@@ -458,7 +458,7 @@ html {
 .ly_reserveOutLineWrapper {
   overflow: hidden;
   padding-top: clamp(0px, 0.69vw, 9999px);
-  margin-top: -70px;
+  margin-top: -4%;
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine {
   padding-top: clamp(0px, 0.69vw, 9999px);
@@ -826,6 +826,10 @@ html {
   border-radius: 100%;
   aspect-ratio: 1/1;
 }
+.bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_arrow img {
+  width: 100%;
+  display: block;
+}
 
 .is_txten .el_commonAllviewBtn_txt {
   color: var(--txtColor);
@@ -1142,7 +1146,8 @@ html {
   gap: clamp(0px, 7.5vw, 9999px);
   align-items: flex-start;
 }
-.bl_newsSection .bl_newsttlWrapper .blcommonSectionTtlWrapper {
+.bl_newsSection .bl_newsttlWrapper {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: clamp(0px, 3.47vw, 9999px);
@@ -1591,7 +1596,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn {
   display: block;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 0.2fr;
   padding: clamp(0px, 1.67vw, 9999px);
   border-radius: clamp(0px, 0.69vw, 9999px);
   overflow: hidden;
@@ -1606,8 +1611,11 @@ Instagram
     transition: opacity 0.5s ease;
   }
 }
-.bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper {
-  margin-bottom: clamp(0px, 2.57vw, 9999px);
+.bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 2.57vw, 9999px);
+  justify-content: space-between;
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_ttl {
   color: var(--txtColor);
@@ -1757,10 +1765,10 @@ Case
   align-items: flex-end;
   margin-bottom: clamp(0px, 3.47vw, 9999px);
 }
-.bl_topCaseSection .bl_caseSliderWrapper_slider .swiper-wrapper {
+.bl_topCaseSection .bl_caseSliderWrapper_slider .splide__track {
   transition-timing-function: linear !important;
 }
-.bl_topCaseSection .bl_caseSliderWrapper_slider .swiper-slide {
+.bl_topCaseSection .bl_caseSliderWrapper_slider .splide__slide {
   width: clamp(0px, 17.92vw, 9999px);
 }
 .bl_topCaseSection .bl_caseItem .bl_caseItem_linkWrapper .bl_caseItem_imgWrapper {

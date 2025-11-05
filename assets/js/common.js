@@ -79,51 +79,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /*Splide*/
+    const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");
+    const options = {
+        type: "loop", 
+        arrows: false, 
+        pagination: false, 
+        drag:false, 
+        gap: 20, 
+        perPage: 4, 
+        breakpoints: {
+            500: {
+                perPage: 1,  
+            },
+        },
+        autoScroll: {
+            speed: 0.5, 
+            pauseOnHover: true, 
+        },
+    };
 
-    
-    function initAutoScrollCaseSlider() {
-        const caseSliderContainer = document.querySelector(".bl_caseSliderWrapper_slider");
-        if (!caseSliderContainer) return;
-      
-        const caseWrapper = caseSliderContainer.querySelector(".swiper-wrapper");
-        const caseSlides = caseSliderContainer.querySelectorAll(".swiper-slide");
-        if (caseSlides.length <= 4) return;
-      
-        // スライドを複製してループを滑らかに
-        caseSlides.forEach(slide => {
-          const clone = slide.cloneNode(true);
-          caseWrapper.appendChild(clone);
-        });
-      
-        // Swiper 初期化
-        const caseSwiper = new Swiper(caseSliderContainer, {
-          slidesPerView: 4,
-          spaceBetween: 30,
-          loop: true,
-          speed: 6000,
-          allowTouchMove: false,
-          autoplay: {
-            delay: 0,
-            pauseOnMouseEnter: true,
-            disableOnInteraction: false,
-          },
-        });
-      
-        // スピードを一定に（線形）
-        caseSwiper.wrapperEl.style.transitionTimingFunction = "linear";
-      
-        // ホバー時に一時停止／再開
-        caseSlides.forEach(slide => {
-            slide.addEventListener("mouseenter", () => {
-                caseSwiper.autoplay.stop();
-            });
-            slide.addEventListener("mouseleave", () => {
-                caseSwiper.autoplay.start();
-            });
-        });
-      }
-      
-      initAutoScrollCaseSlider();
+    if (caseSlider) {
+        const splide = new Splide(caseSlider, options);
+        splide.mount(window.splide.Extensions);
+    }
 
     // アコーディオンアニメーション設定
     setUpAccordion();
@@ -134,37 +113,37 @@ document.addEventListener('DOMContentLoaded', function () {
  * アニメーションライブラリ(GSAP)を使ってアコーディオンのアニメーションを制御します
  */
 const setUpAccordion = () => {
-  const detailsList = document.querySelectorAll(".bl_caseItem_details");
-  const IS_OPENED_CLASS = "is-opened"; // アイコン操作用のクラス名
+    const detailsList = document.querySelectorAll(".bl_caseItem_details");
+    const IS_OPENED_CLASS = "is-opened"; // アイコン操作用のクラス名
 
-  detailsList.forEach((details) => {
-    const summary = details.querySelector(".bl_caseItem_details_summary");
-    const content = details.querySelector(".bl_caseItem_details_content");
+    detailsList.forEach((details) => {
+        const summary = details.querySelector(".bl_caseItem_details_summary");
+        const content = details.querySelector(".bl_caseItem_details_content");
 
-    if (!summary || !content) return;
+        if (!summary || !content) return;
 
-    summary.addEventListener("click", (event) => {
-      // デフォルトの挙動を無効化
-      event.preventDefault();
+        summary.addEventListener("click", (event) => {
+            // デフォルトの挙動を無効化
+            event.preventDefault();
 
-      // is-openedクラスの有無で判定（detailsのopen属性の判定だと、アニメーション完了を待つ必要がありタイミング的に不安定になるため）
-      if (details.classList.contains(IS_OPENED_CLASS)) {
-        // アコーディオンを閉じるときの処理
-        // アイコン操作用クラスを切り替える(クラスを取り除く)
-        details.classList.toggle(IS_OPENED_CLASS);
-        // アニメーション実行
-        closingAnim(content, details).restart();
-      } else {
-        // アコーディオンを開くときの処理
-        // アイコン操作用クラスを切り替える(クラスを付与)
-        details.classList.toggle(IS_OPENED_CLASS);
-        // open属性を付与
-        details.setAttribute("open", "true");
-        // アニメーション実行
-        openingAnim(content).restart();
-      }
+            // is-openedクラスの有無で判定（detailsのopen属性の判定だと、アニメーション完了を待つ必要がありタイミング的に不安定になるため）
+            if (details.classList.contains(IS_OPENED_CLASS)) {
+                // アコーディオンを閉じるときの処理
+                // アイコン操作用クラスを切り替える(クラスを取り除く)
+                details.classList.toggle(IS_OPENED_CLASS);
+                // アニメーション実行
+                closingAnim(content, details).restart();
+            } else {
+                // アコーディオンを開くときの処理
+                // アイコン操作用クラスを切り替える(クラスを付与)
+                details.classList.toggle(IS_OPENED_CLASS);
+                // open属性を付与
+                details.setAttribute("open", "true");
+                // アニメーション実行
+                openingAnim(content).restart();
+            }
+        });
     });
-  });
 }
 
 /**
@@ -173,15 +152,15 @@ const setUpAccordion = () => {
  * @param element {HTMLDetailsElement}
  */
 const closingAnim = (content, element) => gsap.to(content, {
-  height: 0,
-  opacity: 0,
-  duration: 0.4,
-  ease: "power3.out",
-  overwrite: true,
-  onComplete: () => {
-    // アニメーションの完了後にopen属性を取り除く
-    element.removeAttribute("open");
-  },
+    height: 0,
+    opacity: 0,
+    duration: 0.4,
+    ease: "power3.out",
+    overwrite: true,
+    onComplete: () => {
+        // アニメーションの完了後にopen属性を取り除く
+        element.removeAttribute("open");
+    },
 });
 
 /**
@@ -189,15 +168,15 @@ const closingAnim = (content, element) => gsap.to(content, {
  * @param content {HTMLElement}
  */
 const openingAnim = (content) => gsap.fromTo(
-  content,
-  {
-    height: 0,
-    opacity: 0,
-  },
-  {
-    height: "auto",
-    opacity: 1,
-    duration: 0.4,
-    ease: "power3.out",
-    overwrite: true,
-  });
+    content,
+    {
+        height: 0,
+        opacity: 0,
+    },
+    {
+        height: "auto",
+        opacity: 1,
+        duration: 0.4,
+        ease: "power3.out",
+        overwrite: true,
+    });

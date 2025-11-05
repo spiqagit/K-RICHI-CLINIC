@@ -35,6 +35,11 @@
             background-color: #402D10;
             border-radius: 100%;
             aspect-ratio: 1 / 1;
+
+            img{
+                width: 100%;
+                display: block;
+            }
         }
     }
 }

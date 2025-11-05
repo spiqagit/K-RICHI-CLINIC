@@ -176,11 +176,13 @@
     }
 
     .bl_newsttlWrapper {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(50, pc);
 
         .blcommonSectionTtlWrapper {
-            display: flex;
-            flex-direction: column;
-            gap: vwmin(50, pc);
+
 
             .bl_commonAllviewBtnWrapper {
                 width: fit-content;
@@ -737,7 +739,7 @@ Instagram
                     .bl_treatmentBtnItem_btn {
                         display: block;
                         display: grid;
-                        grid-template-columns: 1fr;
+                        grid-template-columns: 1fr .2fr;
                         padding: vwmin(24, pc);
                         border-radius: vwmin(10, pc);
                         overflow: hidden;
@@ -754,9 +756,12 @@ Instagram
                         }
 
                         .bl_treatmentBtnItem_btn_inner {
+                            display: flex;
+                            flex-direction: column;
+                            gap: vwmin(37, pc);
+                            justify-content: space-between;
 
                             .bl_treatmentBtnItem_btn_inner_upper {
-                                margin-bottom: vwmin(37, pc);
 
                                 .el_topMenuSection_item_txtWrapper_ttl {
                                     color: var(--txtColor);
@@ -949,11 +954,11 @@ Case
 
     .bl_caseSliderWrapper_slider {
 
-        .swiper-wrapper {
+        .splide__track {
             transition-timing-function: linear !important;
         }
 
-        .swiper-slide {
+        .splide__slide {
             width: vwmin(258, pc);
         }
     }
@@ -1099,7 +1104,7 @@ Case
                     font-size: vwmin(14, pc);
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 1;  
+                    line-height: 1;
                     letter-spacing: calc(0.7 / 14 * 1em);
                     border-bottom: 1px solid #987F65;
                     padding-block: vwmin(6, pc);
@@ -1107,7 +1112,7 @@ Case
                     margin-bottom: vwmin(10, pc);
                 }
 
-                .bl_caseItem_details_content_item_dd{
+                .bl_caseItem_details_content_item_dd {
                     color: var(--black, #1A0F04);
                     font-family: var(--notoSerifJP);
                     font-size: vwmin(14, pc);
