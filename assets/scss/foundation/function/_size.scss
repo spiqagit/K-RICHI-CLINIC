@@ -1,0 +1,53 @@
+@use 'sass:math';
+@use 'sass:string';
+@use 'sass:meta';
+@function vw($px, $reference) {
+  @if $reference == 'pc' {
+    @return math.div($px, 1280) * 100vw;
+  } @else if $reference == 'tb' {
+    @return math.div($px, 1024) * 100vw;
+  } @else if $reference == 'sp' {
+    @return math.div($px, 767) * 100vw;
+  } @else if $reference == 'sp_m' {
+    @return math.div($px, 500) * 100vw;
+  } @else if $reference == 'sp_s' {
+    @return math.div($px, 320) * 100vw;
+  } @else {
+    @return math.div($px, $reference) * 100vw;
+  }
+}
+
+@function vwmin($pxValue, $reference, $base: null) {
+  @if $reference == 'pc' {
+    @if not $base {
+      $base: 1440;
+    }
+  } @else if $reference == 'tb' {
+    @if not $base {
+      $base: 1024;
+    }
+  } @else if $reference == 'sp' {
+    @if not $base {
+      $base: 767;
+    }
+  } @else if $reference == 'sp_m' {
+    @if not $base {
+      $base: 500;
+    }
+  } @else if $reference == 'sp_s' {
+    @if not $base {
+      $base: 375;
+    }
+  }
+
+  $vwValue: calc(math.round(calc($pxValue / $base) * 10000) / 100 * 1vw);
+
+  @return string.unquote('clamp(0px, #{$vwValue}, 9999px)');
+}
+
+/* -------------------------
+px => rem
+------------------------- */
+@function rem($px) {
+  @return $px / 16 * 1rem;
+}

@@ -1,0 +1,16 @@
+:root {
+    --notoSansJP: 'Noto Sans JP', sans-serif;
+    --notoSerifJP: 'Noto Serif JP', serif;
+    --notoSerifDisplay: 'Noto Serif Display', serif;
+    --libreBaskerville: 'Libre Baskerville', serif;
+    --OldSt: 'Old Standard TT', serif;
+
+    --txtColor: #1A0F04;
+    --leading-trim: calc((1em - 1lh) / 2);
+}
+
+@supports not (top: 1lh) {
+  :root {
+    --leading-trim: 0px; 
+  }
+}

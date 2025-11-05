@@ -1,0 +1,28 @@
+@use 'size' as *;
+@use 'mq' as *;
+@mixin hover_nomal {
+  transition: 0.5s ease;
+  &:hover{
+      opacity: 0.7;
+  }
+}
+
+@mixin font_16 {
+  font-size: vwmin(16, pc);
+  @include underTB {
+    font-size: clamp(14px, vw(16, tb), 16px);
+  }
+  @include underSP {
+    font-size: clamp(14px, vw(16, sp), 16px);
+  }
+}
+
+@mixin post_mt {
+  margin-top: vwmin(40, pc);
+  @include underTB {
+      margin-top: vwmin(40, tb);
+  }
+  @include underSP {
+      margin-top: vwmin(40, sp);
+  }
+}

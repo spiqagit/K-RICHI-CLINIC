@@ -1,0 +1,421 @@
+<?php get_header('meta'); ?>
+<?php wp_head(); ?>
+</head>
+
+<body class="pg_top">
+    <?php get_header(); ?>
+    <main>
+        <div class="bl_fvSection">
+            <picture class="bl_fvSection_bg">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/fv-sp.jpg" media="(max-width: 768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/fv-pc.jpg" alt="">
+            </picture>
+            <div class="bl_fvSection_txt">
+                <p>あなたの<br>人生を、<br>美しく彩る</p>
+            </div>
+        </div>
+
+        <div class="bl_secondViewSectionWrapper_outer">
+            <div class="bl_secondViewSectionWrapper_outline">
+                <div class="bl_secondViewSectionWrapper">
+                    <section class="bl_newsSection bl_topSection">
+                        <?php
+                        $news_query = new WP_Query(array(
+                            'post_type' => 'news',
+                            'posts_per_page' => 3,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                        ));
+                        ?>
+                        <div class="bl_topSection_inner bl_newsSection_inner">
+                            <div class="bl_newsttlWrapper">
+                                <div class="blcommonSectionTtlWrapper">
+                                    <hgroup class="bl_commonSectionTtl">
+                                        <p class="el_commonSectionTtl_ttl_en">News</p>
+                                        <p class="el_commonSectionTtl_ttl_ja">お知らせ</p>
+                                    </hgroup>
+                                </div>
+                                <?php if ($news_query->have_posts()) : ?>
+                                    <div class="bl_commonAllviewBtnWrapper">
+                                        <a href="#" class="bl_commonAllviewBtn">
+                                            <p class="el_commonAllviewBtn_txt">一覧を見る</p>
+                                            <div class="el_commonAllviewBtn_arrow">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <?php if ($news_query->have_posts()) : ?>
+                                <div class="bl_newsSliderWrapper">
+                                    <div class="swiper bl_newsSlider">
+                                        <div class="swiper-wrapper">
+                                            <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
+                                                <div class="swiper-slide">
+                                                    <a href="<?php the_permalink(); ?>" class="bl_topNewsItem">
+                                                        <div class="bl_topNewsItem_thumbnailWrapper">
+                                                            <?php if (has_post_thumbnail()) : ?>
+                                                                <img class="el_topNewsItem_thumbnailWrapper_img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                                                            <?php else : ?>
+                                                                <img class="el_topNewsItem_thumbnailWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/news-nospot-img.jpg" alt="<?php the_title(); ?>">
+                                                            <?php endif; ?>
+                                                        </div>
+                                                        <div class="bl_topNewsItem_txtWrapper">
+                                                            <p class="el_topNewsItem_txtWrapper_date"><?php the_time('Y.m.d'); ?></p>
+                                                            <p class="el_topNewsItem_txtWrapper_ttl"><?php the_title(); ?></p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <?php endwhile; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php else : ?>
+                                <div class="">
+                                    <div class="bl_topNoPostContainer">
+                                        <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                                        <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                        </div>
+                    </section>
+
+                    <?php
+                    $column_query = new WP_Query(array(
+                        'post_type' => 'column',
+                        'posts_per_page' => 4,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                    ));
+                    ?>
+
+                    <section class="bl_topColumnSection bl_topSection">
+                        <div class="bl_topSection_inner">
+                            <div class="bl_topColumnSection_ttlWrapper blcommonSectionTtlWrapper">
+                                <hgroup class="bl_commonSectionTtl">
+                                    <p class="el_commonSectionTtl_ttl_en">Column</p>
+                                    <p class="el_commonSectionTtl_ttl_ja">コラム</p>
+                                </hgroup>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                            <?php if ($column_query->have_posts()) : ?>
+                                <div class="bl_topColumnSection_sliderWrapper">
+                                    <div class="swiper bl_topColumnSection_slider">
+                                        <div class="swiper-wrapper">
+                                            <?php while ($column_query->have_posts()) : $column_query->the_post(); ?>
+                                                <div class="swiper-slide">
+                                                    <a href="<?php the_permalink(); ?>" class="bl_columnBtnItem">
+                                                        <div class="bl_columnBtnItem_imgWrapper">
+                                                            <?php if (has_post_thumbnail()) : ?>
+                                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                                                            <?php else : ?>
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/column-nospot-img.jpg" alt="<?php the_title(); ?>">
+                                                            <?php endif; ?>
+                                                        </div>
+                                                        <div class="bl_columnBtnItem_txtWrapper">
+                                                            <div class="bl_columnBtnItem_txtWrapper_upper">
+                                                                <div class="bl_columnBtnItem_postInfoWrapper">
+                                                                    <p class="el_columnBtnItem_postInfoWrapper_date"><?php the_date('Y.m.d'); ?></p>
+
+                                                                    <?php
+                                                                    $column_cats = get_terms('column-cat');
+                                                                    ?>
+                                                                    <?php if (!empty($column_cats)) : ?>
+                                                                        <div class="bl_columnBtnItem_postInfoWrapper_cats">
+                                                                            <?php foreach ($column_cats as $column_cat) : ?>
+                                                                                <p class="el_columnBtnItem_postInfoWrapper_cats_cat"><?php echo $column_cat->name; ?></p>
+                                                                            <?php endforeach; ?>
+                                                                        </div>
+                                                                    <?php endif; ?>
+                                                                </div>
+                                                                <p class="el_columnBtnItem_txtWrapper_ttl"><?php the_title(); ?></p>
+                                                            </div>
+
+                                                            <div class="bl_columnBtnItem_txtWrapper_arrow">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <?php endwhile; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php else : ?>
+                                <div class="">
+                                    <div class="bl_topNoPostContainer">
+                                        <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                                        <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <section class="bl_conceptSection bl_topSection">
+            <div class="bl_conceptSection_inner bl_topSection_inner">
+                <div class="bl_conceptSection_txtWrapper">
+                    <div class="blcommonSectionTtlWrapper">
+                        <hgroup class="bl_commonSectionTtl">
+                            <p class="el_commonSectionTtl_ttl_en">Concept</p>
+                            <p class="el_commonSectionTtl_ttl_ja">コンセプト</p>
+                        </hgroup>
+                    </div>
+                    <div class="bl_conceptSection_txtContainer">
+                        <div class="bl_conceptSection_copyWrapper">
+                            <p class="el_conceptSection_copyWrapper_main">｢韓国美容 × 日本品質｣</p>
+                            <p class="el_conceptSection_copyWrapper_sub"><span>—</span> その融合が生み出す、新しい美のスタンダード</p>
+                        </div>
+                        <div class="bl_conceptSection_txtWrapper">
+                            <p class="el_conceptSection_txt_txt">K-RICH CLINICは、韓国の最先端美容医療に、日本美容ならではの繊細さと洗練された感性を融合させた、“結果”と“安心”を両立するプレミアム美容クリニックです。</p>
+                            <p class="el_conceptSection_txt_txt">私たちは、一時的な美しさを追求するのではなく、再生医療を通じて自然に美しさが育まれる医療を目指しています。</p>
+                            <p class="el_conceptSection_txt_txt">さらに、お一人おひとりの肌質や骨格、ライフスタイルを丁寧に見極め、最も適したオーダーメイド治療をご提案いたします。</p>
+                            <p class="el_conceptSection_txt_txt">最新の医療機器と確かな技術、そして誠実な医療を通じて、「自分らしく輝く人生」へと導くことが、K-RICH CLINICの理念です。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bl_conceptSection_imgWrapper">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-concept-img.png" alt="モデルの女性の画像">
+                </div>
+            </div>
+        </section>
+
+        <section class="bl_featuerSection">
+            <div class="bl_featuerSection_inner">
+                <div class="bl_featuerSection_ttlWrapper">
+                    <h3 class="bl_featuerSection_ttl">K-RICH CLINICの特徴</h3>
+                </div>
+
+                <div class="bl_featuerSection_listWrapper">
+                    <ol class="bl_featuerSection_list">
+                        <li class="bl_featuerSection_list_item">
+                            <div class="bl_featuerSection_list_item_imgWrapper">
+                                <p class="el_featuerSection_list_item_imgWrapper_num">01</p>
+                                <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-01.jpg" alt="韓国美容と日本品質の融合">
+                            </div>
+                            <div class="bl_featuerSection_list_item_txtWrapper">
+                                <p class="el_featuerSection_list_item_ttl">韓国美容と日本品質の融合</p>
+                                <p class="el_featuerSection_list_item_txt">韓国の先端美容医療と日本の繊細な技術を融合し、一人ひとりに合わせたオーダーメイド治療で理想の美しさを叶えます。</p>
+                            </div>
+                        </li>
+
+                        <li class="bl_featuerSection_list_item">
+                            <div class="bl_featuerSection_list_item_imgWrapper">
+                                <p class="el_featuerSection_list_item_imgWrapper_num">02</p>
+                                <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-02.jpg" alt="再生医療とエイジングケアの専門性">
+                            </div>
+                            <div class="bl_featuerSection_list_item_txtWrapper">
+                                <p class="el_featuerSection_list_item_ttl">再生医療とエイジングケアの専門性</p>
+                                <p class="el_featuerSection_list_item_txt">PRPや幹細胞治療などの再生医療を通じて肌の機能を整え、内側から自然で上質な若返りを導きます。</p>
+                            </div>
+                        </li>
+
+                        <li class="bl_featuerSection_list_item">
+                            <div class="bl_featuerSection_list_item_imgWrapper">
+                                <p class="el_featuerSection_list_item_imgWrapper_num">03</p>
+                                <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-03.jpg" alt="国際的視点と信頼の医療体制">
+                            </div>
+                            <div class="bl_featuerSection_list_item_txtWrapper">
+                                <p class="el_featuerSection_list_item_ttl">国際的視点と信頼の医療体制</p>
+                                <p class="el_featuerSection_list_item_txt">日韓両国の医師免許を持つ院長が多言語の能力を活かし、世界の医療技術を基に、安心と信頼の医療を提供します。</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="bl_commonAllviewBtnWrapper bl_featuerSection_btnWrapper">
+                    <a href="#" class="bl_commonAllviewBtn">
+                        <p class="el_commonAllviewBtn_txt">クリニック紹介を見る</p>
+                        <div class="el_commonAllviewBtn_arrow">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bl_topDoctorSection bl_topSection">
+            <div class="bl_topDoctorSection_inner bl_topSection_inner">
+                <div class="blcommonSectionTtlWrapper">
+                    <hgroup class="bl_commonSectionTtl">
+                        <p class="el_commonSectionTtl_ttl_en">Concept</p>
+                        <p class="el_commonSectionTtl_ttl_ja">コンセプト</p>
+                    </hgroup>
+                </div>
+                <div class="bl_doctorContentsWrapper">
+                    <div class="bl_doctorContentsWrapper_imgWrapper">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/doctor-img.png" alt="院長 金 玟圭 キム・ミンギュ">
+                    </div>
+                    <div class="bl_doctorContentsWrapper_txtWrapper">
+                        <div class="bl_doctorContentsWrapper_nameWrapper">
+                            <p class="el_doctorContentsWrapper_nameWrapper_job">院長</p>
+                            <div class="bl_doctorContentsWrapper_nameWrapper_name">
+                                <p class="el_doctorContentsWrapper_nameWrapper_name_first">金 玟圭</p>
+                                <p class="el_doctorContentsWrapper_nameWrapper_name_last">キム・ミンギュ</p>
+                            </div>
+                        </div>
+                        <div class="bl_doctorContentsWrapper_txtWrapper_txt">
+                            <p>ダミーテキストです。美容医療は、外見の変化だけでなく、心まで明るく前向きにしてくれる力があると信じています。</p>
+                            <p>私たちは患者様との信頼関係を大切にし、安心して任せていただける医療を目指してきました。</p>
+                            <p>一人ひとりの悩みに真摯に向き合い、その方にとって最も自然で美しい結果を追求してまいります。<br>
+                                小さな不安でも、ぜひお気軽にご相談ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bl_topMenuSection bl_topSection">
+            <div class="bl_topMenuSection_inner bl_topSection_inner">
+                <?php
+                $concern_cats = get_terms([
+                    'taxonomy' => 'concern-cat',
+                    'post_type' => 'concern',
+                    'orderby' => 'concern_order',
+                    'order' => 'ASC',
+                    'hide_empty' => true,
+                ]);
+                ?>
+                <?php if (!empty($concern_cats)) : ?>
+                    <div class="bl_topMenuSection_item">
+                        <div class="bl_topMenuSection_item_ttlWrapper">
+                            <div class="blcommonSectionTtlWrapper">
+                                <hgroup class="bl_commonSectionTtl">
+                                    <p class="el_commonSectionTtl_ttl_en">Concern</p>
+                                    <p class="el_commonSectionTtl_ttl_ja">お悩み</p>
+                                </hgroup>
+                            </div>
+                            <div class="bl_commonAllviewBtnWrapper is_txten">
+                                <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
+                                    <p class="el_commonAllviewBtn_txt">View all</p>
+                                    <div class="el_commonAllviewBtn_arrow">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bl_topConcernContainer">
+                            <div class="swiper bl_topConcernSwiper">
+                                <div class="swiper-wrapper">
+                                    <?php foreach ($concern_cats as $concern_cat) : ?>
+                                        <div class="swiper-slide">
+                                            <div class="bl_concernItem">
+                                                <div class="bl_concernItem_upper">
+                                                    <div class="bl_concernItem_upper_imgWrapper">
+                                                        <img src="<?php echo get_field('concern-icon', 'concern-cat_' . $concern_cat->term_id); ?>" alt="<?php echo esc_html($concern_cat->name); ?>">
+                                                    </div>
+                                                    <div class="bl_concernItem_upper_txtWrapper">
+                                                        <p class="el_concernItem_upper_txtWrapper_txtEn"><?php echo get_field('concern-txt-en', 'concern-cat_' . $concern_cat->term_id); ?></p>
+                                                        <p class="el_concernItem_upper_txtWrapper_txtJa"><?php echo esc_html($concern_cat->name); ?></p>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                                $concern_posts = get_posts([
+                                                    'post_type' => 'concern',
+                                                    'posts_per_page' => -1,
+                                                    'orderby' => 'concern_order',
+                                                    'order' => 'ASC',
+                                                    'tax_query' => [
+                                                        [
+                                                            'taxonomy' => 'concern-cat',
+                                                            'field' => 'term_id',
+                                                            'terms' => $concern_cat->term_id,
+                                                        ],
+                                                    ],
+                                                ]);
+                                                ?>
+                                                <?php if (!empty($concern_posts)) : ?>
+                                                    <div class="bl_concernItem_lower">
+                                                        <ul class="bl_concernItem_postList">
+                                                            <?php foreach ($concern_posts as $concern_post) : ?>
+                                                                <li class="bl_concernItem_postList_item">
+                                                                    <a class="bl_concernItem_postList_item_btn" href="<?php echo get_the_permalink($concern_post); ?>">
+                                                                        <p class="el_concernItem_postList_item_btn_txt"><?php echo get_the_title($concern_post); ?></p>
+                                                                        <img class="el_concernItem_postList_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/open-arrow.svg" alt="">
+                                                                    </a>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    </div>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+
+                <?php
+                $treatment_cats = get_terms([
+                    'post_type' => 'menu',
+                    'taxonomy' => 'menu-cat',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'hide_empty' => true,
+                ]);
+                ?>
+                <?php if (!empty($treatment_cats)) : ?>
+                    <div class="bl_topMenuSection_item">
+                        <div class="bl_topMenuSection_item_ttlWrapper">
+                            <div class="blcommonSectionTtlWrapper">
+                                <hgroup class="bl_commonSectionTtl">
+                                    <p class="el_commonSectionTtl_ttl_en">Treatment</p>
+                                    <p class="el_commonSectionTtl_ttl_ja">施術</p>
+                                </hgroup>
+                            </div>
+                            <div class="bl_commonAllviewBtnWrapper is_txten">
+                                <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
+                                    <p class="el_commonAllviewBtn_txt">View all</p>
+                                    <div class="el_commonAllviewBtn_arrow">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bl_topSection_treatmentContainer">
+
+                            <?php foreach ($treatment_cats as $treatment_cat) :
+                                $banner = get_field('menu-cat-banner', 'menu-cat_' . $treatment_cat->term_id);
+                                $txt = get_field('menu-cat-txt', 'menu-cat_' . $treatment_cat->term_id);
+                            ?>
+                                <div class="bl_treatmentBtnItem">
+                                    <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
+                                        style="background-image: url(<?php echo $banner; ?>);">
+                                        <div class="bl_treatmentBtnItem_btn_inner">
+                                            <div class="bl_treatmentBtnItem_btn_inner_upper">
+                                                <p class="el_topMenuSection_item_txtWrapper_ttl">
+                                                    <?php echo esc_html($treatment_cat->name); ?>
+                                                </p>
+                                                <p class="el_topMenuSection_item_txtWrapper_txt">
+                                                    <?php echo $txt; ?>
+                                                </p>
+                                            </div>
+                                            <div class="bl_treatmentBtnItem_btn_inner_arrow">
+                                                <p class="el_treatmentBtnItem_btn_inner_arrow_txt">メニューを見る</p>
+                                                <img class="el_treatmentBtnItem_btn_inner_arrow_img" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/common/black-arrow.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+        </section>
+    </main>
+    <?php get_footer(); ?>
+</body>
+
+</html>
