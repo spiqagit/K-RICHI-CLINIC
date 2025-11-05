@@ -1,1 +1,405 @@
 @use '../foundation/function/index' as *;
+
+
+.ly_reserveOutLineWrapper {
+    overflow: hidden;
+    padding-top: vwmin(10, pc);
+    margin-top: -70px;
+
+    .ly_reserveOutLine {
+        padding-top: vwmin(10, pc);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 101%;
+            height: 100%;
+            border-top: 1px solid #987F65;
+            border-inline: 1px solid #987F65;
+            border-radius: vwmin(50, pc) vwmin(50, pc) 0 0;
+            padding-top: vwmin(10, pc);
+
+            z-index: 1;
+        }
+
+        .ly_reserveSection {
+            position: relative;
+            z-index: 1;
+            background-image: url('../img/common/reserve-pc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-block: vwmin(100, pc);
+            padding-inline: vwmin(40, pc);
+            border-radius: vwmin(40, pc) vwmin(40, pc) 0 0;
+
+
+            .bl_reserveSection_title {
+                width: fit-content;
+                margin-inline: auto;
+                margin-bottom: vwmin(20, pc);
+
+                .el_reserveSection_title_ttl {
+                    color: #FFF;
+                    font-family: var(--notoSerifDisplay);
+                    font-size: vwmin(100, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: calc(2 / 100 * 1em);
+                    margin-block: var(--leading-trim);
+                    margin-block-end: calc(vwmin(20, pc) + var(--leading-trim));
+                }
+
+                .el_reserveSection_title_txt {
+                    color: #FFF;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(20, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(1 / 20 * 1em);
+                    margin-inline: auto;
+                    width: fit-content;
+                }
+            }
+
+
+            .bl_reserveSection_txtWrapper {
+
+                .el_reserveSection_timeTxt {
+                    color: #FFF;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+                    width: fit-content;
+                    margin-inline: auto;
+                    margin-bottom: vwmin(20, pc);
+                }
+
+                .bl_reserveBtnWrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: vwmin(20, pc);
+                }
+
+            }
+        }
+    }
+}
+
+
+.ly_footer {
+    background-color: #F4EEEA;
+
+    .bl_footer_upper {
+        background-color: #F4EEEA;
+        padding-block: vwmin(80, pc);
+        padding-bottom: vwmin(80, pc);
+
+        .bl_footerClinicInfoContainer {
+            display: grid;
+            grid-template-columns: vwmin(307, pc) 1fr;
+            gap: vwmin(120, pc);
+            align-items: center;
+            justify-content: center;
+            max-width: vwmin(1007, pc);
+            width: 100%;
+            margin-inline: auto;
+
+            .bl_footerClinicInfoWrapper_logoContainer {
+                margin-bottom: vwmin(50, pc);
+
+                .bl_footerClinicInfoWrapper_logo {
+                    max-width: vwmin(264, pc);
+                    width: 100%;
+                    margin-inline: auto;
+                    margin-bottom: vwmin(30, pc);
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .bl_footerClinicInfoWrapper_snsContainer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: vwmin(14, pc);
+
+                    .bl_footerClinicInfoWrapper_snsBtn {
+                        max-width: vwmin(40, pc);
+                        width: 100%;
+                        aspect-ratio: 1 / 1;
+                        height: auto;
+                        border-radius: vwmin(4, pc);
+                        background-color: #FFF;
+                        display: grid;
+                        grid-template-columns: vwmin(22, pc);
+                        align-items: center;
+                        justify-content: center;
+                        transition: opacity 0.5s ease;
+
+                        @media (any-hover: hover) {
+                            &:hover {
+                                opacity: 0.7;
+                                transition: opacity 0.5s ease;
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+
+
+            .bl_footerClinicInfoWrapper_addressContainer {
+
+                .bl_footerClinicInfoWrapper_addressWrapper {
+                    margin-bottom: vwmin(20, pc);
+
+                    .el_footerClinicInfoWrapper_numberTxt {
+                        color: var(--txtColor);
+                        font-family: var(--OldSt);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        letter-spacing: calc(0.32 / 16 * 1em);
+                        margin-block: var(--leading-trim);
+                    }
+
+                    .el_footerClinicInfoWrapper_addressTxt {
+                        color: var(--txtColor);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+                    }
+                }
+
+                .bl_footerClinicInfoWrapper_mapLink {
+                    width: fit-content;
+                    display: grid;
+                    grid-template-columns: auto vwmin(12, pc);
+                    align-items: center;
+                    justify-content: center;
+                    gap: vwmin(3, pc);
+                    transition: opacity 0.5s ease;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            opacity: 0.7;
+                            transition: opacity 0.5s ease;
+                        }
+                    }
+
+                    .el_footerClinicInfoWrapper_mapLinkTxt {
+                        color: var(--txtColor);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+                        text-decoration-line: underline;
+                        text-decoration-style: solid;
+                        text-decoration-skip-ink: auto;
+                        text-decoration-thickness: auto;
+                        text-underline-offset: auto;
+                        text-underline-position: from-font;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+
+
+                .bl_footerClinicInfoWrapper_mapContainer {
+                    display: grid;
+                    grid-template-columns: auto vwmin(12, pc);
+                    align-items: center;
+                    justify-content: center;
+                    gap: vwmin(3, pc);
+                }
+            }
+        }
+
+        .bl_footerClinicInfoWrapper_mapContainer {
+            iframe {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 580 / 385;
+                border: none;
+            }
+        }
+    }
+
+
+
+    .bl_footer_lower {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: vwmin(93, pc);
+        align-items: flex-start;
+        max-width: vwmin(1120, pc);
+        padding-top: vwmin(50, pc);
+        padding-bottom: vwmin(80, pc);
+        margin-inline: auto;
+        border-top: 1px solid #E5D8CD;
+
+
+        .bl_footer_btnTitle {
+            display: grid;
+            grid-template-columns: auto auto;
+            width: fit-content;
+            gap: vwmin(8, pc);
+            align-items: center;
+
+            .el_footer_btnTitle_en {
+                width: fit-content;
+                color: var(--txtColor);
+                font-family: var(--notoSerifDisplay);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.96 / 16 * 1em);
+                text-transform: uppercase;
+            }
+
+            .el_footer_btnTitle_ja {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(12, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.6 / 12 * 1em);
+            }
+        }
+
+        .bl_footer_aboutClinicContainer {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(20, pc);
+
+            .bl_footer_aboutClinicLinkContainer {
+                display: flex;
+                flex-direction: column;
+                gap: vwmin(16, pc);
+                padding-left: vwmin(10, pc);
+                border-left: 1px solid var(--txtColor);
+
+                .el_footer_aboutClinicLinkContainer_link {
+                    color: var(--txtColor);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: calc(0.7 / 14 * 1em);
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    text-decoration-skip-ink: auto;
+                    text-decoration-thickness: auto;
+                    text-underline-offset: auto;
+                    text-underline-position: from-font;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            opacity: 0.7;
+                            transition: opacity 0.5s ease;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .bl_footer_btnContainer {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            column-gap: vwmin(93, pc);
+            row-gap: vwmin(30, pc);
+
+            .bl_footer_btn{
+                transition: opacity 0.5s ease;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.5s ease;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    .bl_footer_copyrightContainer {
+        background-color: #402D10;
+        padding-block: vwmin(20, pc);
+        padding-inline: vwmin(160, pc);
+
+        .bl_footer_copyrightWrapper_inner {
+            display: grid;
+            grid-template-columns: auto auto;
+            align-items: center;
+            justify-content: space-between;
+
+            .bl_footer_copyrightLink {
+                color: #FFF;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.7 / 14 * 1em);
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+                text-underline-position: from-font;
+                transition: opacity 0.5s ease;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.5s ease;
+                    }
+                }
+            }
+
+            .bl_footer_copyrightTxt {
+                color: #FFF;
+                text-align: center;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(12, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.6 / 12 * 1em);
+                text-transform: uppercase;
+            }
+        }
+    }
+}

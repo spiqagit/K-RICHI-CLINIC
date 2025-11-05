@@ -31,7 +31,7 @@
                             <div class="bl_newsttlWrapper">
                                 <div class="blcommonSectionTtlWrapper">
                                     <hgroup class="bl_commonSectionTtl">
-                                        <p class="el_commonSectionTtl_ttl_en">News</p>
+                                        <h2 class="el_commonSectionTtl_ttl_en">News</h2>
                                         <p class="el_commonSectionTtl_ttl_ja">お知らせ</p>
                                     </hgroup>
                                 </div>
@@ -95,11 +95,19 @@
                         <div class="bl_topSection_inner">
                             <div class="bl_topColumnSection_ttlWrapper blcommonSectionTtlWrapper">
                                 <hgroup class="bl_commonSectionTtl">
-                                    <p class="el_commonSectionTtl_ttl_en">Column</p>
+                                    <h2 class="el_commonSectionTtl_ttl_en">Column</h2>
                                     <p class="el_commonSectionTtl_ttl_ja">コラム</p>
                                 </hgroup>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-button-next"></div>
+                                <?php if ($column_query->have_posts()) : ?>
+                                    <div class="bl_topColumnSection_sliderNaviWrapper">
+                                        <button class="el_topColumnSection_sliderNaviWrapper_btn el_topColumnSection_sliderNaviWrapper_btnPrev" type="button">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/prev-arrow.svg" alt="前へ">
+                                        </button>
+                                        <button class="el_topColumnSection_sliderNaviWrapper_btn el_topColumnSection_sliderNaviWrapper_btnNext" type="button">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/next-arrow.svg" alt="次へ">
+                                        </button>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             <?php if ($column_query->have_posts()) : ?>
                                 <div class="bl_topColumnSection_sliderWrapper">
@@ -121,7 +129,7 @@
                                                                     <p class="el_columnBtnItem_postInfoWrapper_date"><?php the_date('Y.m.d'); ?></p>
 
                                                                     <?php
-                                                                    $column_cats = get_terms('column-cat');
+                                                                    $column_cats = get_the_terms(get_the_ID(), 'column-cat');
                                                                     ?>
                                                                     <?php if (!empty($column_cats)) : ?>
                                                                         <div class="bl_columnBtnItem_postInfoWrapper_cats">
@@ -141,8 +149,17 @@
                                                     </a>
                                                 </div>
                                             <?php endwhile; ?>
+                                            <?php wp_reset_postdata(); ?>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="bl_commonAllviewBtnWrapper bl_topColumnSection_btnWrapper">
+                                    <a href="<?php echo home_url(); ?>/column/" class="bl_commonAllviewBtn">
+                                        <p class="el_commonAllviewBtn_txt">一覧を見る</p>
+                                        <div class="el_commonAllviewBtn_arrow">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                        </div>
+                                    </a>
                                 </div>
                             <?php else : ?>
                                 <div class="">
@@ -154,6 +171,50 @@
                             <?php endif; ?>
                         </div>
                     </section>
+
+                    <section class="bl_topSnsSection">
+                        <div class="bl_topSnsSection_inner">
+
+                            <div class="bl_topInstagramContainer">
+                                <div class="bl_topInstagramContainer_inner">
+                                    <div class="bl_topInstagramContainer_ttlWrapper">
+                                        <h2 class="el_topInstagramContainer_ttl">Instagram</h2>
+                                        <?php if (get_field('instagram-url', 'option')): ?>
+                                            <div class="bl_commonAllviewBtnWrapper bl_topColumnSection_btnWrapper">
+                                                <a href="<?php echo get_field('instagram_url', 'option'); ?>" class="bl_commonAllviewBtn" target="_blank">
+                                                    <p class="el_commonAllviewBtn_txt">投稿を見る</p>
+                                                    <div class="el_commonAllviewBtn_arrow">
+                                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bl_topSnsSection_otherSnsWrapper">
+                                <h3 class="el_topSnsSection_otherSnsWrapper_ttl">その他SNSはこちら</h3>
+                                <div class="bl_topSnsSection_otherSnsWrapper_snsList">
+                                    <?php if (get_field('youtube-url', 'option')): ?>
+                                        <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('youtube-url', 'option'); ?>" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/youtube-icon.svg" alt="YouTube">
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if (get_field('x-url', 'option')): ?>
+                                        <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('x-url', 'option'); ?>" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/x-icon.svg" alt="X">
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if (get_field('tiktok-url', 'option')): ?>
+                                        <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('tiktok-url', 'option'); ?>" target="_blank">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/tiktok-icon.svg" alt="TikTok">
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
@@ -163,7 +224,7 @@
                 <div class="bl_conceptSection_txtWrapper">
                     <div class="blcommonSectionTtlWrapper">
                         <hgroup class="bl_commonSectionTtl">
-                            <p class="el_commonSectionTtl_ttl_en">Concept</p>
+                            <h2 class="el_commonSectionTtl_ttl_en">Concept</h2>
                             <p class="el_commonSectionTtl_ttl_ja">コンセプト</p>
                         </hgroup>
                     </div>
@@ -172,7 +233,7 @@
                             <p class="el_conceptSection_copyWrapper_main">｢韓国美容 × 日本品質｣</p>
                             <p class="el_conceptSection_copyWrapper_sub"><span>—</span> その融合が生み出す、新しい美のスタンダード</p>
                         </div>
-                        <div class="bl_conceptSection_txtWrapper">
+                        <div class="bl_conceptSection_txtContainer">
                             <p class="el_conceptSection_txt_txt">K-RICH CLINICは、韓国の最先端美容医療に、日本美容ならではの繊細さと洗練された感性を融合させた、“結果”と“安心”を両立するプレミアム美容クリニックです。</p>
                             <p class="el_conceptSection_txt_txt">私たちは、一時的な美しさを追求するのではなく、再生医療を通じて自然に美しさが育まれる医療を目指しています。</p>
                             <p class="el_conceptSection_txt_txt">さらに、お一人おひとりの肌質や骨格、ライフスタイルを丁寧に見極め、最も適したオーダーメイド治療をご提案いたします。</p>
@@ -243,7 +304,7 @@
             <div class="bl_topDoctorSection_inner bl_topSection_inner">
                 <div class="blcommonSectionTtlWrapper">
                     <hgroup class="bl_commonSectionTtl">
-                        <p class="el_commonSectionTtl_ttl_en">Concept</p>
+                        <h2 class="el_commonSectionTtl_ttl_en">Concept</h2>
                         <p class="el_commonSectionTtl_ttl_ja">コンセプト</p>
                     </hgroup>
                 </div>
@@ -282,25 +343,27 @@
                     'hide_empty' => true,
                 ]);
                 ?>
-                <?php if (!empty($concern_cats)) : ?>
-                    <div class="bl_topMenuSection_item">
-                        <div class="bl_topMenuSection_item_ttlWrapper">
-                            <div class="blcommonSectionTtlWrapper">
-                                <hgroup class="bl_commonSectionTtl">
-                                    <p class="el_commonSectionTtl_ttl_en">Concern</p>
-                                    <p class="el_commonSectionTtl_ttl_ja">お悩み</p>
-                                </hgroup>
-                            </div>
-                            <div class="bl_commonAllviewBtnWrapper is_txten">
-                                <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
-                                    <p class="el_commonAllviewBtn_txt">View all</p>
-                                    <div class="el_commonAllviewBtn_arrow">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
-                                    </div>
-                                </a>
-                            </div>
+                <div class="bl_topMenuSection_item">
+                    <div class="bl_topMenuSection_item_ttlWrapper">
+                        <div class="blcommonSectionTtlWrapper">
+                            <hgroup class="bl_commonSectionTtl">
+                                <h2 class="el_commonSectionTtl_ttl_en">Concern</h2>
+                                <p class="el_commonSectionTtl_ttl_ja">お悩み</p>
+                            </hgroup>
                         </div>
-                        <div class="bl_topConcernContainer">
+                        <div class="bl_commonAllviewBtnWrapper is_txten">
+                            <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
+                                <p class="el_commonAllviewBtn_txt">View all</p>
+                                <div class="el_commonAllviewBtn_arrow">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bl_topConcernContainer">
+                        <?php if (!empty($concern_cats)) : ?>
+
                             <div class="swiper bl_topConcernSwiper">
                                 <div class="swiper-wrapper">
                                     <?php foreach ($concern_cats as $concern_cat) : ?>
@@ -347,11 +410,19 @@
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
+                                    <?php wp_reset_postdata(); ?>
                                 </div>
                             </div>
-                        </div>
+                        <?php else : ?>
+                            <div class="">
+                                <div class="bl_topNoPostContainer">
+                                    <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                                    <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
+                </div>
 
 
                 <?php
@@ -363,15 +434,17 @@
                     'hide_empty' => true,
                 ]);
                 ?>
-                <?php if (!empty($treatment_cats)) : ?>
-                    <div class="bl_topMenuSection_item">
-                        <div class="bl_topMenuSection_item_ttlWrapper">
-                            <div class="blcommonSectionTtlWrapper">
-                                <hgroup class="bl_commonSectionTtl">
-                                    <p class="el_commonSectionTtl_ttl_en">Treatment</p>
-                                    <p class="el_commonSectionTtl_ttl_ja">施術</p>
-                                </hgroup>
-                            </div>
+
+                <div class="bl_topMenuSection_item">
+                    <div class="bl_topMenuSection_item_ttlWrapper">
+                        <div class="blcommonSectionTtlWrapper">
+                            <hgroup class="bl_commonSectionTtl">
+                                <h2 class="el_commonSectionTtl_ttl_en">Treatment</h2>
+                                <p class="el_commonSectionTtl_ttl_ja">施術</p>
+                            </hgroup>
+                        </div>
+
+                        <?php if (!empty($treatment_cats)) : ?>
                             <div class="bl_commonAllviewBtnWrapper is_txten">
                                 <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
                                     <p class="el_commonAllviewBtn_txt">View all</p>
@@ -380,10 +453,12 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        <?php endif; ?>
+                    </div>
 
+
+                    <?php if (!empty($treatment_cats)) : ?>
                         <div class="bl_topSection_treatmentContainer">
-
                             <?php foreach ($treatment_cats as $treatment_cat) :
                                 $banner = get_field('menu-cat-banner', 'menu-cat_' . $treatment_cat->term_id);
                                 $txt = get_field('menu-cat-txt', 'menu-cat_' . $treatment_cat->term_id);
@@ -408,10 +483,152 @@
                                     </a>
                                 </div>
                             <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
+                        </div>
+                    <?php else : ?>
+
+                        <div class="">
+                            <div class="bl_topNoPostContainer">
+                                <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                                <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                            </div>
+                        </div>
+
+                    <?php endif; ?>
+
+                </div>
+            </div>
+        </section>
+
+        <?php
+        $case_posts = new WP_Query([
+            'post_type' => 'case',
+            'posts_per_page' => 10,
+            'orderby' => 'date',
+            'order' => 'DESC'
+        ]);
+        ?>
+        <section class="bl_topCaseSection bl_topSection">
+            <div class="bl_topSection_inner">
+                <div class="bl_topCaseSection_ttlWrapper">
+                    <div class="blcommonSectionTtlWrapper">
+                        <hgroup class="bl_commonSectionTtl">
+                            <h2 class="el_commonSectionTtl_ttl_en">Case</h2>
+                            <p class="el_commonSectionTtl_ttl_ja">症例</p>
+                        </hgroup>
+                    </div>
+
+                    <?php if (!empty($treatment_cats)) : ?>
+                        <div class="bl_commonAllviewBtnWrapper is_txten">
+                            <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
+                                <p class="el_commonAllviewBtn_txt">View all</p>
+                                <div class="el_commonAllviewBtn_arrow">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <?php if (!empty($case_posts)) : ?>
+                    <div class="bl_caseSliderWrapper">
+                        <div class="swiper bl_caseSliderWrapper_slider">
+                            <div class="swiper-wrapper">
+                                <?php while ($case_posts->have_posts()) : $case_posts->the_post(); ?>
+                                    <div class="swiper-slide">
+                                        <div class="bl_caseItem">
+                                            <a href="<?php the_permalink(); ?>" class="bl_caseItem_linkWrapper">
+                                                <div class="bl_caseItem_imgWrapper">
+                                                    <?php if (have_rows('slide')): ?>
+                                                        <?php while (have_rows('slide')): the_row(); ?>
+                                                            <img src="<?php the_sub_field('img'); ?>" alt="<?php the_title(); ?>">
+                                                            <?php continue; ?>
+                                                        <?php endwhile; ?>
+                                                    <?php else: ?>
+                                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/news-no-post.jpg" alt="<?php the_title(); ?>">
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="bl_caseItem_txtWrapper">
+                                                    <div class="bl_caseItem_treatmentsWrapper">
+                                                        <?php $treatments = get_field('menu_select'); ?>
+                                                        <?php if (!empty($treatments)): ?>
+                                                            <?php foreach ($treatments as $treatment): ?>
+                                                                <p class="bl_caseItem_treatmentsWrapper_txt">
+                                                                    <?php echo get_the_title($treatment); ?>
+                                                                </p>
+                                                            <?php endforeach; ?>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <p class="el_caseItem_ttl"><?php the_title(); ?></p>
+                                                </div>
+                                            </a>
+                                            <?php
+                                            $case_treatment = get_field('case-treatment');
+                                            $case_time = get_field('case-time');
+                                            $case_downtime = get_field('case-downtime');
+                                            $case_makeup = get_field('case-makeup');
+                                            $case_risk = get_field('case-risk');
+                                            ?>
+                                            <details class="bl_caseItem_details">
+                                                <summary class="bl_caseItem_details_summary">
+                                                    <span class="bl_caseItem_details_summary_txt">詳細を見る</span>
+                                                    <span class="bl_caseItem_details_summary_icon"></span>
+                                                </summary>
+                                                <div class="bl_caseItem_details_content">
+                                                    <div class="bl_caseItem_details_content_inner">
+                                                        <?php if (!empty($case_treatment)): ?>
+                                                            <dl class="bl_caseItem_details_content_item">
+                                                                <dt class="bl_caseItem_details_content_item_dt">施術名</dt>
+                                                                <dd class="bl_caseItem_details_content_item_dd">
+                                                                    <?php echo $case_treatment; ?>
+                                                                </dd>
+                                                            </dl>
+                                                        <?php endif; ?>
+
+                                                        <?php if (!empty($case_time)): ?>
+                                                            <dl class="bl_caseItem_details_content_item">
+                                                                <dt class="bl_caseItem_details_content_item_dt">施術時間</dt>
+                                                                <dd class="bl_caseItem_details_content_item_dd">
+                                                                    <?php echo $case_time; ?>
+                                                                </dd>
+                                                            </dl>
+                                                        <?php endif; ?>
+
+                                                        <?php if (!empty($case_time)): ?>
+                                                            <dl class="bl_caseItem_details_content_item">
+                                                                <dt class="bl_caseItem_details_content_item_dt">ダウンタイム</dt>
+                                                                <dd class="bl_caseItem_details_content_item_dd">
+                                                                    <?php echo $case_downtime; ?>
+                                                                </dd>
+                                                            </dl>
+                                                        <?php endif; ?>
+
+                                                        <?php if (!empty($case_makeup)): ?>
+                                                            <dl class="bl_caseItem_details_content_item">
+                                                                <dt class="bl_caseItem_details_content_item_dt">メイク</dt>
+                                                                <dd class="bl_caseItem_details_content_item_dd" >
+                                                                    <?php echo $case_makeup; ?>
+                                                                </dd>
+                                                            </dl>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+                                            </details>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php else : ?>
+                    <div class="">
+                        <div class="bl_topNoPostContainer">
+                            <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                            <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
                         </div>
                     </div>
                 <?php endif; ?>
-
             </div>
         </section>
     </main>

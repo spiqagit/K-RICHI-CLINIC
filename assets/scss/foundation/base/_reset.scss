@@ -127,3 +127,12 @@ video {
 iframe {
     max-width: 100%;
 }
+
+/* Safariで表示されるデフォルトの三角形アイコンを消します */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::marker {
+    content: "";
+  }

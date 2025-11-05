@@ -147,6 +147,117 @@
             }
         }
     }
+}
 
+
+.bl_reserveBtn {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: vwmin(18, pc) auto;
+    align-items: center;
+    justify-content: center;
+    gap: vwmin(10, pc);
+    max-width: vwmin(240, pc);
+    width: 100%;
+    background-color: #FFF;
+    padding-block: vwmin(17, pc);
+    padding-inline: vwmin(20, pc);
+    border-radius: vwmin(100, pc);
+    transition: all 0.5s ease;
+
+
+    .el_reserveBtn_txt {
+        width: fit-content;
+        color: #402D10;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(20, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: calc(1 / 20 * 1em);
+        transition: color 0.5s ease;
+    }
+
+    .bl_reserveBtn_iconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        .el_reserveBtn_icon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+            path {
+                fill: #402D10;
+                transition: fill 0.5s ease;
+            }
+        }
+    }
+
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #402D10;
+            transition: background-color 0.5s ease;
+
+            .el_reserveBtn_txt {
+                color: #FFF;
+                transition: color 0.5s ease;
+            }
+
+            .bl_reserveBtn_iconWrapper {
+
+                .el_reserveBtn_icon {
+
+                    path {
+                        fill: #FFF;
+                        transition: fill 0.5s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.bl_reserveBtn_brown{    
+    background-color: #402D10;
+
+    .el_reserveBtn_txt {
+        color: #FFF;
+    }
+
+    .bl_reserveBtn_iconWrapper{
+        .el_reserveBtn_icon {
+            path {
+                fill: #FFF;
+            }
+        }
+    }
+
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #FFF;
+            transition: background-color 0.5s ease;
+
+            .el_reserveBtn_txt {
+                color: #402D10;
+                transition: color 0.5s ease;
+            }
+    
+            .bl_reserveBtn_iconWrapper{
+                .el_reserveBtn_icon {
+                    path {
+                        fill: #402D10;
+                        transition: fill 0.5s ease;
+                    }
+                }
+            }
+        }
+    }
 
 }
