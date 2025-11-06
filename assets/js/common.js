@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var breakPoint = 767; // ブレークポイントを設定（underSPと一致）
+    const breakPoint = 767;
     const newsSwiper = document.querySelector(".bl_newsSlider");
     const topConcernSwiper = document.querySelector(".bl_topConcernSwiper");
     const columnSlider = document.querySelector(".bl_topColumnSection_slider");
     const featuerSwiper = document.querySelector(".bl_featuerSection_list");
+    const navBtn = document.querySelector(".bl_headerSpNavBtnWrapper_btn");
+    const nav = document.querySelector(".bl_header_navWrapper_nav");
+    
     let topConcernSlide = null;
     let newsSlide = null;
     let columnSlide = null;
     let featuerSlide = null;
     let swiperBool = false;
     let columnSwiperBool = false;
+    let resizeTimer;
 
     const createSwiper = () => {
         if (topConcernSwiper) {
@@ -95,13 +99,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const initSwiper = () => {
         if (breakPoint >= window.innerWidth) {
-            // SP版（767px以下）: スライダーを初期化
             if (!swiperBool) {
                 createSwiper();
                 swiperBool = true;
             }
         } else {
-            // PC版（768px以上）: スライダーを破棄
             if (swiperBool) {
                 destroySwiper();
                 swiperBool = false;
@@ -116,73 +118,107 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    window.addEventListener(
-        "load",
-        () => {
-            initSwiper();
-            initColumnSwiper();
-        },
-        false
-    );
-
-    let resizeTimer;
-    window.addEventListener(
-        "resize",
-        () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                // リサイズ時に状態をリセットして再初期化
-                const wasSwiperActive = swiperBool;
-                if (wasSwiperActive) {
-                    destroySwiper();
-                    swiperBool = false;
-                }
-                initSwiper();
-            }, 100);
-        },
-        false
-    );
-
-    // DOMContentLoaded時にも初期化を試みる
-    initSwiper();
-    initColumnSwiper();
-
-    /*Splide*/
-    const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");
-    const options = {
-        type: "loop",
-        arrows: false,
-        pagination: false,
-        drag: false,
-        gap: 20,
-        perPage: 4,
-        breakpoints: {
-            500: {
-                perPage: 1,
-            },
-        },
-        autoScroll: {
-            speed: 0.5,
-            pauseOnHover: true,
-        },
+    const initAll = () => {
+        initSwiper();
+        initColumnSwiper();
     };
 
+    const initMobileNav = () => {
+        if (!navBtn || !nav) return;
+
+        if (window.innerWidth <= 767) {
+            gsap.set(nav, {
+                opacity: 0,
+                display: "none",
+            });
+
+            navBtn.addEventListener("click", () => {
+                if (navBtn.dataset.animate === "animate") {
+                    return;
+                }
+
+                if (navBtn.classList.contains("is-active")) {
+                    navBtn.dataset.animate = "animate";
+                    gsap.to(nav, {
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            setTimeout(() => {
+                                navBtn.classList.remove("is-active");
+                                nav.style.display = "none";
+                                navBtn.dataset.animate = "end";
+                            }, 150);
+                        },
+                    });
+                } else {
+                    navBtn.dataset.animate = "animate";
+                    nav.style.display = "block";
+                    gsap.to(nav, {
+                        opacity: 1,
+                        duration: 0.3,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            navBtn.classList.add("is-active");
+                            navBtn.dataset.animate = "end";
+                        },
+                    });
+                }
+            });
+        } else {
+            nav.style.display = "";
+            nav.style.opacity = "";
+            navBtn.classList.remove("is-active");
+        }
+    };
+
+    initAll();
+    initMobileNav();
+
+    window.addEventListener("load", initAll, false);
+
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const wasSwiperActive = swiperBool;
+            if (wasSwiperActive) {
+                destroySwiper();
+                swiperBool = false;
+            }
+            initAll();
+            initMobileNav();
+        }, 100);
+    }, false);
+
+    const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");
     if (caseSlider) {
-        const splide = new Splide(caseSlider, options);
+        const splide = new Splide(caseSlider, {
+            type: "loop",
+            arrows: false,
+            pagination: false,
+            drag: false,
+            gap: 20,
+            perPage: 4,
+            breakpoints: {
+                500: {
+                    perPage: 1,
+                },
+            },
+            autoScroll: {
+                speed: 0.5,
+                pauseOnHover: true,
+            },
+        });
         splide.mount(window.splide.Extensions);
     }
 
-    // アコーディオンアニメーション設定
     setUpAccordion();
 
 });
 
-/**
- * アニメーションライブラリ(GSAP)を使ってアコーディオンのアニメーションを制御します
- */
 const setUpAccordion = () => {
     const detailsList = document.querySelectorAll(".bl_caseItem_details");
-    const IS_OPENED_CLASS = "is-opened"; // アイコン操作用のクラス名
+    const IS_OPENED_CLASS = "is-opened";
 
     detailsList.forEach((details) => {
         const summary = details.querySelector(".bl_caseItem_details_summary");
@@ -191,34 +227,20 @@ const setUpAccordion = () => {
         if (!summary || !content) return;
 
         summary.addEventListener("click", (event) => {
-            // デフォルトの挙動を無効化
             event.preventDefault();
 
-            // is-openedクラスの有無で判定（detailsのopen属性の判定だと、アニメーション完了を待つ必要がありタイミング的に不安定になるため）
             if (details.classList.contains(IS_OPENED_CLASS)) {
-                // アコーディオンを閉じるときの処理
-                // アイコン操作用クラスを切り替える(クラスを取り除く)
                 details.classList.toggle(IS_OPENED_CLASS);
-                // アニメーション実行
                 closingAnim(content, details).restart();
             } else {
-                // アコーディオンを開くときの処理
-                // アイコン操作用クラスを切り替える(クラスを付与)
                 details.classList.toggle(IS_OPENED_CLASS);
-                // open属性を付与
                 details.setAttribute("open", "true");
-                // アニメーション実行
                 openingAnim(content).restart();
             }
         });
     });
 }
 
-/**
- * アコーディオンを閉じる時のアニメーション
- * @param content {HTMLElement}
- * @param element {HTMLDetailsElement}
- */
 const closingAnim = (content, element) => gsap.to(content, {
     height: 0,
     opacity: 0,
@@ -226,15 +248,10 @@ const closingAnim = (content, element) => gsap.to(content, {
     ease: "power3.out",
     overwrite: true,
     onComplete: () => {
-        // アニメーションの完了後にopen属性を取り除く
         element.removeAttribute("open");
     },
 });
 
-/**
- * アコーディオンを開く時のアニメーション
- * @param content {HTMLElement}
- */
 const openingAnim = (content) => gsap.fromTo(
     content,
     {
@@ -273,6 +290,7 @@ if (window.innerWidth <= 767) {
         if (navBtn.classList.contains("is-active")) {
             // 閉じるアニメーション
             navBtn.dataset.animate = "animate";
+            navBtn.classList.remove("is-active");
 
             gsap.to(nav, {
                 opacity: 0,
@@ -281,7 +299,6 @@ if (window.innerWidth <= 767) {
                 onComplete: () => {
 
                     setTimeout(() => {
-                        navBtn.classList.remove("is-active");
                         nav.style.display = "none";
                         navBtn.dataset.animate = "end";
                     }, 150);
@@ -291,13 +308,13 @@ if (window.innerWidth <= 767) {
             // 開くアニメーション
             navBtn.dataset.animate = "animate";
             nav.style.display = "block";
+            navBtn.classList.add("is-active");
 
             gsap.to(nav, {
                 opacity: 1,
                 duration: 0.3,
                 ease: "power2.out",
                 onComplete: () => {
-                    navBtn.classList.add("is-active");
                     navBtn.dataset.animate = "end";
                 },
             });

@@ -1,6 +1,5 @@
 @use '../foundation/function/index' as *;
 
-
 .ly_header {
     position: fixed;
     top: 0;
@@ -287,6 +286,7 @@
         display: none;
 
         @include underSP {
+            $transition-easeing: cubic-bezier(0, 0, 0.59, 0.85);
             display: block;
 
             .bl_headerSpNavBtnWrapper_btn {
@@ -306,21 +306,47 @@
                     width: 100%;
                     height: 1px;
                     background-color: var(--txtColor);
-                    transition: transform 0.3s ease;
+                    
+                    
 
                     &:first-child {
                         top: 40%;
                         left: 50%;
                         translate: -50% -50%;
+                        transition: width  0.2s $transition-easeing, rotate 0.2s $transition-easeing , top 0.2s $transition-easeing;
                     }
 
                     &:last-child {
-                        top: 60%;
-                        translate: 0  -50%;
-                        width: 50%;
                         right: 0;
+                        top: 60%;
+                        translate: 0 -50%;
+                        width: 50%;
+                        transition: width  0.2s $transition-easeing .2s, rotate 0.3s $transition-easeing ;
+                        
                     }
                 }
+            }
+
+            .is-active {
+                .el_headerSpNavBtnWrapper_btn_line {
+                    &:first-child {
+                        rotate: 45deg;
+                        left: 50%;
+                        top: 50%;
+                        translate: -50% -50%;
+                        transition: rotate 0.2s $transition-easeing .2s , top 0.2s $transition-easeing .2s;
+                    }
+
+                    &:last-child {
+                        right: 50%;
+                        top: 50%;
+                        rotate: -45deg;
+                        translate: 50% -50%;
+                        width: 100%;
+                        transition: width  0.2s $transition-easeing, rotate 0.2s $transition-easeing .2s , top 0.2s $transition-easeing .2s;
+                    }
+                }
+
             }
         }
     }
@@ -421,12 +447,12 @@
             min-width: vwmin(90, sp_m);
             border-radius: vwmin(4, sp_m);
         }
-    
+
         .bl_header_fixedContainer_btn_inner {
             padding-top: vwmin(21, pc);
             padding-bottom: vwmin(16, pc);
 
-            
+
             @include underSP {
                 display: grid;
                 grid-template-columns: vwmin(17, sp_m) auto;
