@@ -606,3 +606,178 @@
         }
     }
 }
+
+
+/*--------------------------------
+下層
+--------------------------------*/
+
+.bl_commonLowPagebg {
+    background-color: rgb(229, 216, 205);
+}
+
+.bl_commonLowPageWrapper {
+
+    .bl_commonLowPageWrapper_ttlContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding-top: vwmin(222, pc);
+        padding-bottom: vwmin(170, pc);
+        padding-inline: vwmin(160, pc);
+        z-index: -1;
+
+        .bl_commonLowPageWrapper_ttl {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(20, pc);
+            width: fit-content;
+
+            @include underSP {
+                gap: vwmin(20, sp_m);
+            }
+
+            .el_commonLowPageWrapper_ttl_en {
+                color: var(--black, #1A0F04);
+                font-family: var(--OldSt);
+                font-size: vwmin(60, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(1.2 / 60 * 1em);
+            }
+
+            .el_commonLowPageWrapper_ttl_ja {
+                display: grid;
+                grid-template-columns: vwmin(6, pc) auto;
+                align-items: center;
+                gap: vwmin(10, pc);
+                color: #987F65;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(18, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.9 / 18 * 1em);
+
+                &::before {
+                    content: '';
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    background-color: #987F65;
+                    border-radius: 100%;
+                }
+            }
+
+        }
+    }
+
+    .bl_commonLowPageWrapper_contentsOuter {
+        position: relative;
+        overflow: hidden;
+        margin-top: vwmin(475, pc);
+        padding-top: vwmin(10, pc);
+
+        @include underSP {
+            padding-top: vwmin(10, sp_m);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+            border-radius: vwmin(40, pc) vwmin(40, pc) 0 0;
+            padding-top: vwmin(10, pc);
+            padding-inline: vwmin(10, pc);
+            border-top: 1px solid #F4EEEA;
+            border-inline: 1px solid #F4EEEA;
+            width: 100%;
+            z-index: -1;
+
+            @include underSP {
+                border-radius: vwmin(40, sp_m) vwmin(40, sp_m) 0 0;
+                padding-top: vwmin(10, sp_m);
+                padding-inline: vwmin(10, sp_m);
+            }
+        }
+
+        .bl_commonLowPageWrapper_contents {
+            background-color: #F4EEEA;
+            padding-bottom: calc(vwmin(40, pc) + vwmin(18, pc));
+            border-radius: vwmin(30, pc) vwmin(30, pc) 0 0;
+            padding-top: vwmin(160, pc);
+
+            @include underSP {
+                border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------
+パンくずリスト
+--------------------------------*/
+.bl_commonBreadcrumbsContainer {
+    padding-inline: vwmin(60, pc);
+    overflow-x: auto;
+
+    .bl_commonBreadcrumbsList {
+        display: flex;
+        align-items: center;
+        gap: vwmin(18, pc);
+
+        .bl_commonBreadcrumbsItem {
+
+            .bl_commonBreadcrumbsLink {
+                display: block;
+                color: #1A0F04;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.7 / 14 * 1em);
+                transition: opacity 0.5s ease;
+                white-space: nowrap;
+                word-break: keep-all;
+
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.5s ease;
+                    }
+                }
+            }
+
+            .bl_commonBreadcrumbsText {
+                color: rgba(26, 15, 4, 0.50);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.7 / 14 * 1em);
+                white-space: nowrap;
+                word-break: keep-all;
+            }
+        }
+
+
+        .bl_commonBreadcrumbsSeparator {
+            width: vwmin(10, pc);
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
