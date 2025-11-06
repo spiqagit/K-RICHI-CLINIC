@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
-
-    const breakPoint = 767; // ブレークポイントを設定（underSPと一致）
+    var breakPoint = 767; // ブレークポイントを設定（underSPと一致）
     const newsSwiper = document.querySelector(".bl_newsSlider");
     const topConcernSwiper = document.querySelector(".bl_topConcernSwiper");
     const columnSlider = document.querySelector(".bl_topColumnSection_slider");
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     };
-    
+
     const createColumnSwiper = () => {
         if (columnSlider) {
             columnSlide = new Swiper(columnSlider, {
@@ -250,3 +248,59 @@ const openingAnim = (content) => gsap.fromTo(
         ease: "power3.out",
         overwrite: true,
     });
+
+
+
+
+/*モバイルナビゲーション開閉アニメーション
+----------------------------------------------*/
+const navBtn = document.querySelector(".bl_headerSpNavBtnWrapper_btn");
+const nav = document.querySelector(".bl_header_navWrapper_nav");
+
+if (window.innerWidth <= 767) {
+
+    gsap.set(nav, {
+        opacity: 0,
+        display: "none",
+    });
+
+    navBtn.addEventListener("click", () => {
+        // アニメーション中は処理をスキップ
+        if (navBtn.dataset.animate === "animate") {
+            return;
+        }
+
+        if (navBtn.classList.contains("is-active")) {
+            // 閉じるアニメーション
+            navBtn.dataset.animate = "animate";
+
+            gsap.to(nav, {
+                opacity: 0,
+                duration: 0.3,
+                ease: "power2.out",
+                onComplete: () => {
+
+                    setTimeout(() => {
+                        navBtn.classList.remove("is-active");
+                        nav.style.display = "none";
+                        navBtn.dataset.animate = "end";
+                    }, 150);
+                },
+                });
+        } else {
+            // 開くアニメーション
+            navBtn.dataset.animate = "animate";
+            nav.style.display = "block";
+
+            gsap.to(nav, {
+                opacity: 1,
+                duration: 0.3,
+                ease: "power2.out",
+                onComplete: () => {
+                    navBtn.classList.add("is-active");
+                    navBtn.dataset.animate = "end";
+                },
+            });
+        }
+    });
+}

@@ -130,8 +130,6 @@
                         <?php endif; ?>
                     </div>
                 </div>
-
-
             </nav>
             <div>
                 <?php echo do_shortcode('[gtranslate]'); ?>
