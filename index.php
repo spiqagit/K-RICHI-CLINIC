@@ -38,7 +38,7 @@
                                 <?php if ($news_query->have_posts()) : ?>
                                     <div class="bl_commonAllviewBtnWrapper">
                                         <a href="#" class="bl_commonAllviewBtn">
-                                            <p class="el_commonAllviewBtn_txt">一覧を見る</p>
+                                            <p class="el_commonAllviewBtn_txt">View all</p>
                                             <div class="el_commonAllviewBtn_arrow">
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
                                             </div>
@@ -116,34 +116,36 @@
                                             <?php while ($column_query->have_posts()) : $column_query->the_post(); ?>
                                                 <div class="swiper-slide">
                                                     <a href="<?php the_permalink(); ?>" class="bl_columnBtnItem">
-                                                        <div class="bl_columnBtnItem_imgWrapper">
-                                                            <?php if (has_post_thumbnail()) : ?>
-                                                                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
-                                                            <?php else : ?>
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/column-nospot-img.jpg" alt="<?php the_title(); ?>">
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <div class="bl_columnBtnItem_txtWrapper">
-                                                            <div class="bl_columnBtnItem_txtWrapper_upper">
-                                                                <div class="bl_columnBtnItem_postInfoWrapper">
-                                                                    <p class="el_columnBtnItem_postInfoWrapper_date"><?php the_date('Y.m.d'); ?></p>
-
-                                                                    <?php
-                                                                    $column_cats = get_the_terms(get_the_ID(), 'column-cat');
-                                                                    ?>
-                                                                    <?php if (!empty($column_cats)) : ?>
-                                                                        <div class="bl_columnBtnItem_postInfoWrapper_cats">
-                                                                            <?php foreach ($column_cats as $column_cat) : ?>
-                                                                                <p class="el_columnBtnItem_postInfoWrapper_cats_cat"><?php echo $column_cat->name; ?></p>
-                                                                            <?php endforeach; ?>
-                                                                        </div>
-                                                                    <?php endif; ?>
-                                                                </div>
-                                                                <p class="el_columnBtnItem_txtWrapper_ttl"><?php the_title(); ?></p>
+                                                        <div class="bl_columnBtnItem_inner">
+                                                            <div class="bl_columnBtnItem_imgWrapper">
+                                                                <?php if (has_post_thumbnail()) : ?>
+                                                                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                                                                <?php else : ?>
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/column-nospot-img.jpg" alt="<?php the_title(); ?>">
+                                                                <?php endif; ?>
                                                             </div>
+                                                            <div class="bl_columnBtnItem_txtWrapper">
+                                                                <div class="bl_columnBtnItem_txtWrapper_upper">
+                                                                    <div class="bl_columnBtnItem_postInfoWrapper">
+                                                                        <p class="el_columnBtnItem_postInfoWrapper_date"><?php the_date('Y.m.d'); ?></p>
 
-                                                            <div class="bl_columnBtnItem_txtWrapper_arrow">
-                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                                        <?php
+                                                                        $column_cats = get_the_terms(get_the_ID(), 'column-cat');
+                                                                        ?>
+                                                                        <?php if (!empty($column_cats)) : ?>
+                                                                            <div class="bl_columnBtnItem_postInfoWrapper_cats">
+                                                                                <?php foreach ($column_cats as $column_cat) : ?>
+                                                                                    <p class="el_columnBtnItem_postInfoWrapper_cats_cat"><?php echo $column_cat->name; ?></p>
+                                                                                <?php endforeach; ?>
+                                                                            </div>
+                                                                        <?php endif; ?>
+                                                                    </div>
+                                                                    <p class="el_columnBtnItem_txtWrapper_ttl"><?php the_title(); ?></p>
+                                                                </div>
+
+                                                                <div class="bl_columnBtnItem_txtWrapper_arrow">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -155,7 +157,7 @@
                                 </div>
                                 <div class="bl_commonAllviewBtnWrapper bl_topColumnSection_btnWrapper">
                                     <a href="<?php echo home_url(); ?>/column/" class="bl_commonAllviewBtn">
-                                        <p class="el_commonAllviewBtn_txt">一覧を見る</p>
+                                        <p class="el_commonAllviewBtn_txt">View all</p>
                                         <div class="el_commonAllviewBtn_arrow">
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
                                         </div>
@@ -182,13 +184,16 @@
                                         <?php if (get_field('instagram-url', 'option')): ?>
                                             <div class="bl_commonAllviewBtnWrapper bl_topColumnSection_btnWrapper">
                                                 <a href="<?php echo get_field('instagram_url', 'option'); ?>" class="bl_commonAllviewBtn" target="_blank">
-                                                    <p class="el_commonAllviewBtn_txt">投稿を見る</p>
+                                                    <p class="el_commonAllviewBtn_txt">View post</p>
                                                     <div class="el_commonAllviewBtn_arrow">
                                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
                                                     </div>
                                                 </a>
                                             </div>
                                         <?php endif; ?>
+                                    </div>
+                                    <div>
+
                                     </div>
                                 </div>
                             </div>
@@ -231,7 +236,7 @@
                     <div class="bl_conceptSection_txtContainer">
                         <div class="bl_conceptSection_copyWrapper">
                             <p class="el_conceptSection_copyWrapper_main">｢韓国美容 × 日本品質｣</p>
-                            <p class="el_conceptSection_copyWrapper_sub"><span>—</span> その融合が生み出す、新しい美のスタンダード</p>
+                            <p class="el_conceptSection_copyWrapper_sub"><span class="el_conceptSection_copyWrapper_sub_dash">—</span> その融合が生み出す、<br class="el_conceptSection_copyWrapper_sub_br">新しい美のスタンダード</p>
                         </div>
                         <div class="bl_conceptSection_txtContainer">
                             <p class="el_conceptSection_txt_txt">K-RICH CLINICは、韓国の最先端美容医療に、日本美容ならではの繊細さと洗練された感性を融合させた、“結果”と“安心”を両立するプレミアム美容クリニックです。</p>
@@ -254,48 +259,48 @@
                 </div>
 
                 <div class="bl_featuerSection_listWrapper">
-                    <ol class="bl_featuerSection_list">
-                        <li class="bl_featuerSection_list_item">
-                            <div class="bl_featuerSection_list_item_imgWrapper">
-                                <p class="el_featuerSection_list_item_imgWrapper_num">01</p>
-                                <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-01.jpg" alt="韓国美容と日本品質の融合">
+                    <div class="swiper bl_featuerSection_list">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="bl_featuerSection_list_item">
+                                    <div class="bl_featuerSection_list_item_imgWrapper">
+                                        <p class="el_featuerSection_list_item_imgWrapper_num">01</p>
+                                        <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-01.jpg" alt="韓国美容と日本品質の融合">
+                                    </div>
+                                    <div class="bl_featuerSection_list_item_txtWrapper">
+                                        <p class="el_featuerSection_list_item_ttl">韓国美容と日本品質の融合</p>
+                                        <p class="el_featuerSection_list_item_txt">韓国の先端美容医療と日本の繊細な技術を融合し、一人ひとりに合わせたオーダーメイド治療で理想の美しさを叶えます。</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="bl_featuerSection_list_item_txtWrapper">
-                                <p class="el_featuerSection_list_item_ttl">韓国美容と日本品質の融合</p>
-                                <p class="el_featuerSection_list_item_txt">韓国の先端美容医療と日本の繊細な技術を融合し、一人ひとりに合わせたオーダーメイド治療で理想の美しさを叶えます。</p>
-                            </div>
-                        </li>
 
-                        <li class="bl_featuerSection_list_item">
-                            <div class="bl_featuerSection_list_item_imgWrapper">
-                                <p class="el_featuerSection_list_item_imgWrapper_num">02</p>
-                                <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-02.jpg" alt="再生医療とエイジングケアの専門性">
+                            <div class="swiper-slide">
+                                <div class="bl_featuerSection_list_item">
+                                    <div class="bl_featuerSection_list_item_imgWrapper">
+                                        <p class="el_featuerSection_list_item_imgWrapper_num">02</p>
+                                        <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-02.jpg" alt="再生医療とエイジングケアの専門性">
+                                    </div>
+                                    <div class="bl_featuerSection_list_item_txtWrapper">
+                                        <p class="el_featuerSection_list_item_ttl">再生医療とエイジングケアの専門性</p>
+                                        <p class="el_featuerSection_list_item_txt">PRPや幹細胞治療などの再生医療を通じて肌の機能を整え、内側から自然で上質な若返りを導きます。</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="bl_featuerSection_list_item_txtWrapper">
-                                <p class="el_featuerSection_list_item_ttl">再生医療とエイジングケアの専門性</p>
-                                <p class="el_featuerSection_list_item_txt">PRPや幹細胞治療などの再生医療を通じて肌の機能を整え、内側から自然で上質な若返りを導きます。</p>
-                            </div>
-                        </li>
 
-                        <li class="bl_featuerSection_list_item">
-                            <div class="bl_featuerSection_list_item_imgWrapper">
-                                <p class="el_featuerSection_list_item_imgWrapper_num">03</p>
-                                <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-03.jpg" alt="国際的視点と信頼の医療体制">
+                            <div class="swiper-slide">
+                                <div class="bl_featuerSection_list_item">
+                                    <div class="bl_featuerSection_list_item_imgWrapper">
+                                        <p class="el_featuerSection_list_item_imgWrapper_num">03</p>
+                                        <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-03.jpg" alt="国際的視点と信頼の医療体制">
+                                    </div>
+                                    <div class="bl_featuerSection_list_item_txtWrapper">
+                                        <p class="el_featuerSection_list_item_ttl">国際的視点と信頼の医療体制</p>
+                                        <p class="el_featuerSection_list_item_txt">日韓両国の医師免許を持つ院長が多言語の能力を活かし、世界の医療技術を基に、安心と信頼の医療を提供します。</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="bl_featuerSection_list_item_txtWrapper">
-                                <p class="el_featuerSection_list_item_ttl">国際的視点と信頼の医療体制</p>
-                                <p class="el_featuerSection_list_item_txt">日韓両国の医師免許を持つ院長が多言語の能力を活かし、世界の医療技術を基に、安心と信頼の医療を提供します。</p>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-                <div class="bl_commonAllviewBtnWrapper bl_featuerSection_btnWrapper">
-                    <a href="#" class="bl_commonAllviewBtn">
-                        <p class="el_commonAllviewBtn_txt">クリニック紹介を見る</p>
-                        <div class="el_commonAllviewBtn_arrow">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -304,8 +309,8 @@
             <div class="bl_topDoctorSection_inner bl_topSection_inner">
                 <div class="blcommonSectionTtlWrapper">
                     <hgroup class="bl_commonSectionTtl">
-                        <h2 class="el_commonSectionTtl_ttl_en">Concept</h2>
-                        <p class="el_commonSectionTtl_ttl_ja">コンセプト</p>
+                        <h2 class="el_commonSectionTtl_ttl_en">Doctor</h2>
+                        <p class="el_commonSectionTtl_ttl_ja">院長紹介</p>
                     </hgroup>
                 </div>
                 <div class="bl_doctorContentsWrapper">
@@ -351,7 +356,7 @@
                                 <p class="el_commonSectionTtl_ttl_ja">お悩み</p>
                             </hgroup>
                         </div>
-                        <div class="bl_commonAllviewBtnWrapper is_txten">
+                        <div class="bl_commonAllviewBtnWrapper">
                             <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
                                 <p class="el_commonAllviewBtn_txt">View all</p>
                                 <div class="el_commonAllviewBtn_arrow">
@@ -607,7 +612,7 @@
                                                             <?php if (!empty($case_makeup)): ?>
                                                                 <dl class="bl_caseItem_details_content_item">
                                                                     <dt class="bl_caseItem_details_content_item_dt">メイク</dt>
-                                                                    <dd class="bl_caseItem_details_content_item_dd" >
+                                                                    <dd class="bl_caseItem_details_content_item_dd">
                                                                         <?php echo $case_makeup; ?>
                                                                     </dd>
                                                                 </dl>

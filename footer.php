@@ -61,24 +61,24 @@
                         <div class="bl_footerClinicInfoWrapper_logo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="K-RICH Clinic">
                         </div>
-                        <div class="bl_footerClinicInfoWrapper_snsContainer">
+                        <div class="bl_commonSnsIconContainer">
                             <?php if (get_field('instagram-url', 'option')): ?>
-                                <a href="<?php echo get_field('instagram-url', 'option'); ?>" class="bl_footerClinicInfoWrapper_snsBtn" target="_blank">
+                                <a href="<?php echo get_field('instagram-url', 'option'); ?>" class="bl_commonSnsIconContainer_btn" target="_blank">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/instagram-icon.svg" alt="Instagram">
                                 </a>
                             <?php endif; ?>
                             <?php if (get_field('youtube-url', 'option')): ?>
-                                <a href="<?php echo get_field('youtube-url', 'option'); ?>" class="bl_footerClinicInfoWrapper_snsBtn" target="_blank">
+                                <a href="<?php echo get_field('youtube-url', 'option'); ?>" class="bl_commonSnsIconContainer_btn" target="_blank">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/youtube-icon.svg" alt="YouTube">
                                 </a>
                             <?php endif; ?>
                             <?php if (get_field('x-url', 'option')): ?>
-                                <a href="<?php echo get_field('x-url', 'option'); ?>" class="bl_footerClinicInfoWrapper_snsBtn" target="_blank">
+                                <a href="<?php echo get_field('x-url', 'option'); ?>" class="bl_commonSnsIconContainer_btn" target="_blank">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/x-icon.svg" alt="X">
                                 </a>
                             <?php endif; ?>
                             <?php if (get_field('tiktok-url', 'option')): ?>
-                                <a href="<?php echo get_field('tiktok-url', 'option'); ?>" class="bl_footerClinicInfoWrapper_snsBtn" target="_blank">
+                                <a href="<?php echo get_field('tiktok-url', 'option'); ?>" class="bl_commonSnsIconContainer_btn" target="_blank">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/tiktok-icon.svg" alt="X">
                                 </a>
                             <?php endif; ?>

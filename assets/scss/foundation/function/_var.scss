@@ -4,13 +4,12 @@
     --notoSerifDisplay: 'Noto Serif Display', serif;
     --libreBaskerville: 'Libre Baskerville', serif;
     --OldSt: 'Old Standard TT', serif;
-
     --txtColor: #1A0F04;
-    --leading-trim: calc((1em - 1lh) / 2);
+    --leading-trim: 0;
 }
 
-@supports not (top: 1lh) {
-  :root {
-    --leading-trim: 0px; 
-  }
+@supports (height: 1lh) {
+    :root {
+        --leading-trim: calc((1em - 1lh) / 2);
+    }
 }

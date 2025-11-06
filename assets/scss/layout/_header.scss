@@ -11,6 +11,10 @@
     padding-inline: vwmin(40, pc);
     padding-block: vwmin(24, pc);
 
+    @include underSP {
+        padding: vwmin(20, sp_m);
+    }
+
 
     .bl_header_inenr {
         display: grid;
@@ -18,6 +22,10 @@
         justify-content: space-between;
         align-items: center;
         gap: vwmin(20, pc);
+
+        @include underSP {
+            grid-template-columns: vwmin(114, sp_m) auto;
+        }
     }
 }
 
@@ -34,127 +42,286 @@
     align-items: center;
     gap: vwmin(30, pc);
 
+    @include underSP {
+        gap: vwmin(20, sp_m);
+        grid-template-columns: auto vwmin(36, sp_m);
+    }
+
+
     .bl_header_navWrapper_nav {
-        display: grid;
-        grid-template-columns: repeat(10, auto);
-        gap: vwmin(32, pc);
-        align-items: center;
 
-        .bl_header_navWrapper_hoverContainer {
-            position: relative;
+        @include underSP {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F4EEEA;
+            z-index: -1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
 
-            .bl_header_navWrapper_hoverContainer_linkContainer {
-                position: absolute;
-                bottom:0;
-                left: 50%;
-                transform: translateX(-50%) translateY(130%);
-                display: flex;
-                flex-direction: column;
-                gap: vwmin(10, pc);
-                width: fit-content;
-                margin-inline: auto;
-                background-color: rgba(244, 238, 234, 0.60);
-                padding: vwmin(10, pc);
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.3s ease, visibility 0.3s ease;
+        .bl_header_navWrapper_nav_inner {
+            @include underSP {
+                padding-top: vwmin(120, sp_m);
+                padding-inline: vwmin(20, sp_m);
+                padding-bottom: vwmin(50, sp_m);
+            }
+        }
 
-                .bl_header_navWrapper_hoverContainer_linkContainer_link {
-                    display: grid;
-                    grid-template-columns: auto vwmin(9, pc);
-                    align-items: center;
-                    justify-content: space-between;
+        .bl_header_navWrapper_nav_btnWrapper {
+            display: grid;
+            grid-template-columns: repeat(10, auto);
+            gap: vwmin(32, pc);
+            align-items: center;
+
+            @include underSP {
+                grid-template-columns: repeat(2, auto);
+                align-items: flex-start;
+                row-gap: vwmin(28, sp_m);
+                column-gap: vwmin(80, sp_m);
+            }
+
+            .bl_header_navWrapper_hoverContainer {
+                position: relative;
+
+                @include underSP {
+                    grid-column: span 2;
+                }
+
+                .bl_header_navWrapper_hoverContainer_linkContainer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(130%);
+                    display: flex;
+                    flex-direction: column;
                     gap: vwmin(10, pc);
-                    width: vwmin(170, pc);
-                    transition: opacity 0.3s ease;
+                    width: fit-content;
+                    margin-inline: auto;
+                    background-color: rgba(244, 238, 234, 0.60);
+                    padding: vwmin(10, pc);
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.3s ease, visibility 0.3s ease;
 
-                    @media (any-hover: hover) {
-                        &:hover {
-                            opacity: 0.7;
-                            transition: opacity 0.3s ease;
+                    @include underSP {
+                        position: relative;
+                        bottom: auto;
+                        left: auto;
+                        transform: translateX(0) translateY(0);
+                        opacity: 1;
+                        visibility: visible;
+                        gap: vwmin(10, sp_m);
+                        padding: 0;
+                        padding-left: vwmin(10, sp_m);
+                        margin-inline: 0;
+                        margin-top: vwmin(20, sp_m);
+                        border-left: 1px solid var(--txtColor);
+                    }
+
+                    .bl_header_navWrapper_hoverContainer_linkContainer_link {
+                        display: grid;
+                        grid-template-columns: auto vwmin(9, pc);
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: vwmin(10, pc);
+                        width: vwmin(170, pc);
+                        transition: opacity 0.3s ease;
+
+                        @include underSP {
+                            width: auto;
+                            grid-template-columns: auto;
+                            gap: vwmin(16, sp_m);
+                            width: fit-content;
+                        }
+
+                        @media (any-hover: hover) {
+                            &:hover {
+                                opacity: 0.7;
+                                transition: opacity 0.3s ease;
+                            }
+                        }
+
+                        .el_header_navWrapper_hoverContainer_linkContainer_link_txt {
+                            color: var(--black, #1A0F04);
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(14, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1;
+                            letter-spacing: 0.7px;
+
+                            @include underSP {
+                                font-size: vwmin(14, sp_m);
+                                text-decoration-line: underline;
+                                text-decoration-style: solid;
+                                text-decoration-skip-ink: auto;
+                                text-decoration-thickness: auto;
+                                text-underline-offset: auto;
+                                text-underline-position: from-font;
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 1/1;
+                            object-fit: contain;
+
+                            @include underSP {
+                                display: none;
+                            }
                         }
                     }
+                }
 
-                    .el_header_navWrapper_hoverContainer_linkContainer_link_txt {
-                        color: var(--black, #1A0F04);
-                        font-family: var(--notoSerifJP);
-                        font-size: vwmin(14, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1;
-                        letter-spacing: 0.7px;
-                    }
-
-                    img {
-                        width: 100%;
-                        height: auto;
-                        aspect-ratio: 1/1;
-                        object-fit: contain;
+                @media (any-hover: hover) {
+                    &:hover .bl_header_navWrapper_hoverContainer_linkContainer {
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
             }
 
-            @media (any-hover: hover) {
-                &:hover .bl_header_navWrapper_hoverContainer_linkContainer {
-                    opacity: 1;
-                    visibility: visible;
+            .bl_header_navBtn {
+                display: block;
+                width: 100%;
+                padding: 0;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+
+                @include underSP {
+                    width: fit-content;
+                }
+
+
+                .el_header_navBtn_en {
+                    display: block;
+                    color: var(--txtColor);
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-family: var(--libreBaskerville);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    letter-spacing: calc(0.84 / 15 * 1em);
+                    width: fit-content;
+                    margin-inline: auto;
+                    margin-block-end: calc(vwmin(4, pc) + var(--leading-trim));
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                        margin-inline: 0;
+                        margin-block-end: calc(vwmin(6, sp_m) + var(--leading-trim));
+                    }
+
+                }
+
+                .el_header_navBtn_ja {
+                    display: block;
+                    color: var(--txtColor);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(12, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    letter-spacing: calc(0.6 / 12 * 1em);
+                    width: fit-content;
+                    margin-inline: auto;
+                    text-align: center;
+
+                    @include underSP {
+                        font-size: vwmin(12, sp_m);
+                        text-align: left;
+                        margin-inline: 0;
+                    }
+                }
+
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        .el_header_navBtn_en {
+                            color: #987F65;
+                            transition: color 0.3s ease;
+                        }
+
+                        .el_header_navBtn_ja {
+                            color: #987F65;
+                            transition: color 0.3s ease;
+                        }
+                    }
                 }
             }
         }
 
-        .bl_header_navBtn {
+        .bl_header_reeserveSpBtnWrapper {
+            display: none;
+
+            @include underSP {
+                display: flex;
+                flex-direction: column;
+                gap: vwmin(20, sp_m);
+                padding-top: vwmin(50, sp_m);
+            }
+        }
+
+        .bl_headerNavSnsIconContainerSp {
+            display: none;
+
+            @include underSP {
+                display: flex;
+                padding-top: vwmin(50, sp_m);
+
+            }
+        }
+    }
+
+    .bl_headerSpNavBtnWrapper {
+        display: none;
+
+        @include underSP {
             display: block;
-            width: 100%;
-            padding: 0;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
 
-
-            .el_header_navBtn_en {
+            .bl_headerSpNavBtnWrapper_btn {
+                position: relative;
                 display: block;
-                color: var(--txtColor);
-                text-align: center;
-                text-transform: uppercase;
-                font-family: var(--libreBaskerville);
-                font-size: vwmin(15, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1.2;
-                letter-spacing: calc(0.84 / 15 * 1em);
-                width: fit-content;
-                margin-inline: auto;
-                margin-block-end: calc(vwmin(4, pc) + var(--leading-trim));
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1/1;
+                border: none;
+                background-color: transparent;
+                padding: 0;
 
-            }
+                .el_headerSpNavBtnWrapper_btn_line {
+                    position: absolute;
+                    top: 50%;
+                    translate: -50% -50%;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--txtColor);
+                    transition: transform 0.3s ease;
 
-            .el_header_navBtn_ja {
-                display: block;
-                color: var(--txtColor);
-                font-family: var(--notoSerifJP);
-                font-size: vwmin(12, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1.2;
-                letter-spacing: calc(0.6 / 12 * 1em);
-                width: fit-content;
-                margin-inline: auto;
-                text-align: center;
-            }
-
-
-            @media (any-hover: hover) {
-                &:hover {
-                    .el_header_navBtn_en {
-                        color: #987F65;
-                        transition: color 0.3s ease;
+                    &:first-child {
+                        top: 40%;
+                        left: 50%;
+                        translate: -50% -50%;
                     }
 
-                    .el_header_navBtn_ja {
-                        color: #987F65;
-                        transition: color 0.3s ease;
-                    }   
+                    &:last-child {
+                        top: 60%;
+                        translate: 0  -50%;
+                        width: 50%;
+                        right: 0;
+                    }
                 }
             }
         }
@@ -179,6 +346,10 @@
         letter-spacing: calc(0.84 / 14 * 1em);
         text-transform: uppercase;
         order: 2;
+
+        @include underSP {
+            font-size: vwmin(14, sp_m);
+        }
     }
 
 
@@ -193,6 +364,10 @@
         line-height: 1;
         letter-spacing: calc(0.84 / 14 * 1em);
         text-transform: uppercase;
+
+        @include underSP {
+            font-size: vwmin(14, sp_m);
+        }
 
         :last-child {
             order: 1;
@@ -222,6 +397,15 @@
     gap: vwmin(12, pc);
     width: fit-content;
 
+    @include underSP {
+        bottom: calc(vwmin(20, sp_m) + env(safe-area-inset-bottom));
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding-inline: vwmin(10, sp_m);
+    }
+
 
     .bl_header_fixedContainer_btn {
         display: flex;
@@ -235,9 +419,24 @@
         border-radius: vwmin(30, pc);
         transition: background-color 0.3s ease;
 
+        @include underSP {
+            min-width: vwmin(90, sp_m);
+            border-radius: vwmin(4, sp_m);
+        }
+    
         .bl_header_fixedContainer_btn_inner {
             padding-top: vwmin(21, pc);
             padding-bottom: vwmin(16, pc);
+
+            
+            @include underSP {
+                display: grid;
+                grid-template-columns: vwmin(17, sp_m) auto;
+                justify-content: center;
+                align-items: center;
+                gap: vwmin(8, sp_m);
+                padding-block: vwmin(16, sp_m);
+            }
 
 
             .bl_header_fixedContainer_btn_icon {
@@ -245,6 +444,13 @@
                 width: 100%;
                 aspect-ratio: 1/1;
                 margin-inline: auto;
+
+                @include underSP {
+                    max-width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 .el_header_fixedContainer_btn_icon_svg {
                     width: 100%;
@@ -271,6 +477,10 @@
                 line-height: 1.2;
                 letter-spacing: calc(0.7 / 14 * 1em);
                 transition: color 0.3s ease;
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
             }
         }
 

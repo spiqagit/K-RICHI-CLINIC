@@ -7,6 +7,28 @@
   }
 }
 
+// レスポンシブ対応のサイズ設定ミックスイン
+// 使用例: @include responsive-size(font-size, 16, 14, 14);
+//         @include responsive-size(padding, 40, 30, 20);
+@mixin responsive-size($property, $pc, $tb: null, $sp: null, $min: null, $max: null) {
+  @if $tb == null {
+    $tb: $pc;
+  }
+  @if $sp == null {
+    $sp: $tb;
+  }
+
+  #{$property}: vwmin($pc, 'pc', $base: null, $min: $min, $max: $max);
+  
+  @include underTB {
+    #{$property}: vwmin($tb, 'tb', $base: null, $min: $min, $max: $max);
+  }
+  
+  @include underSP {
+    #{$property}: vwmin($sp, 'sp', $base: null, $min: $min, $max: $max);
+  }
+}
+
 @mixin font_16 {
   font-size: vwmin(16, pc);
   @include underTB {

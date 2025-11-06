@@ -9,9 +9,17 @@
     width: 100%;
     padding-inline: vwmin(40, pc);
 
+    @include underSP {
+        padding-inline: vwmin(30, sp_m);
+    }
+
     .bl_topSection_inner {
         max-width: vwmin(1120, pc);
         margin-inline: auto;
+
+        @include underSP {
+            max-width: 100%;
+        }
     }
 }
 
@@ -32,6 +40,11 @@
             letter-spacing: calc(0.96 / 48 * 1em);
             margin-block-start: var(--leading-trim);
             margin-block-end: calc(vwmin(20, pc) + var(--leading-trim));
+
+            @include underSP {
+                font-size: vwmin(40, sp_m);
+                margin-block-end: calc(vwmin(20, sp_m) + var(--leading-trim));
+            }
         }
 
         .el_commonSectionTtl_ttl_ja {
@@ -42,6 +55,10 @@
             font-weight: 400;
             line-height: 1.5;
             letter-spacing: calc(0.9 / 18 * 1em);
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+            }
         }
     }
 }
@@ -91,6 +108,11 @@
     justify-content: center;
     align-items: center;
 
+    @include underSP {
+        padding-top: vwmin(181, sp_m);
+        padding-bottom: vwmin(143, sp_m);
+    }
+
     .bl_fvSection_bg {
         position: fixed;
         top: 0;
@@ -119,6 +141,11 @@
         letter-spacing: calc(2.6 / 52 * 1em);
         width: fit-content;
         margin-inline: auto;
+
+        @include underSP {
+            font-size: vwmin(30, sp_m);
+            text-shadow: 0 vwmin(4, sp_m) vwmin(25, sp_m) rgba(73, 52, 18, 0.20);
+        }
     }
 }
 
@@ -130,6 +157,10 @@
         position: relative;
         padding-top: vwmin(10, pc);
         z-index: 0;
+
+        @include underSP {
+            padding-top: vwmin(10, sp_m);
+        }
 
         &::before {
             content: '';
@@ -145,12 +176,22 @@
             border-inline: 1px solid #F4EEEA;
             width: 100%;
             z-index: -1;
+
+            @include underSP {
+                border-radius: vwmin(40, sp_m) vwmin(40, sp_m) 0 0;
+                padding-top: vwmin(10, sp_m);
+                padding-inline: vwmin(10, sp_m);
+            }
         }
 
 
         .bl_secondViewSectionWrapper {
             background-color: #F4EEEA;
             border-radius: vwmin(30, pc) vwmin(30, pc) 0 0;
+
+            @include underSP {
+                border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
+            }
         }
     }
 }
@@ -168,11 +209,23 @@
     z-index: 1;
     margin-bottom: vwmin(120, pc);
 
+    @include underSP {
+        padding-top: vwmin(100, sp_m);
+        padding-inline: vwmin(30, sp_m);
+        margin-bottom: vwmin(100, sp_m);
+        overflow: hidden;
+    }
+
     .bl_newsSection_inner {
         display: grid;
         grid-template-columns: vwmin(155, pc) 1fr;
         gap: vwmin(108, pc);
         align-items: flex-start;
+
+        @include underSP {
+            grid-template-columns: 1fr;
+            gap: vwmin(50, sp_m);
+        }
     }
 
     .bl_newsttlWrapper {
@@ -181,8 +234,16 @@
         flex-direction: column;
         gap: vwmin(50, pc);
 
-        .blcommonSectionTtlWrapper {
+        @include underSP {
+            display: grid;
+            grid-template-columns: auto auto;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: vwmin(20, sp_m);
+            width: 100%;
+        }
 
+        .blcommonSectionTtlWrapper {
 
             .bl_commonAllviewBtnWrapper {
                 width: fit-content;
@@ -197,6 +258,10 @@
         background-color: transparent;
         transition: background-color 0.5s ease;
 
+        @include underSP {
+            padding: vwmin(20, sp_m);
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 background-color: #EFE7E0;
@@ -207,6 +272,10 @@
         .bl_topNewsItem_thumbnailWrapper {
             width: 100%;
             margin-bottom: vwmin(20, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(20, sp_m);
+            }
 
             .el_topNewsItem_thumbnailWrapper_img {
                 object-fit: cover;
@@ -225,6 +294,10 @@
                 font-weight: 400;
                 line-height: 1.5;
                 letter-spacing: calc(0.32 / 16 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
             }
 
             .el_topNewsItem_txtWrapper_ttl {
@@ -235,6 +308,10 @@
                 font-weight: 400;
                 line-height: 1.6;
                 letter-spacing: calc(0.8 / 16 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
             }
         }
     }
@@ -248,7 +325,25 @@
             }
         }
 
+        .swiper {
+            @include underSP {
+                overflow: visible;
+            }
+        }
+
+
+
         .swiper-wrapper {
+
+            @include underSP {
+                width: 100%;
+            }
+
+            .swiper-slide {
+                @include underSP {
+                    max-width: vwmin(286, sp_m);
+                }
+            }
 
             .swiper-slide:first-child {
                 .bl_topNewsItem {
@@ -278,22 +373,45 @@
     padding-block: vwmin(120, pc);
     padding-inline: vwmin(40, pc);
 
+
+    @include underSP {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-block: vwmin(100, sp_m);
+        padding-inline: vwmin(30, sp_m);
+    }
+
     .bl_conceptSection_inner {
         display: grid;
-        grid-template-columns: 1fr vwmin(400, pc);
+        grid-template-columns: vwmin(650, pc) vwmin(400, pc);
         gap: vwmin(80, pc);
         align-items: center;
+
+        @include underSP {
+            display: contents;
+        }
     }
 
 
     .bl_conceptSection_txtWrapper {
 
-        .bl_commonSectionTtl {
-            margin-bottom: vwmin(50, pc);
+        @include underSP {
+            display: contents;
         }
 
+        .bl_commonSectionTtl {
+            margin-bottom: vwmin(50, pc);
+
+            @include underSP {
+                margin-bottom: 0;
+            }
+        }
 
         .bl_conceptSection_txtContainer {
+
+            @include underSP {
+                order: 3;
+            }
 
 
             .bl_conceptSection_copyWrapper {
@@ -306,12 +424,54 @@
                 letter-spacing: calc(1.2 / 24 * 1em);
                 margin-bottom: vwmin(20, pc);
                 margin-bottom: vwmin(30, pc);
+
+                @include underSP {
+                    margin-bottom: vwmin(30, sp_m);
+                    width: fit-content;
+                    margin-inline: auto;
+                }
+
+                .el_conceptSection_copyWrapper_main {
+                    @include underSP {
+                        font-size: vwmin(24, sp_m);
+                        width: fit-content;
+                        margin-inline: auto;
+                    }
+                }
+
+                .el_conceptSection_copyWrapper_sub {
+                    @include underSP {
+                        font-size: vwmin(20, sp_m);
+                        width: fit-content;
+                        margin-inline: auto;
+                        text-align: center;
+                    }
+
+                    .el_conceptSection_copyWrapper_sub_dash {
+                        @include underSP {
+                            display: none;
+                        }
+                    }
+
+                    .el_conceptSection_copyWrapper_sub_br {
+                        display: none;
+
+                        @include underSP {
+                            display: block;
+                        }
+                    }
+                }
+
             }
 
             .bl_conceptSection_txtContainer {
                 display: flex;
                 flex-direction: column;
                 gap: vwmin(30, pc);
+
+                @include underSP {
+                    gap: vwmin(30, sp_m);
+                }
 
                 .el_conceptSection_txt_txt {
                     color: var(--txtColor);
@@ -321,22 +481,47 @@
                     font-weight: 400;
                     line-height: 1.9;
                     letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                    }
                 }
             }
 
         }
     }
+
+    .bl_conceptSection_imgWrapper {
+        @include underSP {
+            order: 2;
+            max-width: vwmin(240, sp_m);
+            margin-inline: auto;
+            margin-bottom: vwmin(30, sp_m);
+        }
+    }
+
 }
 
 .bl_featuerSection {
+    overflow: hidden;
     background-color: #F4EEEA;
     padding-top: vwmin(100, pc);
     padding-bottom: vwmin(120, pc);
+
+    @include underSP {
+        padding-block: vwmin(100, sp_m);
+    }
 
     .bl_featuerSection_ttlWrapper {
         width: 100%;
         max-width: vwmin(1120, pc);
         margin-inline: auto;
+
+        @include underSP {
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
+
 
         .bl_featuerSection_ttl {
             color: var(--txtColor);
@@ -352,27 +537,78 @@
             margin-bottom: vwmin(30, pc);
             max-width: vwmax(1120, pc);
             margin-inline: auto;
+
+            @include underSP {
+                font-size: vwmin(24, sp_m);
+                padding-block: vwmin(10, sp_m);
+                margin-bottom: vwmin(30, sp_m);
+            }
         }
     }
 
     .bl_featuerSection_listWrapper {
-        overflow-x: auto;
         max-width: vwmin(1120, pc);
         margin-inline: auto;
-        margin-bottom: vwmin(50, pc);
+
+        @include underSP {
+            max-width: 100%;
+            padding-inline: 0;
+            overflow: hidden;
+        }
 
         .bl_featuerSection_list {
-            display: grid;
-            grid-template-columns: vwmin(334, pc) vwmin(334, pc) vwmin(334, pc);
-            justify-content: center;
-            align-items: center;
-            gap: vwmin(60, pc);
+            // PC時はgridレイアウト
+            display: block;
+            overflow: visible;
+
+            // SP時はSwiperスタイル
+            @include underSP {
+                padding-inline: vwmin(30, sp_m);
+                overflow: hidden;
+            }
+
+            @media (min-width: 768px) {
+                .swiper-wrapper {
+                    display: grid;
+                    grid-template-columns: repeat(3, vwmin(334, pc));
+                    justify-content: center;
+                    align-items: start;
+                    gap: vwmin(60, pc);
+                }
+
+                .swiper-slide {
+                    display: grid;
+                    grid-template-rows: subgrid;
+                    grid-row: span 2;
+                }
+            }
+
+            .swiper-wrapper {
+                @include underSP {
+                    display: flex;
+                    width: 100%;
+                }
+            }
+
+            .swiper-slide {
+                @include underSP {
+                    width: vwmin(334, sp_m);
+                    flex-shrink: 0;
+                }
+            }
 
             .bl_featuerSection_list_item {
                 display: grid;
                 grid-template-rows: subgrid;
                 grid-row: 2 span;
                 gap: vwmin(20, pc);
+
+                @include underSP {
+                    grid-template-rows: auto;
+                    grid-row: auto;
+                    gap: vwmin(20, sp_m);
+
+                }
             }
 
             .bl_featuerSection_list_item_imgWrapper {
@@ -395,6 +631,13 @@
                     font-weight: 400;
                     line-height: 1;
                     letter-spacing: calc(0.68 / 34 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(34, sp_m);
+                        padding-inline: vwmin(15, sp_m);
+                        padding-block: vwmin(23, sp_m);
+                        border-radius: 0 0 vwmin(10, sp_m) 0;
+                    }
                 }
             }
 
@@ -410,6 +653,11 @@
                     line-height: 1.8;
                     letter-spacing: calc(0.9 / 18 * 1em);
                     margin-bottom: vwmin(10, pc);
+
+                    @include underSP {
+                        font-size: vwmin(18, sp_m);
+                        margin-bottom: vwmin(10, sp_m);
+                    }
                 }
 
                 .el_featuerSection_list_item_txt {
@@ -419,8 +667,11 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 1.8;
-                    ;
                     letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                    }
                 }
             }
         }
@@ -435,6 +686,20 @@ Column
     overflow: hidden;
     padding-bottom: vwmin(120, pc);
 
+    @include underSP {
+        padding-bottom: vwmin(100, sp_m);
+    }
+
+    .bl_topSection_inner {
+        @include underSP {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+            align-items: flex-end;
+            row-gap: vwmin(50, sp_m);
+        }
+    }
+
     .bl_topColumnSection_ttlWrapper {
         display: grid;
         grid-template-columns: auto vwmin(112, pc);
@@ -442,14 +707,26 @@ Column
         align-items: flex-end;
         margin-bottom: vwmin(50, pc);
 
+        @include underSP {
+            display: contents;
+        }
+
         .bl_commonSectionTtl {
             width: fit-content;
+
+            @include underSP {
+                order: 1;
+            }
         }
 
         .bl_topColumnSection_sliderNaviWrapper {
             display: grid;
             grid-template-columns: repeat(2, vwmin(46, pc));
             gap: vwmin(10, pc);
+
+            @include underSP {
+                display: none;
+            }
 
             .el_topColumnSection_sliderNaviWrapper_btn {
                 width: 100%;
@@ -484,112 +761,178 @@ Column
     .bl_topColumnSection_sliderWrapper {
         margin-bottom: vwmin(50, pc);
 
+        @include underSP {
+            order: 3;
+            margin-bottom: 0;
+            grid-column: 2 span;
+        }
+
         .bl_topColumnSection_slider {
             overflow: visible;
+            width: 100%;
 
             .swiper-wrapper {
                 max-width: vwmin(520, pc);
                 width: 100%;
+
+                @include underSP {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .swiper-slide {
+            @include underSP {
+                max-width: vwmin(286, sp_m);
+                height: auto;
             }
         }
 
         .bl_columnBtnItem {
-            display: grid;
-            grid-template-columns: vwmin(140, pc) 1fr;
-            gap: vwmin(24, pc);
-            width: 100%;
-            padding: vwmin(20, pc);
-            border-radius: vwmin(4, pc);
-            background-color: #E5D8CD;
-            transition: opacity 0.5s ease;
-
-            @media (any-hover: hover) {
-                &:hover {
-                    opacity: 0.7;
-                    transition: opacity 0.5s ease;
-                }
-            }
-
-            .bl_columnBtnItem_imgWrapper {
+            .bl_columnBtnItem_inner {
+                display: grid;
+                grid-template-columns: vwmin(140, pc) 1fr;
+                gap: vwmin(24, pc);
                 width: 100%;
-                aspect-ratio: 1 / 1;
-                height: auto;
-                overflow: hidden;
+                padding: vwmin(20, pc);
+                border-radius: vwmin(4, pc);
+                background-color: #E5D8CD;
+                transition: opacity 0.5s ease;
 
-                img {
-                    width: 100%;
+                @include underSP {
+                    display: flex;
+                    flex-direction: column;
+                    gap: vwmin(24, sp_m);
+                    padding: vwmin(20, sp_m);
                     height: 100%;
-                    object-fit: cover;
                 }
-            }
 
-            .bl_columnBtnItem_txtWrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                .bl_columnBtnItem_postInfoWrapper {
-                    display: grid;
-                    grid-template-columns: min-content 1fr;
-                    gap: vwmin(20, pc);
-                    align-items: flex-start;
-                    margin-bottom: vwmin(10, pc);
-
-                    .el_columnBtnItem_postInfoWrapper_date {
-                        color: var(--black, #1A0F04);
-                        font-family: var(--OldSt);
-                        font-size: vwmin(16, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1.5;
-                        letter-spacing: calc(0.48 / 16 * 1em);
-                        width: fit-content;
-                        padding-top: vwmin(2, pc);
-                    }
-
-
-                    .bl_columnBtnItem_postInfoWrapper_cats {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: vwmin(10, pc);
-                        width: fit-content;
-
-                        .el_columnBtnItem_postInfoWrapper_cats_cat {
-                            display: block;
-                            color: var(--black, #1A0F04);
-                            font-family: var(--notoSerifJP);
-                            font-size: vwmin(12, pc);
-                            font-style: normal;
-                            font-weight: 400;
-                            line-height: 1.6;
-                            letter-spacing: calc(0.6 / 12 * 1em);
-                            padding-block: vwmin(2, pc);
-                            padding-inline: vwmin(8, pc);
-                            border-radius: vwmin(2, pc);
-                            background-color: #F4EEEA;
-                        }
-
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.5s ease;
                     }
                 }
 
-                .el_columnBtnItem_txtWrapper_ttl {
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifDisplay);
-                    font-size: vwmin(16, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1.6;
-                    letter-spacing: calc(0.8 / 16 * 1em);
-                }
-
-                .bl_columnBtnItem_txtWrapper_arrow {
+                .bl_columnBtnItem_imgWrapper {
                     width: 100%;
-                    max-width: vwmin(15, pc);
-                    margin-left: auto;
+                    aspect-ratio: 1 / 1;
+                    height: auto;
+
+                    @include underSP {
+                        max-width: vwmin(170, sp_m);
+                        margin-inline: auto;
+                    }
 
                     img {
                         width: 100%;
-                        height: auto;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .bl_columnBtnItem_txtWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    @include underSP {
+                        height: 100%;
+                    }
+
+                    .bl_columnBtnItem_postInfoWrapper {
+                        display: grid;
+                        grid-template-columns: min-content 1fr;
+                        gap: vwmin(20, pc);
+                        align-items: flex-start;
+                        margin-bottom: vwmin(10, pc);
+
+                        @include underSP {
+                            grid-template-columns: 1fr;
+                            gap: vwmin(4, sp_m);
+                            margin-bottom: vwmin(10, sp_m);
+                        }
+
+                        .el_columnBtnItem_postInfoWrapper_date {
+                            color: var(--black, #1A0F04);
+                            font-family: var(--OldSt);
+                            font-size: vwmin(16, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1.5;
+                            letter-spacing: calc(0.48 / 16 * 1em);
+                            width: fit-content;
+                            padding-top: vwmin(2, pc);
+
+                            @include underSP {
+                                font-size: vwmin(16, sp_m);
+                                padding-top: 0;
+                            }
+                        }
+
+
+                        .bl_columnBtnItem_postInfoWrapper_cats {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: vwmin(10, pc);
+                            width: fit-content;
+
+                            @include underSP {
+                                gap: vwmin(4, sp_m);
+                            }
+
+                            .el_columnBtnItem_postInfoWrapper_cats_cat {
+                                display: block;
+                                color: var(--black, #1A0F04);
+                                font-family: var(--notoSerifJP);
+                                font-size: vwmin(12, pc);
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 1.6;
+                                letter-spacing: calc(0.6 / 12 * 1em);
+                                padding-block: vwmin(2, pc);
+                                padding-inline: vwmin(8, pc);
+                                border-radius: vwmin(2, pc);
+                                background-color: #F4EEEA;
+
+                                @include underSP {
+                                    font-size: vwmin(12, sp_m);
+                                    padding-block: vwmin(2, sp_m);
+                                    padding-inline: vwmin(4, sp_m);
+                                    border-radius: vwmin(2, sp_m);
+                                }
+                            }
+
+                        }
+                    }
+
+                    .el_columnBtnItem_txtWrapper_ttl {
+                        color: var(--txtColor);
+                        font-family: var(--notoSerifDisplay);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.6;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
+                    }
+
+                    .bl_columnBtnItem_txtWrapper_arrow {
+                        width: 100%;
+                        max-width: vwmin(15, pc);
+                        margin-left: auto;
+
+                        @include underSP {
+                            max-width: vwmin(15, sp_m);
+                        }
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
                     }
                 }
             }
@@ -601,6 +944,12 @@ Column
     .bl_topColumnSection_btnWrapper {
         width: fit-content;
         margin-inline: auto;
+
+        @include underSP {
+            order: 2;
+            margin-left: auto;
+            margin-right: 0;
+        }
     }
 }
 
@@ -614,6 +963,11 @@ Instagram
     padding-bottom: vwmin(120, pc);
     padding-inline: vwmin(40, pc);
 
+    @include underSP {
+        padding-bottom: vwmin(100, sp_m);
+        padding-inline: vwmin(30, sp_m);
+    }
+
 
     .bl_topInstagramContainer {
         max-width: vwmin(1100, pc);
@@ -622,6 +976,13 @@ Instagram
         border-radius: vwmin(6, pc);
         background-color: #ECDCCF;
         margin-bottom: vwmin(50, pc);
+
+        @include underSP {
+            max-width: 100%;
+            padding: vwmin(10, sp_m);
+            border-radius: vwmin(6, sp_m);
+            margin-bottom: vwmin(30, sp_m);
+        }
 
         .bl_topInstagramContainer_inner {
             display: grid;
@@ -634,6 +995,11 @@ Instagram
             background-color: #ECDCCF;
             padding-block: vwmin(30, pc);
 
+            @include underSP {
+                grid-template-columns: 1fr;
+                gap: vwmin(30, sp_m);
+                padding-block: vwmin(40, sp_m);
+            }
 
             .bl_topInstagramContainer_ttlWrapper {
 
@@ -649,6 +1015,11 @@ Instagram
                     margin-inline: auto;
                     margin-block: var(--leading-trim);
                     margin-block-end: calc(vwmin(30, pc) + var(--leading-trim));
+
+                    @include underSP {
+                        font-size: vwmin(40, sp_m);
+                        margin-block-end: calc(vwmin(30, sp_m) + var(--leading-trim));
+                    }
                 }
             }
         }
@@ -668,6 +1039,11 @@ Instagram
             line-height: 1.5;
             letter-spacing: calc(0.9 / 18 * 1em);
             margin-bottom: vwmin(16, pc);
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                margin-bottom: vwmin(16, sp_m);
+            }
         }
 
         .bl_topSnsSection_otherSnsWrapper_snsList {
@@ -675,6 +1051,10 @@ Instagram
             justify-content: center;
             align-items: center;
             gap: vwmin(30, pc);
+
+            @include underSP {
+                gap: vwmin(30, sp_m);
+            }
 
             .bl_topSnsSection_otherSnsWrapper_snsbtn {
                 display: block;
@@ -684,6 +1064,10 @@ Instagram
                 max-width: vwmin(26, pc);
                 width: 100%;
                 transition: opacity 0.5s ease;
+
+                @include underSP {
+                    max-width: vwmin(26, sp_m);
+                }
 
                 img {
                     width: 100%;
@@ -707,14 +1091,24 @@ Instagram
 --------------------------------*/
 
 .bl_topMenuSection {
+    overflow: hidden;
     width: 100%;
     background-color: #F4EEEA;
     padding-block: vwmin(120, pc);
+
+    @include underSP {
+        padding-block: vwmin(100, sp_m);
+    }
 
     .bl_topMenuSection_inner {
         display: flex;
         flex-direction: column;
         gap: vwmin(120, pc);
+
+        @include underSP {
+            gap: vwmin(120, sp_m);
+        }
+
 
 
         .bl_topMenuSection_item {
@@ -725,12 +1119,21 @@ Instagram
                 justify-content: space-between;
                 align-items: flex-end;
                 margin-bottom: vwmin(50, pc);
+
+                @include underSP {
+                    margin-bottom: vwmin(50, sp_m);
+                }
             }
 
             .bl_topSection_treatmentContainer {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: vwmin(30, pc);
+
+                @include underSP {
+                    grid-template-columns: 1fr;
+                    gap: vwmin(30, sp_m);
+                }
 
 
                 .bl_treatmentBtnItem {
@@ -748,6 +1151,11 @@ Instagram
                         background-repeat: no-repeat;
                         transition: opacity 0.5s ease;
 
+                        @include underSP {
+                            padding: vwmin(24, sp_m);
+                            border-radius: vwmin(10, sp_m);
+                        }
+
                         @media (any-hover: hover) {
                             &:hover {
                                 opacity: 0.7;
@@ -761,6 +1169,10 @@ Instagram
                             gap: vwmin(37, pc);
                             justify-content: space-between;
 
+                            @include underSP {
+                                gap: vwmin(37, sp_m);
+                            }
+
                             .bl_treatmentBtnItem_btn_inner_upper {
 
                                 .el_topMenuSection_item_txtWrapper_ttl {
@@ -772,6 +1184,10 @@ Instagram
                                     line-height: 1.2;
                                     letter-spacing: calc(0.64 / 32 * 1em);
                                     margin-block-end: calc(vwmin(16, pc) + var(--leading-trim));
+
+                                    @include underSP {
+                                        font-size: vwmin(28, sp_m);
+                                    }
                                 }
 
                                 .el_topMenuSection_item_txtWrapper_txt {
@@ -782,6 +1198,10 @@ Instagram
                                     font-weight: 400;
                                     line-height: 1.5;
                                     letter-spacing: calc(0.6 / 12 * 1em);
+
+                                    @include underSP {
+                                        font-size: vwmin(12, sp_m);
+                                    }
                                 }
                             }
 
@@ -796,6 +1216,14 @@ Instagram
                                 padding-inline: vwmin(20, pc);
                                 padding-block: vwmin(8, pc);
 
+
+                                @include underSP {
+                                    grid-template-columns: max-content vwmin(8, sp_m);
+                                    padding-inline: vwmin(20, sp_m);
+                                    padding-block: vwmin(8, sp_m);
+                                    border-radius: vwmin(100, sp_m);
+                                }
+
                                 .el_treatmentBtnItem_btn_inner_arrow_txt {
                                     color: var(--txtColor);
                                     font-family: var(--notoSerifJP);
@@ -805,6 +1233,10 @@ Instagram
                                     line-height: 1.5;
                                     letter-spacing: calc(0.6 / 12 * 1em);
                                     width: fit-content;
+
+                                    @include underSP {
+                                        font-size: vwmin(12, sp_m);
+                                    }
                                 }
 
                             }
@@ -839,6 +1271,14 @@ Instagram
                         background-color: #E5D8CD;
                         width: 100%;
 
+                        @include underSP {
+                            grid-template-columns: vwmin(50, sp_m) auto;
+                            gap: vwmin(10, sp_m);
+                            padding-block: vwmin(10, sp_m);
+                            padding-inline: vwmin(14, sp_m);
+                        }
+
+
                         .bl_concernItem_upper_imgWrapper {
                             display: grid;
                             grid-template-columns: vwmin(30, pc);
@@ -849,6 +1289,10 @@ Instagram
                             aspect-ratio: 1 / 1;
                             padding: vwmin(7, pc);
 
+                            @include underSP {
+                                grid-template-columns: vwmin(30, sp_m);
+                                padding: vwmin(7, sp_m);
+                            }
 
 
                             img {
@@ -861,7 +1305,7 @@ Instagram
                         .bl_concernItem_upper_txtWrapper {
                             display: flex;
                             flex-direction: column;
-
+                            
                             .el_concernItem_upper_txtWrapper_txtEn {
                                 color: var(--line, #987F65);
                                 font-family: var(--OldSt);
@@ -871,6 +1315,10 @@ Instagram
                                 line-height: 1;
                                 margin-block: var(--leading-trim);
                                 letter-spacing: calc(0.28 / 14 * 1em);
+
+                                @include underSP {
+                                    font-size: vwmin(14, sp_m);
+                                }
                             }
 
                             .el_concernItem_upper_txtWrapper_txtJa {
@@ -881,6 +1329,10 @@ Instagram
                                 font-weight: 400;
                                 line-height: 1.5;
                                 letter-spacing: calc(0.9 / 18 * 1em);
+
+                                @include underSP {
+                                    font-size: vwmin(18, sp_m);
+                                }
                             }
                         }
                     }
@@ -889,10 +1341,19 @@ Instagram
                         padding-block: vwmin(20, pc);
                         padding-inline: vwmin(14, pc);
 
+                        @include underSP {
+                            padding-block: vwmin(20, sp_m);
+                            padding-inline: vwmin(14, sp_m);
+                        }
+
                         .bl_concernItem_postList {
                             display: flex;
                             flex-direction: column;
                             gap: vwmin(16, pc);
+
+                            @include underSP {
+                                gap: vwmin(16, sp_m);
+                            }
 
                             .bl_concernItem_postList_item {
 
@@ -904,6 +1365,11 @@ Instagram
                                     padding-bottom: vwmin(6, pc);
                                     border-bottom: 1px solid #E5D8CD;
                                     transition: opacity 0.5s ease;
+                                    @include underSP {
+                                        grid-template-columns: 1fr vwmin(11, sp_m);
+                                        gap: vwmin(10, sp_m);
+                                        padding-bottom: vwmin(6, sp_m);
+                                    }
 
                                     @media (any-hover: hover) {
                                         &:hover {
@@ -917,6 +1383,9 @@ Instagram
                                         color: var(--txtColor);
                                         font-family: var(--notoSerifJP);
                                         font-size: vwmin(16, pc);
+                                        @include underSP {
+                                            font-size: vwmin(16, sp_m);
+                                        }
                                     }
 
                                     .el_concernItem_postList_item_btn_arrow {
@@ -928,6 +1397,12 @@ Instagram
 
                         }
                     }
+                }
+            }
+
+            .bl_topConcernSwiper {
+                @include underSP {
+                    overflow: visible;
                 }
             }
         }
@@ -943,12 +1418,20 @@ Case
     padding-block: vwmin(calc(120 + 70), pc);
     background-color: #E5D8CD;
 
+    @include underSP {
+        padding-block: vwmin(calc(100 + 70), sp_m);
+    }
+
     .bl_topCaseSection_ttlWrapper {
         display: grid;
         grid-template-columns: auto auto;
         justify-content: space-between;
         align-items: flex-end;
         margin-bottom: vwmin(50, pc);
+
+        @include underSP {
+            margin-bottom: vwmin(50, sp_m);
+        }
     }
 
 
@@ -960,167 +1443,9 @@ Case
 
         .splide__slide {
             width: vwmin(258, pc);
-        }
-    }
 
-
-    .bl_caseItem {
-
-        .bl_caseItem_linkWrapper {
-
-            .bl_caseItem_imgWrapper {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 258/322;
-                overflow: hidden;
-                margin-bottom: vwmin(20, pc);
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-        }
-
-
-        .bl_caseItem_txtWrapper {
-            display: flex;
-            flex-direction: column;
-            gap: vwmin(4, pc);
-            margin-bottom: vwmin(10, pc);
-
-            .bl_caseItem_treatmentsWrapper {
-                display: flex;
-                flex-wrap: wrap;
-                gap: vwmin(10, pc);
-
-                .bl_caseItem_treatmentsWrapper_txt {
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(12, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1;
-                    letter-spacing: calc(0.6 / 12 * 1em);
-                    padding: vwmin(4, pc);
-                    border-radius: vwmin(4, pc);
-                    border: 1px solid var(--line, #987F65);
-                }
-            }
-
-            .el_caseItem_ttl {
-                color: var(--txtColor);
-                font-family: var(--notoSerifJP);
-                font-size: vwmin(18, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1.5;
-                letter-spacing: calc(0.9 / 18 * 1em);
-            }
-        }
-
-
-        .bl_caseItem_details {
-            background-color: #F4EEEA;
-            border-radius: vwmin(2, pc);
-            overflow: hidden;
-
-            .bl_caseItem_details_summary {
-                display: grid;
-                grid-template-columns: 1fr vwmin(20, pc);
-                align-items: center;
-                gap: vwmin(10, pc);
-                cursor: pointer;
-                padding-inline: vwmin(12, pc);
-                padding-block: vwmin(10, pc);
-
-                .bl_caseItem_details_summary_txt {
-                    display: block;
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(14, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1.5;
-                    letter-spacing: calc(0.7 / 14 * 1em);
-                }
-
-                .bl_caseItem_details_summary_icon {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 100%;
-                    background-color: #fff;
-                    position: relative;
-
-                    &::before,
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: vwmin(5, pc);
-                        height: vwmin(1, pc);
-                        background-color: var(--txtColor);
-                        border-radius: vwmin(1, pc);
-                        transition: transform 0.4s ease;
-
-                    }
-
-                    &::after {
-                        transform: translate(-50%, -50%) rotate(-90deg);
-                    }
-                }
-            }
-        }
-
-        .is-opened {
-            .bl_caseItem_details_summary {
-                .bl_caseItem_details_summary_icon {
-                    &::after {
-                        transition: transform 0.4s ease;
-                        transform: translate(-50%, -50%) rotate(0deg);
-                    }
-                }
-            }
-        }
-
-
-        .bl_caseItem_details_content {
-            overflow: hidden;
-            height: 0;
-
-
-            .bl_caseItem_details_content_inner {
-                padding: vwmin(20, pc);
-                display: flex;
-                flex-direction: column;
-                gap: vwmin(20, pc);
-
-                .bl_caseItem_details_content_item_dt {
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(14, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1;
-                    letter-spacing: calc(0.7 / 14 * 1em);
-                    border-bottom: 1px solid #987F65;
-                    padding-block: vwmin(6, pc);
-                    padding-inline: vwmin(4, pc);
-                    margin-bottom: vwmin(10, pc);
-                }
-
-                .bl_caseItem_details_content_item_dd {
-                    color: var(--black, #1A0F04);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(14, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1;
-                    letter-spacing: 0.7px;
-                }
+            @include underSP {
+                width: vwmin(258, sp_m);
             }
         }
     }

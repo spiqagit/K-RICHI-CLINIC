@@ -17,32 +17,47 @@
   }
 }
 
-@function vwmin($pxValue, $reference, $base: null) {
+@function vwmin($pxValue, $reference, $base: null, $min: 0px, $max: null) {
   @if $reference == 'pc' {
     @if not $base {
       $base: 1440;
+    }
+    @if not $max {
+      $max: $pxValue * 1.2; // PC: 最大値は元の値の120%
     }
   } @else if $reference == 'tb' {
     @if not $base {
       $base: 1024;
     }
+    @if not $max {
+      $max: $pxValue * 1.15; // TB: 最大値は元の値の115%
+    }
   } @else if $reference == 'sp' {
     @if not $base {
       $base: 767;
+    }
+    @if not $max {
+      $max: $pxValue * 1.1; // SP: 最大値は元の値の110%
     }
   } @else if $reference == 'sp_m' {
     @if not $base {
       $base: 500;
     }
+    @if not $max {
+      $max: $pxValue * 1.1;
+    }
   } @else if $reference == 'sp_s' {
     @if not $base {
       $base: 375;
+    }
+    @if not $max {
+      $max: $pxValue * 1.1;
     }
   }
 
   $vwValue: calc(math.round(calc($pxValue / $base) * 10000) / 100 * 1vw);
 
-  @return string.unquote('clamp(0px, #{$vwValue}, 9999px)');
+  @return string.unquote('clamp(#{$min}, #{$vwValue}, #{$max}px)');
 }
 
 /* -------------------------

@@ -10,6 +10,11 @@
         gap: vwmin(20, pc);
         transition: opacity 0.5s ease;
 
+        @include underSP {
+            grid-template-columns: auto vwmin(30, sp_m);
+            gap: vwmin(20, sp_m);
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 opacity: .7;
@@ -19,12 +24,19 @@
 
         .el_commonAllviewBtn_txt {
             color: var(--txtColor);
-            font-family: var(--notoSerifJP);
+            font-family: var(--OldSt);
             font-size: vwmin(18, pc);
             font-style: normal;
             font-weight: 400;
             line-height: 1.5;
             letter-spacing: calc(0.9 / 18 * 1em);
+            margin-block: var(--leading-trim);
+            padding-top: vwmin(5, pc);
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                padding-top: vwmin(5, sp_m);
+            }
         }
 
         .el_commonAllviewBtn_arrow {
@@ -36,27 +48,17 @@
             border-radius: 100%;
             aspect-ratio: 1 / 1;
 
-            img{
+            @include underSP {
+                grid-template-columns: vwmin(16, sp_m);
+            }
+
+            img {
                 width: 100%;
                 display: block;
             }
         }
     }
 }
-
-.is_txten {
-
-    .el_commonAllviewBtn_txt {
-        color: var(--txtColor);
-        font-family: var(--OldSt);
-        font-size: vwmin(18, pc);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: calc(0.9 / 18 * 1em);
-    }
-}
-
 
 
 /*--------------------------------
@@ -67,6 +69,20 @@
     background-color: #E5D8CD;
     padding-block: vwmin(120, pc);
     padding-inline: vwmin(40, pc);
+
+    @include underSP {
+        padding-block: vwmin(100, sp_m);
+        padding-inline: vwmin(30, sp_m);
+    }
+
+    .bl_topDoctorSection_inner {
+
+        .blcommonSectionTtlWrapper {
+            @include underSP {
+                margin-bottom: vwmin(50, sp_m);
+            }
+        }
+    }
 
     .blcommonSectionTtlWrapper {
         margin-bottom: vwmin(50, pc);
@@ -81,6 +97,18 @@
         grid-template-columns: vwmin(323, pc) 1fr;
         gap: vwmin(94, pc);
 
+        @include underSP {
+            max-width: 100%;
+            grid-template-columns: 1fr;
+            gap: vwmin(30, sp_m);
+        }
+
+        .bl_doctorContentsWrapper_imgWrapper {
+            @include underSP {
+                max-width: vwmin(300, sp_m);
+                margin-inline: auto;
+            }
+        }
 
         .bl_doctorContentsWrapper_txtWrapper {
 
@@ -95,6 +123,13 @@
                 padding-bottom: vwmin(10, pc);
                 border-bottom: 1px solid #987F65;
                 margin-bottom: vwmin(30, pc);
+
+                @include underSP {
+                    padding-bottom: vwmin(10, sp_m);
+                    border-bottom: 1px solid #987F65;
+                    margin-bottom: vwmin(30, sp_m);
+                    font-size: vwmin(14, sp_m);
+                }
             }
 
             .bl_doctorContentsWrapper_nameWrapper_name {
@@ -102,6 +137,11 @@
                 grid-template-columns: max-content max-content;
                 align-items: flex-end;
                 gap: vwmin(20, pc);
+
+
+                @include underSP {
+                    gap: vwmin(20, sp_m);
+                }
 
                 .el_doctorContentsWrapper_nameWrapper_job {
                     color: var(--txtColor);
@@ -111,6 +151,10 @@
                     font-weight: 400;
                     line-height: 1.5;
                     letter-spacing: calc(0.7 / 14 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                    }
                 }
 
                 .el_doctorContentsWrapper_nameWrapper_name_first {
@@ -122,6 +166,10 @@
                     line-height: 1.5;
                     letter-spacing: calc(1.2 / 24 * 1em);
                     width: fit-content;
+
+                    @include underSP {
+                        font-size: vwmin(24, sp_m);
+                    }
                 }
 
                 .el_doctorContentsWrapper_nameWrapper_name_last {
@@ -134,6 +182,9 @@
                     letter-spacing: calc(0.7 / 14 * 1em);
                     width: fit-content;
 
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                    }
                 }
             }
 
@@ -149,6 +200,11 @@
                 font-weight: 400;
                 line-height: 1.8;
                 letter-spacing: calc(0.8 / 16 * 1em);
+
+                @include underSP {
+                    gap: vwmin(20, sp_m);
+                    font-size: vwmin(16, sp_m);
+                }
             }
         }
     }
@@ -170,6 +226,15 @@
     border-radius: vwmin(100, pc);
     transition: all 0.5s ease;
 
+    @include underSP {
+        max-width: 100%;
+        grid-template-columns: vwmin(18, sp_m) auto;
+        padding-block: vwmin(22, sp_m);
+        padding-inline: vwmin(20, sp_m);
+        border-radius: vwmin(100, sp_m);
+        gap: vwmin(10, sp_m);
+    }
+
 
     .el_reserveBtn_txt {
         width: fit-content;
@@ -181,6 +246,10 @@
         line-height: 1;
         letter-spacing: calc(1 / 20 * 1em);
         transition: color 0.5s ease;
+
+        @include underSP {
+            font-size: vwmin(20, sp_m);
+        }
     }
 
     .bl_reserveBtn_iconWrapper {
@@ -228,14 +297,14 @@
 }
 
 
-.bl_reserveBtn_brown{    
+.bl_reserveBtn_brown {
     background-color: #402D10;
 
     .el_reserveBtn_txt {
         color: #FFF;
     }
 
-    .bl_reserveBtn_iconWrapper{
+    .bl_reserveBtn_iconWrapper {
         .el_reserveBtn_icon {
             path {
                 fill: #FFF;
@@ -253,8 +322,8 @@
                 color: #402D10;
                 transition: color 0.5s ease;
             }
-    
-            .bl_reserveBtn_iconWrapper{
+
+            .bl_reserveBtn_iconWrapper {
                 .el_reserveBtn_icon {
                     path {
                         fill: #402D10;
@@ -265,4 +334,275 @@
         }
     }
 
+}
+
+
+
+
+.bl_commonSnsIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: vwmin(14, pc);
+
+    @include underSP {
+        gap: vwmin(10, sp_m);
+    }
+
+    .bl_commonSnsIconContainer_btn {
+        max-width: vwmin(40, pc);
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        border-radius: vwmin(4, pc);
+        background-color: #FFF;
+        display: grid;
+        grid-template-columns: vwmin(22, pc);
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease;
+
+        @include underSP {
+            max-width: vwmin(40, sp_m);
+            border-radius: vwmin(4, sp_m);
+            grid-template-columns: vwmin(22, sp_m);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.7;
+                transition: opacity 0.5s ease;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+
+
+
+
+.bl_caseItem {
+
+    .bl_caseItem_linkWrapper {
+
+        .bl_caseItem_imgWrapper {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 258/322;
+            overflow: hidden;
+            margin-bottom: vwmin(20, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(22, sp_m);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+
+    .bl_caseItem_txtWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(4, pc);
+        margin-bottom: vwmin(10, pc);
+
+        @include underSP {
+            gap: vwmin(8, sp_m);
+            margin-bottom: vwmin(10, sp_m);
+        }
+
+        .bl_caseItem_treatmentsWrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: vwmin(10, pc);
+
+            @include underSP {
+                gap: vwmin(10, sp_m);
+            }
+
+            .bl_caseItem_treatmentsWrapper_txt {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(12, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.6 / 12 * 1em);
+                padding: vwmin(4, pc);
+                border-radius: vwmin(4, pc);
+                border: 1px solid var(--line, #987F65);
+
+                @include underSP {
+                    font-size: vwmin(12, sp_m);
+                    padding: vwmin(4, sp_m);
+                    border-radius: vwmin(4, sp_m);
+                    border: 1px solid var(--line, #987F65);
+                }
+            }
+        }
+
+        .el_caseItem_ttl {
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.9 / 18 * 1em);
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+            }
+        }
+    }
+
+
+    .bl_caseItem_details {
+        background-color: #F4EEEA;
+        border-radius: vwmin(2, pc);
+        overflow: hidden;
+
+        @include underSP {
+            border-radius: vwmin(2, sp_m);
+        }
+
+        .bl_caseItem_details_summary {
+            display: grid;
+            grid-template-columns: 1fr vwmin(20, pc);
+            align-items: center;
+            gap: vwmin(10, pc);
+            cursor: pointer;
+            padding-inline: vwmin(12, pc);
+            padding-block: vwmin(10, pc);
+
+            @include underSP {
+                grid-template-columns: 1fr vwmin(20, sp_m);
+                gap: vwmin(10, sp_m);
+                padding-inline: vwmin(12, sp_m);
+                padding-block: vwmin(10, sp_m);
+            }
+
+            .bl_caseItem_details_summary_txt {
+                display: block;
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.7 / 14 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
+            }
+
+            .bl_caseItem_details_summary_icon {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                background-color: #fff;
+                position: relative;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: vwmin(5, pc);
+                    height: vwmin(1, pc);
+                    background-color: var(--txtColor);
+                    border-radius: vwmin(1, pc);
+                    transition: transform 0.4s ease;
+
+                    @include underSP {
+                        width: vwmin(5, sp_m);
+                        height: vwmin(1, sp_m);
+                        border-radius: vwmin(1, sp_m);
+                    }
+                }
+
+                &::after {
+                    transform: translate(-50%, -50%) rotate(-90deg);
+                }
+            }
+        }
+    }
+
+    .is-opened {
+        .bl_caseItem_details_summary {
+            .bl_caseItem_details_summary_icon {
+                &::after {
+                    transition: transform 0.4s ease;
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+            }
+        }
+    }
+
+
+    .bl_caseItem_details_content {
+        overflow: hidden;
+        height: 0;
+
+
+        .bl_caseItem_details_content_inner {
+            padding: vwmin(20, pc);
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(20, pc);
+
+            @include underSP {
+                padding: vwmin(20, sp_m);
+                gap: vwmin(20, sp_m);
+            }
+
+            .bl_caseItem_details_content_item_dt {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.7 / 14 * 1em);
+                border-bottom: 1px solid #987F65;
+                padding-block: vwmin(6, pc);
+                padding-inline: vwmin(4, pc);
+                margin-bottom: vwmin(10, pc);
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                    padding-block: vwmin(6, sp_m);
+                    padding-inline: vwmin(4, sp_m);
+                    margin-bottom: vwmin(10, sp_m);
+                }
+            }
+
+            .bl_caseItem_details_content_item_dd {
+                color: var(--black, #1A0F04);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.7 / 14 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
+            }
+        }
+    }
 }

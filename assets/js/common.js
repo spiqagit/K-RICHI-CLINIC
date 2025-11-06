@@ -2,27 +2,73 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    const breakPoint = 500; // ブレークポイントを設定
+    const breakPoint = 767; // ブレークポイントを設定（underSPと一致）
     const newsSwiper = document.querySelector(".bl_newsSlider");
     const topConcernSwiper = document.querySelector(".bl_topConcernSwiper");
+    const columnSlider = document.querySelector(".bl_topColumnSection_slider");
+    const featuerSwiper = document.querySelector(".bl_featuerSection_list");
     let topConcernSlide = null;
     let newsSlide = null;
+    let columnSlide = null;
+    let featuerSlide = null;
     let swiperBool = false;
+    let columnSwiperBool = false;
 
     const createSwiper = () => {
         if (topConcernSwiper) {
+            if (topConcernSlide) {
+                topConcernSlide.destroy(true, true);
+            }
             topConcernSlide = new Swiper(topConcernSwiper, {
-                type: 'loop',
                 slidesPerView: 'auto',
                 spaceBetween: 20,
+                freeMode: {
+                    enabled: true,
+                    sticky: false,
+                },
             });
         }
 
         if (newsSwiper) {
+            if (newsSlide) {
+                newsSlide.destroy(true, true);
+            }
             newsSlide = new Swiper(newsSwiper, {
-                type: 'loop',
+                slidesPerView: 'auto',
+                freeMode: {
+                    enabled: true,
+                    sticky: false,
+                },
+
+            });
+        }
+
+        if (featuerSwiper) {
+            if (featuerSlide) {
+                featuerSlide.destroy(true, true);
+            }
+            featuerSlide = new Swiper(featuerSwiper, {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                freeMode: {
+                    enabled: true,
+                    sticky: false,
+                },
+                resistance: true,
+                resistanceRatio: 0,
+            });
+        }
+    };
+    
+    const createColumnSwiper = () => {
+        if (columnSlider) {
+            columnSlide = new Swiper(columnSlider, {
                 slidesPerView: 'auto',
                 spaceBetween: 20,
+                navigation: {
+                    prevEl: '.el_topColumnSection_sliderNaviWrapper_btnPrev',
+                    nextEl: '.el_topColumnSection_sliderNaviWrapper_btnNext',
+                },
             });
         }
     };
@@ -36,66 +82,90 @@ document.addEventListener('DOMContentLoaded', function () {
             newsSlide.destroy(false, true);
             newsSlide = null;
         }
+        if (featuerSlide) {
+            featuerSlide.destroy(false, true);
+            featuerSlide = null;
+        }
+    };
+
+    const destroyColumnSwiper = () => {
+        if (columnSlide) {
+            columnSlide.destroy(false, true);
+            columnSlide = null;
+        }
+    };
+
+    const initSwiper = () => {
+        if (breakPoint >= window.innerWidth) {
+            // SP版（767px以下）: スライダーを初期化
+            if (!swiperBool) {
+                createSwiper();
+                swiperBool = true;
+            }
+        } else {
+            // PC版（768px以上）: スライダーを破棄
+            if (swiperBool) {
+                destroySwiper();
+                swiperBool = false;
+            }
+        }
+    };
+
+    const initColumnSwiper = () => {
+        if (!columnSwiperBool) {
+            createColumnSwiper();
+            columnSwiperBool = true;
+        }
     };
 
     window.addEventListener(
         "load",
         () => {
-            if (breakPoint < window.innerWidth) {
-                swiperBool = false;
-            } else {
-                createSwiper();
-                swiperBool = true;
-            }
+            initSwiper();
+            initColumnSwiper();
         },
         false
     );
 
+    let resizeTimer;
     window.addEventListener(
         "resize",
         () => {
-            if (breakPoint < window.innerWidth && swiperBool) {
-                destroySwiper();
-                swiperBool = false;
-            } else if (breakPoint >= window.innerWidth && !swiperBool) {
-                createSwiper();
-                swiperBool = true;
-            }
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // リサイズ時に状態をリセットして再初期化
+                const wasSwiperActive = swiperBool;
+                if (wasSwiperActive) {
+                    destroySwiper();
+                    swiperBool = false;
+                }
+                initSwiper();
+            }, 100);
         },
         false
     );
 
-
-    const columnSlider = document.querySelector(".bl_topColumnSection_slider");
-    if (columnSlider) {
-        new Swiper(columnSlider, {
-            type: 'loop',
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            navigation: {
-                prevEl: '.el_topColumnSection_sliderNaviWrapper_btnPrev',
-                nextEl: '.el_topColumnSection_sliderNaviWrapper_btnNext',
-            },
-        });
-    }
+    // DOMContentLoaded時にも初期化を試みる
+    initSwiper();
+    initColumnSwiper();
 
     /*Splide*/
     const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");
     const options = {
-        type: "loop", 
-        arrows: false, 
-        pagination: false, 
-        drag:false, 
-        gap: 20, 
-        perPage: 4, 
+        type: "loop",
+        arrows: false,
+        pagination: false,
+        drag: false,
+        gap: 20,
+        perPage: 4,
         breakpoints: {
             500: {
-                perPage: 1,  
+                perPage: 1,
             },
         },
         autoScroll: {
-            speed: 0.5, 
-            pauseOnHover: true, 
+            speed: 0.5,
+            pauseOnHover: true,
         },
     };
 

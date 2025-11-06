@@ -6,9 +6,18 @@
     padding-top: vwmin(10, pc);
     margin-top: -4%;
 
+    @include underSP {
+        padding-top: vwmin(10, sp_m);
+        margin-top: -11%;
+    }
+
     .ly_reserveOutLine {
         padding-top: vwmin(10, pc);
         position: relative;
+
+        @include underSP {
+            padding-top: vwmin(10, sp_m);
+        }
 
         &::before {
             content: '';
@@ -22,8 +31,13 @@
             border-inline: 1px solid #987F65;
             border-radius: vwmin(50, pc) vwmin(50, pc) 0 0;
             padding-top: vwmin(10, pc);
-
             z-index: 1;
+
+            @include underSP {
+                border-radius: vwmin(50, sp_m) vwmin(50, sp_m) 0 0;
+                padding-top: vwmin(10, sp_m);
+                width: 103%;
+            }
         }
 
         .ly_reserveSection {
@@ -37,11 +51,22 @@
             padding-inline: vwmin(40, pc);
             border-radius: vwmin(40, pc) vwmin(40, pc) 0 0;
 
+            @include underSP {
+                border-radius: vwmin(40, sp_m) vwmin(40, sp_m) 0 0;
+                padding-block: vwmin(100, sp_m);
+                padding-inline: vwmin(40, sp_m);
+                overflow: hidden;
+            }
+
 
             .bl_reserveSection_title {
                 width: fit-content;
                 margin-inline: auto;
                 margin-bottom: vwmin(20, pc);
+
+                @include underSP {
+                    margin-bottom: vwmin(20, sp_m);
+                }
 
                 .el_reserveSection_title_ttl {
                     color: #FFF;
@@ -53,6 +78,11 @@
                     letter-spacing: calc(2 / 100 * 1em);
                     margin-block: var(--leading-trim);
                     margin-block-end: calc(vwmin(20, pc) + var(--leading-trim));
+
+                    @include underSP {
+                        font-size: vwmin(100, sp_m);
+                        margin-block-end: calc(vwmin(20, sp_m) + var(--leading-trim));
+                    }
                 }
 
                 .el_reserveSection_title_txt {
@@ -65,6 +95,10 @@
                     letter-spacing: calc(1 / 20 * 1em);
                     margin-inline: auto;
                     width: fit-content;
+
+                    @include underSP {
+                        font-size: vwmin(20, sp_m);
+                    }
                 }
             }
 
@@ -82,6 +116,11 @@
                     width: fit-content;
                     margin-inline: auto;
                     margin-bottom: vwmin(20, pc);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                        margin-bottom: vwmin(20, sp_m);
+                    }
                 }
 
                 .bl_reserveBtnWrapper {
@@ -89,6 +128,11 @@
                     justify-content: center;
                     align-items: center;
                     gap: vwmin(20, pc);
+
+                    @include underSP {
+                        flex-direction: column;
+                        gap: vwmin(20, sp_m);
+                    }
                 }
 
             }
@@ -105,6 +149,12 @@
         padding-block: vwmin(80, pc);
         padding-bottom: vwmin(80, pc);
 
+        @include underSP {
+            padding-top: vwmin(80, sp_m);
+            padding-bottom: vwmin(50, sp_m);
+            padding-inline: vwmin(30, sp_m);
+        }
+
         .bl_footerClinicInfoContainer {
             display: grid;
             grid-template-columns: vwmin(307, pc) 1fr;
@@ -115,8 +165,18 @@
             width: 100%;
             margin-inline: auto;
 
+            @include underSP {
+                grid-template-columns: 1fr;
+                gap: vwmin(50, sp_m);
+                max-width: 100%;
+            }
+
             .bl_footerClinicInfoWrapper_logoContainer {
                 margin-bottom: vwmin(50, pc);
+
+                @include underSP {
+                    margin-bottom: vwmin(50, sp_m);
+                }
 
                 .bl_footerClinicInfoWrapper_logo {
                     max-width: vwmin(264, pc);
@@ -124,42 +184,13 @@
                     margin-inline: auto;
                     margin-bottom: vwmin(30, pc);
 
+                    @include underSP {
+                        max-width: vwmin(264, sp_m);
+                        margin-bottom: vwmin(30, sp_m);
+                    }
+
                     img {
                         width: 100%;
-                    }
-                }
-
-                .bl_footerClinicInfoWrapper_snsContainer {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: vwmin(14, pc);
-
-                    .bl_footerClinicInfoWrapper_snsBtn {
-                        max-width: vwmin(40, pc);
-                        width: 100%;
-                        aspect-ratio: 1 / 1;
-                        height: auto;
-                        border-radius: vwmin(4, pc);
-                        background-color: #FFF;
-                        display: grid;
-                        grid-template-columns: vwmin(22, pc);
-                        align-items: center;
-                        justify-content: center;
-                        transition: opacity 0.5s ease;
-
-                        @media (any-hover: hover) {
-                            &:hover {
-                                opacity: 0.7;
-                                transition: opacity 0.5s ease;
-                            }
-                        }
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: contain;
-                        }
                     }
                 }
             }
@@ -170,6 +201,10 @@
                 .bl_footerClinicInfoWrapper_addressWrapper {
                     margin-bottom: vwmin(20, pc);
 
+                    @include underSP {
+                        margin-bottom: vwmin(20, sp_m);
+                    }
+
                     .el_footerClinicInfoWrapper_numberTxt {
                         color: var(--txtColor);
                         font-family: var(--OldSt);
@@ -179,6 +214,10 @@
                         line-height: 1;
                         letter-spacing: calc(0.32 / 16 * 1em);
                         margin-block: var(--leading-trim);
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
                     }
 
                     .el_footerClinicInfoWrapper_addressTxt {
@@ -189,6 +228,10 @@
                         font-weight: 400;
                         line-height: 1.5;
                         letter-spacing: calc(0.8 / 16 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
                     }
                 }
 
@@ -200,6 +243,11 @@
                     justify-content: center;
                     gap: vwmin(3, pc);
                     transition: opacity 0.5s ease;
+
+                    @include underSP {
+                        grid-template-columns: auto vwmin(12, sp_m);
+                        gap: vwmin(3, sp_m);
+                    }
 
                     @media (any-hover: hover) {
                         &:hover {
@@ -223,6 +271,11 @@
                         text-underline-offset: auto;
                         text-underline-position: from-font;
 
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
+
                         img {
                             width: 100%;
                         }
@@ -237,6 +290,11 @@
                     align-items: center;
                     justify-content: center;
                     gap: vwmin(3, pc);
+
+                    @include underSP {
+                        grid-template-columns: auto vwmin(12, sp_m);
+                        gap: vwmin(3, sp_m);
+                    }
                 }
             }
         }
@@ -264,6 +322,16 @@
         margin-inline: auto;
         border-top: 1px solid #E5D8CD;
 
+        @include underSP {
+            margin-inline: vwmin(30, sp_m);
+            grid-template-columns: 1fr;
+            gap: vwmin(50, sp_m);
+            max-width: 100%;
+            padding-top: vwmin(50, sp_m);
+            padding-bottom: vwmin(50, sp_m);
+            padding-inline: 0;
+        }
+
 
         .bl_footer_btnTitle {
             display: grid;
@@ -271,6 +339,11 @@
             width: fit-content;
             gap: vwmin(8, pc);
             align-items: center;
+
+            @include underSP {
+                grid-template-columns: auto;
+                gap: vwmin(8, sp_m);
+            }
 
             .el_footer_btnTitle_en {
                 width: fit-content;
@@ -282,6 +355,10 @@
                 line-height: 1;
                 letter-spacing: calc(0.96 / 16 * 1em);
                 text-transform: uppercase;
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
             }
 
             .el_footer_btnTitle_ja {
@@ -292,6 +369,10 @@
                 font-weight: 400;
                 line-height: 1;
                 letter-spacing: calc(0.6 / 12 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(12, sp_m);
+                }
             }
         }
 
@@ -300,12 +381,23 @@
             flex-direction: column;
             gap: vwmin(20, pc);
 
+
+            @include underSP {
+                gap: vwmin(20, sp_m);
+            }
+
             .bl_footer_aboutClinicLinkContainer {
                 display: flex;
                 flex-direction: column;
                 gap: vwmin(16, pc);
                 padding-left: vwmin(10, pc);
                 border-left: 1px solid var(--txtColor);
+
+                @include underSP {
+                    padding-left: vwmin(10, sp_m);
+                    gap: vwmin(16, sp_m);
+                    border-left: 1px solid var(--txtColor);
+                }
 
                 .el_footer_aboutClinicLinkContainer_link {
                     color: var(--txtColor);
@@ -321,6 +413,11 @@
                     text-decoration-thickness: auto;
                     text-underline-offset: auto;
                     text-underline-position: from-font;
+
+                    @include underSP {
+                        width: fit-content;
+                        font-size: vwmin(14, sp_m);
+                    }
 
                     @media (any-hover: hover) {
                         &:hover {
@@ -339,7 +436,12 @@
             column-gap: vwmin(93, pc);
             row-gap: vwmin(30, pc);
 
-            .bl_footer_btn{
+            @include underSP {
+                grid-template-columns: repeat(2, auto);
+                gap: vwmin(30, sp_m);
+            }
+
+            .bl_footer_btn {
                 transition: opacity 0.5s ease;
 
                 @media (any-hover: hover) {
@@ -359,11 +461,25 @@
         padding-block: vwmin(20, pc);
         padding-inline: vwmin(160, pc);
 
+        @include underSP {
+            padding-top: vwmin(20, sp_m);
+            padding-inline: vwmin(30, sp_m);
+            padding-bottom: vwmin(100, sp_m);
+        }
+
         .bl_footer_copyrightWrapper_inner {
             display: grid;
             grid-template-columns: auto auto;
             align-items: center;
             justify-content: space-between;
+
+            @include underSP {
+                grid-template-columns: auto;
+                align-items: center;
+                gap: vwmin(20, sp_m);
+                width: fit-content;
+                margin-inline: auto;
+            }
 
             .bl_footer_copyrightLink {
                 color: #FFF;
@@ -380,6 +496,10 @@
                 text-underline-offset: auto;
                 text-underline-position: from-font;
                 transition: opacity 0.5s ease;
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
 
                 @media (any-hover: hover) {
                     &:hover {
@@ -399,6 +519,10 @@
                 line-height: 1;
                 letter-spacing: calc(0.6 / 12 * 1em);
                 text-transform: uppercase;
+
+                @include underSP {
+                    font-size: vwmin(12, sp_m);
+                }
             }
         }
     }
