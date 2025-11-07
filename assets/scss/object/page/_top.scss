@@ -1021,7 +1021,27 @@ Instagram
                         margin-block-end: calc(vwmin(30, sp_m) + var(--leading-trim));
                     }
                 }
+
             }
+
+            .bl_topInstagramContainer_instagramWrapper{
+
+                @include underSP {
+                    overflow-x: auto;
+                    width: calc(100% - 10px * 2);
+                    margin-inline: auto;
+                }
+
+                @include underSP {
+                    #sb_instagram{
+                        width: vwmin(520, sp_m) !important;
+                    }
+                }
+
+            }
+            
+        
+
         }
     }
 

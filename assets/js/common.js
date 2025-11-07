@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
             pagination: false,
             drag: false,
             gap: 20,
-            perPage: 4,
+            perPage: "auto",
             breakpoints: {
                 500: {
                     perPage: 1,

@@ -192,8 +192,8 @@
                                             </div>
                                         <?php endif; ?>
                                     </div>
-                                    <div>
-
+                                    <div class="bl_topInstagramContainer_instagramWrapper">
+                                        <?php echo do_shortcode('[instagram-feed]'); ?>
                                     </div>
                                 </div>
                             </div>

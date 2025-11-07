@@ -312,7 +312,7 @@
                         top: 40%;
                         left: 50%;
                         translate: -50% -50%;
-                        transition:  rotate 0.2s $transition-easeing , top 0.2s $transition-easeing;
+                        transition:  rotate 0.3s $transition-easeing , top 0.2s $transition-easeing;
                     }
 
                     &:last-child {
@@ -320,7 +320,7 @@
                         top: 60%;
                         translate: 0 -50%;
                         width: 50%;
-                        transition: width  0.2s $transition-easeing .2s , rotate 0.3s $transition-easeing ;
+                        transition: width  0.2s $transition-easeing .3s , rotate 0.3s $transition-easeing ;
                         
                     }
                 }
@@ -342,7 +342,8 @@
                         rotate: -20deg;
                         translate: 50% -50%;
                         width: 100%;
-                        transition: width  0.2s $transition-easeing, rotate 0.2s $transition-easeing .2s , top 0.2s $transition-easeing .2s;
+                        transform-origin: center;
+                        transition: width  0.2s $transition-easeing, rotate 0.2s $transition-easeing .2s , top 0.2s $transition-easeing .2s,;
                     }
                 }
 

@@ -480,14 +480,14 @@ html {
     top: 40%;
     left: 50%;
     translate: -50% -50%;
-    transition: rotate 0.2s cubic-bezier(0, 0, 0.59, 0.85), top 0.2s cubic-bezier(0, 0, 0.59, 0.85);
+    transition: rotate 0.3s cubic-bezier(0, 0, 0.59, 0.85), top 0.2s cubic-bezier(0, 0, 0.59, 0.85);
   }
   .bl_header_navWrapper .bl_headerSpNavBtnWrapper .bl_headerSpNavBtnWrapper_btn .el_headerSpNavBtnWrapper_btn_line:last-child {
     right: 0;
     top: 60%;
     translate: 0 -50%;
     width: 50%;
-    transition: width 0.2s cubic-bezier(0, 0, 0.59, 0.85) 0.2s, rotate 0.3s cubic-bezier(0, 0, 0.59, 0.85);
+    transition: width 0.2s cubic-bezier(0, 0, 0.59, 0.85) 0.3s, rotate 0.3s cubic-bezier(0, 0, 0.59, 0.85);
   }
   .bl_header_navWrapper .bl_headerSpNavBtnWrapper .is-active .el_headerSpNavBtnWrapper_btn_line:first-child {
     rotate: 20deg;
@@ -502,6 +502,7 @@ html {
     rotate: -20deg;
     translate: 50% -50%;
     width: 100%;
+    transform-origin: center;
     transition: width 0.2s cubic-bezier(0, 0, 0.59, 0.85), rotate 0.2s cubic-bezier(0, 0, 0.59, 0.85) 0.2s, top 0.2s cubic-bezier(0, 0, 0.59, 0.85) 0.2s;
   }
 }
@@ -2947,6 +2948,18 @@ Instagram
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_ttlWrapper .el_topInstagramContainer_ttl {
     font-size: clamp(0px, 8vw, 44px);
     margin-block-end: calc(clamp(0px, 6vw, 33px) + var(--leading-trim));
+  }
+}
+@media screen and (width <= 767px) {
+  .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper {
+    overflow-x: auto;
+    width: calc(100% - 20px);
+    margin-inline: auto;
+  }
+}
+@media screen and (width <= 767px) {
+  .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper #sb_instagram {
+    width: clamp(0px, 104vw, 572px) !important;
   }
 }
 .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .el_topSnsSection_otherSnsWrapper_ttl {
