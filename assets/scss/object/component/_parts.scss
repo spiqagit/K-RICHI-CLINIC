@@ -774,8 +774,92 @@
 
         .bl_commonBreadcrumbsSeparator {
             width: vwmin(10, pc);
+
             img {
                 display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+/*--------------------------------
+2カラムレイアウト
+--------------------------------*/
+
+.ly_commonTwoColumnWrapper {
+    padding-bottom: vwmin(200, pc);
+
+    .ly_commonTwoColumnWrapper_inner {
+        display: grid;
+        grid-template-columns: vwmin(244, pc) 1fr;
+        gap: vwmin(80, pc);
+
+        @include underSP {
+            grid-template-columns: 1fr;
+            gap: vwmin(40, sp_m);
+        }
+    }
+}
+
+
+.bl_commonSelectNaviWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(20, pc);
+
+    .bl_commonSelectNaviWrapper_item {
+
+        .bl_commonSelectNaviWrapper_item_label {
+            display: block;
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: calc(0.8 / 16 * 1em);
+            margin-bottom: vwmin(10, pc);
+        }
+
+        .bl_commonSelectNaviWrapper_selectWrapper {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: vwmin(16, pc);
+                transform: translateY(-50%);
+                width: vwmin(7, pc);
+                height: vwmin(12, pc);
+                background-image: url('../img/common/select-arrow.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+
+            .bl_commonSelectNaviWrapper_item_select {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                -o-appearance: none;
+                cursor: pointer;
+                display: block;
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1;
+                letter-spacing: calc(0.7 / 14 * 1em);
+                background-color: #E5D8CD;
+                padding: vwmin(16, pc);
+                border: none;
                 width: 100%;
             }
         }

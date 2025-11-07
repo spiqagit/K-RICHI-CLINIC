@@ -1,4 +1,6 @@
+gsap.registerPlugin(ScrollTrigger);
 document.addEventListener('DOMContentLoaded', function () {
+
 
     const breakPoint = 767;
     const newsSwiper = document.querySelector(".bl_newsSlider");
@@ -7,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const featuerSwiper = document.querySelector(".bl_featuerSection_list");
     const navBtn = document.querySelector(".bl_headerSpNavBtnWrapper_btn");
     const nav = document.querySelector(".bl_header_navWrapper_nav");
-    
+
     let topConcernSlide = null;
     let newsSlide = null;
     let columnSlide = null;
@@ -214,6 +216,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setUpAccordion();
 
+
+    //絞り込みナビ
+    const filterNaviList = document.querySelectorAll(".bl_commonSelectNaviWrapper");
+
+    if(breakPoint<= window.innerWidth ){
+        filterNaviList.forEach((filterNavi) => {
+            const parentElement = filterNavi.closest(".ly_commonTwoColumnWrapper_inner");
+            if (parentElement) {
+                ScrollTrigger.create({
+                    pin: true, //トリガー要素を固定する
+                    trigger: filterNavi,
+                    startTrigger: parentElement,
+                    start: "top-=120px top",
+                    endTrigger: parentElement,
+                    end: "bottom-=300px top", //親要素の下部ピッタリで終了
+                    pinSpacing: false, //余白を追加しない（position: stickyのような動作）
+                });
+            }
+        });
+    }
+
 });
 
 const setUpAccordion = () => {
@@ -303,7 +326,7 @@ if (window.innerWidth <= 767) {
                         navBtn.dataset.animate = "end";
                     }, 150);
                 },
-                });
+            });
         } else {
             // 開くアニメーション
             navBtn.dataset.animate = "animate";
@@ -321,3 +344,5 @@ if (window.innerWidth <= 767) {
         }
     });
 }
+
+
