@@ -629,6 +629,12 @@
         padding-inline: vwmin(160, pc);
         z-index: -1;
 
+        @include underSP {
+            padding-top: vwmin(143, sp_m);
+            padding-bottom: vwmin(60, sp_m);
+            padding-inline: vwmin(30, sp_m);
+        }
+
         .bl_commonLowPageWrapper_ttl {
             display: flex;
             flex-direction: column;
@@ -647,6 +653,10 @@
                 font-weight: 400;
                 line-height: 1;
                 letter-spacing: calc(1.2 / 60 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(46, sp_m);
+                }
             }
 
             .el_commonLowPageWrapper_ttl_ja {
@@ -661,6 +671,11 @@
                 font-weight: 400;
                 line-height: 1;
                 letter-spacing: calc(0.9 / 18 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                    grid-template-columns: vwmin(6, sp_m) auto;
+                }
 
                 &::before {
                     content: '';
@@ -683,6 +698,7 @@
         padding-top: vwmin(10, pc);
 
         @include underSP {
+            margin-top: vwmin(272, sp_m);
             padding-top: vwmin(10, sp_m);
         }
 
@@ -715,6 +731,7 @@
             padding-top: vwmin(160, pc);
 
             @include underSP {
+                padding-bottom: calc(vwmin(40, sp_m) + vwmin(18, sp_m));
                 border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
             }
         }
@@ -729,10 +746,18 @@
     padding-inline: vwmin(60, pc);
     overflow-x: auto;
 
+    @include underSP {
+        padding-inline: vwmin(30, sp_m);
+    }
+
     .bl_commonBreadcrumbsList {
         display: flex;
         align-items: center;
         gap: vwmin(18, pc);
+
+        @include underSP {
+            gap: vwmin(18, sp_m);
+        }
 
         .bl_commonBreadcrumbsItem {
 
@@ -748,6 +773,10 @@
                 transition: opacity 0.5s ease;
                 white-space: nowrap;
                 word-break: keep-all;
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
 
 
                 @media (any-hover: hover) {
@@ -768,12 +797,20 @@
                 letter-spacing: calc(0.7 / 14 * 1em);
                 white-space: nowrap;
                 word-break: keep-all;
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
             }
         }
 
 
         .bl_commonBreadcrumbsSeparator {
             width: vwmin(10, pc);
+
+            @include underSP {
+                width: vwmin(10, sp_m);
+            }
 
             img {
                 display: block;
@@ -792,6 +829,11 @@
 .ly_commonTwoColumnWrapper {
     padding-bottom: vwmin(200, pc);
 
+    @include underSP {
+        padding-bottom: vwmin(100, sp_m);
+        padding-inline: vwmin(30, sp_m);
+    }
+
     .ly_commonTwoColumnWrapper_inner {
         display: grid;
         grid-template-columns: vwmin(244, pc) 1fr;
@@ -799,7 +841,7 @@
 
         @include underSP {
             grid-template-columns: 1fr;
-            gap: vwmin(40, sp_m);
+            gap: vwmin(80, sp_m);
         }
     }
 }
@@ -809,6 +851,10 @@
     display: flex;
     flex-direction: column;
     gap: vwmin(20, pc);
+
+    @include underSP {
+        gap: vwmin(20, sp_m);
+    }
 
     .bl_commonSelectNaviWrapper_item {
 
@@ -822,6 +868,11 @@
             line-height: 1.5;
             letter-spacing: calc(0.8 / 16 * 1em);
             margin-bottom: vwmin(10, pc);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+                margin-bottom: vwmin(10, sp_m);
+            }
         }
 
         .bl_commonSelectNaviWrapper_selectWrapper {
@@ -839,6 +890,12 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
+
+                @include underSP {
+                    right: vwmin(16, sp_m);
+                    width: vwmin(7, sp_m);
+                    height: vwmin(12, sp_m);
+                }
             }
 
 
@@ -861,6 +918,11 @@
                 padding: vwmin(16, pc);
                 border: none;
                 width: 100%;
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                    padding: vwmin(16, sp_m);
+                }
             }
         }
     }

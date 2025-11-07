@@ -58,7 +58,7 @@ add_filter('get_the_archive_title', function ($title) {
 // 一覧・single生成制御
 function disable_faq_pages()
 {
-    if (is_singular('faq') || is_singular('price')  || is_tax('faq-cat')) {
+    if (is_singular('faq') || is_tax('faq-cat')) {
         global $wp_query;
         $wp_query->set_404();
         status_header(404);

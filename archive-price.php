@@ -30,7 +30,7 @@
                                             <div class="bl_commonSelectNaviWrapper_item">
                                                 <label for="cosmeticSelect" class="bl_commonSelectNaviWrapper_item_label"><?php echo $parent_cat->name; ?></label>
                                                 <div class="bl_commonSelectNaviWrapper_selectWrapper">
-                                                    <select name="" id="cosmeticSelect" class="bl_commonSelectNaviWrapper_item_select" onchange="if(this.value) window.location.href = this.value;">
+                                                    <select name="" id="cosmeticSelect" class="bl_commonSelectNaviWrapper_item_select" onchange="<?php echo esc_js('if(this.value) window.location.href = this.value;'); ?>">
                                                         <option value="">施術を選ぶ</option>
                                                         <?php
                                                         $price_SelectList = get_posts(array(
