@@ -6,8 +6,15 @@
         <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
         </li>
-        <li class="bl_commonBreadcrumbsItem">
-            <p class="bl_commonBreadcrumbsText"></p>
-        </li>
+        <?php if (is_page('about')): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">クリニックについて</p>
+            </li>
+        <?php endif; ?>
+        <?php if (is_404()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>
+            </li>
+        <?php endif; ?>
     </ul>
 </div>

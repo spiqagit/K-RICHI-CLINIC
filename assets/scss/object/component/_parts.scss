@@ -731,6 +731,7 @@
             padding-top: vwmin(160, pc);
 
             @include underSP {
+                padding-top: vwmin(100, sp_m);
                 padding-bottom: calc(vwmin(40, sp_m) + vwmin(18, sp_m));
                 border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
             }
@@ -924,6 +925,133 @@
                     padding: vwmin(16, sp_m);
                 }
             }
+        }
+    }
+}
+
+
+/*--------------------------------
+Google Maps
+--------------------------------*/
+
+.bl_commonGoogleMapLink {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: auto vwmin(18, pc);
+    align-items: flex-end;
+    justify-content: center;
+    gap: vwmin(3, pc);
+    transition: opacity 0.5s ease;
+
+    @include underSP {
+        grid-template-columns: auto vwmin(12, sp_m);
+        gap: vwmin(3, sp_m);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+        }
+    }
+
+    .el_commonGoogleMapLink_txt {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(16, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: calc(0.8 / 16 * 1em);
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+
+
+        @include underSP {
+            font-size: vwmin(16, sp_m);
+        }
+
+    }
+
+
+    .el_commonGoogleMapLink_icon {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+/*--------------------------------
+404ページ
+--------------------------------*/
+
+.bl_page404Contents {
+    padding-bottom: vwmin(200, pc);
+    max-width: vwmin(800, pc);
+    margin-inline: auto;
+    width: 100%;
+
+    @include underSP {
+        max-width: 100%;
+        padding-inline: vwmin(30, sp_m);
+        padding-bottom: vwmin(180, sp_m);
+    }
+
+    .bl_page404Contents_txt {
+        color: #1A0F04;
+        text-align: center;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(16, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.9;
+        margin-bottom: vwmin(50, pc);
+        letter-spacing: calc(0.8 / 16 * 1em);
+
+        @include underSP {
+            font-size: vwmin(16, sp_m);
+            margin-bottom: vwmin(50, sp_m);
+            text-align: left;
+        }
+    }
+
+    .bl_page404Contents_btn {
+        display: block;
+        max-width: vwmin(200, pc);
+        width: 100%;
+        margin-inline: auto;
+        border-radius: vwmin(2, pc);
+        background: #E5D8CD;
+        color: var(--black, #1A0F04);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(18, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: calc(0.9 / 18 * 1em);
+        padding: vwmin(15, pc);
+        box-sizing: border-box;
+        text-align: center;
+        transition: opacity 0.5s ease;
+
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.7;
+                transition: opacity 0.5s ease;
+            }
+        }
+
+        @include underSP {
+            max-width: vwmin(200, sp_m);
+            border-radius: vwmin(2, sp_m);
+            font-size: vwmin(18, sp_m);
+            padding: vwmin(15, sp_m);
         }
     }
 }

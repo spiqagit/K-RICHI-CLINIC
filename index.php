@@ -305,6 +305,16 @@
             </div>
         </section>
 
+        <?php
+        $staff_cats = get_terms([
+            'taxonomy' => 'staff-cat',
+            'orderby' => 'staff_order',
+            'order' => 'ASC',
+            'hide_empty' => true,
+            'posts_per_page' => 1,
+            'slug' => 'director',
+        ]);
+        ?>
         <section class="bl_topDoctorSection bl_topSection">
             <div class="bl_topDoctorSection_inner bl_topSection_inner">
                 <div class="blcommonSectionTtlWrapper">
@@ -313,26 +323,45 @@
                         <p class="el_commonSectionTtl_ttl_ja">院長紹介</p>
                     </hgroup>
                 </div>
-                <div class="bl_doctorContentsWrapper">
-                    <div class="bl_doctorContentsWrapper_imgWrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/doctor-img.png" alt="院長 金 玟圭 キム・ミンギュ">
-                    </div>
-                    <div class="bl_doctorContentsWrapper_txtWrapper">
-                        <div class="bl_doctorContentsWrapper_nameWrapper">
-                            <p class="el_doctorContentsWrapper_nameWrapper_job">院長</p>
-                            <div class="bl_doctorContentsWrapper_nameWrapper_name">
-                                <p class="el_doctorContentsWrapper_nameWrapper_name_first">金 玟圭</p>
-                                <p class="el_doctorContentsWrapper_nameWrapper_name_last">キム・ミンギュ</p>
+                <?php foreach ($staff_cats as $staff_cat) : ?>
+                    <?php
+                    $staff_posts = get_posts([
+                        'post_type' => 'staff',
+                        'posts_per_page' => -1,
+                        'orderby' => 'staff_order',
+                        'order' => 'ASC',
+                        'tax_query' => [
+                            [
+                                'taxonomy' => 'staff-cat',
+                                'field' => 'term_id',
+                                'terms' => $staff_cat->term_id,
+                            ],
+                        ],
+                    ]);
+                    ?>
+                    <?php if (!empty($staff_posts)) : ?>
+                        <?php foreach ($staff_posts as $staff_post) : ?>
+                            <div class="bl_doctorContentsWrapper">
+                                <div class="bl_doctorContentsWrapper_imgWrapper">
+                                    <img src="<?php echo get_the_post_thumbnail_url($staff_post->ID); ?>" alt="<?php echo get_the_title($staff_post); ?>">
+                                </div>
+                                <div class="bl_doctorContentsWrapper_txtWrapper">
+                                    <div class="bl_doctorContentsWrapper_nameWrapper">
+                                        <p class="el_doctorContentsWrapper_nameWrapper_job"><?php echo $staff_cat->name; ?></p>
+                                        <div class="bl_doctorContentsWrapper_nameWrapper_name">
+                                            <p class="el_doctorContentsWrapper_nameWrapper_name_first"><?php echo get_the_title($staff_post->ID); ?></p>
+                                            <p class="el_doctorContentsWrapper_nameWrapper_name_last"><?php echo get_field('staff-rubi', $staff_post->ID); ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="bl_doctorContentsWrapper_txtWrapper_txt">
+                                        <?php echo get_field('director-txt', $staff_post->ID); ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="bl_doctorContentsWrapper_txtWrapper_txt">
-                            <p>ダミーテキストです。美容医療は、外見の変化だけでなく、心まで明るく前向きにしてくれる力があると信じています。</p>
-                            <p>私たちは患者様との信頼関係を大切にし、安心して任せていただける医療を目指してきました。</p>
-                            <p>一人ひとりの悩みに真摯に向き合い、その方にとって最も自然で美しい結果を追求してまいります。<br>
-                                小さな不安でも、ぜひお気軽にご相談ください。</p>
-                        </div>
-                    </div>
-                </div>
+                        <?php endforeach; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </section>
 

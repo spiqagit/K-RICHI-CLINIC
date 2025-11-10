@@ -96,9 +96,9 @@
                         </div>
 
                         <?php if (get_field('google_map_link', 'option')): ?>
-                            <a href="<?php echo get_field('google_map_link', 'option'); ?>" class="bl_footerClinicInfoWrapper_mapLink" target="_blank">
-                                <p class="el_footerClinicInfoWrapper_mapLinkTxt">Google Maps</p>
-                                <img class="bl_footerClinicInfoWrapper_mapLinkIcon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/out-arrow.svg" alt="">
+                            <a href="<?php echo get_field('google_map_link', 'option'); ?>" class="bl_commonGoogleMapLink" target="_blank">
+                                <p class="el_commonGoogleMapLink_txt">Google Maps</p>
+                                <img class="el_commonGoogleMapLink_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/out-arrow.svg" alt="">
                             </a>
                         <?php endif; ?>
                     </div>

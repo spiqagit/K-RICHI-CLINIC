@@ -19,6 +19,23 @@ function remove_menus()
 }
 add_action('admin_menu', 'remove_menus', 999);
 
+// 投稿タイプ「staff」のブロックエディターを非表示
+function disable_block_editor_for_stuff($use_block_editor, $post_type)
+{
+    if ($post_type === 'staff') {
+        return false;
+    }
+    return $use_block_editor;
+}
+add_filter('use_block_editor_for_post_type', 'disable_block_editor_for_stuff', 10, 2);
+
+// 投稿タイプ「staff」のクラシックエディターも非表示
+function remove_editor_for_staff()
+{
+    remove_post_type_support('staff', 'editor');
+}
+add_action('init', 'remove_editor_for_staff');
+
 /* ---------- 投稿関連 ---------- */
 // single生成制御
 

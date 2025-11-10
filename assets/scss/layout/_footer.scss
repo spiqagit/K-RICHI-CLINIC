@@ -235,53 +235,6 @@
                     }
                 }
 
-                .bl_footerClinicInfoWrapper_mapLink {
-                    width: fit-content;
-                    display: grid;
-                    grid-template-columns: auto vwmin(12, pc);
-                    align-items: center;
-                    justify-content: center;
-                    gap: vwmin(3, pc);
-                    transition: opacity 0.5s ease;
-
-                    @include underSP {
-                        grid-template-columns: auto vwmin(12, sp_m);
-                        gap: vwmin(3, sp_m);
-                    }
-
-                    @media (any-hover: hover) {
-                        &:hover {
-                            opacity: 0.7;
-                            transition: opacity 0.5s ease;
-                        }
-                    }
-
-                    .el_footerClinicInfoWrapper_mapLinkTxt {
-                        color: var(--txtColor);
-                        font-family: var(--notoSerifJP);
-                        font-size: vwmin(16, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1.5;
-                        letter-spacing: calc(0.8 / 16 * 1em);
-                        text-decoration-line: underline;
-                        text-decoration-style: solid;
-                        text-decoration-skip-ink: auto;
-                        text-decoration-thickness: auto;
-                        text-underline-offset: auto;
-                        text-underline-position: from-font;
-
-
-                        @include underSP {
-                            font-size: vwmin(16, sp_m);
-                        }
-
-                        img {
-                            width: 100%;
-                        }
-                    }
-                }
-
 
 
                 .bl_footerClinicInfoWrapper_mapContainer {

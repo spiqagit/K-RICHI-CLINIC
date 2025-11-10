@@ -237,6 +237,52 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+
+    /*--------------------------------
+    About Mission Section Slider
+    ---------------------------------*/
+    const aboutMissionSectionSlideItem = document.querySelector(".bl_aboutMissionSection_slider");
+    if (aboutMissionSectionSlideItem) {
+        const aboutMissionSectionSlide = new Splide(aboutMissionSectionSlideItem, {
+            type: "loop",
+            arrows: false,
+            pagination: false,
+            drag: false,
+            gap: 20,
+            clones: 3,
+            perPage: "auto",
+            autoScroll: {
+                speed: 0.5,
+                pauseOnHover: false,
+            },
+        });
+        aboutMissionSectionSlide.mount(window.splide.Extensions);
+    }
+
+    /*--------------------------------
+    About Information Section Slider
+    ---------------------------------*/
+    const aboutInformationSectionSlideItem = document.querySelector(".bl_aboutInformationSection_slider");
+    if (aboutInformationSectionSlideItem) {
+        const aboutInformationSectionSlide = new Splide(aboutInformationSectionSlideItem, {
+            type: "loop",
+            arrows: false,
+            pagination: false,
+            drag: false,
+            gap: 20,
+            clones: 5,
+            perPage: 1,
+            autoScroll: {
+                speed: 0.5,
+                pauseOnHover: false,
+                autoStart: true, // 追加
+                rewind: true, // 追加
+            },
+        });
+        aboutInformationSectionSlide.mount(window.splide.Extensions);
+    }
+
 });
 
 const setUpAccordion = () => {

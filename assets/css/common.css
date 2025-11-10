@@ -915,50 +915,6 @@ html {
     font-size: clamp(0px, 3.2vw, 17.6px);
   }
 }
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapLink {
-  width: fit-content;
-  display: grid;
-  grid-template-columns: auto clamp(0px, 0.83vw, 14.4px);
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0px, 0.21vw, 3.6px);
-  transition: opacity 0.5s ease;
-}
-@media screen and (width <= 767px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapLink {
-    grid-template-columns: auto clamp(0px, 2.4vw, 13.2px);
-    gap: clamp(0px, 0.6vw, 3.3px);
-  }
-}
-@media (any-hover: hover) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapLink:hover {
-    opacity: 0.7;
-    transition: opacity 0.5s ease;
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapLink .el_footerClinicInfoWrapper_mapLinkTxt {
-  color: var(--txtColor);
-  font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: auto;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-}
-@media screen and (width <= 767px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapLink .el_footerClinicInfoWrapper_mapLinkTxt {
-    font-size: clamp(0px, 3.2vw, 17.6px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapLink .el_footerClinicInfoWrapper_mapLinkTxt img {
-  width: 100%;
-}
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
   display: grid;
   grid-template-columns: auto clamp(0px, 0.83vw, 14.4px);
@@ -1839,6 +1795,7 @@ html {
 }
 @media screen and (width <= 767px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
+    padding-top: clamp(0px, 20vw, 110px);
     padding-bottom: calc(clamp(0px, 8vw, 44px) + clamp(0px, 3.6vw, 19.8px));
     border-radius: clamp(0px, 6vw, 33px) clamp(0px, 6vw, 33px) 0 0;
   }
@@ -2017,6 +1974,122 @@ html {
   .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_selectWrapper .bl_commonSelectNaviWrapper_item_select {
     font-size: clamp(0px, 2.8vw, 15.4px);
     padding: clamp(0px, 3.2vw, 17.6px);
+  }
+}
+
+/*--------------------------------
+Google Maps
+--------------------------------*/
+.bl_commonGoogleMapLink {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: auto clamp(0px, 1.25vw, 21.6px);
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0px, 0.21vw, 3.6px);
+  transition: opacity 0.5s ease;
+}
+@media screen and (width <= 767px) {
+  .bl_commonGoogleMapLink {
+    grid-template-columns: auto clamp(0px, 2.4vw, 13.2px);
+    gap: clamp(0px, 0.6vw, 3.3px);
+  }
+}
+@media (any-hover: hover) {
+  .bl_commonGoogleMapLink:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+}
+.bl_commonGoogleMapLink .el_commonGoogleMapLink_txt {
+  color: var(--txtColor);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+@media screen and (width <= 767px) {
+  .bl_commonGoogleMapLink .el_commonGoogleMapLink_txt {
+    font-size: clamp(0px, 3.2vw, 17.6px);
+  }
+}
+.bl_commonGoogleMapLink .el_commonGoogleMapLink_icon img {
+  width: 100%;
+}
+
+/*--------------------------------
+404ページ
+--------------------------------*/
+.bl_page404Contents {
+  padding-bottom: clamp(0px, 13.89vw, 240px);
+  max-width: clamp(0px, 55.56vw, 960px);
+  margin-inline: auto;
+  width: 100%;
+}
+@media screen and (width <= 767px) {
+  .bl_page404Contents {
+    max-width: 100%;
+    padding-inline: clamp(0px, 6vw, 33px);
+    padding-bottom: clamp(0px, 36vw, 198px);
+  }
+}
+.bl_page404Contents .bl_page404Contents_txt {
+  color: #1A0F04;
+  text-align: center;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.9;
+  margin-bottom: clamp(0px, 3.47vw, 60px);
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 767px) {
+  .bl_page404Contents .bl_page404Contents_txt {
+    font-size: clamp(0px, 3.2vw, 17.6px);
+    margin-bottom: clamp(0px, 10vw, 55px);
+    text-align: left;
+  }
+}
+.bl_page404Contents .bl_page404Contents_btn {
+  display: block;
+  max-width: clamp(0px, 13.89vw, 240px);
+  width: 100%;
+  margin-inline: auto;
+  border-radius: clamp(0px, 0.14vw, 2.4px);
+  background: #E5D8CD;
+  color: var(--black, #1A0F04);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  padding: clamp(0px, 1.04vw, 18px);
+  box-sizing: border-box;
+  text-align: center;
+  transition: opacity 0.5s ease;
+}
+@media (any-hover: hover) {
+  .bl_page404Contents .bl_page404Contents_btn:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+}
+@media screen and (width <= 767px) {
+  .bl_page404Contents .bl_page404Contents_btn {
+    max-width: clamp(0px, 40vw, 220px);
+    border-radius: clamp(0px, 0.4vw, 2.2px);
+    font-size: clamp(0px, 3.6vw, 19.8px);
+    padding: clamp(0px, 3vw, 16.5px);
   }
 }
 
@@ -4095,4 +4168,350 @@ case
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceWrapList_item_caution {
     font-size: clamp(0px, 3.2vw, 17.6px);
   }
+}
+
+/*--------------------------------
+Misson
+---------------------------------*/
+.bl_aboutMissionSection {
+  padding-bottom: clamp(0px, 3.54vw, 61.2px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection {
+    padding-top: clamp(0px, 8vw, 44px);
+    padding-bottom: clamp(0px, 12vw, 66px);
+  }
+}
+.bl_aboutMissionSection .bl_aboutMissionSection_inner {
+  display: grid;
+  grid-template-columns: clamp(0px, 29.17vw, 504px) 1fr;
+  align-items: center;
+  max-width: clamp(0px, 77.78vw, 1344px);
+  margin-inline: auto;
+  width: 100%;
+  margin-bottom: clamp(0px, 4.38vw, 75.6px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection .bl_aboutMissionSection_inner {
+    grid-template-columns: 1fr;
+    gap: clamp(0px, 10vw, 55px);
+    margin-bottom: clamp(0px, 10vw, 55px);
+    max-width: 100%;
+    padding-inline: clamp(0px, 6vw, 33px);
+  }
+}
+.bl_aboutMissionSection .bl_aboutMissionSection_inner .el_aboutMissionSection_ttl {
+  color: var(--black, #1A0F04);
+  font-family: var(--OldSt);
+  font-size: clamp(0px, 4.17vw, 72px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-block: calc(var(--leading-trim));
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection .bl_aboutMissionSection_inner .el_aboutMissionSection_ttl {
+    font-size: clamp(0px, 8vw, 44px);
+    width: fit-content;
+    margin-inline: auto;
+  }
+}
+.bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .el_aboutMissionSection_txtContainer_copy {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.67vw, 28.8px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(0px, 3.47vw, 60px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .el_aboutMissionSection_txtContainer_copy {
+    font-size: clamp(0px, 4.8vw, 26.4px);
+    margin-bottom: clamp(0px, 10vw, 55px);
+    text-align: center;
+  }
+}
+.bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(0px, 1.39vw, 24px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt {
+    gap: clamp(0px, 4vw, 22px);
+  }
+}
+.bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt .el_aboutMissionSection_txtContainer_txt_item {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt .el_aboutMissionSection_txtContainer_txt_item {
+    font-size: clamp(0px, 3.2vw, 17.6px);
+  }
+}
+.bl_aboutMissionSection .bl_aboutMissionSection_slider .el_aboutMissionSection_slider_item {
+  width: fit-content;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--OldSt);
+  font-size: clamp(0px, 6.25vw, 108px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutMissionSection .bl_aboutMissionSection_slider .el_aboutMissionSection_slider_item {
+    font-size: clamp(0px, 18vw, 99px);
+  }
+}
+
+/*--------------------------------
+Concept
+---------------------------------*/
+.bl_aboutConceptSection {
+  padding-block: clamp(0px, 8.33vw, 144px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutConceptSection {
+    padding-block: clamp(0px, 20vw, 110px);
+    padding-inline: clamp(0px, 6vw, 33px);
+  }
+}
+.bl_aboutConceptSection .bl_conceptSection_inner {
+  max-width: clamp(0px, 77.78vw, 1344px);
+  margin-inline: auto;
+  width: 100%;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutConceptSection .bl_conceptSection_inner {
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------
+Doctor
+---------------------------------*/
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner {
+  max-width: clamp(0px, 77.78vw, 1344px);
+  margin-inline: auto;
+  width: 100%;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner {
+    max-width: 100%;
+  }
+}
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper {
+  margin-top: clamp(0px, 3.47vw, 60px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper {
+    margin-top: clamp(0px, 10vw, 55px);
+  }
+}
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(0px, 2.08vw, 36px);
+  padding-bottom: clamp(0px, 0.69vw, 12px);
+  border-bottom: 1px solid #987F65;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
+    font-size: clamp(0px, 3.6vw, 19.8px);
+    margin-bottom: clamp(0px, 6vw, 33px);
+    padding-bottom: clamp(0px, 2vw, 11px);
+  }
+}
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 0.69vw, 12px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
+    gap: clamp(0px, 2vw, 11px);
+  }
+}
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
+  display: grid;
+  grid-template-columns: clamp(0px, 5.56vw, 96px) 1fr;
+  gap: clamp(0px, 2.78vw, 48px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
+    grid-template-columns: clamp(0px, 16vw, 88px) 1fr;
+    gap: clamp(0px, 8vw, 44px);
+  }
+}
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
+    font-size: clamp(0px, 3.2vw, 17.6px);
+  }
+}
+
+/*--------------------------------
+Information
+---------------------------------*/
+.bl_aboutInformationSection {
+  padding-top: clamp(0px, 8.33vw, 144px);
+  padding-bottom: clamp(0px, 13.89vw, 240px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection {
+    padding-top: clamp(0px, 20vw, 110px);
+    padding-bottom: clamp(0px, 40vw, 220px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner {
+  max-width: clamp(0px, 41.67vw, 720px);
+  margin-inline: auto;
+  width: 100%;
+  margin-bottom: clamp(0px, 8.33vw, 144px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner {
+    max-width: 100%;
+    margin-bottom: clamp(0px, 24vw, 132px);
+    padding-inline: clamp(0px, 6vw, 33px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(0px, 1.39vw, 24px);
+  margin-bottom: clamp(0px, 3.47vw, 60px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group {
+    gap: clamp(0px, 4vw, 22px);
+    margin-bottom: clamp(0px, 10vw, 55px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_en {
+  color: var(--black);
+  font-family: var(--OldSt);
+  width: fit-content;
+  margin-inline: auto;
+  font-size: clamp(0px, 4.17vw, 72px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-block: calc(var(--leading-trim));
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_en {
+    font-size: clamp(0px, 8vw, 44px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_ja {
+  color: var(--black);
+  width: fit-content;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_ja {
+    font-size: clamp(0px, 3.2vw, 17.6px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 1.67vw, 28.8px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper {
+    gap: clamp(0px, 4.8vw, 26.4px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item {
+  display: grid;
+  grid-template-columns: clamp(0px, 13.89vw, 240px) 1fr;
+  align-items: flex-start;
+  gap: clamp(0px, 2.78vw, 48px);
+  padding-bottom: clamp(0px, 1.67vw, 28.8px);
+  border-bottom: 1px solid #987F65;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item {
+    grid-template-columns: clamp(0px, 20vw, 110px) 1fr;
+    gap: clamp(0px, 6vw, 33px);
+    padding-bottom: clamp(0px, 4.8vw, 26.4px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_ttl,
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_txt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_ttl,
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_txt {
+    font-size: clamp(0px, 2.8vw, 15.4px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .bl_commonGoogleMapLink {
+  margin-top: clamp(0px, 0.69vw, 12px);
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .bl_commonGoogleMapLink {
+    margin-top: clamp(0px, 2vw, 11px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide {
+  max-width: clamp(0px, 25vw, 432px);
+  width: 100%;
+  border-radius: clamp(0px, 0.14vw, 2.4px);
+  overflow: hidden;
+}
+@media screen and (width <= 767px) {
+  .bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide {
+    max-width: clamp(0px, 72vw, 396px);
+    border-radius: clamp(0px, 0.4vw, 2.2px);
+  }
+}
+.bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
