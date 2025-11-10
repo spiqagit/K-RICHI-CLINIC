@@ -194,13 +194,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");
     if (caseSlider) {
-        const splide = new Splide(caseSlider, {
+        const caseSplide = new Splide(caseSlider, {
             type: "loop",
             arrows: false,
             pagination: false,
             drag: false,
             gap: 20,
             perPage: "auto",
+            perMove: 1, // 追加
+            focus: 0, // 追加
+            clones: 5,
             breakpoints: {
                 500: {
                     perPage: 1,
@@ -209,9 +212,11 @@ document.addEventListener('DOMContentLoaded', function () {
             autoScroll: {
                 speed: 0.5,
                 pauseOnHover: true,
+                rewind: false,
             },
         });
-        splide.mount(window.splide.Extensions);
+        // マウント後にクローンにクラスを追加
+        caseSplide.mount(window.splide.Extensions);
     }
 
     setUpAccordion();
@@ -220,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //絞り込みナビ
     const filterNaviList = document.querySelectorAll(".bl_commonSelectNaviWrapper");
 
-    if(breakPoint<= window.innerWidth ){
+    if (breakPoint <= window.innerWidth) {
         filterNaviList.forEach((filterNavi) => {
             const parentElement = filterNavi.closest(".ly_commonTwoColumnWrapper_inner");
             if (parentElement) {

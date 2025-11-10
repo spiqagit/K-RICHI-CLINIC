@@ -28,4 +28,8 @@
     <script src="
 https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js
 "></script>
+
     <script type="module" src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js"></script>
+    <?php if (is_front_page()): ?>
+        <script type="module" src="<?php echo get_template_directory_uri(); ?>/assets/js/top.js"></script>
+    <?php endif; ?>

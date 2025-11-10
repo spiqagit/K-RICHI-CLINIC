@@ -224,21 +224,21 @@
             </div>
         </div>
 
-        <section class="bl_conceptSection bl_topSection">
+        <section class="bl_conceptSection bl_topSection bl_fadeIn">
             <div class="bl_conceptSection_inner bl_topSection_inner">
                 <div class="bl_conceptSection_txtWrapper">
                     <div class="blcommonSectionTtlWrapper">
                         <hgroup class="bl_commonSectionTtl">
-                            <h2 class="el_commonSectionTtl_ttl_en">Concept</h2>
-                            <p class="el_commonSectionTtl_ttl_ja">コンセプト</p>
+                            <h2 class="el_commonSectionTtl_ttl_en bl_fadeIn_item">Concept</h2>
+                            <p class="el_commonSectionTtl_ttl_ja bl_fadeIn_item">コンセプト</p>
                         </hgroup>
                     </div>
                     <div class="bl_conceptSection_txtContainer">
-                        <div class="bl_conceptSection_copyWrapper">
+                        <div class="bl_conceptSection_copyWrapper bl_fadeIn_item">
                             <p class="el_conceptSection_copyWrapper_main">｢韓国美容 × 日本品質｣</p>
                             <p class="el_conceptSection_copyWrapper_sub"><span class="el_conceptSection_copyWrapper_sub_dash">—</span> その融合が生み出す、<br class="el_conceptSection_copyWrapper_sub_br">新しい美のスタンダード</p>
                         </div>
-                        <div class="bl_conceptSection_txtContainer">
+                        <div class="bl_conceptSection_txtContainer bl_fadeIn_item">
                             <p class="el_conceptSection_txt_txt">K-RICH CLINICは、韓国の最先端美容医療に、日本美容ならではの繊細さと洗練された感性を融合させた、“結果”と“安心”を両立するプレミアム美容クリニックです。</p>
                             <p class="el_conceptSection_txt_txt">私たちは、一時的な美しさを追求するのではなく、再生医療を通じて自然に美しさが育まれる医療を目指しています。</p>
                             <p class="el_conceptSection_txt_txt">さらに、お一人おひとりの肌質や骨格、ライフスタイルを丁寧に見極め、最も適したオーダーメイド治療をご提案いたします。</p>
@@ -246,15 +246,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="bl_conceptSection_imgWrapper">
+                <div class="bl_conceptSection_imgWrapper bl_fadeIn_item">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-concept-img.png" alt="モデルの女性の画像">
                 </div>
             </div>
         </section>
 
-        <section class="bl_featuerSection">
+        <section class="bl_featuerSection bl_fadeIn">
             <div class="bl_featuerSection_inner">
-                <div class="bl_featuerSection_ttlWrapper">
+                <div class="bl_featuerSection_ttlWrapper bl_fadeIn_item">
                     <h3 class="bl_featuerSection_ttl">K-RICH CLINICの特徴</h3>
                 </div>
 
@@ -263,11 +263,11 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="bl_featuerSection_list_item">
-                                    <div class="bl_featuerSection_list_item_imgWrapper">
+                                    <div class="bl_featuerSection_list_item_imgWrapper bl_fadeIn_item">
                                         <p class="el_featuerSection_list_item_imgWrapper_num">01</p>
                                         <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-01.jpg" alt="韓国美容と日本品質の融合">
                                     </div>
-                                    <div class="bl_featuerSection_list_item_txtWrapper">
+                                    <div class="bl_featuerSection_list_item_txtWrapper bl_fadeIn_item">
                                         <p class="el_featuerSection_list_item_ttl">韓国美容と日本品質の融合</p>
                                         <p class="el_featuerSection_list_item_txt">韓国の先端美容医療と日本の繊細な技術を融合し、一人ひとりに合わせたオーダーメイド治療で理想の美しさを叶えます。</p>
                                     </div>
@@ -276,11 +276,11 @@
 
                             <div class="swiper-slide">
                                 <div class="bl_featuerSection_list_item">
-                                    <div class="bl_featuerSection_list_item_imgWrapper">
+                                    <div class="bl_featuerSection_list_item_imgWrapper bl_fadeIn_item">
                                         <p class="el_featuerSection_list_item_imgWrapper_num">02</p>
                                         <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-02.jpg" alt="再生医療とエイジングケアの専門性">
                                     </div>
-                                    <div class="bl_featuerSection_list_item_txtWrapper">
+                                    <div class="bl_featuerSection_list_item_txtWrapper bl_fadeIn_item">
                                         <p class="el_featuerSection_list_item_ttl">再生医療とエイジングケアの専門性</p>
                                         <p class="el_featuerSection_list_item_txt">PRPや幹細胞治療などの再生医療を通じて肌の機能を整え、内側から自然で上質な若返りを導きます。</p>
                                     </div>
@@ -289,11 +289,11 @@
 
                             <div class="swiper-slide">
                                 <div class="bl_featuerSection_list_item">
-                                    <div class="bl_featuerSection_list_item_imgWrapper">
+                                    <div class="bl_featuerSection_list_item_imgWrapper bl_fadeIn_item">
                                         <p class="el_featuerSection_list_item_imgWrapper_num">03</p>
                                         <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-03.jpg" alt="国際的視点と信頼の医療体制">
                                     </div>
-                                    <div class="bl_featuerSection_list_item_txtWrapper">
+                                    <div class="bl_featuerSection_list_item_txtWrapper bl_fadeIn_item">
                                         <p class="el_featuerSection_list_item_ttl">国際的視点と信頼の医療体制</p>
                                         <p class="el_featuerSection_list_item_txt">日韓両国の医師免許を持つ院長が多言語の能力を活かし、世界の医療技術を基に、安心と信頼の医療を提供します。</p>
                                     </div>
@@ -315,12 +315,12 @@
             'slug' => 'director',
         ]);
         ?>
-        <section class="bl_topDoctorSection bl_topSection">
+        <section class="bl_topDoctorSection bl_topSection bl_fadeIn">
             <div class="bl_topDoctorSection_inner bl_topSection_inner">
                 <div class="blcommonSectionTtlWrapper">
                     <hgroup class="bl_commonSectionTtl">
-                        <h2 class="el_commonSectionTtl_ttl_en">Doctor</h2>
-                        <p class="el_commonSectionTtl_ttl_ja">院長紹介</p>
+                        <h2 class="el_commonSectionTtl_ttl_en bl_fadeIn_item">Doctor</h2>
+                        <p class="el_commonSectionTtl_ttl_ja bl_fadeIn_item">院長紹介</p>
                     </hgroup>
                 </div>
                 <?php foreach ($staff_cats as $staff_cat) : ?>
@@ -341,19 +341,19 @@
                     ?>
                     <?php if (!empty($staff_posts)) : ?>
                         <?php foreach ($staff_posts as $staff_post) : ?>
-                            <div class="bl_doctorContentsWrapper">
-                                <div class="bl_doctorContentsWrapper_imgWrapper">
+                            <div class="bl_doctorContentsWrapper ">
+                                <div class="bl_doctorContentsWrapper_imgWrapper bl_fadeIn_item">
                                     <img src="<?php echo get_the_post_thumbnail_url($staff_post->ID); ?>" alt="<?php echo get_the_title($staff_post); ?>">
                                 </div>
                                 <div class="bl_doctorContentsWrapper_txtWrapper">
-                                    <div class="bl_doctorContentsWrapper_nameWrapper">
+                                    <div class="bl_doctorContentsWrapper_nameWrapper bl_fadeIn_item">
                                         <p class="el_doctorContentsWrapper_nameWrapper_job"><?php echo $staff_cat->name; ?></p>
                                         <div class="bl_doctorContentsWrapper_nameWrapper_name">
                                             <p class="el_doctorContentsWrapper_nameWrapper_name_first"><?php echo get_the_title($staff_post->ID); ?></p>
                                             <p class="el_doctorContentsWrapper_nameWrapper_name_last"><?php echo get_field('staff-rubi', $staff_post->ID); ?></p>
                                         </div>
                                     </div>
-                                    <div class="bl_doctorContentsWrapper_txtWrapper_txt">
+                                    <div class="bl_doctorContentsWrapper_txtWrapper_txt bl_fadeIn_item">
                                         <?php echo get_field('director-txt', $staff_post->ID); ?>
                                     </div>
                                 </div>
@@ -366,7 +366,7 @@
         </section>
 
 
-        <section class="bl_topMenuSection bl_topSection">
+        <section class="bl_topMenuSection bl_topSection bl_fadeIn">
             <div class="bl_topMenuSection_inner bl_topSection_inner">
                 <?php
                 $concern_cats = get_terms([
@@ -381,11 +381,11 @@
                     <div class="bl_topMenuSection_item_ttlWrapper">
                         <div class="blcommonSectionTtlWrapper">
                             <hgroup class="bl_commonSectionTtl">
-                                <h2 class="el_commonSectionTtl_ttl_en">Concern</h2>
-                                <p class="el_commonSectionTtl_ttl_ja">お悩み</p>
+                                <h2 class="el_commonSectionTtl_ttl_en bl_fadeIn_item">Concern</h2>
+                                <p class="el_commonSectionTtl_ttl_ja bl_fadeIn_item">お悩み</p>
                             </hgroup>
                         </div>
-                        <div class="bl_commonAllviewBtnWrapper">
+                        <div class="bl_commonAllviewBtnWrapper bl_fadeIn_item">
                             <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
                                 <p class="el_commonAllviewBtn_txt">View all</p>
                                 <div class="el_commonAllviewBtn_arrow">
@@ -402,7 +402,7 @@
                                 <div class="swiper-wrapper">
                                     <?php foreach ($concern_cats as $concern_cat) : ?>
                                         <div class="swiper-slide">
-                                            <div class="bl_concernItem">
+                                            <div class="bl_concernItem bl_fadeIn_item">
                                                 <div class="bl_concernItem_upper">
                                                     <div class="bl_concernItem_upper_imgWrapper">
                                                         <img src="<?php echo get_field('concern-icon', 'concern-cat_' . $concern_cat->term_id); ?>" alt="<?php echo esc_html($concern_cat->name); ?>">
@@ -449,7 +449,7 @@
                             </div>
                         <?php else : ?>
                             <div class="">
-                                <div class="bl_topNoPostContainer">
+                                <div class="bl_topNoPostContainer bl_fadeIn_item">
                                     <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
                                     <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
                                 </div>
@@ -469,17 +469,17 @@
                 ]);
                 ?>
 
-                <div class="bl_topMenuSection_item">
+                <div class="bl_topMenuSection_item bl_fadeIn_item">
                     <div class="bl_topMenuSection_item_ttlWrapper">
                         <div class="blcommonSectionTtlWrapper">
                             <hgroup class="bl_commonSectionTtl">
-                                <h2 class="el_commonSectionTtl_ttl_en">Treatment</h2>
-                                <p class="el_commonSectionTtl_ttl_ja">施術</p>
+                                <h2 class="el_commonSectionTtl_ttl_en bl_fadeIn_item">Treatment</h2>
+                                <p class="el_commonSectionTtl_ttl_ja bl_fadeIn_item">施術</p>
                             </hgroup>
                         </div>
 
                         <?php if (!empty($treatment_cats)) : ?>
-                            <div class="bl_commonAllviewBtnWrapper is_txten">
+                            <div class="bl_commonAllviewBtnWrapper is_txten bl_fadeIn_item">
                                 <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
                                     <p class="el_commonAllviewBtn_txt">View all</p>
                                     <div class="el_commonAllviewBtn_arrow">
@@ -498,7 +498,7 @@
                                 $txt = get_field('menu-cat-txt', 'menu-cat_' . $treatment_cat->term_id);
                             ?>
                                 <div class="bl_treatmentBtnItem">
-                                    <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
+                                    <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn bl_fadeIn_item"
                                         style="background-image: url(<?php echo $banner; ?>);">
                                         <div class="bl_treatmentBtnItem_btn_inner">
                                             <div class="bl_treatmentBtnItem_btn_inner_upper">
@@ -522,9 +522,9 @@
                     <?php else : ?>
 
                         <div class="">
-                            <div class="bl_topNoPostContainer">
-                                <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
-                                <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                            <div class="bl_topNoPostContainer bl_fadeIn">
+                                <p class="bl_topNoPostContainer_txtEn bl_fadeIn_item">Coming soon...</p>
+                                <p class="bl_topNoPostContainer_txtJa bl_fadeIn_item">ただいま公開準備中です。</p>
                             </div>
                         </div>
 
@@ -542,18 +542,18 @@
             'order' => 'DESC'
         ]);
         ?>
-        <section class="bl_topCaseSection bl_topSection">
+        <section class="bl_topCaseSection bl_topSection bl_fadeIn">
             <div class="bl_topSection_inner">
                 <div class="bl_topCaseSection_ttlWrapper">
                     <div class="blcommonSectionTtlWrapper">
                         <hgroup class="bl_commonSectionTtl">
-                            <h2 class="el_commonSectionTtl_ttl_en">Case</h2>
-                            <p class="el_commonSectionTtl_ttl_ja">症例</p>
+                            <h2 class="el_commonSectionTtl_ttl_en bl_fadeIn_item">Case</h2>
+                            <p class="el_commonSectionTtl_ttl_ja bl_fadeIn_item">症例</p>
                         </hgroup>
                     </div>
 
                     <?php if (!empty($treatment_cats)) : ?>
-                        <div class="bl_commonAllviewBtnWrapper is_txten">
+                        <div class="bl_commonAllviewBtnWrapper is_txten bl_fadeIn_item">
                             <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
                                 <p class="el_commonAllviewBtn_txt">View all</p>
                                 <div class="el_commonAllviewBtn_arrow">
@@ -570,7 +570,7 @@
                             <div class="splide__track">
                                 <div class="splide__list">
                                     <?php while ($case_posts->have_posts()) : $case_posts->the_post(); ?>
-                                        <div class="splide__slide">
+                                        <div class="splide__slide bl_fadeIn_item">
                                             <div class="bl_caseItem">
                                                 <a href="<?php the_permalink(); ?>" class="bl_caseItem_linkWrapper">
                                                     <div class="bl_caseItem_imgWrapper">
