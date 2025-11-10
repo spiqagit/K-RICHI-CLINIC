@@ -215,7 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 rewind: false,
             },
         });
-        // マウント後にクローンにクラスを追加
         caseSplide.mount(window.splide.Extensions);
     }
 

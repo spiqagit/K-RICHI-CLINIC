@@ -234,9 +234,9 @@
                         </hgroup>
                     </div>
                     <div class="bl_conceptSection_txtContainer">
-                        <div class="bl_conceptSection_copyWrapper bl_fadeIn_item">
-                            <p class="el_conceptSection_copyWrapper_main">｢韓国美容 × 日本品質｣</p>
-                            <p class="el_conceptSection_copyWrapper_sub"><span class="el_conceptSection_copyWrapper_sub_dash">—</span> その融合が生み出す、<br class="el_conceptSection_copyWrapper_sub_br">新しい美のスタンダード</p>
+                        <div class="bl_conceptSection_copyWrapper">
+                            <p class="el_conceptSection_copyWrapper_main bl_fadeIn_item">｢韓国美容 × 日本品質｣</p>
+                            <p class="el_conceptSection_copyWrapper_sub bl_fadeIn_item"><span class="el_conceptSection_copyWrapper_sub_dash">—</span> その融合が生み出す、<br class="el_conceptSection_copyWrapper_sub_br">新しい美のスタンダード</p>
                         </div>
                         <div class="bl_conceptSection_txtContainer bl_fadeIn_item">
                             <p class="el_conceptSection_txt_txt">K-RICH CLINICは、韓国の最先端美容医療に、日本美容ならではの繊細さと洗練された感性を融合させた、“結果”と“安心”を両立するプレミアム美容クリニックです。</p>
@@ -497,8 +497,8 @@
                                 $banner = get_field('menu-cat-banner', 'menu-cat_' . $treatment_cat->term_id);
                                 $txt = get_field('menu-cat-txt', 'menu-cat_' . $treatment_cat->term_id);
                             ?>
-                                <div class="bl_treatmentBtnItem">
-                                    <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn bl_fadeIn_item"
+                                <div class="bl_treatmentBtnItem bl_fadeIn_item">
+                                    <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
                                         style="background-image: url(<?php echo $banner; ?>);">
                                         <div class="bl_treatmentBtnItem_btn_inner">
                                             <div class="bl_treatmentBtnItem_btn_inner_upper">
@@ -565,7 +565,7 @@
                 </div>
 
                 <?php if (!empty($case_posts)) : ?>
-                    <div class="bl_caseSliderWrapper">
+                    <div class="bl_caseSliderWrapper bl_fadeIn_item">
                         <div class="splide bl_caseSliderWrapper_slider">
                             <div class="splide__track">
                                 <div class="splide__list">
