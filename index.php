@@ -497,24 +497,26 @@
                                 $banner = get_field('menu-cat-banner', 'menu-cat_' . $treatment_cat->term_id);
                                 $txt = get_field('menu-cat-txt', 'menu-cat_' . $treatment_cat->term_id);
                             ?>
-                                <div class="bl_treatmentBtnItem bl_fadeIn_item">
-                                    <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
-                                        style="background-image: url(<?php echo $banner; ?>);">
-                                        <div class="bl_treatmentBtnItem_btn_inner">
-                                            <div class="bl_treatmentBtnItem_btn_inner_upper">
-                                                <p class="el_topMenuSection_item_txtWrapper_ttl">
-                                                    <?php echo esc_html($treatment_cat->name); ?>
-                                                </p>
-                                                <p class="el_topMenuSection_item_txtWrapper_txt">
-                                                    <?php echo $txt; ?>
-                                                </p>
+                                <div class="bl_treatmentBtnItem">
+                                    <div class="bl_fadeIn_item">
+                                        <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
+                                            style="background-image: url(<?php echo $banner; ?>);">
+                                            <div class="bl_treatmentBtnItem_btn_inner">
+                                                <div class="bl_treatmentBtnItem_btn_inner_upper">
+                                                    <p class="el_topMenuSection_item_txtWrapper_ttl">
+                                                        <?php echo esc_html($treatment_cat->name); ?>
+                                                    </p>
+                                                    <p class="el_topMenuSection_item_txtWrapper_txt">
+                                                        <?php echo $txt; ?>
+                                                    </p>
+                                                </div>
+                                                <div class="bl_treatmentBtnItem_btn_inner_arrow">
+                                                    <p class="el_treatmentBtnItem_btn_inner_arrow_txt">メニューを見る</p>
+                                                    <img class="el_treatmentBtnItem_btn_inner_arrow_img" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                </div>
                                             </div>
-                                            <div class="bl_treatmentBtnItem_btn_inner_arrow">
-                                                <p class="el_treatmentBtnItem_btn_inner_arrow_txt">メニューを見る</p>
-                                                <img class="el_treatmentBtnItem_btn_inner_arrow_img" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/common/black-arrow.svg" alt="">
-                                            </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
@@ -565,12 +567,12 @@
                 </div>
 
                 <?php if (!empty($case_posts)) : ?>
-                    <div class="bl_caseSliderWrapper bl_fadeIn_item">
+                    <div class="bl_caseSliderWrapper">
                         <div class="splide bl_caseSliderWrapper_slider">
-                            <div class="splide__track">
+                            <div class="splide__track bl_fadeIn_item">
                                 <div class="splide__list">
                                     <?php while ($case_posts->have_posts()) : $case_posts->the_post(); ?>
-                                        <div class="splide__slide bl_fadeIn_item">
+                                        <div class="splide__slide">
                                             <div class="bl_caseItem">
                                                 <a href="<?php the_permalink(); ?>" class="bl_caseItem_linkWrapper">
                                                     <div class="bl_caseItem_imgWrapper">
