@@ -52,7 +52,7 @@
             font-family: var(--notoSerifJP);
             font-size: vwmin(18, pc);
             font-style: normal;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1.5;
             letter-spacing: calc(0.9 / 18 * 1em);
 
@@ -121,6 +121,10 @@
         height: 100%;
         object-fit: cover;
         z-index: -1;
+
+        @include underSP {
+            height: 80%;
+        }
 
         img {
             width: 100%;
@@ -223,8 +227,7 @@
         align-items: flex-start;
 
         @include underSP {
-            grid-template-columns: 1fr;
-            gap: vwmin(50, sp_m);
+            display: block;
         }
     }
 
@@ -234,6 +237,7 @@
         flex-direction: column;
         gap: vwmin(50, pc);
 
+
         @include underSP {
             display: grid;
             grid-template-columns: auto auto;
@@ -241,6 +245,7 @@
             justify-content: space-between;
             gap: vwmin(20, sp_m);
             width: 100%;
+            margin-bottom: vwmin(50, sp_m);
         }
 
         .blcommonSectionTtlWrapper {
@@ -317,6 +322,8 @@
     }
 
     .bl_newsSliderWrapper {
+        width: 100%;
+
         @media (min-width: 768px) {
             .swiper-wrapper {
                 display: grid;
@@ -331,8 +338,6 @@
             }
         }
 
-
-
         .swiper-wrapper {
 
             @include underSP {
@@ -341,7 +346,7 @@
 
             .swiper-slide {
                 @include underSP {
-                    max-width: vwmin(286, sp_m);
+                    max-width: vwmin(260, sp_m);
                 }
             }
 
@@ -630,6 +635,7 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: 1;
+                    z-index: 1;
                     letter-spacing: calc(0.68 / 34 * 1em);
 
                     @include underSP {
@@ -1024,7 +1030,7 @@ Instagram
 
             }
 
-            .bl_topInstagramContainer_instagramWrapper{
+            .bl_topInstagramContainer_instagramWrapper {
 
                 @include underSP {
                     overflow-x: auto;
@@ -1033,14 +1039,14 @@ Instagram
                 }
 
                 @include underSP {
-                    #sb_instagram{
+                    #sb_instagram {
                         width: vwmin(520, sp_m) !important;
                     }
                 }
 
             }
-            
-        
+
+
 
         }
     }
@@ -1135,7 +1141,7 @@ Instagram
 
             .bl_topMenuSection_item_ttlWrapper {
                 display: grid;
-                grid-template-columns: auto auto;
+                grid-template-columns: 1fr auto;
                 justify-content: space-between;
                 align-items: flex-end;
                 margin-bottom: vwmin(50, pc);
@@ -1207,6 +1213,7 @@ Instagram
 
                                     @include underSP {
                                         font-size: vwmin(28, sp_m);
+                                        margin-block-end: calc(vwmin(16, sp_m) + var(--leading-trim));
                                     }
                                 }
 
@@ -1325,7 +1332,7 @@ Instagram
                         .bl_concernItem_upper_txtWrapper {
                             display: flex;
                             flex-direction: column;
-                            
+
                             .el_concernItem_upper_txtWrapper_txtEn {
                                 color: var(--line, #987F65);
                                 font-family: var(--OldSt);
@@ -1385,6 +1392,7 @@ Instagram
                                     padding-bottom: vwmin(6, pc);
                                     border-bottom: 1px solid #E5D8CD;
                                     transition: opacity 0.5s ease;
+
                                     @include underSP {
                                         grid-template-columns: 1fr vwmin(11, sp_m);
                                         gap: vwmin(10, sp_m);
@@ -1403,6 +1411,7 @@ Instagram
                                         color: var(--txtColor);
                                         font-family: var(--notoSerifJP);
                                         font-size: vwmin(16, pc);
+
                                         @include underSP {
                                             font-size: vwmin(16, sp_m);
                                         }
@@ -1423,6 +1432,12 @@ Instagram
             .bl_topConcernSwiper {
                 @include underSP {
                     overflow: visible;
+
+                    .swiper-slide {
+                        height: auto;
+
+
+                    }
                 }
             }
         }
@@ -1462,10 +1477,10 @@ Case
         }
 
         .splide__slide {
-            width: vwmin(258, pc);
+            width: vwmin(258, pc) !important;
 
             @include underSP {
-                width: vwmin(258, sp_m);
+                width: vwmin(258, sp_m) !important;
             }
         }
     }

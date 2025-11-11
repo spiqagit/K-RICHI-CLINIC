@@ -55,7 +55,7 @@
                             <span class="el_header_navBtn_en">case</span>
                             <span class="el_header_navBtn_ja">症例</span>
                         </a>
-                        <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/case/">
+                        <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/news/">
                             <span class="el_header_navBtn_en">news</span>
                             <span class="el_header_navBtn_ja">お知らせ</span>
                         </a>

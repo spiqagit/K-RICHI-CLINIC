@@ -151,7 +151,7 @@
                     <p class="el_footer_btnTitle_ja">症例</p>
                 </a>
 
-                <a href="<?php echo home_url(); ?>/COLUMN/" class="bl_footer_btnTitle bl_footer_btn">
+                <a href="<?php echo home_url(); ?>/column/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">column</p>
                     <p class="el_footer_btnTitle_ja">コラム</p>
                 </a>
@@ -166,7 +166,7 @@
                     <p class="el_footer_btnTitle_ja">お知らせ</p>
                 </a>
 
-                <a href="<?php echo home_url(); ?>/ACCESS/" class="bl_footer_btnTitle bl_footer_btn">
+                <a href="<?php echo home_url(); ?>/access/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">access</p>
                     <p class="el_footer_btnTitle_ja">アクセス</p>
                 </a>
@@ -181,7 +181,7 @@
         <div class="bl_footer_copyrightContainer">
             <div class="bl_footer_copyrightWrapper_inner">
                 <a class="bl_footer_copyrightLink" href="<?php echo home_url(); ?>/privacy-policy/">プライバシーポリシー</a>
-                <small class="bl_footer_copyrightTxt">&copy;K-richi Clinic</small>
+                <small class="bl_footer_copyrightTxt">&copy;K-rich Clinic</small>
             </div>
         </div>
     </footer>

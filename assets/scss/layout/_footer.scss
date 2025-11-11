@@ -80,7 +80,8 @@
                     margin-block-end: calc(vwmin(20, pc) + var(--leading-trim));
 
                     @include underSP {
-                        font-size: vwmin(100, sp_m);
+                        font-size: vwmin(80, sp_m);
+                    letter-spacing: calc(1.6 / 80 * 1em);
                         margin-block-end: calc(vwmin(20, sp_m) + var(--leading-trim));
                     }
                 }

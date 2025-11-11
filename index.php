@@ -37,7 +37,7 @@
                                 </div>
                                 <?php if ($news_query->have_posts()) : ?>
                                     <div class="bl_commonAllviewBtnWrapper">
-                                        <a href="#" class="bl_commonAllviewBtn">
+                                        <a href="<?php echo home_url(); ?>/news/" class="bl_commonAllviewBtn">
                                             <p class="el_commonAllviewBtn_txt">View all</p>
                                             <div class="el_commonAllviewBtn_arrow">
                                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
@@ -386,7 +386,7 @@
                             </hgroup>
                         </div>
                         <div class="bl_commonAllviewBtnWrapper bl_fadeIn_item">
-                            <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
+                            <a href="<?php echo home_url(); ?>/concern/" class="bl_commonAllviewBtn">
                                 <p class="el_commonAllviewBtn_txt">View all</p>
                                 <div class="el_commonAllviewBtn_arrow">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
@@ -556,7 +556,7 @@
 
                     <?php if (!empty($treatment_cats)) : ?>
                         <div class="bl_commonAllviewBtnWrapper is_txten bl_fadeIn_item">
-                            <a href="<?php echo home_url(); ?>/treatment/" class="bl_commonAllviewBtn">
+                            <a href="<?php echo home_url(); ?>/case/" class="bl_commonAllviewBtn">
                                 <p class="el_commonAllviewBtn_txt">View all</p>
                                 <div class="el_commonAllviewBtn_arrow">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">

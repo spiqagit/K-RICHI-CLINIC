@@ -25,11 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             topConcernSlide = new Swiper(topConcernSwiper, {
                 slidesPerView: 'auto',
+                slideHeight: 'auto',
                 spaceBetween: 20,
-                freeMode: {
-                    enabled: true,
-                    sticky: false,
-                },
             });
         }
 
@@ -39,11 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             newsSlide = new Swiper(newsSwiper, {
                 slidesPerView: 'auto',
-                freeMode: {
-                    enabled: true,
-                    sticky: false,
-                },
-
             });
         }
 
@@ -54,12 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
             featuerSlide = new Swiper(featuerSwiper, {
                 slidesPerView: 'auto',
                 spaceBetween: 30,
-                freeMode: {
-                    enabled: true,
-                    sticky: false,
-                },
-                resistance: true,
-                resistanceRatio: 0,
             });
         }
     };
@@ -174,23 +160,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    const initHeaderHover = () => {
+        // PC版のみ動作（SP版ではCSSで常に表示されるため）
+        if (window.innerWidth <= 767) return;
+
+        const hoverContainers = document.querySelectorAll(".bl_header_navWrapper_hoverContainer");
+        
+        hoverContainers.forEach((container) => {
+            const linkContainer = container.querySelector(".bl_header_navWrapper_hoverContainer_linkContainer");
+            if (!linkContainer) return;
+
+            // ホバーで表示
+            container.addEventListener("mouseenter", () => {
+                linkContainer.style.opacity = "1";
+                linkContainer.style.visibility = "visible";
+            });
+
+            // ホバー解除で非表示
+            container.addEventListener("mouseleave", () => {
+                linkContainer.style.opacity = "0";
+                linkContainer.style.visibility = "hidden";
+            });
+        });
+    };
+
     initAll();
     initMobileNav();
+    initHeaderHover();
 
     window.addEventListener("load", initAll, false);
 
-    window.addEventListener("resize", () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            const wasSwiperActive = swiperBool;
-            if (wasSwiperActive) {
-                destroySwiper();
-                swiperBool = false;
-            }
-            initAll();
-            initMobileNav();
-        }, 100);
-    }, false);
 
     const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");
     if (caseSlider) {
@@ -198,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
             type: "loop",
             arrows: false,
             pagination: false,
-            drag: false,
             gap: 20,
             perPage: "auto",
             perMove: 1, // 追加

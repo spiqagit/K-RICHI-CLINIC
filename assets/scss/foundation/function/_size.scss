@@ -7,9 +7,9 @@
   } @else if $reference == 'tb' {
     @return math.div($px, 1024) * 100vw;
   } @else if $reference == 'sp' {
-    @return math.div($px, 767) * 100vw;
+    @return math.div($px, 428) * 100vw;
   } @else if $reference == 'sp_m' {
-    @return math.div($px, 500) * 100vw;
+    @return math.div($px, 375) * 100vw;
   } @else if $reference == 'sp_s' {
     @return math.div($px, 320) * 100vw;
   } @else {
@@ -41,7 +41,7 @@
     }
   } @else if $reference == 'sp_m' {
     @if not $base {
-      $base: 500;
+      $base: 428;
     }
     @if not $max {
       $max: $pxValue * 1.1;

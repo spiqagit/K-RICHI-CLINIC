@@ -39,7 +39,7 @@
             font-family: var(--notoSerifJP);
             font-size: vwmin(32, pc);
             font-style: normal;
-            font-weight: 500;
+            font-weight: 400;
             line-height: 120%;
             letter-spacing: calc(1.6 / 32 * 1em);
 
@@ -63,7 +63,7 @@
                 font-family: var(--notoSerifJP);
                 font-size: vwmin(28, pc);
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 300;
                 line-height: 1.2;
                 letter-spacing: calc(1.4 / 28 * 1em);
                 border-bottom: 1px dashed #987F65;
@@ -98,7 +98,7 @@
                         font-family: var(--notoSerifJP);
                         font-size: vwmin(24, pc);
                         font-style: normal;
-                        font-weight: 400;
+                        font-weight: 300;
                         line-height: 1.5;
                         letter-spacing: calc(1.2 / 24 * 1em);
                         padding-inline: vwmin(20, pc);
@@ -135,10 +135,9 @@
                                 font-family: var(--notoSerifJP);
                                 font-size: vwmin(20, pc);
                                 font-style: normal;
-                                font-weight: 400;
+                                font-weight: 300;
                                 line-height: 1.2;
                                 letter-spacing: calc(1 / 20 * 1em);
-                                padding-block: vwmin(10, pc);
                                 padding-left: vwmin(20, pc);
                                 border-left: 2px solid #987F65;
                                 margin-bottom: vwmin(18, pc);
@@ -179,7 +178,7 @@
                                         font-family: var(--notoSansJP);
                                         font-size: vwmin(16, pc);
                                         font-style: normal;
-                                        font-weight: 400;
+                                        font-weight: 350;
                                         line-height: 1.8;
                                         letter-spacing: calc(0.8 / 16 * 1em);
 
@@ -195,7 +194,7 @@
                                         font-family: var(--notoSansJP);
                                         font-size: vwmin(14, pc);
                                         font-style: normal;
-                                        font-weight: 400;
+                                        font-weight: 350;
                                         line-height: 1.8;
                                         letter-spacing: calc(0.7 / 14 * 1em);
 
@@ -214,9 +213,20 @@
                                                 gap: vwmin(10, sp_m);
                                             }
 
-                                            .el_amountTableList_item_txt,
                                             .el_amountTableList_item_num {
                                                 text-align: right;
+                                            }
+
+                                            .el_amountTableList_item_txt{
+                                                order: 1;
+                                            }
+
+                                            .el_amountTableList_item_view{
+                                                order: 2;
+                                            }
+
+                                            .el_amountTableList_item_num{
+                                                order: 3;
                                             }
 
                                             @include underSP {
@@ -237,7 +247,7 @@
                                 font-family: var(--notoSerifJP);
                                 font-size: vwmin(14, pc);
                                 font-style: normal;
-                                font-weight: 500;
+                                font-weight: 350;
                                 line-height: 1.5;
                                 letter-spacing: calc(0.7 / 14 * 1em);
 
@@ -254,7 +264,7 @@
                         font-family: var(--notoSerifJP);
                         font-size: vwmin(16, pc);
                         font-style: normal;
-                        font-weight: 500;
+                        font-weight: 400;
                         line-height: 1.5;
                         letter-spacing: calc(0.8 / 16 * 1em);
 
