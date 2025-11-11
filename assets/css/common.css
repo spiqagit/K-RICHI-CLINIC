@@ -175,7 +175,7 @@ html {
   font-family: var(--OldSt), var(--notoSerifJP);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
 }
 @media screen and (width <= 767px) {
   html {
@@ -190,8 +190,8 @@ html {
   width: 100%;
   z-index: 100;
   background-color: rgba(244, 238, 234, 0.6);
-  padding-inline: clamp(0px, 2.78vw, 48px);
-  padding-block: clamp(0px, 1.67vw, 28.8px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
+  padding-block: clamp(0px, 1.67vw, 36px);
 }
 @media screen and (width <= 767px) {
   .ly_header {
@@ -200,10 +200,10 @@ html {
 }
 .ly_header .bl_header_inenr {
   display: grid;
-  grid-template-columns: clamp(0px, 7.92vw, 136.8px) auto;
+  grid-template-columns: clamp(0px, 7.92vw, 171px) auto;
   justify-content: space-between;
   align-items: center;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_header .bl_header_inenr {
@@ -221,7 +221,7 @@ html {
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
-  gap: clamp(0px, 2.08vw, 36px);
+  gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_header_navWrapper {
@@ -254,7 +254,7 @@ html {
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper {
   display: grid;
   grid-template-columns: repeat(10, auto);
-  gap: clamp(0px, 2.22vw, 38.4px);
+  gap: clamp(0px, 2.22vw, 48px);
   align-items: center;
 }
 @media screen and (width <= 767px) {
@@ -280,11 +280,11 @@ html {
   transform: translateX(-50%) translateY(130%);
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.69vw, 15px);
   width: fit-content;
   margin-inline: auto;
   background-color: rgba(244, 238, 234, 0.6);
-  padding: clamp(0px, 0.69vw, 12px);
+  padding: clamp(0px, 0.69vw, 15px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -297,7 +297,7 @@ html {
     transform: translateX(0) translateY(0);
     opacity: 1;
     visibility: visible;
-    gap: clamp(0px, 2.34vw, 11px);
+    gap: clamp(0px, 3.74vw, 17.6px);
     padding: 0;
     padding-left: clamp(0px, 2.34vw, 11px);
     margin-inline: 0;
@@ -307,11 +307,11 @@ html {
 }
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navWrapper_hoverContainer .bl_header_navWrapper_hoverContainer_linkContainer .bl_header_navWrapper_hoverContainer_linkContainer_link {
   display: grid;
-  grid-template-columns: auto clamp(0px, 0.63vw, 10.8px);
+  grid-template-columns: auto clamp(0px, 0.63vw, 13.5px);
   align-items: center;
   justify-content: space-between;
-  gap: clamp(0px, 0.69vw, 12px);
-  width: clamp(0px, 11.81vw, 204px);
+  gap: clamp(0px, 0.69vw, 15px);
+  width: clamp(0px, 11.81vw, 255px);
   transition: opacity 0.3s ease;
 }
 @media screen and (width <= 767px) {
@@ -331,7 +331,7 @@ html {
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navWrapper_hoverContainer .bl_header_navWrapper_hoverContainer_linkContainer .bl_header_navWrapper_hoverContainer_linkContainer_link .el_header_navWrapper_hoverContainer_linkContainer_link_txt {
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -379,14 +379,14 @@ html {
   text-align: center;
   text-transform: uppercase;
   font-family: var(--libreBaskerville);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.056em;
   width: fit-content;
   margin-inline: auto;
-  margin-block-end: calc(clamp(0px, 0.28vw, 4.8px) + var(--leading-trim));
+  margin-block-end: calc(clamp(0px, 0.28vw, 6px) + var(--leading-trim));
   transition: color 0.3s ease;
 }
 @media screen and (width <= 767px) {
@@ -400,7 +400,7 @@ html {
   display: block;
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.2;
@@ -514,7 +514,7 @@ html {
   color: #6F6D6D;
   width: fit-content;
   font-family: var(--libreBaskerville);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -532,7 +532,7 @@ html {
   text-align: center;
   width: fit-content;
   font-family: var(--libreBaskerville);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -563,13 +563,13 @@ html {
 
 .bl_header_fixedContainer {
   position: fixed;
-  bottom: clamp(0px, 2.08vw, 36px);
-  right: clamp(0px, 2.08vw, 36px);
+  bottom: clamp(0px, 2.08vw, 45px);
+  right: clamp(0px, 2.08vw, 45px);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   z-index: 10;
-  gap: clamp(0px, 0.83vw, 14.4px);
+  gap: clamp(0px, 0.83vw, 18px);
   width: fit-content;
 }
 @media screen and (width <= 767px) {
@@ -587,22 +587,25 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: clamp(0px, 0.56vw, 9.6px);
+  gap: clamp(0px, 0.56vw, 12px);
   background-color: #FFF;
-  min-width: clamp(0px, 6.25vw, 108px);
+  min-width: clamp(0px, 6.25vw, 135px);
   width: 100%;
-  border-radius: clamp(0px, 2.08vw, 36px);
+  border-radius: clamp(0px, 2.08vw, 45px);
   transition: background-color 0.3s ease;
+  aspect-ratio: 1/1;
+  height: auto;
 }
 @media screen and (width <= 767px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn {
     min-width: clamp(0px, 21.03vw, 99px);
     border-radius: clamp(0px, 0.93vw, 4.4px);
+    aspect-ratio: auto;
   }
 }
 .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner {
-  padding-top: clamp(0px, 1.46vw, 25.2px);
-  padding-bottom: clamp(0px, 1.11vw, 19.2px);
+  padding-top: clamp(0px, 1.46vw, 31.5px);
+  padding-bottom: clamp(0px, 1.11vw, 24px);
 }
 @media screen and (width <= 767px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner {
@@ -615,12 +618,12 @@ html {
   }
 }
 .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon {
-  max-width: clamp(0px, 1.81vw, 31.2px);
+  max-width: clamp(0px, 1.81vw, 39px);
   width: 100%;
-  height: 100%;
+  height: auto;
   aspect-ratio: 1/1;
   margin-inline: auto;
-  margin-bottom: clamp(0px, 0.28vw, 4.8px);
+  margin-bottom: clamp(0px, 0.56vw, 12px);
 }
 @media screen and (width <= 767px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon {
@@ -628,13 +631,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: clamp(0px, 0.28vw, 4.8px);
+    margin-bottom: clamp(0px, 1.87vw, 8.8px);
   }
 }
 .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon .el_header_fixedContainer_btn_icon_svg {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
+  aspect-ratio: 1/1;
 }
 .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon .el_header_fixedContainer_btn_icon_svg path {
   fill: #402D10;
@@ -647,7 +652,7 @@ html {
   color: var(--dark-brown, #402D10);
   text-align: center;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 600;
   line-height: 1.2;
@@ -676,6 +681,14 @@ html {
 .bl_header_fixedContainer .bl_header_fixedContainer_btn_brown {
   background-color: #402D10;
 }
+.bl_header_fixedContainer .bl_header_fixedContainer_btn_brown .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon {
+  margin-bottom: clamp(0px, 0.56vw, 12px);
+}
+@media screen and (width <= 767px) {
+  .bl_header_fixedContainer .bl_header_fixedContainer_btn_brown .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon {
+    margin-bottom: clamp(0px, 1.87vw, 8.8px);
+  }
+}
 .bl_header_fixedContainer .bl_header_fixedContainer_btn_brown .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon .el_header_fixedContainer_btn_icon_svg path {
   fill: #FFF;
 }
@@ -696,7 +709,7 @@ html {
 
 .ly_reserveOutLineWrapper {
   overflow: hidden;
-  padding-top: clamp(0px, 0.69vw, 12px);
+  padding-top: clamp(0px, 0.69vw, 15px);
   margin-top: -4%;
 }
 @media screen and (width <= 767px) {
@@ -706,7 +719,7 @@ html {
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine {
-  padding-top: clamp(0px, 0.69vw, 12px);
+  padding-top: clamp(0px, 0.69vw, 15px);
   position: relative;
 }
 @media screen and (width <= 767px) {
@@ -724,8 +737,8 @@ html {
   height: 100%;
   border-top: 1px solid #987F65;
   border-inline: 1px solid #987F65;
-  border-radius: clamp(0px, 3.47vw, 60px) clamp(0px, 3.47vw, 60px) 0 0;
-  padding-top: clamp(0px, 0.69vw, 12px);
+  border-radius: clamp(0px, 3.47vw, 75px) clamp(0px, 3.47vw, 75px) 0 0;
+  padding-top: clamp(0px, 0.69vw, 15px);
   z-index: 1;
 }
 @media screen and (width <= 767px) {
@@ -742,12 +755,13 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-block: clamp(0px, 6.94vw, 120px);
-  padding-inline: clamp(0px, 2.78vw, 48px);
-  border-radius: clamp(0px, 2.78vw, 48px) clamp(0px, 2.78vw, 48px) 0 0;
+  padding-block: clamp(0px, 6.94vw, 150px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
+  border-radius: clamp(0px, 2.78vw, 60px) clamp(0px, 2.78vw, 60px) 0 0;
 }
 @media screen and (width <= 767px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection {
+    background-image: url("../img/common/reserve-sp.jpg");
     border-radius: clamp(0px, 9.35vw, 44px) clamp(0px, 9.35vw, 44px) 0 0;
     padding-block: clamp(0px, 23.36vw, 110px);
     padding-inline: clamp(0px, 9.35vw, 44px);
@@ -757,7 +771,7 @@ html {
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title {
   width: fit-content;
   margin-inline: auto;
-  margin-bottom: clamp(0px, 1.39vw, 24px);
+  margin-bottom: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title {
@@ -767,13 +781,13 @@ html {
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_ttl {
   color: #FFF;
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 6.94vw, 120px);
+  font-size: clamp(0px, 6.94vw, 150px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
   margin-block: var(--leading-trim);
-  margin-block-end: calc(clamp(0px, 1.39vw, 24px) + var(--leading-trim));
+  margin-block-end: calc(clamp(0px, 1.39vw, 30px) + var(--leading-trim));
 }
 @media screen and (width <= 767px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_ttl {
@@ -785,7 +799,7 @@ html {
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_txt {
   color: #FFF;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.39vw, 24px);
+  font-size: clamp(0px, 1.39vw, 30px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -801,14 +815,14 @@ html {
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .el_reserveSection_timeTxt {
   color: #FFF;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
   width: fit-content;
   margin-inline: auto;
-  margin-bottom: clamp(0px, 1.39vw, 24px);
+  margin-bottom: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .el_reserveSection_timeTxt {
@@ -820,7 +834,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .bl_reserveBtnWrapper {
@@ -834,8 +848,8 @@ html {
 }
 .ly_footer .bl_footer_upper {
   background-color: #F4EEEA;
-  padding-block: clamp(0px, 5.56vw, 96px);
-  padding-bottom: clamp(0px, 5.56vw, 96px);
+  padding-block: clamp(0px, 5.56vw, 120px);
+  padding-bottom: clamp(0px, 5.56vw, 120px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_upper {
@@ -846,11 +860,11 @@ html {
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer {
   display: grid;
-  grid-template-columns: clamp(0px, 21.32vw, 368.4px) 1fr;
-  gap: clamp(0px, 8.33vw, 144px);
+  grid-template-columns: clamp(0px, 21.32vw, 460.5px) 1fr;
+  gap: clamp(0px, 8.33vw, 180px);
   align-items: center;
   justify-content: center;
-  max-width: clamp(0px, 69.93vw, 1208.4px);
+  max-width: clamp(0px, 69.93vw, 1510.5px);
   width: 100%;
   margin-inline: auto;
 }
@@ -862,7 +876,7 @@ html {
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
@@ -870,10 +884,10 @@ html {
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
-  max-width: clamp(0px, 18.33vw, 316.8px);
+  max-width: clamp(0px, 18.33vw, 396px);
   width: 100%;
   margin-inline: auto;
-  margin-bottom: clamp(0px, 2.08vw, 36px);
+  margin-bottom: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
@@ -885,7 +899,7 @@ html {
   width: 100%;
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
-  margin-bottom: clamp(0px, 1.39vw, 24px);
+  margin-bottom: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
@@ -895,7 +909,7 @@ html {
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
   color: var(--txtColor);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -910,7 +924,7 @@ html {
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -923,10 +937,10 @@ html {
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
   display: grid;
-  grid-template-columns: auto clamp(0px, 0.83vw, 14.4px);
+  grid-template-columns: auto clamp(0px, 0.83vw, 18px);
   align-items: center;
   justify-content: center;
-  gap: clamp(0px, 0.21vw, 3.6px);
+  gap: clamp(0px, 0.21vw, 4.5px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
@@ -943,11 +957,11 @@ html {
 .ly_footer .bl_footer_lower {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: clamp(0px, 6.46vw, 111.6px);
+  gap: clamp(0px, 6.46vw, 139.5px);
   align-items: flex-start;
-  max-width: clamp(0px, 77.78vw, 1344px);
-  padding-top: clamp(0px, 3.47vw, 60px);
-  padding-bottom: clamp(0px, 5.56vw, 96px);
+  max-width: clamp(0px, 77.78vw, 1680px);
+  padding-top: clamp(0px, 3.47vw, 75px);
+  padding-bottom: clamp(0px, 5.56vw, 120px);
   margin-inline: auto;
   border-top: 1px solid #E5D8CD;
 }
@@ -966,7 +980,7 @@ html {
   display: grid;
   grid-template-columns: auto auto;
   width: fit-content;
-  gap: clamp(0px, 0.56vw, 9.6px);
+  gap: clamp(0px, 0.56vw, 12px);
   align-items: center;
 }
 @media screen and (width <= 767px) {
@@ -979,7 +993,7 @@ html {
   width: fit-content;
   color: var(--txtColor);
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -994,7 +1008,7 @@ html {
 .ly_footer .bl_footer_lower .bl_footer_btnTitle .el_footer_btnTitle_ja {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1008,7 +1022,7 @@ html {
 .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer {
@@ -1018,8 +1032,8 @@ html {
 .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer .bl_footer_aboutClinicLinkContainer {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.11vw, 19.2px);
-  padding-left: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 1.11vw, 24px);
+  padding-left: clamp(0px, 0.69vw, 15px);
   border-left: 1px solid var(--txtColor);
 }
 @media screen and (width <= 767px) {
@@ -1032,7 +1046,7 @@ html {
 .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer .bl_footer_aboutClinicLinkContainer .el_footer_aboutClinicLinkContainer_link {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1059,8 +1073,8 @@ html {
 .ly_footer .bl_footer_lower .bl_footer_btnContainer {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  column-gap: clamp(0px, 6.46vw, 111.6px);
-  row-gap: clamp(0px, 2.08vw, 36px);
+  column-gap: clamp(0px, 6.46vw, 139.5px);
+  row-gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_lower .bl_footer_btnContainer {
@@ -1079,8 +1093,8 @@ html {
 }
 .ly_footer .bl_footer_copyrightContainer {
   background-color: #402D10;
-  padding-block: clamp(0px, 1.39vw, 24px);
-  padding-inline: clamp(0px, 11.11vw, 192px);
+  padding-block: clamp(0px, 1.39vw, 30px);
+  padding-inline: clamp(0px, 11.11vw, 240px);
 }
 @media screen and (width <= 767px) {
   .ly_footer .bl_footer_copyrightContainer {
@@ -1107,7 +1121,7 @@ html {
 .ly_footer .bl_footer_copyrightContainer .bl_footer_copyrightWrapper_inner .bl_footer_copyrightLink {
   color: #FFF;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1135,7 +1149,7 @@ html {
   color: #FFF;
   text-align: center;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1150,10 +1164,10 @@ html {
 
 .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn {
   display: grid;
-  grid-template-columns: auto clamp(0px, 2.78vw, 48px);
+  grid-template-columns: auto clamp(0px, 2.08vw, 45px);
   align-items: center;
   justify-content: center;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
   transition: opacity 0.5s ease;
 }
 @media screen and (width <= 767px) {
@@ -1171,13 +1185,13 @@ html {
 .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_txt {
   color: var(--txtColor);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
   margin-block: var(--leading-trim);
-  padding-top: clamp(0px, 0.35vw, 6px);
+  padding-top: clamp(0px, 0.35vw, 7.5px);
 }
 @media screen and (width <= 767px) {
   .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_txt {
@@ -1187,7 +1201,7 @@ html {
 }
 .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_arrow {
   display: grid;
-  grid-template-columns: clamp(0px, 1.25vw, 21.6px);
+  grid-template-columns: clamp(0px, 1.11vw, 24px);
   align-items: center;
   justify-content: center;
   background-color: #402D10;
@@ -1210,8 +1224,8 @@ html {
 --------------------------------*/
 .bl_topDoctorSection {
   background-color: #E5D8CD;
-  padding-block: clamp(0px, 8.33vw, 144px);
-  padding-inline: clamp(0px, 2.78vw, 48px);
+  padding-block: clamp(0px, 8.33vw, 180px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .bl_topDoctorSection {
@@ -1225,16 +1239,16 @@ html {
   }
 }
 .bl_topDoctorSection .blcommonSectionTtlWrapper {
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 .bl_topDoctorSection .bl_doctorContentsWrapper {
-  max-width: clamp(0px, 70.63vw, 1220.4px);
+  max-width: clamp(0px, 70.63vw, 1525.5px);
   width: 100%;
   margin-inline: auto;
   display: grid;
   align-items: flex-start;
-  grid-template-columns: clamp(0px, 22.43vw, 387.6px) 1fr;
-  gap: clamp(0px, 6.53vw, 112.8px);
+  grid-template-columns: clamp(0px, 22.43vw, 484.5px) 1fr;
+  gap: clamp(0px, 6.53vw, 141px);
 }
 @media screen and (width <= 767px) {
   .bl_topDoctorSection .bl_doctorContentsWrapper {
@@ -1244,8 +1258,8 @@ html {
   }
 }
 .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
-  padding: clamp(0px, 0.69vw, 12px);
-  border-radius: clamp(0px, 0.14vw, 2.4px);
+  padding: clamp(0px, 0.69vw, 15px);
+  border-radius: clamp(0px, 0.14vw, 3px);
   border: 1px solid #987F65;
 }
 @media screen and (width <= 767px) {
@@ -1260,14 +1274,14 @@ html {
 .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
-  padding-bottom: clamp(0px, 0.69vw, 12px);
+  padding-bottom: clamp(0px, 0.69vw, 15px);
   border-bottom: 1px solid #987F65;
-  margin-bottom: clamp(0px, 2.08vw, 36px);
+  margin-bottom: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
@@ -1281,7 +1295,7 @@ html {
   display: grid;
   grid-template-columns: max-content max-content;
   align-items: flex-end;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
@@ -1291,7 +1305,7 @@ html {
 .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1305,7 +1319,7 @@ html {
 .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.67vw, 28.8px);
+  font-size: clamp(0px, 1.67vw, 36px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1320,7 +1334,7 @@ html {
 .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1335,10 +1349,10 @@ html {
 .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.8;
@@ -1354,16 +1368,16 @@ html {
 .bl_reserveBtn {
   width: fit-content;
   display: grid;
-  grid-template-columns: clamp(0px, 1.25vw, 21.6px) auto;
+  grid-template-columns: clamp(0px, 1.25vw, 27px) auto;
   align-items: center;
   justify-content: center;
-  gap: clamp(0px, 0.69vw, 12px);
-  max-width: clamp(0px, 16.67vw, 288px);
+  gap: clamp(0px, 0.69vw, 15px);
+  max-width: clamp(0px, 16.67vw, 360px);
   width: 100%;
   background-color: #FFF;
-  padding-block: clamp(0px, 1.18vw, 20.4px);
-  padding-inline: clamp(0px, 1.39vw, 24px);
-  border-radius: clamp(0px, 6.94vw, 120px);
+  padding-block: clamp(0px, 1.18vw, 25.5px);
+  padding-inline: clamp(0px, 1.39vw, 30px);
+  border-radius: clamp(0px, 6.94vw, 150px);
   transition: all 0.5s ease;
 }
 @media screen and (width <= 767px) {
@@ -1380,7 +1394,7 @@ html {
   width: fit-content;
   color: #402D10;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.39vw, 24px);
+  font-size: clamp(0px, 1.39vw, 30px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1451,7 +1465,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(0px, 0.97vw, 16.8px);
+  gap: clamp(0px, 0.97vw, 21px);
 }
 @media screen and (width <= 767px) {
   .bl_commonSnsIconContainer {
@@ -1459,14 +1473,14 @@ html {
   }
 }
 .bl_commonSnsIconContainer .bl_commonSnsIconContainer_btn {
-  max-width: clamp(0px, 2.78vw, 48px);
+  max-width: clamp(0px, 2.78vw, 60px);
   width: 100%;
   aspect-ratio: 1/1;
   height: auto;
-  border-radius: clamp(0px, 0.28vw, 4.8px);
+  border-radius: clamp(0px, 0.28vw, 6px);
   background-color: #FFF;
   display: grid;
-  grid-template-columns: clamp(0px, 1.53vw, 26.4px);
+  grid-template-columns: clamp(0px, 1.53vw, 33px);
   align-items: center;
   justify-content: center;
   transition: opacity 0.5s ease;
@@ -1495,7 +1509,7 @@ html {
   height: auto;
   aspect-ratio: 258/322;
   overflow: hidden;
-  margin-bottom: clamp(0px, 1.39vw, 24px);
+  margin-bottom: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_caseItem .bl_caseItem_linkWrapper .bl_caseItem_imgWrapper {
@@ -1510,8 +1524,8 @@ html {
 .bl_caseItem .bl_caseItem_txtWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 0.28vw, 4.8px);
-  margin-bottom: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.28vw, 6px);
+  margin-bottom: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_caseItem .bl_caseItem_txtWrapper {
@@ -1522,7 +1536,7 @@ html {
 .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper {
@@ -1532,13 +1546,13 @@ html {
 .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper .bl_caseItem_treatmentsWrapper_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.05em;
-  padding: clamp(0px, 0.28vw, 4.8px);
-  border-radius: clamp(0px, 0.28vw, 4.8px);
+  padding: clamp(0px, 0.28vw, 6px);
+  border-radius: clamp(0px, 0.28vw, 6px);
   border: 1px solid var(--line, #987F65);
 }
 @media screen and (width <= 767px) {
@@ -1552,7 +1566,7 @@ html {
 .bl_caseItem .bl_caseItem_txtWrapper .el_caseItem_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1565,7 +1579,7 @@ html {
 }
 .bl_caseItem .bl_caseItem_details {
   background-color: #F4EEEA;
-  border-radius: clamp(0px, 0.14vw, 2.4px);
+  border-radius: clamp(0px, 0.14vw, 3px);
   overflow: hidden;
 }
 @media screen and (width <= 767px) {
@@ -1575,12 +1589,12 @@ html {
 }
 .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary {
   display: grid;
-  grid-template-columns: 1fr clamp(0px, 1.39vw, 24px);
+  grid-template-columns: 1fr clamp(0px, 1.39vw, 30px);
   align-items: center;
-  gap: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.69vw, 15px);
   cursor: pointer;
-  padding-inline: clamp(0px, 0.83vw, 14.4px);
-  padding-block: clamp(0px, 0.69vw, 12px);
+  padding-inline: clamp(0px, 0.83vw, 18px);
+  padding-block: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary {
@@ -1594,7 +1608,7 @@ html {
   display: block;
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1618,10 +1632,10 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(0px, 0.35vw, 6px);
-  height: clamp(0px, 0.07vw, 1.2px);
+  width: clamp(0px, 0.35vw, 7.5px);
+  height: clamp(0px, 0.07vw, 1.5px);
   background-color: var(--txtColor);
-  border-radius: clamp(0px, 0.07vw, 1.2px);
+  border-radius: clamp(0px, 0.07vw, 1.5px);
   transition: transform 0.4s ease;
 }
 @media screen and (width <= 767px) {
@@ -1643,10 +1657,10 @@ html {
   height: 0;
 }
 .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner {
-  padding: clamp(0px, 1.39vw, 24px);
+  padding: clamp(0px, 1.39vw, 30px);
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner {
@@ -1657,15 +1671,15 @@ html {
 .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.05em;
   border-bottom: 1px solid #987F65;
-  padding-block: clamp(0px, 0.42vw, 7.2px);
-  padding-inline: clamp(0px, 0.28vw, 4.8px);
-  margin-bottom: clamp(0px, 0.69vw, 12px);
+  padding-block: clamp(0px, 0.42vw, 9px);
+  padding-inline: clamp(0px, 0.28vw, 6px);
+  margin-bottom: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dt {
@@ -1678,7 +1692,7 @@ html {
 .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dd {
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1703,9 +1717,9 @@ html {
   left: 0;
   width: 100%;
   z-index: 100;
-  padding-top: clamp(0px, 15.42vw, 266.4px);
-  padding-bottom: clamp(0px, 11.81vw, 204px);
-  padding-inline: clamp(0px, 11.11vw, 192px);
+  padding-top: clamp(0px, 15.42vw, 333px);
+  padding-bottom: clamp(0px, 11.81vw, 255px);
+  padding-inline: clamp(0px, 11.11vw, 240px);
   z-index: -1;
 }
 @media screen and (width <= 767px) {
@@ -1718,7 +1732,7 @@ html {
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
   width: fit-content;
 }
 @media screen and (width <= 767px) {
@@ -1729,7 +1743,7 @@ html {
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_en {
   color: var(--black, #1A0F04);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 4.17vw, 72px);
+  font-size: clamp(0px, 4.17vw, 90px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1742,12 +1756,12 @@ html {
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_ja {
   display: grid;
-  grid-template-columns: clamp(0px, 0.42vw, 7.2px) auto;
+  grid-template-columns: clamp(0px, 0.42vw, 9px) auto;
   align-items: center;
-  gap: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.69vw, 15px);
   color: #987F65;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -1771,8 +1785,8 @@ html {
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter {
   position: relative;
   overflow: hidden;
-  margin-top: clamp(0px, 32.99vw, 570px);
-  padding-top: clamp(0px, 0.69vw, 12px);
+  margin-top: clamp(0px, 32.99vw, 712.5px);
+  padding-top: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter {
@@ -1787,9 +1801,9 @@ html {
   left: 50%;
   height: 100%;
   transform: translateX(-50%);
-  border-radius: clamp(0px, 2.78vw, 48px) clamp(0px, 2.78vw, 48px) 0 0;
-  padding-top: clamp(0px, 0.69vw, 12px);
-  padding-inline: clamp(0px, 0.69vw, 12px);
+  border-radius: clamp(0px, 2.78vw, 60px) clamp(0px, 2.78vw, 60px) 0 0;
+  padding-top: clamp(0px, 0.69vw, 15px);
+  padding-inline: clamp(0px, 0.69vw, 15px);
   border-top: 1px solid #F4EEEA;
   border-inline: 1px solid #F4EEEA;
   width: 100%;
@@ -1804,9 +1818,9 @@ html {
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
   background-color: #F4EEEA;
-  padding-bottom: calc(clamp(0px, 2.78vw, 48px) + clamp(0px, 1.25vw, 21.6px));
-  border-radius: clamp(0px, 2.08vw, 36px) clamp(0px, 2.08vw, 36px) 0 0;
-  padding-top: clamp(0px, 11.11vw, 192px);
+  padding-bottom: calc(clamp(0px, 2.78vw, 60px) + clamp(0px, 1.25vw, 27px));
+  border-radius: clamp(0px, 2.08vw, 45px) clamp(0px, 2.08vw, 45px) 0 0;
+  padding-top: clamp(0px, 11.11vw, 240px);
 }
 @media screen and (width <= 767px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
@@ -1820,7 +1834,7 @@ html {
 パンくずリスト
 --------------------------------*/
 .bl_commonBreadcrumbsContainer {
-  padding-inline: clamp(0px, 4.17vw, 72px);
+  padding-inline: clamp(0px, 4.17vw, 90px);
   overflow-x: auto;
 }
 @media screen and (width <= 767px) {
@@ -1831,7 +1845,7 @@ html {
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList {
   display: flex;
   align-items: center;
-  gap: clamp(0px, 1.25vw, 21.6px);
+  gap: clamp(0px, 1.25vw, 27px);
 }
 @media screen and (width <= 767px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList {
@@ -1842,7 +1856,7 @@ html {
   display: block;
   color: #1A0F04;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1865,7 +1879,7 @@ html {
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsItem .bl_commonBreadcrumbsText {
   color: rgba(26, 15, 4, 0.5);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -1879,7 +1893,7 @@ html {
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator {
-  width: clamp(0px, 0.56vw, 9.6px);
+  width: clamp(0px, 0.56vw, 12px);
 }
 @media screen and (width <= 767px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator {
@@ -1895,7 +1909,7 @@ html {
 2カラムレイアウト
 --------------------------------*/
 .ly_commonTwoColumnWrapper {
-  padding-bottom: clamp(0px, 13.89vw, 240px);
+  padding-bottom: clamp(0px, 13.89vw, 300px);
 }
 @media screen and (width <= 767px) {
   .ly_commonTwoColumnWrapper {
@@ -1905,8 +1919,8 @@ html {
 }
 .ly_commonTwoColumnWrapper .ly_commonTwoColumnWrapper_inner {
   display: grid;
-  grid-template-columns: clamp(0px, 16.94vw, 292.8px) 1fr;
-  gap: clamp(0px, 5.56vw, 96px);
+  grid-template-columns: clamp(0px, 16.94vw, 366px) 1fr;
+  gap: clamp(0px, 5.56vw, 120px);
 }
 @media screen and (width <= 767px) {
   .ly_commonTwoColumnWrapper .ly_commonTwoColumnWrapper_inner {
@@ -1918,7 +1932,7 @@ html {
 .bl_commonSelectNaviWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_commonSelectNaviWrapper {
@@ -1929,12 +1943,12 @@ html {
   display: block;
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 0.69vw, 12px);
+  margin-bottom: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_item_label {
@@ -1949,10 +1963,10 @@ html {
   content: "";
   position: absolute;
   top: 50%;
-  right: clamp(0px, 1.11vw, 19.2px);
+  right: clamp(0px, 1.11vw, 24px);
   transform: translateY(-50%);
-  width: clamp(0px, 0.49vw, 8.4px);
-  height: clamp(0px, 0.83vw, 14.4px);
+  width: clamp(0px, 0.49vw, 10.5px);
+  height: clamp(0px, 0.83vw, 18px);
   background-image: url("../img/common/select-arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -1975,13 +1989,13 @@ html {
   display: block;
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.05em;
   background-color: #E5D8CD;
-  padding: clamp(0px, 1.11vw, 19.2px);
+  padding: clamp(0px, 1.11vw, 24px);
   border: none;
   width: 100%;
 }
@@ -1998,10 +2012,10 @@ Google Maps
 .bl_commonGoogleMapLink {
   width: fit-content;
   display: grid;
-  grid-template-columns: auto clamp(0px, 1.25vw, 21.6px);
+  grid-template-columns: auto clamp(0px, 1.25vw, 27px);
   align-items: flex-end;
   justify-content: center;
-  gap: clamp(0px, 0.21vw, 3.6px);
+  gap: clamp(0px, 0.21vw, 4.5px);
   transition: opacity 0.5s ease;
 }
 @media screen and (width <= 767px) {
@@ -2019,7 +2033,7 @@ Google Maps
 .bl_commonGoogleMapLink .el_commonGoogleMapLink_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -2044,8 +2058,8 @@ Google Maps
 404ページ
 --------------------------------*/
 .bl_page404Contents {
-  padding-bottom: clamp(0px, 13.89vw, 240px);
-  max-width: clamp(0px, 55.56vw, 960px);
+  padding-bottom: clamp(0px, 13.89vw, 300px);
+  max-width: clamp(0px, 55.56vw, 1200px);
   margin-inline: auto;
   width: 100%;
 }
@@ -2060,11 +2074,11 @@ Google Maps
   color: #1A0F04;
   text-align: center;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.9;
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
   letter-spacing: 0.05em;
 }
 @media screen and (width <= 767px) {
@@ -2076,19 +2090,19 @@ Google Maps
 }
 .bl_page404Contents .bl_page404Contents_btn {
   display: block;
-  max-width: clamp(0px, 13.89vw, 240px);
+  max-width: clamp(0px, 13.89vw, 300px);
   width: 100%;
   margin-inline: auto;
-  border-radius: clamp(0px, 0.14vw, 2.4px);
+  border-radius: clamp(0px, 0.14vw, 3px);
   background: #E5D8CD;
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.05em;
-  padding: clamp(0px, 1.04vw, 18px);
+  padding: clamp(0px, 1.04vw, 22.5px);
   box-sizing: border-box;
   text-align: center;
   transition: opacity 0.5s ease;
@@ -2114,7 +2128,7 @@ Google Maps
 .bl_topSection {
   position: relative;
   width: 100%;
-  padding-inline: clamp(0px, 2.78vw, 48px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .bl_topSection {
@@ -2122,7 +2136,7 @@ Google Maps
   }
 }
 .bl_topSection .bl_topSection_inner {
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   margin-inline: auto;
 }
 @media screen and (width <= 767px) {
@@ -2137,13 +2151,13 @@ Google Maps
 .blcommonSectionTtlWrapper .bl_commonSectionTtl .el_commonSectionTtl_ttl_en {
   color: var(--txtColor);
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 3.33vw, 57.6px);
+  font-size: clamp(0px, 3.33vw, 72px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
   margin-block-start: var(--leading-trim);
-  margin-block-end: calc(clamp(0px, 1.39vw, 24px) + var(--leading-trim));
+  margin-block-end: calc(clamp(0px, 1.39vw, 30px) + var(--leading-trim));
 }
 @media screen and (width <= 767px) {
   .blcommonSectionTtlWrapper .bl_commonSectionTtl .el_commonSectionTtl_ttl_en {
@@ -2154,7 +2168,7 @@ Google Maps
 .blcommonSectionTtlWrapper .bl_commonSectionTtl .el_commonSectionTtl_ttl_ja {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 300;
   line-height: 1.5;
@@ -2172,20 +2186,20 @@ Google Maps
 .bl_topNoPostContainer .bl_topNoPostContainer_txtEn {
   color: var(--txtColor);
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 3.33vw, 57.6px);
+  font-size: clamp(0px, 3.33vw, 72px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
   margin-block: var(--leading-trim);
-  margin-block-end: calc(clamp(0px, 1.39vw, 24px) + var(--leading-trim));
+  margin-block-end: calc(clamp(0px, 1.39vw, 30px) + var(--leading-trim));
   width: fit-content;
   margin-inline: auto;
 }
 .bl_topNoPostContainer .bl_topNoPostContainer_txtJa {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -2197,8 +2211,8 @@ Google Maps
 .bl_fvSection {
   position: relative;
   width: 100%;
-  padding-block: clamp(0px, 20.83vw, 360px);
-  padding-inline: clamp(0px, 2.78vw, 48px);
+  padding-block: clamp(0px, 20.83vw, 450px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2231,9 +2245,9 @@ Google Maps
 .bl_fvSection .bl_fvSection_txt {
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
-  text-shadow: 0 clamp(0px, 0.28vw, 4.8px) clamp(0px, 1.74vw, 30px) rgba(73, 52, 18, 0.2);
+  text-shadow: 0 clamp(0px, 0.28vw, 6px) clamp(0px, 1.74vw, 37.5px) rgba(73, 52, 18, 0.2);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 3.61vw, 62.4px);
+  font-size: clamp(0px, 3.61vw, 78px);
   font-style: normal;
   font-weight: 600;
   line-height: 1.4;
@@ -2253,7 +2267,7 @@ Google Maps
 }
 .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline {
   position: relative;
-  padding-top: clamp(0px, 0.69vw, 12px);
+  padding-top: clamp(0px, 0.69vw, 15px);
   z-index: 0;
 }
 @media screen and (width <= 767px) {
@@ -2268,9 +2282,9 @@ Google Maps
   left: 50%;
   height: 100%;
   transform: translateX(-50%);
-  border-radius: clamp(0px, 2.78vw, 48px) clamp(0px, 2.78vw, 48px) 0 0;
-  padding-top: clamp(0px, 0.69vw, 12px);
-  padding-inline: clamp(0px, 0.69vw, 12px);
+  border-radius: clamp(0px, 2.78vw, 60px) clamp(0px, 2.78vw, 60px) 0 0;
+  padding-top: clamp(0px, 0.69vw, 15px);
+  padding-inline: clamp(0px, 0.69vw, 15px);
   border-top: 1px solid #F4EEEA;
   border-inline: 1px solid #F4EEEA;
   width: 100%;
@@ -2285,7 +2299,7 @@ Google Maps
 }
 .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline .bl_secondViewSectionWrapper {
   background-color: #F4EEEA;
-  border-radius: clamp(0px, 2.08vw, 36px) clamp(0px, 2.08vw, 36px) 0 0;
+  border-radius: clamp(0px, 2.08vw, 45px) clamp(0px, 2.08vw, 45px) 0 0;
 }
 @media screen and (width <= 767px) {
   .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline .bl_secondViewSectionWrapper {
@@ -2296,10 +2310,10 @@ Google Maps
 .bl_newsSection {
   position: relative;
   width: 100%;
-  padding-inline: clamp(0px, 2.78vw, 48px);
-  padding-top: clamp(0px, 8.33vw, 144px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
+  padding-top: clamp(0px, 8.33vw, 180px);
   z-index: 1;
-  margin-bottom: clamp(0px, 8.33vw, 144px);
+  margin-bottom: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_newsSection {
@@ -2311,8 +2325,8 @@ Google Maps
 }
 .bl_newsSection .bl_newsSection_inner {
   display: grid;
-  grid-template-columns: clamp(0px, 10.76vw, 186px) 1fr;
-  gap: clamp(0px, 7.5vw, 129.6px);
+  grid-template-columns: clamp(0px, 10.76vw, 232.5px) 1fr;
+  gap: clamp(0px, 7.5vw, 162px);
   align-items: flex-start;
 }
 @media screen and (width <= 767px) {
@@ -2324,7 +2338,7 @@ Google Maps
   width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 3.47vw, 60px);
+  gap: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_newsSection .bl_newsttlWrapper {
@@ -2342,7 +2356,7 @@ Google Maps
 }
 .bl_newsSection .bl_topNewsItem {
   display: block;
-  padding: clamp(0px, 1.39vw, 24px);
+  padding: clamp(0px, 1.39vw, 30px);
   border-inline: 1px solid #987F65;
   background-color: transparent;
   transition: background-color 0.5s ease;
@@ -2360,7 +2374,7 @@ Google Maps
 }
 .bl_newsSection .bl_topNewsItem .bl_topNewsItem_thumbnailWrapper {
   width: 100%;
-  margin-bottom: clamp(0px, 1.39vw, 24px);
+  margin-bottom: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_newsSection .bl_topNewsItem .bl_topNewsItem_thumbnailWrapper {
@@ -2375,7 +2389,7 @@ Google Maps
 .bl_newsSection .bl_topNewsItem .bl_topNewsItem_txtWrapper .el_topNewsItem_txtWrapper_date {
   color: var(--txtColor);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -2389,7 +2403,7 @@ Google Maps
 .bl_newsSection .bl_topNewsItem .bl_topNewsItem_txtWrapper .el_topNewsItem_txtWrapper_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -2438,8 +2452,8 @@ Google Maps
 .bl_conceptSection {
   width: 100%;
   background-color: #E5D8CD;
-  padding-block: clamp(0px, 8.33vw, 144px);
-  padding-inline: clamp(0px, 2.78vw, 48px);
+  padding-block: clamp(0px, 8.33vw, 180px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .bl_conceptSection {
@@ -2451,8 +2465,8 @@ Google Maps
 }
 .bl_conceptSection .bl_conceptSection_inner {
   display: grid;
-  grid-template-columns: clamp(0px, 45.14vw, 780px) clamp(0px, 27.78vw, 480px);
-  gap: clamp(0px, 5.56vw, 96px);
+  grid-template-columns: clamp(0px, 45.14vw, 975px) clamp(0px, 27.78vw, 600px);
+  gap: clamp(0px, 5.56vw, 120px);
   align-items: center;
 }
 @media screen and (width <= 767px) {
@@ -2466,7 +2480,7 @@ Google Maps
   }
 }
 .bl_conceptSection .bl_conceptSection_txtWrapper .bl_commonSectionTtl {
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_commonSectionTtl {
@@ -2481,13 +2495,13 @@ Google Maps
 .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_copyWrapper {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.67vw, 28.8px);
+  font-size: clamp(0px, 1.67vw, 36px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 1.39vw, 24px);
-  margin-bottom: clamp(0px, 2.08vw, 36px);
+  margin-bottom: clamp(0px, 1.39vw, 30px);
+  margin-bottom: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_copyWrapper {
@@ -2527,7 +2541,7 @@ Google Maps
 .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_txtContainer {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.08vw, 36px);
+  gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_txtContainer {
@@ -2537,7 +2551,7 @@ Google Maps
 .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_txtContainer .el_conceptSection_txt_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.9;
@@ -2560,8 +2574,8 @@ Google Maps
 .bl_featuerSection {
   overflow: hidden;
   background-color: #F4EEEA;
-  padding-top: clamp(0px, 6.94vw, 120px);
-  padding-bottom: clamp(0px, 8.33vw, 144px);
+  padding-top: clamp(0px, 6.94vw, 150px);
+  padding-bottom: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_featuerSection {
@@ -2570,7 +2584,7 @@ Google Maps
 }
 .bl_featuerSection .bl_featuerSection_ttlWrapper {
   width: 100%;
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   margin-inline: auto;
 }
 @media screen and (width <= 767px) {
@@ -2583,14 +2597,14 @@ Google Maps
   color: var(--txtColor);
   text-align: center;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.67vw, 28.8px);
+  font-size: clamp(0px, 1.67vw, 36px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
-  padding-block: clamp(0px, 0.69vw, 12px);
+  padding-block: clamp(0px, 0.69vw, 15px);
   border-block: 1px solid #987F65;
-  margin-bottom: clamp(0px, 2.08vw, 36px);
+  margin-bottom: clamp(0px, 2.08vw, 45px);
   max-width: vwmax(1120, pc);
   margin-inline: auto;
 }
@@ -2602,7 +2616,7 @@ Google Maps
   }
 }
 .bl_featuerSection .bl_featuerSection_listWrapper {
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   margin-inline: auto;
 }
 @media screen and (width <= 767px) {
@@ -2625,10 +2639,10 @@ Google Maps
 @media (min-width: 768px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .swiper-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, clamp(0px, 23.19vw, 400.8px));
+    grid-template-columns: repeat(3, clamp(0px, 23.19vw, 501px));
     justify-content: center;
     align-items: start;
-    gap: clamp(0px, 4.17vw, 72px);
+    gap: clamp(0px, 4.17vw, 90px);
   }
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .swiper-slide {
     display: grid;
@@ -2652,7 +2666,7 @@ Google Maps
   display: grid;
   grid-template-rows: subgrid;
   grid-row: 2 span;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item {
@@ -2663,20 +2677,20 @@ Google Maps
 }
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_imgWrapper {
   position: relative;
-  border-radius: clamp(0px, 0.69vw, 12px);
+  border-radius: clamp(0px, 0.69vw, 15px);
   overflow: hidden;
 }
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_imgWrapper .el_featuerSection_list_item_imgWrapper_num {
   position: absolute;
   top: 0;
   left: 0;
-  padding-inline: clamp(0px, 1.04vw, 18px);
-  padding-block: clamp(0px, 1.6vw, 27.6px);
-  border-radius: 0 0 clamp(0px, 0.69vw, 12px) 0;
+  padding-inline: clamp(0px, 1.04vw, 22.5px);
+  padding-block: clamp(0px, 1.6vw, 34.5px);
+  border-radius: 0 0 clamp(0px, 0.69vw, 15px) 0;
   background-color: rgb(244, 238, 234);
   color: var(--dark-brown, #402D10);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 2.36vw, 40.8px);
+  font-size: clamp(0px, 2.36vw, 51px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -2694,12 +2708,12 @@ Google Maps
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 600;
   line-height: 1.8;
   letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 0.69vw, 12px);
+  margin-bottom: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_ttl {
@@ -2710,7 +2724,7 @@ Google Maps
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.8;
@@ -2727,7 +2741,7 @@ Column
 --------------------------------*/
 .bl_topColumnSection {
   overflow: hidden;
-  padding-bottom: clamp(0px, 8.33vw, 144px);
+  padding-bottom: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection {
@@ -2745,10 +2759,10 @@ Column
 }
 .bl_topColumnSection .bl_topColumnSection_ttlWrapper {
   display: grid;
-  grid-template-columns: auto clamp(0px, 7.78vw, 134.4px);
+  grid-template-columns: auto clamp(0px, 7.78vw, 168px);
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection .bl_topColumnSection_ttlWrapper {
@@ -2765,8 +2779,8 @@ Column
 }
 .bl_topColumnSection .bl_topColumnSection_ttlWrapper .bl_topColumnSection_sliderNaviWrapper {
   display: grid;
-  grid-template-columns: repeat(2, clamp(0px, 3.19vw, 55.2px));
-  gap: clamp(0px, 0.69vw, 12px);
+  grid-template-columns: repeat(2, clamp(0px, 3.19vw, 69px));
+  gap: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection .bl_topColumnSection_ttlWrapper .bl_topColumnSection_sliderNaviWrapper {
@@ -2778,7 +2792,7 @@ Column
   height: auto;
   aspect-ratio: 1/1;
   display: grid;
-  grid-template-columns: clamp(0px, 1.46vw, 25.2px);
+  grid-template-columns: clamp(0px, 1.46vw, 31.5px);
   justify-content: center;
   align-items: center;
   border: 1px solid #987F65;
@@ -2798,7 +2812,7 @@ Column
   height: auto;
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper {
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper {
@@ -2812,7 +2826,7 @@ Column
   width: 100%;
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_topColumnSection_slider .swiper-wrapper {
-  max-width: clamp(0px, 36.11vw, 624px);
+  max-width: clamp(0px, 36.11vw, 780px);
   width: 100%;
 }
 @media screen and (width <= 767px) {
@@ -2828,11 +2842,11 @@ Column
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner {
   display: grid;
-  grid-template-columns: clamp(0px, 9.72vw, 168px) 1fr;
-  gap: clamp(0px, 1.67vw, 28.8px);
+  grid-template-columns: clamp(0px, 9.72vw, 210px) 1fr;
+  gap: clamp(0px, 1.67vw, 36px);
   width: 100%;
-  padding: clamp(0px, 1.39vw, 24px);
-  border-radius: clamp(0px, 0.28vw, 4.8px);
+  padding: clamp(0px, 1.39vw, 30px);
+  border-radius: clamp(0px, 0.28vw, 6px);
   background-color: #E5D8CD;
   transition: opacity 0.5s ease;
 }
@@ -2880,9 +2894,9 @@ Column
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper {
   display: grid;
   grid-template-columns: min-content 1fr;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
   align-items: flex-start;
-  margin-bottom: clamp(0px, 0.69vw, 12px);
+  margin-bottom: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper {
@@ -2894,13 +2908,13 @@ Column
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .el_columnBtnItem_postInfoWrapper_date {
   color: var(--black, #1A0F04);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.03em;
   width: fit-content;
-  padding-top: clamp(0px, 0.14vw, 2.4px);
+  padding-top: clamp(0px, 0.14vw, 3px);
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .el_columnBtnItem_postInfoWrapper_date {
@@ -2911,7 +2925,7 @@ Column
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .bl_columnBtnItem_postInfoWrapper_cats {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.69vw, 15px);
   width: fit-content;
 }
 @media screen and (width <= 767px) {
@@ -2923,14 +2937,14 @@ Column
   display: block;
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.05em;
-  padding-block: clamp(0px, 0.14vw, 2.4px);
-  padding-inline: clamp(0px, 0.56vw, 9.6px);
-  border-radius: clamp(0px, 0.14vw, 2.4px);
+  padding-block: clamp(0px, 0.14vw, 3px);
+  padding-inline: clamp(0px, 0.56vw, 12px);
+  border-radius: clamp(0px, 0.14vw, 3px);
   background-color: #F4EEEA;
 }
 @media screen and (width <= 767px) {
@@ -2944,7 +2958,7 @@ Column
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .el_columnBtnItem_txtWrapper_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -2956,18 +2970,21 @@ Column
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_txtWrapper_arrow {
+  display: block;
   width: 100%;
-  max-width: clamp(0px, 1.04vw, 18px);
+  max-width: clamp(0px, 1.81vw, 39px);
   margin-left: auto;
 }
 @media screen and (width <= 767px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_txtWrapper_arrow {
-    max-width: clamp(0px, 3.5vw, 16.5px);
+    max-width: clamp(0px, 6.07vw, 28.6px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_txtWrapper_arrow img {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 .bl_topColumnSection .bl_topColumnSection_btnWrapper {
   width: fit-content;
@@ -2985,8 +3002,8 @@ Column
 Instagram
 --------------------------------*/
 .bl_topSnsSection {
-  padding-bottom: clamp(0px, 8.33vw, 144px);
-  padding-inline: clamp(0px, 2.78vw, 48px);
+  padding-bottom: clamp(0px, 8.33vw, 180px);
+  padding-inline: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .bl_topSnsSection {
@@ -2995,12 +3012,12 @@ Instagram
   }
 }
 .bl_topSnsSection .bl_topInstagramContainer {
-  max-width: clamp(0px, 76.39vw, 1320px);
+  max-width: clamp(0px, 76.39vw, 1650px);
   margin-inline: auto;
-  padding: clamp(0px, 0.69vw, 12px);
-  border-radius: clamp(0px, 0.42vw, 7.2px);
+  padding: clamp(0px, 0.69vw, 15px);
+  border-radius: clamp(0px, 0.42vw, 9px);
   background-color: #ECDCCF;
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_topSnsSection .bl_topInstagramContainer {
@@ -3012,14 +3029,14 @@ Instagram
 }
 .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner {
   display: grid;
-  grid-template-columns: clamp(0px, 21.04vw, 363.6px) clamp(0px, 34.86vw, 602.4px);
-  gap: clamp(0px, 5.56vw, 96px);
+  grid-template-columns: clamp(0px, 21.04vw, 454.5px) clamp(0px, 34.86vw, 753px);
+  gap: clamp(0px, 5.56vw, 120px);
   align-items: center;
   justify-content: center;
-  border-radius: clamp(0px, 0.42vw, 7.2px);
+  border-radius: clamp(0px, 0.42vw, 9px);
   border: 1px solid var(--line, #987F65);
   background-color: #ECDCCF;
-  padding-block: clamp(0px, 2.08vw, 36px);
+  padding-block: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner {
@@ -3031,7 +3048,7 @@ Instagram
 .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_ttlWrapper .el_topInstagramContainer_ttl {
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 4.17vw, 72px);
+  font-size: clamp(0px, 3.33vw, 72px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -3039,7 +3056,7 @@ Instagram
   width: fit-content;
   margin-inline: auto;
   margin-block: var(--leading-trim);
-  margin-block-end: calc(clamp(0px, 2.08vw, 36px) + var(--leading-trim));
+  margin-block-end: calc(clamp(0px, 2.08vw, 45px) + var(--leading-trim));
 }
 @media screen and (width <= 767px) {
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_ttlWrapper .el_topInstagramContainer_ttl {
@@ -3064,12 +3081,12 @@ Instagram
   width: fit-content;
   margin-inline: auto;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 1.11vw, 19.2px);
+  margin-bottom: clamp(0px, 1.11vw, 24px);
 }
 @media screen and (width <= 767px) {
   .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .el_topSnsSection_otherSnsWrapper_ttl {
@@ -3081,7 +3098,7 @@ Instagram
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: clamp(0px, 2.08vw, 36px);
+  gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .bl_topSnsSection_otherSnsWrapper_snsList {
@@ -3093,7 +3110,7 @@ Instagram
   width: 100%;
   aspect-ratio: 1/1;
   height: auto;
-  max-width: clamp(0px, 1.81vw, 31.2px);
+  max-width: clamp(0px, 1.81vw, 39px);
   width: 100%;
   transition: opacity 0.5s ease;
 }
@@ -3121,7 +3138,7 @@ Instagram
   overflow: hidden;
   width: 100%;
   background-color: #F4EEEA;
-  padding-block: clamp(0px, 8.33vw, 144px);
+  padding-block: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection {
@@ -3131,7 +3148,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 8.33vw, 144px);
+  gap: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner {
@@ -3143,7 +3160,7 @@ Instagram
   grid-template-columns: 1fr auto;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topMenuSection_item_ttlWrapper {
@@ -3153,7 +3170,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(0px, 2.08vw, 36px);
+  gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer {
@@ -3168,8 +3185,8 @@ Instagram
   display: block;
   display: grid;
   grid-template-columns: 1fr 0.2fr;
-  padding: clamp(0px, 1.67vw, 28.8px);
-  border-radius: clamp(0px, 0.69vw, 12px);
+  padding: clamp(0px, 1.67vw, 36px);
+  border-radius: clamp(0px, 0.69vw, 15px);
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -3191,7 +3208,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.57vw, 44.4px);
+  gap: clamp(0px, 2.57vw, 55.5px);
   justify-content: space-between;
 }
 @media screen and (width <= 767px) {
@@ -3202,12 +3219,12 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifDisplay);
-  font-size: clamp(0px, 2.22vw, 38.4px);
+  font-size: clamp(0px, 2.22vw, 48px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  margin-block-end: calc(clamp(0px, 1.11vw, 19.2px) + var(--leading-trim));
+  margin-block-end: calc(clamp(0px, 1.11vw, 24px) + var(--leading-trim));
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_ttl {
@@ -3218,7 +3235,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -3231,14 +3248,14 @@ Instagram
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow {
   display: grid;
-  grid-template-columns: max-content clamp(0px, 0.56vw, 9.6px);
+  grid-template-columns: max-content clamp(0px, 0.56vw, 12px);
   background-color: #FFF;
   align-items: center;
   width: fit-content;
-  gap: clamp(0px, 0.69vw, 12px);
-  border-radius: clamp(0px, 6.94vw, 120px);
-  padding-inline: clamp(0px, 1.39vw, 24px);
-  padding-block: clamp(0px, 0.56vw, 9.6px);
+  gap: clamp(0px, 0.69vw, 15px);
+  border-radius: clamp(0px, 6.94vw, 150px);
+  padding-inline: clamp(0px, 1.39vw, 30px);
+  padding-block: clamp(0px, 0.56vw, 12px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow {
@@ -3251,7 +3268,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow .el_treatmentBtnItem_btn_inner_arrow_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -3267,20 +3284,27 @@ Instagram
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .swiper-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(0px, 2.08vw, 36px);
+    gap: clamp(0px, 2.08vw, 45px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem {
   height: 100%;
   background-color: #FFFBF8;
+  overflow: hidden;
+  border-radius: clamp(0px, 0.28vw, 6px);
+}
+@media screen and (width <= 767px) {
+  .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem {
+    border-radius: clamp(0px, 0.93vw, 4.4px);
+  }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper {
   display: grid;
-  grid-template-columns: clamp(0px, 3.47vw, 60px) auto;
-  gap: clamp(0px, 0.69vw, 12px);
+  grid-template-columns: clamp(0px, 3.47vw, 75px) auto;
+  gap: clamp(0px, 0.69vw, 15px);
   align-items: center;
-  padding-block: clamp(0px, 0.69vw, 12px);
-  padding-inline: clamp(0px, 0.97vw, 16.8px);
+  padding-block: clamp(0px, 0.69vw, 15px);
+  padding-inline: clamp(0px, 0.97vw, 21px);
   background-color: #E5D8CD;
   width: 100%;
 }
@@ -3294,13 +3318,13 @@ Instagram
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_imgWrapper {
   display: grid;
-  grid-template-columns: clamp(0px, 2.08vw, 36px);
+  grid-template-columns: clamp(0px, 2.08vw, 45px);
   justify-content: center;
   align-items: center;
   border-radius: 100%;
   background-color: #987F65;
   aspect-ratio: 1/1;
-  padding: clamp(0px, 0.49vw, 8.4px);
+  padding: clamp(0px, 0.49vw, 10.5px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_imgWrapper {
@@ -3320,7 +3344,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_txtWrapper .el_concernItem_upper_txtWrapper_txtEn {
   color: var(--line, #987F65);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -3335,7 +3359,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_txtWrapper .el_concernItem_upper_txtWrapper_txtJa {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -3347,8 +3371,8 @@ Instagram
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower {
-  padding-block: clamp(0px, 1.39vw, 24px);
-  padding-inline: clamp(0px, 0.97vw, 16.8px);
+  padding-block: clamp(0px, 1.39vw, 30px);
+  padding-inline: clamp(0px, 0.97vw, 21px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower {
@@ -3359,7 +3383,7 @@ Instagram
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.11vw, 19.2px);
+  gap: clamp(0px, 1.11vw, 24px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList {
@@ -3368,10 +3392,10 @@ Instagram
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList .bl_concernItem_postList_item .bl_concernItem_postList_item_btn {
   display: grid;
-  grid-template-columns: 1fr clamp(0px, 0.76vw, 13.2px);
+  grid-template-columns: 1fr clamp(0px, 0.76vw, 16.5px);
   align-items: center;
-  gap: clamp(0px, 0.69vw, 12px);
-  padding-bottom: clamp(0px, 0.42vw, 7.2px);
+  gap: clamp(0px, 0.69vw, 15px);
+  padding-bottom: clamp(0px, 0.42vw, 9px);
   border-bottom: 1px solid #E5D8CD;
   transition: opacity 0.5s ease;
 }
@@ -3392,7 +3416,7 @@ Instagram
   width: 100%;
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
 }
 @media screen and (width <= 767px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList .bl_concernItem_postList_item .bl_concernItem_postList_item_btn .el_concernItem_postList_item_btn_txt {
@@ -3416,12 +3440,12 @@ Instagram
 Case
 --------------------------------*/
 .bl_topCaseSection {
-  padding-block: clamp(0px, 13.19vw, 228px);
+  padding-block: clamp(0px, 13.19vw, 285px);
   background-color: #E5D8CD;
 }
 @media screen and (width <= 767px) {
   .bl_topCaseSection {
-    padding-block: clamp(0px, 39.72vw, 187px);
+    padding-block: clamp(0px, 23.36vw, 110px);
   }
 }
 .bl_topCaseSection .bl_topCaseSection_ttlWrapper {
@@ -3429,7 +3453,7 @@ Case
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_topCaseSection .bl_topCaseSection_ttlWrapper {
@@ -3440,7 +3464,7 @@ Case
   transition-timing-function: linear !important;
 }
 .bl_topCaseSection .bl_caseSliderWrapper_slider .splide__slide {
-  width: clamp(0px, 17.92vw, 309.6px) !important;
+  width: clamp(0px, 17.92vw, 387px) !important;
 }
 @media screen and (width <= 767px) {
   .bl_topCaseSection .bl_caseSliderWrapper_slider .splide__slide {
@@ -3454,10 +3478,10 @@ case
 /* archive
 ============================== */
 .ly_2col.un_case {
-  padding: 0 clamp(0px, 1.39vw, 24px);
-  margin: clamp(0px, 11.11vw, 192px) auto 0;
+  padding: 0 clamp(0px, 1.39vw, 30px);
+  margin: clamp(0px, 11.11vw, 240px) auto 0;
   box-sizing: content-box;
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   display: flex;
   justify-content: space-between;
 }
@@ -3465,8 +3489,8 @@ case
   .ly_2col.un_case {
     max-width: none;
     flex-direction: column-reverse;
-    margin: clamp(0px, 9.77vw, 115px) auto 0;
-    padding: 0 clamp(0px, 1.56vw, 18.4px);
+    margin: clamp(0px, 13.02vw, 120px) auto 0;
+    padding: 0 clamp(0px, 2.08vw, 19.2px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3477,8 +3501,8 @@ case
 }
 
 .el_casePosts {
-  width: calc(100% - clamp(0px, 5.56vw, 96px));
-  max-width: clamp(0px, 54.86vw, 948px);
+  width: calc(100% - clamp(0px, 5.56vw, 120px));
+  max-width: clamp(0px, 54.86vw, 1185px);
 }
 @media screen and (width <= 1024px) {
   .el_casePosts {
@@ -3490,11 +3514,11 @@ case
 .el_caseList {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0px, 2.5vw, 43.2px) clamp(0px, 2.78vw, 48px);
+  gap: clamp(0px, 2.5vw, 54px) clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 1024px) {
   .el_caseList {
-    gap: clamp(0px, 3.52vw, 41.4px) clamp(0px, 3.91vw, 46px);
+    gap: clamp(0px, 4.69vw, 43.2px) clamp(0px, 5.21vw, 48px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3503,11 +3527,11 @@ case
   }
 }
 .el_caseList_item {
-  width: calc((100% - clamp(0px, 5.56vw, 96px)) / 3);
+  width: calc((100% - clamp(0px, 5.56vw, 120px)) / 3);
 }
 @media screen and (width <= 1024px) {
   .el_caseList_item {
-    width: calc((100% - clamp(0px, 3.91vw, 46px)) / 2);
+    width: calc((100% - clamp(0px, 5.21vw, 48px)) / 2);
   }
 }
 @media screen and (width <= 767px) {
@@ -3529,11 +3553,11 @@ case
 .el_caseList_thmb {
   aspect-ratio: 1/1;
   overflow: hidden;
-  border-radius: clamp(0px, 0.56vw, 9.6px);
+  border-radius: clamp(0px, 0.56vw, 12px);
 }
 @media screen and (width <= 1024px) {
   .el_caseList_thmb {
-    border-radius: clamp(0px, 0.78vw, 9.2px);
+    border-radius: clamp(0px, 1.04vw, 9.6px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3547,11 +3571,11 @@ case
   object-fit: cover;
 }
 .el_caseList_ttl {
-  margin: clamp(0px, 0.56vw, 9.6px) clamp(0px, 0.69vw, 12px);
+  margin: clamp(0px, 0.56vw, 12px) clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 1024px) {
   .el_caseList_ttl {
-    margin: clamp(0px, 0.78vw, 9.2px) clamp(0px, 0.98vw, 11.5px);
+    margin: clamp(0px, 1.04vw, 9.6px) clamp(0px, 1.3vw, 12px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3561,13 +3585,13 @@ case
 }
 .el_caseList_theme {
   display: flex;
-  gap: clamp(0px, 5.56vw, 96px);
+  gap: clamp(0px, 5.56vw, 120px);
   flex-wrap: wrap;
-  margin-top: clamp(0px, 0.97vw, 16.8px);
+  margin-top: clamp(0px, 0.97vw, 21px);
 }
 @media screen and (width <= 1024px) {
   .el_caseList_theme {
-    margin-top: clamp(0px, 1.37vw, 16.1px);
+    margin-top: clamp(0px, 1.82vw, 16.8px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3577,17 +3601,17 @@ case
 }
 .el_caseList_theme > a,
 .el_caseList_theme > span {
-  padding: clamp(0px, 0.28vw, 4.8px);
+  padding: clamp(0px, 0.28vw, 6px);
   border: 1px solid var(--border-thin);
-  border-radius: clamp(0px, 0.28vw, 4.8px);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  border-radius: clamp(0px, 0.28vw, 6px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-weight: 400;
   line-height: 1.6;
 }
 @media screen and (width <= 1024px) {
   .el_caseList_theme > a,
   .el_caseList_theme > span {
-    font-size: clamp(0px, 1.37vw, 16.1px);
+    font-size: clamp(0px, 1.82vw, 16.8px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3598,14 +3622,14 @@ case
 }
 .el_caseList_theme > a > span,
 .el_caseList_theme > span > span {
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-weight: 400;
   line-height: 1.6;
 }
 @media screen and (width <= 1024px) {
   .el_caseList_theme > a > span,
   .el_caseList_theme > span > span {
-    font-size: clamp(0px, 1.37vw, 16.1px);
+    font-size: clamp(0px, 1.82vw, 16.8px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3628,13 +3652,13 @@ case
 }
 
 .el_caseSide {
-  width: clamp(0px, 18.06vw, 312px);
+  width: clamp(0px, 18.06vw, 390px);
 }
 @media screen and (width <= 1024px) {
   .el_caseSide {
     width: 100%;
-    max-width: clamp(0px, 39.06vw, 460px);
-    margin: 0 auto clamp(0px, 5.86vw, 69px);
+    max-width: clamp(0px, 52.08vw, 480px);
+    margin: 0 auto clamp(0px, 7.81vw, 72px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3643,16 +3667,16 @@ case
   }
 }
 .el_caseSide_ttl {
-  margin-bottom: clamp(0px, 0.97vw, 16.8px);
+  margin-bottom: clamp(0px, 0.97vw, 21px);
   font-weight: 700;
   line-height: 1;
 }
 .el_sideSelect + .el_caseSide_ttl {
-  margin-top: clamp(0px, 2.22vw, 38.4px);
+  margin-top: clamp(0px, 2.22vw, 48px);
 }
 @media screen and (width <= 1024px) {
   .el_caseSide_ttl {
-    margin-bottom: clamp(0px, 1.37vw, 16.1px);
+    margin-bottom: clamp(0px, 1.82vw, 16.8px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3664,8 +3688,8 @@ case
 /* single
 ============================== */
 .un_case.ly_inner {
-  max-width: clamp(0px, 77.78vw, 1344px);
-  margin-top: clamp(0px, 2.78vw, 48px);
+  max-width: clamp(0px, 77.78vw, 1680px);
+  margin-top: clamp(0px, 2.78vw, 60px);
   display: flex;
   justify-content: space-between;
 }
@@ -3673,7 +3697,7 @@ case
   .un_case.ly_inner {
     max-width: none;
     display: block;
-    margin-top: clamp(0px, 6.84vw, 80.5px);
+    margin-top: clamp(0px, 9.11vw, 84px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3691,13 +3715,13 @@ case
   }
 }
 .un_case .el_edit h2 {
-  font-size: clamp(0px, 2.08vw, 36px);
-  padding-bottom: clamp(0px, 0.56vw, 9.6px);
+  font-size: clamp(0px, 2.08vw, 45px);
+  padding-bottom: clamp(0px, 0.56vw, 12px);
 }
 @media screen and (width <= 1024px) {
   .un_case .el_edit h2 {
-    padding-bottom: clamp(0px, 0.78vw, 9.2px);
-    font-size: clamp(0px, 2.73vw, 32.2px);
+    padding-bottom: clamp(0px, 1.04vw, 9.6px);
+    font-size: clamp(0px, 3.65vw, 33.6px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3707,15 +3731,15 @@ case
   }
 }
 .un_case .el_edit h3 {
-  font-size: clamp(0px, 1.39vw, 24px);
-  margin-top: clamp(0px, 2.78vw, 48px);
-  padding-left: clamp(0px, 0.69vw, 12px);
+  font-size: clamp(0px, 1.39vw, 30px);
+  margin-top: clamp(0px, 2.78vw, 60px);
+  padding-left: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 1024px) {
   .un_case .el_edit h3 {
-    margin-top: clamp(0px, 3.91vw, 46px);
-    padding-left: clamp(0px, 0.98vw, 11.5px);
-    font-size: clamp(0px, 1.95vw, 23px);
+    margin-top: clamp(0px, 5.21vw, 48px);
+    padding-left: clamp(0px, 1.3vw, 12px);
+    font-size: clamp(0px, 2.6vw, 24px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3726,12 +3750,12 @@ case
   }
 }
 .un_case .el_edit h3:before {
-  height: calc(100% - clamp(0px, 0.28vw, 4.8px));
-  top: clamp(0px, 0.14vw, 2.4px);
+  height: calc(100% - clamp(0px, 0.28vw, 6px));
+  top: clamp(0px, 0.14vw, 3px);
 }
 @media screen and (width <= 1024px) {
   .un_case .el_edit h3:before {
-    top: clamp(0px, 0.2vw, 2.3px);
+    top: clamp(0px, 0.26vw, 2.4px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3740,11 +3764,11 @@ case
   }
 }
 .un_case .el_edit h4 {
-  margin-top: clamp(0px, 1.81vw, 31.2px);
+  margin-top: clamp(0px, 1.81vw, 39px);
 }
 @media screen and (width <= 1024px) {
   .un_case .el_edit h4 {
-    margin-top: clamp(0px, 2.54vw, 29.9px);
+    margin-top: clamp(0px, 3.39vw, 31.2px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3759,7 +3783,7 @@ case
 @media screen and (width <= 1024px) {
   .el_siderCase {
     width: 100%;
-    margin-bottom: clamp(0px, 3.13vw, 36.8px);
+    margin-bottom: clamp(0px, 4.17vw, 38.4px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3769,15 +3793,15 @@ case
 }
 .el_siderCase_wrap {
   position: sticky;
-  top: clamp(0px, 6.94vw, 120px);
+  top: clamp(0px, 6.94vw, 150px);
   height: auto;
-  width: calc(100% - clamp(0px, 5.56vw, 96px));
+  width: calc(100% - clamp(0px, 5.56vw, 120px));
   margin: 0 auto;
 }
 @media screen and (width <= 1024px) {
   .el_siderCase_wrap {
-    width: calc(100% - clamp(0px, 7.81vw, 92px));
-    top: clamp(0px, 9.77vw, 115px);
+    width: calc(100% - clamp(0px, 10.42vw, 96px));
+    top: clamp(0px, 13.02vw, 120px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3787,7 +3811,7 @@ case
   }
 }
 .el_siderCase_img {
-  border-radius: clamp(0px, 0.56vw, 9.6px);
+  border-radius: clamp(0px, 0.56vw, 12px);
   overflow: hidden;
 }
 .el_siderCase_img img {
@@ -3797,16 +3821,16 @@ case
 }
 .el_siderCase_cap {
   text-align: center;
-  font-size: clamp(0px, 0.83vw, 14.4px);
+  font-size: clamp(0px, 0.83vw, 18px);
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.01em;
-  margin-top: clamp(0px, 0.56vw, 9.6px);
+  margin-top: clamp(0px, 0.56vw, 12px);
 }
 @media screen and (width <= 1024px) {
   .el_siderCase_cap {
-    margin-top: clamp(0px, 0.78vw, 9.2px);
-    font-size: clamp(0px, 1.17vw, 13.8px);
+    margin-top: clamp(0px, 1.04vw, 9.6px);
+    font-size: clamp(0px, 1.56vw, 14.4px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3820,13 +3844,13 @@ case
 }
 .el_siderCase .swiper-btn-prev, .el_siderCase .swiper-btn-next {
   position: absolute;
-  top: calc(50% - clamp(0px, 3.33vw, 57.6px));
+  top: calc(50% - clamp(0px, 3.33vw, 72px));
   cursor: pointer;
   outline: none;
 }
 @media screen and (width <= 1024px) {
   .el_siderCase .swiper-btn-prev, .el_siderCase .swiper-btn-next {
-    top: calc(50% - clamp(0px, 4.69vw, 55.2px));
+    top: calc(50% - clamp(0px, 6.25vw, 57.6px));
   }
 }
 @media screen and (width <= 767px) {
@@ -3846,11 +3870,11 @@ case
   }
 }
 .el_siderCase .swiper-btn-prev {
-  left: clamp(0px, -2.78vw, -48px);
+  left: clamp(0px, -2.78vw, -60px);
 }
 @media screen and (width <= 1024px) {
   .el_siderCase .swiper-btn-prev {
-    left: clamp(0px, -3.91vw, -46px);
+    left: clamp(0px, -5.21vw, -48px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3859,11 +3883,11 @@ case
   }
 }
 .el_siderCase .swiper-btn-next {
-  right: clamp(0px, -2.78vw, -48px);
+  right: clamp(0px, -2.78vw, -60px);
 }
 @media screen and (width <= 1024px) {
   .el_siderCase .swiper-btn-next {
-    right: clamp(0px, -3.91vw, -46px);
+    right: clamp(0px, -5.21vw, -48px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3877,17 +3901,17 @@ case
 
 .bl_relationCase {
   background: var(--bg-thin);
-  padding: clamp(0px, 5.56vw, 96px) clamp(0px, 2.78vw, 48px);
-  max-width: clamp(0px, 83.33vw, 1440px);
-  width: calc(100% - clamp(0px, 2.78vw, 48px));
-  margin: clamp(0px, 5.56vw, 96px) auto 0;
+  padding: clamp(0px, 5.56vw, 120px) clamp(0px, 2.78vw, 60px);
+  max-width: clamp(0px, 83.33vw, 1800px);
+  width: calc(100% - clamp(0px, 2.78vw, 60px));
+  margin: clamp(0px, 5.56vw, 120px) auto 0;
 }
 @media screen and (width <= 1024px) {
   .bl_relationCase {
     max-width: none;
-    width: calc(100% - clamp(0px, 3.91vw, 46px));
-    margin: clamp(0px, 7.81vw, 92px) auto 0;
-    padding: clamp(0px, 11.72vw, 138px) clamp(0px, 3.91vw, 46px);
+    width: calc(100% - clamp(0px, 5.21vw, 48px));
+    margin: clamp(0px, 10.42vw, 96px) auto 0;
+    padding: clamp(0px, 15.63vw, 144px) clamp(0px, 5.21vw, 48px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3899,12 +3923,12 @@ case
   }
 }
 .bl_relationCase .el_textBox_ttl {
-  font-size: clamp(0px, 1.94vw, 33.6px);
-  padding-bottom: clamp(0px, 2.08vw, 36px);
+  font-size: clamp(0px, 1.94vw, 42px);
+  padding-bottom: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 1024px) {
   .bl_relationCase .el_textBox_ttl {
-    font-size: clamp(0px, 2.73vw, 32.2px);
+    font-size: clamp(0px, 3.65vw, 33.6px);
     padding-bottom: 0;
   }
 }
@@ -3914,13 +3938,13 @@ case
   }
 }
 .bl_relationCase .el_caseList {
-  gap: clamp(0px, 2.78vw, 48px);
-  margin-top: clamp(0px, 5.56vw, 96px);
+  gap: clamp(0px, 2.78vw, 60px);
+  margin-top: clamp(0px, 5.56vw, 120px);
 }
 @media screen and (width <= 1024px) {
   .bl_relationCase .el_caseList {
-    gap: clamp(0px, 3.91vw, 46px);
-    margin-top: clamp(0px, 3.91vw, 46px);
+    gap: clamp(0px, 5.21vw, 48px);
+    margin-top: clamp(0px, 5.21vw, 48px);
   }
 }
 @media screen and (width <= 767px) {
@@ -3930,11 +3954,11 @@ case
   }
 }
 .bl_relationCase .el_caseList_item {
-  width: calc((100% - clamp(0px, 11.11vw, 192px)) / 4);
+  width: calc((100% - clamp(0px, 11.11vw, 240px)) / 4);
 }
 @media screen and (width <= 1024px) {
   .bl_relationCase .el_caseList_item {
-    width: calc((100% - clamp(0px, 3.91vw, 46px)) / 2);
+    width: calc((100% - clamp(0px, 5.21vw, 48px)) / 2);
   }
 }
 @media screen and (width <= 767px) {
@@ -3944,7 +3968,7 @@ case
 }
 
 .ly_priceColumnWrapper .ly_priceColumnWrapper_inner {
-  max-width: clamp(0px, 78.06vw, 1348.8px);
+  max-width: clamp(0px, 78.06vw, 1686px);
   margin-inline: auto;
   width: 100%;
 }
@@ -3957,7 +3981,7 @@ case
 .ly_priceContentsWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 5.56vw, 96px);
+  gap: clamp(0px, 5.56vw, 120px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper {
@@ -3967,7 +3991,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 4.17vw, 72px);
+  gap: clamp(0px, 4.17vw, 90px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item {
@@ -3977,7 +4001,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .el_priceContentsWrapper_item_ttl {
   color: var(--black, #1A0F04);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 2.22vw, 38.4px);
+  font-size: clamp(0px, 2.22vw, 48px);
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -3991,7 +4015,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.78vw, 48px);
+  gap: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList {
@@ -4001,13 +4025,13 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .el_priceChildList_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.94vw, 33.6px);
+  font-size: clamp(0px, 1.94vw, 42px);
   font-style: normal;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: 0.05em;
   border-bottom: 1px dashed #987F65;
-  padding-bottom: clamp(0px, 1.39vw, 24px);
+  padding-bottom: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .el_priceChildList_ttl {
@@ -4017,7 +4041,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 3.47vw, 60px);
+  gap: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList {
@@ -4027,7 +4051,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.78vw, 48px);
+  gap: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item {
@@ -4037,13 +4061,13 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceChildList_postList_item_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.67vw, 28.8px);
+  font-size: clamp(0px, 1.67vw, 36px);
   font-style: normal;
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0.05em;
-  padding-inline: clamp(0px, 1.39vw, 24px);
-  padding-block: clamp(0px, 0.69vw, 12px);
+  padding-inline: clamp(0px, 1.39vw, 30px);
+  padding-block: clamp(0px, 0.69vw, 15px);
   background-color: #E5D8CD;
 }
 @media screen and (width <= 767px) {
@@ -4056,7 +4080,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.78vw, 48px);
+  gap: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList {
@@ -4066,7 +4090,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 0.83vw, 14.4px);
+  gap: clamp(0px, 0.83vw, 18px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item {
@@ -4076,14 +4100,14 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_ttl {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.39vw, 24px);
+  font-size: clamp(0px, 1.39vw, 30px);
   font-style: normal;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: 0.05em;
-  padding-left: clamp(0px, 1.39vw, 24px);
+  padding-left: clamp(0px, 1.39vw, 30px);
   border-left: 2px solid #987F65;
-  margin-bottom: clamp(0px, 1.25vw, 21.6px);
+  margin-bottom: clamp(0px, 1.25vw, 27px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_ttl {
@@ -4095,7 +4119,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.08vw, 36px);
+  gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList {
@@ -4106,8 +4130,8 @@ case
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: flex-start;
-  gap: clamp(0px, 1.6vw, 27.6px);
-  padding-bottom: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.6vw, 34.5px);
+  padding-bottom: clamp(0px, 1.39vw, 30px);
   border-bottom: 1px solid #987F65;
 }
 @media screen and (width <= 767px) {
@@ -4120,7 +4144,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .el_priceTableList_item_ttl_txt {
   color: var(--txtColor);
   font-family: var(--notoSansJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 350;
   line-height: 1.8;
@@ -4135,7 +4159,7 @@ case
   color: var(--txtColor);
   font-feature-settings: "palt" on;
   font-family: var(--notoSansJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 350;
   line-height: 1.8;
@@ -4150,7 +4174,7 @@ case
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: flex-start;
-  gap: clamp(0px, 1.11vw, 19.2px);
+  gap: clamp(0px, 1.11vw, 24px);
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item {
@@ -4162,13 +4186,13 @@ case
   text-align: right;
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item .el_amountTableList_item_txt {
-  order: 1;
+  grid-column: 1;
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item .el_amountTableList_item_view {
-  order: 2;
+  grid-column: 2;
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item .el_amountTableList_item_num {
-  order: 3;
+  grid-column: 3;
 }
 @media screen and (width <= 767px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item .el_amountTableList_item_txt {
@@ -4179,7 +4203,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_caption {
   color: #987F65;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 350;
   line-height: 1.5;
@@ -4193,7 +4217,7 @@ case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceWrapList_item_caution {
   color: #987F65;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4209,7 +4233,7 @@ case
 Misson
 ---------------------------------*/
 .bl_aboutMissionSection {
-  padding-bottom: clamp(0px, 3.54vw, 61.2px);
+  padding-bottom: clamp(0px, 3.54vw, 76.5px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutMissionSection {
@@ -4219,12 +4243,12 @@ Misson
 }
 .bl_aboutMissionSection .bl_aboutMissionSection_inner {
   display: grid;
-  grid-template-columns: clamp(0px, 29.17vw, 504px) 1fr;
+  grid-template-columns: clamp(0px, 29.17vw, 630px) 1fr;
   align-items: center;
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   margin-inline: auto;
   width: 100%;
-  margin-bottom: clamp(0px, 4.38vw, 75.6px);
+  margin-bottom: clamp(0px, 4.38vw, 94.5px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner {
@@ -4238,7 +4262,7 @@ Misson
 .bl_aboutMissionSection .bl_aboutMissionSection_inner .el_aboutMissionSection_ttl {
   color: var(--black, #1A0F04);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 4.17vw, 72px);
+  font-size: clamp(0px, 3.33vw, 72px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -4255,12 +4279,12 @@ Misson
 .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .el_aboutMissionSection_txtContainer_copy {
   color: var(--black);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.67vw, 28.8px);
+  font-size: clamp(0px, 1.67vw, 36px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .el_aboutMissionSection_txtContainer_copy {
@@ -4272,7 +4296,7 @@ Misson
 .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(0px, 1.39vw, 24px);
+  gap: clamp(0px, 1.39vw, 30px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt {
@@ -4282,7 +4306,7 @@ Misson
 .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt .el_aboutMissionSection_txtContainer_txt_item {
   color: var(--black);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.9;
@@ -4297,7 +4321,7 @@ Misson
   width: fit-content;
   color: rgba(255, 255, 255, 0.4);
   font-family: var(--OldSt);
-  font-size: clamp(0px, 6.25vw, 108px);
+  font-size: clamp(0px, 6.25vw, 135px);
   font-style: normal;
   font-weight: 700;
   line-height: 1;
@@ -4315,7 +4339,7 @@ Misson
 Concept
 ---------------------------------*/
 .bl_aboutConceptSection {
-  padding-block: clamp(0px, 8.33vw, 144px);
+  padding-block: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutConceptSection {
@@ -4324,7 +4348,7 @@ Concept
   }
 }
 .bl_aboutConceptSection .bl_conceptSection_inner {
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   margin-inline: auto;
   width: 100%;
 }
@@ -4338,7 +4362,7 @@ Concept
 Doctor
 ---------------------------------*/
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner {
-  max-width: clamp(0px, 77.78vw, 1344px);
+  max-width: clamp(0px, 77.78vw, 1680px);
   margin-inline: auto;
   width: 100%;
 }
@@ -4348,7 +4372,7 @@ Doctor
   }
 }
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper {
-  margin-top: clamp(0px, 3.47vw, 60px);
+  margin-top: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper {
@@ -4358,13 +4382,13 @@ Doctor
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
   color: var(--black);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 21.6px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 2.08vw, 36px);
-  padding-bottom: clamp(0px, 0.69vw, 12px);
+  margin-bottom: clamp(0px, 2.08vw, 45px);
+  padding-bottom: clamp(0px, 0.69vw, 15px);
   border-bottom: 1px solid #987F65;
 }
 @media screen and (width <= 767px) {
@@ -4377,7 +4401,7 @@ Doctor
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 0.69vw, 12px);
+  gap: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
@@ -4386,8 +4410,8 @@ Doctor
 }
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
   display: grid;
-  grid-template-columns: clamp(0px, 5.56vw, 96px) 1fr;
-  gap: clamp(0px, 2.78vw, 48px);
+  grid-template-columns: clamp(0px, 5.56vw, 120px) 1fr;
+  gap: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
@@ -4399,7 +4423,7 @@ Doctor
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
   color: var(--black);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4416,8 +4440,8 @@ Doctor
 Information
 ---------------------------------*/
 .bl_aboutInformationSection {
-  padding-top: clamp(0px, 8.33vw, 144px);
-  padding-bottom: clamp(0px, 13.89vw, 240px);
+  padding-top: clamp(0px, 8.33vw, 180px);
+  padding-bottom: clamp(0px, 13.89vw, 300px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutInformationSection {
@@ -4426,10 +4450,10 @@ Information
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner {
-  max-width: clamp(0px, 41.67vw, 720px);
+  max-width: clamp(0px, 41.67vw, 900px);
   margin-inline: auto;
   width: 100%;
-  margin-bottom: clamp(0px, 8.33vw, 144px);
+  margin-bottom: clamp(0px, 8.33vw, 180px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner {
@@ -4443,8 +4467,8 @@ Information
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: clamp(0px, 1.39vw, 24px);
-  margin-bottom: clamp(0px, 3.47vw, 60px);
+  gap: clamp(0px, 1.39vw, 30px);
+  margin-bottom: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group {
@@ -4457,7 +4481,7 @@ Information
   font-family: var(--OldSt);
   width: fit-content;
   margin-inline: auto;
-  font-size: clamp(0px, 4.17vw, 72px);
+  font-size: clamp(0px, 4.17vw, 90px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -4473,7 +4497,7 @@ Information
   color: var(--black);
   width: fit-content;
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.11vw, 19.2px);
+  font-size: clamp(0px, 1.11vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4487,7 +4511,7 @@ Information
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 1.67vw, 28.8px);
+  gap: clamp(0px, 1.67vw, 36px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper {
@@ -4496,10 +4520,10 @@ Information
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item {
   display: grid;
-  grid-template-columns: clamp(0px, 13.89vw, 240px) 1fr;
+  grid-template-columns: clamp(0px, 13.89vw, 300px) 1fr;
   align-items: flex-start;
-  gap: clamp(0px, 2.78vw, 48px);
-  padding-bottom: clamp(0px, 1.67vw, 28.8px);
+  gap: clamp(0px, 2.78vw, 60px);
+  padding-bottom: clamp(0px, 1.67vw, 36px);
   border-bottom: 1px solid #987F65;
 }
 @media screen and (width <= 767px) {
@@ -4513,7 +4537,7 @@ Information
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_txt {
   color: var(--black);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.97vw, 16.8px);
+  font-size: clamp(0px, 0.97vw, 21px);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4537,7 +4561,7 @@ Information
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .bl_commonGoogleMapLink {
-  margin-top: clamp(0px, 0.69vw, 12px);
+  margin-top: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 767px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .bl_commonGoogleMapLink {
@@ -4545,9 +4569,9 @@ Information
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide {
-  max-width: clamp(0px, 25vw, 432px);
+  max-width: clamp(0px, 25vw, 540px);
   width: 100%;
-  border-radius: clamp(0px, 0.14vw, 2.4px);
+  border-radius: clamp(0px, 0.14vw, 3px);
   overflow: hidden;
 }
 @media screen and (width <= 767px) {

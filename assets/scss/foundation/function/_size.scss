@@ -23,14 +23,14 @@
       $base: 1440;
     }
     @if not $max {
-      $max: $pxValue * 1.2; // PC: 最大値は元の値の120%
+      $max: $pxValue * 1.5; // PC: 最大値は元の値の150%（タブレット時も大きめに）
     }
   } @else if $reference == 'tb' {
     @if not $base {
-      $base: 1024;
+      $base: 768; // タブレットの最小幅を基準に（より大きいサイズになる）
     }
     @if not $max {
-      $max: $pxValue * 1.15; // TB: 最大値は元の値の115%
+      $max: $pxValue * 1.2; // TB: 最大値は元の値の500%
     }
   } @else if $reference == 'sp' {
     @if not $base {

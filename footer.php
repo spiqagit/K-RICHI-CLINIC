@@ -166,6 +166,11 @@
                     <p class="el_footer_btnTitle_ja">お知らせ</p>
                 </a>
 
+                <a href="<?php echo home_url(); ?>/faq/" class="bl_footer_btnTitle bl_footer_btn">
+                    <p class="el_footer_btnTitle_en">faq</p>
+                    <p class="el_footer_btnTitle_ja">よくある質問</p>
+                </a>
+
                 <a href="<?php echo home_url(); ?>/access/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">access</p>
                     <p class="el_footer_btnTitle_ja">アクセス</p>

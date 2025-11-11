@@ -52,6 +52,7 @@
             border-radius: vwmin(40, pc) vwmin(40, pc) 0 0;
 
             @include underSP {
+                background-image: url('../img/common/reserve-sp.jpg');
                 border-radius: vwmin(40, sp_m) vwmin(40, sp_m) 0 0;
                 padding-block: vwmin(100, sp_m);
                 padding-inline: vwmin(40, sp_m);
@@ -81,7 +82,7 @@
 
                     @include underSP {
                         font-size: vwmin(80, sp_m);
-                    letter-spacing: calc(1.6 / 80 * 1em);
+                        letter-spacing: calc(1.6 / 80 * 1em);
                         margin-block-end: calc(vwmin(20, sp_m) + var(--leading-trim));
                     }
                 }

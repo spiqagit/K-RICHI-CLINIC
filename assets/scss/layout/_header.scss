@@ -114,7 +114,7 @@
                         transform: translateX(0) translateY(0);
                         opacity: 1;
                         visibility: visible;
-                        gap: vwmin(10, sp_m);
+                        gap: vwmin(16, sp_m);
                         padding: 0;
                         padding-left: vwmin(10, sp_m);
                         margin-inline: 0;
@@ -384,7 +384,7 @@
         letter-spacing: calc(0.84 / 14 * 1em);
         text-transform: uppercase;
 
-        @media (any-hover: hover) { 
+        @media (any-hover: hover) {
             &:hover {
                 opacity: 0.7;
                 transition: opacity 0.3s ease;
@@ -444,10 +444,13 @@
         width: 100%;
         border-radius: vwmin(30, pc);
         transition: background-color 0.3s ease;
+        aspect-ratio: 1/1;
+        height: auto;
 
         @include underSP {
             min-width: vwmin(90, sp_m);
             border-radius: vwmin(4, sp_m);
+            aspect-ratio: auto;
         }
 
         .bl_header_fixedContainer_btn_inner {
@@ -468,23 +471,25 @@
             .bl_header_fixedContainer_btn_icon {
                 max-width: vwmin(26, pc);
                 width: 100%;
-                height: 100%;
+                height: auto;
                 aspect-ratio: 1/1;
                 margin-inline: auto;
-                margin-bottom: vwmin(4, pc);
+                margin-bottom: vwmin(8, pc);
 
                 @include underSP {
                     max-width: 100%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: vwmin(4, pc);
+                    margin-bottom: vwmin(8, sp_m);
                 }
 
                 .el_header_fixedContainer_btn_icon_svg {
+                    display: block;
                     width: 100%;
-                    height: 100%;
+                    height: auto;
                     object-fit: contain;
+                    aspect-ratio: 1/1;
 
                     path {
                         fill: #402D10;
@@ -547,6 +552,11 @@
         .bl_header_fixedContainer_btn_inner {
 
             .bl_header_fixedContainer_btn_icon {
+                margin-bottom: vwmin(8, pc);
+
+                @include underSP {
+                    margin-bottom: vwmin(8, sp_m);
+                }
 
                 .el_header_fixedContainer_btn_icon_svg {
 

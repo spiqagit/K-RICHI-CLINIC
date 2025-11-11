@@ -927,17 +927,20 @@ Column
                     }
 
                     .bl_columnBtnItem_txtWrapper_arrow {
+                        display: block;
                         width: 100%;
-                        max-width: vwmin(15, pc);
+                        max-width: vwmin(26, pc);
                         margin-left: auto;
 
                         @include underSP {
-                            max-width: vwmin(15, sp_m);
+                            max-width: vwmin(26, sp_m);
                         }
 
                         img {
+                            display: block;
                             width: 100%;
-                            height: auto;
+                            height: 100%;
+                            object-fit: contain;
                         }
                     }
                 }
@@ -1012,7 +1015,7 @@ Instagram
                 .el_topInstagramContainer_ttl {
                     color: var(--black, #1A0F04);
                     font-family: var(--notoSerifDisplay);
-                    font-size: vwmin(60, pc);
+                    font-size: vwmin(48, pc);
                     font-style: normal;
                     font-weight: 400;
                     line-height: 1;
@@ -1287,6 +1290,12 @@ Instagram
                 .bl_concernItem {
                     height: 100%;
                     background-color: #FFFBF8;
+                    overflow: hidden;
+                    border-radius: vwmin(4, pc);
+
+                    @include underSP {
+                        border-radius: vwmin(4, sp_m);
+                    }
 
                     .bl_concernItem_upper {
                         display: grid;
@@ -1454,7 +1463,7 @@ Case
     background-color: #E5D8CD;
 
     @include underSP {
-        padding-block: vwmin(calc(100 + 70), sp_m);
+        padding-block: vwmin(100, sp_m);
     }
 
     .bl_topCaseSection_ttlWrapper {

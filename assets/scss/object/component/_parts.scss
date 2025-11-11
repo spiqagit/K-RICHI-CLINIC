@@ -4,7 +4,7 @@
 
     .bl_commonAllviewBtn {
         display: grid;
-        grid-template-columns: auto vwmin(40, pc);
+        grid-template-columns: auto vwmin(30, pc);
         align-items: center;
         justify-content: center;
         gap: vwmin(20, pc);
@@ -41,7 +41,7 @@
 
         .el_commonAllviewBtn_arrow {
             display: grid;
-            grid-template-columns: vwmin(18, pc);
+            grid-template-columns: vwmin(16, pc);
             align-items: center;
             justify-content: center;
             background-color: #402D10;

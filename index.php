@@ -144,7 +144,7 @@
                                                                 </div>
 
                                                                 <div class="bl_columnBtnItem_txtWrapper_arrow">
-                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/clomun-arrow.svg" alt="">
                                                                 </div>
                                                             </div>
                                                         </div>
