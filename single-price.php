@@ -112,7 +112,9 @@
                                                                     <?php while (have_rows('price_wrap')): the_row(); ?>
 
                                                                         <li class="bl_priceWrapList_item">
+                                                                            <?php if (get_sub_field('price_wrap-ttl')): ?>
                                                                             <p class="el_priceWrapList_item_ttl"><?php the_sub_field('price_wrap-ttl'); ?></p>
+                                                                            <?php endif; ?>
 
                                                                             <?php if (have_rows('price_table')): ?>
 
@@ -121,7 +123,9 @@
 
                                                                                         <li class="bl_priceTableList_item">
 
-                                                                                            <p class="el_priceTableList_item_ttl_txt"><?php the_sub_field('price_table-ttl'); ?></p>
+                                                                                            <?php if (get_sub_field('price_table-ttl')): ?>
+                                                                                                <p class="el_priceTableList_item_ttl_txt"><?php the_sub_field('price_table-ttl'); ?></p>
+                                                                                            <?php endif; ?>
 
                                                                                             <?php if (have_rows('amount-table')): ?>
                                                                                                 <ul class="bl_amountTableList">
@@ -192,7 +196,9 @@
 
                                                                                         <li class="bl_priceTableList_item">
 
-                                                                                            <p class="el_priceTableList_item_ttl_txt"><?php the_sub_field('price_table-ttl'); ?></p>
+                                                                                            <?php if (get_sub_field('price_table-ttl')): ?>
+                                                                                                <p class="el_priceTableList_item_ttl_txt"><?php the_sub_field('price_table-ttl'); ?></p>
+                                                                                            <?php endif; ?>
 
                                                                                             <?php if (have_rows('amount-table')): ?>
                                                                                                 <ul class="bl_amountTableList">

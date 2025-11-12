@@ -197,3 +197,12 @@ function my_custom_search($search, $wp_query)
 }
 add_filter('posts_search', 'my_custom_search', 10, 2);
 if (isset($_GET['s'])) $_GET['s'] = mb_convert_kana($_GET['s'], 's', 'UTF-8');
+
+
+function solecolor_wp_terms_checklist_args( $args, $post_id ){
+    if ( !isset($args['checked_ontop']) || $args['checked_ontop'] !== false ){
+         $args['checked_ontop'] = false;
+    }
+    return $args;
+ }
+ add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args',10,2);

@@ -55,7 +55,7 @@
     }
   }
 
-  $vwValue: calc(math.round(calc($pxValue / $base) * 10000) / 100 * 1vw);
+  $vwValue: math.div($pxValue, $base) * 100vw;
 
   @return string.unquote('clamp(#{$min}, #{$vwValue}, #{$max}px)');
 }

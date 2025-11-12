@@ -25,8 +25,8 @@
                                 ?>
                                 <?php if (!empty($parent_catList)) : ?>
                                     <nav class="bl_commonSelectNaviWrapper">
-                                    <?php foreach ($parent_catList as $parent_cat) : ?>
-                                        
+                                        <?php foreach ($parent_catList as $parent_cat) : ?>
+
                                             <div class="bl_commonSelectNaviWrapper_item">
                                                 <label for="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_label"><?php echo $parent_cat->name; ?></label>
                                                 <div class="bl_commonSelectNaviWrapper_selectWrapper">
@@ -53,7 +53,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                    <?php endforeach; ?>
+                                        <?php endforeach; ?>
                                     </nav>
                                 <?php endif; ?>
                             </div>
@@ -117,7 +117,9 @@
                                                                                 <?php while (have_rows('price_wrap')): the_row(); ?>
 
                                                                                     <li class="bl_priceWrapList_item">
-                                                                                        <p class="el_priceWrapList_item_ttl"><?php the_sub_field('price_wrap-ttl'); ?></p>
+                                                                                        <?php if (get_sub_field('price_wrap-ttl')): ?>
+                                                                                            <p class="el_priceWrapList_item_ttl"><?php the_sub_field('price_wrap-ttl'); ?></p>
+                                                                                        <?php endif; ?>
 
                                                                                         <?php if (have_rows('price_table')): ?>
 
@@ -126,7 +128,9 @@
 
                                                                                                     <li class="bl_priceTableList_item">
 
-                                                                                                        <p class="el_priceTableList_item_ttl_txt"><?php the_sub_field('price_table-ttl'); ?></p>
+                                                                                                        <?php if (get_sub_field('price_table-ttl')): ?>
+                                                                                                            <p class="el_priceTableList_item_ttl_txt"><?php the_sub_field('price_table-ttl'); ?></p>
+                                                                                                        <?php endif; ?>
 
                                                                                                         <?php if (have_rows('amount-table')): ?>
                                                                                                             <ul class="bl_amountTableList">

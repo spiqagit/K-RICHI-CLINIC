@@ -3073,6 +3073,12 @@ Instagram
     margin-block-end: calc(clamp(0px, 7.01vw, 33px) + var(--leading-trim));
   }
 }
+.bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper #sb_instagram {
+  padding-bottom: 0 !important;
+}
+.bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper #sb_instagram #sbi_images {
+  padding: 0 !important;
+}
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper {
     overflow-x: auto;
@@ -3532,11 +3538,11 @@ Case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.78vw, 60px);
+  gap: clamp(0px, 3.47vw, 75px);
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList {
-    gap: clamp(0px, 9.35vw, 44px);
+    gap: clamp(0px, 11.68vw, 55px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .el_priceChildList_ttl {
@@ -3558,21 +3564,21 @@ Case
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 3.47vw, 75px);
+  gap: clamp(0px, 2.78vw, 60px);
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList {
-    gap: clamp(0px, 11.68vw, 55px);
+    gap: clamp(0px, 9.35vw, 44px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 2.78vw, 60px);
+  gap: clamp(0px, 2.08vw, 45px);
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item {
-    gap: clamp(0px, 9.35vw, 44px);
+    gap: clamp(0px, 7.01vw, 33px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceChildList_postList_item_ttl {
@@ -3586,12 +3592,14 @@ Case
   padding-inline: clamp(0px, 1.39vw, 30px);
   padding-block: clamp(0px, 0.69vw, 15px);
   background-color: #E5D8CD;
+  margin-bottom: clamp(0px, 0.69vw, 15px);
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceChildList_postList_item_ttl {
     font-size: clamp(0px, 5.61vw, 26.4px);
     padding-inline: clamp(0px, 4.67vw, 22px);
     padding-block: clamp(0px, 2.34vw, 11px);
+    margin-bottom: clamp(0px, 2.34vw, 11px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList {
@@ -3629,7 +3637,6 @@ Case
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_ttl {
     font-size: clamp(0px, 4.67vw, 22px);
-    padding-block: clamp(0px, 2.34vw, 11px);
     padding-left: clamp(0px, 4.67vw, 22px);
   }
 }
@@ -3681,10 +3688,12 @@ Case
   font-weight: 350;
   line-height: 1.8;
   letter-spacing: 0.05em;
+  grid-column: 2;
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList {
     font-size: clamp(0px, 3.27vw, 15.4px);
+    grid-column: 1;
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .bl_priceChildList_postList .bl_priceChildList_postList_item .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item {

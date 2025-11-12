@@ -52,10 +52,10 @@
         .bl_priceChildList {
             display: flex;
             flex-direction: column;
-            gap: vwmin(40, pc);
+            gap: vwmin(50, pc);
 
             @include underSP {
-                gap: vwmin(40, sp_m);
+                gap: vwmin(50, sp_m);
             }
 
             .el_priceChildList_ttl {
@@ -78,19 +78,19 @@
             .bl_priceChildList_postList {
                 display: flex;
                 flex-direction: column;
-                gap: vwmin(50, pc);
+                gap: vwmin(40, pc);
 
                 @include underSP {
-                    gap: vwmin(50, sp_m);
+                    gap: vwmin(40, sp_m);
                 }
 
                 .bl_priceChildList_postList_item {
                     display: flex;
                     flex-direction: column;
-                    gap: vwmin(40, pc);
+                    gap: vwmin(30, pc);
 
                     @include underSP {
-                        gap: vwmin(40, sp_m);
+                        gap: vwmin(30, sp_m);
                     }
 
                     .el_priceChildList_postList_item_ttl {
@@ -104,11 +104,13 @@
                         padding-inline: vwmin(20, pc);
                         padding-block: vwmin(10, pc);
                         background-color: #E5D8CD;
+                        margin-bottom: vwmin(10, pc);
 
                         @include underSP {
                             font-size: vwmin(24, sp_m);
                             padding-inline: vwmin(20, sp_m);
                             padding-block: vwmin(10, sp_m);
+                            margin-bottom: vwmin(10, sp_m);
                         }
                     }
 
@@ -144,7 +146,6 @@
 
                                 @include underSP {
                                     font-size: vwmin(20, sp_m);
-                                    padding-block: vwmin(10, sp_m);
                                     padding-left: vwmin(20, sp_m);
                                 }
                             }
@@ -197,9 +198,11 @@
                                         font-weight: 350;
                                         line-height: 1.8;
                                         letter-spacing: calc(0.7 / 14 * 1em);
+                                        grid-column: 2;
 
                                         @include underSP {
                                             font-size: vwmin(14, sp_m);
+                                            grid-column: 1;
                                         }
 
                                         .bl_amountTableList_item {
@@ -217,7 +220,7 @@
                                                 text-align: right;
                                             }
 
-                                            .el_amountTableList_item_txt{
+                                            .el_amountTableList_item_txt {
                                                 grid-column: 1;
 
                                                 @include underSP {
@@ -227,13 +230,13 @@
                                                 }
                                             }
 
-                                            .el_amountTableList_item_view{
+                                            .el_amountTableList_item_view {
                                                 @include underSP {
                                                     grid-column: 3;
                                                 }
                                             }
 
-                                            .el_amountTableList_item_num{
+                                            .el_amountTableList_item_num {
                                                 grid-column: 3;
 
                                                 @include underSP {

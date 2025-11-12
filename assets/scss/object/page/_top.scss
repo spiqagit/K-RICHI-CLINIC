@@ -1035,6 +1035,14 @@ Instagram
 
             .bl_topInstagramContainer_instagramWrapper {
 
+                #sb_instagram{
+                    padding-bottom: 0 !important;
+
+                    #sbi_images{
+                        padding: 0 !important;
+                    }
+                }
+
                 @include underSP {
                     overflow-x: auto;
                     width: calc(100% - 10px * 2);

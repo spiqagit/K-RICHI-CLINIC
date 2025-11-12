@@ -606,51 +606,53 @@
                                                 $case_makeup = get_field('case-makeup');
                                                 $case_risk = get_field('case-risk');
                                                 ?>
-                                                <details class="bl_caseItem_details">
-                                                    <summary class="bl_caseItem_details_summary">
-                                                        <span class="bl_caseItem_details_summary_txt">詳細を見る</span>
-                                                        <span class="bl_caseItem_details_summary_icon"></span>
-                                                    </summary>
-                                                    <div class="bl_caseItem_details_content">
-                                                        <div class="bl_caseItem_details_content_inner">
-                                                            <?php if (!empty($case_treatment)): ?>
-                                                                <dl class="bl_caseItem_details_content_item">
-                                                                    <dt class="bl_caseItem_details_content_item_dt">施術名</dt>
-                                                                    <dd class="bl_caseItem_details_content_item_dd">
-                                                                        <?php echo $case_treatment; ?>
-                                                                    </dd>
-                                                                </dl>
-                                                            <?php endif; ?>
+                                                <?php if (!empty($case_treatment) || !empty($case_time) || !empty($case_downtime) || !empty($case_makeup) || !empty($case_risk)): ?>
+                                                    <details class="bl_caseItem_details">
+                                                        <summary class="bl_caseItem_details_summary">
+                                                            <span class="bl_caseItem_details_summary_txt">詳細を見る</span>
+                                                            <span class="bl_caseItem_details_summary_icon"></span>
+                                                        </summary>
+                                                        <div class="bl_caseItem_details_content">
+                                                            <div class="bl_caseItem_details_content_inner">
+                                                                <?php if (!empty($case_treatment)): ?>
+                                                                    <dl class="bl_caseItem_details_content_item">
+                                                                        <dt class="bl_caseItem_details_content_item_dt">施術名</dt>
+                                                                        <dd class="bl_caseItem_details_content_item_dd">
+                                                                            <?php echo $case_treatment; ?>
+                                                                        </dd>
+                                                                    </dl>
+                                                                <?php endif; ?>
 
-                                                            <?php if (!empty($case_time)): ?>
-                                                                <dl class="bl_caseItem_details_content_item">
-                                                                    <dt class="bl_caseItem_details_content_item_dt">施術時間</dt>
-                                                                    <dd class="bl_caseItem_details_content_item_dd">
-                                                                        <?php echo $case_time; ?>
-                                                                    </dd>
-                                                                </dl>
-                                                            <?php endif; ?>
+                                                                <?php if (!empty($case_time)): ?>
+                                                                    <dl class="bl_caseItem_details_content_item">
+                                                                        <dt class="bl_caseItem_details_content_item_dt">施術時間</dt>
+                                                                        <dd class="bl_caseItem_details_content_item_dd">
+                                                                            <?php echo $case_time; ?>
+                                                                        </dd>
+                                                                    </dl>
+                                                                <?php endif; ?>
 
-                                                            <?php if (!empty($case_time)): ?>
-                                                                <dl class="bl_caseItem_details_content_item">
-                                                                    <dt class="bl_caseItem_details_content_item_dt">ダウンタイム</dt>
-                                                                    <dd class="bl_caseItem_details_content_item_dd">
-                                                                        <?php echo $case_downtime; ?>
-                                                                    </dd>
-                                                                </dl>
-                                                            <?php endif; ?>
+                                                                <?php if (!empty($case_time)): ?>
+                                                                    <dl class="bl_caseItem_details_content_item">
+                                                                        <dt class="bl_caseItem_details_content_item_dt">ダウンタイム</dt>
+                                                                        <dd class="bl_caseItem_details_content_item_dd">
+                                                                            <?php echo $case_downtime; ?>
+                                                                        </dd>
+                                                                    </dl>
+                                                                <?php endif; ?>
 
-                                                            <?php if (!empty($case_makeup)): ?>
-                                                                <dl class="bl_caseItem_details_content_item">
-                                                                    <dt class="bl_caseItem_details_content_item_dt">メイク</dt>
-                                                                    <dd class="bl_caseItem_details_content_item_dd">
-                                                                        <?php echo $case_makeup; ?>
-                                                                    </dd>
-                                                                </dl>
-                                                            <?php endif; ?>
+                                                                <?php if (!empty($case_makeup)): ?>
+                                                                    <dl class="bl_caseItem_details_content_item">
+                                                                        <dt class="bl_caseItem_details_content_item_dt">メイク</dt>
+                                                                        <dd class="bl_caseItem_details_content_item_dd">
+                                                                            <?php echo $case_makeup; ?>
+                                                                        </dd>
+                                                                    </dl>
+                                                                <?php endif; ?>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </details>
+                                                    </details>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     <?php endwhile; ?>
