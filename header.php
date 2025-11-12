@@ -168,7 +168,6 @@
                 </div>
                 <p class="el_header_fixedContainer_btn_txt">LINE予約</p>
             </div>
-
         </a>
     <?php endif; ?>
 

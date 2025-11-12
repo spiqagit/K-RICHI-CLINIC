@@ -1,0 +1,383 @@
+@use '../../foundation/function/index' as *;
+
+/*--------------------------------
+Misson
+---------------------------------*/
+
+.bl_aboutMissionSection {
+    padding-bottom: vwmin(51, pc);
+
+    @include underSP {
+        padding-top: vwmin(40, sp_m);
+        padding-bottom: vwmin(60, sp_m);
+    }
+
+    .bl_aboutMissionSection_inner {
+        display: grid;
+        grid-template-columns: vwmin(420, pc) 1fr;
+        align-items: center;
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+        width: 100%;
+        margin-bottom: vwmin(63, pc);
+
+        @include underSP {
+            grid-template-columns: 1fr;
+            gap: vwmin(50, sp_m);
+            margin-bottom: vwmin(50, sp_m);
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
+
+        .el_aboutMissionSection_ttl {
+            color: var(--black, #1A0F04);
+            font-family: var(--OldSt);
+            font-size: vwmin(48, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(1.2 / 60 * 1em);
+            margin-block: calc(var(--leading-trim));
+
+            @include underSP {
+                font-size: vwmin(40, sp_m);
+                width: fit-content;
+                margin-inline: auto;
+            }
+        }
+
+        .bl_aboutMissionSection_txtContainer {
+
+
+            .el_aboutMissionSection_txtContainer_copy {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(24, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.8;
+                letter-spacing: calc(1.2 / 24 * 1em);
+                margin-bottom: vwmin(50, pc);
+
+                @include underSP {
+                    font-size: vwmin(24, sp_m);
+                    margin-bottom: vwmin(50, sp_m);
+                    text-align: center;
+                }
+
+                .el_aboutMissionSection_txtContainer_copy_br {
+                    display: none;
+
+                    @media (max-width: 768px) {
+                        display: block;
+                    }
+                }
+            }
+
+            .bl_aboutMissionSection_txtContainer_txt {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: vwmin(20, pc);
+
+                @include underSP {
+                    gap: vwmin(20, sp_m);
+                }
+
+                .el_aboutMissionSection_txtContainer_txt_item {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.9;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .bl_aboutMissionSection_slider {
+
+        .el_aboutMissionSection_slider_item {
+            width: fit-content;
+            color: rgba(255, 255, 255, 0.40);
+            font-family: var(--OldSt);
+            font-size: vwmin(90, pc);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: calc(1.8 / 90 * 1em);
+            white-space: nowrap;
+            word-break: keep-all;
+
+            @include underSP {
+                font-size: vwmin(90, sp_m);
+            }
+        }
+    }
+}
+
+
+/*--------------------------------
+Concept
+---------------------------------*/
+
+.bl_aboutConceptSection {
+    padding-block: vwmin(120, pc);
+
+    @include underSP {
+        padding-block: vwmin(100, sp_m);
+        padding-inline: vwmin(30, sp_m);
+
+    }
+
+    .bl_conceptSection_inner {
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+        width: 100%;
+
+        @include underSP {
+            max-width: 100%;
+        }
+    }
+}
+
+
+/*--------------------------------
+Doctor
+---------------------------------*/
+
+.bl_aboutDoctorSection {
+
+    .bl_aboutDoctorSection_inner {
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+        width: 100%;
+
+        @include underSP {
+            max-width: 100%;
+        }
+
+        .bl_doctorContentsWrapper_careerWrapper {
+            margin-top: vwmin(50, pc);
+            @include underSP {
+                margin-top: vwmin(50, sp_m);
+            }
+
+            .bl_doctorContentsWrapper_careerWrapper_ttl {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(18, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.9 / 18 * 1em);
+                margin-bottom: vwmin(30, pc);
+                padding-bottom: vwmin(10, pc);
+                border-bottom: 1px solid #987F65;
+
+                @include underSP {
+                    font-size: vwmin(18, sp_m);
+                    margin-bottom: vwmin(30, sp_m);
+                    padding-bottom: vwmin(10, sp_m);
+                }
+            }
+
+            .bl_doctorContentsWrapper_careerWrapper_list {
+                display: flex;
+                flex-direction: column;
+                gap: vwmin(10, pc);
+
+                @include underSP {
+                    gap: vwmin(10, sp_m);
+                }
+
+                .bl_doctorContentsWrapper_careerWrapper_list_item {
+                    display: grid;
+                    grid-template-columns: vwmin(80, pc) 1fr;
+                    gap: vwmin(40, pc);
+
+                    @include underSP {
+                        grid-template-columns: vwmin(80, sp_m) 1fr;
+                        gap: vwmin(40, sp_m);
+                    }
+
+                    .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
+                    .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
+                        color: var(--black);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------
+Information
+---------------------------------*/
+
+.bl_aboutInformationSection {
+    padding-top: vwmin(120, pc);
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        padding-top: vwmin(100, sp_m);
+        padding-bottom: vwmin(200, sp_m);
+    }
+
+    .bl_aboutInformationSection_inner {
+        max-width: vwmin(600, pc);
+        margin-inline: auto;
+        width: 100%;
+        margin-bottom: vwmin(120, pc);
+
+        @include underSP {
+            max-width: 100%;
+            margin-bottom: vwmin(120, sp_m);
+            padding-inline: vwmin(30, sp_m);
+        }
+
+        .bl_aboutInformationTtlWrapper {
+
+            .bl_aboutInformationTtlWrapper_group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: vwmin(20, pc);
+                margin-bottom: vwmin(50, pc);
+
+                @include underSP {
+                    gap: vwmin(20, sp_m);
+                    margin-bottom: vwmin(50, sp_m);
+                }
+
+                .el_aboutInformationTtlWrapper_en {
+                    color: var(--black);
+                    font-family: var(--OldSt);
+                    width: fit-content;
+                    margin-inline: auto;
+                    font-size: vwmin(48, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: calc(1.2 / 60 * 1em);
+                    margin-block: calc(var(--leading-trim));
+
+                    @include underSP {
+                        font-size: vwmin(40, sp_m);
+                    }
+                }
+
+                .el_aboutInformationTtlWrapper_ja {
+                    color: var(--black);
+                    width: fit-content;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                    }
+                }
+            }
+        }
+
+        .bl_aboutInformationSection_infoWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(24, pc);
+
+            @include underSP {
+                gap: vwmin(24, sp_m);
+            }
+
+            .bl_aboutInformationSection_infoWrapper_item {
+                display: grid;
+                grid-template-columns: vwmin(200, pc) 1fr;
+                align-items: flex-start;
+                gap: vwmin(40, pc);
+                padding-bottom: vwmin(24, pc);
+                border-bottom: 1px solid #987F65;
+
+                @include underSP {
+                    grid-template-columns: vwmin(100, sp_m) 1fr;
+                    gap: vwmin(30, sp_m);
+                    padding-bottom: vwmin(24, sp_m);
+                }
+
+                .el_aboutInformationSection_infoWrapper_item_ttl,
+                .el_aboutInformationSection_infoWrapper_item_txt {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.7 / 14 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                    }
+
+                    .el_aboutInformationSection_infoWrapper_item_txt_link {
+                        cursor: pointer;
+                        @media (any-hover: hover) {
+                            &:hover {
+                                opacity: 0.7;
+                                transition: opacity 0.3s ease;
+                            }
+                        }
+                    }
+                }
+
+                .bl_commonGoogleMapLink{
+                    margin-top: vwmin(10, pc);
+
+                    @include underSP {
+                        margin-top: vwmin(10, sp_m);
+                    }
+                }
+            }
+        }
+    }
+
+    .bl_aboutInformationSection_slider{
+        .splide__slide{
+            max-width: vwmin(360, pc);
+            width: 100%;
+            border-radius: vwmin(2, pc);
+            overflow: hidden;
+
+            @include underSP {
+                max-width: vwmin(360, sp_m);
+                border-radius: vwmin(2, sp_m);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
