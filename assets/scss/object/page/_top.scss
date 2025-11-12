@@ -461,7 +461,7 @@
                     .el_conceptSection_copyWrapper_sub_br {
                         display: none;
 
-                        @include underSP {
+                        @media (max-width: 768px) {
                             display: block;
                         }
                     }
@@ -572,7 +572,7 @@
                 overflow: hidden;
             }
 
-            @media (min-width: 768px) {
+            @media (min-width: 1024px) {
                 .swiper-wrapper {
                     display: grid;
                     grid-template-columns: repeat(3, vwmin(334, pc));
@@ -1278,7 +1278,7 @@ Instagram
 
             .bl_topConcernContainer {
 
-                @media (min-width: 768px) {
+                @media (min-width: 1024px) {
                     .swiper-wrapper {
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
@@ -1444,8 +1444,8 @@ Instagram
 
                     .swiper-slide {
                         height: auto;
-
-
+                        max-width: vwmin(286, sp_m) !important;
+                        width: 100%;
                     }
                 }
             }
@@ -1463,7 +1463,8 @@ Case
     background-color: #E5D8CD;
 
     @include underSP {
-        padding-block: vwmin(100, sp_m);
+        padding-top: vwmin(100, sp_m);
+        padding-bottom: vwmin(180, sp_m);
     }
 
     .bl_topCaseSection_ttlWrapper {

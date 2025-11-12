@@ -116,6 +116,14 @@
                 max-width: vwmin(300, sp_m);
                 margin-inline: auto;
             }
+
+            img {
+                border-radius: vwmin(2, pc);
+
+                @include underSP {
+                    border-radius: vwmin(2, sp_m);
+                }
+            }
         }
 
         .bl_doctorContentsWrapper_txtWrapper {

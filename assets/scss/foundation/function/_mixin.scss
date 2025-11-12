@@ -20,30 +20,14 @@
 
   #{$property}: vwmin($pc, 'pc', $base: null, $min: $min, $max: $max);
   
-  @include underTB {
-    #{$property}: vwmin($tb, 'tb', $base: null, $min: $min, $max: $max);
-  }
-  
   @include underSP {
-    #{$property}: vwmin($sp, 'sp', $base: null, $min: $min, $max: $max);
+    #{$property}: vwmin($tb, 'tb', $base: null, $min: $min, $max: $max);
   }
 }
 
-@mixin font_16 {
-  font-size: vwmin(16, pc);
-  @include underTB {
-    font-size: clamp(14px, vw(16, tb), 16px);
-  }
-  @include underSP {
-    font-size: clamp(14px, vw(16, sp), 16px);
-  }
-}
 
 @mixin post_mt {
   margin-top: vwmin(40, pc);
-  @include underTB {
-      margin-top: vwmin(40, tb);
-  }
   @include underSP {
       margin-top: vwmin(40, sp);
   }

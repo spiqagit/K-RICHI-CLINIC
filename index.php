@@ -7,7 +7,7 @@
     <main>
         <div class="bl_fvSection">
             <picture class="bl_fvSection_bg">
-                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/fv-sp.jpg" media="(max-width: 768px)">
+                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/fv-sp.jpg" media="(max-width:1024px)">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/fv-pc.jpg" alt="">
             </picture>
             <div class="bl_fvSection_txt">

@@ -45,7 +45,7 @@
                         </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/price/">
                             <span class="el_header_navBtn_en">price</span>
-                            <span class="el_header_navBtn_ja">料金</span>
+                            <span class="el_header_navBtn_ja">料金表</span>
                         </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/regen-med/">
                             <span class="el_header_navBtn_en">regen.med.</span>

@@ -60,6 +60,7 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             display: none;
+            opacity: 0;
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
@@ -481,7 +482,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: vwmin(8, sp_m);
+                    margin-bottom: 0;
                 }
 
                 .el_header_fixedContainer_btn_icon_svg {
@@ -555,7 +556,7 @@
                 margin-bottom: vwmin(8, pc);
 
                 @include underSP {
-                    margin-bottom: vwmin(8, sp_m);
+                    margin-bottom: 0;
                 }
 
                 .el_header_fixedContainer_btn_icon_svg {

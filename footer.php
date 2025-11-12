@@ -178,7 +178,7 @@
 
                 <a href="<?php echo home_url(); ?>/price/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">price</p>
-                    <p class="el_footer_btnTitle_ja">料金</p>
+                    <p class="el_footer_btnTitle_ja">料金表</p>
                 </a>
             </div>
         </div>

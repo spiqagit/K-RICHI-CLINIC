@@ -219,20 +219,25 @@
 
                                             .el_amountTableList_item_txt{
                                                 grid-column: 1;
+
+                                                @include underSP {
+                                                    grid-column: 1;
+                                                    grid-column: 2 span;
+
+                                                }
                                             }
 
                                             .el_amountTableList_item_view{
-                                                grid-column: 2;
+                                                @include underSP {
+                                                    grid-column: 3;
+                                                }
                                             }
 
                                             .el_amountTableList_item_num{
                                                 grid-column: 3;
-                                            }
 
-                                            @include underSP {
-                                                .el_amountTableList_item_txt {
-                                                    text-align: left;
-                                                    grid-column: 2 span;
+                                                @include underSP {
+                                                    grid-column: 4;
                                                 }
                                             }
 

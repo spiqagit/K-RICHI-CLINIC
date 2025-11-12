@@ -13,12 +13,6 @@
 }
 
 @mixin underSP {
-  @media screen and (width <=767px) {
-    @content;
-  }
-}
-
-@mixin underTB {
   @media screen and (width <=1024px) {
     @content;
   }

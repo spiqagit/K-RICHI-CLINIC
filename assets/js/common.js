@@ -2,7 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    const breakPoint = 767;
+    const breakPoint = 1024;
     const newsSwiper = document.querySelector(".bl_newsSlider");
     const topConcernSwiper = document.querySelector(".bl_topConcernSwiper");
     const columnSlider = document.querySelector(".bl_topColumnSection_slider");
@@ -345,7 +345,7 @@ const openingAnim = (content) => gsap.fromTo(
 const navBtn = document.querySelector(".bl_headerSpNavBtnWrapper_btn");
 const nav = document.querySelector(".bl_header_navWrapper_nav");
 
-if (window.innerWidth <= 767) {
+if (window.innerWidth <= 1024) {
 
     gsap.set(nav, {
         opacity: 0,
@@ -362,6 +362,7 @@ if (window.innerWidth <= 767) {
             // 閉じるアニメーション
             navBtn.dataset.animate = "animate";
             navBtn.classList.remove("is-active");
+            document.documentElement.style.overflow = "auto";
 
             gsap.to(nav, {
                 opacity: 0,
@@ -380,6 +381,7 @@ if (window.innerWidth <= 767) {
             navBtn.dataset.animate = "animate";
             nav.style.display = "block";
             navBtn.classList.add("is-active");
+            document.documentElement.style.overflow = "hidden";
 
             gsap.to(nav, {
                 opacity: 1,
