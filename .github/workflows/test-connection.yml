@@ -1,0 +1,51 @@
+name: Test SSH Connection
+
+on:
+  workflow_dispatch:  # 手動実行のみ
+
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Test SSH Connection
+        run: |
+          echo "Testing SSH connection to ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_PORT || 22 }}"
+          ssh -p ${{ secrets.SERVER_PORT || 22 }} \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=10 \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+            "echo 'SSH connection successful!' && \
+             echo 'Server info:' && \
+             uname -a && \
+             echo 'Current directory:' && \
+             pwd && \
+             echo 'Remote path exists:' && \
+             ls -la ${{ secrets.REMOTE_PATH }} || echo 'Remote path does not exist'"
+
+      - name: Test Remote Path
+        run: |
+          ssh -p ${{ secrets.SERVER_PORT || 22 }} \
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+            "if [ -d '${{ secrets.REMOTE_PATH }}' ]; then
+               echo '✓ Remote path exists and is a directory'
+               echo 'Contents:'
+               ls -la '${{ secrets.REMOTE_PATH }}' | head -10
+             else
+               echo '✗ Remote path does not exist or is not a directory'
+               echo 'Parent directory:'
+               ls -la \$(dirname '${{ secrets.REMOTE_PATH }}') | head -10
+             fi"
+
+      - name: Cleanup SSH
+        if: always()
+        run: |
+          rm -f ~/.ssh/id_rsa
+
