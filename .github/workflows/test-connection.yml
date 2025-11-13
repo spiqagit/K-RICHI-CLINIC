@@ -19,9 +19,32 @@ jobs:
             exit 1
           fi
           
+          # 秘密鍵をファイルに書き込む（改行を保持）
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          echo "✓ SSH key file created"
+          
+          # 秘密鍵の形式を検証
+          echo "Validating SSH key format..."
+          if ! ssh-keygen -l -f ~/.ssh/id_rsa > /dev/null 2>&1; then
+            echo "❌ ERROR: Invalid SSH private key format!"
+            echo ""
+            echo "The SSH_PRIVATE_KEY secret appears to be invalid."
+            echo "Please check:"
+            echo "  1. The key includes the header: -----BEGIN OPENSSH PRIVATE KEY-----"
+            echo "  2. The key includes the footer: -----END OPENSSH PRIVATE KEY-----"
+            echo "  3. All lines are properly formatted (no extra spaces or characters)"
+            echo "  4. The key is complete (not truncated)"
+            echo ""
+            echo "First 50 characters of the key:"
+            head -c 50 ~/.ssh/id_rsa
+            echo ""
+            echo "Last 50 characters of the key:"
+            tail -c 50 ~/.ssh/id_rsa
+            echo ""
+            exit 1
+          fi
+          
+          echo "✓ SSH key file created and validated"
           
           # サーバー情報の確認
           if [ -z "${{ secrets.SERVER_HOST }}" ]; then
