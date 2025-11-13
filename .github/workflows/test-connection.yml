@@ -112,14 +112,74 @@ jobs:
             echo "=== Trying alternative connection method ==="
             
             # 別の方法で試す: 対話的でないシンプルな接続
+            echo "Trying simple SSH connection..."
             ssh -p ${{ secrets.SERVER_PORT || 22 }} \
               -o StrictHostKeyChecking=yes \
               -o ConnectTimeout=10 \
               -o BatchMode=yes \
               -o PreferredAuthentications=publickey \
               -T ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "true" 2>&1 || {
-              echo "Alternative method also failed"
+              echo "Simple SSH connection also failed"
             }
+            
+            echo ""
+            echo "=== Testing rsync connection (used in deploy) ==="
+            # rsync経由で接続を試す（デプロイで使用する方法）
+            echo "test" > /tmp/test_file.txt
+            rsync -avz --dry-run \
+              -e "ssh -p ${{ secrets.SERVER_PORT || 22 }} -o StrictHostKeyChecking=yes -o BatchMode=yes" \
+              /tmp/test_file.txt ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/ 2>&1 || {
+              echo "rsync connection also failed"
+            }
+            rm -f /tmp/test_file.txt
+            
+            echo ""
+            echo "=== Testing SFTP connection ==="
+            # SFTP経由で接続を試す
+            echo "test" > /tmp/test_sftp.txt
+            cat > /tmp/sftp_commands.txt << 'SFTPEOF'
+ls
+pwd
+quit
+SFTPEOF
+            sftp -P ${{ secrets.SERVER_PORT || 22 }} \
+              -o StrictHostKeyChecking=yes \
+              -o BatchMode=yes \
+              -b /tmp/sftp_commands.txt \
+              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 2>&1 && {
+              echo "✓ SFTP connection successful!"
+            } || {
+              echo "✗ SFTP connection failed"
+            }
+            rm -f /tmp/test_sftp.txt /tmp/sftp_commands.txt
+            
+            echo ""
+            echo "=== Testing SCP connection ==="
+            # SCP経由で接続を試す
+            echo "test" > /tmp/test_scp.txt
+            scp -P ${{ secrets.SERVER_PORT || 22 }} \
+              -o StrictHostKeyChecking=yes \
+              -o BatchMode=yes \
+              /tmp/test_scp.txt ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/test_scp_remote.txt 2>&1 && {
+              echo "✓ SCP connection successful!"
+            } || {
+              echo "✗ SCP connection failed"
+            }
+            rm -f /tmp/test_scp.txt
+            
+            echo ""
+            echo "=== Summary ==="
+            echo "All connection methods failed. This suggests:"
+            echo "1. Server SSH config is restricting non-interactive connections"
+            echo "2. Server may require specific SSH options or environment"
+            echo "3. Server security software may be blocking automated connections"
+            echo ""
+            echo "=== Next steps ==="
+            echo "1. Check server SSH logs: /var/log/auth.log or /var/log/secure"
+            echo "2. Review server SSH config: /etc/ssh/sshd_config"
+            echo "3. Check for Match blocks or ForceCommand settings"
+            echo "4. Verify the user's shell is not restricted"
+            echo "5. Check if the server allows rsync/SCP connections"
             
             exit 1
           fi
