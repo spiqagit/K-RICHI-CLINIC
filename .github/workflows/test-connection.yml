@@ -11,37 +11,80 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          
+          # SSH秘密鍵の設定
+          if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ]; then
+            echo "ERROR: SSH_PRIVATE_KEY secret is not set"
+            exit 1
+          fi
+          
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+          echo "✓ SSH key file created"
+          
+          # サーバー情報の確認
+          if [ -z "${{ secrets.SERVER_HOST }}" ]; then
+            echo "ERROR: SERVER_HOST secret is not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.SERVER_USER }}" ]; then
+            echo "ERROR: SERVER_USER secret is not set"
+            exit 1
+          fi
+          
+          echo "Server: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_PORT || 22 }}"
+          
+          # ホストキーの取得
+          echo "Scanning host keys..."
+          ssh-keyscan -H -p ${{ secrets.SERVER_PORT || 22 }} ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || {
+            echo "Warning: ssh-keyscan failed, but continuing..."
+          }
+          echo "✓ SSH setup completed"
 
       - name: Test SSH Connection
         run: |
-          echo "Testing SSH connection to ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_PORT || 22 }}"
-          ssh -p ${{ secrets.SERVER_PORT || 22 }} \
+          set -e
+          echo "=========================================="
+          echo "Testing SSH connection..."
+          echo "=========================================="
+          
+          SSH_CMD="ssh -p ${{ secrets.SERVER_PORT || 22 }} \
             -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=10 \
-            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
-            "echo 'SSH connection successful!' && \
+            -o BatchMode=yes \
+            -v"
+          
+          echo "Connection details:"
+          echo "  Host: ${{ secrets.SERVER_HOST }}"
+          echo "  Port: ${{ secrets.SERVER_PORT || 22 }}"
+          echo "  User: ${{ secrets.SERVER_USER }}"
+          echo ""
+          
+          $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+            "echo '✓ SSH connection successful!' && \
              echo 'Server info:' && \
              uname -a && \
              echo 'Current directory:' && \
-             pwd && \
-             echo 'Remote path exists:' && \
-             ls -la ${{ secrets.REMOTE_PATH }} || echo 'Remote path does not exist'"
-
-      - name: Test Remote Path
-        run: |
-          ssh -p ${{ secrets.SERVER_PORT || 22 }} \
-            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+             pwd" || {
+            echo "❌ SSH connection failed!"
+            echo "Please check:"
+            echo "  1. SSH_PRIVATE_KEY is correct"
+            echo "  2. SERVER_HOST, SERVER_USER, SERVER_PORT are correct"
+            echo "  3. Server allows SSH connections from GitHub Actions IPs"
+            exit 1
+          }
+          
+          echo ""
+          echo "Testing remote path: ${{ secrets.REMOTE_PATH }}"
+          $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
             "if [ -d '${{ secrets.REMOTE_PATH }}' ]; then
-               echo '✓ Remote path exists and is a directory'
-               echo 'Contents:'
-               ls -la '${{ secrets.REMOTE_PATH }}' | head -10
+               echo '✓ Remote path exists'
+               ls -la '${{ secrets.REMOTE_PATH }}' | head -5
              else
-               echo '✗ Remote path does not exist or is not a directory'
+               echo '⚠ Remote path does not exist'
                echo 'Parent directory:'
-               ls -la \$(dirname '${{ secrets.REMOTE_PATH }}') | head -10
+               ls -la \$(dirname '${{ secrets.REMOTE_PATH }}') | head -5
              fi"
 
       - name: Cleanup SSH
