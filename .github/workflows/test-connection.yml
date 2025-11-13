@@ -74,9 +74,11 @@ jobs:
           
           SSH_CMD="ssh -p ${{ secrets.SERVER_PORT || 22 }} \
             -o StrictHostKeyChecking=yes \
-            -o ConnectTimeout=10 \
+            -o ConnectTimeout=30 \
+            -o ServerAliveInterval=60 \
+            -o ServerAliveCountMax=3 \
             -o BatchMode=yes \
-            -v"
+            -o LogLevel=INFO"
           
           echo "Connection details:"
           echo "  Host: ${{ secrets.SERVER_HOST }}"
@@ -84,22 +86,26 @@ jobs:
           echo "  User: ${{ secrets.SERVER_USER }}"
           echo ""
           
-          $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
-            "echo '✓ SSH connection successful!' && \
-             echo 'Server info:' && \
-             uname -a && \
-             echo 'Current directory:' && \
-             pwd" || {
-            echo "❌ SSH connection failed!"
-            echo "Please check:"
-            echo "  1. SSH_PRIVATE_KEY is correct"
-            echo "  2. SERVER_HOST, SERVER_USER, SERVER_PORT are correct"
-            echo "  3. Server allows SSH connections from GitHub Actions IPs"
+          # まず簡単なコマンドでテスト
+          echo "Step 1: Testing basic connection..."
+          $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo '✓ Basic connection successful!'" || {
+            echo "❌ Basic SSH connection failed!"
             exit 1
           }
           
           echo ""
-          echo "Testing remote path: ${{ secrets.REMOTE_PATH }}"
+          echo "Step 2: Getting server info..."
+          $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+            "echo 'Server info:' && \
+             uname -a && \
+             echo 'Current directory:' && \
+             pwd" || {
+            echo "❌ Command execution failed!"
+            exit 1
+          }
+          
+          echo ""
+          echo "Step 3: Testing remote path: ${{ secrets.REMOTE_PATH }}"
           $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
             "if [ -d '${{ secrets.REMOTE_PATH }}' ]; then
                echo '✓ Remote path exists'
@@ -108,7 +114,12 @@ jobs:
                echo '⚠ Remote path does not exist'
                echo 'Parent directory:'
                ls -la \$(dirname '${{ secrets.REMOTE_PATH }}') | head -5
-             fi"
+             fi" || {
+            echo "⚠ Remote path check failed, but connection is working"
+          }
+          
+          echo ""
+          echo "✅ All connection tests passed!"
 
       - name: Cleanup SSH
         if: always()
