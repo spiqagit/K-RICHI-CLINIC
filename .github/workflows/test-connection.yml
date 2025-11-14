@@ -47,12 +47,12 @@ jobs:
           echo "✓ SSH key file created and validated"
           
           # サーバー情報の確認
-          if [ -z "${{ secrets.SERVER_HOST }}" ]; then
-            echo "ERROR: SERVER_HOST secret is not set"
+          if [ -z "${{ secrets.XSERVER_HOST }}" ]; then
+            echo "ERROR: XSERVER_HOST secret is not set"
             exit 1
           fi
-          if [ -z "${{ secrets.SERVER_USER }}" ]; then
-            echo "ERROR: SERVER_USER secret is not set"
+          if [ -z "${{ secrets.XSERVER_USER }}" ]; then
+            echo "ERROR: XSERVER_USER secret is not set"
             exit 1
           fi
           
@@ -63,11 +63,11 @@ jobs:
             SERVER_PORT="${{ secrets.SERVER_PORT }}"
           fi
           
-          echo "Server: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:$SERVER_PORT"
+          echo "Server: ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:$SERVER_PORT"
           
           # ホストキーの取得
           echo "Scanning host keys..."
-          ssh-keyscan -H -p $SERVER_PORT ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || {
+          ssh-keyscan -H -p $SERVER_PORT ${{ secrets.XSERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || {
             echo "Warning: ssh-keyscan failed, but continuing..."
           }
           echo "✓ SSH setup completed"
@@ -96,14 +96,14 @@ jobs:
             -vvv"
           
           echo "Connection details:"
-          echo "  Host: ${{ secrets.SERVER_HOST }}"
+          echo "  Host: ${{ secrets.XSERVER_HOST }}"
           echo "  Port: $SSH_PORT"
-          echo "  User: ${{ secrets.SERVER_USER }}"
+          echo "  User: ${{ secrets.XSERVER_USER }}"
           echo ""
           
           # まず簡単なコマンドでテスト（詳細ログ付き）
           echo "Step 1: Testing basic connection with verbose logging..."
-          $SSH_CMD ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "echo '✓ Basic connection successful!'" 2>&1 | tee /tmp/ssh_output.log
+          $SSH_CMD ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }} "echo '✓ Basic connection successful!'" 2>&1 | tee /tmp/ssh_output.log
           SSH_EXIT_CODE=${PIPESTATUS[0]}
           
           if [ $SSH_EXIT_CODE -ne 0 ]; then
@@ -132,7 +132,7 @@ jobs:
             -o ConnectTimeout=10 \
             -o BatchMode=yes \
             -o PreferredAuthentications=publickey \
-            -T ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "true" 2>&1 || {
+            -T ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }} "true" 2>&1 || {
               echo "Simple SSH connection also failed"
             }
             
@@ -142,7 +142,7 @@ jobs:
             echo "test" > /tmp/test_file.txt
             rsync -avz --dry-run \
               -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=yes -o BatchMode=yes" \
-              /tmp/test_file.txt ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/ 2>&1 || {
+              /tmp/test_file.txt ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:/tmp/ 2>&1 || {
               echo "rsync connection also failed"
             }
             rm -f /tmp/test_file.txt
@@ -156,7 +156,7 @@ jobs:
               -o StrictHostKeyChecking=yes \
               -o BatchMode=yes \
               -b /tmp/sftp_commands.txt \
-              ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 2>&1 && {
+              ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }} 2>&1 && {
               echo "✓ SFTP connection successful!"
             } || {
               echo "✗ SFTP connection failed"
@@ -170,7 +170,7 @@ jobs:
             scp -P $SSH_PORT \
               -o StrictHostKeyChecking=yes \
               -o BatchMode=yes \
-              /tmp/test_scp.txt ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/test_scp_remote.txt 2>&1 && {
+              /tmp/test_scp.txt ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:/tmp/test_scp_remote.txt 2>&1 && {
               echo "✓ SCP connection successful!"
             } || {
               echo "✗ SCP connection failed"
@@ -208,7 +208,7 @@ jobs:
             -o BatchMode=yes"
           
           echo "Step 2: Getting server info..."
-          $SSH_CMD_NORMAL ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+          $SSH_CMD_NORMAL ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }} \
             "echo 'Server info:' && \
              uname -a && \
              echo 'Current directory:' && \
@@ -216,7 +216,7 @@ jobs:
           
           echo ""
           echo "Step 3: Testing remote path: ${{ secrets.REMOTE_PATH }}"
-          $SSH_CMD_NORMAL ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
+          $SSH_CMD_NORMAL ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }} \
             "if [ -d '${{ secrets.REMOTE_PATH }}' ]; then
                echo '✓ Remote path exists'
                ls -la '${{ secrets.REMOTE_PATH }}' | head -5
