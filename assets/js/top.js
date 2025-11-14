@@ -15,9 +15,9 @@ const fadeIn = () => {
         },{
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration:2,
             ease: "power1.out",
-            stagger: 0.3,
+            stagger: 0.1,
             scrollTrigger: {
                 trigger: item,
                 start: 'top 60%', // アニメーションの開始位置の指定

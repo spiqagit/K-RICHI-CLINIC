@@ -135,7 +135,7 @@
                 <?php echo do_shortcode('[gtranslate]'); ?>
             </div>
             <div class="bl_headerSpNavBtnWrapper">
-                <button class="bl_headerSpNavBtnWrapper_btn" type="button">
+                <button class="bl_headerSpNavBtnWrapper_btn" aria-label="ナビゲーション開閉ボタン" type="button">
                     <span class="el_headerSpNavBtnWrapper_btn_line"></span>
                     <span class="el_headerSpNavBtnWrapper_btn_line"></span>
                 </button>
