@@ -1,4 +1,4 @@
-name: Deploy to Xserver via rsync
+name: Deploy to Xserver via SFTP
 
 on:
   push:
@@ -14,45 +14,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          
-          # ポート番号のデフォルト値を設定（XserverのSFTPポートは10022）
-          if [ -z "${{ secrets.SERVER_PORT }}" ]; then
-            SSH_PORT="10022"
-          else
-            SSH_PORT="${{ secrets.SERVER_PORT }}"
-          fi
-          
-          # ホストキーの取得
-          ssh-keyscan -H -p $SSH_PORT ${{ secrets.XSERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || true
-
-      - name: Deploy files via rsync
-        run: |
-          # ポート番号のデフォルト値を設定
-          if [ -z "${{ secrets.SERVER_PORT }}" ]; then
-            SSH_PORT="10022"
-          else
-            SSH_PORT="${{ secrets.SERVER_PORT }}"
-          fi
-          
-          rsync -avz --delete \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='node_modules' \
-            --exclude='.env' \
-            --exclude='.DS_Store' \
-            --exclude='*.md' \
-            --exclude='.gitignore' \
-            -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=yes -o BatchMode=yes" \
-            ./ ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:${{ secrets.REMOTE_PATH }}
-
-      - name: Cleanup SSH
-        if: always()
-        run: |
-          rm -f ~/.ssh/id_rsa
+      - name: Deploy files via SFTP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.XSERVER_HOST }}
+          username: ${{ secrets.XSERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 10022 }}
+          source: "."
+          target: ${{ secrets.REMOTE_PATH }}
+          strip_components: 0
+          rm: false
+          overwrite: true
+          exclude: |
+            .git
+            .github
+            node_modules
+            .env
+            .DS_Store
+            *.md
+            .gitignore
 
