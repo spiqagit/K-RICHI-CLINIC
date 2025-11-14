@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master  # デプロイをトリガーするブランチ
+      - main    # mainブランチにも対応
   workflow_dispatch:  # 手動実行も可能にする
 
 jobs:
