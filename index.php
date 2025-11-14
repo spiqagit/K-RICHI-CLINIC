@@ -385,14 +385,16 @@
                                 <p class="el_commonSectionTtl_ttl_ja bl_fadeIn_item">お悩み</p>
                             </hgroup>
                         </div>
-                        <div class="bl_commonAllviewBtnWrapper bl_fadeIn_item">
-                            <a href="<?php echo home_url(); ?>/concern/" class="bl_commonAllviewBtn">
-                                <p class="el_commonAllviewBtn_txt">View all</p>
-                                <div class="el_commonAllviewBtn_arrow">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
-                                </div>
-                            </a>
-                        </div>
+                        <?php if (!empty($concern_cats)) : ?>
+                            <div class="bl_commonAllviewBtnWrapper bl_fadeIn_item">
+                                <a href="<?php echo home_url(); ?>/concern/" class="bl_commonAllviewBtn">
+                                    <p class="el_commonAllviewBtn_txt">View all</p>
+                                    <div class="el_commonAllviewBtn_arrow">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
 
                     <div class="bl_topConcernContainer">
