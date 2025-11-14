@@ -56,11 +56,18 @@ jobs:
             exit 1
           fi
           
-          echo "Server: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.SERVER_PORT || 22 }}"
+          # ポート番号のデフォルト値を設定（XserverのSFTPポートは10022）
+          if [ -z "${{ secrets.SERVER_PORT }}" ]; then
+            SERVER_PORT="10022"
+          else
+            SERVER_PORT="${{ secrets.SERVER_PORT }}"
+          fi
+          
+          echo "Server: ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:$SERVER_PORT"
           
           # ホストキーの取得
           echo "Scanning host keys..."
-          ssh-keyscan -H -p ${{ secrets.SERVER_PORT || 22 }} ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || {
+          ssh-keyscan -H -p $SERVER_PORT ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>&1 || {
             echo "Warning: ssh-keyscan failed, but continuing..."
           }
           echo "✓ SSH setup completed"
@@ -72,7 +79,14 @@ jobs:
           echo "Testing SSH connection..."
           echo "=========================================="
           
-          SSH_CMD="ssh -p ${{ secrets.SERVER_PORT || 22 }} \
+          # ポート番号のデフォルト値を設定（XserverのSFTPポートは10022）
+          if [ -z "${{ secrets.SERVER_PORT }}" ]; then
+            SSH_PORT="10022"
+          else
+            SSH_PORT="${{ secrets.SERVER_PORT }}"
+          fi
+          
+          SSH_CMD="ssh -p $SSH_PORT \
             -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=30 \
             -o ServerAliveInterval=10 \
@@ -83,7 +97,7 @@ jobs:
           
           echo "Connection details:"
           echo "  Host: ${{ secrets.SERVER_HOST }}"
-          echo "  Port: ${{ secrets.SERVER_PORT || 22 }}"
+          echo "  Port: $SSH_PORT"
           echo "  User: ${{ secrets.SERVER_USER }}"
           echo ""
           
@@ -111,14 +125,14 @@ jobs:
             echo ""
             echo "=== Trying alternative connection method ==="
             
-            # 別の方法で試す: 対話的でないシンプルな接続
-            echo "Trying simple SSH connection..."
-            ssh -p ${{ secrets.SERVER_PORT || 22 }} \
-              -o StrictHostKeyChecking=yes \
-              -o ConnectTimeout=10 \
-              -o BatchMode=yes \
-              -o PreferredAuthentications=publickey \
-              -T ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "true" 2>&1 || {
+          # 別の方法で試す: 対話的でないシンプルな接続
+          echo "Trying simple SSH connection..."
+          ssh -p $SSH_PORT \
+            -o StrictHostKeyChecking=yes \
+            -o ConnectTimeout=10 \
+            -o BatchMode=yes \
+            -o PreferredAuthentications=publickey \
+            -T ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "true" 2>&1 || {
               echo "Simple SSH connection also failed"
             }
             
@@ -127,7 +141,7 @@ jobs:
             # rsync経由で接続を試す（デプロイで使用する方法）
             echo "test" > /tmp/test_file.txt
             rsync -avz --dry-run \
-              -e "ssh -p ${{ secrets.SERVER_PORT || 22 }} -o StrictHostKeyChecking=yes -o BatchMode=yes" \
+              -e "ssh -p $SSH_PORT -o StrictHostKeyChecking=yes -o BatchMode=yes" \
               /tmp/test_file.txt ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/ 2>&1 || {
               echo "rsync connection also failed"
             }
@@ -138,7 +152,7 @@ jobs:
             # SFTP経由で接続を試す
             echo "test" > /tmp/test_sftp.txt
             printf 'ls\npwd\nquit\n' > /tmp/sftp_commands.txt
-            sftp -P ${{ secrets.SERVER_PORT || 22 }} \
+            sftp -P $SSH_PORT \
               -o StrictHostKeyChecking=yes \
               -o BatchMode=yes \
               -b /tmp/sftp_commands.txt \
@@ -153,7 +167,7 @@ jobs:
             echo "=== Testing SCP connection ==="
             # SCP経由で接続を試す
             echo "test" > /tmp/test_scp.txt
-            scp -P ${{ secrets.SERVER_PORT || 22 }} \
+            scp -P $SSH_PORT \
               -o StrictHostKeyChecking=yes \
               -o BatchMode=yes \
               /tmp/test_scp.txt ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/test_scp_remote.txt 2>&1 && {
@@ -186,7 +200,7 @@ jobs:
           echo ""
           
           # 詳細ログを減らして通常のコマンドを実行
-          SSH_CMD_NORMAL="ssh -p ${{ secrets.SERVER_PORT || 22 }} \
+          SSH_CMD_NORMAL="ssh -p $SSH_PORT \
             -o StrictHostKeyChecking=yes \
             -o ConnectTimeout=30 \
             -o ServerAliveInterval=10 \
