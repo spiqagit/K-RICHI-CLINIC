@@ -1,0 +1,34 @@
+name: Test FTP Connection
+
+on:
+  workflow_dispatch:  # 手動実行のみ
+
+jobs:
+  test-ftp:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create test file
+        run: |
+          mkdir -p test-deploy
+          echo "FTP connection test - $(date)" > test-deploy/test-ftp-connection.txt
+          echo "This file was deployed via GitHub Actions FTP" >> test-deploy/test-ftp-connection.txt
+          echo "If you see this file, FTP connection is working correctly!" >> test-deploy/test-ftp-connection.txt
+
+      - name: Deploy test file via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /stg03-spiqadesign.com/public_html/k-rich-clinic/wp-content/themes/k-richi-clinic
+          local-dir: test-deploy
+
+      - name: Test Result
+        run: |
+          echo "✅ Test file deployed successfully!"
+          echo "Check the server to verify: test-ftp-connection.txt"
+
