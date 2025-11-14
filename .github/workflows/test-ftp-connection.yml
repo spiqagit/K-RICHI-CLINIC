@@ -1,0 +1,28 @@
+name: Test FTP Connection
+
+on:
+  workflow_dispatch:  # 手動実行のみ
+
+jobs:
+  test-ftp:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Test FTP Connection
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.REMOTE_PATH }}/test_connection
+          dry-run: true
+
+      - name: Connection Test Result
+        run: |
+          echo "✅ FTP connection test successful!"
+          echo "The connection to the server is working correctly."
+
+
