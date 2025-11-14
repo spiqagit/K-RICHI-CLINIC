@@ -11,13 +11,13 @@ const fadeIn = () => {
 
         gsap.fromTo(itemTxtItemList, {
             opacity: 0,
-            y: "80",
+            y: "60",
         },{
-            opacity: 5,
+            opacity: 1,
             y: 0,
-            duration:2,
+            duration: 1,
             ease: "power1.out",
-            stagger: 0.67,
+            stagger: 0.3,
             scrollTrigger: {
                 trigger: item,
                 start: 'top 60%', // アニメーションの開始位置の指定

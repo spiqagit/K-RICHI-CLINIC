@@ -262,12 +262,12 @@
                     <div class="swiper bl_featuerSection_list">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="bl_featuerSection_list_item">
-                                    <div class="bl_featuerSection_list_item_imgWrapper bl_fadeIn_item">
+                                <div class="bl_featuerSection_list_item bl_fadeIn_item">
+                                    <div class="bl_featuerSection_list_item_imgWrapper">
                                         <p class="el_featuerSection_list_item_imgWrapper_num">01</p>
                                         <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-01.jpg" alt="韓国美容と日本品質の融合">
                                     </div>
-                                    <div class="bl_featuerSection_list_item_txtWrapper bl_fadeIn_item">
+                                    <div class="bl_featuerSection_list_item_txtWrapper">
                                         <p class="el_featuerSection_list_item_ttl">韓国美容と日本品質の融合</p>
                                         <p class="el_featuerSection_list_item_txt">韓国の先端美容医療と日本の繊細な技術を融合し、一人ひとりに合わせたオーダーメイド治療で理想の美しさを叶えます。</p>
                                     </div>
@@ -275,12 +275,12 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <div class="bl_featuerSection_list_item">
-                                    <div class="bl_featuerSection_list_item_imgWrapper bl_fadeIn_item">
+                                <div class="bl_featuerSection_list_item bl_fadeIn_item">
+                                    <div class="bl_featuerSection_list_item_imgWrapper">
                                         <p class="el_featuerSection_list_item_imgWrapper_num">02</p>
                                         <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-02.jpg" alt="再生医療とエイジングケアの専門性">
                                     </div>
-                                    <div class="bl_featuerSection_list_item_txtWrapper bl_fadeIn_item">
+                                    <div class="bl_featuerSection_list_item_txtWrapper">
                                         <p class="el_featuerSection_list_item_ttl">再生医療とエイジングケアの専門性</p>
                                         <p class="el_featuerSection_list_item_txt">PRPや幹細胞治療などの再生医療を通じて肌の機能を整え、内側から自然で上質な若返りを導きます。</p>
                                     </div>
@@ -288,12 +288,12 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <div class="bl_featuerSection_list_item">
-                                    <div class="bl_featuerSection_list_item_imgWrapper bl_fadeIn_item">
+                                <div class="bl_featuerSection_list_item bl_fadeIn_item">
+                                    <div class="bl_featuerSection_list_item_imgWrapper">
                                         <p class="el_featuerSection_list_item_imgWrapper_num">03</p>
                                         <img class="bl_featuerSection_list_item_imgWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/featuer-03.jpg" alt="国際的視点と信頼の医療体制">
                                     </div>
-                                    <div class="bl_featuerSection_list_item_txtWrapper bl_fadeIn_item">
+                                    <div class="bl_featuerSection_list_item_txtWrapper">
                                         <p class="el_featuerSection_list_item_ttl">国際的視点と信頼の医療体制</p>
                                         <p class="el_featuerSection_list_item_txt">日韓両国の医師免許を持つ院長が多言語の能力を活かし、世界の医療技術を基に、安心と信頼の医療を提供します。</p>
                                     </div>
