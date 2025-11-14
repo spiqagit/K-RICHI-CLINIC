@@ -20,7 +20,7 @@ jobs:
           host: ${{ secrets.XSERVER_HOST }}
           username: ${{ secrets.XSERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SERVER_PORT || 10022 }}
+          port: ${{ secrets.SERVER_PORT != '' && secrets.SERVER_PORT || '10022' }}
           source: "."
           target: ${{ secrets.REMOTE_PATH }}
           strip_components: 0
