@@ -13,11 +13,11 @@ const fadeIn = () => {
             opacity: 0,
             y: "80",
         },{
-            opacity: 1,
+            opacity: 5,
             y: 0,
             duration:2,
             ease: "power1.out",
-            stagger: 0.1,
+            stagger: 0.67,
             scrollTrigger: {
                 trigger: item,
                 start: 'top 60%', // アニメーションの開始位置の指定
