@@ -1,0 +1,32 @@
+name: Deploy to Xserver via FTP
+
+on:
+  push:
+    branches:
+      - master  # デプロイをトリガーするブランチ
+  workflow_dispatch:  # 手動実行も可能にする
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.REMOTE_PATH }}
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+            **/.env
+            **/.DS_Store
+            **/*.md
+            **/.gitignore
+
