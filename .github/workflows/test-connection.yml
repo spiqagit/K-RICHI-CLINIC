@@ -1,7 +1,7 @@
 name: Test SSH Connection
 
 on:
-  workflow_dispatch:  # 手動実行のみ
+  workflow_dispatch:  # 手動実行のみ（SSH接続テスト用）
 
 jobs:
   test-connection:
