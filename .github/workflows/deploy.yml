@@ -14,6 +14,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Prepare files for deployment
+        run: |
+          # デプロイに不要なファイル・ディレクトリを削除
+          rm -rf .git .github node_modules
+          find . -name ".env" -delete
+          find . -name ".DS_Store" -delete
+          find . -name "*.md" -delete
+          find . -name ".gitignore" -delete
+
       - name: Deploy files via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -26,12 +35,4 @@ jobs:
           strip_components: 0
           rm: false
           overwrite: true
-          exclude: |
-            .git
-            .github
-            node_modules
-            .env
-            .DS_Store
-            *.md
-            .gitignore
 
