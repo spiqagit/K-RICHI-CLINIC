@@ -17,11 +17,11 @@ jobs:
       - name: Prepare files for deployment
         run: |
           # デプロイに不要なファイル・ディレクトリを削除
-          rm -rf .git .github node_modules
-          find . -name ".env" -delete
-          find . -name ".DS_Store" -delete
-          find . -name "*.md" -delete
-          find . -name ".gitignore" -delete
+          rm -rf .git node_modules
+          find . -name ".env" -not -path "./.github/*" -delete
+          find . -name ".DS_Store" -not -path "./.github/*" -delete
+          find . -name "*.md" -not -path "./.github/*" -delete
+          find . -name ".gitignore" -not -path "./.github/*" -delete
 
       - name: Deploy files via SFTP
         uses: appleboy/scp-action@v0.1.7
