@@ -24,7 +24,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /stg03-spiqadesign.com/public_html/k-rich-clinic/wp-content/themes/k-richi-clinic
+          server-dir: /stg03-spiqadesign.com/public_html/k-rich-clinic/wp-content/themes/k-richi-clinic/
           local-dir: test-deploy
 
       - name: Test Result
