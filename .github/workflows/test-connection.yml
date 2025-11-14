@@ -137,11 +137,7 @@ jobs:
             echo "=== Testing SFTP connection ==="
             # SFTP経由で接続を試す
             echo "test" > /tmp/test_sftp.txt
-            cat > /tmp/sftp_commands.txt << 'SFTPEOF'
-ls
-pwd
-quit
-SFTPEOF
+            printf 'ls\npwd\nquit\n' > /tmp/sftp_commands.txt
             sftp -P ${{ secrets.SERVER_PORT || 22 }} \
               -o StrictHostKeyChecking=yes \
               -o BatchMode=yes \
