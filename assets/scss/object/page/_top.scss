@@ -79,6 +79,11 @@
         margin-block-end: calc(vwmin(20, pc) + var(--leading-trim));
         width: fit-content;
         margin-inline: auto;
+
+        @include underSP {
+            font-size: vwmin(40, sp_m);
+            margin-block-end: calc(vwmin(20, sp_m) + var(--leading-trim));
+        }
     }
 
     .bl_topNoPostContainer_txtJa {
@@ -91,6 +96,10 @@
         letter-spacing: calc(0.9 / 18 * 1em);
         width: fit-content;
         margin-inline: auto;
+
+        @include underSP {
+            font-size: vwmin(18, sp_m);
+        }
     }
 }
 
