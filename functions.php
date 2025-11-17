@@ -36,6 +36,26 @@ function remove_editor_for_staff()
 }
 add_action('init', 'remove_editor_for_staff');
 
+// price-catタクソノミーの「表示」ボタンを非表示にする
+function remove_price_cat_view_action($actions, $tag)
+{
+    if (isset($actions['view'])) {
+        unset($actions['view']);
+    }
+    return $actions;
+}
+add_filter('price-cat_row_actions', 'remove_price_cat_view_action', 10, 2);
+
+// menu-catタクソノミーの「表示」ボタンを非表示にする
+function remove_menu_cat_view_action($actions, $tag)
+{
+    if (isset($actions['view'])) {
+        unset($actions['view']);
+    }
+    return $actions;
+}
+add_filter('menu-cat_row_actions', 'remove_menu_cat_view_action', 10, 2);
+
 /* ---------- 投稿関連 ---------- */
 // single生成制御
 
@@ -84,6 +104,32 @@ function disable_faq_pages()
     }
 }
 add_action('template_redirect', 'disable_faq_pages');
+
+// price-catタクソノミーページを404にする
+function disable_price_cat_pages()
+{
+    if (is_tax('price-cat')) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header(404);
+        get_template_part(404);
+        exit;
+    }
+}
+add_action('template_redirect', 'disable_price_cat_pages');
+
+// menu-catタクソノミーページを404にする
+function disable_menu_cat_pages()
+{
+    if (is_tax('menu-cat')) {
+        global $wp_query;
+        $wp_query->set_404();
+        status_header(404);
+        get_template_part(404);
+        exit;
+    }
+}
+add_action('template_redirect', 'disable_menu_cat_pages');
 
 // デフォルト投稿のアーカイブ・個別記事を404にする
 function disable_default_post_pages()
