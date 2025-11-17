@@ -474,7 +474,7 @@
                 ]);
                 ?>
 
-                <div class="bl_topMenuSection_item bl_fadeIn_item">
+                <div class="bl_topMenuSection_item bl_fadeIn">
                     <div class="bl_topMenuSection_item_ttlWrapper">
                         <div class="blcommonSectionTtlWrapper">
                             <hgroup class="bl_commonSectionTtl">
@@ -529,7 +529,7 @@
                     <?php else : ?>
 
                         <div class="">
-                            <div class="bl_topNoPostContainer bl_fadeIn">
+                            <div class="bl_topNoPostContainer">
                                 <p class="bl_topNoPostContainer_txtEn bl_fadeIn_item">Coming soon...</p>
                                 <p class="bl_topNoPostContainer_txtJa bl_fadeIn_item">ただいま公開準備中です。</p>
                             </div>
