@@ -109,8 +109,9 @@
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            <?php if ($column_query->have_posts()) : ?>
-                                <div class="bl_topColumnSection_sliderWrapper">
+
+                            <div class="bl_topColumnSection_sliderWrapper">
+                                <?php if ($column_query->have_posts()) : ?>
                                     <div class="swiper bl_topColumnSection_slider">
                                         <div class="swiper-wrapper">
                                             <?php while ($column_query->have_posts()) : $column_query->the_post(); ?>
@@ -154,7 +155,16 @@
                                             <?php wp_reset_postdata(); ?>
                                         </div>
                                     </div>
-                                </div>
+                                <?php else : ?>
+                                    <div class="">
+                                        <div class="bl_topNoPostContainer">
+                                            <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                                            <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <?php if ($column_query->have_posts()) : ?>
                                 <div class="bl_commonAllviewBtnWrapper bl_topColumnSection_btnWrapper">
                                     <a href="<?php echo home_url(); ?>/column/" class="bl_commonAllviewBtn">
                                         <p class="el_commonAllviewBtn_txt">View all</p>
@@ -162,13 +172,6 @@
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
                                         </div>
                                     </a>
-                                </div>
-                            <?php else : ?>
-                                <div class="">
-                                    <div class="bl_topNoPostContainer">
-                                        <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
-                                        <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
-                                    </div>
                                 </div>
                             <?php endif; ?>
                         </div>
