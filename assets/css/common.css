@@ -3950,13 +3950,11 @@ Doctor
   }
 }
 .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
-  display: grid;
-  grid-template-columns: clamp(0px, 5.5555555556vw, 120px) 1fr;
+  display: flex;
   gap: clamp(0px, 2.7777777778vw, 60px);
 }
 @media screen and (width <= 1024px) {
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
-    grid-template-columns: clamp(0px, 18.691588785vw, 88px) 1fr;
     gap: clamp(0px, 9.3457943925vw, 44px);
   }
 }
@@ -3974,6 +3972,14 @@ Doctor
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
     font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
+  width: clamp(0px, 5.5555555556vw, 120px);
+}
+@media screen and (width <= 1024px) {
+  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
+    width: clamp(0px, 18.691588785vw, 88px);
   }
 }
 

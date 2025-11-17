@@ -142,6 +142,15 @@ function disable_default_post_pages()
         get_template_part(404);
         exit;
     }
+
+        // デフォルト投稿の個別記事
+        if (is_singular('staff')) {
+            global $wp_query;
+            $wp_query->set_404();
+            status_header(404);
+            get_template_part(404);
+            exit;
+        }
     
     // デフォルト投稿のアーカイブ（ホームページが投稿一覧の場合）
     if (is_home() && !is_front_page()) {

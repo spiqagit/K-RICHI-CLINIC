@@ -198,12 +198,10 @@ Doctor
                 }
 
                 .bl_doctorContentsWrapper_careerWrapper_list_item {
-                    display: grid;
-                    grid-template-columns: vwmin(80, pc) 1fr;
+                    display: flex;
                     gap: vwmin(40, pc);
 
                     @include underSP {
-                        grid-template-columns: vwmin(80, sp_m) 1fr;
                         gap: vwmin(40, sp_m);
                     }
 
@@ -219,6 +217,13 @@ Doctor
 
                         @include underSP {
                             font-size: vwmin(16, sp_m);
+                        }
+                    }
+
+                    .bl_doctorContentsWrapper_careerWrapper_list_item_ttl{
+                        width: vwmin(80, pc);
+                        @include underSP {
+                            width: vwmin(80, sp_m);
                         }
                     }
                 }
