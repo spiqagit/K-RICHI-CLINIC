@@ -188,8 +188,12 @@
                                                             <ul class="bl_doctorContentsWrapper_careerWrapper_list">
                                                                 <?php while (have_rows('career-list', $staff_post->ID)) : the_row(); ?>
                                                                     <li class="bl_doctorContentsWrapper_careerWrapper_list_item">
-                                                                        <p class="bl_doctorContentsWrapper_careerWrapper_list_item_ttl"><?php the_sub_field('career-list-year'); ?></p>
-                                                                        <p class="bl_doctorContentsWrapper_careerWrapper_list_item_txt"><?php the_sub_field('career-list-txt'); ?></p>
+                                                                        <?php if (get_sub_field('career-list-year')) : ?>
+                                                                            <p class="bl_doctorContentsWrapper_careerWrapper_list_item_ttl"><?php the_sub_field('career-list-year'); ?></p>
+                                                                        <?php endif; ?>
+                                                                        <?php if (get_sub_field('career-list-txt')) : ?>
+                                                                            <p class="bl_doctorContentsWrapper_careerWrapper_list_item_txt"><?php the_sub_field('career-list-txt'); ?></p>
+                                                                        <?php endif; ?>
                                                                     </li>
                                                                 <?php endwhile; ?>
                                                             </ul>
