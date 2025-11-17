@@ -120,13 +120,13 @@
                 </div>
                 <div class="bl_footer_aboutClinicLinkContainer">
                     <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/about/">クリニックについて</a>
-                    <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/manager/">院長紹介</a>
-                    <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/staff/">スタッフ紹介</a>
+                    <!-- <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/manager/">院長紹介</a>
+                    <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/staff/">スタッフ紹介</a> -->
                 </div>
             </div>
 
             <div class="bl_footer_btnContainer">
-                <a href="<?php echo home_url(); ?>/guide/" class="bl_footer_btnTitle bl_footer_btn">
+                <!-- <a href="<?php echo home_url(); ?>/guide/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">guide</p>
                     <p class="el_footer_btnTitle_ja">初めての方へ</p>
                 </a>
@@ -174,7 +174,7 @@
                 <a href="<?php echo home_url(); ?>/access/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">access</p>
                     <p class="el_footer_btnTitle_ja">アクセス</p>
-                </a>
+                </a> -->
 
                 <a href="<?php echo home_url(); ?>/price/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">price</p>
