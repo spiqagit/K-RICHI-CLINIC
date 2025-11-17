@@ -65,8 +65,10 @@ function change_posts_per_page($query)
     if (is_admin() || !$query->is_main_query())
         return;
 
-    // ページネーションのクエリ変数を適切に処理
-    
+    // price投稿タイプのアーカイブページで全件表示
+    if (is_post_type_archive('price')) {
+        $query->set('posts_per_page', -1);
+    }
 }
 add_action('pre_get_posts', 'change_posts_per_page');
 

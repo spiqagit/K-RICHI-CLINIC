@@ -2205,6 +2205,12 @@ Google Maps
   width: fit-content;
   margin-inline: auto;
 }
+@media screen and (width <= 1024px) {
+  .bl_topNoPostContainer .bl_topNoPostContainer_txtEn {
+    font-size: clamp(0px, 9.3457943925vw, 44px);
+    margin-block-end: calc(clamp(0px, 4.6728971963vw, 22px) + var(--leading-trim));
+  }
+}
 .bl_topNoPostContainer .bl_topNoPostContainer_txtJa {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
@@ -2215,6 +2221,11 @@ Google Maps
   letter-spacing: 0.05em;
   width: fit-content;
   margin-inline: auto;
+}
+@media screen and (width <= 1024px) {
+  .bl_topNoPostContainer .bl_topNoPostContainer_txtJa {
+    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+  }
 }
 
 .bl_fvSection {
