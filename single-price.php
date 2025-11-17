@@ -37,6 +37,7 @@
                                                         <?php
                                                         $price_SelectList = get_posts(array(
                                                             'post_type' => 'price',
+                                                            'posts_per_page' => -1,
                                                             'tax_query' => array(
                                                                 array(
                                                                     'taxonomy' => 'price-cat',
