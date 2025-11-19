@@ -19,13 +19,13 @@ const fadeIn = () => {
         // 初期状態を明示的に設定
         gsap.set(itemTxtItemList, {
             opacity: 0,
-            y: 60,
+            y: 45,
         });
 
         const animation = gsap.to(itemTxtItemList, {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 1.2,
             ease: "power1.out",
             stagger: 0.3,
             scrollTrigger: {
