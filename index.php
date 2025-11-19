@@ -571,7 +571,7 @@
                     <?php endif; ?>
                 </div>
 
-                <?php if (!empty($case_posts)) : ?>
+                <?php if ($case_posts->have_posts()) : ?>
                     <div class="bl_caseSliderWrapper">
                         <div class="splide bl_caseSliderWrapper_slider">
                             <div class="splide__track bl_fadeIn_item">
@@ -669,8 +669,8 @@
                 <?php else : ?>
                     <div class="">
                         <div class="bl_topNoPostContainer">
-                            <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
-                            <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
+                            <p class="bl_topNoPostContainer_txtEn bl_fadeIn_item">Coming soon...</p>
+                            <p class="bl_topNoPostContainer_txtJa bl_fadeIn_item">ただいま公開準備中です。</p>
                         </div>
                     </div>
                 <?php endif; ?>
