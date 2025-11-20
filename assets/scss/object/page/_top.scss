@@ -506,6 +506,8 @@
     }
 
     .bl_conceptSection_imgWrapper {
+        order: 2;
+        
         @include underSP {
             order: 2;
             max-width: vwmin(240, sp_m);

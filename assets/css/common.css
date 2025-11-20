@@ -2582,6 +2582,9 @@ Google Maps
     font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
 }
+.bl_conceptSection .bl_conceptSection_imgWrapper {
+  order: 2;
+}
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_imgWrapper {
     order: 2;

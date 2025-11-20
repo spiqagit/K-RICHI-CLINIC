@@ -229,6 +229,9 @@
 
         <section class="bl_conceptSection bl_topSection bl_fadeIn">
             <div class="bl_conceptSection_inner bl_topSection_inner">
+                <div class="bl_conceptSection_imgWrapper bl_fadeIn_item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-concept-img.png" alt="モデルの女性の画像">
+                </div>
                 <div class="bl_conceptSection_txtWrapper">
                     <div class="blcommonSectionTtlWrapper">
                         <hgroup class="bl_commonSectionTtl">
@@ -248,9 +251,6 @@
                             <p class="el_conceptSection_txt_txt">最新の医療機器と確かな技術、そして誠実な医療を通じて、「自分らしく輝く人生」へと導くことが、K-RICH CLINICの理念です。</p>
                         </div>
                     </div>
-                </div>
-                <div class="bl_conceptSection_imgWrapper bl_fadeIn_item">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-concept-img.png" alt="モデルの女性の画像">
                 </div>
             </div>
         </section>
