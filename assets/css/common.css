@@ -4147,3 +4147,133 @@ Information
   height: 100%;
   object-fit: cover;
 }
+
+.bl_staffContentsOuter {
+  /* 看護師紹介 */
+}
+.bl_staffContentsOuter .bl_staffContents_ttl {
+  margin-bottom: clamp(0px, 3.4722222222vw, 75px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents_ttl {
+    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents_ttl .el_staffContents_ttl_en {
+  color: var(--black);
+  font-family: var(--notoSerifDisplay);
+  font-size: clamp(0px, 4.1666666667vw, 90px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  width: fit-content;
+  margin-inline: auto;
+  text-transform: capitalize;
+  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents_ttl .el_staffContents_ttl_en {
+    font-size: clamp(0px, 9.3457943925vw, 44px);
+    margin-bottom: clamp(0px, 1.1111111111vw, 24px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents_ttl .el_staffContents_ttl_ja {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  width: fit-content;
+  margin-inline: auto;
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents_ttl .el_staffContents_ttl_ja {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_commonLowPageWrapper_contents_inner {
+    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents .bl_staffContents_postList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 6.9444444444vw, 150px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffContents_postList {
+    gap: clamp(0px, 23.3644859813vw, 110px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(odd) {
+  padding-top: clamp(0px, 11.1111111111vw, 240px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(odd) {
+    padding-top: clamp(0px, 23.3644859813vw, 110px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(odd) .bl_commonLowPageWrapper_contents_inner {
+  padding-bottom: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(odd) .bl_commonLowPageWrapper_contents_inner {
+    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(even) {
+  background-color: #E5D8CD;
+  border-radius: 0;
+  padding-top: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(even) {
+    padding-top: clamp(0px, 23.3644859813vw, 110px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_commonLowPageWrapper_contents_inner {
+  padding-bottom: clamp(0px, 13.8888888889vw, 300px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_commonLowPageWrapper_contents_inner {
+    padding-bottom: clamp(0px, 42.0560747664vw, 198px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper {
+  max-width: clamp(0px, 66.1805555556vw, 1429.5px);
+  grid-template-columns: clamp(0px, 17.9861111111vw, 388.5px) 1fr;
+  gap: clamp(0px, 6.5277777778vw, 141px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: clamp(0px, 7.0093457944vw, 33px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper_imgWrapper {
+  max-width: clamp(0px, 17.9861111111vw, 388.5px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper_imgWrapper {
+    max-width: clamp(0px, 60.5140186916vw, 284.9px);
+  }
+}
+.bl_staffContentsOuter .bl_nurseContentsWrapper .el_nurseContentsWrapper_txt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_nurseContentsWrapper .el_nurseContentsWrapper_txt {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
