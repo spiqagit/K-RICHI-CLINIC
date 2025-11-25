@@ -117,6 +117,23 @@
                                                     </div>
                                                 <?php endif; ?>
 
+
+                                                <?php if (have_rows('license-list', $staff_post->ID)) : //資格
+                                                ?>
+                                                    <div class="bl_doctorContentsWrapper_careerWrapper">
+                                                        <p class="bl_doctorContentsWrapper_careerWrapper_ttl">資格</p>
+                                                        <ul class="bl_doctorContentsWrapper_careerWrapper_list">
+                                                            <?php while (have_rows('license-list', $staff_post->ID)) : the_row(); ?>
+                                                                <li class="bl_doctorContentsWrapper_careerWrapper_list_item">
+                                                                    <?php if (get_sub_field('license-list-txt')) : ?>
+                                                                        <p class="bl_doctorContentsWrapper_careerWrapper_list_item_txt"><?php the_sub_field('license-list-txt'); ?></p>
+                                                                    <?php endif; ?>
+                                                                </li>
+                                                            <?php endwhile; ?>
+                                                        </ul>
+                                                    </div>
+                                                <?php endif; ?>
+
                                                 <?php if (get_field('nursse-txt', $staff_post->ID)) : //看護師紹介
                                                 ?>
                                                     <div class="bl_nurseContentsWrapper">
