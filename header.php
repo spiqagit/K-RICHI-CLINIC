@@ -132,7 +132,28 @@
                 </div>
             </nav>
             <div>
-                <?php echo do_shortcode('[gtranslate]'); ?>
+                <?php 
+                // gtranslateショートコードの出力
+                $gtranslate_output = '';
+                
+                // 複数のショートコードパターンを試す
+                if (shortcode_exists('gtranslate')) {
+                    $gtranslate_output = do_shortcode('[gtranslate]');
+                } elseif (shortcode_exists('gtranslate_widget')) {
+                    $gtranslate_output = do_shortcode('[gtranslate_widget]');
+                } elseif (function_exists('gt_get_flags')) {
+                    // プラグインの関数が存在する場合は直接呼び出す
+                    $gtranslate_output = do_shortcode('[gtranslate]');
+                }
+                
+                // 出力が空でない場合のみ表示
+                if (!empty($gtranslate_output)) {
+                    echo $gtranslate_output;
+                } elseif (defined('WP_DEBUG') && WP_DEBUG) {
+                    // デバッグモードの場合のみコメントを出力
+                    echo '<!-- gtranslate plugin not found or not activated -->';
+                }
+                ?>
             </div>
             <div class="bl_headerSpNavBtnWrapper">
                 <button class="bl_headerSpNavBtnWrapper_btn" aria-label="ナビゲーション開閉ボタン" type="button">

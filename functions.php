@@ -22,7 +22,7 @@ add_action('admin_menu', 'remove_menus', 999);
 // 投稿タイプ「staff」のブロックエディターを非表示
 function disable_block_editor_for_stuff($use_block_editor, $post_type)
 {
-    if ($post_type === 'staff') {
+    if ($post_type === 'staff' || $post_type === 'concern') {
         return false;
     }
     return $use_block_editor;
@@ -33,6 +33,7 @@ add_filter('use_block_editor_for_post_type', 'disable_block_editor_for_stuff', 1
 function remove_editor_for_staff()
 {
     remove_post_type_support('staff', 'editor');
+    remove_post_type_support('concern', 'editor');
 }
 add_action('init', 'remove_editor_for_staff');
 
@@ -243,3 +244,5 @@ function solecolor_wp_terms_checklist_args( $args, $post_id ){
     return $args;
  }
  add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args',10,2);
+
+

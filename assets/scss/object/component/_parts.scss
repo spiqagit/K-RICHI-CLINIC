@@ -229,6 +229,7 @@
 
     .bl_doctorContentsWrapper_careerWrapper {
         margin-top: vwmin(50, pc);
+
         @include underSP {
             margin-top: vwmin(50, sp_m);
         }
@@ -284,8 +285,9 @@
                     }
                 }
 
-                .bl_doctorContentsWrapper_careerWrapper_list_item_ttl{
+                .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
                     width: vwmin(80, pc);
+
                     @include underSP {
                         width: vwmin(80, sp_m);
                     }
@@ -817,13 +819,45 @@
 
             @include underSP {
                 padding-top: vwmin(100, sp_m);
-                padding-bottom: calc(vwmin(40, sp_m) + vwmin(18, sp_m));
+                padding-bottom: calc(10vw + vwmin(18, sp_m));
                 border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
             }
         }
     }
 }
 
+
+
+/*--------------------------------
+下層 白背景
+--------------------------------*/
+
+.bl_commonLowPageWhiteBg {
+    background-color: #F4EEEA;
+
+    .bl_commonLowPageWhiteMain {
+        padding-top: vwmin(192, pc);
+        padding-bottom: calc(vwmin(40, pc) + vwmin(18, pc));
+
+        @include underSP {
+            padding-top: vwmin(143, sp_m);
+            padding-bottom: calc(10vw + vwmin(18, sp_m));
+        }
+
+        .bl_commonLowPageWhiteMain_inner {
+            max-width: vwmin(1120, pc);
+            margin-inline: auto;
+            width: 100%;
+            padding-bottom: vwmin(200, pc);
+
+
+            @include underSP {
+                max-width: 100%;
+                padding-inline: vwmin(30, sp_m);
+            }
+        }
+    }
+}
 
 /*--------------------------------
 パンくずリスト
@@ -1137,6 +1171,116 @@ Google Maps
             border-radius: vwmin(2, sp_m);
             font-size: vwmin(18, sp_m);
             padding: vwmin(15, sp_m);
+        }
+    }
+}
+
+
+/*--------------------------------
+menuカード
+--------------------------------*/
+
+.bl_menuCard {
+    overflow: hidden;
+    border-radius: vwmin(4, pc);
+    background-color: #E5D8CD;
+    transition: opacity 0.5s ease;
+
+    @include underSP {
+        border-radius: vwmin(4, sp_m);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+        }
+    }
+
+    .bl_menuCard_inner {
+        padding: vwmin(20, pc);
+
+        @include underSP {
+            padding: vwmin(16, sp_m);
+        }
+
+        .el_menuCard_inner_img {
+            border-radius: vwmin(2, pc);
+            overflow: hidden;
+            aspect-ratio: 315 / 210;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-bottom: vwmin(30, pc);
+
+            @include underSP {
+                border-radius: vwmin(2, sp_m);
+            }
+        }
+
+        .bl_menuCard_txtWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(10, pc);
+
+            @include underSP {
+                gap: vwmin(10, sp_m);
+            }
+
+            .el_menuCard_txtWrapper_ttl {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(20, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: calc(0.2 / 20 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(18, sp_m);
+                }
+            }
+
+
+            .el_menuCard_txtWrapper_txt {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(14, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.7 / 14 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                }
+            }
+        }
+    }
+
+    .bl_menuCard_arrowWrapper {
+        display: grid;
+        grid-template-columns: vwmin(12, pc);
+        align-items: center;
+        justify-content: center;
+        background-color: #FFF;
+        padding: vwmin(10, pc);
+        border-radius: vwmin(4, pc) 0 0 0;
+        width: fit-content;
+        margin-left: auto;
+        height: auto;
+        aspect-ratio: 1 / 1;
+
+        @include underSP {
+            grid-template-columns: vwmin(12, sp_m);
+            padding: vwmin(10, sp_m);
+            border-radius: vwmin(4, sp_m) 0 0 0;
+        }
+
+        .el_menuCard_arrowWrapper_img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
     }
 }
