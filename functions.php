@@ -95,72 +95,55 @@ add_filter('get_the_archive_title', function ($title) {
 
 
 // 一覧・single生成制御
-function disable_faq_pages()
+// 共通の404処理関数
+function set_404_and_exit()
 {
+    global $wp_query;
+    $wp_query->set_404();
+    status_header(404);
+    get_template_part(404);
+    exit;
+}
+
+// シンプルな条件チェック用の関数
+function disable_pages_by_conditions()
+{
+    // FAQ関連
     if (is_singular('faq') || is_tax('faq-cat')) {
-        global $wp_query;
-        $wp_query->set_404();
-        status_header(404);
-        get_template_part(404);
-        exit;
+        set_404_and_exit();
+    }
+    
+    // タクソノミーページ
+    $disabled_taxonomies = ['price-cat', 'menu-cat'];
+    foreach ($disabled_taxonomies as $taxonomy) {
+        if (is_tax($taxonomy)) {
+            set_404_and_exit();
+        }
     }
 }
-add_action('template_redirect', 'disable_faq_pages');
-
-// price-catタクソノミーページを404にする
-function disable_price_cat_pages()
-{
-    if (is_tax('price-cat')) {
-        global $wp_query;
-        $wp_query->set_404();
-        status_header(404);
-        get_template_part(404);
-        exit;
-    }
-}
-add_action('template_redirect', 'disable_price_cat_pages');
-
-// menu-catタクソノミーページを404にする
-function disable_menu_cat_pages()
-{
-    if (is_tax('menu-cat')) {
-        global $wp_query;
-        $wp_query->set_404();
-        status_header(404);
-        get_template_part(404);
-        exit;
-    }
-}
-add_action('template_redirect', 'disable_menu_cat_pages');
+add_action('template_redirect', 'disable_pages_by_conditions');
 
 // デフォルト投稿のアーカイブ・個別記事を404にする
 function disable_default_post_pages()
 {
-    // デフォルト投稿の個別記事
+    // デフォルト投稿の個別記事とstaff-catタクソノミー
     if (is_singular('post')) {
-        global $wp_query;
-        $wp_query->set_404();
-        status_header(404);
-        get_template_part(404);
-        exit;
+        set_404_and_exit();
+    }
+    
+    //お悩みカテゴリー
+    if (is_tax('concern-cat')) {
+        set_404_and_exit();
     }
 
-        // デフォルト投稿の個別記事
-        if (is_singular('staff')) {
-            global $wp_query;
-            $wp_query->set_404();
-            status_header(404);
-            get_template_part(404);
-            exit;
-        }
+    // staff投稿タイプの個別記事
+    if (is_singular('staff') || is_tax('staff-cat')) {
+        set_404_and_exit();
+    }
     
     // デフォルト投稿のアーカイブ（ホームページが投稿一覧の場合）
     if (is_home() && !is_front_page()) {
-        global $wp_query;
-        $wp_query->set_404();
-        status_header(404);
-        get_template_part(404);
-        exit;
+        set_404_and_exit();
     }
     
     // カテゴリー・タグアーカイブ（デフォルト投稿のみの場合）
@@ -168,10 +151,7 @@ function disable_default_post_pages()
         global $wp_query;
         // クエリにpost_typeが指定されていない、またはpostのみの場合
         if (empty($wp_query->query_vars['post_type']) || $wp_query->query_vars['post_type'] === 'post') {
-            $wp_query->set_404();
-            status_header(404);
-            get_template_part(404);
-            exit;
+            set_404_and_exit();
         }
     }
 }
