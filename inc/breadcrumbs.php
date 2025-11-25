@@ -58,5 +58,11 @@
                 <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>
             </li>
         <?php endif; ?>
+
+        <?php if (is_page()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><<?php the_title(); ?></p>
+            </li>
+        <?php endif; ?>
     </ul>
 </div>
