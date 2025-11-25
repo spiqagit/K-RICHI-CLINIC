@@ -333,12 +333,12 @@
                         'post_type' => 'staff',
                         'posts_per_page' => -1,
                         'orderby' => 'staff_order',
-                        'order' => 'ASC',
+                        'order' => 'MENU_ORDER',
                         'tax_query' => [
                             [
                                 'taxonomy' => 'staff-cat',
-                                'field' => 'term_id',
-                                'terms' => $staff_cat->term_id,
+                                'field' => 'slug',
+                                'terms' => 'director',
                             ],
                         ],
                     ]);
