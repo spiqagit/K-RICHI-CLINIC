@@ -11,7 +11,8 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/fv-pc.jpg" alt="">
             </picture>
             <div class="bl_fvSection_txt">
-                <p>あなたの<br>人生を、<br>美しく彩る</p>
+                <p>繊細な贅沢で、</p>
+                <p>重なる美しさ</p>
             </div>
         </div>
 

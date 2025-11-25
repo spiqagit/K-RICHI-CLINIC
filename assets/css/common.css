@@ -2264,7 +2264,7 @@ Google Maps
 }
 .bl_fvSection .bl_fvSection_txt {
   color: rgba(255, 255, 255, 0.7);
-  text-align: center;
+  text-align: left;
   text-shadow: 0 clamp(0px, 0.2777777778vw, 6px) clamp(0px, 1.7361111111vw, 37.5px) rgba(73, 52, 18, 0.2);
   font-family: var(--notoSerifJP);
   font-size: clamp(0px, 3.6111111111vw, 78px);
