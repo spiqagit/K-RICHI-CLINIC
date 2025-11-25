@@ -169,7 +169,7 @@
 
                                                                                         <?php endif; ?>
                                                                                         <?php if (get_sub_field('price-caption')): ?>
-                                                                                            <p class="el_priceWrapList_item_caption"><?php the_sub_field('price-caption'); ?></p>
+                                                                                            <div class="el_priceWrapList_item_caption"><?php the_sub_field('price-caption'); ?></div>
                                                                                         <?php endif; ?>
                                                                                     </li>
 

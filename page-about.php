@@ -158,8 +158,8 @@
                                         'tax_query' => [
                                             [
                                                 'taxonomy' => 'staff-cat',
-                                                'field' => 'term_id',
-                                                'terms' => $staff_cat->term_id,
+                                                'field' => 'slug',
+                                                'terms' => "director",
                                             ],
                                         ],
                                     ]);

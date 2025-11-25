@@ -88,47 +88,80 @@
     .blcommonSectionTtlWrapper {
         margin-bottom: vwmin(50, pc);
     }
+}
 
-    .bl_doctorContentsWrapper {
-        max-width: vwmin(1017, pc);
-        width: 100%;
-        margin-inline: auto;
-        display: grid;
-        align-items: flex-start;
-        grid-template-columns: vwmin(323, pc) 1fr;
-        gap: vwmin(94, pc);
+
+.bl_doctorContentsWrapper {
+    max-width: vwmin(1017, pc);
+    width: 100%;
+    margin-inline: auto;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: vwmin(323, pc) 1fr;
+    gap: vwmin(94, pc);
+
+    @include underSP {
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: vwmin(30, sp_m);
+    }
+
+    .bl_doctorContentsWrapper_imgWrapper {
+        padding: vwmin(10, pc);
+        border-radius: vwmin(2, pc);
+        border: 1px solid #987F65;
 
         @include underSP {
-            max-width: 100%;
-            grid-template-columns: 1fr;
-            gap: vwmin(30, sp_m);
+            padding: vwmin(10, sp_m);
+            border-radius: vwmin(2, sp_m);
+            border: 1px solid #987F65;
+            max-width: vwmin(300, sp_m);
+            margin-inline: auto;
         }
 
-        .bl_doctorContentsWrapper_imgWrapper {
-            padding: vwmin(10, pc);
+        img {
             border-radius: vwmin(2, pc);
-            border: 1px solid #987F65;
 
             @include underSP {
-                padding: vwmin(10, sp_m);
                 border-radius: vwmin(2, sp_m);
-                border: 1px solid #987F65;
-                max-width: vwmin(300, sp_m);
-                margin-inline: auto;
             }
+        }
+    }
 
-            img {
-                border-radius: vwmin(2, pc);
+    .bl_doctorContentsWrapper_txtWrapper {
 
-                @include underSP {
-                    border-radius: vwmin(2, sp_m);
-                }
+        .bl_doctorContentsWrapper_nameWrapper {
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(14, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.7 / 14 * 1em);
+            padding-bottom: vwmin(10, pc);
+            border-bottom: 1px solid #987F65;
+            margin-bottom: vwmin(30, pc);
+
+            @include underSP {
+                padding-bottom: vwmin(10, sp_m);
+                border-bottom: 1px solid #987F65;
+                margin-bottom: vwmin(30, sp_m);
+                font-size: vwmin(14, sp_m);
             }
         }
 
-        .bl_doctorContentsWrapper_txtWrapper {
+        .bl_doctorContentsWrapper_nameWrapper_name {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: flex-end;
+            gap: vwmin(20, pc);
 
-            .bl_doctorContentsWrapper_nameWrapper {
+
+            @include underSP {
+                gap: vwmin(20, sp_m);
+            }
+
+            .el_doctorContentsWrapper_nameWrapper_job {
                 color: var(--txtColor);
                 font-family: var(--notoSerifJP);
                 font-size: vwmin(14, pc);
@@ -136,90 +169,126 @@
                 font-weight: 400;
                 line-height: 1.5;
                 letter-spacing: calc(0.7 / 14 * 1em);
-                padding-bottom: vwmin(10, pc);
-                border-bottom: 1px solid #987F65;
-                margin-bottom: vwmin(30, pc);
 
                 @include underSP {
-                    padding-bottom: vwmin(10, sp_m);
-                    border-bottom: 1px solid #987F65;
-                    margin-bottom: vwmin(30, sp_m);
                     font-size: vwmin(14, sp_m);
                 }
             }
 
-            .bl_doctorContentsWrapper_nameWrapper_name {
-                display: grid;
-                grid-template-columns: max-content max-content;
-                align-items: flex-end;
-                gap: vwmin(20, pc);
-
+            .el_doctorContentsWrapper_nameWrapper_name_first {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(24, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(1.2 / 24 * 1em);
+                width: fit-content;
 
                 @include underSP {
-                    gap: vwmin(20, sp_m);
-                }
-
-                .el_doctorContentsWrapper_nameWrapper_job {
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(14, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1.5;
-                    letter-spacing: calc(0.7 / 14 * 1em);
-
-                    @include underSP {
-                        font-size: vwmin(14, sp_m);
-                    }
-                }
-
-                .el_doctorContentsWrapper_nameWrapper_name_first {
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(24, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1.5;
-                    letter-spacing: calc(1.2 / 24 * 1em);
-                    width: fit-content;
-
-                    @include underSP {
-                        font-size: vwmin(24, sp_m);
-                    }
-                }
-
-                .el_doctorContentsWrapper_nameWrapper_name_last {
-                    color: var(--txtColor);
-                    font-family: var(--notoSerifJP);
-                    font-size: vwmin(14, pc);
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1.5;
-                    letter-spacing: calc(0.7 / 14 * 1em);
-                    width: fit-content;
-
-                    @include underSP {
-                        font-size: vwmin(14, sp_m);
-                    }
+                    font-size: vwmin(24, sp_m);
                 }
             }
 
-
-            .bl_doctorContentsWrapper_txtWrapper_txt {
-                display: flex;
-                flex-direction: column;
-                gap: vwmin(20, pc);
-                color: var(--black, #1A0F04);
+            .el_doctorContentsWrapper_nameWrapper_name_last {
+                color: var(--txtColor);
                 font-family: var(--notoSerifJP);
-                font-size: vwmin(16, pc);
+                font-size: vwmin(14, pc);
                 font-style: normal;
                 font-weight: 400;
-                line-height: 1.8;
-                letter-spacing: calc(0.8 / 16 * 1em);
+                line-height: 1.5;
+                letter-spacing: calc(0.7 / 14 * 1em);
+                width: fit-content;
 
                 @include underSP {
-                    gap: vwmin(20, sp_m);
-                    font-size: vwmin(16, sp_m);
+                    font-size: vwmin(14, sp_m);
+                }
+            }
+        }
+
+
+        .bl_doctorContentsWrapper_txtWrapper_txt {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(20, pc);
+            color: var(--black, #1A0F04);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                gap: vwmin(20, sp_m);
+                font-size: vwmin(16, sp_m);
+            }
+        }
+    }
+
+
+    .bl_doctorContentsWrapper_careerWrapper {
+        margin-top: vwmin(50, pc);
+        @include underSP {
+            margin-top: vwmin(50, sp_m);
+        }
+
+        .bl_doctorContentsWrapper_careerWrapper_ttl {
+            color: var(--black);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(0.9 / 18 * 1em);
+            margin-bottom: vwmin(30, pc);
+            padding-bottom: vwmin(10, pc);
+            border-bottom: 1px solid #987F65;
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                margin-bottom: vwmin(30, sp_m);
+                padding-bottom: vwmin(10, sp_m);
+            }
+        }
+
+        .bl_doctorContentsWrapper_careerWrapper_list {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(10, pc);
+
+            @include underSP {
+                gap: vwmin(10, sp_m);
+            }
+
+            .bl_doctorContentsWrapper_careerWrapper_list_item {
+                display: flex;
+                gap: vwmin(40, pc);
+
+                @include underSP {
+                    gap: vwmin(40, sp_m);
+                }
+
+                .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
+                .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                    }
+                }
+
+                .bl_doctorContentsWrapper_careerWrapper_list_item_ttl{
+                    width: vwmin(80, pc);
+                    @include underSP {
+                        width: vwmin(80, sp_m);
+                    }
                 }
             }
         }

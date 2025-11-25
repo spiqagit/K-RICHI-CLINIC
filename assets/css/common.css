@@ -1242,7 +1242,8 @@ html {
 .bl_topDoctorSection .blcommonSectionTtlWrapper {
   margin-bottom: clamp(0px, 3.4722222222vw, 75px);
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper {
+
+.bl_doctorContentsWrapper {
   max-width: clamp(0px, 70.625vw, 1525.5px);
   width: 100%;
   margin-inline: auto;
@@ -1252,19 +1253,19 @@ html {
   gap: clamp(0px, 6.5277777778vw, 141px);
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper {
+  .bl_doctorContentsWrapper {
     max-width: 100%;
     grid-template-columns: 1fr;
     gap: clamp(0px, 7.0093457944vw, 33px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
   padding: clamp(0px, 0.6944444444vw, 15px);
   border-radius: clamp(0px, 0.1388888889vw, 3px);
   border: 1px solid #987F65;
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
     padding: clamp(0px, 2.3364485981vw, 11px);
     border-radius: clamp(0px, 0.4672897196vw, 2.2px);
     border: 1px solid #987F65;
@@ -1272,15 +1273,15 @@ html {
     margin-inline: auto;
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper img {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper img {
   border-radius: clamp(0px, 0.1388888889vw, 3px);
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper img {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper img {
     border-radius: clamp(0px, 0.4672897196vw, 2.2px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
   font-size: clamp(0px, 0.9722222222vw, 21px);
@@ -1293,25 +1294,25 @@ html {
   margin-bottom: clamp(0px, 2.0833333333vw, 45px);
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
     padding-bottom: clamp(0px, 2.3364485981vw, 11px);
     border-bottom: 1px solid #987F65;
     margin-bottom: clamp(0px, 7.0093457944vw, 33px);
     font-size: clamp(0px, 3.2710280374vw, 15.4px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
   display: grid;
   grid-template-columns: max-content max-content;
   align-items: flex-end;
   gap: clamp(0px, 1.3888888889vw, 30px);
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
     gap: clamp(0px, 4.6728971963vw, 22px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
   font-size: clamp(0px, 0.9722222222vw, 21px);
@@ -1321,11 +1322,11 @@ html {
   letter-spacing: 0.05em;
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
     font-size: clamp(0px, 3.2710280374vw, 15.4px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
   font-size: clamp(0px, 1.6666666667vw, 36px);
@@ -1336,11 +1337,11 @@ html {
   width: fit-content;
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
     font-size: clamp(0px, 5.6074766355vw, 26.4px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
   font-size: clamp(0px, 0.9722222222vw, 21px);
@@ -1351,11 +1352,11 @@ html {
   width: fit-content;
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
     font-size: clamp(0px, 3.2710280374vw, 15.4px);
   }
 }
-.bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
   display: flex;
   flex-direction: column;
   gap: clamp(0px, 1.3888888889vw, 30px);
@@ -1368,9 +1369,79 @@ html {
   letter-spacing: 0.05em;
 }
 @media screen and (width <= 1024px) {
-  .bl_topDoctorSection .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
     gap: clamp(0px, 4.6728971963vw, 22px);
     font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper {
+  margin-top: clamp(0px, 3.4722222222vw, 75px);
+}
+@media screen and (width <= 1024px) {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper {
+    margin-top: clamp(0px, 11.6822429907vw, 55px);
+  }
+}
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 27px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(0px, 2.0833333333vw, 45px);
+  padding-bottom: clamp(0px, 0.6944444444vw, 15px);
+  border-bottom: 1px solid #987F65;
+}
+@media screen and (width <= 1024px) {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
+    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+    padding-bottom: clamp(0px, 2.3364485981vw, 11px);
+  }
+}
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 0.6944444444vw, 15px);
+}
+@media screen and (width <= 1024px) {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
+    gap: clamp(0px, 2.3364485981vw, 11px);
+  }
+}
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
+  display: flex;
+  gap: clamp(0px, 2.7777777778vw, 60px);
+}
+@media screen and (width <= 1024px) {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
+    gap: clamp(0px, 9.3457943925vw, 44px);
+  }
+}
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+.bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
+  width: clamp(0px, 5.5555555556vw, 120px);
+}
+@media screen and (width <= 1024px) {
+  .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
+    width: clamp(0px, 18.691588785vw, 88px);
   }
 }
 
@@ -3924,76 +3995,6 @@ Doctor
 @media screen and (width <= 1024px) {
   .bl_aboutDoctorSection .bl_aboutDoctorSection_inner {
     max-width: 100%;
-  }
-}
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper {
-  margin-top: clamp(0px, 3.4722222222vw, 75px);
-}
-@media screen and (width <= 1024px) {
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper {
-    margin-top: clamp(0px, 11.6822429907vw, 55px);
-  }
-}
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
-  color: var(--black);
-  font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.25vw, 27px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  margin-bottom: clamp(0px, 2.0833333333vw, 45px);
-  padding-bottom: clamp(0px, 0.6944444444vw, 15px);
-  border-bottom: 1px solid #987F65;
-}
-@media screen and (width <= 1024px) {
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 2.3364485981vw, 11px);
-  }
-}
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(0px, 0.6944444444vw, 15px);
-}
-@media screen and (width <= 1024px) {
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
-    gap: clamp(0px, 2.3364485981vw, 11px);
-  }
-}
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
-  display: flex;
-  gap: clamp(0px, 2.7777777778vw, 60px);
-}
-@media screen and (width <= 1024px) {
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
-    gap: clamp(0px, 9.3457943925vw, 44px);
-  }
-}
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
-  color: var(--black);
-  font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.1111111111vw, 24px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-}
-@media screen and (width <= 1024px) {
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-  }
-}
-.bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
-  width: clamp(0px, 5.5555555556vw, 120px);
-}
-@media screen and (width <= 1024px) {
-  .bl_aboutDoctorSection .bl_aboutDoctorSection_inner .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
-    width: clamp(0px, 18.691588785vw, 88px);
   }
 }
 
