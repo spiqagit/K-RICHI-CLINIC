@@ -112,13 +112,36 @@ function disable_pages_by_conditions()
     if (is_singular('faq') || is_tax('faq-cat')) {
         set_404_and_exit();
     }
-    
-    // タクソノミーページ
-    $disabled_taxonomies = ['price-cat', 'menu-cat'];
-    foreach ($disabled_taxonomies as $taxonomy) {
-        if (is_tax($taxonomy)) {
-            set_404_and_exit();
-        }
+
+    // menu投稿タイプの個別記事
+    if (is_singular('menu') || is_tax('menu-cat') || is_post_type_archive('menu')) {
+        set_404_and_exit();
+    }
+
+    // menu投稿タイプの個別記事
+    if (is_singular('staff') || is_tax('staff-cat') || is_post_type_archive('staff')) {
+        set_404_and_exit();
+    }
+
+    // case投稿タイプの個別記事
+    if (is_singular('case') || is_tax('case-cat') || is_post_type_archive('case')) {
+        set_404_and_exit();
+    }
+
+
+    // price投稿タイプの個別記事
+    if (is_singular('concern') || is_tax('concern-cat') || is_post_type_archive('concern')) {
+        set_404_and_exit();
+    }
+
+    // price投稿タイプの個別記事
+    if (is_singular('faq') || is_tax('faq-cat') || is_post_type_archive('faq')) {
+        set_404_and_exit();
+    }
+
+    // price投稿タイプの個別記事
+    if (is_singular('news') || is_tax('news-cat') || is_post_type_archive('news')) {
+        set_404_and_exit();
     }
 }
 add_action('template_redirect', 'disable_pages_by_conditions');
@@ -130,7 +153,7 @@ function disable_default_post_pages()
     if (is_singular('post')) {
         set_404_and_exit();
     }
-    
+
     //お悩みカテゴリー
     if (is_tax('concern-cat')) {
         set_404_and_exit();
@@ -140,12 +163,12 @@ function disable_default_post_pages()
     if (is_singular('staff') || is_tax('staff-cat')) {
         set_404_and_exit();
     }
-    
+
     // デフォルト投稿のアーカイブ（ホームページが投稿一覧の場合）
     if (is_home() && !is_front_page()) {
         set_404_and_exit();
     }
-    
+
     // カテゴリー・タグアーカイブ（デフォルト投稿のみの場合）
     if (is_category() || is_tag()) {
         global $wp_query;
@@ -236,10 +259,11 @@ add_filter('posts_search', 'my_custom_search', 10, 2);
 if (isset($_GET['s'])) $_GET['s'] = mb_convert_kana($_GET['s'], 's', 'UTF-8');
 
 
-function solecolor_wp_terms_checklist_args( $args, $post_id ){
-    if ( !isset($args['checked_ontop']) || $args['checked_ontop'] !== false ){
-         $args['checked_ontop'] = false;
+function solecolor_wp_terms_checklist_args($args, $post_id)
+{
+    if (!isset($args['checked_ontop']) || $args['checked_ontop'] !== false) {
+        $args['checked_ontop'] = false;
     }
     return $args;
- }
- add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args',10,2);
+}
+add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2);
