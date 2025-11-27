@@ -29,6 +29,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
         <script type="module" src="<?php echo get_template_directory_uri(); ?>/assets/js/top.js"></script>
     <?php endif; ?>
 
+    <?php if (is_singular('price') || is_post_type_archive('price')): ?>
+        <script type="module" src="<?php echo get_template_directory_uri(); ?>/assets/js/price.js"></script>
+    <?php endif; ?>
+
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">

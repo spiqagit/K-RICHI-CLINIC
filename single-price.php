@@ -49,7 +49,11 @@
                                                                 ?>
                                                                 <?php if (!empty($price_SelectList)) : ?>
                                                                     <?php foreach ($price_SelectList as $price_Select) : ?>
-                                                                        <option value="<?php echo esc_url(get_permalink($price_Select->ID)); ?>" <?php selected($price_Select->ID, $current_post_id); ?>><?php echo get_the_title($price_Select); ?></option>
+                                                                        <?php if ($price_Select->ID == $current_post_id) : ?>
+                                                                            <option value="<?php echo esc_url(get_permalink($price_Select->ID)); ?>#post<?php echo $price_Select->ID; ?>" selected><?php echo get_the_title($price_Select); ?></option>
+                                                                        <?php else : ?>
+                                                                            <option value="<?php echo esc_url(get_permalink($price_Select->ID)); ?>#post<?php echo $price_Select->ID; ?>"><?php echo get_the_title($price_Select); ?></option>
+                                                                        <?php endif; ?>
                                                                     <?php endforeach; ?>
                                                                 <?php endif; ?>
                                                                 <?php wp_reset_postdata(); ?>
@@ -104,7 +108,7 @@
 
                                                             <div class="bl_priceChildList_postList">
                                                                 <div class="bl_priceChildList_postList_item">
-                                                                    <h4 class="el_priceChildList_postList_item_ttl">
+                                                                    <h4 class="el_priceChildList_postList_item_ttl" id="post<?php echo $current_post_id; ?>">
                                                                         <?php the_title(); ?>
                                                                     </h4>
 
@@ -179,7 +183,7 @@
                                                         <div class="bl_priceChildList">
                                                             <div class="bl_priceChildList_postList">
                                                                 <div class="bl_priceChildList_postList_item">
-                                                                    <h4 class="el_priceChildList_postList_item_ttl">
+                                                                    <h4 class="el_priceChildList_postList_item_ttl" id="post<?php echo $current_post_id; ?>">
                                                                         <?php the_title(); ?>
                                                                     </h4>
 

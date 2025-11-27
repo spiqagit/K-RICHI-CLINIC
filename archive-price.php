@@ -47,7 +47,7 @@
                                                         ?>
                                                         <?php if (!empty($price_SelectList)) : ?>
                                                             <?php foreach ($price_SelectList as $price_Select) : ?>
-                                                                <option value="<?php echo esc_url(get_permalink($price_Select->ID)); ?>"><?php echo get_the_title($price_Select); ?></option>
+                                                                <option value="<?php echo esc_url(get_permalink($price_Select->ID)); ?>#post<?php echo $price_Select->ID; ?>"><?php echo get_the_title($price_Select); ?></option>
                                                             <?php endforeach; ?>
                                                         <?php endif; ?>
                                                         <?php wp_reset_postdata(); ?>
