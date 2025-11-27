@@ -119,6 +119,11 @@ function disable_pages_by_conditions()
     }
 
     // menu投稿タイプの個別記事
+    if (is_singular('price')) {
+        set_404_and_exit();
+    }
+
+    // menu投稿タイプの個別記事
     if (is_singular('staff') || is_tax('staff-cat') || is_post_type_archive('staff')) {
         set_404_and_exit();
     }
@@ -127,7 +132,6 @@ function disable_pages_by_conditions()
     if (is_singular('case') || is_tax('case-cat') || is_post_type_archive('case')) {
         set_404_and_exit();
     }
-
 
     // price投稿タイプの個別記事
     if (is_singular('concern') || is_tax('concern-cat') || is_post_type_archive('concern')) {

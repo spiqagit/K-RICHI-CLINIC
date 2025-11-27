@@ -30,7 +30,7 @@
                                             <div class="bl_commonSelectNaviWrapper_item">
                                                 <label for="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_label"><?php echo $parent_cat->name; ?></label>
                                                 <div class="bl_commonSelectNaviWrapper_selectWrapper">
-                                                    <select name="<?php echo $parent_cat->slug; ?>" id="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_select" onchange="<?php echo esc_js('if(this.value) window.location.href = this.value;'); ?>">
+                                                    <select name="<?php echo $parent_cat->slug; ?>" id="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_select">
                                                         <option value="">施術を選ぶ</option>
                                                         <?php
                                                         $price_SelectList = get_posts(array(
@@ -47,7 +47,7 @@
                                                         ?>
                                                         <?php if (!empty($price_SelectList)) : ?>
                                                             <?php foreach ($price_SelectList as $price_Select) : ?>
-                                                                <option value="<?php echo esc_url(get_permalink($price_Select->ID)); ?>#post<?php echo $price_Select->ID; ?>"><?php echo get_the_title($price_Select); ?></option>
+                                                                <option value="#post<?php echo $price_Select->ID; ?>"><?php echo get_the_title($price_Select); ?></option>
                                                             <?php endforeach; ?>
                                                         <?php endif; ?>
                                                         <?php wp_reset_postdata(); ?>
@@ -109,7 +109,7 @@
                                                             <div class="bl_priceChildList_postList">
                                                                 <?php while ($pricePosts_query->have_posts()) : $pricePosts_query->the_post(); ?>
                                                                     <div class="bl_priceChildList_postList_item">
-                                                                        <h4 class="el_priceChildList_postList_item_ttl">
+                                                                        <h4 class="el_priceChildList_postList_item_ttl" id="post<?php echo get_the_ID(); ?>">
                                                                             <?php the_title(); ?>
                                                                         </h4>
 
