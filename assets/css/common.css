@@ -3841,8 +3841,14 @@ Case
   }
 }
 
-.ly_menuSinglePage {
-  background-color: #E5D8CD;
+.bl_menuArticleMain {
+  padding-bottom: calc(clamp(0px, 2.7777777778vw, 60px) + clamp(0px, 1.25vw, 27px));
+  background-color: #F4EEEA;
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleMain {
+    padding-bottom: 100px;
+  }
 }
 
 .bl_menuArticle_ttlContainer {
@@ -4124,7 +4130,7 @@ Case
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr {
   display: grid;
   grid-template-columns: clamp(0px, 13.8888888889vw, 300px) 1fr;
-  border-bottom: 1px solid #987F65;
+  border-bottom: 1px solid rgba(152, 127, 101, 0.4);
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr {

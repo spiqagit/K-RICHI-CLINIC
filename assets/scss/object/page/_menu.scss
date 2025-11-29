@@ -1,9 +1,13 @@
 @use '../../foundation/function/index' as *;
 
-.ly_menuSinglePage {
-    background-color: #E5D8CD;
-}
+.bl_menuArticleMain{
+    padding-bottom: calc(vwmin(40, pc) + vwmin(18, pc));
+    background-color: #F4EEEA;
 
+    @include underSP {
+        padding-bottom: 100px;
+    }
+}
 
 .bl_menuArticle_ttlContainer {
     background-color: #E5D8CD;
@@ -300,7 +304,7 @@
         .bl_menuInfoTable_tr {
             display: grid;
             grid-template-columns: vwmin(200, pc) 1fr;
-            border-bottom: 1px solid #987F65;
+            border-bottom: 1px solid rgb(152, 127, 101, 0.4);
 
             @include underSP {
                 grid-template-columns: vwmin(130, sp_m) 1fr;
