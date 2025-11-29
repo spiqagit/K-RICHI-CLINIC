@@ -195,7 +195,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_header {
-    padding: clamp(0px, 4.6728971963vw, 22px);
+    padding: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .ly_header .bl_header_inenr {
@@ -207,7 +207,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_header .bl_header_inenr {
-    grid-template-columns: clamp(0px, 26.6355140187vw, 125.4px) auto;
+    grid-template-columns: clamp(0px, 30.4vw, 125.4px) auto;
   }
 }
 
@@ -225,8 +225,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper {
-    gap: clamp(0px, 4.6728971963vw, 22px);
-    grid-template-columns: auto clamp(0px, 8.4112149533vw, 39.6px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
+    grid-template-columns: auto clamp(0px, 9.6vw, 39.6px);
   }
 }
 @media screen and (width <= 1024px) {
@@ -247,9 +247,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_inner {
-    padding-top: clamp(0px, 28.0373831776vw, 132px);
-    padding-inline: clamp(0px, 4.6728971963vw, 22px);
-    padding-bottom: clamp(0px, 11.6822429907vw, 55px);
+    padding-top: clamp(0px, 32vw, 132px);
+    padding-inline: clamp(0px, 5.3333333333vw, 22px);
+    padding-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper {
@@ -262,8 +262,8 @@ html {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper {
     grid-template-columns: repeat(2, auto);
     align-items: flex-start;
-    row-gap: clamp(0px, 6.5420560748vw, 30.8px);
-    column-gap: clamp(0px, 18.691588785vw, 88px);
+    row-gap: clamp(0px, 7.4666666667vw, 30.8px);
+    column-gap: clamp(0px, 21.3333333333vw, 88px);
   }
 }
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navWrapper_hoverContainer {
@@ -298,11 +298,11 @@ html {
     transform: translateX(0) translateY(0);
     opacity: 1;
     visibility: visible;
-    gap: clamp(0px, 3.738317757vw, 17.6px);
+    gap: clamp(0px, 4.2666666667vw, 17.6px);
     padding: 0;
-    padding-left: clamp(0px, 2.3364485981vw, 11px);
+    padding-left: clamp(0px, 2.6666666667vw, 11px);
     margin-inline: 0;
-    margin-top: clamp(0px, 4.6728971963vw, 22px);
+    margin-top: clamp(0px, 5.3333333333vw, 22px);
     border-left: 1px solid var(--txtColor);
   }
 }
@@ -319,7 +319,7 @@ html {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navWrapper_hoverContainer .bl_header_navWrapper_hoverContainer_linkContainer .bl_header_navWrapper_hoverContainer_linkContainer_link {
     width: auto;
     grid-template-columns: auto;
-    gap: clamp(0px, 3.738317757vw, 17.6px);
+    gap: clamp(0px, 4.2666666667vw, 17.6px);
     width: fit-content;
   }
 }
@@ -340,7 +340,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navWrapper_hoverContainer .bl_header_navWrapper_hoverContainer_linkContainer .bl_header_navWrapper_hoverContainer_linkContainer_link .el_header_navWrapper_hoverContainer_linkContainer_link_txt {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
     text-decoration-line: underline;
     text-decoration-style: solid;
     text-decoration-skip-ink: auto;
@@ -392,9 +392,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navBtn .el_header_navBtn_en {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
     margin-inline: 0;
-    margin-block-end: calc(clamp(0px, 1.4018691589vw, 6.6px) + var(--leading-trim));
+    margin-block-end: calc(clamp(0px, 1.6vw, 6.6px) + var(--leading-trim));
   }
 }
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navBtn .el_header_navBtn_ja {
@@ -413,7 +413,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper .bl_header_navBtn .el_header_navBtn_ja {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
     text-align: left;
     margin-inline: 0;
   }
@@ -435,8 +435,8 @@ html {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_reeserveSpBtnWrapper {
     display: flex;
     flex-direction: column;
-    gap: clamp(0px, 4.6728971963vw, 22px);
-    padding-top: clamp(0px, 11.6822429907vw, 55px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
+    padding-top: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_headerNavSnsIconContainerSp {
@@ -445,7 +445,7 @@ html {
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_headerNavSnsIconContainerSp {
     display: flex;
-    padding-top: clamp(0px, 11.6822429907vw, 55px);
+    padding-top: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_header_navWrapper .bl_headerSpNavBtnWrapper {
@@ -525,7 +525,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .gtranslate_wrapper::before {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .gtranslate_wrapper a {
@@ -548,7 +548,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .gtranslate_wrapper a {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .gtranslate_wrapper a :last-child {
@@ -575,12 +575,12 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_fixedContainer {
-    bottom: calc(clamp(0px, 4.6728971963vw, 22px) + env(safe-area-inset-bottom));
+    bottom: calc(clamp(0px, 5.3333333333vw, 22px) + env(safe-area-inset-bottom));
     right: auto;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    padding-inline: clamp(0px, 2.3364485981vw, 11px);
+    padding-inline: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_header_fixedContainer .bl_header_fixedContainer_btn {
@@ -599,8 +599,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn {
-    min-width: clamp(0px, 21.0280373832vw, 99px);
-    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+    min-width: clamp(0px, 24vw, 99px);
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
     aspect-ratio: auto;
   }
 }
@@ -611,11 +611,11 @@ html {
 @media screen and (width <= 1024px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner {
     display: grid;
-    grid-template-columns: clamp(0px, 3.9719626168vw, 18.7px) auto;
+    grid-template-columns: clamp(0px, 4.5333333333vw, 18.7px) auto;
     justify-content: center;
     align-items: center;
-    gap: clamp(0px, 1.8691588785vw, 8.8px);
-    padding-block: clamp(0px, 3.738317757vw, 17.6px);
+    gap: clamp(0px, 2.1333333333vw, 8.8px);
+    padding-block: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner .bl_header_fixedContainer_btn_icon {
@@ -662,7 +662,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn .bl_header_fixedContainer_btn_inner .el_header_fixedContainer_btn_txt {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 @media (any-hover: hover) {
@@ -715,8 +715,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper {
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
-    margin-top: -11%;
+    margin-top: -100px;
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine {
@@ -725,7 +724,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine {
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
+    padding-top: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine::before {
@@ -744,8 +743,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine::before {
-    border-radius: clamp(0px, 11.6822429907vw, 55px) clamp(0px, 11.6822429907vw, 55px) 0 0;
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
+    border-radius: clamp(0px, 13.3333333333vw, 55px) clamp(0px, 13.3333333333vw, 55px) 0 0;
+    padding-top: clamp(0px, 2.6666666667vw, 11px);
     width: 103%;
   }
 }
@@ -763,9 +762,9 @@ html {
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection {
     background-image: url("../img/common/reserve-sp.jpg");
-    border-radius: clamp(0px, 9.3457943925vw, 44px) clamp(0px, 9.3457943925vw, 44px) 0 0;
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 9.3457943925vw, 44px);
+    border-radius: clamp(0px, 10.6666666667vw, 44px) clamp(0px, 10.6666666667vw, 44px) 0 0;
+    padding-block: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 10.6666666667vw, 44px);
     overflow: hidden;
   }
 }
@@ -776,7 +775,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title {
-    margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+    margin-bottom: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_ttl {
@@ -792,9 +791,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_ttl {
-    font-size: clamp(0px, 18.691588785vw, 88px);
+    font-size: clamp(0px, 21.3333333333vw, 88px);
     letter-spacing: 0.02em;
-    margin-block-end: calc(clamp(0px, 4.6728971963vw, 22px) + var(--leading-trim));
+    margin-block-end: calc(clamp(0px, 5.3333333333vw, 22px) + var(--leading-trim));
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_txt {
@@ -810,7 +809,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_title .el_reserveSection_title_txt {
-    font-size: clamp(0px, 4.6728971963vw, 22px);
+    font-size: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .el_reserveSection_timeTxt {
@@ -827,8 +826,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .el_reserveSection_timeTxt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-    margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    margin-bottom: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .bl_reserveBtnWrapper {
@@ -840,7 +839,7 @@ html {
 @media screen and (width <= 1024px) {
   .ly_reserveOutLineWrapper .ly_reserveOutLine .ly_reserveSection .bl_reserveSection_txtWrapper .bl_reserveBtnWrapper {
     flex-direction: column;
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 
@@ -854,9 +853,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper {
-    padding-top: clamp(0px, 18.691588785vw, 88px);
-    padding-bottom: clamp(0px, 11.6822429907vw, 55px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-top: clamp(0px, 21.3333333333vw, 88px);
+    padding-bottom: clamp(0px, 13.3333333333vw, 55px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer {
@@ -872,7 +871,7 @@ html {
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 11.6822429907vw, 55px);
+    gap: clamp(0px, 13.3333333333vw, 55px);
     max-width: 100%;
   }
 }
@@ -881,7 +880,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
@@ -892,8 +891,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
-    max-width: clamp(0px, 61.6822429907vw, 290.4px);
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+    max-width: clamp(0px, 70.4vw, 290.4px);
+    margin-bottom: clamp(0px, 8vw, 33px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo img {
@@ -904,7 +903,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
-    margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+    margin-bottom: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
@@ -919,7 +918,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
@@ -933,7 +932,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
@@ -945,8 +944,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
-    grid-template-columns: auto clamp(0px, 2.8037383178vw, 13.2px);
-    gap: clamp(0px, 0.7009345794vw, 3.3px);
+    grid-template-columns: auto clamp(0px, 3.2vw, 13.2px);
+    gap: clamp(0px, 0.8vw, 3.3px);
   }
 }
 .ly_footer .bl_footer_upper .bl_footerClinicInfoWrapper_mapContainer iframe {
@@ -968,12 +967,12 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower {
-    margin-inline: clamp(0px, 7.0093457944vw, 33px);
+    margin-inline: clamp(0px, 8vw, 33px);
     grid-template-columns: 1fr;
-    gap: clamp(0px, 11.6822429907vw, 55px);
+    gap: clamp(0px, 13.3333333333vw, 55px);
     max-width: 100%;
-    padding-top: clamp(0px, 11.6822429907vw, 55px);
-    padding-bottom: clamp(0px, 11.6822429907vw, 55px);
+    padding-top: clamp(0px, 13.3333333333vw, 55px);
+    padding-bottom: clamp(0px, 13.3333333333vw, 55px);
     padding-inline: 0;
   }
 }
@@ -987,7 +986,7 @@ html {
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_btnTitle {
     grid-template-columns: auto;
-    gap: clamp(0px, 1.8691588785vw, 8.8px);
+    gap: clamp(0px, 2.1333333333vw, 8.8px);
   }
 }
 .ly_footer .bl_footer_lower .bl_footer_btnTitle .el_footer_btnTitle_en {
@@ -1003,7 +1002,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_btnTitle .el_footer_btnTitle_en {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .ly_footer .bl_footer_lower .bl_footer_btnTitle .el_footer_btnTitle_ja {
@@ -1017,7 +1016,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_btnTitle .el_footer_btnTitle_ja {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
   }
 }
 .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer {
@@ -1027,7 +1026,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer {
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer .bl_footer_aboutClinicLinkContainer {
@@ -1039,8 +1038,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer .bl_footer_aboutClinicLinkContainer {
-    padding-left: clamp(0px, 2.3364485981vw, 11px);
-    gap: clamp(0px, 3.738317757vw, 17.6px);
+    padding-left: clamp(0px, 2.6666666667vw, 11px);
+    gap: clamp(0px, 4.2666666667vw, 17.6px);
     border-left: 1px solid var(--txtColor);
   }
 }
@@ -1062,7 +1061,7 @@ html {
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_aboutClinicContainer .bl_footer_aboutClinicLinkContainer .el_footer_aboutClinicLinkContainer_link {
     width: fit-content;
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 @media (any-hover: hover) {
@@ -1080,7 +1079,7 @@ html {
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_lower .bl_footer_btnContainer {
     grid-template-columns: repeat(2, auto);
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .ly_footer .bl_footer_lower .bl_footer_btnContainer .bl_footer_btn {
@@ -1099,9 +1098,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_copyrightContainer {
-    padding-top: clamp(0px, 4.6728971963vw, 22px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
+    padding-top: clamp(0px, 5.3333333333vw, 22px);
+    padding-inline: clamp(0px, 8vw, 33px);
+    padding-bottom: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .ly_footer .bl_footer_copyrightContainer .bl_footer_copyrightWrapper_inner {
@@ -1114,7 +1113,7 @@ html {
   .ly_footer .bl_footer_copyrightContainer .bl_footer_copyrightWrapper_inner {
     grid-template-columns: auto;
     align-items: center;
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
     width: fit-content;
     margin-inline: auto;
   }
@@ -1137,7 +1136,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_copyrightContainer .bl_footer_copyrightWrapper_inner .bl_footer_copyrightLink {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 @media (any-hover: hover) {
@@ -1159,7 +1158,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_footer .bl_footer_copyrightContainer .bl_footer_copyrightWrapper_inner .bl_footer_copyrightTxt {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
   }
 }
 
@@ -1173,8 +1172,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn {
-    grid-template-columns: auto clamp(0px, 7.0093457944vw, 33px);
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    grid-template-columns: auto clamp(0px, 8vw, 33px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 @media (any-hover: hover) {
@@ -1196,8 +1195,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_txt {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    padding-top: clamp(0px, 1.1682242991vw, 5.5px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    padding-top: clamp(0px, 1.3333333333vw, 5.5px);
   }
 }
 .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_arrow {
@@ -1212,7 +1211,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_arrow {
-    grid-template-columns: clamp(0px, 3.738317757vw, 17.6px);
+    grid-template-columns: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn .el_commonAllviewBtn_arrow img {
@@ -1230,13 +1229,13 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_topDoctorSection {
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-block: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 @media screen and (width <= 1024px) {
   .bl_topDoctorSection .bl_topDoctorSection_inner .blcommonSectionTtlWrapper {
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_topDoctorSection .blcommonSectionTtlWrapper {
@@ -1256,7 +1255,7 @@ html {
   .bl_doctorContentsWrapper {
     max-width: 100%;
     grid-template-columns: 1fr;
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
@@ -1266,10 +1265,10 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper {
-    padding: clamp(0px, 2.3364485981vw, 11px);
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    padding: clamp(0px, 2.6666666667vw, 11px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
     border: 1px solid #987F65;
-    max-width: clamp(0px, 70.0934579439vw, 330px);
+    max-width: clamp(0px, 80vw, 330px);
     margin-inline: auto;
   }
 }
@@ -1278,7 +1277,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_imgWrapper img {
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
@@ -1295,10 +1294,10 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper {
-    padding-bottom: clamp(0px, 2.3364485981vw, 11px);
+    padding-bottom: clamp(0px, 2.6666666667vw, 11px);
     border-bottom: 1px solid #987F65;
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    margin-bottom: clamp(0px, 8vw, 33px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
@@ -1309,7 +1308,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
@@ -1323,7 +1322,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_job {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
@@ -1338,7 +1337,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_first {
-    font-size: clamp(0px, 5.6074766355vw, 26.4px);
+    font-size: clamp(0px, 6.4vw, 26.4px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
@@ -1353,7 +1352,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
@@ -1370,8 +1369,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
-    gap: clamp(0px, 4.6728971963vw, 22px);
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper {
@@ -1379,7 +1378,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper {
-    margin-top: clamp(0px, 11.6822429907vw, 55px);
+    margin-top: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
@@ -1396,9 +1395,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_ttl {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 2.3364485981vw, 11px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    margin-bottom: clamp(0px, 8vw, 33px);
+    padding-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
@@ -1408,7 +1407,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list {
-    gap: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
@@ -1417,7 +1416,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item {
-    gap: clamp(0px, 9.3457943925vw, 44px);
+    gap: clamp(0px, 10.6666666667vw, 44px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
@@ -1433,7 +1432,7 @@ html {
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl,
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
@@ -1441,7 +1440,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_careerWrapper .bl_doctorContentsWrapper_careerWrapper_list .bl_doctorContentsWrapper_careerWrapper_list_item .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
-    width: clamp(0px, 18.691588785vw, 88px);
+    width: clamp(0px, 21.3333333333vw, 88px);
   }
 }
 
@@ -1463,11 +1462,11 @@ html {
 @media screen and (width <= 1024px) {
   .bl_reserveBtn {
     max-width: 100%;
-    grid-template-columns: clamp(0px, 4.2056074766vw, 19.8px) auto;
-    padding-block: clamp(0px, 5.1401869159vw, 24.2px);
-    padding-inline: clamp(0px, 4.6728971963vw, 22px);
-    border-radius: clamp(0px, 23.3644859813vw, 110px);
-    gap: clamp(0px, 2.3364485981vw, 11px);
+    grid-template-columns: clamp(0px, 4.8vw, 19.8px) auto;
+    padding-block: clamp(0px, 5.8666666667vw, 24.2px);
+    padding-inline: clamp(0px, 5.3333333333vw, 22px);
+    border-radius: clamp(0px, 26.6666666667vw, 110px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_reserveBtn .el_reserveBtn_txt {
@@ -1483,7 +1482,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_reserveBtn .el_reserveBtn_txt {
-    font-size: clamp(0px, 4.6728971963vw, 22px);
+    font-size: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_reserveBtn .bl_reserveBtn_iconWrapper {
@@ -1549,7 +1548,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonSnsIconContainer {
-    gap: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_commonSnsIconContainer .bl_commonSnsIconContainer_btn {
@@ -1567,9 +1566,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonSnsIconContainer .bl_commonSnsIconContainer_btn {
-    max-width: clamp(0px, 9.3457943925vw, 44px);
-    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
-    grid-template-columns: clamp(0px, 5.1401869159vw, 24.2px);
+    max-width: clamp(0px, 10.6666666667vw, 44px);
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
+    grid-template-columns: clamp(0px, 5.8666666667vw, 24.2px);
   }
 }
 @media (any-hover: hover) {
@@ -1593,7 +1592,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_linkWrapper .bl_caseItem_imgWrapper {
-    margin-bottom: clamp(0px, 5.1401869159vw, 24.2px);
+    margin-bottom: clamp(0px, 5.8666666667vw, 24.2px);
   }
 }
 .bl_caseItem .bl_caseItem_linkWrapper .bl_caseItem_imgWrapper img {
@@ -1609,8 +1608,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_txtWrapper {
-    gap: clamp(0px, 1.8691588785vw, 8.8px);
-    margin-bottom: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 2.1333333333vw, 8.8px);
+    margin-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper {
@@ -1620,7 +1619,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper {
-    gap: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper .bl_caseItem_treatmentsWrapper_txt {
@@ -1637,9 +1636,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_txtWrapper .bl_caseItem_treatmentsWrapper .bl_caseItem_treatmentsWrapper_txt {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
-    padding: clamp(0px, 0.9345794393vw, 4.4px);
-    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
+    padding: clamp(0px, 1.0666666667vw, 4.4px);
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
     border: 1px solid var(--line, #987F65);
   }
 }
@@ -1654,7 +1653,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_txtWrapper .el_caseItem_ttl {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
   }
 }
 .bl_caseItem .bl_caseItem_details {
@@ -1664,7 +1663,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details {
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
   }
 }
 .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary {
@@ -1678,10 +1677,10 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary {
-    grid-template-columns: 1fr clamp(0px, 4.6728971963vw, 22px);
-    gap: clamp(0px, 2.3364485981vw, 11px);
-    padding-inline: clamp(0px, 2.8037383178vw, 13.2px);
-    padding-block: clamp(0px, 2.3364485981vw, 11px);
+    grid-template-columns: 1fr clamp(0px, 5.3333333333vw, 22px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
+    padding-inline: clamp(0px, 3.2vw, 13.2px);
+    padding-block: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_txt {
@@ -1696,7 +1695,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_txt {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_icon {
@@ -1720,9 +1719,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_icon::before, .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_icon::after {
-    width: clamp(0px, 1.1682242991vw, 5.5px);
-    height: clamp(0px, 0.2336448598vw, 1.1px);
-    border-radius: clamp(0px, 0.2336448598vw, 1.1px);
+    width: clamp(0px, 1.3333333333vw, 5.5px);
+    height: clamp(0px, 0.2666666667vw, 1.1px);
+    border-radius: clamp(0px, 0.2666666667vw, 1.1px);
   }
 }
 .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_icon::after {
@@ -1744,8 +1743,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner {
-    padding: clamp(0px, 4.6728971963vw, 22px);
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    padding: clamp(0px, 5.3333333333vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dt {
@@ -1763,10 +1762,10 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dt {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
-    padding-block: clamp(0px, 1.4018691589vw, 6.6px);
-    padding-inline: clamp(0px, 0.9345794393vw, 4.4px);
-    margin-bottom: clamp(0px, 2.3364485981vw, 11px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
+    padding-block: clamp(0px, 1.6vw, 6.6px);
+    padding-inline: clamp(0px, 1.0666666667vw, 4.4px);
+    margin-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dd {
@@ -1780,7 +1779,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details_content .bl_caseItem_details_content_inner .bl_caseItem_details_content_item_dd {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 
@@ -1804,9 +1803,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer {
-    padding-top: clamp(0px, 33.4112149533vw, 157.3px);
-    padding-bottom: clamp(0px, 14.0186915888vw, 66px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-top: clamp(0px, 38.1333333333vw, 157.3px);
+    padding-bottom: clamp(0px, 16vw, 66px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl {
@@ -1817,7 +1816,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl {
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_en {
@@ -1831,7 +1830,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_en {
-    font-size: clamp(0px, 10.7476635514vw, 50.6px);
+    font-size: clamp(0px, 12.2666666667vw, 50.6px);
   }
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_ja {
@@ -1849,8 +1848,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_ja {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-    grid-template-columns: clamp(0px, 1.4018691589vw, 6.6px) auto;
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    grid-template-columns: clamp(0px, 1.6vw, 6.6px) auto;
   }
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_ttlContainer .bl_commonLowPageWrapper_ttl .el_commonLowPageWrapper_ttl_ja::before {
@@ -1870,8 +1869,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter {
-    margin-top: clamp(0px, 63.5514018692vw, 299.2px);
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
+    margin-top: clamp(0px, 72.5333333333vw, 299.2px);
+    padding-top: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter::before {
@@ -1891,9 +1890,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter::before {
-    border-radius: clamp(0px, 9.3457943925vw, 44px) clamp(0px, 9.3457943925vw, 44px) 0 0;
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
-    padding-inline: clamp(0px, 2.3364485981vw, 11px);
+    border-radius: clamp(0px, 10.6666666667vw, 44px) clamp(0px, 10.6666666667vw, 44px) 0 0;
+    padding-top: clamp(0px, 2.6666666667vw, 11px);
+    padding-inline: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
@@ -1904,9 +1903,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
-    padding-top: clamp(0px, 23.3644859813vw, 110px);
-    padding-bottom: calc(clamp(0px, 9.3457943925vw, 44px) + clamp(0px, 4.2056074766vw, 19.8px));
-    border-radius: clamp(0px, 7.0093457944vw, 33px) clamp(0px, 7.0093457944vw, 33px) 0 0;
+    padding-top: clamp(0px, 26.6666666667vw, 110px);
+    padding-bottom: clamp(0px, 26.6666666667vw, 110px);
+    border-radius: clamp(0px, 8vw, 33px) clamp(0px, 8vw, 33px) 0 0;
   }
 }
 
@@ -1922,8 +1921,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain {
-    padding-top: clamp(0px, 33.4112149533vw, 157.3px);
-    padding-bottom: calc(10vw + clamp(0px, 4.2056074766vw, 19.8px));
+    padding-top: clamp(0px, 38.1333333333vw, 157.3px);
+    padding-bottom: 100px;
   }
 }
 .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_inner {
@@ -1936,8 +1935,8 @@ html {
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_inner {
     max-width: 100%;
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 42.0560747664vw, 198px);
+    padding-inline: clamp(0px, 8vw, 33px);
+    padding-bottom: clamp(0px, 48vw, 198px);
   }
 }
 
@@ -1950,7 +1949,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer {
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList {
@@ -1960,7 +1959,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList {
-    gap: clamp(0px, 4.2056074766vw, 19.8px);
+    gap: clamp(0px, 4.8vw, 19.8px);
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsItem .bl_commonBreadcrumbsLink {
@@ -1978,7 +1977,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsItem .bl_commonBreadcrumbsLink {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 @media (any-hover: hover) {
@@ -2000,7 +1999,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsItem .bl_commonBreadcrumbsText {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator {
@@ -2008,7 +2007,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator {
-    width: clamp(0px, 1.8691588785vw, 8.8px);
+    width: clamp(0px, 2.1333333333vw, 8.8px);
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator img {
@@ -2024,8 +2023,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .ly_commonTwoColumnWrapper {
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-bottom: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .ly_commonTwoColumnWrapper .ly_commonTwoColumnWrapper_inner {
@@ -2036,7 +2035,7 @@ html {
 @media screen and (width <= 1024px) {
   .ly_commonTwoColumnWrapper .ly_commonTwoColumnWrapper_inner {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 18.691588785vw, 88px);
+    gap: clamp(0px, 21.3333333333vw, 88px);
   }
 }
 
@@ -2047,7 +2046,7 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonSelectNaviWrapper {
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_item_label {
@@ -2063,8 +2062,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_item_label {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-    margin-bottom: clamp(0px, 2.3364485981vw, 11px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    margin-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_selectWrapper {
@@ -2085,9 +2084,9 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_selectWrapper::after {
-    right: clamp(0px, 3.738317757vw, 17.6px);
-    width: clamp(0px, 1.6355140187vw, 7.7px);
-    height: clamp(0px, 2.8037383178vw, 13.2px);
+    right: clamp(0px, 4.2666666667vw, 17.6px);
+    width: clamp(0px, 1.8666666667vw, 7.7px);
+    height: clamp(0px, 3.2vw, 13.2px);
   }
 }
 .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_selectWrapper .bl_commonSelectNaviWrapper_item_select {
@@ -2112,8 +2111,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_commonSelectNaviWrapper .bl_commonSelectNaviWrapper_item .bl_commonSelectNaviWrapper_selectWrapper .bl_commonSelectNaviWrapper_item_select {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
-    padding: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
+    padding: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 
@@ -2131,8 +2130,8 @@ Google Maps
 }
 @media screen and (width <= 1024px) {
   .bl_commonGoogleMapLink {
-    grid-template-columns: auto clamp(0px, 2.8037383178vw, 13.2px);
-    gap: clamp(0px, 0.7009345794vw, 3.3px);
+    grid-template-columns: auto clamp(0px, 3.2vw, 13.2px);
+    gap: clamp(0px, 0.8vw, 3.3px);
   }
 }
 @media (any-hover: hover) {
@@ -2158,7 +2157,7 @@ Google Maps
 }
 @media screen and (width <= 1024px) {
   .bl_commonGoogleMapLink .el_commonGoogleMapLink_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_commonGoogleMapLink .el_commonGoogleMapLink_icon img {
@@ -2177,8 +2176,8 @@ Google Maps
 @media screen and (width <= 1024px) {
   .bl_page404Contents {
     max-width: 100%;
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 42.0560747664vw, 198px);
+    padding-inline: clamp(0px, 8vw, 33px);
+    padding-bottom: clamp(0px, 48vw, 198px);
   }
 }
 .bl_page404Contents .bl_page404Contents_txt {
@@ -2194,8 +2193,8 @@ Google Maps
 }
 @media screen and (width <= 1024px) {
   .bl_page404Contents .bl_page404Contents_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
     text-align: left;
   }
 }
@@ -2226,10 +2225,10 @@ Google Maps
 }
 @media screen and (width <= 1024px) {
   .bl_page404Contents .bl_page404Contents_btn {
-    max-width: clamp(0px, 46.7289719626vw, 220px);
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    padding: clamp(0px, 3.5046728972vw, 16.5px);
+    max-width: clamp(0px, 53.3333333333vw, 220px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    padding: clamp(0px, 4vw, 16.5px);
   }
 }
 
@@ -2241,10 +2240,20 @@ Google Maps
   flex-direction: column;
   gap: clamp(0px, 1.3888888889vw, 30px);
 }
+@media screen and (width <= 1024px) {
+  .bl_faqList {
+    gap: clamp(0px, 5.3333333333vw, 22px);
+  }
+}
 .bl_faqList .bl_faqList_item_details {
   border-radius: clamp(0px, 0.2777777778vw, 6px);
   overflow: hidden;
-  background: var(--right-brown, #E5D8CD);
+  background: #E5D8CD;
+}
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details {
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
+  }
 }
 .bl_faqList .bl_faqList_item_details summary::marker {
   content: "";
@@ -2261,6 +2270,13 @@ Google Maps
   gap: clamp(0px, 0.6944444444vw, 15px);
   cursor: pointer;
 }
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details .bl_faqList_item_details_summary {
+    padding: clamp(0px, 8vw, 33px);
+    grid-template-columns: auto 1fr clamp(0px, 5.8666666667vw, 24.2px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
+  }
+}
 .bl_faqList .bl_faqList_item_details .bl_faqList_item_details_summary .el_faqList_item_details_summary_txt_q {
   color: var(--txtColor);
   font-family: var(--OldSt);
@@ -2269,6 +2285,11 @@ Google Maps
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
+}
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details .bl_faqList_item_details_summary .el_faqList_item_details_summary_txt_q {
+    font-size: clamp(0px, 4.8vw, 19.8px);
+  }
 }
 .bl_faqList .bl_faqList_item_details .bl_faqList_item_details_summary .el_faqList_item_details_summary_txt {
   color: var(--txtColor);
@@ -2279,13 +2300,18 @@ Google Maps
   line-height: 1.5;
   letter-spacing: 0.05em;
 }
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details .bl_faqList_item_details_summary .el_faqList_item_details_summary_txt {
+    font-size: clamp(0px, 4.8vw, 19.8px);
+  }
+}
 .bl_faqList .bl_faqList_item_details .bl_faqList_item_details_summary .el_faqList_item_details_summary_icon {
   width: 100%;
 }
-.bl_faqList .bl_faqList_item_details .bl_caseItem_details_content {
+.bl_faqList .bl_faqList_item_details .bl_faqList_details_content {
   overflow: hidden;
 }
-.bl_faqList .bl_faqList_item_details .bl_caseItem_details_content .bl_caseItem_details_content_inner {
+.bl_faqList .bl_faqList_item_details .bl_faqList_details_content .bl_faqList_details_content_inner {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: flex-start;
@@ -2294,7 +2320,16 @@ Google Maps
   margin-inline: clamp(0px, 2.0833333333vw, 45px);
   border-top: 1px solid #987F65;
 }
-.bl_faqList .bl_faqList_item_details .bl_caseItem_details_content .bl_caseItem_details_content_inner .el_faqList_item_details_content_ttl {
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details .bl_faqList_details_content .bl_faqList_details_content_inner {
+    padding-block: clamp(0px, 6.4vw, 26.4px);
+    grid-template-columns: auto 1fr;
+    gap: clamp(0px, 1.6vw, 6.6px);
+    margin-inline: clamp(0px, 6.4vw, 26.4px);
+    border-top: 1px solid #987F65;
+  }
+}
+.bl_faqList .bl_faqList_item_details .bl_faqList_details_content .bl_faqList_details_content_inner .el_faqList_details_content_ttl {
   color: var(--txtColor);
   font-family: var(--OldSt);
   font-size: clamp(0px, 1.25vw, 27px);
@@ -2303,7 +2338,13 @@ Google Maps
   line-height: 1;
   letter-spacing: 0.02em;
 }
-.bl_faqList .bl_faqList_item_details .bl_caseItem_details_content .bl_caseItem_details_content_inner .el_faqList_item_details_content_txt {
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details .bl_faqList_details_content .bl_faqList_details_content_inner .el_faqList_details_content_ttl {
+    margin-top: clamp(0px, 1.0666666667vw, 4.4px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+  }
+}
+.bl_faqList .bl_faqList_item_details .bl_faqList_details_content .bl_faqList_details_content_inner .el_faqList_details_content_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
   font-size: clamp(0px, 1.1111111111vw, 24px);
@@ -2311,6 +2352,11 @@ Google Maps
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_faqList .bl_faqList_item_details .bl_faqList_details_content .bl_faqList_details_content_inner .el_faqList_details_content_txt {
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
+  }
 }
 
 /*--------------------------------
@@ -2325,7 +2371,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard {
-    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
   }
 }
 @media (any-hover: hover) {
@@ -2341,8 +2387,8 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_inner {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 4.6728971963vw, 22px);
-    padding: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
+    padding: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_menuCard .bl_menuCard_inner .el_menuCard_inner_img {
@@ -2354,7 +2400,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_inner .el_menuCard_inner_img {
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
   }
 }
 .bl_menuCard .bl_menuCard_inner .bl_menuCard_txtWrapper {
@@ -2364,7 +2410,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_inner .bl_menuCard_txtWrapper {
-    gap: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_menuCard .bl_menuCard_inner .bl_menuCard_txtWrapper .el_menuCard_txtWrapper_ttl {
@@ -2378,7 +2424,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_inner .bl_menuCard_txtWrapper .el_menuCard_txtWrapper_ttl {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
   }
 }
 .bl_menuCard .bl_menuCard_inner .bl_menuCard_txtWrapper .el_menuCard_txtWrapper_txt {
@@ -2392,7 +2438,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_inner .bl_menuCard_txtWrapper .el_menuCard_txtWrapper_txt {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_menuCard .bl_menuCard_arrowWrapper {
@@ -2407,9 +2453,9 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_arrowWrapper {
-    padding: clamp(0px, 2.3364485981vw, 11px);
-    max-width: clamp(0px, 9.3457943925vw, 44px);
-    border-radius: 0 0 clamp(0px, 0.9345794393vw, 4.4px) clamp(0px, 0.9345794393vw, 4.4px);
+    padding: clamp(0px, 2.6666666667vw, 11px);
+    max-width: clamp(0px, 10.6666666667vw, 44px);
+    border-radius: 0 0 clamp(0px, 1.0666666667vw, 4.4px) clamp(0px, 1.0666666667vw, 4.4px);
   }
 }
 .bl_menuCard .bl_menuCard_arrowWrapper .el_menuCard_arrowWrapper_img {
@@ -2418,8 +2464,8 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_menuCard .bl_menuCard_arrowWrapper .el_menuCard_arrowWrapper_img {
-    width: clamp(0px, 3.738317757vw, 17.6px);
-    height: clamp(0px, 3.738317757vw, 17.6px);
+    width: clamp(0px, 4.2666666667vw, 17.6px);
+    height: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 
@@ -2433,7 +2479,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_topSection {
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_topSection .bl_topSection_inner {
@@ -2462,8 +2508,8 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .blcommonSectionTtlWrapper .bl_commonSectionTtl .el_commonSectionTtl_ttl_en {
-    font-size: clamp(0px, 9.3457943925vw, 44px);
-    margin-block-end: calc(clamp(0px, 4.6728971963vw, 22px) + var(--leading-trim));
+    font-size: clamp(0px, 10.6666666667vw, 44px);
+    margin-block-end: calc(clamp(0px, 5.3333333333vw, 22px) + var(--leading-trim));
   }
 }
 .blcommonSectionTtlWrapper .bl_commonSectionTtl .el_commonSectionTtl_ttl_ja {
@@ -2477,7 +2523,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .blcommonSectionTtlWrapper .bl_commonSectionTtl .el_commonSectionTtl_ttl_ja {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
   }
 }
 
@@ -2499,8 +2545,8 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_topNoPostContainer .bl_topNoPostContainer_txtEn {
-    font-size: clamp(0px, 9.3457943925vw, 44px);
-    margin-block-end: calc(clamp(0px, 4.6728971963vw, 22px) + var(--leading-trim));
+    font-size: clamp(0px, 10.6666666667vw, 44px);
+    margin-block-end: calc(clamp(0px, 5.3333333333vw, 22px) + var(--leading-trim));
   }
 }
 .bl_topNoPostContainer .bl_topNoPostContainer_txtJa {
@@ -2516,7 +2562,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_topNoPostContainer .bl_topNoPostContainer_txtJa {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
   }
 }
 
@@ -2531,8 +2577,8 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_fvSection {
-    padding-top: clamp(0px, 42.2897196262vw, 199.1px);
-    padding-bottom: clamp(0px, 33.4112149533vw, 157.3px);
+    padding-top: clamp(0px, 48.2666666667vw, 199.1px);
+    padding-bottom: clamp(0px, 38.1333333333vw, 157.3px);
   }
 }
 .bl_fvSection .bl_fvSection_bg {
@@ -2569,8 +2615,8 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_fvSection .bl_fvSection_txt {
-    font-size: clamp(0px, 7.0093457944vw, 33px);
-    text-shadow: 0 clamp(0px, 0.9345794393vw, 4.4px) clamp(0px, 5.8411214953vw, 27.5px) rgba(73, 52, 18, 0.2);
+    font-size: clamp(0px, 8vw, 33px);
+    text-shadow: 0 clamp(0px, 1.0666666667vw, 4.4px) clamp(0px, 6.6666666667vw, 27.5px) rgba(73, 52, 18, 0.2);
   }
 }
 
@@ -2584,7 +2630,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline {
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
+    padding-top: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline::before {
@@ -2604,9 +2650,9 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline::before {
-    border-radius: clamp(0px, 9.3457943925vw, 44px) clamp(0px, 9.3457943925vw, 44px) 0 0;
-    padding-top: clamp(0px, 2.3364485981vw, 11px);
-    padding-inline: clamp(0px, 2.3364485981vw, 11px);
+    border-radius: clamp(0px, 10.6666666667vw, 44px) clamp(0px, 10.6666666667vw, 44px) 0 0;
+    padding-top: clamp(0px, 2.6666666667vw, 11px);
+    padding-inline: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline .bl_secondViewSectionWrapper {
@@ -2615,7 +2661,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_secondViewSectionWrapper_outer .bl_secondViewSectionWrapper_outline .bl_secondViewSectionWrapper {
-    border-radius: clamp(0px, 7.0093457944vw, 33px) clamp(0px, 7.0093457944vw, 33px) 0 0;
+    border-radius: clamp(0px, 8vw, 33px) clamp(0px, 8vw, 33px) 0 0;
   }
 }
 
@@ -2629,9 +2675,9 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection {
-    padding-top: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
-    margin-bottom: clamp(0px, 23.3644859813vw, 110px);
+    padding-top: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 8vw, 33px);
+    margin-bottom: clamp(0px, 26.6666666667vw, 110px);
     overflow: hidden;
   }
 }
@@ -2658,9 +2704,9 @@ menuカード
     grid-template-columns: auto auto;
     align-items: flex-end;
     justify-content: space-between;
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
     width: 100%;
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_newsSection .bl_newsttlWrapper .blcommonSectionTtlWrapper .bl_commonAllviewBtnWrapper {
@@ -2675,7 +2721,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_topNewsItem {
-    padding: clamp(0px, 4.6728971963vw, 22px);
+    padding: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 @media (any-hover: hover) {
@@ -2690,7 +2736,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_topNewsItem .bl_topNewsItem_thumbnailWrapper {
-    margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+    margin-bottom: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_newsSection .bl_topNewsItem .bl_topNewsItem_thumbnailWrapper .el_topNewsItem_thumbnailWrapper_img {
@@ -2709,7 +2755,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_topNewsItem .bl_topNewsItem_txtWrapper .el_topNewsItem_txtWrapper_date {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_newsSection .bl_topNewsItem .bl_topNewsItem_txtWrapper .el_topNewsItem_txtWrapper_ttl {
@@ -2723,7 +2769,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_topNewsItem .bl_topNewsItem_txtWrapper .el_topNewsItem_txtWrapper_ttl {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_newsSection .bl_newsSliderWrapper {
@@ -2748,7 +2794,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_newsSliderWrapper .swiper-wrapper .swiper-slide {
-    max-width: clamp(0px, 60.7476635514vw, 286px);
+    max-width: clamp(0px, 69.3333333333vw, 286px);
   }
 }
 .bl_newsSection .bl_newsSliderWrapper .swiper-wrapper .swiper-slide:first-child .bl_topNewsItem {
@@ -2771,8 +2817,8 @@ menuカード
   .bl_conceptSection {
     display: grid;
     grid-template-columns: 1fr;
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-block: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_conceptSection .bl_conceptSection_inner {
@@ -2817,21 +2863,21 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_copyWrapper {
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+    margin-bottom: clamp(0px, 8vw, 33px);
     width: fit-content;
     margin-inline: auto;
   }
 }
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_copyWrapper .el_conceptSection_copyWrapper_main {
-    font-size: clamp(0px, 5.6074766355vw, 26.4px);
+    font-size: clamp(0px, 6.4vw, 26.4px);
     width: fit-content;
     margin-inline: auto;
   }
 }
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_copyWrapper .el_conceptSection_copyWrapper_sub {
-    font-size: clamp(0px, 4.6728971963vw, 22px);
+    font-size: clamp(0px, 5.3333333333vw, 22px);
     width: fit-content;
     margin-inline: auto;
     text-align: center;
@@ -2857,7 +2903,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_txtContainer {
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_txtContainer .el_conceptSection_txt_txt {
@@ -2871,7 +2917,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_txtWrapper .bl_conceptSection_txtContainer .bl_conceptSection_txtContainer .el_conceptSection_txt_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_conceptSection .bl_conceptSection_imgWrapper {
@@ -2880,9 +2926,9 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_conceptSection .bl_conceptSection_imgWrapper {
     order: 2;
-    max-width: clamp(0px, 56.0747663551vw, 264px);
+    max-width: clamp(0px, 64vw, 264px);
     margin-inline: auto;
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+    margin-bottom: clamp(0px, 8vw, 33px);
   }
 }
 
@@ -2894,7 +2940,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection {
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
+    padding-block: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_featuerSection .bl_featuerSection_ttlWrapper {
@@ -2905,7 +2951,7 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_ttlWrapper {
     max-width: 100%;
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_featuerSection .bl_featuerSection_ttlWrapper .bl_featuerSection_ttl {
@@ -2925,9 +2971,9 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_ttlWrapper .bl_featuerSection_ttl {
-    font-size: clamp(0px, 5.6074766355vw, 26.4px);
-    padding-block: clamp(0px, 2.3364485981vw, 11px);
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+    font-size: clamp(0px, 6.4vw, 26.4px);
+    padding-block: clamp(0px, 2.6666666667vw, 11px);
+    margin-bottom: clamp(0px, 8vw, 33px);
   }
 }
 .bl_featuerSection .bl_featuerSection_listWrapper {
@@ -2947,7 +2993,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list {
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-inline: clamp(0px, 8vw, 33px);
     overflow: hidden;
   }
 }
@@ -2973,7 +3019,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .swiper-slide {
-    width: clamp(0px, 78.0373831776vw, 367.4px);
+    width: clamp(0px, 89.0666666667vw, 367.4px);
     flex-shrink: 0;
   }
 }
@@ -2987,7 +3033,7 @@ menuカード
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item {
     grid-template-rows: auto;
     grid-row: auto;
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_imgWrapper {
@@ -3014,10 +3060,10 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_imgWrapper .el_featuerSection_list_item_imgWrapper_num {
-    font-size: clamp(0px, 7.9439252336vw, 37.4px);
-    padding-inline: clamp(0px, 3.5046728972vw, 16.5px);
-    padding-block: clamp(0px, 5.3738317757vw, 25.3px);
-    border-radius: 0 0 clamp(0px, 2.3364485981vw, 11px) 0;
+    font-size: clamp(0px, 9.0666666667vw, 37.4px);
+    padding-inline: clamp(0px, 4vw, 16.5px);
+    padding-block: clamp(0px, 6.1333333333vw, 25.3px);
+    border-radius: 0 0 clamp(0px, 2.6666666667vw, 11px) 0;
   }
 }
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_ttl {
@@ -3032,8 +3078,8 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_ttl {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    margin-bottom: clamp(0px, 2.3364485981vw, 11px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    margin-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_txt {
@@ -3047,7 +3093,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_featuerSection .bl_featuerSection_listWrapper .bl_featuerSection_list .bl_featuerSection_list_item_txtWrapper .el_featuerSection_list_item_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 
@@ -3060,7 +3106,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection {
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
+    padding-bottom: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 @media screen and (width <= 1024px) {
@@ -3069,7 +3115,7 @@ Column
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     align-items: flex-end;
-    row-gap: clamp(0px, 11.6822429907vw, 55px);
+    row-gap: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_ttlWrapper {
@@ -3151,7 +3197,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .swiper-slide {
-    max-width: clamp(0px, 66.8224299065vw, 314.6px);
+    max-width: clamp(0px, 76.2666666667vw, 314.6px);
     height: auto;
   }
 }
@@ -3169,8 +3215,8 @@ Column
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner {
     display: flex;
     flex-direction: column;
-    gap: clamp(0px, 5.6074766355vw, 26.4px);
-    padding: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 6.4vw, 26.4px);
+    padding: clamp(0px, 5.3333333333vw, 22px);
     height: 100%;
   }
 }
@@ -3187,7 +3233,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_imgWrapper {
-    max-width: clamp(0px, 39.7196261682vw, 187px);
+    max-width: clamp(0px, 45.3333333333vw, 187px);
     margin-inline: auto;
   }
 }
@@ -3216,8 +3262,8 @@ Column
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 0.9345794393vw, 4.4px);
-    margin-bottom: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 1.0666666667vw, 4.4px);
+    margin-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .el_columnBtnItem_postInfoWrapper_date {
@@ -3233,7 +3279,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .el_columnBtnItem_postInfoWrapper_date {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
     padding-top: 0;
   }
 }
@@ -3245,7 +3291,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .bl_columnBtnItem_postInfoWrapper_cats {
-    gap: clamp(0px, 0.9345794393vw, 4.4px);
+    gap: clamp(0px, 1.0666666667vw, 4.4px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .bl_columnBtnItem_postInfoWrapper_cats .el_columnBtnItem_postInfoWrapper_cats_cat {
@@ -3264,10 +3310,10 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_postInfoWrapper .bl_columnBtnItem_postInfoWrapper_cats .el_columnBtnItem_postInfoWrapper_cats_cat {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
-    padding-block: clamp(0px, 0.4672897196vw, 2.2px);
-    padding-inline: clamp(0px, 0.9345794393vw, 4.4px);
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
+    padding-block: clamp(0px, 0.5333333333vw, 2.2px);
+    padding-inline: clamp(0px, 1.0666666667vw, 4.4px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .el_columnBtnItem_txtWrapper_ttl {
@@ -3281,7 +3327,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .el_columnBtnItem_txtWrapper_ttl {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_txtWrapper_arrow {
@@ -3292,7 +3338,7 @@ Column
 }
 @media screen and (width <= 1024px) {
   .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_txtWrapper_arrow {
-    max-width: clamp(0px, 6.0747663551vw, 28.6px);
+    max-width: clamp(0px, 6.9333333333vw, 28.6px);
   }
 }
 .bl_topColumnSection .bl_topColumnSection_sliderWrapper .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .bl_columnBtnItem_txtWrapper_arrow img {
@@ -3322,8 +3368,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topSnsSection {
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-bottom: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_topSnsSection .bl_topInstagramContainer {
@@ -3337,9 +3383,9 @@ Instagram
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topInstagramContainer {
     max-width: 100%;
-    padding: clamp(0px, 2.3364485981vw, 11px);
-    border-radius: clamp(0px, 1.4018691589vw, 6.6px);
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+    padding: clamp(0px, 2.6666666667vw, 11px);
+    border-radius: clamp(0px, 1.6vw, 6.6px);
+    margin-bottom: clamp(0px, 8vw, 33px);
   }
 }
 .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner {
@@ -3356,8 +3402,8 @@ Instagram
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 7.0093457944vw, 33px);
-    padding-block: clamp(0px, 9.3457943925vw, 44px);
+    gap: clamp(0px, 8vw, 33px);
+    padding-block: clamp(0px, 10.6666666667vw, 44px);
   }
 }
 .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_ttlWrapper .el_topInstagramContainer_ttl {
@@ -3375,8 +3421,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_ttlWrapper .el_topInstagramContainer_ttl {
-    font-size: clamp(0px, 9.3457943925vw, 44px);
-    margin-block-end: calc(clamp(0px, 7.0093457944vw, 33px) + var(--leading-trim));
+    font-size: clamp(0px, 10.6666666667vw, 44px);
+    margin-block-end: calc(clamp(0px, 8vw, 33px) + var(--leading-trim));
   }
 }
 .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper #sb_instagram {
@@ -3394,7 +3440,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topInstagramContainer .bl_topInstagramContainer_inner .bl_topInstagramContainer_instagramWrapper #sb_instagram {
-    width: clamp(0px, 121.4953271028vw, 572px) !important;
+    width: clamp(0px, 138.6666666667vw, 572px) !important;
   }
 }
 .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .el_topSnsSection_otherSnsWrapper_ttl {
@@ -3411,8 +3457,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .el_topSnsSection_otherSnsWrapper_ttl {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    margin-bottom: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    margin-bottom: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .bl_topSnsSection_otherSnsWrapper_snsList {
@@ -3423,7 +3469,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .bl_topSnsSection_otherSnsWrapper_snsList {
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .bl_topSnsSection_otherSnsWrapper_snsList .bl_topSnsSection_otherSnsWrapper_snsbtn {
@@ -3437,7 +3483,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .bl_topSnsSection_otherSnsWrapper_snsList .bl_topSnsSection_otherSnsWrapper_snsbtn {
-    max-width: clamp(0px, 6.0747663551vw, 28.6px);
+    max-width: clamp(0px, 6.9333333333vw, 28.6px);
   }
 }
 .bl_topSnsSection .bl_topSnsSection_otherSnsWrapper .bl_topSnsSection_otherSnsWrapper_snsList .bl_topSnsSection_otherSnsWrapper_snsbtn img {
@@ -3463,7 +3509,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection {
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
+    padding-block: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner {
@@ -3473,7 +3519,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner {
-    gap: clamp(0px, 28.0373831776vw, 132px);
+    gap: clamp(0px, 32vw, 132px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topMenuSection_item_ttlWrapper {
@@ -3485,7 +3531,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topMenuSection_item_ttlWrapper {
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer {
@@ -3496,7 +3542,7 @@ Instagram
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem {
@@ -3516,8 +3562,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn {
-    padding: clamp(0px, 5.6074766355vw, 26.4px);
-    border-radius: clamp(0px, 2.3364485981vw, 11px);
+    padding: clamp(0px, 6.4vw, 26.4px);
+    border-radius: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 @media (any-hover: hover) {
@@ -3534,7 +3580,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner {
-    gap: clamp(0px, 8.6448598131vw, 40.7px);
+    gap: clamp(0px, 9.8666666667vw, 40.7px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_ttl {
@@ -3549,8 +3595,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_ttl {
-    font-size: clamp(0px, 6.5420560748vw, 30.8px);
-    margin-block-end: calc(clamp(0px, 3.738317757vw, 17.6px) + var(--leading-trim));
+    font-size: clamp(0px, 7.4666666667vw, 30.8px);
+    margin-block-end: calc(clamp(0px, 4.2666666667vw, 17.6px) + var(--leading-trim));
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_txt {
@@ -3564,7 +3610,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_upper .el_topMenuSection_item_txtWrapper_txt {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow {
@@ -3580,10 +3626,10 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow {
-    grid-template-columns: max-content clamp(0px, 1.8691588785vw, 8.8px);
-    padding-inline: clamp(0px, 4.6728971963vw, 22px);
-    padding-block: clamp(0px, 1.8691588785vw, 8.8px);
-    border-radius: clamp(0px, 23.3644859813vw, 110px);
+    grid-template-columns: max-content clamp(0px, 2.1333333333vw, 8.8px);
+    padding-inline: clamp(0px, 5.3333333333vw, 22px);
+    padding-block: clamp(0px, 2.1333333333vw, 8.8px);
+    border-radius: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow .el_treatmentBtnItem_btn_inner_arrow_txt {
@@ -3598,7 +3644,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topSection_treatmentContainer .bl_treatmentBtnItem .bl_treatmentBtnItem_btn .bl_treatmentBtnItem_btn_inner .bl_treatmentBtnItem_btn_inner_arrow .el_treatmentBtnItem_btn_inner_arrow_txt {
-    font-size: clamp(0px, 2.8037383178vw, 13.2px);
+    font-size: clamp(0px, 3.2vw, 13.2px);
   }
 }
 @media (min-width: 1024px) {
@@ -3616,7 +3662,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem {
-    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper {
@@ -3631,10 +3677,10 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper {
-    grid-template-columns: clamp(0px, 11.6822429907vw, 55px) auto;
-    gap: clamp(0px, 2.3364485981vw, 11px);
-    padding-block: clamp(0px, 2.3364485981vw, 11px);
-    padding-inline: clamp(0px, 3.2710280374vw, 15.4px);
+    grid-template-columns: clamp(0px, 13.3333333333vw, 55px) auto;
+    gap: clamp(0px, 2.6666666667vw, 11px);
+    padding-block: clamp(0px, 2.6666666667vw, 11px);
+    padding-inline: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_imgWrapper {
@@ -3649,8 +3695,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_imgWrapper {
-    grid-template-columns: clamp(0px, 7.0093457944vw, 33px);
-    padding: clamp(0px, 1.6355140187vw, 7.7px);
+    grid-template-columns: clamp(0px, 8vw, 33px);
+    padding: clamp(0px, 1.8666666667vw, 7.7px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_imgWrapper img {
@@ -3674,7 +3720,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_txtWrapper .el_concernItem_upper_txtWrapper_txtEn {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_txtWrapper .el_concernItem_upper_txtWrapper_txtJa {
@@ -3688,7 +3734,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_upper .bl_concernItem_upper_txtWrapper .el_concernItem_upper_txtWrapper_txtJa {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower {
@@ -3697,8 +3743,8 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower {
-    padding-block: clamp(0px, 4.6728971963vw, 22px);
-    padding-inline: clamp(0px, 3.2710280374vw, 15.4px);
+    padding-block: clamp(0px, 5.3333333333vw, 22px);
+    padding-inline: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList {
@@ -3708,7 +3754,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList {
-    gap: clamp(0px, 3.738317757vw, 17.6px);
+    gap: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList .bl_concernItem_postList_item .bl_concernItem_postList_item_btn {
@@ -3722,9 +3768,9 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList .bl_concernItem_postList_item .bl_concernItem_postList_item_btn {
-    grid-template-columns: 1fr clamp(0px, 2.5700934579vw, 12.1px);
-    gap: clamp(0px, 2.3364485981vw, 11px);
-    padding-bottom: clamp(0px, 1.4018691589vw, 6.6px);
+    grid-template-columns: 1fr clamp(0px, 2.9333333333vw, 12.1px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
+    padding-bottom: clamp(0px, 1.6vw, 6.6px);
   }
 }
 @media (any-hover: hover) {
@@ -3741,7 +3787,7 @@ Instagram
 }
 @media screen and (width <= 1024px) {
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList .bl_concernItem_postList_item .bl_concernItem_postList_item_btn .el_concernItem_postList_item_btn_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernContainer .bl_concernItem .bl_concernItem_lower .bl_concernItem_postList .bl_concernItem_postList_item .bl_concernItem_postList_item_btn .el_concernItem_postList_item_btn_arrow {
@@ -3754,7 +3800,7 @@ Instagram
   }
   .bl_topMenuSection .bl_topMenuSection_inner .bl_topMenuSection_item .bl_topConcernSwiper .swiper-slide {
     height: auto;
-    max-width: clamp(0px, 66.8224299065vw, 314.6px) !important;
+    max-width: clamp(0px, 76.2666666667vw, 314.6px) !important;
     width: 100%;
   }
 }
@@ -3768,8 +3814,8 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_topCaseSection {
-    padding-top: clamp(0px, 23.3644859813vw, 110px);
-    padding-bottom: clamp(0px, 42.0560747664vw, 198px);
+    padding-top: clamp(0px, 26.6666666667vw, 110px);
+    padding-bottom: clamp(0px, 48vw, 198px);
   }
 }
 .bl_topCaseSection .bl_topCaseSection_ttlWrapper {
@@ -3781,7 +3827,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_topCaseSection .bl_topCaseSection_ttlWrapper {
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_topCaseSection .bl_caseSliderWrapper_slider .splide__track {
@@ -3792,12 +3838,22 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_topCaseSection .bl_caseSliderWrapper_slider .splide__slide {
-    width: clamp(0px, 60.2803738318vw, 283.8px) !important;
+    width: clamp(0px, 68.8vw, 283.8px) !important;
   }
 }
 
 .ly_menuSinglePage {
   background-color: #E5D8CD;
+}
+
+.bl_menuArticleMain {
+  background-color: #F4EEEA;
+  padding-bottom: calc(clamp(0px, 2.7777777778vw, 60px) + clamp(0px, 1.25vw, 27px));
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleMain {
+    padding-bottom: 100px;
+  }
 }
 
 .bl_menuArticle_ttlContainer {
@@ -3812,7 +3868,12 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_ttlContainer {
-    padding-block: clamp(0px, 11.6822429907vw, 55px);
+    padding-top: clamp(0px, 37.8666666667vw, 156.2px);
+    grid-template-columns: 1fr;
+    padding-bottom: clamp(0px, 16vw, 66px);
+    gap: clamp(0px, 8vw, 33px);
+    max-width: 100%;
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_menuArticle_ttlContainer .bl_menuArticle_ttl {
@@ -3820,6 +3881,12 @@ Case
   flex-direction: column;
   align-items: center;
   gap: clamp(0px, 0.9722222222vw, 21px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_ttlContainer .bl_menuArticle_ttl {
+    gap: clamp(0px, 3.7333333333vw, 15.4px);
+    align-items: flex-start;
+  }
 }
 .bl_menuArticle_ttlContainer .bl_menuArticle_ttl .el_menuArticle_ttl_en {
   color: #987F65;
@@ -3830,6 +3897,11 @@ Case
   line-height: 1;
   letter-spacing: 0.02em;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_ttlContainer .bl_menuArticle_ttl .el_menuArticle_ttl_en {
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
+  }
+}
 .bl_menuArticle_ttlContainer .bl_menuArticle_ttl .el_menuArticle_ttl_ttl {
   color: var(--black);
   font-family: var(--notoSerifJP);
@@ -3839,15 +3911,31 @@ Case
   line-height: 1;
   letter-spacing: 0.05em;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_ttlContainer .bl_menuArticle_ttl .el_menuArticle_ttl_ttl {
+    font-size: clamp(0px, 9.6vw, 39.6px);
+  }
+}
 .bl_menuArticle_ttlContainer .bl_menuArticle_thumbnail {
   padding: clamp(0px, 0.6944444444vw, 15px);
   border-radius: clamp(0px, 0.2777777778vw, 6px);
   border: 1px solid #987F65;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_ttlContainer .bl_menuArticle_thumbnail {
+    padding: clamp(0px, 2.6666666667vw, 11px);
+    border-radius: clamp(0px, 1.0666666667vw, 4.4px);
+  }
+}
 .bl_menuArticle_ttlContainer .bl_menuArticle_thumbnail .el_menuArticle_thumbnail_img {
   width: 100%;
   object-fit: cover;
   border-radius: clamp(0px, 0.1388888889vw, 3px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_ttlContainer .bl_menuArticle_thumbnail .el_menuArticle_thumbnail_img {
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
+  }
 }
 
 .bl_menuArticle_contents {
@@ -3869,6 +3957,16 @@ Case
   margin-inline: auto;
   width: 100%;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents .bl_menuArticle_contents_inner {
+    grid-template-columns: 1fr;
+    gap: clamp(0px, 16vw, 66px);
+    max-width: 100%;
+    padding-top: clamp(0px, 13.3333333333vw, 55px);
+    padding-inline: clamp(0px, 8vw, 33px);
+    padding-bottom: clamp(0px, 48vw, 198px);
+  }
+}
 
 .bl_menuArticle_contents_navContainer {
   height: 100%;
@@ -3878,6 +3976,12 @@ Case
   top: clamp(0px, 10.4166666667vw, 225px);
   width: 100%;
   z-index: 1;
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper {
+    position: relative;
+    top: 0;
+  }
 }
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .el_menuArticle_contents_navWrapper_ttl {
   color: var(--black);
@@ -3892,10 +3996,22 @@ Case
   margin-bottom: clamp(0px, 2.0833333333vw, 45px);
   text-align: center;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .el_menuArticle_contents_navWrapper_ttl {
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    padding-block: clamp(0px, 2.6666666667vw, 11px);
+    margin-bottom: clamp(0px, 8vw, 33px);
+  }
+}
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList {
   display: flex;
   flex-direction: column;
   gap: clamp(0px, 1.6666666667vw, 36px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList {
+    gap: clamp(0px, 6.4vw, 26.4px);
+  }
 }
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link {
   display: grid;
@@ -3911,6 +4027,13 @@ Case
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link {
+    grid-template-columns: clamp(0px, 1.0666666667vw, 4.4px) 1fr;
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    gap: clamp(0px, 2.1333333333vw, 8.8px);
+  }
+}
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link:before {
   content: "";
   display: block;
@@ -3922,6 +4045,13 @@ Case
   border-radius: 100%;
   margin-top: clamp(0px, 0.4861111111vw, 10.5px);
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link:before {
+    width: clamp(0px, 1.0666666667vw, 4.4px);
+    height: clamp(0px, 1.0666666667vw, 4.4px);
+    margin-top: clamp(0px, 1.8666666667vw, 7.7px);
+  }
+}
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link .el_menuArticle_navListItem_link_txt {
   display: block;
   grid-column: 2;
@@ -3932,8 +4062,12 @@ Case
 }
 
 .bl_menuArticleInfoSection_item {
-  overflow: hidden;
   padding-top: clamp(0px, 4.1666666667vw, 90px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item {
+    padding-top: clamp(0px, 16vw, 66px);
+  }
 }
 .bl_menuArticleInfoSection_item .el_menuArticleInfoSection_item_ttl {
   color: var(--txtColor);
@@ -3947,8 +4081,20 @@ Case
   padding-bottom: clamp(0px, 2.0833333333vw, 45px);
   border-bottom: 1px dashed #987F65;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .el_menuArticleInfoSection_item_ttl {
+    font-size: clamp(0px, 8.5333333333vw, 35.2px);
+    margin-bottom: clamp(0px, 10.6666666667vw, 44px);
+    padding-bottom: clamp(0px, 8vw, 33px);
+  }
+}
 .bl_menuArticleInfoSection_item .bl_caseItem {
   max-width: clamp(0px, 16.6666666667vw, 360px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_caseItem {
+    max-width: clamp(0px, 65.6vw, 270.6px);
+  }
 }
 .bl_menuArticleInfoSection_item .bl_caseItem .bl_caseItem_details_summary {
   background-color: #E5D8CD;
@@ -3957,12 +4103,17 @@ Case
   overflow: hidden;
   margin-bottom: clamp(0px, 3.4722222222vw, 75px);
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_caseSliderWrapper {
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
+  }
+}
 .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .splide__list {
   gap: clamp(0px, 2.7777777778vw, 60px);
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .splide__list {
-    gap: clamp(0px, 9.3457943925vw, 44px);
+    gap: clamp(0px, 10.6666666667vw, 44px);
   }
 }
 .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .bl_meneCaseSlider .splide__slide {
@@ -3983,6 +4134,11 @@ Case
   grid-template-columns: clamp(0px, 13.8888888889vw, 300px) 1fr;
   border-bottom: 1px solid #987F65;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr {
+    grid-template-columns: clamp(0px, 34.6666666667vw, 143px) 1fr;
+  }
+}
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr:last-child {
   border-bottom: none;
 }
@@ -3999,9 +4155,20 @@ Case
   letter-spacing: 0.05em;
   text-align: left;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_th {
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    padding: clamp(0px, 4.2666666667vw, 17.6px);
+  }
+}
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td {
   background-color: #fff;
   padding: clamp(0px, 1.1111111111vw, 24px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td {
+    padding: clamp(0px, 4.2666666667vw, 17.6px);
+  }
 }
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td p {
   color: var(--txtColor);
@@ -4017,6 +4184,12 @@ Case
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td p:first-child {
   margin-top: 0;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td p {
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    margin-top: clamp(0px, 5.3333333333vw, 22px);
+  }
+}
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul {
   display: flex;
   flex-direction: column;
@@ -4025,6 +4198,12 @@ Case
 }
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul:first-child {
   margin-top: 0;
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul {
+    gap: clamp(0px, 4.2666666667vw, 17.6px);
+    margin-top: clamp(0px, 2.1333333333vw, 8.8px);
+  }
 }
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul li {
   position: relative;
@@ -4036,6 +4215,12 @@ Case
   line-height: 1.5;
   letter-spacing: 0.05em;
   padding-left: clamp(0px, 0.8333333333vw, 18px);
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul li {
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    padding-left: clamp(0px, 3.2vw, 13.2px);
+  }
 }
 .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul li:before {
   content: "";
@@ -4049,15 +4234,25 @@ Case
   background-color: #987F65;
   margin-top: clamp(0px, 0.7638888889vw, 16.5px);
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuInfoTable .bl_menuInfoTable_tr .el_menuInfoTable_td ul li:before {
+    width: clamp(0px, 1.0666666667vw, 4.4px);
+    height: clamp(0px, 1.0666666667vw, 4.4px);
+    margin-top: clamp(0px, 2.9333333333vw, 12.1px);
+  }
+}
+.bl_menuArticleInfoSection_item .bl_menuRelatedPostList {
+  width: 100%;
+}
 @media screen and (min-width: 769px) {
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .splide {
-    overflow: visible !important;
+    overflow: hidden !important;
   }
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider {
-    overflow: visible !important;
+    overflow: hidden !important;
   }
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__track {
-    overflow: visible;
+    overflow: hidden;
   }
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__list {
     display: grid !important;
@@ -4068,14 +4263,21 @@ Case
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__slide {
     width: auto !important;
     margin: 0 !important;
+    min-width: 0;
   }
 }
 @media screen and (max-width: 768px) {
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .bl_menuCard {
+    max-width: clamp(0px, 65.6vw, 270.6px);
+  }
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__list {
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
   .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__slide {
     width: fit-content !important;
+  }
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__track {
+    overflow: visible !important;
   }
 }
 
@@ -4100,10 +4302,11 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_backAllbtn {
-    max-width: clamp(0px, 46.7289719626vw, 220px);
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    padding: clamp(0px, 2.3364485981vw, 11px);
+    max-width: clamp(0px, 53.3333333333vw, 220px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
+    font-size: clamp(0px, 4.8vw, 19.8px);
+    padding: clamp(0px, 2.6666666667vw, 11px);
+    margin-top: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 @media (any-hover: hover) {
@@ -4131,7 +4334,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper {
-    gap: clamp(0px, 18.691588785vw, 88px);
+    gap: clamp(0px, 21.3333333333vw, 88px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item {
@@ -4141,7 +4344,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item {
-    gap: clamp(0px, 14.0186915888vw, 66px);
+    gap: clamp(0px, 16vw, 66px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .el_priceContentsWrapper_item_ttl {
@@ -4155,7 +4358,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .el_priceContentsWrapper_item_ttl {
-    font-size: clamp(0px, 7.476635514vw, 35.2px);
+    font-size: clamp(0px, 8.5333333333vw, 35.2px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList {
@@ -4165,7 +4368,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList {
-    gap: clamp(0px, 11.6822429907vw, 55px);
+    gap: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .el_priceChildList_ttl {
@@ -4181,7 +4384,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .ly_priceContentsWrapper .bl_priceContentsWrapper_item .bl_priceChildList .el_priceChildList_ttl {
-    font-size: clamp(0px, 6.5420560748vw, 30.8px);
+    font-size: clamp(0px, 7.4666666667vw, 30.8px);
   }
 }
 
@@ -4192,7 +4395,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceChildList_postList {
-    gap: clamp(0px, 9.3457943925vw, 44px);
+    gap: clamp(0px, 10.6666666667vw, 44px);
   }
 }
 .bl_priceChildList_postList .bl_priceChildList_postList_item {
@@ -4202,7 +4405,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceChildList_postList .bl_priceChildList_postList_item {
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceChildList_postList_item_ttl {
@@ -4220,10 +4423,10 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceChildList_postList_item_ttl {
-    font-size: clamp(0px, 5.6074766355vw, 26.4px);
-    padding-inline: clamp(0px, 4.6728971963vw, 22px);
-    padding-block: clamp(0px, 2.3364485981vw, 11px);
-    margin-bottom: clamp(0px, 2.3364485981vw, 11px);
+    font-size: clamp(0px, 6.4vw, 26.4px);
+    padding-inline: clamp(0px, 5.3333333333vw, 22px);
+    padding-block: clamp(0px, 2.6666666667vw, 11px);
+    margin-bottom: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceWrapList_item_caution {
@@ -4237,7 +4440,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceChildList_postList .bl_priceChildList_postList_item .el_priceWrapList_item_caution {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 
@@ -4248,7 +4451,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList {
-    gap: clamp(0px, 9.3457943925vw, 44px);
+    gap: clamp(0px, 10.6666666667vw, 44px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item {
@@ -4258,7 +4461,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item {
-    gap: clamp(0px, 2.8037383178vw, 13.2px);
+    gap: clamp(0px, 3.2vw, 13.2px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_ttl {
@@ -4275,8 +4478,8 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_ttl {
-    font-size: clamp(0px, 4.6728971963vw, 22px);
-    padding-left: clamp(0px, 4.6728971963vw, 22px);
+    font-size: clamp(0px, 5.3333333333vw, 22px);
+    padding-left: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList {
@@ -4286,7 +4489,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList {
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item {
@@ -4300,8 +4503,8 @@ Case
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 4.6728971963vw, 22px);
-    padding-bottom: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
+    padding-bottom: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .el_priceTableList_item_ttl_txt {
@@ -4315,7 +4518,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .el_priceTableList_item_ttl_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList {
@@ -4331,7 +4534,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
     grid-column: 1;
   }
 }
@@ -4344,7 +4547,7 @@ Case
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item {
     grid-template-columns: repeat(4, 1fr);
-    gap: clamp(0px, 2.3364485981vw, 11px);
+    gap: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_priceWrapList .bl_priceWrapList_item .bl_priceTableList .bl_priceTableList_item .bl_amountTableList .bl_amountTableList_item .el_amountTableList_item_num {
@@ -4383,7 +4586,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_priceWrapList .bl_priceWrapList_item .el_priceWrapList_item_caption {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 
@@ -4395,8 +4598,8 @@ Misson
 }
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection {
-    padding-top: clamp(0px, 9.3457943925vw, 44px);
-    padding-bottom: clamp(0px, 14.0186915888vw, 66px);
+    padding-top: clamp(0px, 10.6666666667vw, 44px);
+    padding-bottom: clamp(0px, 16vw, 66px);
   }
 }
 .bl_aboutMissionSection .bl_aboutMissionSection_inner {
@@ -4411,10 +4614,10 @@ Misson
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner {
     grid-template-columns: 1fr;
-    gap: clamp(0px, 11.6822429907vw, 55px);
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    gap: clamp(0px, 13.3333333333vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
     max-width: 100%;
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_aboutMissionSection .bl_aboutMissionSection_inner .el_aboutMissionSection_ttl {
@@ -4429,7 +4632,7 @@ Misson
 }
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner .el_aboutMissionSection_ttl {
-    font-size: clamp(0px, 9.3457943925vw, 44px);
+    font-size: clamp(0px, 10.6666666667vw, 44px);
     width: fit-content;
     margin-inline: auto;
   }
@@ -4446,8 +4649,8 @@ Misson
 }
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .el_aboutMissionSection_txtContainer_copy {
-    font-size: clamp(0px, 5.6074766355vw, 26.4px);
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    font-size: clamp(0px, 6.4vw, 26.4px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
     text-align: center;
   }
 }
@@ -4466,7 +4669,7 @@ Misson
 }
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt {
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt .el_aboutMissionSection_txtContainer_txt_item {
@@ -4480,7 +4683,7 @@ Misson
 }
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_inner .bl_aboutMissionSection_txtContainer .bl_aboutMissionSection_txtContainer_txt .el_aboutMissionSection_txtContainer_txt_item {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_aboutMissionSection .bl_aboutMissionSection_slider .el_aboutMissionSection_slider_item {
@@ -4497,7 +4700,7 @@ Misson
 }
 @media screen and (width <= 1024px) {
   .bl_aboutMissionSection .bl_aboutMissionSection_slider .el_aboutMissionSection_slider_item {
-    font-size: clamp(0px, 21.0280373832vw, 99px);
+    font-size: clamp(0px, 24vw, 99px);
   }
 }
 
@@ -4509,8 +4712,8 @@ Concept
 }
 @media screen and (width <= 1024px) {
   .bl_aboutConceptSection {
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-block: clamp(0px, 26.6666666667vw, 110px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_aboutConceptSection .bl_conceptSection_inner {
@@ -4547,8 +4750,8 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection {
-    padding-top: clamp(0px, 23.3644859813vw, 110px);
-    padding-bottom: clamp(0px, 46.7289719626vw, 220px);
+    padding-top: clamp(0px, 26.6666666667vw, 110px);
+    padding-bottom: clamp(0px, 53.3333333333vw, 220px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner {
@@ -4560,8 +4763,8 @@ Information
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner {
     max-width: 100%;
-    margin-bottom: clamp(0px, 28.0373831776vw, 132px);
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    margin-bottom: clamp(0px, 32vw, 132px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group {
@@ -4574,8 +4777,8 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group {
-    gap: clamp(0px, 4.6728971963vw, 22px);
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    gap: clamp(0px, 5.3333333333vw, 22px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_en {
@@ -4592,7 +4795,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_en {
-    font-size: clamp(0px, 9.3457943925vw, 44px);
+    font-size: clamp(0px, 10.6666666667vw, 44px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_ja {
@@ -4607,7 +4810,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationTtlWrapper .bl_aboutInformationTtlWrapper_group .el_aboutInformationTtlWrapper_ja {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper {
@@ -4617,7 +4820,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper {
-    gap: clamp(0px, 5.6074766355vw, 26.4px);
+    gap: clamp(0px, 6.4vw, 26.4px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item {
@@ -4630,9 +4833,9 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item {
-    grid-template-columns: clamp(0px, 23.3644859813vw, 110px) 1fr;
-    gap: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 5.6074766355vw, 26.4px);
+    grid-template-columns: clamp(0px, 26.6666666667vw, 110px) 1fr;
+    gap: clamp(0px, 8vw, 33px);
+    padding-bottom: clamp(0px, 6.4vw, 26.4px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_ttl,
@@ -4648,7 +4851,7 @@ Information
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_ttl,
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_txt {
-    font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .el_aboutInformationSection_infoWrapper_item_ttl .el_aboutInformationSection_infoWrapper_item_txt_link,
@@ -4667,7 +4870,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_inner .bl_aboutInformationSection_infoWrapper .bl_aboutInformationSection_infoWrapper_item .bl_commonGoogleMapLink {
-    margin-top: clamp(0px, 2.3364485981vw, 11px);
+    margin-top: clamp(0px, 2.6666666667vw, 11px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide {
@@ -4678,8 +4881,8 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide {
-    max-width: clamp(0px, 84.1121495327vw, 396px);
-    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    max-width: clamp(0px, 96vw, 396px);
+    border-radius: clamp(0px, 0.5333333333vw, 2.2px);
   }
 }
 .bl_aboutInformationSection .bl_aboutInformationSection_slider .splide__slide img {
@@ -4703,8 +4906,20 @@ Information
 .bl_commonArticleSection h2:first-child {
   margin-top: 0;
 }
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection h2 {
+    font-size: clamp(0px, 8.5333333333vw, 35.2px);
+    padding-bottom: clamp(0px, 5.3333333333vw, 22px);
+    margin-top: clamp(0px, 16vw, 66px);
+  }
+}
 .bl_commonArticleSection figure {
   margin-top: clamp(0px, 2.7777777778vw, 60px);
+}
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection figure {
+    margin-top: clamp(0px, 10.6666666667vw, 44px);
+  }
 }
 .bl_commonArticleSection figure:first-child {
   margin-top: 0;
@@ -4724,6 +4939,12 @@ Information
   margin: 0;
   margin-top: clamp(0px, 0.6944444444vw, 15px);
 }
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection figure figcaption {
+    font-size: clamp(0px, 3.7333333333vw, 15.4px);
+    margin-top: clamp(0px, 2.6666666667vw, 11px);
+  }
+}
 .bl_commonArticleSection h3 {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
@@ -4740,6 +4961,14 @@ Information
 .bl_commonArticleSection h3:first-child {
   margin-top: 0;
 }
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection h3 {
+    font-size: clamp(0px, 6.4vw, 26.4px);
+    margin-top: clamp(0px, 13.3333333333vw, 55px);
+    padding-block: clamp(0px, 2.6666666667vw, 11px);
+    padding-inline: clamp(0px, 5.3333333333vw, 22px);
+  }
+}
 .bl_commonArticleSection h4 {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
@@ -4755,6 +4984,13 @@ Information
 .bl_commonArticleSection h4:first-child {
   margin-top: 0;
 }
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection h4 {
+    font-size: clamp(0px, 5.3333333333vw, 22px);
+    margin-top: clamp(0px, 10.6666666667vw, 44px);
+    padding-left: clamp(0px, 5.3333333333vw, 22px);
+  }
+}
 .bl_commonArticleSection ul {
   display: flex;
   flex-direction: column;
@@ -4763,6 +4999,12 @@ Information
 }
 .bl_commonArticleSection ul:first-child {
   margin-top: 0;
+}
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection ul {
+    gap: clamp(0px, 4.2666666667vw, 17.6px);
+    margin-top: clamp(0px, 8vw, 33px);
+  }
 }
 .bl_commonArticleSection ul li {
   position: relative;
@@ -4774,6 +5016,12 @@ Information
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection ul li {
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
+    padding-left: clamp(0px, 3.2vw, 13.2px);
+  }
 }
 .bl_commonArticleSection ul li:before {
   content: "";
@@ -4787,13 +5035,20 @@ Information
   border-radius: 100%;
   background-color: #987F65;
 }
+@media screen and (width <= 1024px) {
+  .bl_commonArticleSection ul li:before {
+    width: clamp(0px, 1.0666666667vw, 4.4px);
+    height: clamp(0px, 1.0666666667vw, 4.4px);
+    top: clamp(0px, 3.2vw, 13.2px);
+  }
+}
 
 .bl_staffContentsOuter {
   /* 看護師紹介 */
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_commonLowPageWrapper_contents_inner {
-    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-inline: clamp(0px, 8vw, 33px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents .bl_staffContents_ttl {
@@ -4801,7 +5056,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_staffContents_ttl {
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+    margin-bottom: clamp(0px, 13.3333333333vw, 55px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents .bl_staffContents_ttl .el_staffContents_ttl_en {
@@ -4819,7 +5074,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_staffContents_ttl .el_staffContents_ttl_en {
-    font-size: clamp(0px, 9.3457943925vw, 44px);
+    font-size: clamp(0px, 10.6666666667vw, 44px);
     margin-bottom: clamp(0px, 1.1111111111vw, 24px);
   }
 }
@@ -4836,7 +5091,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_staffContents_ttl .el_staffContents_ttl_ja {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents .bl_staffContents_postList {
@@ -4846,7 +5101,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_staffContents_postList {
-    gap: clamp(0px, 23.3644859813vw, 110px);
+    gap: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(odd) {
@@ -4854,7 +5109,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents:nth-child(odd) {
-    padding-top: clamp(0px, 23.3644859813vw, 110px);
+    padding-top: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(odd) .bl_commonLowPageWrapper_contents_inner {
@@ -4862,7 +5117,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents:nth-child(odd) .bl_commonLowPageWrapper_contents_inner {
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
+    padding-bottom: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(even) {
@@ -4872,7 +5127,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents:nth-child(even) {
-    padding-top: clamp(0px, 23.3644859813vw, 110px);
+    padding-top: clamp(0px, 26.6666666667vw, 110px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_commonLowPageWrapper_contents_inner {
@@ -4880,7 +5135,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_commonLowPageWrapper_contents_inner {
-    padding-bottom: clamp(0px, 42.0560747664vw, 198px);
+    padding-bottom: clamp(0px, 48vw, 198px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper {
@@ -4892,7 +5147,7 @@ Information
   .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper {
     max-width: 100%;
     grid-template-columns: 1fr;
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 8vw, 33px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper_imgWrapper {
@@ -4900,7 +5155,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper_imgWrapper {
-    max-width: clamp(0px, 60.5140186916vw, 284.9px);
+    max-width: clamp(0px, 69.0666666667vw, 284.9px);
   }
 }
 .bl_staffContentsOuter .bl_nurseContentsWrapper .el_nurseContentsWrapper_txt {
@@ -4914,7 +5169,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_nurseContentsWrapper .el_nurseContentsWrapper_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 
@@ -4939,7 +5194,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper {
-    grid-template-columns: 1fr clamp(0px, 29.2056074766vw, 137.5px);
+    grid-template-columns: 1fr clamp(0px, 33.3333333333vw, 137.5px);
   }
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_ttl {
@@ -4954,7 +5209,7 @@ Information
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    padding-left: clamp(0px, 4.6728971963vw, 22px);
+    padding-left: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_ttl .el_concernUpper_ttlWrapper_ttl_main {
@@ -4969,7 +5224,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_ttl .el_concernUpper_ttlWrapper_ttl_main {
-    font-size: clamp(0px, 6.0747663551vw, 28.6px);
+    font-size: clamp(0px, 6.9333333333vw, 28.6px);
   }
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_ttl .el_concernUpper_ttlWrapper_ttl_sub {
@@ -4983,7 +5238,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_ttl .el_concernUpper_ttlWrapper_ttl_sub {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_imgWrapper {
@@ -5022,7 +5277,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernUpper .bl_concernTxtWrapper .el_concernTxtWrapper_txt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-size: clamp(0px, 4.2666666667vw, 17.6px);
   }
 }
 
@@ -5034,8 +5289,8 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernLower .bl_concernLower_inner {
-    grid-template-columns: repeat(auto-fill, minmax(min(clamp(0px, 39.7196261682vw, 187px), 100%), 1fr));
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    grid-template-columns: repeat(auto-fill, minmax(min(clamp(0px, 45.3333333333vw, 187px), 100%), 1fr));
+    gap: clamp(0px, 5.3333333333vw, 22px);
   }
 }
 .bl_concernLower .bl_concernLower_inner .bl_menuCard {

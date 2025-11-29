@@ -316,7 +316,7 @@ const setUpAccordion = () => {
     const faqDetailsList = document.querySelectorAll(".bl_faqList_item_details");
     faqDetailsList.forEach((details) => {
         const summary = details.querySelector(".bl_faqList_item_details_summary");
-        const content = details.querySelector(".bl_caseItem_details_content");
+        const content = details.querySelector(".bl_faqList_details_content");
         const icon = details.querySelector(".el_faqList_item_details_summary_icon");
 
         if (!summary || !content) return;

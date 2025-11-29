@@ -819,7 +819,7 @@
 
             @include underSP {
                 padding-top: vwmin(100, sp_m);
-                padding-bottom: calc(vwmin(40, sp_m) + vwmin(18, sp_m));
+                padding-bottom: vwmin(100, sp_m);
                 border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
             }
         }
@@ -840,7 +840,7 @@
 
         @include underSP {
             padding-top: vwmin(143, sp_m);
-            padding-bottom: calc(10vw + vwmin(18, sp_m));
+            padding-bottom: 100px;
         }
 
         .bl_commonLowPageWhiteMain_inner {
@@ -1187,10 +1187,18 @@ Google Maps
     flex-direction: column;
     gap: vwmin(20, pc);
 
+    @include underSP {
+        gap: vwmin(20, sp_m);
+    }
+
     .bl_faqList_item_details {
         border-radius: vwmin(4, pc);
         overflow: hidden;
-        background: var(--right-brown, #E5D8CD);
+        background: #E5D8CD;
+
+        @include underSP {
+            border-radius: vwmin(4, sp_m);
+        }
 
         summary::marker {
             content: "";
@@ -1209,6 +1217,12 @@ Google Maps
             gap: vwmin(10, pc);
             cursor: pointer;
 
+            @include underSP {
+                padding: vwmin(30, sp_m);
+                grid-template-columns: auto 1fr vwmin(22, sp_m);
+                gap: vwmin(10, sp_m);
+            }
+
             .el_faqList_item_details_summary_txt_q {
                 color: var(--txtColor);
                 font-family: var(--OldSt);
@@ -1217,6 +1231,10 @@ Google Maps
                 font-weight: 400;
                 line-height: 1;
                 letter-spacing: calc(0.4 / 20 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(18, sp_m);
+                }
             }
 
             .el_faqList_item_details_summary_txt {
@@ -1227,6 +1245,10 @@ Google Maps
                 font-weight: 400;
                 line-height: 1.5;
                 letter-spacing: calc(0.9 / 18 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(18, sp_m);
+                }
             }
 
             .el_faqList_item_details_summary_icon {
@@ -1235,10 +1257,10 @@ Google Maps
         }
 
 
-        .bl_caseItem_details_content {
+        .bl_faqList_details_content {
             overflow: hidden;
 
-            .bl_caseItem_details_content_inner {
+            .bl_faqList_details_content_inner {
                 display: grid;
                 grid-template-columns: auto 1fr;
                 align-items: flex-start;
@@ -1247,7 +1269,15 @@ Google Maps
                 margin-inline: vwmin(30, pc);
                 border-top: 1px solid #987F65;
 
-                .el_faqList_item_details_content_ttl {
+                @include underSP {
+                    padding-block: vwmin(24, sp_m);
+                    grid-template-columns: auto 1fr;
+                    gap: vwmin(6, sp_m);
+                    margin-inline: vwmin(24, sp_m);
+                    border-top: 1px solid #987F65;
+                }
+
+                .el_faqList_details_content_ttl {
                     color: var(--txtColor);
                     font-family: var(--OldSt);
                     font-size: vwmin(18, pc);
@@ -1255,9 +1285,14 @@ Google Maps
                     font-weight: 400;
                     line-height: 1;
                     letter-spacing: calc(0.36 / 18 * 1em);
+
+                    @include underSP {
+                        margin-top: vwmin(4, sp_m);
+                        font-size: vwmin(18, sp_m);
+                    }
                 }
 
-                .el_faqList_item_details_content_txt {
+                .el_faqList_details_content_txt {
                     color: var(--txtColor);
                     font-family: var(--notoSerifJP);
                     font-size: vwmin(16, pc);
@@ -1265,6 +1300,10 @@ Google Maps
                     font-weight: 400;
                     line-height: 1.5;
                     letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                    }
                 }
             }
         }

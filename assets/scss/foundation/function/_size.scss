@@ -18,41 +18,74 @@
 }
 
 @function vwmin($pxValue, $reference, $base: null, $min: 0px, $max: null) {
+  // 負の値の場合は$minと$maxを自動調整
+  $isNegative: $pxValue < 0;
+  
   @if $reference == 'pc' {
     @if not $base {
       $base: 1440;
     }
     @if not $max {
-      $max: $pxValue * 1.5; // PC: 最大値は元の値の150%（タブレット時も大きめに）
+      @if $isNegative {
+        $max: $pxValue; // 負の値の場合、最大値は元の値（0に近い値）
+        $min: $pxValue * 1.5; // 負の値の場合、最小値はより負の値
+      } @else {
+        $max: $pxValue * 1.5; // PC: 最大値は元の値の150%（タブレット時も大きめに）
+      }
     }
   } @else if $reference == 'tb' {
     @if not $base {
       $base: 768; // タブレットの最小幅を基準に（より大きいサイズになる）
     }
     @if not $max {
-      $max: $pxValue * 1.2; // TB: 最大値は元の値の500%
+      @if $isNegative {
+        $max: $pxValue;
+        $min: $pxValue * 1.2;
+      } @else {
+        $max: $pxValue * 1.2; // TB: 最大値は元の値の500%
+      }
     }
   } @else if $reference == 'sp' {
     @if not $base {
       $base: 767;
     }
     @if not $max {
-      $max: $pxValue * 1.1; // SP: 最大値は元の値の110%
+      @if $isNegative {
+        $max: $pxValue;
+        $min: $pxValue * 1.1;
+      } @else {
+        $max: $pxValue * 1.1; // SP: 最大値は元の値の110%
+      }
     }
   } @else if $reference == 'sp_m' {
     @if not $base {
-      $base: 428;
+      $base: 375;
     }
     @if not $max {
-      $max: $pxValue * 1.1;
+      @if $isNegative {
+        $max: $pxValue;
+        $min: $pxValue * 1.1;
+      } @else {
+        $max: $pxValue * 1.1;
+      }
     }
   } @else if $reference == 'sp_s' {
     @if not $base {
       $base: 375;
     }
     @if not $max {
-      $max: $pxValue * 1.1;
+      @if $isNegative {
+        $max: $pxValue;
+        $min: $pxValue * 1.1;
+      } @else {
+        $max: $pxValue * 1.1;
+      }
     }
+  }
+
+  // 負の値で$minが指定されていない場合、自動的に負の値に設定
+  @if $isNegative and $min == 0px {
+    $min: $pxValue * 1.1;
   }
 
   $vwValue: math.div($pxValue, $base) * 100vw;

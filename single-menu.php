@@ -6,7 +6,7 @@
 
     <?php get_header(); ?>
 
-    <main>
+    <main class="bl_menuArticleMain">
         <article class="bl_menuArticle">
 
             <div class="bl_menuArticle_ttlContainer">
@@ -275,10 +275,10 @@
                                                         <span class="el_faqList_item_details_summary_txt"><?php the_sub_field('menu-faq-list-q'); ?></span>
                                                         <img class="el_faqList_item_details_summary_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
                                                     </summary>
-                                                    <div class="bl_caseItem_details_content">
-                                                        <div class="bl_caseItem_details_content_inner">
-                                                            <p class="el_faqList_item_details_content_ttl">A.</p>
-                                                            <p class="el_faqList_item_details_content_txt"><?php the_sub_field('menu-faq-list-a'); ?></p>
+                                                    <div class="bl_faqList_details_content">
+                                                        <div class="bl_faqList_details_content_inner">
+                                                            <p class="el_faqList_details_content_ttl">A.</p>
+                                                            <p class="el_faqList_details_content_txt"><?php the_sub_field('menu-faq-list-a'); ?></p>
                                                         </div>
                                                     </div>
                                                 </details>
@@ -364,6 +364,8 @@
                 </div>
             </div>
         </article>
+        
+        <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
     </main>
 
     <?php get_footer(); ?>
