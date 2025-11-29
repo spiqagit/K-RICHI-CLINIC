@@ -3712,6 +3712,11 @@ Case
 .bl_menuArticle_contents {
   background-color: #F4EEEA;
 }
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_contents .bl_menuArticle_contents_inner {
+    overflow: hidden;
+  }
+}
 .bl_menuArticle_contents .bl_menuArticle_contents_inner {
   position: relative;
   display: grid;
@@ -3763,6 +3768,7 @@ Case
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link:before {
   content: "";
@@ -3778,6 +3784,10 @@ Case
 .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link .el_menuArticle_navListItem_link_txt {
   display: block;
   grid-column: 2;
+}
+.bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .is-active {
+  color: #987F65;
+  transition: color 0.3s ease;
 }
 
 .bl_menuArticleInfoSection_item {
@@ -3897,6 +3907,69 @@ Case
   border-radius: 100%;
   background-color: #987F65;
   margin-top: clamp(0px, 0.7638888889vw, 16.5px);
+}
+@media screen and (min-width: 769px) {
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .splide {
+    overflow: visible !important;
+  }
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider {
+    overflow: visible !important;
+  }
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__track {
+    overflow: visible;
+  }
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__list {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: clamp(0px, 2.0833333333vw, 45px);
+    transform: none !important;
+  }
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__slide {
+    width: auto !important;
+    margin: 0 !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__list {
+    gap: clamp(0px, 4.6728971963vw, 22px);
+  }
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__slide {
+    width: fit-content !important;
+  }
+}
+
+.bl_menuArticle_backAllbtn {
+  display: block;
+  max-width: clamp(0px, 13.8888888889vw, 300px);
+  width: 100%;
+  border-radius: clamp(0px, 0.1388888889vw, 3px);
+  background: #E5D8CD;
+  color: var(--black, #1A0F04);
+  font-family: "Noto Serif JP";
+  font-size: clamp(0px, 1.25vw, 27px);
+  font-style: normal;
+  font-weight: 350;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  padding: clamp(0px, 0.6944444444vw, 15px);
+  text-align: center;
+  transition: opacity 0.5s ease;
+  margin-top: clamp(0px, 6.9444444444vw, 150px);
+  margin-inline: auto;
+}
+@media screen and (width <= 1024px) {
+  .bl_menuArticle_backAllbtn {
+    max-width: clamp(0px, 46.7289719626vw, 220px);
+    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    padding: clamp(0px, 2.3364485981vw, 11px);
+  }
+}
+@media (any-hover: hover) {
+  .bl_menuArticle_backAllbtn:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
 }
 
 .ly_priceColumnWrapper .ly_priceColumnWrapper_inner {

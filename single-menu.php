@@ -303,24 +303,45 @@
                                 </section>
                             <?php endif; ?>
 
-                            <?php if (have_rows('menu-related-post')): ?>
+                            <?php if (get_field('menu-related-post')): ?>
                                 <section class="bl_menuArticleInfoSection_item">
                                     <h2 class="el_menuArticleInfoSection_item_ttl">組み合わせ施術</h2>
 
-                                    <ul class="bl_menuRelatedPostList">
-                                        <?php while (have_rows('menu-related-post')): the_row(); ?>
+                                    <div class="bl_menuRelatedPostList">
+                                        <div class="splide bl_menuRelatedPostSlider">
+                                            <div class="splide__track">
+                                                <div class="splide__list">
+                                                    <?php foreach (get_field('menu-related-post') as $menu) : ?>
+                                                        <div class="splide__slide">
+                                                            <a href="<?php echo get_permalink($menu); ?>" class="bl_menuCard">
+                                                                <div class="bl_menuCard_inner">
+                                                                    <?php if (get_the_post_thumbnail($menu)): ?>
+                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu->ID); ?>" alt="<?php echo get_the_title($menu->ID); ?>">
+                                                                    <?php else: ?>
+                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo get_the_title($menu->ID); ?>">
+                                                                    <?php endif; ?>
+                                                                    <div class="bl_menuCard_txtWrapper">
+                                                                        <p class="el_menuCard_txtWrapper_ttl"><?php echo get_the_title($menu); ?></p>
+                                                                        <?php if (get_field('menu-archive-txt', $menu)): ?>
+                                                                            <p class="el_menuCard_txtWrapper_txt"><?php echo get_field('menu-archive-txt', $menu); ?></p>
+                                                                        <?php endif; ?>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="bl_menuCard_arrowWrapper">
+                                                                    <img class="el_menuCard_arrowWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                            <li class="bl_menuRelatedPostList_item">
-                                                <a href="<?php the_sub_field('menu-related-post-link'); ?>" class="bl_menuRelatedPostList_item_link">
-                                                    <img src="<?php the_sub_field('menu-related-post-img'); ?>" alt="<?php the_sub_field('menu-related-post-title'); ?>">
-                                                </a>
-                                            </li>
-                                        <?php endwhile; ?>
-                                    </ul>
                                 </section>
                             <?php endif; ?>
                         </div>
-                        <a href="<?php home_url(); ?>/menu/" class="bl_menuArticle_contents_btn">一覧へ戻る</a>
+                        <a href="<?php home_url(); ?>/menu/" class="bl_menuArticle_backAllbtn">一覧へ戻る</a>
                     </div>
                 </div>
             </div>
