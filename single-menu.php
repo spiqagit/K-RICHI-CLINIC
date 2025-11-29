@@ -19,7 +19,7 @@
                     <?php if (has_post_thumbnail()): ?>
                         <img class="el_menuArticle_thumbnail_img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                     <?php else: ?>
-                        <img class="el_menuArticle_thumbnail_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/menu/menu-article-ttl-img.png" alt="">
+                        <img class="el_menuArticle_thumbnail_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="">
                     <?php endif; ?>
                 </div>
             </div>
@@ -308,22 +308,40 @@
                                     <h2 class="el_menuArticleInfoSection_item_ttl">組み合わせ施術</h2>
 
                                     <div class="bl_menuRelatedPostList">
+                                        <?php
+                                        $related_menu_ids = get_field('menu-related-post');
+                                        if (!empty($related_menu_ids)) {
+                                            // ACFのrelationshipフィールドからID配列を取得
+                                            $ids = array();
+                                            foreach ($related_menu_ids as $related_menu) {
+                                                $ids[] = is_object($related_menu) ? $related_menu->ID : $related_menu;
+                                            }
+                                            $related_menu_list = get_posts(array(
+                                                'post_type' => 'menu',
+                                                'posts_per_page' => -1,
+                                                'post__in' => $ids,
+                                                'orderby' => 'post__in'
+                                            ));
+                                        } else {
+                                            $related_menu_list = array();
+                                        }
+                                        ?>
                                         <div class="splide bl_menuRelatedPostSlider">
                                             <div class="splide__track">
                                                 <div class="splide__list">
-                                                    <?php foreach (get_field('menu-related-post') as $menu) : ?>
+                                                    <?php foreach ($related_menu_list as $menu) : ?>
                                                         <div class="splide__slide">
-                                                            <a href="<?php echo get_permalink($menu); ?>" class="bl_menuCard">
+                                                            <a href="<?php echo get_permalink($menu->ID); ?>" class="bl_menuCard">
                                                                 <div class="bl_menuCard_inner">
-                                                                    <?php if (get_the_post_thumbnail($menu)): ?>
-                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu->ID); ?>" alt="<?php echo get_the_title($menu->ID); ?>">
+                                                                    <?php if (has_post_thumbnail($menu->ID)): ?>
+                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu->ID); ?>" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
                                                                     <?php else: ?>
-                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo get_the_title($menu->ID); ?>">
+                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
                                                                     <?php endif; ?>
                                                                     <div class="bl_menuCard_txtWrapper">
-                                                                        <p class="el_menuCard_txtWrapper_ttl"><?php echo get_the_title($menu); ?></p>
-                                                                        <?php if (get_field('menu-archive-txt', $menu)): ?>
-                                                                            <p class="el_menuCard_txtWrapper_txt"><?php echo get_field('menu-archive-txt', $menu); ?></p>
+                                                                        <p class="el_menuCard_txtWrapper_ttl"><?php echo esc_html(get_the_title($menu->ID)); ?></p>
+                                                                        <?php if (get_field('menu-archive-txt', $menu->ID)): ?>
+                                                                            <p class="el_menuCard_txtWrapper_txt"><?php echo esc_html(get_field('menu-archive-txt', $menu->ID)); ?></p>
                                                                         <?php endif; ?>
                                                                     </div>
                                                                 </div>

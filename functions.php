@@ -126,7 +126,7 @@ function disable_pages_by_conditions()
     }
 
     // staff投稿タイプの個別記事
-    if (is_singular('staff') || is_tax('staff-cat') || is_post_type_archive('staff')) {
+    if ( is_singular('staff') || is_tax('staff-cat') ) {
         set_404_and_exit();
     }
 
@@ -136,7 +136,7 @@ function disable_pages_by_conditions()
     }
 
     // concern投稿タイプの個別記事
-    if (is_singular('concern') || is_tax('concern-cat') || is_post_type_archive('concern')) {
+    if ( is_tax('concern-cat') || is_post_type_archive('concern')) {
         set_404_and_exit();
     }
 

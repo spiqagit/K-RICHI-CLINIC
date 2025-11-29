@@ -2,49 +2,6 @@
 
 .bl_staffContentsOuter {
 
-    .bl_staffContents_ttl {
-        margin-bottom: vwmin(50, pc);
-
-        @include underSP {
-            margin-bottom: vwmin(50, sp_m);
-        }
-
-        .el_staffContents_ttl_en {
-            color: var(--black);
-            font-family: var(--notoSerifDisplay);
-            font-size: vwmin(60, pc);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1;
-            letter-spacing: calc(1.2 / 60 * 1em);
-            width: fit-content;
-            margin-inline: auto;
-            text-transform: capitalize;
-            margin-bottom: vwmin(20, pc);
-
-            @include underSP {
-                font-size: vwmin(40, sp_m);
-                margin-bottom: vwmin(16, pc);
-            }
-        }
-
-        .el_staffContents_ttl_ja {
-            color: var(--black);
-            font-family: var(--notoSerifJP);
-            font-size: vwmin(16, pc);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1.5;
-            letter-spacing: calc(0.8 / 16 * 1em);
-            width: fit-content;
-            margin-inline: auto;
-
-            @include underSP {
-                font-size: vwmin(16, sp_m);
-            }
-        }
-    }
-
     .bl_staffContents {
 
         .bl_commonLowPageWrapper_contents_inner{
@@ -52,7 +9,49 @@
                 padding-inline: vwmin(30, sp_m);
             }
         }
-        
+
+        .bl_staffContents_ttl {
+            margin-bottom: vwmin(50, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(50, sp_m);
+            }
+
+            .el_staffContents_ttl_en {
+                color: var(--black);
+                font-family: var(--notoSerifDisplay);
+                font-size: vwmin(60, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(1.2 / 60 * 1em);
+                width: fit-content;
+                margin-inline: auto;
+                text-transform: capitalize;
+                margin-bottom: vwmin(20, pc);
+
+                @include underSP {
+                    font-size: vwmin(40, sp_m);
+                    margin-bottom: vwmin(16, pc);
+                }
+            }
+
+            .el_staffContents_ttl_ja {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.8 / 16 * 1em);
+                width: fit-content;
+                margin-inline: auto;
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+            }
+        }
 
         .bl_staffContents_postList {
             display: flex;
