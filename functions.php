@@ -114,19 +114,18 @@ function disable_pages_by_conditions()
     if (is_singular('faq') || is_tax('faq-cat')) {
         set_404_and_exit();
     }
-<<<<<<< HEAD
 
     // menu投稿タイプの個別記事
-    if ( is_tax('menu-cat') || is_post_type_archive('menu')) {
+    if (is_tax('menu-cat') || is_post_type_archive('menu')) {
         set_404_and_exit();
     }
 
-    // menu投稿タイプの個別記事
+    // price投稿タイプの個別記事
     if (is_singular('price')) {
         set_404_and_exit();
     }
 
-    // menu投稿タイプの個別記事
+    // staff投稿タイプの個別記事
     if (is_singular('staff') || is_tax('staff-cat') || is_post_type_archive('staff')) {
         set_404_and_exit();
     }
@@ -136,28 +135,22 @@ function disable_pages_by_conditions()
         set_404_and_exit();
     }
 
-    // price投稿タイプの個別記事
+    // concern投稿タイプの個別記事
     if (is_singular('concern') || is_tax('concern-cat') || is_post_type_archive('concern')) {
         set_404_and_exit();
     }
 
-    // price投稿タイプの個別記事
-    if (is_singular('faq') || is_tax('faq-cat') || is_post_type_archive('faq')) {
+    // news投稿タイプの個別記事
+    if (is_singular('news') || is_tax('news-cat') || is_post_type_archive('news')) {
         set_404_and_exit();
     }
 
-    // price投稿タイプの個別記事
-    if (is_singular('news') || is_tax('news-cat') || is_post_type_archive('news')) {
-        set_404_and_exit();
-=======
-    
     // タクソノミーページ
     $disabled_taxonomies = ['price-cat', 'menu-cat'];
     foreach ($disabled_taxonomies as $taxonomy) {
         if (is_tax($taxonomy)) {
             set_404_and_exit();
         }
->>>>>>> doctor-archive
     }
 }
 add_action('template_redirect', 'disable_pages_by_conditions');
