@@ -59,7 +59,7 @@
     }
   } @else if $reference == 'sp_m' {
     @if not $base {
-      $base: 375;
+      $base: 428;
     }
     @if not $max {
       @if $isNegative {

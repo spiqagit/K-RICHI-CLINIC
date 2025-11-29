@@ -4,33 +4,28 @@
     background-color: #E5D8CD;
 }
 
-.bl_menuArticleMain{
-     background-color: #F4EEEA;
-    padding-bottom: calc(vwmin(40, pc) + vwmin(18, pc));
-
-    @include underSP {
-        padding-bottom: 100px;
-    }
-}
-
 
 .bl_menuArticle_ttlContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    gap: vwmin(90, pc);
-    padding-block: vwmin(142, pc);
-    max-width: vwmin(1120, pc);
-    margin-inline: auto;
+    background-color: #E5D8CD;
 
-    @include underSP {
-        padding-top: vwmin(142, sp_m);
-        grid-template-columns: 1fr;
-        padding-bottom: vwmin(60, sp_m);
-        gap: vwmin(30, sp_m);
-        max-width: 100%;
-        padding-inline: vwmin(30, sp_m);
+    .bl_menuArticle_ttlContainer_inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: vwmin(90, pc);
+        padding-block: vwmin(142, pc);
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+
+        @include underSP {
+            padding-top: vwmin(142, sp_m);
+            grid-template-columns: 1fr;
+            padding-bottom: vwmin(60, sp_m);
+            gap: vwmin(30, sp_m);
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
     }
 
     .bl_menuArticle_ttl {
@@ -308,7 +303,7 @@
             border-bottom: 1px solid #987F65;
 
             @include underSP {
-                grid-template-columns:  vwmin(130, sp_m) 1fr;
+                grid-template-columns: vwmin(130, sp_m) 1fr;
             }
 
             &:last-child {
@@ -352,6 +347,7 @@
                     line-height: 1.5;
                     letter-spacing: calc(0.32 / 16 * 1em);
                     margin-top: vwmin(20, pc);
+
                     &:first-child {
                         margin-top: 0;
                     }
@@ -405,11 +401,7 @@
                             background-color: #987F65;
                             margin-top: vwmin(11, pc);
 
-                            @include underSP {
-                                width: vwmin(4, sp_m);
-                                height: vwmin(4, sp_m);
-                                margin-top: vwmin(11, sp_m);
-                            }
+
                         }
                     }
                 }
@@ -450,7 +442,7 @@
         @media screen and (max-width: 768px) {
             .bl_menuRelatedPostSlider {
 
-                .bl_menuCard{
+                .bl_menuCard {
                     max-width: vwmin(246, sp_m);
                 }
 
@@ -462,7 +454,7 @@
                     width: fit-content !important;
                 }
 
-                .splide__track{
+                .splide__track {
                     overflow: visible !important;
                 }
             }
@@ -495,7 +487,6 @@
         border-radius: vwmin(2, sp_m);
         font-size: vwmin(18, sp_m);
         padding: vwmin(10, sp_m);
-        margin-top: vwmin(100, sp_m);
     }
 
     @media (any-hover: hover) {

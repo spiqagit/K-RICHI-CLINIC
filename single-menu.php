@@ -2,7 +2,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body class="ly_menuSinglePage">
+<body>
 
     <?php get_header(); ?>
 
@@ -10,17 +10,19 @@
         <article class="bl_menuArticle">
 
             <div class="bl_menuArticle_ttlContainer">
-                <hgroup class="bl_menuArticle_ttl">
-                    <p class="el_menuArticle_ttl_en"><?php the_field('menu-en-txt'); ?></p>
-                    <h1 class="el_menuArticle_ttl_ttl"><?php the_title(); ?></h1>
-                </hgroup>
+                <div class="bl_menuArticle_ttlContainer_inner">
+                    <hgroup class="bl_menuArticle_ttl">
+                        <p class="el_menuArticle_ttl_en"><?php the_field('menu-en-txt'); ?></p>
+                        <h1 class="el_menuArticle_ttl_ttl"><?php the_title(); ?></h1>
+                    </hgroup>
 
-                <div class="bl_menuArticle_thumbnail">
-                    <?php if (has_post_thumbnail()): ?>
-                        <img class="el_menuArticle_thumbnail_img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-                    <?php else: ?>
-                        <img class="el_menuArticle_thumbnail_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="">
-                    <?php endif; ?>
+                    <div class="bl_menuArticle_thumbnail">
+                        <?php if (has_post_thumbnail()): ?>
+                            <img class="el_menuArticle_thumbnail_img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        <?php else: ?>
+                            <img class="el_menuArticle_thumbnail_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="">
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
 
@@ -363,9 +365,9 @@
                     </div>
                 </div>
             </div>
+            <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
         </article>
-        
-        <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
+
     </main>
 
     <?php get_footer(); ?>
