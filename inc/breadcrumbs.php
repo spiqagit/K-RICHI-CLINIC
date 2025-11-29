@@ -29,9 +29,39 @@
             </li>
         <?php endif; ?>
 
+        <?php if (is_post_type_archive('staff')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">スタッフ紹介</p>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_post_type_archive('concern')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">お悩み</p>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_singular("concern")): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <a href="<?php echo home_url(); ?>/concern/" class="bl_commonBreadcrumbsLink">お悩み一覧</a>
+            </li>
+            <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
+            </li>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>
+            </li>
+        <?php endif; ?>
+
         <?php if (is_404()): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_page()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><<?php the_title(); ?></p>
             </li>
         <?php endif; ?>
     </ul>

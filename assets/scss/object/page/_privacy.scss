@@ -1,0 +1,187 @@
+@use '../../foundation/function/index' as *;
+
+.bl_privacyContentsWrapper {
+    max-width: vwmin(900, pc);
+    margin-inline: auto;
+    width: 100%;
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        max-width: 100%;
+        padding-inline: vwmin(30, sp_m);
+    }
+
+    h2 {
+        color: var(--black, #1A0F04);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: calc(1.2 / 24 * 1em);
+        margin-top: vwmin(60, pc);
+
+        @include underSP {
+            font-size: vwmin(24, sp_m);
+            margin-top: vwmin(60, sp_m);
+        }
+
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    p {
+        color: var(--black);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(16, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.9;
+        letter-spacing: calc(0.8 / 16 * 1em);
+        margin-top: vwmin(20, pc);
+
+        @include underSP {
+            font-size: vwmin(16, sp_m);
+            margin-top: vwmin(20, sp_m);
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            text-align: right;
+            margin-top: vwmin(10, pc);
+
+            @include underSP {
+                margin-top: vwmin(10, sp_m);
+            }
+        }
+    }
+
+
+    >ol {
+        list-style: none;
+        counter-reset: item;
+        list-style-position: outside;
+        padding-left: vwmin(22, pc);
+        margin-top: vwmin(20, pc);
+
+        @include underSP {
+            padding-left: vwmin(22, sp_m);
+            margin-top: vwmin(20, sp_m);
+        }
+
+
+        >li {
+            counter-increment: item;
+            color: #1A0F04;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.9;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+            }
+
+            &::marker {
+                content: counter(item)". ";
+            }
+
+
+            >ol {
+                list-style-type: lower-latin;
+                list-style-position: outside;
+                padding-left: vwmin(22, pc);
+
+                @include underSP {
+                    padding-left: vwmin(22, sp_m);
+                }
+
+                li {
+                    color: #1A0F04;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.9;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                    }
+
+                    >ol {
+                        text-align: left;
+                        list-style-type: lower-roman;
+                        list-style-position: outside;
+                        padding-left: vwmin(32, pc);
+                        color: var(--black);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.9;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                            padding-left: vwmin(32, sp_m);
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .bl_privacyContentsWrapper_contact {
+        padding: vwmin(20, pc);
+        background-color: #E5D8CD;
+        border-radius: vwmin(4, pc);
+        color: #1A0F04;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(16, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.9;
+        letter-spacing: calc(0.8 / 16 * 1em);
+        margin-top: vwmin(10, pc);
+
+        @include underSP {
+            padding: vwmin(20, sp_m);
+            border-radius: vwmin(4, sp_m);
+            font-size: vwmin(16, sp_m);
+            margin-top: vwmin(10, sp_m);
+
+        }
+
+        .bl_privacyContentsWrapper_contact_item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: vwmin(4, pc);
+            align-items: flex-start;
+
+            @include underSP {
+                gap: vwmin(4, sp_m);
+            }
+
+            a {
+                transition: opacity 0.3s ease;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.3s ease;
+                    }
+                }
+            }
+        }
+    }
+}
