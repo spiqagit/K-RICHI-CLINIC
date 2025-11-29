@@ -1,0 +1,121 @@
+@use '../../foundation/function/index' as *;
+
+
+.bl_commonArticleSection {
+
+    h2 {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(32, pc);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: calc(1.6 / 32 * 1em);
+        padding-bottom: vwmin(20, pc);
+        border-bottom: 1px dashed #987F65;
+        margin-top: vwmin(60, pc);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+
+    figure {
+        margin-top: vwmin(40, pc);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        figcaption {
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(14, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: calc(0.7 / 14 * 1em);
+            margin: 0;
+            margin-top: vwmin(10, pc);
+        }
+    }
+
+
+    h3 {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: calc(1.2 / 24 * 1em);
+        margin-top: vwmin(50, pc);
+        padding-block: vwmin(10, pc);
+        padding-inline: vwmin(20, pc);
+        background-color: #E5D8CD;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h4 {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(20, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: calc(1 / 20 * 1em);
+        padding-left: vwmin(20, pc);
+        border-left: 2px solid #987F65;
+        margin-top: vwmin(40, pc);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(16, pc);
+        margin-top: vwmin(30, pc);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: vwmin(12, pc);
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            &:before{
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: vwmin(12, pc);
+                width: vwmin(4, pc);
+                height: vwmin(4, pc);
+                aspect-ratio: 1/1;
+                border-radius: 100%;
+                background-color: #987F65;
+            }
+        }
+    }
+}

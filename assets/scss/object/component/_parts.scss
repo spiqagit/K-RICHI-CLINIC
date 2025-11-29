@@ -229,6 +229,7 @@
 
     .bl_doctorContentsWrapper_careerWrapper {
         margin-top: vwmin(50, pc);
+
         @include underSP {
             margin-top: vwmin(50, sp_m);
         }
@@ -284,8 +285,9 @@
                     }
                 }
 
-                .bl_doctorContentsWrapper_careerWrapper_list_item_ttl{
+                .bl_doctorContentsWrapper_careerWrapper_list_item_ttl {
                     width: vwmin(80, pc);
+
                     @include underSP {
                         width: vwmin(80, sp_m);
                     }
@@ -1137,6 +1139,99 @@ Google Maps
             border-radius: vwmin(2, sp_m);
             font-size: vwmin(18, sp_m);
             padding: vwmin(15, sp_m);
+        }
+    }
+}
+
+
+/*--------------------------------
+よくある質問
+--------------------------------*/
+
+.bl_faqList {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(20, pc);
+
+    .bl_faqList_item_details {
+        border-radius: vwmin(4, pc);
+        overflow: hidden;
+        background: var(--right-brown, #E5D8CD);
+
+        summary::marker {
+            content: "";
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .bl_faqList_item_details_summary {
+            list-style-type: none;
+            padding: vwmin(30, pc);
+            display: grid;
+            grid-template-columns: auto 1fr vwmin(22, pc);
+            align-items: center;
+            gap: vwmin(10, pc);
+            cursor: pointer;
+
+            .el_faqList_item_details_summary_txt_q {
+                color: var(--txtColor);
+                font-family: var(--OldSt);
+                font-size: vwmin(20, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.4 / 20 * 1em);
+            }
+
+            .el_faqList_item_details_summary_txt {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(18, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.9 / 18 * 1em);
+            }
+
+            .el_faqList_item_details_summary_icon {
+                width: 100%;
+            }
+        }
+
+
+        .bl_caseItem_details_content {
+            overflow: hidden;
+
+            .bl_caseItem_details_content_inner {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                align-items: flex-start;
+                gap: vwmin(6, pc);
+                padding-block: vwmin(30, pc);
+                margin-inline: vwmin(30, pc);
+                border-top: 1px solid #987F65;
+
+                .el_faqList_item_details_content_ttl {
+                    color: var(--txtColor);
+                    font-family: var(--OldSt);
+                    font-size: vwmin(18, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: calc(0.36 / 18 * 1em);
+                }
+
+                .el_faqList_item_details_content_txt {
+                    color: var(--txtColor);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+                }
+            }
         }
     }
 }

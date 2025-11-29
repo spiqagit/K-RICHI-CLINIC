@@ -16,7 +16,6 @@
 
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
@@ -31,6 +30,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
 
     <?php if (is_singular('price') || is_post_type_archive('price')): ?>
         <script type="module" src="<?php echo get_template_directory_uri(); ?>/assets/js/price.js"></script>
+    <?php endif; ?>
+
+    <?php if (is_singular('menu')): ?>
+        <script type="module" src="<?php echo get_template_directory_uri(); ?>/assets/js/menu.js"></script>
     <?php endif; ?>
 
     <!-- css -->

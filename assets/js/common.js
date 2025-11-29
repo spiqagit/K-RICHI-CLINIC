@@ -288,10 +288,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const setUpAccordion = () => {
-    const detailsList = document.querySelectorAll(".bl_caseItem_details");
     const IS_OPENED_CLASS = "is-opened";
 
-    detailsList.forEach((details) => {
+    // ケーススタディ用のアコーディオン
+    const caseDetailsList = document.querySelectorAll(".bl_caseItem_details");
+    caseDetailsList.forEach((details) => {
         const summary = details.querySelector(".bl_caseItem_details_summary");
         const content = details.querySelector(".bl_caseItem_details_content");
 
@@ -310,7 +311,52 @@ const setUpAccordion = () => {
             }
         });
     });
+
+    // FAQ用のアコーディオン
+    const faqDetailsList = document.querySelectorAll(".bl_faqList_item_details");
+    faqDetailsList.forEach((details) => {
+        const summary = details.querySelector(".bl_faqList_item_details_summary");
+        const content = details.querySelector(".bl_caseItem_details_content");
+        const icon = details.querySelector(".el_faqList_item_details_summary_icon");
+
+        if (!summary || !content) return;
+
+        // アイコンの初期状態を設定
+        if (icon) {
+            gsap.set(icon, { rotation: 0 });
+        }
+
+        summary.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            if (details.classList.contains(IS_OPENED_CLASS)) {
+                details.classList.toggle(IS_OPENED_CLASS);
+                closingAnim(content, details).restart();
+                // アイコンを下向きに回転（0度）
+                if (icon) {
+                    gsap.to(icon, {
+                        rotation: 0,
+                        duration: 0.4,
+                        ease: "power3.out",
+                    });
+                }
+            } else {
+                details.classList.toggle(IS_OPENED_CLASS);
+                details.setAttribute("open", "true");
+                openingAnim(content).restart();
+                // アイコンを上向きに回転（180度）
+                if (icon) {
+                    gsap.to(icon, {
+                        rotation: 180,
+                        duration: 0.4,
+                        ease: "power3.out",
+                    });
+                }
+            }
+        });
+    });
 }
+
 
 const closingAnim = (content, element) => gsap.to(content, {
     height: 0,

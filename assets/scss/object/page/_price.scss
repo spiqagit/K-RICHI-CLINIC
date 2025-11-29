@@ -73,215 +73,218 @@
                     font-size: vwmin(28, sp_m);
                 }
             }
+        }
+    }
+}
 
 
-            .bl_priceChildList_postList {
-                display: flex;
-                flex-direction: column;
-                gap: vwmin(40, pc);
+.bl_priceChildList_postList {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(40, pc);
+
+    @include underSP {
+        gap: vwmin(40, sp_m);
+    }
+
+    .bl_priceChildList_postList_item {
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(30, pc);
+
+        @include underSP {
+            gap: vwmin(30, sp_m);
+        }
+
+        .el_priceChildList_postList_item_ttl {
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(24, pc);
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: calc(1.2 / 24 * 1em);
+            padding-inline: vwmin(20, pc);
+            padding-block: vwmin(10, pc);
+            background-color: #E5D8CD;
+            margin-bottom: vwmin(10, pc);
+
+            @include underSP {
+                font-size: vwmin(24, sp_m);
+                padding-inline: vwmin(20, sp_m);
+                padding-block: vwmin(10, sp_m);
+                margin-bottom: vwmin(10, sp_m);
+            }
+        }
+
+
+
+        .el_priceWrapList_item_caution {
+            color: #987F65;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+            }
+        }
+    }
+}
+
+
+.bl_priceWrapList {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(40, pc);
+
+    @include underSP {
+        gap: vwmin(40, sp_m);
+    }
+
+    .bl_priceWrapList_item {
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(12, pc);
+
+        @include underSP {
+            gap: vwmin(12, sp_m);
+        }
+
+        .el_priceWrapList_item_ttl {
+            color: var(--txtColor);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(20, pc);
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: calc(1 / 20 * 1em);
+            padding-left: vwmin(20, pc);
+            border-left: 2px solid #987F65;
+            margin-bottom: vwmin(18, pc);
+
+            @include underSP {
+                font-size: vwmin(20, sp_m);
+                padding-left: vwmin(20, sp_m);
+            }
+        }
+
+
+        .bl_priceTableList {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(30, pc);
+
+            @include underSP {
+                gap: vwmin(30, sp_m);
+            }
+
+            .bl_priceTableList_item {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: flex-start;
+                gap: vwmin(23, pc);
+                padding-bottom: vwmin(20, pc);
+                border-bottom: 1px solid #987F65;
 
                 @include underSP {
-                    gap: vwmin(40, sp_m);
+                    grid-template-columns: 1fr;
+                    gap: vwmin(20, sp_m);
+                    padding-bottom: vwmin(20, sp_m);
                 }
 
-                .bl_priceChildList_postList_item {
-                    display: flex;
-                    flex-direction: column;
-                    gap: vwmin(30, pc);
+                .el_priceTableList_item_ttl_txt {
+                    color: var(--txtColor);
+                    font-family: var(--notoSansJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 350;
+                    line-height: 1.8;
+                    letter-spacing: calc(0.8 / 16 * 1em);
 
                     @include underSP {
-                        gap: vwmin(30, sp_m);
+                        font-size: vwmin(16, sp_m);
+                    }
+                }
+
+
+                .bl_amountTableList {
+                    color: var(--txtColor);
+                    font-feature-settings: 'palt' on;
+                    font-family: var(--notoSansJP);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 350;
+                    line-height: 1.8;
+                    letter-spacing: calc(0.7 / 14 * 1em);
+                    grid-column: 2;
+
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                        grid-column: 1;
                     }
 
-                    .el_priceChildList_postList_item_ttl {
-                        color: var(--txtColor);
-                        font-family: var(--notoSerifJP);
-                        font-size: vwmin(24, pc);
-                        font-style: normal;
-                        font-weight: 300;
-                        line-height: 1.5;
-                        letter-spacing: calc(1.2 / 24 * 1em);
-                        padding-inline: vwmin(20, pc);
-                        padding-block: vwmin(10, pc);
-                        background-color: #E5D8CD;
-                        margin-bottom: vwmin(10, pc);
+                    .bl_amountTableList_item {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        align-items: flex-start;
+                        gap: vwmin(16, pc);
 
                         @include underSP {
-                            font-size: vwmin(24, sp_m);
-                            padding-inline: vwmin(20, sp_m);
-                            padding-block: vwmin(10, sp_m);
-                            margin-bottom: vwmin(10, sp_m);
-                        }
-                    }
-
-                    .bl_priceWrapList {
-                        display: flex;
-                        flex-direction: column;
-                        gap: vwmin(40, pc);
-
-                        @include underSP {
-                            gap: vwmin(40, sp_m);
+                            grid-template-columns: repeat(4, 1fr);
+                            gap: vwmin(10, sp_m);
                         }
 
-                        .bl_priceWrapList_item {
-                            display: flex;
-                            flex-direction: column;
-                            gap: vwmin(12, pc);
+                        .el_amountTableList_item_num {
+                            text-align: right;
+                        }
+
+                        .el_amountTableList_item_txt {
+                            grid-column: 1;
 
                             @include underSP {
-                                gap: vwmin(12, sp_m);
+                                grid-column: 1;
+                                grid-column: 2 span;
+
                             }
-
-                            .el_priceWrapList_item_ttl {
-                                color: var(--txtColor);
-                                font-family: var(--notoSerifJP);
-                                font-size: vwmin(20, pc);
-                                font-style: normal;
-                                font-weight: 300;
-                                line-height: 1.2;
-                                letter-spacing: calc(1 / 20 * 1em);
-                                padding-left: vwmin(20, pc);
-                                border-left: 2px solid #987F65;
-                                margin-bottom: vwmin(18, pc);
-
-                                @include underSP {
-                                    font-size: vwmin(20, sp_m);
-                                    padding-left: vwmin(20, sp_m);
-                                }
-                            }
-
-
-                            .bl_priceTableList {
-                                display: flex;
-                                flex-direction: column;
-                                gap: vwmin(30, pc);
-
-                                @include underSP {
-                                    gap: vwmin(30, sp_m);
-                                }
-
-                                .bl_priceTableList_item {
-                                    display: grid;
-                                    grid-template-columns: 1fr 1fr;
-                                    align-items: flex-start;
-                                    gap: vwmin(23, pc);
-                                    padding-bottom: vwmin(20, pc);
-                                    border-bottom: 1px solid #987F65;
-
-                                    @include underSP {
-                                        grid-template-columns: 1fr;
-                                        gap: vwmin(20, sp_m);
-                                        padding-bottom: vwmin(20, sp_m);
-                                    }
-
-                                    .el_priceTableList_item_ttl_txt {
-                                        color: var(--txtColor);
-                                        font-family: var(--notoSansJP);
-                                        font-size: vwmin(16, pc);
-                                        font-style: normal;
-                                        font-weight: 350;
-                                        line-height: 1.8;
-                                        letter-spacing: calc(0.8 / 16 * 1em);
-
-                                        @include underSP {
-                                            font-size: vwmin(16, sp_m);
-                                        }
-                                    }
-
-
-                                    .bl_amountTableList {
-                                        color: var(--txtColor);
-                                        font-feature-settings: 'palt' on;
-                                        font-family: var(--notoSansJP);
-                                        font-size: vwmin(14, pc);
-                                        font-style: normal;
-                                        font-weight: 350;
-                                        line-height: 1.8;
-                                        letter-spacing: calc(0.7 / 14 * 1em);
-                                        grid-column: 2;
-
-                                        @include underSP {
-                                            font-size: vwmin(14, sp_m);
-                                            grid-column: 1;
-                                        }
-
-                                        .bl_amountTableList_item {
-                                            display: grid;
-                                            grid-template-columns: repeat(3, 1fr);
-                                            align-items: flex-start;
-                                            gap: vwmin(16, pc);
-
-                                            @include underSP {
-                                                grid-template-columns: repeat(4, 1fr);
-                                                gap: vwmin(10, sp_m);
-                                            }
-
-                                            .el_amountTableList_item_num {
-                                                text-align: right;
-                                            }
-
-                                            .el_amountTableList_item_txt {
-                                                grid-column: 1;
-
-                                                @include underSP {
-                                                    grid-column: 1;
-                                                    grid-column: 2 span;
-
-                                                }
-                                            }
-
-                                            .el_amountTableList_item_view {
-                                                @include underSP {
-                                                    grid-column: 3;
-                                                }
-                                            }
-
-                                            .el_amountTableList_item_num {
-                                                grid-column: 3;
-
-                                                @include underSP {
-                                                    grid-column: 4;
-                                                }
-                                            }
-
-
-                                        }
-                                    }
-                                }
-                            }
-
-                            .el_priceWrapList_item_caption {
-                                color: #987F65;
-                                font-family: var(--notoSerifJP);
-                                font-size: vwmin(14, pc);
-                                font-style: normal;
-                                font-weight: 350;
-                                line-height: 1.5;
-                                letter-spacing: calc(0.7 / 14 * 1em);
-
-                                @include underSP {
-                                    font-size: vwmin(14, sp_m);
-                                }
-                            }
-
                         }
-                    }
 
-                    .el_priceWrapList_item_caution {
-                        color: #987F65;
-                        font-family: var(--notoSerifJP);
-                        font-size: vwmin(16, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1.5;
-                        letter-spacing: calc(0.8 / 16 * 1em);
-
-                        @include underSP {
-                            font-size: vwmin(16, sp_m);
+                        .el_amountTableList_item_view {
+                            @include underSP {
+                                grid-column: 3;
+                            }
                         }
+
+                        .el_amountTableList_item_num {
+                            grid-column: 3;
+
+                            @include underSP {
+                                grid-column: 4;
+                            }
+                        }
+
+
                     }
                 }
             }
         }
+
+        .el_priceWrapList_item_caption {
+            color: #987F65;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(14, pc);
+            font-style: normal;
+            font-weight: 350;
+            line-height: 1.5;
+            letter-spacing: calc(0.7 / 14 * 1em);
+
+            @include underSP {
+                font-size: vwmin(14, sp_m);
+            }
+        }
+
     }
 }
