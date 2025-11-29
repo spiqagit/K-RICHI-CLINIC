@@ -114,6 +114,7 @@ function disable_pages_by_conditions()
     if (is_singular('faq') || is_tax('faq-cat')) {
         set_404_and_exit();
     }
+<<<<<<< HEAD
 
     // menu投稿タイプの個別記事
     if ( is_tax('menu-cat') || is_post_type_archive('menu')) {
@@ -148,6 +149,15 @@ function disable_pages_by_conditions()
     // price投稿タイプの個別記事
     if (is_singular('news') || is_tax('news-cat') || is_post_type_archive('news')) {
         set_404_and_exit();
+=======
+    
+    // タクソノミーページ
+    $disabled_taxonomies = ['price-cat', 'menu-cat'];
+    foreach ($disabled_taxonomies as $taxonomy) {
+        if (is_tax($taxonomy)) {
+            set_404_and_exit();
+        }
+>>>>>>> doctor-archive
     }
 }
 add_action('template_redirect', 'disable_pages_by_conditions');
@@ -277,9 +287,9 @@ add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2
 
 // 投稿一覧にカスタムカラムを追加（foods, price, case）
 $post_types_with_menu_select = ['foods', 'price', 'case'];
-foreach ( $post_types_with_menu_select as $post_type ) {
+foreach ($post_types_with_menu_select as $post_type) {
     // カラムを追加
-    add_filter( "manage_{$post_type}_posts_columns", function( $columns ) {
+    add_filter("manage_{$post_type}_posts_columns", function ($columns) {
         $new_columns = [];
         foreach ($columns as $key => $value) {
             $new_columns[$key] = $value;
@@ -288,20 +298,20 @@ foreach ( $post_types_with_menu_select as $post_type ) {
             }
         }
         return $new_columns;
-    } );
-    
+    });
+
     // カラムに値を表示
-    add_action( "manage_{$post_type}_posts_custom_column", function( $column_name, $post_id ) {
-        if ( $column_name === 'menu_select' ) {
-            $related_posts = get_field( 'menu_select', $post_id );
-            if ( $related_posts ) {
+    add_action("manage_{$post_type}_posts_custom_column", function ($column_name, $post_id) {
+        if ($column_name === 'menu_select') {
+            $related_posts = get_field('menu_select', $post_id);
+            if ($related_posts) {
                 $output = '';
-                foreach ( $related_posts as $related_post ) {
-                    $related_post_id = is_object( $related_post ) ? $related_post->ID : $related_post;
-                    $output .= get_the_title( $related_post_id ) . '<br>';
+                foreach ($related_posts as $related_post) {
+                    $related_post_id = is_object($related_post) ? $related_post->ID : $related_post;
+                    $output .= get_the_title($related_post_id) . '<br>';
                 }
                 echo $output;
             }
         }
-    }, 10, 2 );
+    }, 10, 2);
 }
