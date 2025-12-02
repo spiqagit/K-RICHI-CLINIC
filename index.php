@@ -187,7 +187,7 @@
                                         <h2 class="el_topInstagramContainer_ttl">Instagram</h2>
                                         <?php if (get_field('instagram-url', 'option')): ?>
                                             <div class="bl_commonAllviewBtnWrapper bl_topColumnSection_btnWrapper">
-                                                <a href="<?php echo get_field('instagram_url', 'option'); ?>" class="bl_commonAllviewBtn" target="_blank">
+                                                <a href="<?php echo get_field('instagram-url', 'option'); ?>" class="bl_commonAllviewBtn" target="_blank">
                                                     <p class="el_commonAllviewBtn_txt">View post</p>
                                                     <div class="el_commonAllviewBtn_arrow">
                                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/white-arrow.svg" alt="">
@@ -202,26 +202,28 @@
                                 </div>
                             </div>
 
-                            <div class="bl_topSnsSection_otherSnsWrapper">
-                                <h3 class="el_topSnsSection_otherSnsWrapper_ttl">その他SNSはこちら</h3>
-                                <div class="bl_topSnsSection_otherSnsWrapper_snsList">
-                                    <?php if (get_field('youtube-url', 'option')): ?>
-                                        <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('youtube-url', 'option'); ?>" target="_blank">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/youtube-icon.svg" alt="YouTube">
-                                        </a>
-                                    <?php endif; ?>
-                                    <?php if (get_field('x-url', 'option')): ?>
-                                        <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('x-url', 'option'); ?>" target="_blank">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/x-icon.svg" alt="X">
-                                        </a>
-                                    <?php endif; ?>
-                                    <?php if (get_field('tiktok-url', 'option')): ?>
-                                        <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('tiktok-url', 'option'); ?>" target="_blank">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/tiktok-icon.svg" alt="TikTok">
-                                        </a>
-                                    <?php endif; ?>
+                            <?php if (get_field('youtube-url', 'option') || get_field('x-url', 'option') || get_field('tiktok-url', 'option')): ?>
+                                <div class="bl_topSnsSection_otherSnsWrapper">
+                                    <h3 class="el_topSnsSection_otherSnsWrapper_ttl">その他SNSはこちら</h3>
+                                    <div class="bl_topSnsSection_otherSnsWrapper_snsList">
+                                        <?php if (get_field('youtube-url', 'option')): ?>
+                                            <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('youtube-url', 'option'); ?>" target="_blank">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/youtube-icon.svg" alt="YouTube">
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if (get_field('x-url', 'option')): ?>
+                                            <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('x-url', 'option'); ?>" target="_blank">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/x-icon.svg" alt="X">
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if (get_field('tiktok-url', 'option')): ?>
+                                            <a class="bl_topSnsSection_otherSnsWrapper_snsbtn" href="<?php echo get_field('tiktok-url', 'option'); ?>" target="_blank">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/tiktok-icon.svg" alt="TikTok">
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                     </section>
                 </div>

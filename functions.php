@@ -21,20 +21,21 @@ function remove_menus()
 }
 add_action('admin_menu', 'remove_menus', 999);
 
-// 投稿タイプ「staff」のブロックエディターを非表示
+// 投稿タイプ「staff」「concern」のブロックエディターを非表示
 function disable_block_editor_for_stuff($use_block_editor, $post_type)
 {
-    if ($post_type === 'staff') {
+    if ($post_type === 'staff' || $post_type === 'concern') {
         return false;
     }
     return $use_block_editor;
 }
 add_filter('use_block_editor_for_post_type', 'disable_block_editor_for_stuff', 10, 2);
 
-// 投稿タイプ「staff」のクラシックエディターも非表示
+// 投稿タイプ「staff」「concern」のクラシックエディターも非表示
 function remove_editor_for_staff()
 {
     remove_post_type_support('staff', 'editor');
+    remove_post_type_support('concern', 'editor');
 }
 add_action('init', 'remove_editor_for_staff');
 
@@ -136,7 +137,7 @@ function disable_pages_by_conditions()
     }
 
     // concern投稿タイプの個別記事
-    if ( is_tax('concern-cat') || is_post_type_archive('concern')) {
+    if ( is_tax('concern-cat')) {
         set_404_and_exit();
     }
 

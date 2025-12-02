@@ -31,17 +31,18 @@
                 <div class="bl_concernLower">
                     <div class="bl_concernLower_inner">
                         <?php foreach (get_field('menu_select') as $menu) : ?>
-                            <a href="<?php echo get_permalink($menu); ?>" class="bl_menuCard">
+                            <?php $menu_post = get_post($menu); ?>
+                            <a href="<?php echo get_the_permalink($menu_post->ID); ?>" class="bl_menuCard">
                                 <div class="bl_menuCard_inner">
-                                    <?php if (get_the_post_thumbnail($menu)): ?>
-                                        <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu->ID); ?>" alt="<?php echo get_the_title($menu->ID); ?>">
+                                    <?php if (get_the_post_thumbnail_url($menu_post->ID)): ?>
+                                        <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu_post->ID); ?>" alt="<?php echo esc_attr(get_the_title($menu_post->ID)); ?>">
                                     <?php else: ?>
-                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo get_the_title($menu->ID); ?>">
+                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
                                     <?php endif; ?>
                                     <div class="bl_menuCard_txtWrapper">
-                                        <p class="el_menuCard_txtWrapper_ttl"><?php echo get_the_title($menu); ?></p>
-                                        <?php if (get_field('menu-archive-txt', $menu)): ?>
-                                            <p class="el_menuCard_txtWrapper_txt"><?php echo get_field('menu-archive-txt', $menu); ?></p>
+                                        <p class="el_menuCard_txtWrapper_ttl"><?php echo get_the_title($menu_post->ID); ?></p>
+                                        <?php if (get_field('menu-archive-txt', $menu_post->ID)): ?>
+                                            <p class="el_menuCard_txtWrapper_txt"><?php echo get_field('menu-archive-txt', $menu_post->ID); ?></p>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -50,6 +51,7 @@
                                 </div>
                             </a>
                         <?php endforeach; ?>
+                        <?php wp_reset_postdata(); ?>
                     </div>
                 </div>
             <?php endif; ?>

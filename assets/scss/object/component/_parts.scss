@@ -847,7 +847,6 @@
             max-width: vwmin(1120, pc);
             width: 100%;
             margin-inline: auto;
-            padding-inline: vwmin(60, pc);
             padding-bottom: vwmin(200, pc);
 
             @include underSP {
@@ -857,6 +856,23 @@
 
             }
         }
+    }
+}
+
+
+/*--------------------------------
+1カラムレイアウト
+--------------------------------*/
+.bl_commonSingleColumnContainer {
+    max-width: vwmin(1120, pc);
+    width: 100%;
+    margin-inline: auto;
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        max-width: 100%;
+        padding-inline: vwmin(30, sp_m);
+        padding-bottom: vwmin(180, sp_m);
     }
 }
 
