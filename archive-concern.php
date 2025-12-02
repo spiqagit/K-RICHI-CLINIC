@@ -15,17 +15,17 @@
         <div class="bl_commonLowPageWrapper_contentsOuter">
             <div class="bl_commonLowPageWrapper_contents">
                 <div class="bl_commonLowPageWrapper_contents_inner">
-                    <div class="bl_commonSingleColumnContainer bl_concernArchiveContents">
-                        <?php
-                        $concern_cats = get_terms([
-                            'taxonomy' => 'concern-cat',
-                            'post_type' => 'concern',
-                            'orderby' => 'concern_order',
-                            'order' => 'ASC',
-                            'hide_empty' => true,
-                        ]);
-                        ?>
-                        <?php if (!empty($concern_cats)) : ?>
+                    <?php
+                    $concern_cats = get_terms([
+                        'taxonomy' => 'concern-cat',
+                        'post_type' => 'concern',
+                        'orderby' => 'concern_order',
+                        'order' => 'ASC',
+                        'hide_empty' => true,
+                    ]);
+                    ?>
+                    <?php if (!empty($concern_cats)) : ?>
+                        <div class="bl_commonSingleColumnContainer bl_concernArchiveContents">
 
                             <?php foreach ($concern_cats as $concern_cat) : ?>
                                 <div class="bl_concernItem bl_fadeIn_item">
@@ -70,15 +70,16 @@
                                 </div>
                             <?php endforeach; ?>
                             <?php wp_reset_postdata(); ?>
-                        <?php else : ?>
-                            <div class="">
-                                <div class="bl_topNoPostContainer bl_fadeIn_item">
-                                    <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
-                                    <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
-                                </div>
+                        </div>
+
+                    <?php else : ?>
+                        <div class="bl_commonSingleColumnContainer">
+                            <div class="bl_topNoPostContainer bl_fadeIn_item">
+                                <p class="bl_topNoPostContainer_txtEn">Coming soon...</p>
+                                <p class="bl_topNoPostContainer_txtJa">ただいま公開準備中です。</p>
                             </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
                     <div>
                         <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
                     </div>
