@@ -1,8 +1,18 @@
 @use '../../foundation/function/index' as *;
 
+
+
 .bl_staffContentsOuter {
 
     .bl_staffContents {
+        border-radius: 0 !important;
+
+        &:first-child {
+            border-radius: vwmin(30, pc) vwmin(30, pc) 0 0 !important;
+            @include underSP {
+                border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0 !important;
+            }
+        }
 
         .bl_commonLowPageWrapper_contents_inner{
             @include underSP {

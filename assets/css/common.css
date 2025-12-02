@@ -4912,6 +4912,17 @@ Information
 .bl_staffContentsOuter {
   /* 看護師紹介 */
 }
+.bl_staffContentsOuter .bl_staffContents {
+  border-radius: 0 !important;
+}
+.bl_staffContentsOuter .bl_staffContents:first-child {
+  border-radius: clamp(0px, 2.0833333333vw, 45px) clamp(0px, 2.0833333333vw, 45px) 0 0 !important;
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents:first-child {
+    border-radius: clamp(0px, 7.0093457944vw, 33px) clamp(0px, 7.0093457944vw, 33px) 0 0 !important;
+  }
+}
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_commonLowPageWrapper_contents_inner {
     padding-inline: clamp(0px, 7.0093457944vw, 33px);

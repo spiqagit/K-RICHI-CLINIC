@@ -22,6 +22,7 @@
                 'orderby' => 'staff_order',
                 'order' => 'ASC',
                 'hide_empty' => true,
+                'parent' => 0,
             ]);
             ?>
 
