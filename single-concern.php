@@ -34,10 +34,10 @@
                             <?php $menu_post = get_post($menu); ?>
                             <a href="<?php echo get_the_permalink($menu_post->ID); ?>" class="bl_menuCard">
                                 <div class="bl_menuCard_inner">
-                                    <?php if (get_the_post_thumbnail_url($menu_post->ID)): ?>
+                                    <?php if (has_post_thumbnail($menu_post->ID)): ?>
                                         <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu_post->ID); ?>" alt="<?php echo esc_attr(get_the_title($menu_post->ID)); ?>">
                                     <?php else: ?>
-                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
+                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo esc_attr(get_the_title($menu_post->ID)); ?>">
                                     <?php endif; ?>
                                     <div class="bl_menuCard_txtWrapper">
                                         <p class="el_menuCard_txtWrapper_ttl"><?php echo get_the_title($menu_post->ID); ?></p>
