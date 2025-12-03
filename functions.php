@@ -72,6 +72,32 @@ function change_posts_per_page($query)
     if (is_post_type_archive('price')) {
         $query->set('posts_per_page', -1);
     }
+
+    // 新着順
+    if (is_post_type_archive('case')) {
+        $query->set('orderby', 'date');
+        $query->set('order', 'DESC');
+        $query->set('posts_per_page', 9);
+    }
+
+    // search-caseページでsパラメータに基づいてフィルタリング
+    if (get_query_var('search_case')) {
+        $query->set('post_type', 'case');
+        $query->set('orderby', 'date');
+        $query->set('order', 'DESC');
+        $query->set('posts_per_page', 9);
+        
+        $case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
+        if ($case_id > 0) {
+            $query->set('meta_query', array(
+                array(
+                    'key' => 'menu_select',
+                    'value' => '"' . $case_id . '"',
+                    'compare' => 'LIKE'
+                )
+            ));
+        }
+    }
 }
 add_action('pre_get_posts', 'change_posts_per_page');
 
@@ -132,7 +158,7 @@ function disable_pages_by_conditions()
     }
 
     // case投稿タイプの個別記事
-    if (is_singular('case') || is_tax('case-cat') || is_post_type_archive('case')) {
+    if (is_singular('case') || is_tax('case-cat')) {
         set_404_and_exit();
     }
 
@@ -196,7 +222,9 @@ add_action('template_redirect', 'disable_default_post_pages');
 function custom_search_case_rewrite_rule()
 {
     add_rewrite_rule('^search-case/?$', 'index.php?search_case=1', 'top');
+    add_rewrite_rule('^search-case/page/([0-9]+)/?$', 'index.php?search_case=1&paged=$matches[1]', 'top');
     add_rewrite_rule('^search-price/?$', 'index.php?search_price=1', 'top');
+    add_rewrite_rule('^search-price/page/([0-9]+)/?$', 'index.php?search_price=1&paged=$matches[1]', 'top');
 }
 add_action('init', 'custom_search_case_rewrite_rule');
 

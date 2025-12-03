@@ -74,9 +74,12 @@
                                                             'post__in'  => $case_SelectList,
                                                         ));
                                                         ?>
+                                                        <?php 
+                                                        $current_case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
+                                                        ?>
                                                         <?php if (!empty($menuPosts)): ?>
                                                             <?php foreach ($menuPosts as $menuPost): ?>
-                                                                <option value="<?php echo $menuPost->ID; ?>"><?php echo get_the_title($menuPost->ID); ?></option>
+                                                                <option value="<?php echo $menuPost->ID; ?>" <?php selected($current_case_id, $menuPost->ID); ?>><?php echo get_the_title($menuPost->ID); ?></option>
                                                             <?php endforeach; ?>
                                                         <?php endif; ?>
                                                     </select>
@@ -192,16 +195,23 @@
                                     $base = trailingslashit($url_parts[0]) . '%_%';
                                     $format = $wp_rewrite->using_permalinks() ? user_trailingslashit('page/%#%', 'paged') : '?paged=%#%';
 
-                                    // クエリ文字列がある場合は追加
-                                    if (isset($url_parts[1])) {
-                                        $format .= '&' . $url_parts[1];
-                                    }
+                                    // sパラメータを取得
+                                    $current_case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
+                                    
+                                    // URLにクエリパラメータを追加する関数
+                                    $add_query_to_url = function($url) use ($current_case_id, $wp_rewrite) {
+                                        if ($current_case_id > 0) {
+                                            $separator = (strpos($url, '?') !== false) ? '&' : '?';
+                                            $url .= $separator . 's=' . $current_case_id;
+                                        }
+                                        return $url;
+                                    };
 
                                     // 前へボタンのURL
-                                    $prev_url = ($paged > 1) ? str_replace(array('%_%', '%#%'), array($format, $paged - 1), $base) : '';
+                                    $prev_url = ($paged > 1) ? $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $paged - 1), $base)) : '';
 
                                     // 次へボタンのURL
-                                    $next_url = ($paged < $total) ? str_replace(array('%_%', '%#%'), array($format, $paged + 1), $base) : '';
+                                    $next_url = ($paged < $total) ? $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $paged + 1), $base)) : '';
 
                                     // 最初に表示するページ数（例: 3で「123」）
                                     $first_pages = 3;
@@ -221,7 +231,7 @@
                                             <?php
                                             // 最初のページ（1, 2, 3など）
                                             for ($i = 1; $i <= min($first_pages, $total); $i++) {
-                                                $page_url = str_replace(array('%_%', '%#%'), array($format, $i), $base);
+                                                $page_url = $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $i), $base));
                                                 $is_current = ($i == $paged);
                                             ?>
                                                 <li class="bl_pagination_item">
@@ -248,7 +258,7 @@
                                                     }
                                                     // 最後のページ
                                                     for ($i = $total - $last_pages + 1; $i <= $total; $i++) {
-                                                        $page_url = str_replace(array('%_%', '%#%'), array($format, $i), $base);
+                                                        $page_url = $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $i), $base));
                                                     ?>
                                                         <li class="bl_pagination_item">
                                                             <a href="<?php echo esc_url($page_url); ?>" class="bl_pagination_link"><?php echo $i; ?></a>
@@ -268,7 +278,7 @@
                                                     }
                                                     // 最後のページ（現在のページも含む）
                                                     for ($i = $total - $last_pages + 1; $i <= $total; $i++) {
-                                                        $page_url = str_replace(array('%_%', '%#%'), array($format, $i), $base);
+                                                        $page_url = $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $i), $base));
                                                         $is_current = ($i == $paged);
                                                     ?>
                                                         <li class="bl_pagination_item">
@@ -308,7 +318,7 @@
                                                     }
                                                     // 最後のページ
                                                     for ($i = $total - $last_pages + 1; $i <= $total; $i++) {
-                                                        $page_url = str_replace(array('%_%', '%#%'), array($format, $i), $base);
+                                                        $page_url = $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $i), $base));
                                                     ?>
                                                         <li class="bl_pagination_item">
                                                             <a href="<?php echo esc_url($page_url); ?>" class="bl_pagination_link"><?php echo $i; ?></a>
@@ -319,7 +329,7 @@
                                             } else {
                                                 // 全ページを表示（省略記号不要）
                                                 for ($i = $first_pages + 1; $i <= $total; $i++) {
-                                                    $page_url = str_replace(array('%_%', '%#%'), array($format, $i), $base);
+                                                    $page_url = $add_query_to_url(str_replace(array('%_%', '%#%'), array($format, $i), $base));
                                                     $is_current = ($i == $paged);
                                                     ?>
                                                     <li class="bl_pagination_item">

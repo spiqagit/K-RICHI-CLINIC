@@ -424,8 +424,6 @@
 }
 
 
-
-
 .bl_commonSnsIconContainer {
     display: flex;
     justify-content: center;
@@ -470,229 +468,6 @@
     }
 }
 
-
-
-
-.bl_caseItem {
-
-    .bl_caseItem_linkWrapper {
-
-        .bl_caseItem_imgWrapper {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 258/322;
-            overflow: hidden;
-            margin-bottom: vwmin(20, pc);
-
-            @include underSP {
-                margin-bottom: vwmin(22, sp_m);
-            }
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-
-
-    .bl_caseItem_txtWrapper {
-        display: flex;
-        flex-direction: column;
-        gap: vwmin(4, pc);
-        margin-bottom: vwmin(10, pc);
-
-        @include underSP {
-            gap: vwmin(8, sp_m);
-            margin-bottom: vwmin(10, sp_m);
-        }
-
-        .bl_caseItem_treatmentsWrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: vwmin(10, pc);
-
-            @include underSP {
-                gap: vwmin(10, sp_m);
-            }
-
-            .bl_caseItem_treatmentsWrapper_txt {
-                color: var(--txtColor);
-                font-family: var(--notoSerifJP);
-                font-size: vwmin(12, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1;
-                letter-spacing: calc(0.6 / 12 * 1em);
-                padding: vwmin(4, pc);
-                border-radius: vwmin(4, pc);
-                border: 1px solid var(--line, #987F65);
-
-                @include underSP {
-                    font-size: vwmin(12, sp_m);
-                    padding: vwmin(4, sp_m);
-                    border-radius: vwmin(4, sp_m);
-                    border: 1px solid var(--line, #987F65);
-                }
-            }
-        }
-
-        .el_caseItem_ttl {
-            color: var(--txtColor);
-            font-family: var(--notoSerifJP);
-            font-size: vwmin(18, pc);
-            font-style: normal;
-            font-weight: 400;
-            line-height: 1.5;
-            letter-spacing: calc(0.9 / 18 * 1em);
-
-            @include underSP {
-                font-size: vwmin(18, sp_m);
-            }
-        }
-    }
-
-
-    .bl_caseItem_details {
-        background-color: #F4EEEA;
-        border-radius: vwmin(2, pc);
-        overflow: hidden;
-
-        @include underSP {
-            border-radius: vwmin(2, sp_m);
-        }
-
-        .bl_caseItem_details_summary {
-            display: grid;
-            grid-template-columns: 1fr vwmin(20, pc);
-            align-items: center;
-            gap: vwmin(10, pc);
-            cursor: pointer;
-            padding-inline: vwmin(12, pc);
-            padding-block: vwmin(10, pc);
-
-            @include underSP {
-                grid-template-columns: 1fr vwmin(20, sp_m);
-                gap: vwmin(10, sp_m);
-                padding-inline: vwmin(12, sp_m);
-                padding-block: vwmin(10, sp_m);
-            }
-
-            .bl_caseItem_details_summary_txt {
-                display: block;
-                color: var(--txtColor);
-                font-family: var(--notoSerifJP);
-                font-size: vwmin(14, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1.5;
-                letter-spacing: calc(0.7 / 14 * 1em);
-
-                @include underSP {
-                    font-size: vwmin(14, sp_m);
-                }
-            }
-
-            .bl_caseItem_details_summary_icon {
-                width: 100%;
-                height: 100%;
-                border-radius: 100%;
-                background-color: #fff;
-                position: relative;
-
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: vwmin(5, pc);
-                    height: vwmin(1, pc);
-                    background-color: var(--txtColor);
-                    border-radius: vwmin(1, pc);
-                    transition: transform 0.4s ease;
-
-                    @include underSP {
-                        width: vwmin(5, sp_m);
-                        height: vwmin(1, sp_m);
-                        border-radius: vwmin(1, sp_m);
-                    }
-                }
-
-                &::after {
-                    transform: translate(-50%, -50%) rotate(-90deg);
-                }
-            }
-        }
-    }
-
-    .is-opened {
-        .bl_caseItem_details_summary {
-            .bl_caseItem_details_summary_icon {
-                &::after {
-                    transition: transform 0.4s ease;
-                    transform: translate(-50%, -50%) rotate(0deg);
-                }
-            }
-        }
-    }
-
-
-    .bl_caseItem_details_content {
-        overflow: hidden;
-        height: 0;
-
-
-        .bl_caseItem_details_content_inner {
-            padding: vwmin(20, pc);
-            display: flex;
-            flex-direction: column;
-            gap: vwmin(20, pc);
-
-            @include underSP {
-                padding: vwmin(20, sp_m);
-                gap: vwmin(20, sp_m);
-            }
-
-            .bl_caseItem_details_content_item_dt {
-                color: var(--txtColor);
-                font-family: var(--notoSerifJP);
-                font-size: vwmin(14, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1;
-                letter-spacing: calc(0.7 / 14 * 1em);
-                border-bottom: 1px solid #987F65;
-                padding-block: vwmin(6, pc);
-                padding-inline: vwmin(4, pc);
-                margin-bottom: vwmin(10, pc);
-
-                @include underSP {
-                    font-size: vwmin(14, sp_m);
-                    padding-block: vwmin(6, sp_m);
-                    padding-inline: vwmin(4, sp_m);
-                    margin-bottom: vwmin(10, sp_m);
-                }
-            }
-
-            .bl_caseItem_details_content_item_dd {
-                color: var(--black, #1A0F04);
-                font-family: var(--notoSerifJP);
-                font-size: vwmin(14, pc);
-                font-style: normal;
-                font-weight: 400;
-                line-height: 1;
-                letter-spacing: calc(0.7 / 14 * 1em);
-
-                @include underSP {
-                    font-size: vwmin(14, sp_m);
-                }
-            }
-        }
-    }
-}
 
 
 /*--------------------------------
@@ -969,7 +744,7 @@
 --------------------------------*/
 
 .ly_commonTwoColumnWrapper {
-    padding-bottom: vwmin(200, pc);
+    margin-bottom: vwmin(200, pc);
 
     @include underSP {
         padding-bottom: vwmin(100, sp_m);
@@ -1438,6 +1213,89 @@ menuカード
                 width: vwmin(16, sp_m);
                 height: vwmin(16, sp_m);
             }
+        }
+    }
+}
+
+
+/*--------------------------------
+
+--------------------------------*/
+
+.bl_pagination {
+    display: grid;
+    grid-template-columns: vwmin(46, pc) 1fr vwmin(46, pc);
+    gap: vwmin(30, pc);
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-inline: auto;
+    padding-top: vwmin(100, pc);
+
+
+    .bl_pagination_Btn {
+        display: grid;
+        grid-template-columns: vwmin(21, pc);
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border: 1px solid #987F65;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.5s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #987F65;
+                transition: background-color 0.5s ease;
+            }
+        }
+    }
+
+    .bl_pagination_Btn_prev {
+        grid-column: 1;
+    }
+
+    .bl_pagination_Btn_next {
+        grid-column: 3;
+    }
+
+
+    .bl_pagination_list {
+        grid-column: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: vwmin(21, pc);
+
+        @include underSP {
+            gap: vwmin(10, sp_m);
+        }
+
+        .bl_pagination_link {
+            color: var(--black);
+            font-family: var(--OldSt);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.36 / 18 * 1em);
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                letter-spacing: calc(0.36 / 18 * 1em);
+            }
+        }
+
+        .bl_pagination_link_current {
+            color: #987F65;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: 4px;
+            text-underline-position: from-font;
+            padding-inline: vwmin(1, pc);
         }
     }
 }
