@@ -1,0 +1,671 @@
+@use '../../foundation/function/index' as *;
+
+
+.bl_guideContents {
+    padding-bottom: vwmin(200, pc) !important;
+    overflow: hidden;
+
+    @include underSP {
+        padding-bottom: vwmin(120, sp_m);
+    }
+}
+
+
+.bl_guideContentsInner {
+    max-width: vwmin(1240, pc);
+    margin-inline: auto;
+    width: 100%;
+
+    @include underSP {
+        max-width: 100%;
+        padding-inline: vwmin(30, sp_m);
+    }
+}
+
+.bl_guideAboutSection {
+    max-width: vwmin(1120, pc);
+    margin-inline: auto;
+    width: 100%;
+    padding-bottom: vwmin(220, pc);
+
+    @include underSP {
+        max-width: 100%;
+        padding-bottom: vwmin(120, sp_m);
+    }
+
+    .el_guideAboutSection_ttl {
+        padding-block: vwmin(20, pc);
+        border-bottom: 1px solid #987F65;
+        border-top: 1px solid #987F65;
+        max-width: vwmin(527, pc);
+        margin-inline: auto;
+        color: var(--black);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.8;
+        letter-spacing: calc(1.2 / 24 * 1em);
+        margin-bottom: vwmin(40, pc);
+        text-align: center;
+        margin-bottom: vwmin(60, pc);
+
+        @include underSP {
+            font-size: vwmin(24, sp_m);
+            padding: vwmin(20, sp_m);
+            margin-bottom: vwmin(50, sp_m);
+            max-width: 100%;
+        }
+    }
+
+    .bl_guideAboutSection_contentWrapper {
+        display: grid;
+        grid-template-columns: 1fr vwmin(480, pc);
+        gap: vwmin(40, pc);
+        align-items: flex-start;
+
+        @include underSP {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(30, sp_m);
+        }
+
+
+        .bl_guideAboutSection_contentWrapper_txtContainer {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(20, pc);
+
+            @include underSP {
+                gap: vwmin(20, sp_m);
+            }
+
+            .el_guideAboutSection_contentWrapper_txtContainer_txt {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.9;
+                letter-spacing: calc(0.8 / 16 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+            }
+        }
+    }
+
+
+    .bl_guideAboutSection_imgWrapper {
+        width: 100%;
+
+        .bl_guideAboutSection_imgSlider {
+            margin-bottom: vwmin(20, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(20, sp_m);
+            }
+
+            .el_guideAboutSection_imgSlider_img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                aspect-ratio: 480 / 321;
+                border-radius: vwmin(4, pc);
+                overflow: hidden;
+
+                @include underSP {
+                    border-radius: vwmin(4, sp_m);
+                }
+            }
+        }
+
+        .bl_guideAboutSection_imgSlider_pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: vwmin(10, pc);
+
+            @include underSP {
+                gap: vwmin(10, sp_m);
+            }
+
+            .swiper-pagination-bullet {
+                display: block;
+                background-color: rgb(229, 216, 205);
+                opacity: 1;
+                margin: 0 !important;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: #987F65;
+            }
+        }
+    }
+}
+
+
+
+.bl_guideReserveContainer {
+    padding: vwmin(10, pc);
+    border: 1px solid #987F65;
+    margin-bottom: vwmin(220, pc);
+
+    @include underSP {
+        padding: vwmin(10, sp_m);
+        margin-bottom: vwmin(100, sp_m);
+    }
+
+    .bl_guideReserveContainer_inner {
+        padding-block: vwmin(60, pc);
+        padding-inline: vwmin(120, pc);
+        background-color: #E5D8CD;
+        display: grid;
+        grid-template-columns: 1fr vwmin(300, pc);
+        align-items: center;
+
+        @include underSP {
+            grid-template-columns: 1fr;
+            padding-block: vwmin(60, sp_m);
+            padding-inline: vwmin(30, sp_m);
+            gap: vwmin(50, sp_m);
+        }
+
+        .bl_guideReserveContainer_ttlWrapper {
+            position: relative;
+            margin-bottom: vwmin(30, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(30, sp_m);
+            }
+
+            .el_guideReserveContainer_ttl {
+                color: var(--black);
+                width: fit-content;
+                margin-inline: auto;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(30, pc);
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.5;
+                letter-spacing: calc(1.5 / 30 * 1em);
+                padding-top: vwmin(41, pc);
+                padding-bottom: vwmin(14, pc);
+
+                @include underSP {
+                    font-size: vwmin(30, sp_m);
+                    padding-top: vwmin(14, sp_m);
+                    padding-bottom: vwmin(2, sp_m);
+                }
+            }
+
+            .el_guideReserveContainer_subTtl {
+                position: absolute;
+                font-family: var(--OldSt);
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                color: rgba(64, 45, 16, 0.10);
+                font-size: vwmin(140, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(2.8 / 140 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(80, sp_m);
+                }
+            }
+        }
+
+        .bl_guideReserveContainer_txtWrapper {
+
+            .el_guideReserveContainer_txt {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(24, pc);
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1.5;
+                letter-spacing: calc(1.2 / 24 * 1em);
+                margin-bottom: vwmin(10, pc);
+
+                @include underSP {
+                    text-align: center;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(18, sp_m);
+                    line-height: 1.5;
+                    letter-spacing: calc(0.9 / 18 * 1em);
+                    margin-bottom: vwmin(20, sp_m);
+                }
+            }
+
+            .el_guideReserveContainer_hourTxt {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.8 / 16 * 1em);
+                width: fit-content;
+                margin-inline: auto;
+
+                @include underSP {
+                    font-size: vwmin(14, sp_m);
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+                }
+            }
+        }
+
+
+        .bl_guideReserveContainer_btnWrapper {
+
+
+            .bl_reserveBtnWrapper {
+                display: flex;
+                flex-direction: column;
+                gap: vwmin(20, pc);
+
+                @include underSP {
+                    gap: vwmin(20, sp_m);
+                }
+
+                .bl_reserveBtn {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.bl_guideFlowSection {
+
+    .bl_guideFlowSection_inner {
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+        width: 100%;
+
+        @include underSP {
+            max-width: 100%;
+        }
+
+
+        .bl_guideFlowSection_ttlWrapper {
+            width: fit-content;
+            margin-inline: auto;
+            margin-bottom: vwmin(50, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(50, sp_m);
+            }
+
+            .el_guideFlowSection_ttl {
+                color: var(--black);
+                font-family: var(--notoSerifDisplay);
+                font-size: vwmin(60, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(1.2 / 60 * 1em);
+                width: fit-content;
+                margin-inline: auto;
+
+                @include underSP {
+                    font-size: vwmin(40, sp_m);
+                }
+            }
+
+            .el_guideFlowSection_subTtl {
+                color: var(--black);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.8 / 16 * 1em);
+                width: fit-content;
+                margin-inline: auto;
+
+                @include underSP {
+                    font-size: vwmin(18, sp_m);
+                }
+            }
+        }
+
+
+        .bl_guideFlowListWrapper {
+            .swiper-slide {
+                width: fit-content !important;
+                height: auto !important;
+            }
+
+            @media (min-width: 768px) {
+                .bl_guideFlowListSlider {
+
+                    .swiper-wrapper {
+                        justify-content: space-between;
+                    }
+                }
+            }
+
+            .bl_guideFlowListSlider {
+
+                @include underSP {
+                    overflow: visible;
+                }
+            }
+
+            .swiper-slide {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: -40px;
+                    width: 40px;
+                    height: 2px;
+                    background-color: #E5D8CD;
+                }
+
+                &:last-child {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+            .bl_guideFlowList_item {
+                background-color: #E5D8CD;
+                padding: vwmin(19, pc);
+                border-radius: vwmin(4, pc);
+                overflow: hidden;
+                max-width: vwmin(250, pc);
+                width: 100%;
+                height: 100%;
+
+                @include underSP {
+                    max-width: vwmin(250, sp_m);
+                    padding: vwmin(19, sp_m);
+                    border-radius: vwmin(4, sp_m);
+                }
+
+                .el_guideFlowList_item_img {
+                    width: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 210 / 172;
+                    border-radius: vwmin(2, pc);
+                    margin-bottom: vwmin(20, pc);
+                    overflow: hidden;
+
+                    @include underSP {
+                        margin-bottom: vwmin(10, sp_m);
+                        border-radius: vwmin(2, sp_m);
+                    }
+                }
+
+                .bl_guideFlowList_item_ttl {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 1.8;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+                    margin-bottom: vwmin(10, pc);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                        margin-bottom: vwmin(10, sp_m);
+                    }
+
+                }
+
+                .bl_guideFlowList_item_txt {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.8;
+                    letter-spacing: calc(0.7 / 14 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.bl_guidePageLower {
+    background-color: #E5D8CD;
+    padding-top: vwmin(120, pc);
+    padding-bottom: 58px;
+
+    @include underSP {
+        padding-bottom: 98px
+    }
+
+
+
+
+    .bl_guideContentsSection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: vwmin(30, pc);
+        align-items: stretch;
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+        width: 100%;
+        padding-bottom: vwmin(200, pc);
+
+        @include underSP {
+            grid-template-columns: 1fr;
+            gap: vwmin(30, sp_m);
+            padding-bottom: vwmin(180, sp_m);
+            padding-top: vwmin(100, sp_m);
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
+
+        .bl_guideContentsSection_item {
+            padding-block: vwmin(50, pc);
+            padding-inline: vwmin(20, pc);
+            border: 1px solid #987F65;
+            border-radius: vwmin(4, pc);
+
+            @include underSP {
+                padding-inline: vwmin(24, sp_m);
+                padding-block: vwmin(50, sp_m);
+                border-radius: vwmin(4, sp_m);
+            }
+
+
+            .bl_guideContentsSection_item_ttlWrapper {
+                width: fit-content;
+                margin-bottom: vwmin(50, pc);
+                margin-inline: auto;
+
+                @include underSP {
+                    margin-bottom: vwmin(50, sp_m);
+                }
+
+                .el_guideContentsSection_item_ttl {
+                    color: var(--black);
+                    font-family: var(--notoSerifDisplay);
+                    font-size: vwmin(60, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: calc(1.2 / 60 * 1em);
+                    width: fit-content;
+                    margin-inline: auto;
+                    margin-bottom: vwmin(10, pc);
+
+                    @include underSP {
+                        font-size: vwmin(40, sp_m);
+                        margin-bottom: vwmin(10, sp_m);
+                        font-weight: 400;
+                        line-height: 1;
+                        letter-spacing: calc(0.8 / 40 * 1em);
+                    }
+                }
+
+                .el_guideContentsSection_item_subTtl {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+                    width: fit-content;
+                    margin-inline: auto;
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                    }
+                }
+            }
+
+            .bl_guideContentsSection_item_txtWrapper {
+
+                .bl_guideContentsSection_item_txtWrapper_txtWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: vwmin(20, pc);
+                    margin-bottom: vwmin(10, pc);
+
+                    @include underSP {
+                        gap: vwmin(20, sp_m);
+                        margin-bottom: vwmin(30, sp_m);
+                    }
+
+                    .el_guideContentsSection_item_txtWrapper_txtWrapper_txt {
+                        color: var(--black);
+                        text-align: center;
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.8;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+                        width: fit-content;
+                        margin-inline: auto;
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
+                    }
+
+                    .el_guideContentsSection_item_txtWrapper_txtWrapper_txt_sp {
+                        text-align: left;
+
+                        br {
+                            @include underSP {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .bl_paymentListWrapper {
+
+                    .bl_paymentList {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        gap: vwmin(10, pc);
+                        margin-inline: auto;
+                        max-width: vwmin(390, pc);
+                        width: 100%;
+
+                        @include underSP {
+                            gap: vwmin(10, sp_m);
+                            max-width: 100%;
+                        }
+
+                        .bl_paymentList_item {
+                            background-color: #fff;
+                            border-radius: vwmin(4, pc);
+                            padding-inline: vwmin(12, pc);
+                            aspect-ratio: 1 / 1;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: auto;
+
+                            @include underSP {
+                                border-radius: vwmin(4, sp_m);
+                                padding-inline: vwmin(12, sp_m);
+                            }
+
+                            .el_paymentList_item_img {
+                                height: auto;
+                                width: 100%;
+                                aspect-ratio: 1 / 1;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .bl_guideContentsSection_dowonloadbtn {
+        display: grid;
+        grid-template-columns: 1fr vwmin(24, pc);
+        align-items: center;
+        gap: vwmin(10, pc);
+        width: fit-content;
+        margin-inline: auto;
+        padding: vwmin(10, pc) vwmin(20, pc);
+        background-color: #F4EEEA;
+        border-radius: vwmin(4, pc);
+        padding-inline: vwmin(20, pc);
+        padding-block: vwmin(12, pc);
+        margin-top: vwmin(20, pc);
+        transition: opacity 0.5s ease;
+
+        @include underSP {
+            width: 100%;
+            grid-template-columns: 1fr vwmin(24, sp_m);
+            border-radius: vwmin(4, sp_m);
+            gap: vwmin(4, sp_m);
+            padding-inline: vwmin(18, sp_m);
+            padding-block: vwmin(12, sp_m);
+            margin-top: 0;
+        }
+
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: .7;
+                transition: opacity 0.5s ease;
+            }
+        }
+
+        .el_guideContentsSection_dowonloadbtn_txt {
+            color: var(--black);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+            }
+        }
+    }
+}

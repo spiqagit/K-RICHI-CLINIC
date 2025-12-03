@@ -73,7 +73,7 @@
 
         <?php if (is_page()): ?>
             <li class="bl_commonBreadcrumbsItem">
-                <p class="bl_commonBreadcrumbsText"><<?php the_title(); ?></p>
+                <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>
             </li>
         <?php endif; ?>
     </ul>

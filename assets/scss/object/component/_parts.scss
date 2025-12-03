@@ -813,13 +813,15 @@
 
         .bl_commonLowPageWrapper_contents {
             background-color: #F4EEEA;
-            padding-bottom: calc(vwmin(40, pc) + vwmin(18, pc));
+            padding-bottom: 58px;
             border-radius: vwmin(30, pc) vwmin(30, pc) 0 0;
             padding-top: vwmin(160, pc);
 
             @include underSP {
                 padding-top: vwmin(100, sp_m);
                 padding-bottom: vwmin(100, sp_m);
+                padding-bottom: 98px;
+
                 border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
             }
         }
@@ -883,9 +885,11 @@
 .bl_commonBreadcrumbsContainer {
     padding-inline: vwmin(60, pc);
     overflow-x: auto;
+    padding-bottom: vwmin(18, pc);
 
     @include underSP {
         padding-inline: vwmin(30, sp_m);
+        padding-bottom: vwmin(18, pc);
     }
 
     .bl_commonBreadcrumbsList {
