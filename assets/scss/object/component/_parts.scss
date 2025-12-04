@@ -588,15 +588,13 @@
 
         .bl_commonLowPageWrapper_contents {
             background-color: #F4EEEA;
-            padding-bottom: 58px;
+            padding-bottom: 3.3vw;
             border-radius: vwmin(30, pc) vwmin(30, pc) 0 0;
             padding-top: vwmin(160, pc);
 
             @include underSP {
+                padding-bottom: 97px;
                 padding-top: vwmin(100, sp_m);
-                padding-bottom: vwmin(100, sp_m);
-                padding-bottom: 98px;
-
                 border-radius: vwmin(30, sp_m) vwmin(30, sp_m) 0 0;
             }
         }

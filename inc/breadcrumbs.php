@@ -65,6 +65,12 @@
             </li>
         <?php endif; ?>
 
+        <?php if (is_post_type_archive('recruit')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">採用情報</p>
+            </li>
+        <?php endif; ?>
+
         <?php if (is_404()): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>

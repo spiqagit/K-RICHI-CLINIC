@@ -1,0 +1,239 @@
+@use '../../foundation/function/index' as *;
+
+.bl_recruitContents {
+    padding-block: vwmin(120, pc);
+
+    @include underSP {
+        padding-block: vwmin(120, sp_m);
+    }
+}
+
+.bl_recruitMessageSection {
+    padding-block: vwmin(120, pc);
+
+    @include underSP {
+        padding-block: vwmin(120, sp_m);
+    }
+
+    .bl_recruitMessageSection_inner {
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: vwmin(400, pc) 1fr;
+        gap: vwmin(120, pc);
+        align-items: center;
+
+
+        .bl_recruitMessageSection_imgWrapper {
+            padding: vwmin(10, pc);
+            border-radius: vwmin(4, pc);
+            border: 1px solid #987F65;
+
+            .bl_recruitMessageSection_imgWrapper_img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: vwmin(2, pc);
+            }
+        }
+
+
+        .bl_recruitMessageSection_txtWrapper {
+
+            .bl_recruitMessageSection_txtWrapper_ttl {
+                margin-bottom: vwmin(50, pc);
+
+                .el_recruitMessageSection_txtWrapper_ttl_en {
+                    color: var(--black);
+                    font-family: var(--notoSerifDisplay);
+                    font-size: vwmin(48, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: calc(0.96 / 48 * 1em);
+                    margin-bottom: vwmin(10, pc);
+                }
+
+                .el_recruitMessageSection_txtWrapper_ttl_ja {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(18, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.9 / 18 * 1em);
+                }
+            }
+
+            .el_recruitMessageSection_copyWrapper {
+                color: var(--black);
+                font-family: var(--notoSerifDisplay);
+                font-size: vwmin(36, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.4;
+                letter-spacing: calc(0.72 / 36 * 1em);
+                margin-bottom: vwmin(50, pc);
+
+                .el_recruitMessageSection_copyWrapper_span {
+                    color: var(--black);
+                    font-family: var(--notoSerifDisplay);
+                    font-size: vwmin(28, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.8;
+                    letter-spacing: calc(0.56 / 28 * 1em);
+                }
+            }
+        }
+
+        .bl_recruitMessageSection_messageTxtWrapper {
+
+            .bl_recruitMessageSection_messageTxtWrapper_txtContainer {
+                display: flex;
+                gap: vwmin(20, pc);
+                flex-direction: column;
+                margin-bottom: vwmin(20, pc);
+
+                .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.9;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+                }
+            }
+
+
+            .bl_recruitMessageSection_messageTxtWrapper_directorWrapper {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: vwmin(14, pc);
+                align-items: flex-end;
+
+                .el_recruitMessageSection_messageTxtWrapper_directorWrapper_job {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.7 / 14 * 1em);
+                }
+
+                .el_recruitMessageSection_messageTxtWrapper_directorWrapper_name {
+                    color: var(--black);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(18, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.9 / 18 * 1em);
+                }
+            }
+        }
+    }
+}
+
+.bl_recruitConditionsSection {
+    padding-block: vwmin(120, pc);
+    background-color: #E5D8CD;
+
+    @include underSP {
+        padding-block: vwmin(120, sp_m);
+    }
+
+    .bl_recruitConditionsSection_inner {
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+
+
+        .bl_recruitConditionsSection_ttl {
+            width: fit-content;
+            margin-bottom: vwmin(50, pc);
+            margin-inline: auto;
+
+            .el_recruitConditionsSection_ttl_en {
+                color: var(--black);
+                font-family: var(--notoSerifDisplay);
+                font-size: vwmin(48, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.96 / 48 * 1em);
+            }
+
+            .el_recruitConditionsSection_ttl_ja {
+                color: var(--black, #1A0F04);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(18, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.9 / 18 * 1em);
+                width: fit-content;
+                margin-inline: auto;
+            }
+        }
+
+
+        .bl_recruitConditionsSection_list {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(50, pc);
+
+            .bl_recruitConditionsSection_list_item {
+                display: grid;
+                grid-template-columns: vwmin(260, pc) 1fr;
+                gap: vwmin(60, pc);
+                align-items: center;
+
+                .bl_recruitConditionsSection_list_item_imgWrapper {
+                    padding: vwmin(10, pc);
+                    border-radius: vwmin(4, pc);
+                    border: 1px solid #987F65;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                    }
+                }
+
+                .bl_recruitConditionsSection_list_item_txtWrapper {
+
+                    .el_recruitConditionsSection_list_item_txtWrapper_ttl {
+                        color: var(--black);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(18, pc);
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 1.8;
+                        letter-spacing: calc(0.9 / 18 * 1em);
+                        padding-block: vwmin(4, pc);
+                        padding-inline: vwmin(10, pc);
+                        background-color: #F4EEEA;
+                        width: fit-content;
+                        margin-bottom: vwmin(14, pc);
+                    }
+
+                    .el_recruitConditionsSection_list_item_txtWrapper_txt {
+                        color: var(--black);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.8;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+

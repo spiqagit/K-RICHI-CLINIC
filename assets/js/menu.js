@@ -125,14 +125,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 関連メニュースライダー
-    new Splide(".bl_menuRelatedPostSlider", {
-        type: "loop",
-        arrows: false,
-        pagination: false,
-        autoWidth: true,
-        perPage:  "auto",
-        perMove: "auto",
-        clones: 0,
-        breakpoints: { 768: { destroy: false } }
-    }).mount();
+    const relatedPostSlider = document.querySelector(".bl_menuRelatedPostSlider");
+    if (relatedPostSlider) {
+        new Splide(relatedPostSlider, {
+            type: "loop",
+            arrows: false,
+            pagination: false,
+            autoWidth: true,
+            perPage:  "auto",
+            perMove: "auto",
+            clones: 0,
+            breakpoints: { 768: { destroy: false } }
+        }).mount();
+    }
 });

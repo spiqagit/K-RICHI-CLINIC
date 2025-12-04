@@ -1696,15 +1696,14 @@ html {
 }
 .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
   background-color: #F4EEEA;
-  padding-bottom: 58px;
+  padding-bottom: 3.3vw;
   border-radius: clamp(0px, 2.0833333333vw, 45px) clamp(0px, 2.0833333333vw, 45px) 0 0;
   padding-top: clamp(0px, 11.1111111111vw, 240px);
 }
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWrapper .bl_commonLowPageWrapper_contentsOuter .bl_commonLowPageWrapper_contents {
+    padding-bottom: 97px;
     padding-top: clamp(0px, 23.3644859813vw, 110px);
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
-    padding-bottom: 98px;
     border-radius: clamp(0px, 7.0093457944vw, 33px) clamp(0px, 7.0093457944vw, 33px) 0 0;
   }
 }
@@ -6055,4 +6054,204 @@ Information
   .bl_guidePageLower .bl_guideContentsSection_dowonloadbtn .el_guideContentsSection_dowonloadbtn_txt {
     font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
+}
+
+.bl_recruitContents {
+  padding-block: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_recruitContents {
+    padding-block: clamp(0px, 28.0373831776vw, 132px);
+  }
+}
+
+.bl_recruitMessageSection {
+  padding-block: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_recruitMessageSection {
+    padding-block: clamp(0px, 28.0373831776vw, 132px);
+  }
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner {
+  max-width: clamp(0px, 77.7777777778vw, 1680px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: clamp(0px, 27.7777777778vw, 600px) 1fr;
+  gap: clamp(0px, 8.3333333333vw, 180px);
+  align-items: center;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_imgWrapper {
+  padding: clamp(0px, 0.6944444444vw, 15px);
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+  border: 1px solid #987F65;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_imgWrapper .bl_recruitMessageSection_imgWrapper_img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: clamp(0px, 0.1388888889vw, 3px);
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .bl_recruitMessageSection_txtWrapper_ttl {
+  margin-bottom: clamp(0px, 3.4722222222vw, 75px);
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .bl_recruitMessageSection_txtWrapper_ttl .el_recruitMessageSection_txtWrapper_ttl_en {
+  color: var(--black);
+  font-family: var(--notoSerifDisplay);
+  font-size: clamp(0px, 3.3333333333vw, 72px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: clamp(0px, 0.6944444444vw, 15px);
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .bl_recruitMessageSection_txtWrapper_ttl .el_recruitMessageSection_txtWrapper_ttl_ja {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 27px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .el_recruitMessageSection_copyWrapper {
+  color: var(--black);
+  font-family: var(--notoSerifDisplay);
+  font-size: clamp(0px, 2.5vw, 54px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-bottom: clamp(0px, 3.4722222222vw, 75px);
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .el_recruitMessageSection_copyWrapper .el_recruitMessageSection_copyWrapper_span {
+  color: var(--black);
+  font-family: var(--notoSerifDisplay);
+  font-size: clamp(0px, 1.9444444444vw, 42px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer {
+  display: flex;
+  gap: clamp(0px, 1.3888888889vw, 30px);
+  flex-direction: column;
+  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_directorWrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(0px, 0.9722222222vw, 21px);
+  align-items: flex-end;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_directorWrapper .el_recruitMessageSection_messageTxtWrapper_directorWrapper_job {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 0.9722222222vw, 21px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+.bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_directorWrapper .el_recruitMessageSection_messageTxtWrapper_directorWrapper_name {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 27px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+.bl_recruitConditionsSection {
+  padding-block: clamp(0px, 8.3333333333vw, 180px);
+  background-color: #E5D8CD;
+}
+@media screen and (width <= 1024px) {
+  .bl_recruitConditionsSection {
+    padding-block: clamp(0px, 28.0373831776vw, 132px);
+  }
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner {
+  max-width: clamp(0px, 77.7777777778vw, 1680px);
+  margin-inline: auto;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_ttl {
+  width: fit-content;
+  margin-bottom: clamp(0px, 3.4722222222vw, 75px);
+  margin-inline: auto;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_ttl .el_recruitConditionsSection_ttl_en {
+  color: var(--black);
+  font-family: var(--notoSerifDisplay);
+  font-size: clamp(0px, 3.3333333333vw, 72px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_ttl .el_recruitConditionsSection_ttl_ja {
+  color: var(--black, #1A0F04);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 27px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  width: fit-content;
+  margin-inline: auto;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 3.4722222222vw, 75px);
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_list .bl_recruitConditionsSection_list_item {
+  display: grid;
+  grid-template-columns: clamp(0px, 18.0555555556vw, 390px) 1fr;
+  gap: clamp(0px, 4.1666666667vw, 90px);
+  align-items: center;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_list .bl_recruitConditionsSection_list_item .bl_recruitConditionsSection_list_item_imgWrapper {
+  padding: clamp(0px, 0.6944444444vw, 15px);
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+  border: 1px solid #987F65;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_list .bl_recruitConditionsSection_list_item .bl_recruitConditionsSection_list_item_imgWrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_list .bl_recruitConditionsSection_list_item .bl_recruitConditionsSection_list_item_txtWrapper .el_recruitConditionsSection_list_item_txtWrapper_ttl {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 27px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  padding-block: clamp(0px, 0.2777777778vw, 6px);
+  padding-inline: clamp(0px, 0.6944444444vw, 15px);
+  background-color: #F4EEEA;
+  width: fit-content;
+  margin-bottom: clamp(0px, 0.9722222222vw, 21px);
+}
+.bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_list .bl_recruitConditionsSection_list_item .bl_recruitConditionsSection_list_item_txtWrapper .el_recruitConditionsSection_list_item_txtWrapper_txt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
 }

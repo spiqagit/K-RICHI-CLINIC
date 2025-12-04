@@ -36,8 +36,11 @@ function remove_editor_for_staff()
 {
     remove_post_type_support('staff', 'editor');
     remove_post_type_support('concern', 'editor');
+    remove_post_type_support('recruit', 'editor');
 }
 add_action('init', 'remove_editor_for_staff');
+
+
 
 // price-catタクソノミーの「表示」ボタンを非表示にする
 function remove_price_cat_view_action($actions, $tag)
