@@ -1724,6 +1724,35 @@ html {
     padding-bottom: 100px;
   }
 }
+.bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_ttlWrapper {
+  max-width: clamp(0px, 77.7777777778vw, 1680px);
+  width: 100%;
+  margin-inline: auto;
+  padding-block: clamp(0px, 8.3333333333vw, 180px);
+  padding-inline: clamp(0px, 3.4722222222vw, 75px);
+  border: 1px solid #987F65;
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+}
+@media screen and (width <= 1024px) {
+  .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_ttlWrapper {
+    max-width: 100%;
+    padding-block: clamp(0px, 8.3333333333vw, 180px);
+  }
+}
+.bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_ttlWrapper .el_commonLowPageWhiteMain_ttl {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 2.7777777778vw, 60px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_ttlWrapper .el_commonLowPageWhiteMain_ttl {
+    font-size: clamp(0px, 8.4112149533vw, 39.6px);
+  }
+}
 .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_inner {
   max-width: clamp(0px, 77.7777777778vw, 1680px);
   width: 100%;
@@ -6687,4 +6716,115 @@ Information
     border: 1px solid #402D10;
     transition: all 0.5s ease;
   }
+}
+
+.bl_entryFormSection {
+  padding-top: clamp(0px, 6.9444444444vw, 150px);
+  padding-bottom: clamp(0px, 13.8888888889vw, 300px);
+}
+.bl_entryFormSection .bl_entryFormSection_inner {
+  max-width: clamp(0px, 55.5555555556vw, 1200px);
+  margin-inline: auto;
+  width: 100%;
+}
+@media screen and (width <= 1024px) {
+  .bl_entryFormSection .bl_entryFormSection_inner {
+    max-width: 100%;
+    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+  }
+}
+
+.bl_entryFormWrapper .bl_entryFormWrapper_item .el_entryFormWrapper_item_ttl {
+  color: var(--black);
+  text-align: center;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.6666666667vw, 36px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  margin-bottom: clamp(0px, 4.1666666667vw, 90px);
+  padding-block: clamp(0px, 0.6944444444vw, 15px);
+  border-bottom: 1px solid #987F65;
+  border-top: 1px solid #987F65;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 2.7777777778vw, 60px);
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_ttlWrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(0px, 1.3888888889vw, 30px);
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_ttlWrapper .el_entryFormInputList_item_ttl {
+  display: flex;
+  align-items: center;
+  gap: clamp(0px, 1.3888888889vw, 30px);
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_ttlWrapper .el_entryFormInputList_item_ttl .el_entryFormInputList_item_ttl_txt {
+  display: block;
+  color: var(--black);
+  font-feature-settings: "palt" on;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_ttlWrapper .el_entryFormInputList_item_ttl .el_entryFormInputList_item_ttl_option {
+  display: block;
+  color: var(--white);
+  font-feature-settings: "palt" on;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 0.8333333333vw, 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  padding-inline: clamp(0px, 0.4166666667vw, 9px);
+  padding-block: clamp(0px, 0.2083333333vw, 4.5px);
+  border-radius: clamp(0px, 0.1388888889vw, 3px);
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_ttlWrapper .el_entryFormInputList_item_ttl .el_entryFormInputList_item_ttl_option.is-required {
+  color: #fff;
+  background-color: #402D10;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_ttlWrapper .el_entryFormInputList_item_ttl .el_entryFormInputList_item_ttl_option.is-optional {
+  color: #fff;
+  background-color: #AEAEAE;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: clamp(0px, 2.0833333333vw, 45px);
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper input,
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper textarea,
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  cursor: pointer;
+  display: block;
+  border: none;
+  font-family: var(--notoSerifJP);
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper p {
+  width: 100%;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper .el_inputText {
+  display: block;
+  width: 100%;
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+  border: 1px solid #987F65;
+  background: var(--white);
 }

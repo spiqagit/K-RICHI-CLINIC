@@ -1,0 +1,141 @@
+@use '../../foundation/function/index' as *;
+
+
+.bl_entryFormSection {
+    padding-top: vwmin(100, pc);
+    padding-bottom: vwmin(200, pc);
+
+
+    .bl_entryFormSection_inner {
+        max-width: vwmin(800, pc);
+        margin-inline: auto;
+        width: 100%;
+
+        @include underSP {
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
+    }
+}
+
+.bl_entryFormWrapper {
+
+    .bl_entryFormWrapper_item {
+
+        .el_entryFormWrapper_item_ttl {
+            color: var(--black);
+            text-align: center;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(24, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(1.2 / 24 * 1em);
+            margin-bottom: vwmin(60, pc);
+            padding-block: vwmin(10, pc);
+            border-bottom: 1px solid #987F65;
+            border-top: 1px solid #987F65;
+        }
+
+
+        .bl_entryFormInputList {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(40, pc);
+
+            .bl_entryFormInputList_item {
+
+
+                .bl_entryFormInputList_item_ttlWrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: vwmin(20, pc);
+
+                    .el_entryFormInputList_item_ttl {
+                        display: flex;
+                        align-items: center;
+                        gap: vwmin(20, pc);
+
+                        .el_entryFormInputList_item_ttl_txt {
+                            display: block;
+                            color: var(--black);
+                            font-feature-settings: 'palt' on;
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(16, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1.2;
+                            letter-spacing: calc(0.8 / 16 * 1em);
+                        }
+
+                        .el_entryFormInputList_item_ttl_option {
+                            display: block;
+                            color: var(--white);
+                            font-feature-settings: 'palt' on;
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(12, pc);
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: 1.2;
+                            letter-spacing: calc(0.6 / 12 * 1em);
+                            padding-inline: vwmin(6, pc);
+                            padding-block: vwmin(3, pc);
+                            border-radius: vwmin(2, pc);
+
+                            &.is-required {
+                                color: #fff;
+                                background-color: #402D10;
+                            }
+
+                            &.is-optional {
+                                color: #fff;
+                                background-color: #AEAEAE;
+                            }
+                        }
+                    }
+                }
+
+
+
+                .bl_entryFormInputList_item_inputWrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: vwmin(30, pc);
+
+                    input,
+                    textarea,
+                    select {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        -ms-appearance: none;
+                        -o-appearance: none;
+                        cursor: pointer;
+                        display: block;
+                        border: none;
+                        font-family: var(--notoSerifJP);
+                    }
+
+                    p{
+                        width: 100%;
+                    }
+
+                    .wpcf7-form-control-wrap{
+                        display: block;
+                        width: 100%;
+                    }
+
+                    .el_inputText {
+                        display: block;
+                        width: 100%;
+                        border-radius: vwmin(4, pc);
+                        border: 1px solid  #987F65;
+                        background: var(--white);
+                    }
+                }
+            }
+
+
+        }
+    }
+}
