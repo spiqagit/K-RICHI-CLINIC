@@ -14,7 +14,7 @@
         </div>
 
 
-        <div class="bl_commonLowPageWrapper_contentsOuter bl_staffContentsOuter">
+        <div class="bl_commonLowPageWrapper_contentsOuter bl_recruitContentsOuter">
             <div class="bl_commonLowPageWrapper_contents">
                 <div class="bl_commonLowPageWrapper_contents_inner">
                     <section class="bl_recruitMessageSection">
@@ -33,22 +33,22 @@
                             ?>
                             <?php if ($staffDirectorList): ?>
                                 <?php foreach ($staffDirectorList as $staffDirector) : ?>
-                                    <?php 
-                                        $staffDirectorPosts = get_posts(
-                                            array(
-                                                'post_type' => 'staff',
-                                                'posts_per_page' => 1,
-                                                'orderby' => 'staff_order',
-                                                'order' => 'ASC',
-                                                'tax_query' => array(
-                                                    array(
-                                                        'taxonomy' => 'staff-cat',
-                                                        'field' => 'slug',
-                                                        'terms' => $staffDirector->slug,
-                                                    ),
+                                    <?php
+                                    $staffDirectorPosts = get_posts(
+                                        array(
+                                            'post_type' => 'staff',
+                                            'posts_per_page' => 1,
+                                            'orderby' => 'staff_order',
+                                            'order' => 'ASC',
+                                            'tax_query' => array(
+                                                array(
+                                                    'taxonomy' => 'staff-cat',
+                                                    'field' => 'slug',
+                                                    'terms' => $staffDirector->slug,
                                                 ),
-                                            )
-                                        );
+                                            ),
+                                        )
+                                    );
                                     ?>
                                     <?php if ($staffDirectorPosts): ?>
                                         <?php foreach ($staffDirectorPosts as $staffDirectorPost) : ?>
@@ -89,9 +89,6 @@
                             </div>
                         </div>
                     </section>
-                    <div>
-                        <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
-                    </div>
                 </div>
             </div>
         </div>
@@ -140,16 +137,58 @@
                     <p class="el_jobCategorySection_ttl_ja">求人カテゴリー</p>
                 </hgroup>
 
-                <div>
-                    <details>
-                        <summary>
-                            <span>
-                                <span>医師</span>
-                                <span></span>
-                            </span>
-                        </summary>
-                    </details>
+                <div class="bl_jobCategorySection_list">
+                    <?php if (have_posts()): ?>
+
+                        <?php while (have_posts()):
+                            the_post(); ?>
+
+                            <details class="bl_jobCategorySection_list_item">
+                                <summary class="bl_jobCategorySection_list_item_summary">
+                                    <span class="bl_jobCategorySection_list_item_summary_txtContainer">
+                                        <?php if (get_field('job-en-name')): ?>
+                                            <span class="el_jobCategorySection_list_item_summary_txtContainer_txtEn"><?php the_field('job-en-name'); ?></span>
+                                        <?php endif; ?>
+                                        <span class="el_jobCategorySection_list_item_summary_txtContainer_txtJa"><?php the_title(); ?></span>
+                                    </span>
+                                    <img class="bl_jobCategorySection_list_item_summary_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
+                                </summary>
+                                <div class="bl_jobCategorySection_list_item_content">
+                                    <div class="bl_jobCategorySection_list_item_content_inner">
+                                        <?php if (have_rows('guidelines-list')): ?>
+
+                                            <ul class="bl_jobContentList">
+                                                <?php while (have_rows('guidelines-list')):
+                                                    the_row(); ?>
+                                                    <li class="bl_jobContentList_item">
+                                                        <?php if (get_sub_field('guidelines-list-ttl')): ?>
+                                                            <p class="el_jobContentList_item_ttl"><?php the_sub_field('guidelines-list-ttl'); ?></p>
+                                                        <?php endif; ?>
+                                                        <?php if (get_sub_field('guidelines-list-contents')): ?>
+                                                            <div class="bl_jobContentList_item_content">
+                                                                <?php the_sub_field('guidelines-list-contents'); ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </li>
+                                                <?php endwhile; ?>
+                                            </ul>
+                                            <a href="<?php echo home_url();?>/entry/&postid=<?php the_ID(); ?>" class="bl_jobCategorySection_entryBtn">エントリー</a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </details>
+
+                        <?php endwhile; ?>
+
+                    <?php else: ?>
+
+                        <p class="bl_jobCategorySection_noPosts">現在募集中の求人はありません。</p>
+                    
+                    <?php endif; ?>
                 </div>
+            </div>
+            <div>
+                <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
             </div>
         </section>
     </main>
