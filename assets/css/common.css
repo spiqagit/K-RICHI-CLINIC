@@ -2180,7 +2180,9 @@ Google Maps
 menuカード
 --------------------------------*/
 .bl_menuCard {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   border-radius: clamp(0px, 0.2777777778vw, 6px);
   background-color: #E5D8CD;
@@ -3855,15 +3857,18 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticleInfoSection_item .bl_caseSliderWrapper {
+    overflow: visible !important;
     margin-bottom: clamp(0px, 11.6822429907vw, 55px);
   }
 }
-.bl_menuArticleInfoSection_item .bl_caseSliderWrapper .splide__list {
-  gap: clamp(0px, 2.7777777778vw, 60px);
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .bl_meneCaseSlider {
+    overflow: visible !important;
+  }
 }
 @media screen and (width <= 1024px) {
-  .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .splide__list {
-    gap: clamp(0px, 9.3457943925vw, 44px);
+  .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .bl_meneCaseSlider .splide__track {
+    overflow: visible !important;
   }
 }
 .bl_menuArticleInfoSection_item .bl_caseSliderWrapper .bl_meneCaseSlider .splide__slide {
@@ -3987,40 +3992,15 @@ Case
 .bl_menuArticleInfoSection_item .bl_menuRelatedPostList {
   width: 100%;
 }
-@media screen and (min-width: 769px) {
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .splide {
-    overflow: hidden !important;
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider {
-    overflow: hidden !important;
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__track {
-    overflow: hidden;
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__list {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: clamp(0px, 2.0833333333vw, 45px);
-    transform: none !important;
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__slide {
-    width: auto !important;
-    margin: 0 !important;
-    min-width: 0;
-  }
+.bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostList_inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0px, 2.0833333333vw, 45px);
 }
-@media screen and (max-width: 768px) {
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .bl_menuCard {
-    max-width: clamp(0px, 57.476635514vw, 270.6px);
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__list {
+@media screen and (width <= 1024px) {
+  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostList_inner {
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(0px, 4.6728971963vw, 22px);
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__slide {
-    width: fit-content !important;
-  }
-  .bl_menuArticleInfoSection_item .bl_menuRelatedPostList .bl_menuRelatedPostSlider .splide__track {
-    overflow: visible !important;
   }
 }
 

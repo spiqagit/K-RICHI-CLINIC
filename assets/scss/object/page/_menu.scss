@@ -272,18 +272,21 @@
         margin-bottom: vwmin(50, pc);
 
         @include underSP {
+            overflow: visible !important;
             margin-bottom: vwmin(50, sp_m);
         }
 
-        .splide__list {
-            gap: vwmin(40, pc);
-
-            @include underSP {
-                gap: vwmin(40, sp_m);
-            }
-        }
 
         .bl_meneCaseSlider {
+            @include underSP {
+                overflow: visible !important;
+            }
+
+            .splide__track {
+                @include underSP {
+                    overflow: visible !important;
+                }
+            }
 
             .splide__slide {
                 width: fit-content !important;
@@ -416,51 +419,14 @@
     .bl_menuRelatedPostList {
         width: 100%;
 
-        @media screen and (min-width: 769px) {
-            .splide {
-                overflow: hidden !important;
-            }
+        .bl_menuRelatedPostList_inner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: vwmin(30, pc);
 
-            .bl_menuRelatedPostSlider {
-                overflow: hidden !important;
-
-                .splide__track {
-                    overflow: hidden;
-                }
-
-                .splide__list {
-                    display: grid !important;
-                    grid-template-columns: repeat(3, 1fr) !important;
-                    gap: vwmin(30, pc);
-                    transform: none !important;
-                }
-
-                .splide__slide {
-                    width: auto !important;
-                    margin: 0 !important;
-                    min-width: 0;
-                }
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .bl_menuRelatedPostSlider {
-
-                .bl_menuCard {
-                    max-width: vwmin(246, sp_m);
-                }
-
-                .splide__list {
-                    gap: vwmin(20, sp_m);
-                }
-
-                .splide__slide {
-                    width: fit-content !important;
-                }
-
-                .splide__track {
-                    overflow: visible !important;
-                }
+            @include underSP {
+                grid-template-columns: repeat(2, 1fr);
+                gap: vwmin(20, sp_m);
             }
         }
     }

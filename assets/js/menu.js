@@ -116,10 +116,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // 症例スライダー
     const caseSlider = document.querySelector(".bl_meneCaseSlider");
     if (caseSlider) {
-        const caseSplide = new Splide(caseSlider, {});
+        const caseSplide = new Splide(caseSlider, {
+            arrows: false,
+            pagination: false,
+            gap: 40
+        });
         caseSplide.on('overflow', (isOverflow) => {
             caseSplide.go(0);
-            caseSplide.options = { arrows: false, pagination: false, gap: 20, drag: isOverflow };
+            caseSplide.options({ drag: isOverflow });
         });
         caseSplide.mount();
     }

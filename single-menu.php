@@ -328,40 +328,34 @@
                                             $related_menu_list = array();
                                         }
                                         ?>
-                                        <div class="splide bl_menuRelatedPostSlider">
-                                            <div class="splide__track">
-                                                <div class="splide__list">
-                                                    <?php foreach ($related_menu_list as $menu) : ?>
-                                                        <div class="splide__slide">
-                                                            <a href="<?php echo get_permalink($menu->ID); ?>" class="bl_menuCard">
-                                                                <div class="bl_menuCard_inner">
-                                                                    <?php if (has_post_thumbnail($menu->ID)): ?>
-                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu->ID); ?>" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
-                                                                    <?php else: ?>
-                                                                        <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
-                                                                    <?php endif; ?>
-                                                                    <div class="bl_menuCard_txtWrapper">
-                                                                        <p class="el_menuCard_txtWrapper_ttl"><?php echo esc_html(get_the_title($menu->ID)); ?></p>
-                                                                        <?php if (get_field('menu-archive-txt', $menu->ID)): ?>
-                                                                            <p class="el_menuCard_txtWrapper_txt"><?php echo esc_html(get_field('menu-archive-txt', $menu->ID)); ?></p>
-                                                                        <?php endif; ?>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="bl_menuCard_arrowWrapper">
-                                                                    <img class="el_menuCard_arrowWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
-                                                                </div>
-                                                            </a>
+                                        <div class="bl_menuRelatedPostList_inner">
+                                            <?php foreach ($related_menu_list as $menu) : ?>
+                                                <a href="<?php echo get_permalink($menu->ID); ?>" class="bl_menuCard">
+                                                    <div class="bl_menuCard_inner">
+                                                        <?php if (has_post_thumbnail($menu->ID)): ?>
+                                                            <img class="el_menuCard_inner_img" src="<?php echo get_the_post_thumbnail_url($menu->ID); ?>" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
+                                                        <?php else: ?>
+                                                            <img class="el_menuCard_inner_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/concern/concern-noimg.jpg" alt="<?php echo esc_attr(get_the_title($menu->ID)); ?>">
+                                                        <?php endif; ?>
+                                                        <div class="bl_menuCard_txtWrapper">
+                                                            <p class="el_menuCard_txtWrapper_ttl"><?php echo esc_html(get_the_title($menu->ID)); ?></p>
+                                                            <?php if (get_field('menu-archive-txt', $menu->ID)): ?>
+                                                                <p class="el_menuCard_txtWrapper_txt"><?php echo esc_html(get_field('menu-archive-txt', $menu->ID)); ?></p>
+                                                            <?php endif; ?>
                                                         </div>
-                                                    <?php endforeach; ?>
-                                                </div>
-                                            </div>
+                                                    </div>
+                                                    <div class="bl_menuCard_arrowWrapper">
+                                                        <img class="el_menuCard_arrowWrapper_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
+                                                    </div>
+                                                </a>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
 
                                 </section>
                             <?php endif; ?>
                         </div>
-                        <a href="<?php home_url(); ?>/menu/" class="bl_menuArticle_backAllbtn">一覧へ戻る</a>
+                        <a href="<?php echo home_url(); ?>/treatment/" class="bl_menuArticle_backAllbtn">一覧へ戻る</a>
                     </div>
                 </div>
             </div>
