@@ -108,7 +108,7 @@
     .bl_menuArticle_contents_inner {
         position: relative;
         display: grid;
-        grid-template-columns: vwmin(240, pc) 1fr;
+        grid-template-columns: vwmin(240, pc) vwmin(800, pc);
         gap: vwmin(80, pc);
         padding-top: vwmin(150, pc);
         padding-bottom: vwmin(200, pc);
@@ -117,7 +117,8 @@
         width: 100%;
 
         @include underSP {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: vwmin(60, sp_m);
             max-width: 100%;
             padding-top: vwmin(50, sp_m);

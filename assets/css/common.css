@@ -3731,7 +3731,7 @@ Case
 .bl_menuArticle_contents .bl_menuArticle_contents_inner {
   position: relative;
   display: grid;
-  grid-template-columns: clamp(0px, 16.6666666667vw, 360px) 1fr;
+  grid-template-columns: clamp(0px, 16.6666666667vw, 360px) clamp(0px, 55.5555555556vw, 1200px);
   gap: clamp(0px, 5.5555555556vw, 120px);
   padding-top: clamp(0px, 10.4166666667vw, 225px);
   padding-bottom: clamp(0px, 13.8888888889vw, 300px);
@@ -3741,7 +3741,8 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_contents .bl_menuArticle_contents_inner {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: clamp(0px, 14.0186915888vw, 66px);
     max-width: 100%;
     padding-top: clamp(0px, 11.6822429907vw, 55px);
