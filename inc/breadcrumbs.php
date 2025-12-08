@@ -77,6 +77,16 @@
             </li>
         <?php endif; ?>
 
+
+        <?php if (is_page('thanks')): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <a href="<?php echo home_url(); ?>/recruit/" class="bl_commonBreadcrumbsLink">採用情報</a>
+            </li>
+            <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
+            </li>
+        <?php endif; ?>
+
         <?php if (is_page()): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>

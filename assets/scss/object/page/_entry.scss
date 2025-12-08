@@ -619,3 +619,115 @@
         }
     }
 }
+
+
+//--------------------------------
+// サンクスページ
+//--------------------------------
+
+.bl_thanksWrapper {
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        padding-bottom: vwmin(180, sp_m);
+    }
+
+    .bl_thanksWrapper_inner {
+        max-width: vwmin(900, pc);
+        margin-inline: auto;
+        width: 100%;
+
+        @include underSP {
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
+
+        .el_thanksWrapper_ttl {
+            color: #1A0F04;
+            text-align: center;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(30, pc);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: calc(1.5 / 30 * 1em);
+            margin-bottom: vwmin(50, pc);
+
+            @include underSP {
+                font-size: vwmin(30, sp_m);
+                margin-bottom: vwmin(40, sp_m);
+            }
+
+            .sp_only{
+                display: none;
+
+                @include underSP {
+                    display: block;
+                }
+            }
+        }
+
+        .bl_thanksWrapper_inner_content {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(20, pc);
+            margin-bottom: vwmin(50, pc);
+
+            @include underSP {
+                gap: vwmin(20, sp_m);
+                margin-bottom: vwmin(40, sp_m);
+                 max-width: vwmin(580, sp_m);
+                 margin-inline: auto;
+            }
+
+            .el_thanksWrapper_inner_content_txt {
+                color: #1A0F04;
+                text-align: center;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.9;
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                    text-align: left;
+                }
+            }
+        }
+
+        .bl_thanksWrapper_inner_btn {
+            display: block;
+            color: var(--black, #1A0F04);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(0.9 / 18 * 1em);
+            padding: vwmin(10, pc);
+            background-color: #E5D8CD;
+            color: #1A0F04;
+            transition: all 0.3s ease;
+            max-width: vwmin(200, pc);
+            width: 100%;
+            margin-inline: auto;
+            text-align: center;
+             border-radius: vwmin(2, pc);
+
+             @media (any-hover: hover) {
+                &:hover {
+                    opacity: 0.7;
+                    transition: all 0.3s ease;
+                }
+             }
+
+             @include underSP {
+                font-size: vwmin(18, sp_m);
+                padding: vwmin(10, sp_m);
+                max-width: vwmin(200, sp_m);
+                border-radius: vwmin(2, sp_m);
+             }
+        }
+    }
+}

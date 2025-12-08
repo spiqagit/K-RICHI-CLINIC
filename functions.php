@@ -477,3 +477,7 @@ add_shortcode('privacy_link', 'privacy_policy_link_shortcode');
 
 // Contact Form 7でショートコードを有効化
 add_filter('wpcf7_form_elements', 'do_shortcode');
+
+// Contact Form 7 デバッグ用：メール送信をスキップ（開発環境用）
+// ※本番では削除またはコメントアウトしてください
+add_filter('wpcf7_skip_mail', '__return_true');

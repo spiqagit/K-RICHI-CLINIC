@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         caseSplide.on('overflow', (isOverflow) => {
             caseSplide.go(0);
-            caseSplide.options({ drag: isOverflow });
+            caseSplide.options = { drag: isOverflow };
         });
         caseSplide.mount();
     }
