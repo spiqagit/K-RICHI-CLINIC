@@ -230,7 +230,7 @@
 /*--------------------------------
 一覧ページ
 --------------------------------*/
-.ly_caseColumnWrapper_inner{
+.ly_caseColumnWrapper_inner {
     max-width: vwmin(1120, pc);
     margin-inline: auto;
     width: 100%;
@@ -240,7 +240,7 @@
     }
 }
 
-.bl_casePostList{
+.bl_casePostList {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: vwmin(40, pc);
@@ -249,9 +249,231 @@
         grid-template-columns: repeat(1, 1fr);
         gap: vwmin(40, sp_m);
     }
+
     .bl_caseItem {
-        .bl_caseItem_details{
+        .bl_caseItem_details {
             background-color: #E5D8CD;
+        }
+    }
+}
+
+
+
+/*--------------------------------
+症例詳細ページ
+--------------------------------*/
+.bl_caseMainSection {
+    padding-bottom: vwmin(200, pc);
+
+    width: 100%;
+
+    @include underSP {
+        max-width: 100%;
+        padding-bottom: vwmin(180, sp_m);
+        padding-inline: vwmin(30, sp_m);
+    }
+
+    .bl_caseMainSection_inner {
+        max-width: vwmin(1120, pc);
+        margin-inline: auto;
+
+        @include underSP {
+            max-width: 100%;
+        }
+    }
+}
+
+
+.bl_caseArticleWrapper {
+    display: grid;
+    grid-template-columns: vwmin(472, pc) 1fr;
+    gap: vwmin(80, pc);
+    padding-block: vwmin(100, pc);
+
+
+    @include underSP {
+        grid-template-columns: 1fr;
+        gap: vwmin(40, sp_m);
+        padding-block: vwmin(100, sp_m);
+    }
+
+    .bl_caseLeftWrapper {
+        height: 100%;
+
+        .bl_caseImgSlieWrapper {
+            position: sticky;
+            top: vwmin(100, pc);
+
+            @include underSP {
+                position: relative;
+                top: 0;
+            }
+
+            .bl_caseMaiSlidenWrapper {
+                display: grid;
+                grid-template-columns: vwmin(46, pc) 1fr vwmin(46, pc);
+                align-items: center;
+                gap: vwmin(20, pc);
+                margin-bottom: vwmin(30, pc);
+
+                @include underSP {
+                    grid-template-columns: vwmin(40, sp_m) 1fr vwmin(40, sp_m);
+                    gap: vwmin(20, sp_m);
+                    margin-bottom: vwmin(30, sp_m);
+                }
+
+                .bl_caseImgSlide {
+
+                    .bl_caseImgSlide_item {
+
+                        img {
+                            padding: vwmin(10, pc);
+                            border-radius: vwmin(4, pc);
+                            border: 1px solid #987F65;
+                            aspect-ratio: 318/398;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            overflow: hidden;
+
+                            @include underSP {
+                                padding: vwmin(10, sp_m);
+                                border-radius: vwmin(4, sp_m);
+                                border: 1px solid #987F65;
+                            }
+                        }
+
+                        .el_caseImgSlide_item_caption {
+                            color: var(--txtColor);
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(14, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1.2;
+                            letter-spacing: calc(0.7 / 14 * 1em);
+                            margin-top: vwmin(10, pc);
+
+                            @include underSP {
+                                font-size: vwmin(14, sp_m);
+                            }
+                        }
+                    }
+                }
+
+                .el_caseImgSlideNaviWrapper_btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: transparent;
+                    border: 1px solid #987F65;
+                    width: vwmin(46, pc);
+                    aspect-ratio: 1/1;
+                    padding: vwmin(10, pc);
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    width: 100%;
+
+                    svg {
+                        display: block;
+                    }
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            background-color: #987F65;
+                            transition: background-color 0.3s ease;
+                            border-color: #fff;
+
+                            svg {
+                                path {
+                                    stroke: #fff;
+                                    transition: stroke 0.3s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bl_caseThumbnailSlide {
+
+
+                .splide__slide {
+                    transform: scale(1);
+                }
+
+                .bl_caseThumbnailSlide_item {
+                    aspect-ratio: 318/398;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    overflow: hidden;
+                    transform: scale(1);
+
+                }
+
+                .is-active {
+                    border: none;
+                    transform: scale(1);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: #987F65;
+                        opacity: .7;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bl_relatedCaseSection {
+    background-color: #E5D8CD;
+    padding: vwmin(40, pc);
+    border-radius: vwmin(4, pc);
+
+    @include underSP {
+        padding: vwmin(40, sp_m);
+        border-radius: vwmin(2, sp_m);
+    }
+
+
+    .el_relatedCaseSection_ttl {
+        color: #1A0F04;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: calc(1.2 / 24 * 1em);
+        margin-bottom: vwmin(40, pc);
+        max-width: vwmin(230, pc);
+        margin-inline: auto;
+        padding-block: vwmin(10, pc);
+        border-bottom: 1px solid #987F65;
+        border-top: 1px solid #987F65;
+        text-align: center;
+
+        @include underSP {
+            font-size: vwmin(24, sp_m);
+            margin-bottom: vwmin(30, sp_m);
+            max-width: vwmin(230, sp_m);
+        }
+    }
+
+    .bl_relatedCaseSection_list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: vwmin(40, pc);
+
+        @include underSP {
+            grid-template-columns: repeat(1, 1fr);
+            gap: vwmin(50, sp_m);
         }
     }
 }

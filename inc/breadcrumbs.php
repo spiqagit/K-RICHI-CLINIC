@@ -71,6 +71,25 @@
             </li>
         <?php endif; ?>
 
+
+        <?php if (is_post_type_archive('case')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">症例</p>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_singular("case")): ?>  
+            <li class="bl_commonBreadcrumbsItem">
+                <a href="<?php echo home_url(); ?>/case/" class="bl_commonBreadcrumbsLink">症例</a>
+            </li>
+            <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
+            </li>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>
+            </li>
+        <?php endif; ?>
+
         <?php if (is_404()): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>

@@ -160,11 +160,6 @@ function disable_pages_by_conditions()
         set_404_and_exit();
     }
 
-    // case投稿タイプの個別記事
-    if (is_singular('case') || is_tax('case-cat')) {
-        set_404_and_exit();
-    }
-
     // concern投稿タイプの個別記事
     if ( is_tax('concern-cat')) {
         set_404_and_exit();
