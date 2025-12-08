@@ -340,3 +340,140 @@ foreach ($post_types_with_menu_select as $post_type) {
         }
     }, 10, 2);
 }
+
+
+// Contact Form 7 で生年月日の年の選択肢を動的に生成
+add_filter('wpcf7_form_tag', 'dynamic_birth_year_options', 10, 1);
+function dynamic_birth_year_options($tag) {
+    if ($tag['name'] === 'birth-year') {
+        $currentYear = intval(date('Y'));
+        $options = array('');  // 最初に空のオプション（プレースホルダー用）
+        
+        for ($year = 1936; $year <= $currentYear; $year++) {
+            $options[] = strval($year);
+        }
+        
+        $tag['raw_values'] = $options;
+        $tag['values'] = $options;
+        $tag['labels'] = $options;
+    }
+    return $tag;
+}
+
+
+/**
+ * Contact Form 7のフォームにh-adrクラスを追加
+ */
+add_filter( 'wpcf7_form_class_attr', 'add_h_adr_class_to_cf7', 10, 1 );
+
+function add_h_adr_class_to_cf7( $class ) {
+    // フォームID 76 に h-adr クラスを追加
+    $contact_form = wpcf7_get_current_contact_form();
+    if ( $contact_form && $contact_form->id() == 1974 ) {
+        $class .= ' h-adr';
+    }
+    return $class;
+}
+
+
+
+/**
+ * Contact Form 7 生年月日フィールドのカスタム検証
+ */
+add_filter('wpcf7_validate_select', 'custom_birthdate_validation', 20, 2);
+add_filter('wpcf7_validate_select*', 'custom_birthdate_validation', 20, 2);
+
+function custom_birthdate_validation($result, $tag) {
+    $tag = new WPCF7_FormTag($tag);
+    $name = $tag->name;
+    
+    // 生年月日フィールドの検証
+    if (in_array($name, array('birth-year', 'birth-month', 'birth-date'))) {
+        $year = isset($_POST['birth-year']) ? trim($_POST['birth-year']) : '';
+        $month = isset($_POST['birth-month']) ? trim($_POST['birth-month']) : '';
+        $date = isset($_POST['birth-date']) ? trim($_POST['birth-date']) : '';
+        
+        // いずれかが空の場合
+        if (empty($year) || empty($month) || empty($date)) {
+            // 最初のフィールド(year)でのみエラーを表示
+            if ($name === 'birth-year') {
+                $result->invalidate($tag, '生年月日を入力してください');
+            }
+        } else {
+            // すべて入力されている場合、日付の妥当性チェック
+            if (!checkdate((int)$month, (int)$date, (int)$year)) {
+                if ($name === 'birth-year') {
+                    $result->invalidate($tag, '正しい日付を入力してください');
+                }
+            }
+        }
+    }
+    
+    return $result;
+}
+
+/**
+ * 生年月日エラーメッセージの表示位置をカスタマイズ
+ */
+add_filter('wpcf7_ajax_json_echo', 'wpcf7_birthdate_error_position', 10, 2);
+
+function wpcf7_birthdate_error_position($items, $result) {
+    $class = 'wpcf7-custom-item-error';
+    // birth-yearのエラーをfulldateの位置に表示
+    $target_names = array('birth-year');
+    
+    if (isset($items['invalid_fields'])) {
+        foreach ($items['invalid_fields'] as $k => $v) {
+            $orig = $v['into'];
+            // フィールド名を抽出
+            foreach ($target_names as $name) {
+                if (strpos($orig, $name) !== false) {
+                    // エラー表示位置を変更
+                    $items['invalid_fields'][$k]['into'] = ".{$class}.fulldate";
+                    break;
+                }
+            }
+        }
+    }
+    return $items;
+}
+
+/**
+ * hidden フィールド "fulldate" に値を設定
+ */
+add_filter('wpcf7_posted_data', 'combine_birthdate_fields');
+
+function combine_birthdate_fields($posted_data) {
+    if (isset($posted_data['birth-year']) && 
+        isset($posted_data['birth-month']) && 
+        isset($posted_data['birth-date'])) {
+        
+        // 配列の場合は最初の要素を取得
+        $year = is_array($posted_data['birth-year']) ? $posted_data['birth-year'][0] : $posted_data['birth-year'];
+        $month = is_array($posted_data['birth-month']) ? $posted_data['birth-month'][0] : $posted_data['birth-month'];
+        $date = is_array($posted_data['birth-date']) ? $posted_data['birth-date'][0] : $posted_data['birth-date'];
+        
+        if (!empty($year) && !empty($month) && !empty($date)) {
+            $month = str_pad($month, 2, '0', STR_PAD_LEFT);
+            $date = str_pad($date, 2, '0', STR_PAD_LEFT);
+            $posted_data['fulldate'] = $year . '-' . $month . '-' . $date;
+        }
+    }
+    
+    return $posted_data;
+}
+
+/* ---------- プライバシーポリシーリンク用ショートコード ---------- */
+function privacy_policy_link_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'text' => 'プライバシーポリシー',
+        'class' => 'bl_privacyBtn',
+    ), $atts);
+    
+    $url = home_url('/privacy-policy');
+    return '<a href="' . esc_url($url) . '" class="' . esc_attr($atts['class']) . '" target="_blank" rel="noopener">' . esc_html($atts['text']) . '</a>';
+}
+add_shortcode('privacy_link', 'privacy_policy_link_shortcode');
+
+// Contact Form 7でショートコードを有効化
+add_filter('wpcf7_form_elements', 'do_shortcode');

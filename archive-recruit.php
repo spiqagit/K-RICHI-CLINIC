@@ -172,7 +172,7 @@
                                                     </li>
                                                 <?php endwhile; ?>
                                             </ul>
-                                            <a href="<?php echo home_url();?>/entry/&postid=<?php the_ID(); ?>" class="bl_jobCategorySection_entryBtn">エントリー</a>
+                                            <a href="<?php echo home_url();?>/entry/?postid=<?php the_ID(); ?>" class="bl_jobCategorySection_entryBtn">エントリー</a>
                                         <?php endif; ?>
                                     </div>
                                 </div>

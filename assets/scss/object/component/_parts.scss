@@ -628,8 +628,9 @@
             border-radius: vwmin(4, pc);
 
             @include underSP {
-                max-width: 100%;
-                padding-block: vwmin(120, pc);
+                max-width: calc(100% - vwmin(30, sp_m) * 2);
+                padding-block: vwmin(53, sp_m);
+                padding-inline: vwmin(20, sp_m);
             }
 
             .el_commonLowPageWhiteMain_ttl {
@@ -642,7 +643,7 @@
                 letter-spacing: calc(2 / 40 * 1em);
 
                 @include underSP {
-                    font-size: vwmin(36, sp_m);
+                    font-size: vwmin(24, sp_m);
                 }
             }
         }

@@ -5,6 +5,11 @@
     padding-top: vwmin(100, pc);
     padding-bottom: vwmin(200, pc);
 
+    @include underSP {
+        padding-top: vwmin(50, sp_m);
+        padding-bottom: vwmin(180, sp_m);
+    }
+
 
     .bl_entryFormSection_inner {
         max-width: vwmin(800, pc);
@@ -19,6 +24,13 @@
 }
 
 .bl_entryFormWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(100, pc);
+
+    @include underSP {
+        gap: vwmin(50, sp_m);
+    }
 
     .bl_entryFormWrapper_item {
 
@@ -35,6 +47,12 @@
             padding-block: vwmin(10, pc);
             border-bottom: 1px solid #987F65;
             border-top: 1px solid #987F65;
+
+            @include underSP {
+                font-size: vwmin(20, sp_m);
+                margin-bottom: vwmin(40, sp_m);
+                padding-block: vwmin(10, sp_m);
+            }
         }
 
 
@@ -43,18 +61,30 @@
             flex-direction: column;
             gap: vwmin(40, pc);
 
-            .bl_entryFormInputList_item {
+            @include underSP {
+                gap: vwmin(40, sp_m);
+            }
 
+            .bl_entryFormInputList_item {
 
                 .bl_entryFormInputList_item_ttlWrapper {
                     display: flex;
                     align-items: center;
                     gap: vwmin(20, pc);
+                    margin-bottom: vwmin(14, pc);
+
+                    @include underSP {
+                        margin-bottom: vwmin(14, sp_m);
+                    }
 
                     .el_entryFormInputList_item_ttl {
                         display: flex;
                         align-items: center;
                         gap: vwmin(20, pc);
+
+                        @include underSP {
+                            gap: vwmin(20, sp_m);
+                        }
 
                         .el_entryFormInputList_item_ttl_txt {
                             display: block;
@@ -66,6 +96,10 @@
                             font-weight: 400;
                             line-height: 1.2;
                             letter-spacing: calc(0.8 / 16 * 1em);
+
+                            @include underSP {
+                                font-size: vwmin(16, sp_m);
+                            }
                         }
 
                         .el_entryFormInputList_item_ttl_option {
@@ -82,6 +116,12 @@
                             padding-block: vwmin(3, pc);
                             border-radius: vwmin(2, pc);
 
+                            @include underSP {
+                                font-size: vwmin(12, sp_m);
+                                padding-inline: vwmin(6, sp_m);
+                                padding-block: vwmin(3, sp_m);
+                            }
+
                             &.is-required {
                                 color: #fff;
                                 background-color: #402D10;
@@ -93,6 +133,22 @@
                             }
                         }
                     }
+
+                    .el_entryFormInputList_item_ttl_subTxt {
+                        color: #1A0F04;
+                        font-feature-settings: 'palt' on;
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(12, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.2;
+                        letter-spacing: calc(0.6 / 12 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(12, sp_m);
+                        }
+                    }
+
                 }
 
 
@@ -101,6 +157,10 @@
                     display: flex;
                     align-items: center;
                     gap: vwmin(30, pc);
+
+                    @include underSP {
+                        gap: vwmin(20, sp_m);
+                    }
 
                     input,
                     textarea,
@@ -116,26 +176,446 @@
                         font-family: var(--notoSerifJP);
                     }
 
-                    p{
+                    p {
                         width: 100%;
                     }
 
-                    .wpcf7-form-control-wrap{
+                    .wpcf7-form-control-wrap {
                         display: block;
                         width: 100%;
                     }
 
-                    .el_inputText {
+                    .el_inputText,
+                    .el_inputTextarea,
+                    .el_selectBox {
                         display: block;
                         width: 100%;
                         border-radius: vwmin(4, pc);
-                        border: 1px solid  #987F65;
-                        background: var(--white);
+                        border: 1px solid #987F65;
+                        background-color: #fff;
+                        padding-block: vwmin(16, pc);
+                        padding-inline: vwmin(20, pc);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.2;
+                        letter-spacing: calc(0.8 / 16 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                            padding-block: vwmin(16, sp_m);
+                            padding-inline: vwmin(20, sp_m);
+                            border-radius: vwmin(4, sp_m);
+                        }
+
+                        &::placeholder {
+                            color: #AEAEAE;
+                            font-feature-settings: 'palt' on;
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(16, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1.2;
+                            letter-spacing: calc(0.8 / 16 * 1em);
+
+                            @include underSP {
+                                font-size: vwmin(16, sp_m);
+                            }
+                        }
+                    }
+
+                    .el_inputTextarea {
+                        min-height: vwmin(250, pc);
+                    }
+
+                    .el_selectBox {
+                        padding-right: vwmin(45, pc);
+                    }
+
+                    .bl_entryFormInputList_selectContainer {
+                        display: flex;
+                        align-items: center;
+                        gap: vwmin(10, pc);
+
+                        .bl_entryFormInputList_selectWrapper {
+                            position: relative;
+                            display: block;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: vwmin(22, pc);
+                                right: vwmin(20, pc);
+                                width: vwmin(11, pc);
+                                height: vwmin(10, pc);
+                                background-image: url('../img/common/form-selectArrow.svg');
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: center;
+
+                                @include underSP {
+                                    top: vwmin(22, sp_m);
+                                    right: vwmin(20, sp_m);
+                                    width: vwmin(11, sp_m);
+                                    height: vwmin(10, sp_m);
+                                }
+                            }
+                        }
+
+                        .el_entryFormInputList_selectContainer_txt {
+                            width: fit-content;
+                            color: #1A0F04;
+                            font-feature-settings: 'palt' on;
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(16, pc);
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 1.2;
+                            letter-spacing: calc(0.8 / 16 * 1em);
+
+                            @include underSP {
+                                font-size: vwmin(16, sp_m);
+                            }
+                        }
+                    }
+
+                    .el_radioBtn {
+                        display: grid;
+                        grid-template-columns: repeat(3, max-content);
+                        gap: vwmin(20, pc);
+
+                        @include underSP {
+                            gap: vwmin(20, sp_m);
+                        }
+
+                        .wpcf7-list-item {
+                            display: block;
+                            width: fit-content;
+                            margin-left: 0;
+                        }
+
+                        label {
+                            display: grid;
+                            grid-template-columns: vwmin(18, pc) 1fr;
+                            align-items: center;
+                            gap: vwmin(10, pc);
+                            width: fit-content;
+                            color: #1A0F04;
+                            font-feature-settings: 'palt' on;
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(16, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1.2;
+                            letter-spacing: calc(0.8 / 16 * 1em);
+
+                            @include underSP {
+                                font-size: vwmin(16, sp_m);
+                                grid-template-columns: vwmin(18, sp_m) 1fr;
+                            }
+                        }
+
+                        input[type="radio"] {
+                            position: relative;
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 1 / 1;
+                            border: 1px solid #987F65;
+                            border-radius: 100%;
+                            margin: 0;
+                        }
+
+                        input[type="radio"]:checked::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: vwmin(10, pc);
+                            height: vwmin(10, pc);
+                            border-radius: 100%;
+                            background-color: #402D10;
+
+                            @include underSP {
+                                width: vwmin(10, sp_m);
+                                height: vwmin(10, sp_m);
+                            }
+                        }
+                    }
+
+
+
+                    .el_inputFile {
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(16, pc);
+                        font-style: normal;
+                        font-weight: 400;
+
+                        @include underSP {
+                            font-size: vwmin(16, sp_m);
+                        }
+                    }
+                }
+
+                .bl_entryFormInputList_item_fileWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: vwmin(10, pc);
+
+                    @include underSP {
+                        gap: vwmin(10, sp_m);
+                    }
+
+                    .el_inputFile {
+                        width: 100%;
+                    }
+
+                    .el_entryFormInputList_item_fileWrapper_txt {
+                        color: #1A0F04;
+                        text-align: center;
+                        font-feature-settings: 'palt' on;
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(12, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1.2;
+                        letter-spacing: calc(0.6 / 12 * 1em);
+                        padding-left: vwmin(20, pc);
+
+                        @include underSP {
+                            font-size: vwmin(12, sp_m);
+                            padding-left: vwmin(20, sp_m);
+                        }
+                    }
+                }
+
+                .bl_entryFormInputList_birthDateWrapper {
+
+                    .bl_entryFormInputList_selectWrapper {
+
+                        &:first-child {
+                            width: 100%;
+                            max-width: vwmin(104, pc);
+
+                            @include underSP {
+                                max-width: vwmin(104, sp_m);
+                            }
+                        }
+
+                        &:last-child {
+                            width: 100%;
+                            max-width: vwmin(104, pc);
+
+                            @include underSP {
+                                max-width: vwmin(104, sp_m);
+                            }
+                        }
+                    }
+                }
+
+                .p-postal-code {
+                    width: 100%;
+                    max-width: vwmin(138, pc);
+
+                    @include underSP {
+                        max-width: vwmin(138, sp_m);
                     }
                 }
             }
+        }
+    }
 
 
+
+
+    .privacy {
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+        margin-bottom: vwmin(50, pc);
+
+        @include underSP {
+            margin-bottom: vwmin(50, sp_m);
+        }
+    }
+
+
+    .bl_privacyPolicyContainer {
+
+        .el_privacyPolicyContainer_txt {
+            color: #1A0F04;
+            font-feature-settings: 'palt' on;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.2;
+            width: fit-content;
+            margin-inline: auto;
+            letter-spacing: calc(0.8 / 16 * 1em);
+            margin-bottom: vwmin(20, pc);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+                margin-bottom: vwmin(20, sp_m);
+            }
+
+
+            .bl_privacyBtn {
+                color: #61B5DC;
+                font-feature-settings: 'palt' on;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.2;
+                letter-spacing: calc(0.8 / 16 * 1em);
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+                text-underline-position: from-font;
+                transition: opacity 0.3s ease;
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.3s ease;
+                    }
+                }
+            }
+        }
+
+        .submit {
+            display: block;
+            width: 100%;
+            max-width: vwmin(240, pc);
+            margin-inline: auto;
+            background-color: #402D10;
+            border-radius: vwmin(100, pc);
+            color: #FFF;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: calc(0.9 / 18 * 1em);
+            padding-block: vwmin(15, pc);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            opacity: .5;
+            pointer-events: none;
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                padding-block: vwmin(15, sp_m);
+                max-width: vwmin(240, sp_m);
+                border-radius: vwmin(100, sp_m);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid #402D10;
+                    color: #402D10;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        .is-active {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+
+.el_checkBox {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: vwmin(30, pc);
+
+    @include underSP {
+        display: flex;
+        flex-wrap: wrap;
+        gap: vwmin(30, sp_m);
+    }
+
+    .wpcf7-list-item {
+        display: block;
+        width: fit-content;
+        margin-left: 0;
+
+        label {
+            display: grid;
+            grid-template-columns: vwmin(16, pc) 1fr;
+            align-items: center;
+            gap: vwmin(10, pc);
+            width: fit-content;
+            margin-left: 0;
+            color: #1A0F04;
+            font-feature-settings: 'palt' on;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: calc(0.8 / 16 * 1em);
+            cursor: pointer;
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+                grid-template-columns: vwmin(16, sp_m) 1fr;
+                gap: vwmin(10, sp_m);
+            }
+
+            input[type="checkbox"] {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+                margin: 0;
+                border: 1px solid #987F65 !important;
+                border-radius: vwmin(2, pc);
+
+                @include underSP {
+                    border-radius: vwmin(2, sp_m);
+                }
+            }
+
+            input[type="checkbox"]:checked {
+                background-color: #402D10 !important;
+            }
+
+            input[type="checkbox"]:checked::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: vwmin(10, pc);
+                height: vwmin(10, pc);
+                border-radius: 100%;
+                background-image: url('../img/common/checkIcon.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                @include underSP {
+                    width: vwmin(10, sp_m);
+                    height: vwmin(10, sp_m);
+                }
+            }
         }
     }
 }

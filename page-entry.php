@@ -3,11 +3,22 @@
 /**
  * Template Name: エントリーフォーム
  */
+
+$postid = isset($_GET['postid']) ? intval($_GET['postid']) : 0;
+
+if (empty($postid)) {
+    wp_redirect(home_url());
+    exit;
+}
+
+$post_title = get_the_title($postid);
 ?>
+
 
 
 <?php get_header('meta'); ?>
 <?php wp_head(); ?>
+<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 </head>
 
 
@@ -22,24 +33,6 @@
 
         <section class="bl_entryFormSection">
             <div class="bl_entryFormSection_inner">
-                <!-- <div class="bl_entryFormWrapper">
-                    <div class="bl_entryFormWrapper_item">
-                        <h2 class="el_entryFormWrapper_item_ttl">お問い合わせフォーム</h2>
-                        <div class="bl_entryFormInputList">
-                            <div class="bl_entryFormInputList_item">
-                                <div class="bl_entryFormInputList_item_ttlWrapper">
-                                    <label for="name" class="el_entryFormInputList_item_ttl">
-                                        <span class="el_entryFormInputList_item_ttl_txt">名前</span>
-                                        <span class="el_entryFormInputList_item_ttl_option is-required">必須</span>
-                                    </label>
-                                </div>
-                                <div class="bl_entryFormInputList_item_inputWrapper">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <?php the_content(); ?>
             </div>
         </section>
@@ -50,6 +43,35 @@
     </main>
 
     <?php get_footer(); ?>
+    <script>
+        (function() {
+            var postTitle = '<?php echo esc_js($post_title); ?>';
+            
+            function setJobValue() {
+                var jobInput = document.querySelector("input[name='job']");
+                if (jobInput) {
+                    jobInput.value = postTitle;
+                    return true;
+                }
+                return false;
+            }
+            
+            // DOMContentLoaded時に試行
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setJobValue);
+            } else {
+                setJobValue();
+            }
+            
+            // Contact Form 7が遅延読み込みの場合に備えて再試行
+            window.addEventListener('load', function() {
+                if (!setJobValue()) {
+                    // それでも見つからない場合は少し待ってから再試行
+                    setTimeout(setJobValue, 500);
+                }
+            });
+        })();
+    </script>
 </body>
 
 </html>
