@@ -216,4 +216,10 @@
     mark{
         background: linear-gradient(transparent 60%, rgba(198, 183, 167, 0.6) 40%);
     }
+
+
+    table {
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(16, pc);
+    }
 }
