@@ -37,6 +37,7 @@ function remove_editor_for_staff()
     remove_post_type_support('staff', 'editor');
     remove_post_type_support('concern', 'editor');
     remove_post_type_support('recruit', 'editor');
+    remove_post_type_support('faq', 'editor');
 }
 add_action('init', 'remove_editor_for_staff');
 
@@ -197,6 +198,11 @@ function disable_default_post_pages()
 
     // staff投稿タイプの個別記事
     if (is_singular('staff') || is_tax('staff-cat')) {
+        set_404_and_exit();
+    }
+
+    // staff投稿タイプの個別記事
+    if (is_singular('faq') || is_tax('faq-cat')) {
         set_404_and_exit();
     }
 
