@@ -1,1 +1,111 @@
 @use '../../foundation/function/index' as *;
+
+
+
+.bl_newsArchiveWrapper {
+    max-width: vwmin(1040, pc);
+    width: 100%;
+    margin-inline: auto;
+
+    @include underSP {
+        max-width: 100%;
+    }
+}
+
+.bl_newsArchiveList {
+
+    .bl_newsArchiveItem {
+        border-bottom: 1px solid #987F65;
+
+        &:first-child {
+            border-top: 1px solid #987F65;
+        }
+
+        .bl_newsArchiveItem_link {
+            display: grid;
+            grid-template-columns: vwmin(87, pc) 1fr;
+            align-items: center;
+            gap: vwmin(30, pc);
+            padding-inline: vwmin(30, pc);
+            padding-block: vwmin(40, pc);
+            transition: background-color 0.5s ease;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #E5D8CD;
+                    transition: background-color 0.5s ease;
+                }
+            }
+
+            @include underSP {
+                grid-template-columns:  1fr;
+                gap: vwmin(10, sp_m);
+                padding-inline: vwmin(20, sp_m);
+                padding-block: vwmin(30, sp_m);
+            }
+
+            .el_newsArchiveItem_date {
+                display: block;
+                color: #1A0F04;
+                font-family: var(--OldSt);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.32 / 16 * 1em);
+                padding-top: vwmin(4, pc);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+            }
+
+            .el_newsArchiveItem_ttl {
+                color: #1A0F04;
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(18, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.9 / 18 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(18, sp_m);
+                }   
+            }
+        }
+    }
+
+}
+
+
+//--------------------------------
+// ニュース記事
+//--------------------------------
+
+.bl_newsArticleWrapper_container{
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        padding-bottom: vwmin(180, sp_m);
+    }
+}
+
+.bl_newsArticleWrapper {
+    padding-top: vwmin(100, pc);
+
+    @include underSP {
+        padding-top: vwmin(50, sp_m);
+    }
+
+    .bl_newsArticleWrapper_inner{
+        max-width: vwmin(1000, pc);
+        margin-inline: auto;
+        width: 100%;
+
+        @include underSP {
+            max-width: 100%;
+            padding-inline: vwmin(30, sp_m);
+        }
+    }
+}

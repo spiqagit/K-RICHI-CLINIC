@@ -83,6 +83,13 @@ function change_posts_per_page($query)
         $query->set('posts_per_page', 9);
     }
 
+    // news投稿タイプのアーカイブページ（年月アーカイブ含む）で10件表示
+    if (is_post_type_archive('news') || (is_date() && get_query_var('post_type') === 'news')) {
+        $query->set('posts_per_page', 10);
+        $query->set('orderby', 'date');
+        $query->set('order', 'DESC');
+    }
+
     // search-caseページでsパラメータに基づいてフィルタリング
     if (get_query_var('search_case')) {
         $query->set('post_type', 'case');
@@ -162,11 +169,6 @@ function disable_pages_by_conditions()
 
     // concern投稿タイプの個別記事
     if ( is_tax('concern-cat')) {
-        set_404_and_exit();
-    }
-
-    // news投稿タイプの個別記事
-    if (is_singular('news') || is_tax('news-cat') || is_post_type_archive('news')) {
         set_404_and_exit();
     }
 
@@ -458,21 +460,54 @@ function combine_birthdate_fields($posted_data) {
     return $posted_data;
 }
 
-/* ---------- プライバシーポリシーリンク用ショートコード ---------- */
-function privacy_policy_link_shortcode($atts) {
-    $atts = shortcode_atts(array(
-        'text' => 'プライバシーポリシー',
-        'class' => 'bl_privacyBtn',
-    ), $atts);
+
+
+/**
+ * カスタム投稿タイプに日付ベースのリライトルールを追加
+ * example.com/news/2025/10/ の形式でアクセス可能にする
+ */
+
+function add_custom_post_date_rewrite_rules() {
+    // 対象のカスタム投稿タイプを指定
+    $post_types = array('news'); // ここに実際の投稿タイプ名を設定
     
-    $url = home_url('/privacy-policy');
-    return '<a href="' . esc_url($url) . '" class="' . esc_attr($atts['class']) . '" target="_blank" rel="noopener">' . esc_html($atts['text']) . '</a>';
+    foreach ($post_types as $post_type) {
+        $post_type_obj = get_post_type_object($post_type);
+        
+        if (!$post_type_obj || !$post_type_obj->has_archive) {
+            continue;
+        }
+        
+        // 投稿タイプのスラッグを取得
+        $archive_slug = $post_type_obj->rewrite['slug'];
+        
+        // 年月 + ページネーション: /news/2025/10/page/2/
+        add_rewrite_rule(
+            $archive_slug . '/([0-9]{4})/([0-9]{1,2})/page/([0-9]+)/?$',
+            'index.php?post_type=' . $post_type . '&year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]',
+            'top'
+        );
+        
+        // 年月: /news/2025/10/
+        add_rewrite_rule(
+            $archive_slug . '/([0-9]{4})/([0-9]{1,2})/?$',
+            'index.php?post_type=' . $post_type . '&year=$matches[1]&monthnum=$matches[2]',
+            'top'
+        );
+        
+        // 年 + ページネーション: /news/2025/page/2/
+        add_rewrite_rule(
+            $archive_slug . '/([0-9]{4})/page/([0-9]+)/?$',
+            'index.php?post_type=' . $post_type . '&year=$matches[1]&paged=$matches[2]',
+            'top'
+        );
+        
+        // 年: /news/2025/
+        add_rewrite_rule(
+            $archive_slug . '/([0-9]{4})/?$',
+            'index.php?post_type=' . $post_type . '&year=$matches[1]',
+            'top'
+        );
+    }
 }
-add_shortcode('privacy_link', 'privacy_policy_link_shortcode');
-
-// Contact Form 7でショートコードを有効化
-add_filter('wpcf7_form_elements', 'do_shortcode');
-
-// Contact Form 7 デバッグ用：メール送信をスキップ（開発環境用）
-// ※本番では削除またはコメントアウトしてください
-add_filter('wpcf7_skip_mail', '__return_true');
+add_action('init', 'add_custom_post_date_rewrite_rules');

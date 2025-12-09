@@ -227,6 +227,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // カテゴリーナビゲーション
+    const catNaviList = document.querySelectorAll(".bl_commonCatNavi");
+    if (breakPoint <= window.innerWidth) {
+        catNaviList.forEach((catNavi) => {
+            const parentElement = catNavi.closest(".ly_commonTwoColumnWrapper_inner");
+            if (parentElement) {
+                ScrollTrigger.create({
+                    pin: true,
+                    trigger: catNavi,
+                    startTrigger: parentElement,
+                    start: "top-=120px top",
+                    endTrigger: parentElement,
+                    end: "bottom-=300px top",
+                    pinSpacing: false,
+                });
+            }
+        });
+    }
+
     // About Mission Section Slider
     const aboutMissionSectionSlideItem = document.querySelector(".bl_aboutMissionSection_slider");
     if (aboutMissionSectionSlideItem) {
@@ -266,6 +285,72 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         aboutInformationSectionSlide.mount(window.splide.Extensions);
     }
+
+
+
+    //カテゴリーアコーディオン（1024px以下のみ）
+    const catNaviBtn = document.querySelectorAll(".bl_commonCatNavi_item_btn");
+    const catNaviItems = [];
+    
+    // 初期化：要素を収集してイベントリスナーを登録
+    if (catNaviBtn) {
+        catNaviBtn.forEach((btn) => {
+            const parent = btn.closest(".bl_commonCatNavi_item");
+            const content = parent ? parent.querySelector(".bl_commonCatNaviListWrapper") : null;
+            
+            if (content) {
+                catNaviItems.push({ btn, content });
+                
+                btn.addEventListener("click", () => {
+                    // 1024px以下の時のみ動作
+                    if (window.innerWidth > breakPoint) return;
+
+                    const isActive = btn.classList.contains("is-active");
+
+                    if (isActive) {
+                        // 閉じる
+                        btn.classList.remove("is-active");
+                        gsap.to(content, {
+                            height: 0,
+                            opacity: 0,
+                            duration: 0.4,
+                            ease: "power3.out",
+                        });
+                    } else {
+                        // 開く
+                        btn.classList.add("is-active");
+                        gsap.to(content, {
+                            height: "auto",
+                            opacity: 1,
+                            duration: 0.4,
+                            ease: "power3.out",
+                        });
+                    }
+                });
+            }
+        });
+    }
+    
+    // 状態を更新する関数
+    const updateCatNaviState = () => {
+        catNaviItems.forEach(({ btn, content }) => {
+            if (window.innerWidth <= breakPoint) {
+                // SP: 閉じた状態にリセット
+                btn.classList.remove("is-active");
+                gsap.set(content, { height: 0, opacity: 0, overflow: "hidden" });
+            } else {
+                // PC: 開いた状態に
+                btn.classList.remove("is-active");
+                gsap.set(content, { height: "auto", opacity: 1, overflow: "visible" });
+            }
+        });
+    };
+    
+    // 初期状態を設定
+    updateCatNaviState();
+    
+    // リサイズ時に状態を更新
+    window.addEventListener("resize", updateCatNaviState);
 });
 
 // アコーディオンクラス
@@ -424,3 +509,6 @@ const openingAnim = (content) => gsap.fromTo(
         overwrite: true,
     }
 );
+
+
+

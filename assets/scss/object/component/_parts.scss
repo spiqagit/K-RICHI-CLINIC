@@ -636,14 +636,30 @@
             .el_commonLowPageWhiteMain_ttl {
                 color: var(--black);
                 font-family: var(--notoSerifJP);
-                font-size: vwmin(40, pc);   
+                font-size: vwmin(40, pc);
                 font-style: normal;
                 font-weight: 400;
-                line-height: 1;
+                line-height: 1.4;
                 letter-spacing: calc(2 / 40 * 1em);
 
                 @include underSP {
                     font-size: vwmin(24, sp_m);
+                }
+            }
+
+            .el_commonLowPageWhiteMain_ttl_date {
+                color: #1A0F04;
+                font-family: var(--OldSt);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.32 / 16 * 1em);
+                margin-bottom: vwmin(10, pc);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                    margin-bottom: vwmin(10, sp_m);
                 }
             }
         }
@@ -1261,6 +1277,12 @@ menuカード
     margin-inline: auto;
     padding-top: vwmin(100, pc);
 
+    @include underSP {
+        grid-template-columns: vwmin(97, sp_m) 1fr vwmin(97, sp_m);
+        padding-top: vwmin(60, sp_m);
+        gap: vwmin(10, sp_m);
+    }
+
 
     .bl_pagination_Btn {
         display: grid;
@@ -1325,6 +1347,272 @@ menuカード
             text-underline-offset: 4px;
             text-underline-position: from-font;
             padding-inline: vwmin(1, pc);
+        }
+    }
+}
+
+
+/*--------------------------------
+カテゴリーナビゲーション
+--------------------------------*/
+
+.bl_commonCatNavi {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(30, pc);
+
+    .bl_commonCatNavi_item_ttl {
+        color: #1A0F04;
+        font-family: var(--OldSt);
+        font-size: vwmin(18, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: calc(0.36 / 18 * 1em);
+        padding-top: vwmin(12, pc);
+        padding-bottom: vwmin(10, pc);
+        border-top: 1px solid #987F65;
+        border-bottom: 1px solid #987F65;
+        text-align: center;
+
+        @include underSP {
+            display: none;
+        }
+    }
+
+    .bl_commonCatNavi_item_btn {
+        display: none;
+
+        @include underSP {
+            display: grid;
+            grid-template-columns: 1fr vwmin(11, sp_m);
+            align-items: center;
+            justify-content: center;
+            gap: vwmin(10, sp_m);
+            color: #1A0F04;
+            font-family: var(--OldSt);
+            font-size: vwmin(18, sp_m);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(0.36 / 18 * 1em);
+            padding-top: vwmin(13, sp_m);
+            padding-bottom: vwmin(10, sp_m);
+            padding-inline: vwmin(24, sp_m);
+            border: none;
+            border-top: 1px solid #987F65;
+            border-bottom: 1px solid #987F65;
+            text-align: center;
+            background: none;
+            width: 100%;
+        }
+
+        .bl_commonCatNavi_item_btn_arrow {
+            rotate: 0deg;
+            transition: rotate 0.5s ease;
+        }
+    }
+
+    .is-active {
+        .bl_commonCatNavi_item_btn_arrow {
+            rotate: 180deg;
+            transition: rotate 0.5s ease;
+        }
+    }
+
+    .bl_commonCatNaviListWrapper {
+        @include underSP {
+            height: 0;
+            overflow: hidden;
+        }
+    }
+
+
+    .bl_commonCatNaviList {
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(20, pc);
+        padding-top: vwmin(30, pc);
+
+        @include underSP {
+            padding-top: vwmin(20, sp_m);
+            gap: vwmin(20, sp_m);
+        }
+
+
+        .bl_commonCatNaviItem {
+            position: relative;
+            display: block;
+            padding-left: vwmin(12, pc);
+            color: #1A0F04;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+                padding-left: vwmin(12, sp_m);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: vwmin(8, pc);
+                left: 0;
+                width: vwmin(4, pc);
+                aspect-ratio: 1 / 1;
+                height: auto;
+                background-color: #1A0F04;
+                border-radius: 100%;
+
+                @include underSP {
+                    top: vwmin(8, sp_m);
+                    width: vwmin(4, sp_m);
+                }
+            }
+
+            .bl_commonCatNaviItem_link_current {
+                color: #987F65;
+            }
+        }
+    }
+}
+
+.bl_singlArrowNav {
+    display: grid;
+    grid-template-columns: vwmin(135, pc) vwmin(200, pc) vwmin(135, pc);
+    align-items: center;
+    justify-content: center;
+    gap: vwmin(165, pc);
+    padding-top: vwmin(100, pc);
+
+    @include underSP {
+        padding-top: vwmin(60, sp_m);
+        grid-template-columns: max-content vwmin(120, sp_m) max-content;
+        gap: vwmin(10, sp_m);
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+
+    .el_singlArrowNav_btn_txt {
+        color: var(--black);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(14, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: calc(0.7 / 14 * 1em);
+
+        @include underSP {
+            font-size: vwmin(14, sp_m);
+            letter-spacing: calc(0.7 / 14 * 1em);
+        }
+    }
+
+
+    .bl_singlArrowNav_btn {
+        display: grid;
+        grid-template-columns: vwmin(12, pc) auto;
+        align-items: center;
+        justify-content: center;
+        gap: vwmin(20, pc);
+        width: fit-content;
+        padding-bottom: vwmin(4, pc);
+
+        @include underSP {
+            grid-template-columns: vwmin(12, sp_m) auto;
+            gap: vwmin(20, sp_m);
+        }
+    }
+
+    .bl_singlArrowNav_prev {
+        position: relative;
+        grid-column: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background-color: #987F65;
+            transition: width 0.5s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+                    transition: width 0.5s ease;
+                }
+            }
+        }
+    }
+
+    .bl_singlArrowNav_next {
+        position: relative;
+        grid-template-columns: auto vwmin(12, pc);
+        grid-column: 3;
+
+        @include underSP {
+            grid-template-columns: auto vwmin(12, sp_m);
+            width: fit-content;
+            margin-left: auto;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #987F65;
+            transition: width 0.5s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    width: 100%;
+                    transition: width 0.5s ease;
+                }
+            }
+        }
+    }
+
+
+    .bl_singlArrowNav_allViewBtn {
+        display: block;
+        color: #1A0F04;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(18, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: calc(0.9 / 18 * 1em);
+        background-color: #E5D8CD;
+        text-align: center;
+        padding-block: vwmin(15, pc);
+        border-radius: vwmin(2, pc);
+        transition: opacity 0.5s ease;
+        grid-column: 2;
+
+        @include underSP {
+            font-size: vwmin(18, sp_m);
+            padding-block: vwmin(10, sp_m);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.7;
+                transition: opacity 0.5s ease;
+            }
         }
     }
 }

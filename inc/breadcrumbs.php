@@ -90,6 +90,24 @@
             </li>
         <?php endif; ?>
 
+        <?php if (is_post_type_archive('news')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">お知らせ</p>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_singular("news")): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <a href="<?php echo home_url(); ?>/news/" class="bl_commonBreadcrumbsLink">お知らせ</a>
+            </li>
+            <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
+            </li>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>
+            </li>
+        <?php endif; ?>
+
         <?php if (is_404()): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>
