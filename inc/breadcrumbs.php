@@ -108,6 +108,13 @@
             </li>
         <?php endif; ?>
 
+
+        <?php if (is_post_type_archive('faq')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">よくある質問</p>
+            </li>
+        <?php endif; ?>
+
         <?php if (is_404()): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText">ページが見つかりませんでした</p>
