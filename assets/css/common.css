@@ -5613,6 +5613,13 @@ Information
 
 .bl_newsArticleWrapper_thumbnail {
   width: 100%;
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+  overflow: hidden;
+}
+@media screen and (width <= 1024px) {
+  .bl_newsArticleWrapper_thumbnail {
+    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+  }
 }
 .bl_newsArticleWrapper_thumbnail img {
   width: 100%;

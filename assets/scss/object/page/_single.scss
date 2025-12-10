@@ -226,6 +226,12 @@
 
 .bl_newsArticleWrapper_thumbnail{
     width: 100%;
+    border-radius: vwmin(4, pc);
+    overflow: hidden;
+
+    @include underSP {
+        border-radius: vwmin(2, sp_m);
+    }
 
     img{
         width: 100%;
