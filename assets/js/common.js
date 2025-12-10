@@ -208,6 +208,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setUpAccordion();
 
+    // リンクコピー機能
+    const copyLinkBtns = document.querySelectorAll(".js_copyLinkBtn");
+    copyLinkBtns.forEach((btn) => {
+        btn.addEventListener("click", async () => {
+            const url = btn.dataset.url || window.location.href;
+            const toast = document.querySelector(".js_copyToast");
+
+            try {
+                await navigator.clipboard.writeText(url);
+                
+                if (toast) {
+                    toast.classList.add("is-show");
+                    setTimeout(() => {
+                        toast.classList.remove("is-show");
+                    }, 2000);
+                }
+            } catch (err) {
+                // フォールバック（古いブラウザ対応）
+                const textArea = document.createElement("textarea");
+                textArea.value = url;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+                
+                if (toast) {
+                    toast.classList.add("is-show");
+                    setTimeout(() => {
+                        toast.classList.remove("is-show");
+                    }, 2000);
+                }
+            }
+        });
+    });
+
     // About Mission Section Slider
     const aboutMissionSectionSlideItem = document.querySelector(".bl_aboutMissionSection_slider");
     if (aboutMissionSectionSlideItem) {

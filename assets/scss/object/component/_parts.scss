@@ -1376,7 +1376,7 @@ menuカード
         top: auto;
         align-self: auto;
         gap: vwmin(20, sp_m);
-    }   
+    }
 
     .bl_commonCatNavi_item_ttl {
         color: #1A0F04;
@@ -1509,7 +1509,7 @@ menuカード
     @include underSP {
         padding-top: vwmin(60, sp_m);
         grid-template-columns: max-content vwmin(120, sp_m) max-content;
-        gap: vwmin(10, sp_m);
+        gap: vwmin(27, sp_m);
         width: fit-content;
         margin-inline: auto;
     }
@@ -1541,7 +1541,7 @@ menuカード
         padding-bottom: vwmin(4, pc);
 
         @include underSP {
-            grid-template-columns: vwmin(12, sp_m) auto;
+            grid-template-columns: vwmin(16, sp_m) auto;
             gap: vwmin(20, sp_m);
         }
     }
@@ -1577,7 +1577,7 @@ menuカード
         grid-column: 3;
 
         @include underSP {
-            grid-template-columns: auto vwmin(12, sp_m);
+            grid-template-columns: auto vwmin(16, sp_m);
             width: fit-content;
             margin-left: auto;
         }
@@ -1629,6 +1629,109 @@ menuカード
             &:hover {
                 opacity: 0.7;
                 transition: opacity 0.5s ease;
+            }
+        }
+    }
+}
+
+/*--------------------------------
+シェアボタン
+--------------------------------*/
+.bl_commonShareBtnWrapper {
+
+    .el_commonShareBtnWrapper_ttl {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(20, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: calc(1 / 20 * 1em);
+        width: fit-content;
+        margin-inline: auto;
+        margin-bottom: vwmin(30, pc);
+
+        @include underSP {
+            margin-bottom: vwmin(30, sp_m);
+            font-size: vwmin(20, sp_m);
+        }
+    }
+
+    .bl_commonShareBtnWrapper_btnWrapper {
+        display: grid;
+        grid-template-columns: vwmin(200, pc) vwmin(148, pc);
+        align-items: center;
+        justify-content: center;
+        gap: vwmin(30, pc);
+
+        @include underSP {
+            grid-template-columns: vwmin(200, sp_m) vwmin(148, sp_m);
+            gap: vwmin(30, sp_m);
+        }
+
+        .bl_commonShareBtnWrapper_copyBtn {
+            color: #fff;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: calc(0.9 / 18 * 1em);
+            background-color: #987F65;
+            padding-block: vwmin(15, pc);
+            padding-inline: vwmin(20, pc);
+            border-radius: vwmin(100, pc);
+            transition: opacity 0.5s ease;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.5s ease;
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                padding-block: vwmin(15, sp_m);
+                padding-inline: vwmin(20, sp_m);
+                border-radius: vwmin(100, sp_m);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #F4EEEA;
+                    transition: all 0.5s ease;
+                    border: 1px solid #987F65;
+                    color: #987F65;
+
+                }
+            }
+        }
+
+        .bl_copyToast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-weight: 400;
+            line-height: 1;
+            padding: vwmin(20, pc) vwmin(40, pc);
+            border-radius: vwmin(8, pc);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 9999;
+            pointer-events: none;
+
+            @include underSP {
+                font-size: vwmin(14, sp_m);
+                padding: vwmin(16, sp_m) vwmin(32, sp_m);
+                border-radius: vwmin(6, sp_m);
+            }
+
+            &.is-show {
+                opacity: 1;
+                visibility: visible;
             }
         }
     }

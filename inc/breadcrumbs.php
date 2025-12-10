@@ -121,6 +121,24 @@
             </li>
         <?php endif; ?>
 
+        <?php if (is_post_type_archive('column')  && is_archive()): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText">コラム</p>
+            </li>
+        <?php endif; ?>
+
+        <?php if (is_singular("column")): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <a href="<?php echo home_url(); ?>/column/" class="bl_commonBreadcrumbsLink">コラム</a>
+            </li>
+            <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
+            </li>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>
+            </li>
+        <?php endif; ?>
+
 
         <?php if (is_page('thanks')): ?>
             <li class="bl_commonBreadcrumbsItem">

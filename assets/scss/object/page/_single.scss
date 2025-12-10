@@ -223,3 +223,13 @@
         font-size: vwmin(16, pc);
     }
 }
+
+.bl_newsArticleWrapper_thumbnail{
+    width: 100%;
+
+    img{
+        width: 100%;
+        height:auto;
+        object-fit: cover;
+    }
+}

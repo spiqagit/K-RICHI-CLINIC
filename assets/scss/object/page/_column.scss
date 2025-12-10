@@ -1,7 +1,7 @@
 @use '../../foundation/function/index' as *;
 
 
-.bl_faqContentsWrapper_container{
+.bl_faqContentsWrapper_container {
     display: flex;
     flex-direction: column;
     gap: vwmin(100, pc);
@@ -111,9 +111,11 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            gap: vwmin(10, pc);
 
             @include underSP {
                 height: 100%;
+                gap: vwmin(10, sp_m);
             }
 
             .bl_columnBtnItem_postInfoWrapper {
@@ -235,21 +237,270 @@
         gap: vwmin(20, sp_m);
 
 
-        .bl_columnBtnItem_inner{
+        .bl_columnBtnItem_inner {
             display: grid;
             grid-template-columns: vwmin(100, sp_m) 1fr;
             padding: vwmin(10, sp_m);
         }
-    
-        .bl_columnBtnItem_postInfoWrapper{
+
+        .bl_columnBtnItem_postInfoWrapper {
             grid-template-columns: min-content 1fr !important;
             align-items: center !important;
             gap: vwmin(20, sp_m) !important;
         }
-    
-        .el_columnBtnItem_postInfoWrapper_date{
+
+        .el_columnBtnItem_postInfoWrapper_date {
             line-height: 1 !important;
             padding-top: vwmin(4, sp_m) !important;
+        }
+    }
+}
+
+/*--------------------------------
+記事ページ
+--------------------------------*/
+.bl_columnArticleWrapper_container {
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        padding-bottom: vwmin(180, sp_m);
+    }
+}
+
+
+/*--------------------------------
+記事ページ情報
+--------------------------------*/
+
+.bl_columnArticleInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(50, pc);
+    max-width: vwmin(1000, pc);
+    margin-inline: auto;
+    width: 100%;
+    padding-top: vwmin(100, pc);
+
+    @include underSP {
+        max-width: 100%;
+        padding-inline: vwmin(30, sp_m);
+        padding-top: vwmin(100, sp_m);
+        gap: vwmin(50, sp_m);
+    }
+}
+
+/*--------------------------------
+監修者情報
+--------------------------------*/
+.bl_columnArticleSpecialityWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(40, pc);
+
+    @include underSP {
+        gap: vwmin(40, sp_m);
+    }
+
+    .bl_columnArticleSpecialityItem {
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(20, pc);
+        padding: vwmin(20, pc);
+        border-radius: vwmin(4, pc);
+        border: 1px solid #987F65;
+
+        @include underSP {
+            padding: vwmin(20, sp_m);
+            gap: vwmin(20, sp_m);
+            border-radius: vwmin(4, sp_m);
+        }
+
+
+        .bl_columnArticleSpecialityWrapper_upper {
+            display: grid;
+            grid-template-columns: vwmin(90, pc) 1fr;
+            gap: vwmin(20, pc);
+            align-items: center;
+
+            @include underSP {
+                grid-template-columns: vwmin(90, sp_m) 1fr;
+                gap: vwmin(20, sp_m);
+            }
+
+            .bl_columnArticleSpecialityWrapper_upper_imgWrapper {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                height: auto;
+                border-radius: vwmin(4, pc);
+                border: 1px solid #987F65;
+                overflow: hidden;
+
+                @include underSP {
+                    aspect-ratio: 1 / 1;
+                    width: 100%;
+                    height: auto;
+                    border-radius: vwmin(4, sp_m);
+                }
+
+                .el_columnArticleSpecialityWrapper_upper_imgWrapper_img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .bl_columnArticleSpecialityWrapper_upper_txtWrapper {
+
+                .el_columnArticleSpecialityWrapper_upper_txtWrapper_ttl {
+                    color: var(--txtColor);
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(14, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 100%;
+                    letter-spacing: calc(0.7 / 14 * 1em);
+                    border-radius: vwmin(2, pc);
+                    background-color: rgb(229, 216, 205);
+                    padding: vwmin(8, pc);
+                    width: fit-content;
+                    margin-bottom: vwmin(12, pc);
+
+                    @include underSP {
+                        font-size: vwmin(14, sp_m);
+                        border-radius: vwmin(2, sp_m);
+                        padding: vwmin(8, sp_m);
+                        margin-bottom: vwmin(12, sp_m);
+                    }
+                }
+
+                .bl_columnArticleSpecialityWrapper_upper_txtWrapper_txt {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: vwmin(14, pc);
+                    align-items: flex-end;
+                    @include underSP {
+                        grid-template-columns: auto 1fr;
+                        gap: vwmin(14, sp_m);
+                    }
+
+                    .el_columnArticleSpecialityWrapper_upper_txtWrapper_txt_job {
+                        display: block;
+                        color: var(--txtColor);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(14, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        letter-spacing: calc(0.7 / 14 * 1em);
+
+                        @include underSP {
+                            font-size: vwmin(14, sp_m);
+                        }
+                    }
+
+                    .el_columnArticleSpecialityWrapper_upper_txtWrapper_txt_name {
+                        color: var(--black, #1A0F04);
+                        font-family: var(--notoSerifJP);
+                        font-size: vwmin(18, pc);
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 1;
+                        letter-spacing: calc(0.9 / 18 * 1em);
+                        @include underSP {
+                            font-size: vwmin(18, sp_m);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .bl_columnArticleSpecialityWrapper_lower {
+
+            .el_columnArticleSpecialityWrapper_lower_txt {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.9;
+                letter-spacing: calc(0.8 / 16 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+            }
+        }
+    }
+
+}
+
+
+/*--------------------------------
+関連コラム
+--------------------------------*/
+.bl_relatedColumnSection {
+    max-width: vwmin(1000, pc);
+    margin-inline: auto;
+    width: 100%;
+    padding: vwmin(40, pc);
+    background-color: #E5D8CD;
+    margin-top: vwmin(100, pc);
+    border-radius: vwmin(4, pc);
+
+    @include underSP {
+        padding: vwmin(40, sp_m);
+        margin-top: vwmin(100, sp_m);
+        border-radius: vwmin(4, sp_m);
+        max-width: calc(100% - vwmin(60, sp_m));
+    }
+
+    .el_relatedColumnSection_ttl {
+        color: #1A0F04;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: calc(1.2 / 24 * 1em);
+        text-align: center;
+        margin-bottom: vwmin(40, pc);
+        padding-block: vwmin(10, pc);
+        max-width: vwmin(205, pc);
+        margin-inline: auto;
+        border-bottom: 1px solid #987F65;
+        border-top: 1px solid #987F65;
+
+        @include underSP {
+            font-size: vwmin(24, sp_m);
+            margin-bottom: vwmin(40, sp_m);
+            max-width: vwmin(205, sp_m);
+        }
+    }
+
+    .bl_relatedColumnSection_list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: vwmin(20, pc);
+
+        @include underSP {
+            grid-template-columns:  1fr;
+            gap: vwmin(20, sp_m);
+        }
+
+        .bl_columnBtnItem {
+            background-color: #F4EEEA !important;
+
+            .bl_columnBtnItem_inner {
+                display:grid;
+                grid-template-columns: vwmin(100, sp_m) 1fr;
+                gap: vwmin(10, sp_m);
+                background-color: #F4EEEA !important;
+
+                .el_columnBtnItem_postInfoWrapper_cats_cat{
+                    background-color: #E5D8CD !important;
+                }
+            }
         }
     }
 }
