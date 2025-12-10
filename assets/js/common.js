@@ -208,44 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setUpAccordion();
 
-    // 絞り込みナビ
-    const filterNaviList = document.querySelectorAll(".bl_commonSelectNaviWrapper");
-    if (breakPoint <= window.innerWidth) {
-        filterNaviList.forEach((filterNavi) => {
-            const parentElement = filterNavi.closest(".ly_commonTwoColumnWrapper_inner");
-            if (parentElement) {
-                ScrollTrigger.create({
-                    pin: true,
-                    trigger: filterNavi,
-                    startTrigger: parentElement,
-                    start: "top-=120px top",
-                    endTrigger: parentElement,
-                    end: "bottom-=300px top",
-                    pinSpacing: false,
-                });
-            }
-        });
-    }
-
-    // カテゴリーナビゲーション
-    const catNaviList = document.querySelectorAll(".bl_commonCatNavi");
-    if (breakPoint <= window.innerWidth) {
-        catNaviList.forEach((catNavi) => {
-            const parentElement = catNavi.closest(".ly_commonTwoColumnWrapper_inner");
-            if (parentElement) {
-                ScrollTrigger.create({
-                    pin: true,
-                    trigger: catNavi,
-                    startTrigger: parentElement,
-                    start: "top-=120px top",
-                    endTrigger: parentElement,
-                    end: "bottom-=300px top",
-                    pinSpacing: false,
-                });
-            }
-        });
-    }
-
     // About Mission Section Slider
     const aboutMissionSectionSlideItem = document.querySelector(".bl_aboutMissionSection_slider");
     if (aboutMissionSectionSlideItem) {

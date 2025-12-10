@@ -555,7 +555,7 @@
 
     .bl_commonLowPageWrapper_contentsOuter {
         position: relative;
-        overflow: hidden;
+        overflow: clip;
         margin-top: vwmin(475, pc);
         padding-top: vwmin(10, pc);
 
@@ -811,8 +811,14 @@
     display: flex;
     flex-direction: column;
     gap: vwmin(20, pc);
+    position: sticky;
+    top: vwmin(120, pc);
+    align-self: start;
 
     @include underSP {
+        position: relative;
+        top: auto;
+        align-self: auto;
         gap: vwmin(20, sp_m);
     }
 
@@ -1279,9 +1285,9 @@ menuカード
     padding-top: vwmin(100, pc);
 
     @include underSP {
-        grid-template-columns: vwmin(97, sp_m) 1fr vwmin(97, sp_m);
+        grid-template-columns: vwmin(46, sp_m) 1fr vwmin(46, sp_m);
         padding-top: vwmin(60, sp_m);
-        gap: vwmin(10, sp_m);
+        gap: vwmin(30, sp_m);
     }
 
 
@@ -1318,10 +1324,10 @@ menuカード
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: vwmin(21, pc);
+        gap: vwmin(20, pc);
 
         @include underSP {
-            gap: vwmin(10, sp_m);
+            gap: vwmin(20, sp_m);
         }
 
         .bl_pagination_link {
@@ -1361,6 +1367,16 @@ menuカード
     display: flex;
     flex-direction: column;
     gap: vwmin(30, pc);
+    position: sticky;
+    top: vwmin(120, pc);
+    align-self: start;
+
+    @include underSP {
+        position: relative;
+        top: auto;
+        align-self: auto;
+        gap: vwmin(20, sp_m);
+    }   
 
     .bl_commonCatNavi_item_ttl {
         color: #1A0F04;
