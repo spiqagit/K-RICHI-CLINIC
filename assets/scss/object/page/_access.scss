@@ -1,0 +1,121 @@
+@use '../../foundation/function/index' as *;
+
+
+.bl_accessContents {
+    max-width: vwmin(1120, pc);
+    margin-inline: auto;
+    width: 100%;
+    padding-bottom: vwmin(120, pc);
+
+    @include underSP {
+        max-width: 100%;
+        padding-inline: vwmin(30, sp_m);
+        padding-bottom: vwmin(120, sp_m);
+    }
+
+    .el_accessContents_ttl {
+        color: #1A0F04;
+        text-align: center;
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: calc(1.2 / 24 * 1em);
+        margin-bottom: vwmin(40, pc);
+        padding-block: vwmin(10, pc);
+        border-bottom: 1px solid #987F65;
+        border-top: 1px solid #987F65;
+
+        @include underSP {
+            gap: vwmin(20, sp_m);
+            font-size: vwmin(24, sp_m);
+            margin-bottom: vwmin(40, sp_m);
+        }
+    }
+
+    .bl_accessContents_list {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: vwmin(40, pc);
+        overflow-x: auto;
+
+        @include underSP {
+            flex-direction: column;
+            gap: vwmin(40, sp_m);
+            overflow-x: clip;
+        }
+
+        .bl_accessContents_list_item {
+            position: relative;
+            padding: vwmin(20, pc);
+            border-radius: vwmin(4, pc);
+            background-color: #E5D8CD;
+            min-width: vwmin(300, pc);
+
+            @include underSP {
+                padding: vwmin(20, sp_m);
+                border-radius: vwmin(4, sp_m);
+                max-width: vwmin(300, sp_m);
+                min-width: 100%;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: -13.5%;
+                transform: translateY(-50%);
+                width: vwmin(40, pc);
+                height: 2px;
+                background-color: #E5D8CD;
+
+                @include underSP {
+                    width: vwmin(40, sp_m);
+                    top: auto;
+                    right: auto;
+                    left: 50%;
+                    bottom: -5.8%;
+                    rotate: 90deg;
+                    translate: -50% 0
+                }
+            }
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        .bl_accessContents_list_item_img {
+            display: block;
+            margin-bottom: vwmin(20, pc);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+
+            @include underSP {
+                margin-bottom: vwmin(20, sp_m);
+            }
+        }
+
+        .el_accessContents_list_item_txt {
+            color: #1A0F04;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+            }
+        }
+
+    }
+}

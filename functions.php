@@ -41,7 +41,32 @@ function remove_editor_for_staff()
 }
 add_action('init', 'remove_editor_for_staff');
 
+// 特定のページテンプレートでエディタを無効化
+function remove_editor_for_page_templates()
+{
+    if (!isset($_GET['post'])) {
+        return;
+    }
 
+    $post_id = $_GET['post'];
+    $post = get_post($post_id);
+
+    if (!$post || $post->post_type !== 'page') {
+        return;
+    }
+
+    // 無効にしたいページテンプレートを配列で指定
+    $disabled_templates = [
+        'page-access.php',
+    ];
+
+    $template = get_post_meta($post_id, '_wp_page_template', true);
+
+    if (in_array($template, $disabled_templates)) {
+        remove_post_type_support('page', 'editor');
+    }
+}
+add_action('admin_init', 'remove_editor_for_page_templates');
 
 // price-catタクソノミーの「表示」ボタンを非表示にする
 function remove_price_cat_view_action($actions, $tag)
