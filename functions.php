@@ -360,21 +360,83 @@ foreach ($post_types_with_menu_select as $post_type) {
         return $new_columns;
     });
 
-    // カラムに値を表示
+    // カラムに値を表示（クリックで絞り込みリンク）
     add_action("manage_{$post_type}_posts_custom_column", function ($column_name, $post_id) {
         if ($column_name === 'menu_select') {
             $related_posts = get_field('menu_select', $post_id);
             if ($related_posts) {
                 $output = '';
+                $current_post_type = get_post_type($post_id);
                 foreach ($related_posts as $related_post) {
                     $related_post_id = is_object($related_post) ? $related_post->ID : $related_post;
-                    $output .= get_the_title($related_post_id) . '<br>';
+                    $filter_url = admin_url("edit.php?post_type={$current_post_type}&filter_menu_select={$related_post_id}");
+                    $output .= '<a href="' . esc_url($filter_url) . '">' . esc_html(get_the_title($related_post_id)) . '</a><br>';
                 }
                 echo $output;
             }
         }
     }, 10, 2);
 }
+
+// 関連施術で絞り込みフィルターを追加
+add_action('restrict_manage_posts', function ($post_type) {
+    $post_types_with_menu_select = ['price', 'case'];
+    if (!in_array($post_type, $post_types_with_menu_select)) {
+        return;
+    }
+
+    // menuの投稿一覧を取得
+    $menus = get_posts([
+        'post_type'      => 'menu',
+        'posts_per_page' => -1,
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'post_status'    => 'publish',
+    ]);
+
+    if (empty($menus)) {
+        return;
+    }
+
+    $selected = isset($_GET['filter_menu_select']) ? $_GET['filter_menu_select'] : '';
+
+    echo '<select name="filter_menu_select">';
+    echo '<option value="">関連施術で絞り込み</option>';
+    foreach ($menus as $menu) {
+        $is_selected = selected($selected, $menu->ID, false);
+        echo '<option value="' . esc_attr($menu->ID) . '"' . $is_selected . '>' . esc_html($menu->post_title) . '</option>';
+    }
+    echo '</select>';
+});
+
+// 絞り込みクエリを修正
+add_action('pre_get_posts', function ($query) {
+    if (!is_admin() || !$query->is_main_query()) {
+        return;
+    }
+
+    $post_types_with_menu_select = ['price', 'case'];
+    $current_post_type = $query->get('post_type');
+
+    if (!in_array($current_post_type, $post_types_with_menu_select)) {
+        return;
+    }
+
+    if (empty($_GET['filter_menu_select'])) {
+        return;
+    }
+
+    $menu_id = intval($_GET['filter_menu_select']);
+
+    // ACFのリレーションフィールドはシリアライズされた配列で保存されるためLIKE検索
+    $meta_query = $query->get('meta_query') ?: [];
+    $meta_query[] = [
+        'key'     => 'menu_select',
+        'value'   => '"' . $menu_id . '"',
+        'compare' => 'LIKE',
+    ];
+    $query->set('meta_query', $meta_query);
+});
 
 
 // Contact Form 7 で生年月日の年の選択肢を動的に生成
