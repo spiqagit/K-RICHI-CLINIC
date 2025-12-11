@@ -186,7 +186,7 @@ function disable_pages_by_conditions()
     }
 
     // menu投稿タイプの個別記事
-    if (is_tax('menu-cat') || is_post_type_archive('menu')) {
+    if ( is_tax('department-cat')) {
         set_404_and_exit();
     }
 

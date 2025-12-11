@@ -481,6 +481,12 @@ const setUpAccordion = () => {
         iconRotation: 180,
         iconDuration: 0.4,
     });
+
+    new Accordion({
+        containerSelector: ".bl_menuArchive_item",
+        summarySelector: ".bl_menuArchive_item_upper_btn",
+        contentSelector: ".bl_menuArchive_item_lower"
+    });
 };
 
 const closingAnim = (content, element) => gsap.to(content, {

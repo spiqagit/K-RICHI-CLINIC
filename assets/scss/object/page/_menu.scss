@@ -1,6 +1,6 @@
 @use '../../foundation/function/index' as *;
 
-.bl_menuArticleMain{
+.bl_menuArticleMain {
     padding-bottom: calc(vwmin(40, pc) + vwmin(18, pc));
     background-color: #F4EEEA;
 
@@ -464,6 +464,232 @@
         &:hover {
             opacity: 0.7;
             transition: opacity 0.5s ease;
+        }
+    }
+}
+
+/*--------------------------------
+一覧
+--------------------------------*/
+.bl_menuArchive {
+    padding-bottom: vwmin(200, pc);
+
+    @include underSP {
+        padding-bottom: vwmin(180, sp_m);
+        padding-inline: vwmin(30, sp_m);
+    }
+
+    .bl_menuArchive_inner {
+        max-width: vwmin(800, pc);
+        width: 100%;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: vwmin(40, pc);
+
+        @include underSP {
+            max-width: 100%;
+            gap: vwmin(30, sp_m);
+        }
+    }
+}
+
+
+.bl_menuArchive_item {
+    border-radius: vwmin(10, pc);
+    overflow: hidden;
+
+    @include underSP {
+        border-radius: vwmin(10, sp_m);
+    }
+
+    .bl_menuArchive_item_upper {
+
+        .bl_bl_menuArchive_item_upper_txtWrapper {
+            display: grid;
+            grid-template-columns: 1fr .5fr;
+            padding-block: vwmin(57, pc);
+            padding-inline: vwmin(30, pc);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+            @include underSP {
+                padding-block: vwmin(67, sp_m);
+                padding-inline: vwmin(40, sp_m);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .bl_bl_menuArchive_item_upper_txtWrapper_inner {
+                .el_bl_menuArchive_item_upper_txtWrapper_inner_ttl {
+                    color: #1A0F04;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(36, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    letter-spacing: calc(0.72 / 36 * 1em);
+                    margin-bottom: vwmin(16, pc);
+                    text-transform: capitalize;
+
+                    @include underSP {
+                        font-size: vwmin(28, sp_m);
+                        margin-bottom: vwmin(16, sp_m);
+                    }
+                }
+
+                .el_bl_menuArchive_item_upper_txtWrapper_inner_txt {
+                    color: #1A0F04;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(12, sp_m);
+                    }
+                }
+            }
+        }
+
+        .bl_menuArchive_item_upper_btn {
+            display: grid;
+            grid-template-columns: max-content vwmin(26, pc);
+            align-items: center;
+            justify-content: center;
+            gap: vwmin(10, pc);
+            padding: vwmin(10, pc);
+            background-color: #FFFBF8;
+            border-radius: vwmin(2, pc);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            color: #1A0F04;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(18, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.9 / 18 * 1em);
+
+            @include underSP {
+                font-size: vwmin(18, sp_m);
+                padding: vwmin(10, sp_m);
+                gap: vwmin(20, sp_m);
+                grid-template-columns: max-content vwmin(26, sp_m);
+            }
+
+            .bl_menuArchive_item_upper_btn_txt {
+                display: block;
+                width: fit-content;
+            }
+
+            .bl_menuArchive_item_upper_btn_icon {
+                position: relative;
+                display: block;
+                background-color: #E5D8CD;
+                border-radius: 100%;
+                aspect-ratio: 1/1;
+                width: 100%;
+                height: auto;
+
+                &::before,
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: vwmin(10, pc);
+                    height: 1px;
+                    border-radius: vwmin(1, pc);
+                    background-color: #1A0F04;
+                    transition: all 0.3s ease;
+
+                    @include underSP {
+                        width: vwmin(10, sp_m);
+                        border-radius: vwmin(1, sp_m);
+                    }
+                }
+
+
+                &::after {
+                    rotate: 90deg;
+                    transform-origin: left top;
+                }
+            }
+        }
+    }
+
+    .bl_menuArchive_item_lower {
+        background-color: #FFFBF8;
+        overflow: hidden;
+        height: 0;
+
+        .bl_menuArchive_item_lower_inner {
+            padding-block: vwmin(40, pc);
+            padding-inline: vwmin(30, pc);
+
+            @include underSP {
+                padding-block: vwmin(40, sp_m);
+                padding-inline: vwmin(20, sp_m);
+            }
+
+            .bl_menuArchive_item_lower_list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: vwmin(30, pc);
+
+                @include underSP {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: vwmin(30, sp_m);
+                }
+
+                .bl_menuArchive_item_lower_list_item {
+
+                    .bl_menuArchive_item_lower_list_item_link {
+                        display: grid;
+                        grid-template-columns: 1fr vwmin(6, pc);
+                        align-items: center;
+                        gap: vwmin(20, pc);
+                        padding-bottom: vwmin(6, pc);
+                        border-bottom: 1px solid #E5D8CD;
+
+                        @include underSP {
+                            grid-template-columns: 1fr vwmin(6, sp_m);
+                            gap: vwmin(20, sp_m);
+                            padding-bottom: vwmin(6, sp_m);
+                        }
+
+                        .el_menuArchive_item_lower_list_item_link_txt {
+                            color: #1A0F04;
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(14, pc);
+                            font-weight: 400;
+                            line-height: 1.5;
+                            letter-spacing: calc(0.7 / 14 * 1em);
+
+                            @include underSP {
+                                font-size: vwmin(14, sp_m);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    +.is-opened{
+        .bl_menuArchive_item_upper_btn_icon {
+            &::after {
+                rotate: 0deg !important;
+                transform-origin: left top;
+            }
         }
     }
 }
