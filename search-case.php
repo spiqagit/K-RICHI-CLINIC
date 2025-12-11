@@ -20,7 +20,7 @@
                             <div class="ly_commonTwoColumnWrapper_left">
                                 <?php
                                 $menuCatList = get_terms(
-                                    'menu-cat',
+                                    'department-cat',
                                     array(
                                         'parent' => 0,
                                         'hide_empty' => true,
@@ -66,7 +66,7 @@
                                                             'posts_per_page' => -1,
                                                             'tax_query' => array(
                                                                 array(
-                                                                    'taxonomy' => 'menu-cat',
+                                                                    'taxonomy' => 'department-cat',
                                                                     'field' => 'term_id',
                                                                     'terms' => $menuCat->term_id,
                                                                 ),

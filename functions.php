@@ -346,7 +346,7 @@ add_filter('wp_terms_checklist_args', 'solecolor_wp_terms_checklist_args', 10, 2
 
 
 // 投稿一覧にカスタムカラムを追加（foods, price, case）
-$post_types_with_menu_select = ['foods', 'price', 'case'];
+$post_types_with_menu_select = ['price', 'case'];
 foreach ($post_types_with_menu_select as $post_type) {
     // カラムを追加
     add_filter("manage_{$post_type}_posts_columns", function ($columns) {

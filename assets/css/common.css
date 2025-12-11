@@ -2550,6 +2550,15 @@ menuカード
     width: clamp(0px, 0.9345794393vw, 4.4px);
   }
 }
+.bl_commonCatNavi .bl_commonCatNaviList .bl_commonCatNaviItem .bl_commonCatNaviItem_link {
+  transition: opacity 0.5s ease;
+}
+@media (any-hover: hover) {
+  .bl_commonCatNavi .bl_commonCatNaviList .bl_commonCatNaviItem .bl_commonCatNaviItem_link:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+}
 .bl_commonCatNavi .bl_commonCatNaviList .bl_commonCatNaviItem .bl_commonCatNaviItem_link_current {
   color: #987F65;
 }
@@ -4307,6 +4316,15 @@ Case
   }
 }
 
+.bl_caseItem .bl_caseItem_linkWrapper {
+  transition: opacity 0.5s ease;
+}
+@media (any-hover: hover) {
+  .bl_caseItem .bl_caseItem_linkWrapper:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
+}
 .bl_caseItem .bl_caseItem_linkWrapper .bl_caseItem_imgWrapper {
   width: 100%;
   height: auto;
@@ -8899,10 +8917,12 @@ Information
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: clamp(0px, 0.1388888889vw, 3px);
 }
 @media screen and (width <= 1024px) {
   .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item_img {
     margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
   }
 }
 .bl_accessContents .bl_accessContents_list .el_accessContents_list_item_txt {

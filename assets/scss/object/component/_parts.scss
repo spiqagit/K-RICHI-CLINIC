@@ -1491,6 +1491,17 @@ menuカード
                 }
             }
 
+            .bl_commonCatNaviItem_link {
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.7;
+                        transition: opacity 0.5s ease;
+                    }
+                }
+
+                transition: opacity 0.5s ease;
+            }
+
             .bl_commonCatNaviItem_link_current {
                 color: #987F65;
             }

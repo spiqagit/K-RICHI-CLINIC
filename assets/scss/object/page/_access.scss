@@ -97,9 +97,11 @@
             width: 100%;
             height: auto;
             object-fit: cover;
+            border-radius: vwmin(2, pc);
 
             @include underSP {
                 margin-bottom: vwmin(20, sp_m);
+                border-radius: vwmin(2, sp_m);
             }
         }
 

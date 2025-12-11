@@ -20,7 +20,7 @@
                             <div class="ly_commonTwoColumnWrapper_left">
                                 <?php
                                 $menuCatList = get_terms(
-                                    'menu-cat',
+                                    'department-cat',
                                     array(
                                         'parent' => 0,
                                         'hide_empty' => true,
@@ -54,35 +54,35 @@
                                 <?php if (!empty($menuCatList)) : ?>
                                     <nav class="bl_commonSelectNaviWrapper">
                                         <?php foreach ($menuCatList as $menuCat) : ?>
-
-                                            <div class="bl_commonSelectNaviWrapper_item">
-                                                <label for="<?php echo $menuCat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_label"><?php echo $menuCat->name; ?></label>
-                                                <div class="bl_commonSelectNaviWrapper_selectWrapper">
-                                                    <select name="<?php echo $menuCat->slug; ?>" id="<?php echo $menuCat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_select" onchange="if(this.value) window.location.href = '<?php echo home_url('/search-case/'); ?>?s=' + this.value;">
-                                                        <option value="">施術を選ぶ</option>
-                                                        <?php
-                                                        $menuPosts = get_posts(array(
-                                                            'post_type' => 'menu',
-                                                            'posts_per_page' => -1,
-                                                            'tax_query' => array(
-                                                                array(
-                                                                    'taxonomy' => 'menu-cat',
-                                                                    'field' => 'term_id',
-                                                                    'terms' => $menuCat->term_id,
-                                                                ),
-                                                            ),
-                                                            'post__in'  => $case_SelectList,
-                                                        ));
-                                                        ?>
-                                                        <?php if (!empty($menuPosts)): ?>
-                                                            <?php foreach ($menuPosts as $menuPost): ?>
-                                                                <option value="<?php echo $menuPost->ID; ?>"><?php echo get_the_title($menuPost->ID); ?></option>
-                                                            <?php endforeach; ?>
-                                                        <?php endif; ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-
+                                            <?php if (!empty($menuCat)): ?>
+                                                <?php
+                                                $menuPosts = get_posts(array(
+                                                    'post_type' => 'menu',
+                                                    'posts_per_page' => -1,
+                                                    'tax_query' => array(
+                                                        array(
+                                                            'taxonomy' => 'department-cat',
+                                                            'field' => 'term_id',
+                                                            'terms' => $menuCat->term_id,
+                                                        ),
+                                                    ),
+                                                    'post__in'  => $case_SelectList,
+                                                ));
+                                                ?>
+                                                <?php if (!empty($menuPosts)): ?>
+                                                    <div class="bl_commonSelectNaviWrapper_item">
+                                                        <label for="<?php echo $menuCat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_label"><?php echo $menuCat->name; ?></label>
+                                                        <div class="bl_commonSelectNaviWrapper_selectWrapper">
+                                                            <select name="<?php echo $menuCat->slug; ?>" id="<?php echo $menuCat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_select" onchange="if(this.value) window.location.href = '<?php echo home_url('/search-case/'); ?>?s=' + this.value;">
+                                                                <option value="">施術を選ぶ</option>
+                                                                <?php foreach ($menuPosts as $menuPost): ?>
+                                                                    <option value="<?php echo $menuPost->ID; ?>"><?php echo get_the_title($menuPost->ID); ?></option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
                                         <?php endforeach; ?>
                                     </nav>
                                 <?php endif; ?>
