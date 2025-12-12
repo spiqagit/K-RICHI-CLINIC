@@ -684,7 +684,7 @@
         }
     }
 
-    +.is-opened{
+    &.is-opened{
         .bl_menuArchive_item_upper_btn_icon {
             &::after {
                 rotate: 0deg !important;

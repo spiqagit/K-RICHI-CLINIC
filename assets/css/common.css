@@ -3034,6 +3034,7 @@ menuカード
   border-inline: 1px solid #987F65;
   background-color: transparent;
   transition: background-color 0.5s ease;
+  height: 100%;
 }
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_topNewsItem {
@@ -4519,7 +4520,7 @@ Case
     font-size: clamp(0px, 3.2710280374vw, 15.4px);
   }
 }
-.bl_menuArchive_item + .is-opened .bl_menuArchive_item_upper_btn_icon::after {
+.bl_menuArchive_item.is-opened .bl_menuArchive_item_upper_btn_icon::after {
   rotate: 0deg !important;
   transform-origin: left top;
 }

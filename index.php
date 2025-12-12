@@ -507,7 +507,7 @@
                             ?>
                                 <div class="bl_treatmentBtnItem">
                                     <div class="bl_fadeIn_item">
-                                        <a href="<?php echo home_url(); ?>/treatment-cat/<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
+                                        <a href="<?php echo home_url(); ?>/treatment/#<?php echo esc_attr($treatment_cat->slug); ?>" class="bl_treatmentBtnItem_btn"
                                             style="background-image: url(<?php echo $banner; ?>);">
                                             <div class="bl_treatmentBtnItem_btn_inner">
                                                 <div class="bl_treatmentBtnItem_btn_inner_upper">

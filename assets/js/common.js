@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     setUpAccordion();
+    openMenuArchiveFromHash();
 
     // リンクコピー機能
     const copyLinkBtns = document.querySelectorAll(".js_copyLinkBtn");
@@ -515,5 +516,33 @@ const openingAnim = (content) => gsap.fromTo(
     }
 );
 
+// URLハッシュからメニューアーカイブにスクロール＆オープン
+const openMenuArchiveFromHash = () => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const targetId = hash.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement && targetElement.classList.contains('bl_menuArchive_item')) {
+        const headerOffset = 150;
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+
+        // 少し遅延させてからスクロール＆オープン
+        setTimeout(() => {
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+
+            // アコーディオンを開く
+            const btn = targetElement.querySelector('.bl_menuArchive_item_upper_btn');
+            if (btn) {
+                btn.click();
+            }
+        }, 100);
+    }
+};
 
 

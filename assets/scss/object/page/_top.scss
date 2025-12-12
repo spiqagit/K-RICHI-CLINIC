@@ -271,6 +271,7 @@
         border-inline: 1px solid #987F65;
         background-color: transparent;
         transition: background-color 0.5s ease;
+        height: 100%;
 
         @include underSP {
             padding: vwmin(20, sp_m);

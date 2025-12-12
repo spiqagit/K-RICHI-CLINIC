@@ -31,7 +31,7 @@
                             ?>
                             <?php if (!empty($departmentCatList)) : ?>
                                 <?php foreach ($departmentCatList as $departmentCat) : ?>
-                                    <div class="bl_menuArchive_item">
+                                    <div class="bl_menuArchive_item" id="<?php echo esc_attr($departmentCat->slug); ?>">
                                         <div class="bl_menuArchive_item_upper">
                                             <div class="bl_bl_menuArchive_item_upper_txtWrapper" style="background-image: url('<?php echo get_field('menu-cat-banner', 'menu-cat_' . $departmentCat->term_id); ?>');">
                                                 <div class="bl_bl_menuArchive_item_upper_txtWrapper_inner">
