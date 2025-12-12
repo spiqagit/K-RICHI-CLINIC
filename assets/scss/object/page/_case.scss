@@ -407,6 +407,7 @@
 
                 .splide__slide {
                     transform: scale(1);
+                    border: none;
                 }
 
                 .bl_caseThumbnailSlide_item {
@@ -416,7 +417,6 @@
                     object-fit: cover;
                     overflow: hidden;
                     transform: scale(1);
-
                 }
 
                 .is-active {

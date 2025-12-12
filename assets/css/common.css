@@ -4888,6 +4888,7 @@ Case
 }
 .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide .splide__slide {
   transform: scale(1);
+  border: none;
 }
 .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide .bl_caseThumbnailSlide_item {
   aspect-ratio: 318/398;

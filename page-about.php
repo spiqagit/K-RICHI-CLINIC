@@ -140,7 +140,7 @@
                             'slug' => 'director',
                         ]);
                         ?>
-                        <section class="bl_topDoctorSection bl_aboutDoctorSection">
+                        <section class="bl_topDoctorSection bl_aboutDoctorSection" id="manager">
                             <div class="bl_topDoctorSection_inner bl_aboutDoctorSection_inner">
                                 <div class="blcommonSectionTtlWrapper">
                                     <hgroup class="bl_commonSectionTtl">

@@ -120,7 +120,7 @@
                 </div>
                 <div class="bl_footer_aboutClinicLinkContainer">
                     <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/about/">クリニックについて</a>
-                    <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/manager/">院長紹介</a>
+                    <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/about/#manager">院長紹介</a>
                     <a class="el_footer_aboutClinicLinkContainer_link" href="<?php echo home_url(); ?>/staff/">スタッフ紹介</a>
                 </div>
             </div>
