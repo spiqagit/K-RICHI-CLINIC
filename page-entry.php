@@ -44,7 +44,7 @@ $post_title = get_the_title($postid);
 
     <?php get_footer(); ?>
     <script>
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             var postTitle = '<?php echo esc_js($post_title); ?>';
 
             function setJobValue() {
