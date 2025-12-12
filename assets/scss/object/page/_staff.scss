@@ -82,11 +82,16 @@
 
             @include underSP {
                 gap: vwmin(36, sp_m);
+                justify-content: space-between;
             }
 
             .bl_staffrContentsWrapper_snsListWrapper_list {
                 display: flex;
                 gap: vwmin(10, pc);
+
+                @include underSP {
+                    gap: vwmin(10, sp_m);
+                }
 
 
                 .bl_staffrContentsWrapper_snsListWrapper_list_item {
@@ -106,6 +111,13 @@
                     box-sizing: border-box;
                     transition: background-color 0.5s ease;
 
+                    @include underSP {
+                        max-width: vwmin(30, sp_m);
+                        padding: vwmin(7, sp_m);
+                        border-radius: vwmin(4, sp_m);
+                        padding: vwmin(7, sp_m);
+                    }
+
 
                     svg {
                         display: block;
@@ -115,16 +127,15 @@
                         object-fit: contain;
                         aspect-ratio: 1 / 1;
 
+                        @include underSP {
+                            max-width: vwmin(20, sp_m);
+                        }
+
                         path {
                             fill: var(--svgColor);
                             transition: fill 0.5s ease;
                         }
                     }
-
-                    @include underSP {
-                        max-width: vwmin(20, sp_m);
-                    }
-
                     @media (any-hover: hover) {
                         &:hover {
                             background-color: var(--svgColor);
@@ -198,6 +209,7 @@
         }
 
         .bl_staffrContentsWrapper_snsListWrapper {
+
 
             .bl_staffrContentsWrapper_snsListWrapper_list {
 

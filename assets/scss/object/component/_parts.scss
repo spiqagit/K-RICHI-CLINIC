@@ -199,9 +199,11 @@
                 line-height: 1.5;
                 letter-spacing: calc(0.7 / 14 * 1em);
                 width: fit-content;
+                margin-bottom: vwmin(3, pc);
 
                 @include underSP {
                     font-size: vwmin(14, sp_m);
+                    margin-bottom: vwmin(3, sp_m);
                 }
             }
         }

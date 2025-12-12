@@ -1348,10 +1348,12 @@ html {
   line-height: 1.5;
   letter-spacing: 0.05em;
   width: fit-content;
+  margin-bottom: clamp(0px, 0.2083333333vw, 4.5px);
 }
 @media screen and (width <= 1024px) {
   .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name .el_doctorContentsWrapper_nameWrapper_name_last {
     font-size: clamp(0px, 3.2710280374vw, 15.4px);
+    margin-bottom: clamp(0px, 0.7009345794vw, 3.3px);
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_txtWrapper_txt {
@@ -5935,11 +5937,17 @@ Information
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper {
     gap: clamp(0px, 8.4112149533vw, 39.6px);
+    justify-content: space-between;
   }
 }
 .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list {
   display: flex;
   gap: clamp(0px, 0.6944444444vw, 15px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list {
+    gap: clamp(0px, 2.3364485981vw, 11px);
+  }
 }
 .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item {
   --bgColor: #E5D8CD;
@@ -5957,6 +5965,14 @@ Information
   box-sizing: border-box;
   transition: background-color 0.5s ease;
 }
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item {
+    max-width: clamp(0px, 7.0093457944vw, 33px);
+    padding: clamp(0px, 1.6355140187vw, 7.7px);
+    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+    padding: clamp(0px, 1.6355140187vw, 7.7px);
+  }
+}
 .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item svg {
   display: block;
   width: 100%;
@@ -5965,14 +5981,14 @@ Information
   object-fit: contain;
   aspect-ratio: 1/1;
 }
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item svg {
+    max-width: clamp(0px, 4.6728971963vw, 22px);
+  }
+}
 .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item svg path {
   fill: var(--svgColor);
   transition: fill 0.5s ease;
-}
-@media screen and (width <= 1024px) {
-  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item {
-    max-width: clamp(0px, 4.6728971963vw, 22px);
-  }
 }
 @media (any-hover: hover) {
   .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item:hover {
