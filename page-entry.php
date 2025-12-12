@@ -70,12 +70,11 @@ $post_title = get_the_title($postid);
                     setTimeout(setJobValue, 500);
                 }
             });
+        });
 
-            // Contact Form 7のフォーム送信後にthanksページへリダイレクト
-            document.addEventListener('wpcf7mailsent', function(event) {
-                window.location.href = '<?php echo home_url(); ?>/entry/thanks/';
-            }, false);
-        })();
+        document.addEventListener('wpcf7mailsent', function(event) {
+            location = '<?php echo home_url(); ?>/entry/thanks/';
+        }, false);
     </script>
 </body>
 
