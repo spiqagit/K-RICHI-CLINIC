@@ -63,6 +63,7 @@
 
 
     >ol {
+
         list-style: none;
         counter-reset: item;
         list-style-position: outside;
@@ -95,15 +96,11 @@
 
 
             >ol {
-                list-style-type: lower-latin;
-                list-style-position: outside;
-                padding-left: vwmin(22, pc);
-
-                @include underSP {
-                    padding-left: vwmin(22, sp_m);
-                }
+                list-style-type: none;
+                counter-reset: parenthesized-number;
 
                 li {
+                    position: relative;
                     color: #1A0F04;
                     font-family: var(--notoSerifJP);
                     font-size: vwmin(16, pc);
@@ -111,27 +108,58 @@
                     font-weight: 400;
                     line-height: 1.9;
                     letter-spacing: calc(0.8 / 16 * 1em);
+                    counter-increment: parenthesized-number;
+                    padding-left: vwmin(24, pc);
 
                     @include underSP {
+                        padding-left: vwmin(24, sp_m);
                         font-size: vwmin(16, sp_m);
                     }
 
-                    >ol {
-                        text-align: left;
-                        list-style-type: lower-roman;
-                        list-style-position: outside;
-                        padding-left: vwmin(32, pc);
-                        color: var(--black);
-                        font-family: var(--notoSerifJP);
-                        font-size: vwmin(16, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1.9;
-                        letter-spacing: calc(0.8 / 16 * 1em);
+                    &::before {
+                        content: "(" counter(parenthesized-number) ")";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        margin-right: vwmin(4, pc);
 
                         @include underSP {
-                            font-size: vwmin(16, sp_m);
-                            padding-left: vwmin(32, sp_m);
+                            margin-right: vwmin(4, sp_m);
+                        }
+                    }
+
+                    >ol {
+                        position: relative;
+                        list-style-type: none;
+                        counter-reset: circled-number;
+
+                        li {
+                            position: relative;
+                            color: var(--black);
+                            font-family: var(--notoSerifJP);
+                            font-size: vwmin(16, pc);
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 1.9;
+                            letter-spacing: calc(0.8 / 16 * 1em);
+                            counter-increment: circled-number;
+
+                            @include underSP {
+                                font-size: vwmin(16, sp_m);
+                            }
+
+                            $circled-numbers: "①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨", "⑩";
+
+                            @for $i from 1 through 10 {
+                                &:nth-child(#{$i})::before {
+                                    content: nth($circled-numbers, $i);
+                                    margin-right: vwmin(2, pc);
+
+                                    @include underSP {
+                                        margin-right: vwmin(2, sp_m);
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -179,6 +207,210 @@
                     &:hover {
                         opacity: 0.7;
                         transition: opacity 0.3s ease;
+                    }
+                }
+            }
+        }
+
+        p {
+            color: #1A0F04;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.9;
+            letter-spacing: calc(0.8 / 16 * 1em);
+            margin-top: 0;
+            text-align: left;
+            
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+            }
+        }
+    }
+
+
+    .bl_privacyContentsWrapper_table {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: vwmin(4, pc);
+        margin-top: vwmin(20, pc);
+
+        @include underSP {
+            margin-top: vwmin(20, sp_m);
+            border-radius: vwmin(4, sp_m);
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: vwmin(16, pc);
+            margin-top: vwmin(30, pc);
+
+            @include underSP {
+                margin-top: vwmin(30, sp_m);
+                gap: vwmin(16, sp_m);
+            }
+
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            @include underSP {
+                gap: vwmin(16, sp_m);
+                margin-top: vwmin(30, sp_m);
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            li {
+                position: relative;
+                padding-left: vwmin(12, pc);
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.8 / 16 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                    padding-left: vwmin(12, sp_m);
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: vwmin(12, pc);
+                    width: vwmin(4, pc);
+                    height: vwmin(4, pc);
+                    aspect-ratio: 1/1;
+                    border-radius: 100%;
+                    background-color: #987F65;
+
+                    @include underSP {
+                        width: vwmin(4, sp_m);
+                        height: vwmin(4, sp_m);
+                        top: vwmin(12, sp_m);
+                    }
+                }
+            }
+        }
+
+        a {
+            color: #61B5DC;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.9;
+            letter-spacing: calc(0.8 / 16 * 1em);
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+            transition: opacity 0.3s ease;
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 0.7;
+                    transition: opacity 0.3s ease;
+                }
+            }
+        }
+
+
+        table {
+            color: #1A0F04;
+            font-feature-settings: 'palt' on;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.8 / 16 * 1em);
+            border-radius: vwmin(4, pc);
+
+            @include underSP {
+                border-radius: vwmin(4, sp_m);
+                font-size: vwmin(16, sp_m);
+            }
+
+
+            thead {
+                background-color: #E5D8CD;
+
+                th {
+                    padding: vwmin(16, pc);
+                    border-bottom: 1px solid rgba(152, 127, 101, 0.40);
+                    border-right: 1px solid rgba(152, 127, 101, 0.40);
+                    text-align: left;
+
+                    @include underSP {
+                        padding: vwmin(16, sp_m);
+                    }
+
+                    &:first-child {
+                        min-width: vwmin(185, pc);
+
+                        @include underSP {
+                            min-width: vwmin(185, sp_m);
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        min-width: vwmin(175, pc);
+
+                        @include underSP {
+                            min-width: vwmin(175, sp_m);
+                        }
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:last-child {
+                        min-width: vwmin(364, pc);
+
+                        @include underSP {
+                            min-width: vwmin(364, sp_m);
+                        }
+                    }
+
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+            }
+
+            tbody {
+                background-color: #FFF;
+
+                tr {
+                    td {
+                        padding: vwmin(16, pc);
+                        border-bottom: 1px solid rgba(152, 127, 101, 0.40);
+                        border-right: 1px solid rgba(152, 127, 101, 0.40);
+
+                        @include underSP {
+                            padding: vwmin(16, sp_m);
+                        }
+
+                        &:last-child {
+                            border-right: none;
+                        }
                     }
                 }
             }
