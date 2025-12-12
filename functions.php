@@ -624,6 +624,11 @@ add_action('init', 'add_custom_post_date_rewrite_rules');
 
 function add_multiple_attribute_to_cf7_file_field($tag)
 {
+    // $tagがオブジェクトでない場合はそのまま返す
+    if (!is_object($tag)) {
+        return $tag;
+    }
+
     // ファイルフィールドかどうかを basetype で確認
     if ('file' !== $tag->basetype) {
         return $tag;
