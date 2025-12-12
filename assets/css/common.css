@@ -5927,6 +5927,62 @@ Information
     gap: clamp(0px, 23.3644859813vw, 110px);
   }
 }
+.bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper {
+  display: flex;
+  gap: clamp(0px, 2.5vw, 54px);
+  align-items: flex-end;
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper {
+    gap: clamp(0px, 8.4112149533vw, 39.6px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list {
+  display: flex;
+  gap: clamp(0px, 0.6944444444vw, 15px);
+}
+.bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item {
+  --bgColor: #E5D8CD;
+  --svgColor: #1A0F04;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: clamp(0px, 2.0833333333vw, 45px);
+  width: 100%;
+  aspect-ratio: 1/1;
+  height: auto;
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+  padding: clamp(0px, 0.4861111111vw, 10.5px);
+  background-color: var(--bgColor);
+  box-sizing: border-box;
+  transition: background-color 0.5s ease;
+}
+.bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: clamp(0px, 1.3888888889vw, 30px);
+  object-fit: contain;
+  aspect-ratio: 1/1;
+}
+.bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item svg path {
+  fill: var(--svgColor);
+  transition: fill 0.5s ease;
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item {
+    max-width: clamp(0px, 4.6728971963vw, 22px);
+  }
+}
+@media (any-hover: hover) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item:hover {
+    background-color: var(--svgColor);
+    transition: background-color 0.5s ease;
+  }
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item:hover svg path {
+    fill: var(--bgColor);
+  }
+}
 .bl_staffContentsOuter .bl_staffContents:nth-child(odd) {
   padding-top: clamp(0px, 11.1111111111vw, 240px);
 }
@@ -5979,6 +6035,25 @@ Information
 @media screen and (width <= 1024px) {
   .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_doctorContentsWrapper_imgWrapper {
     max-width: clamp(0px, 60.5140186916vw, 284.9px);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item {
+  --bgColor: #F4EEEA;
+  --svgColor: #1A0F04;
+  background-color: var(--bgColor);
+  transition: background-color 0.5s ease;
+}
+.bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item svg path {
+  fill: var(--svgColor);
+  transition: fill 0.5s ease;
+}
+@media (any-hover: hover) {
+  .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item:hover {
+    background-color: var(--svgColor);
+    transition: background-color 0.5s ease;
+  }
+  .bl_staffContentsOuter .bl_staffContents:nth-child(even) .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item:hover svg path {
+    fill: var(--bgColor);
   }
 }
 .bl_staffContentsOuter .bl_nurseContentsWrapper .el_nurseContentsWrapper_txt {
