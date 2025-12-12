@@ -46,7 +46,7 @@ $post_title = get_the_title($postid);
     <script>
         (function() {
             var postTitle = '<?php echo esc_js($post_title); ?>';
-            
+
             function setJobValue() {
                 var jobInput = document.querySelector("input[name='job']");
                 if (jobInput) {
@@ -55,14 +55,14 @@ $post_title = get_the_title($postid);
                 }
                 return false;
             }
-            
+
             // DOMContentLoaded時に試行
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', setJobValue);
             } else {
                 setJobValue();
             }
-            
+
             // Contact Form 7が遅延読み込みの場合に備えて再試行
             window.addEventListener('load', function() {
                 if (!setJobValue()) {
@@ -70,6 +70,11 @@ $post_title = get_the_title($postid);
                     setTimeout(setJobValue, 500);
                 }
             });
+
+            // Contact Form 7のフォーム送信後にthanksページへリダイレクト
+            document.addEventListener('wpcf7mailsent', function(event) {
+                window.location.href = '<?php echo home_url(); ?>/entry/thanks/';
+            }, false);
         })();
     </script>
 </body>
