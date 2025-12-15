@@ -1868,16 +1868,17 @@ html {
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator {
-  width: clamp(0px, 0.5555555556vw, 12px);
+  min-width: clamp(0px, 0.5555555556vw, 12px);
 }
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator {
-    width: clamp(0px, 1.8691588785vw, 8.8px);
+    min-width: clamp(0px, 1.8691588785vw, 8.8px);
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList .bl_commonBreadcrumbsSeparator img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 /*--------------------------------

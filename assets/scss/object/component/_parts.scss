@@ -768,15 +768,16 @@
 
 
         .bl_commonBreadcrumbsSeparator {
-            width: vwmin(8, pc);
+            min-width: vwmin(8, pc);
 
             @include underSP {
-                width: vwmin(8, sp_m);
+                min-width: vwmin(8, sp_m);
             }
 
             img {
                 display: block;
                 width: 100%;
+                height: auto;
             }
         }
     }
