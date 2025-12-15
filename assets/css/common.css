@@ -9530,7 +9530,7 @@ Information
     translate: -50% 0;
   }
 }
-.bl_accessContents .bl_accessContents_list:last-child::after {
+.bl_accessContents .bl_accessContents_list .bl_accessContents_list_item:last-child::after {
   display: none;
 }
 .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item_img {
