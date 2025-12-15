@@ -131,11 +131,6 @@
                     <p class="el_footer_btnTitle_ja">初めての方へ</p>
                 </a>
 
-                <a href="<?php echo home_url(); ?>/regen-med/" class="bl_footer_btnTitle bl_footer_btn">
-                    <p class="el_footer_btnTitle_en">regen.med.</p>
-                    <p class="el_footer_btnTitle_ja">再生医療</p>
-                </a>
-
                 <a href="<?php echo home_url(); ?>/recruit/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">recruit</p>
                     <p class="el_footer_btnTitle_ja">採用情報</p>
