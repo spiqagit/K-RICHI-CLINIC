@@ -4059,6 +4059,7 @@ Case
   line-height: 1;
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
+  width: fit-content;
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_contents_navContainer .bl_menuArticle_contents_navWrapper .bl_menuArticle_navListWrapper .bl_menuArticle_navList .el_menuArticle_navListItem_link {
@@ -8382,6 +8383,21 @@ Information
   max-width: clamp(0px, 22.2222222222vw, 480px);
   margin-inline: auto;
 }
+@media screen and (width <= 1024px) {
+  .codedropz-upload-inner .cd-upload-btn {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    max-width: clamp(0px, 74.7663551402vw, 352px);
+    padding: clamp(0px, 2.3364485981vw, 11px);
+    border-radius: clamp(0px, 0.4672897196vw, 2.2px);
+    border: 1px solid #987F65;
+    background-color: #fff;
+    color: #1A0F04;
+    font-family: var(--notoSerifJP);
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    font-style: normal;
+    font-weight: 400;
+  }
+}
 
 .codedropz-upload-container {
   padding-top: clamp(0px, 1.3888888889vw, 30px) !important;
@@ -8398,6 +8414,18 @@ Information
 
 .codedropz-upload-handler {
   border: 1px solid #987F65 !important;
+}
+
+.wpcf7-response-output {
+  border: none !important;
+  font-size: clamp(0px, 1.1111111111vw, 24px) !important;
+  color: #dc3232 !important;
+  text-align: center !important;
+}
+@media screen and (width <= 1024px) {
+  .wpcf7-response-output {
+    font-size: clamp(0px, 3.738317757vw, 17.6px) !important;
+  }
 }
 
 .bl_privacyContentsWrapper {

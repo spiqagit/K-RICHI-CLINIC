@@ -785,6 +785,20 @@
         line-height: 1.2;
         max-width: vwmin(320, pc);
         margin-inline: auto;
+
+        @include underSP {
+            font-size: vwmin(16, sp_m);
+            max-width: vwmin(320, sp_m);
+            padding: vwmin(10, sp_m);
+            border-radius: vwmin(2, sp_m);
+            border: 1px solid #987F65;
+            background-color: #fff;
+            color: #1A0F04;
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, sp_m);
+            font-style: normal;
+            font-weight: 400;
+        }
     }
 
 }
@@ -807,4 +821,13 @@
     border: 1px solid #987F65 !important;
 }
 
+.wpcf7-response-output{
+    border: none !important;
+    font-size: vwmin(16, pc) !important;
+    color: #dc3232 !important;
+    text-align: center !important;
 
+    @include underSP {
+        font-size: vwmin(16, sp_m) !important;
+    }
+}
