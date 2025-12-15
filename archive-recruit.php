@@ -53,7 +53,7 @@
                                     <?php if ($staffDirectorPosts): ?>
                                         <?php foreach ($staffDirectorPosts as $staffDirectorPost) : ?>
                                             <div class="bl_recruitMessageSection_imgWrapper">
-                                                <img class="bl_recruitMessageSection_imgWrapper_img" src="<?php echo get_the_post_thumbnail_url($staffDirectorPost->ID); ?>" alt="<?php echo $staffDirectorPost->name; ?>">
+                                                <img class="bl_recruitMessageSection_imgWrapper_img" src="<?php echo get_the_post_thumbnail_url($staffDirectorPost->ID); ?>" alt="院長 <?php echo get_the_title($staffDirectorPost->ID); ?>">
                                             </div>
                                         <?php endforeach; ?>
                                     <?php endif; ?>

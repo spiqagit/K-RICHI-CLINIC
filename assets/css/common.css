@@ -6186,7 +6186,8 @@ Information
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(270deg, rgba(244, 238, 234, 0) 0%, #F4EEEA 100%) no-repeat;
+  background-image: linear-gradient(to left, rgba(244, 238, 234, 0) 0%, #F4EEEA 100%);
+  z-index: 1;
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_imgWrapper .el_concernUpper_ttlWrapper_imgWrapper_img {
   overflow: hidden;
