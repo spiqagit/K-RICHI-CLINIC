@@ -146,15 +146,15 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    width: vwmin(5, pc);
-                    height: vwmin(1, pc);
+                    width: vwmin(8, pc);
+                    height: 1px;
                     background-color: var(--txtColor);
                     border-radius: vwmin(1, pc);
                     transition: transform 0.4s ease;
 
                     @include underSP {
-                        width: vwmin(5, sp_m);
-                        height: vwmin(1, sp_m);
+                        width: vwmin(8, sp_m);
+                        height: 1px;
                         border-radius: vwmin(1, sp_m);
                     }
                 }

@@ -4664,16 +4664,16 @@ Case
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(0px, 0.3472222222vw, 7.5px);
-  height: clamp(0px, 0.0694444444vw, 1.5px);
+  width: clamp(0px, 0.5555555556vw, 12px);
+  height: 1px;
   background-color: var(--txtColor);
   border-radius: clamp(0px, 0.0694444444vw, 1.5px);
   transition: transform 0.4s ease;
 }
 @media screen and (width <= 1024px) {
   .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_icon::before, .bl_caseItem .bl_caseItem_details .bl_caseItem_details_summary .bl_caseItem_details_summary_icon::after {
-    width: clamp(0px, 1.1682242991vw, 5.5px);
-    height: clamp(0px, 0.2336448598vw, 1.1px);
+    width: clamp(0px, 1.8691588785vw, 8.8px);
+    height: 1px;
     border-radius: clamp(0px, 0.2336448598vw, 1.1px);
   }
 }

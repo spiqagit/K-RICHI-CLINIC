@@ -80,6 +80,18 @@
             </li>
         <?php endif; ?>
 
+        <?php if (get_query_var('search_case')): ?>
+            <li class="bl_commonBreadcrumbsItem">
+                <a href="<?php echo home_url(); ?>/case/" class="bl_commonBreadcrumbsLink">症例</a>
+            </li>
+            <li class="bl_commonBreadcrumbsItem bl_commonBreadcrumbsSeparator">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/arrow-icon.svg" alt="">
+            </li>
+            <li class="bl_commonBreadcrumbsItem">
+                <p class="bl_commonBreadcrumbsText"><?php echo get_the_title(intval($_GET['s'])); ?></p>
+            </li>
+        <?php endif; ?>
+
         <?php if (is_singular("case")): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <a href="<?php echo home_url(); ?>/case/" class="bl_commonBreadcrumbsLink">症例</a>

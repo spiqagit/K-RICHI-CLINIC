@@ -664,3 +664,56 @@ add_shortcode('privacy_link', 'privacy_link_shortcode');
 
 // Contact Form 7 でショートコードを有効にする
 add_filter('wpcf7_form_elements', 'do_shortcode');
+
+/**
+ * search-caseページのタイトルをカスタマイズ（All in One SEO対応）
+ * 「〇〇の絞り込み | サイト名」の形式にする
+ */
+function custom_search_case_aioseo_title($title)
+{
+    if (get_query_var('search_case')) {
+        $case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
+        
+        if ($case_id > 0) {
+            // menu投稿タイプから記事タイトルを取得
+            $menu_post = get_post($case_id);
+            if ($menu_post && $menu_post->post_type === 'menu') {
+                // サイト名部分を取得（タイトルから区切り文字以降を抽出）
+                $separator = ' | ';
+                $site_title_part = '';
+                if (strpos($title, $separator) !== false) {
+                    $parts = explode($separator, $title, 2);
+                    if (isset($parts[1])) {
+                        $site_title_part = $separator . $parts[1];
+                    }
+                }
+                $title = get_the_title($menu_post) . 'の絞り込み' . $site_title_part;
+            }
+        }
+    }
+    
+    return $title;
+}
+add_filter('aioseo_title', 'custom_search_case_aioseo_title');
+
+/**
+ * search-caseページのディスクリプションをカスタマイズ（All in One SEO対応）
+ */
+function custom_search_case_aioseo_description($description)
+{
+    if (get_query_var('search_case')) {
+        $case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
+        
+        if ($case_id > 0) {
+            // menu投稿タイプから記事タイトルを取得
+            $menu_post = get_post($case_id);
+            if ($menu_post && $menu_post->post_type === 'menu') {
+                $menu_title = get_the_title($menu_post);
+                $description = $menu_title . 'の症例一覧ページです。';
+            }
+        }
+    }
+    
+    return $description;
+}
+add_filter('aioseo_description', 'custom_search_case_aioseo_description');
