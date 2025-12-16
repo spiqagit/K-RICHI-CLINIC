@@ -18,12 +18,13 @@
         justify-content: center;
         align-items: center;
         gap: vwmin(90, pc);
-        padding-block: vwmin(142, pc);
+        padding-top: vwmin(142, pc);
+        padding-bottom: vwmin(50, pc);
         max-width: vwmin(1120, pc);
         margin-inline: auto;
 
         @include underSP {
-            padding-top: vwmin(142, sp_m);
+            padding-top: vwmin(143, sp_m);
             grid-template-columns: 1fr;
             padding-bottom: vwmin(60, sp_m);
             gap: vwmin(30, sp_m);
@@ -453,6 +454,7 @@
     transition: opacity 0.5s ease;
     margin-top: vwmin(100, pc);
     margin-inline: auto;
+    padding-block: vwmin(10, pc);
 
     @include underSP {
         max-width: vwmin(200, sp_m);
@@ -660,6 +662,15 @@
                         gap: vwmin(20, pc);
                         padding-bottom: vwmin(6, pc);
                         border-bottom: 1px solid #E5D8CD;
+                        transition: opacity 0.5s ease;
+
+
+                        @media (any-hover: hover) {
+                            &:hover {
+                                opacity: 0.7;
+                                transition: opacity 0.5s ease;
+                            }
+                        }
 
                         @include underSP {
                             grid-template-columns: 1fr vwmin(6, sp_m);

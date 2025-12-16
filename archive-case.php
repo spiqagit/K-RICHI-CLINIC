@@ -347,9 +347,9 @@
                             </div>
                         </section>
                     </div>
-                    <div>
-                        <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
-                    </div>
+                </div>
+                <div>
+                    <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
                 </div>
             </div>
         </div>

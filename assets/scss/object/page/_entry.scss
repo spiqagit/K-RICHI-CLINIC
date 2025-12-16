@@ -238,9 +238,19 @@
                         align-items: center;
                         gap: vwmin(10, pc);
 
+                        @include underSP {
+                            width: 100%;
+                        }
+
                         .bl_entryFormInputList_selectWrapper {
                             position: relative;
                             display: block;
+                            width: 100%;
+                            max-width: vwmin(120, pc);
+
+                            @include underSP {
+                                max-width: vwmin(120, sp_m);
+                            }
 
                             &::after {
                                 content: '';
@@ -394,23 +404,41 @@
 
                 .bl_entryFormInputList_birthDateWrapper {
 
-                    .bl_entryFormInputList_selectWrapper {
+                    .bl_entryFormInputList_selectContainer {
+
+                        select {
+                            display: block;
+                            width: 100%;
+                            box-sizing: border-box;
+                        }
 
                         &:first-child {
-                            width: 100%;
-                            max-width: vwmin(104, pc);
+                            select{
+                                width: vwmin(104, pc);
 
-                            @include underSP {
-                                max-width: vwmin(104, sp_m);
+                                @include underSP {
+                                    width: vwmin(104, sp_m);
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            select{
+                                width: vwmin(86, pc);
+
+                                @include underSP {
+                                    width: vwmin(86, sp_m);
+                                }
                             }
                         }
 
                         &:last-child {
-                            width: 100%;
-                            max-width: vwmin(104, pc);
+                            select{
+                            width: vwmin(86, pc);
 
-                            @include underSP {
-                                max-width: vwmin(104, sp_m);
+                                @include underSP {
+                                    width: vwmin(86, sp_m);
+                                }
                             }
                         }
                     }
@@ -548,7 +576,8 @@
     @include underSP {
         display: flex;
         flex-wrap: wrap;
-        gap: vwmin(30, sp_m);
+        gap: vwmin(20, sp_m);
+
     }
 
     .wpcf7-list-item {
@@ -755,7 +784,7 @@
     span {
         display: block;
         font-family: var(--notoSerifJP);
-        font-size: vwmin(14, pc) ;
+        font-size: vwmin(14, pc);
         font-style: normal;
         font-weight: 400;
         line-height: 1.2;
@@ -803,7 +832,7 @@
 
 }
 
-.codedropz-upload-container{
+.codedropz-upload-container {
     padding-top: vwmin(20, pc) !important;
     padding-inline: vwmin(20, pc) !important;
     padding-bottom: vwmin(24, pc) !important;
@@ -817,11 +846,11 @@
 
 
 
-.codedropz-upload-handler{
+.codedropz-upload-handler {
     border: 1px solid #987F65 !important;
 }
 
-.wpcf7-response-output{
+.wpcf7-response-output {
     border: none !important;
     font-size: vwmin(16, pc) !important;
     color: #dc3232 !important;

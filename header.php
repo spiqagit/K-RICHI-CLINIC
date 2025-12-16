@@ -35,6 +35,10 @@
                                 </a>
                             </div>
                         </div>
+                        <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/guide/">
+                            <span class="el_header_navBtn_en">Guide</span>
+                            <span class="el_header_navBtn_ja">初めての方へ</span>
+                        </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/concern/">
                             <span class="el_header_navBtn_en">Concern</span>
                             <span class="el_header_navBtn_ja">お悩み</span>
@@ -62,6 +66,10 @@
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/column/">
                             <span class="el_header_navBtn_en">column</span>
                             <span class="el_header_navBtn_ja">コラム</span>
+                        </a>
+                        <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/faq/">
+                            <span class="el_header_navBtn_en">FAQ</span>
+                            <span class="el_header_navBtn_ja">よくある質問</span>
                         </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/access/">
                             <span class="el_header_navBtn_en">access</span>

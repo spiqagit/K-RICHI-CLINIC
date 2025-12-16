@@ -25,6 +25,10 @@
     flex-direction: column;
     gap: vwmin(50, pc);
 
+    @include underSP_m {
+        gap: vwmin(50, sp_m);
+    }
+
     .bl_concernUpper_ttlWrapper {
         display: grid;
         grid-template-columns: 1fr vwmin(390, pc);
@@ -35,9 +39,15 @@
         min-height: vwmin(280, pc);
 
         @include underSP {
+            grid-template-columns: 1fr vwmin(250, sp_m);
+            min-height: vwmin(125, sp_m);
+        }
+
+        @include underSP_m {
             grid-template-columns: 1fr vwmin(125, sp_m);
             min-height: vwmin(125, sp_m);
         }
+
 
         .bl_concernUpper_ttlWrapper_ttl {
             display: flex;
@@ -46,10 +56,11 @@
             align-items: center;
             padding-left: vwmin(50, pc);
 
-            @include underSP {
+            @include underSP_m {
                 align-items: flex-start;
                 justify-content: flex-start;
                 flex-direction: column;
+                gap: vwmin(10, sp_m);
                 padding-left: vwmin(20, sp_m);
             }
 
@@ -97,7 +108,7 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                width: 100%;
+                width: 101%;
                 height: 100%;
                 background-image: linear-gradient(to left, rgba(244, 238, 234, 0) 0%, #F4EEEA 100%);
 
@@ -139,8 +150,11 @@
         row-gap: vwmin(50, pc);
 
         @include underSP {
-            grid-template-columns: repeat(auto-fill, minmax(min(vwmin(170, sp_m), 100%), 1fr));
             gap: vwmin(20, sp_m);
+        }
+
+        @include underSP_m {
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .bl_menuCard {

@@ -142,7 +142,7 @@
                                                             <div class="bl_columnBtnItem_txtWrapper">
                                                                 <div class="bl_columnBtnItem_txtWrapper_upper">
                                                                     <div class="bl_columnBtnItem_postInfoWrapper">
-                                                                        <p class="el_columnBtnItem_postInfoWrapper_date"><?php the_date('Y.m.d'); ?></p>
+                                                                        <p class="el_columnBtnItem_postInfoWrapper_date"><?php echo get_the_date('Y.m.d'); ?></p>
 
                                                                         <?php
                                                                         $column_cats = get_the_terms(get_the_ID(), 'column-cat');

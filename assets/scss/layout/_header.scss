@@ -66,6 +66,8 @@
 
         .bl_header_navWrapper_nav_inner {
             @include underSP {
+                max-width: vwmin(700, sp_m);
+                margin-inline: auto;
                 padding-top: vwmin(120, sp_m);
                 padding-inline: vwmin(20, sp_m);
                 padding-bottom: vwmin(50, sp_m);
@@ -74,8 +76,8 @@
 
         .bl_header_navWrapper_nav_btnWrapper {
             display: grid;
-            grid-template-columns: repeat(10, auto);
-            gap: vwmin(32, pc);
+            grid-template-columns: repeat(11, auto);
+            gap: vwmin(24, pc);
             align-items: center;
 
             @include underSP {
@@ -294,6 +296,7 @@
                 border: none;
                 background-color: transparent;
                 padding: 0;
+                cursor: pointer;
 
                 .el_headerSpNavBtnWrapper_btn_line {
                     position: absolute;
@@ -447,9 +450,11 @@
         transition: background-color 0.3s ease;
         aspect-ratio: 1/1;
         height: auto;
+        max-width: vwmin(110, pc);
 
         @include underSP {
             min-width: vwmin(90, sp_m);
+            max-width: 100%;
             border-radius: vwmin(4, sp_m);
             aspect-ratio: auto;
         }

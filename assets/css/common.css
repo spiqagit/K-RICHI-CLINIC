@@ -246,6 +246,8 @@ html {
 }
 @media screen and (width <= 1024px) {
   .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_inner {
+    max-width: clamp(0px, 163.5514018692vw, 770px);
+    margin-inline: auto;
     padding-top: clamp(0px, 28.0373831776vw, 132px);
     padding-inline: clamp(0px, 4.6728971963vw, 22px);
     padding-bottom: clamp(0px, 11.6822429907vw, 55px);
@@ -253,8 +255,8 @@ html {
 }
 .bl_header_navWrapper .bl_header_navWrapper_nav .bl_header_navWrapper_nav_btnWrapper {
   display: grid;
-  grid-template-columns: repeat(10, auto);
-  gap: clamp(0px, 2.2222222222vw, 48px);
+  grid-template-columns: repeat(11, auto);
+  gap: clamp(0px, 1.6666666667vw, 36px);
   align-items: center;
 }
 @media screen and (width <= 1024px) {
@@ -463,6 +465,7 @@ html {
     border: none;
     background-color: transparent;
     padding: 0;
+    cursor: pointer;
   }
   .bl_header_navWrapper .bl_headerSpNavBtnWrapper .bl_headerSpNavBtnWrapper_btn .el_headerSpNavBtnWrapper_btn_line {
     position: absolute;
@@ -595,10 +598,12 @@ html {
   transition: background-color 0.3s ease;
   aspect-ratio: 1/1;
   height: auto;
+  max-width: clamp(0px, 7.6388888889vw, 165px);
 }
 @media screen and (width <= 1024px) {
   .bl_header_fixedContainer .bl_header_fixedContainer_btn {
     min-width: clamp(0px, 21.0280373832vw, 99px);
+    max-width: 100%;
     border-radius: clamp(0px, 0.9345794393vw, 4.4px);
     aspect-ratio: auto;
   }
@@ -1300,8 +1305,7 @@ html {
   }
 }
 .bl_doctorContentsWrapper .bl_doctorContentsWrapper_txtWrapper .bl_doctorContentsWrapper_nameWrapper_name {
-  display: grid;
-  grid-template-columns: max-content max-content;
+  display: flex;
   align-items: flex-end;
   gap: clamp(0px, 1.3888888889vw, 30px);
 }
@@ -1723,7 +1727,7 @@ html {
 @media screen and (width <= 1024px) {
   .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain {
     padding-top: clamp(0px, 33.4112149533vw, 157.3px);
-    padding-bottom: 100px;
+    padding-bottom: 97px;
   }
 }
 .bl_commonLowPageWhiteBg .bl_commonLowPageWhiteMain .bl_commonLowPageWhiteMain_ttlWrapper {
@@ -1814,7 +1818,7 @@ html {
 @media screen and (width <= 1024px) {
   .bl_commonBreadcrumbsContainer {
     padding-inline: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 1.25vw, 27px);
+    padding-bottom: clamp(0px, 4.2056074766vw, 19.8px);
   }
 }
 .bl_commonBreadcrumbsContainer .bl_commonBreadcrumbsList {
@@ -2323,7 +2327,7 @@ menuカード
   justify-content: center;
   padding: clamp(0px, 0.6944444444vw, 15px);
   background-color: #fff;
-  border-radius: 0 0 clamp(0px, 0.2777777778vw, 6px) clamp(0px, 0.2777777778vw, 6px);
+  border-radius: clamp(0px, 0.2777777778vw, 6px) 0 clamp(0px, 0.2777777778vw, 6px);
   max-width: clamp(0px, 2.7777777778vw, 60px);
   margin-left: auto;
 }
@@ -2331,7 +2335,7 @@ menuカード
   .bl_menuCard .bl_menuCard_arrowWrapper {
     padding: clamp(0px, 2.3364485981vw, 11px);
     max-width: clamp(0px, 9.3457943925vw, 44px);
-    border-radius: 0 0 clamp(0px, 0.9345794393vw, 4.4px) clamp(0px, 0.9345794393vw, 4.4px);
+    border-radius: clamp(0px, 0.9345794393vw, 4.4px) 0 clamp(0px, 0.9345794393vw, 4.4px);
   }
 }
 .bl_menuCard .bl_menuCard_arrowWrapper .el_menuCard_arrowWrapper_img {
@@ -2443,6 +2447,8 @@ menuカード
     top: auto;
     align-self: auto;
     gap: clamp(0px, 4.6728971963vw, 22px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .bl_commonCatNavi .bl_commonCatNavi_item_ttl {
@@ -2470,7 +2476,7 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_commonCatNavi .bl_commonCatNavi_item_btn {
     display: grid;
-    grid-template-columns: 1fr clamp(0px, 2.5700934579vw, 12.1px);
+    grid-template-columns: 1fr clamp(0px, 3.2710280374vw, 15.4px);
     align-items: center;
     justify-content: center;
     gap: clamp(0px, 2.3364485981vw, 11px);
@@ -2485,8 +2491,8 @@ menuカード
     padding-bottom: clamp(0px, 2.3364485981vw, 11px);
     padding-inline: clamp(0px, 5.6074766355vw, 26.4px);
     border: none;
-    border-top: 1px solid #987F65;
-    border-bottom: 1px solid #987F65;
+    border-top: clamp(0px, 0.2336448598vw, 1.1px) solid #987F65;
+    border-bottom: clamp(0px, 0.2336448598vw, 1.1px) solid #987F65;
     text-align: center;
     background: none;
     width: 100%;
@@ -2527,7 +2533,7 @@ menuカード
   font-size: clamp(0px, 1.1111111111vw, 24px);
   font-style: normal;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.5;
   letter-spacing: 0.05em;
 }
 @media screen and (width <= 1024px) {
@@ -2539,7 +2545,7 @@ menuカード
 .bl_commonCatNavi .bl_commonCatNaviList .bl_commonCatNaviItem::before {
   content: "";
   position: absolute;
-  top: clamp(0px, 0.5555555556vw, 12px);
+  top: clamp(0px, 0.6944444444vw, 15px);
   left: 0;
   width: clamp(0px, 0.2777777778vw, 6px);
   aspect-ratio: 1/1;
@@ -2549,7 +2555,7 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_commonCatNavi .bl_commonCatNaviList .bl_commonCatNaviItem::before {
-    top: clamp(0px, 1.8691588785vw, 8.8px);
+    top: clamp(0px, 2.3364485981vw, 11px);
     width: clamp(0px, 0.9345794393vw, 4.4px);
   }
 }
@@ -2568,7 +2574,7 @@ menuカード
 
 .bl_singlArrowNav {
   display: grid;
-  grid-template-columns: clamp(0px, 9.375vw, 202.5px) clamp(0px, 13.8888888889vw, 300px) clamp(0px, 9.375vw, 202.5px);
+  grid-template-columns: clamp(0px, 9.7222222222vw, 210px) clamp(0px, 13.8888888889vw, 300px) clamp(0px, 9.7222222222vw, 210px);
   align-items: center;
   justify-content: center;
   gap: clamp(0px, 11.4583333333vw, 247.5px);
@@ -2576,9 +2582,16 @@ menuカード
 }
 @media screen and (width <= 1024px) {
   .bl_singlArrowNav {
+    grid-template-columns: clamp(0px, 32.7102803738vw, 154px) clamp(0px, 46.7289719626vw, 220px) clamp(0px, 32.7102803738vw, 154px);
+    gap: clamp(0px, 5.6074766355vw, 26.4px);
     padding-top: clamp(0px, 14.0186915888vw, 66px);
-    grid-template-columns: max-content clamp(0px, 28.0373831776vw, 132px) max-content;
-    gap: clamp(0px, 6.308411215vw, 29.7px);
+  }
+}
+@media screen and (width <= 600px) {
+  .bl_singlArrowNav {
+    padding-top: clamp(0px, 14.0186915888vw, 66px);
+    grid-template-columns: clamp(0px, 25.7009345794vw, 121px) clamp(0px, 28.0373831776vw, 132px) clamp(0px, 25.7009345794vw, 121px);
+    gap: clamp(0px, 2.3364485981vw, 11px);
     width: fit-content;
     margin-inline: auto;
   }
@@ -2586,7 +2599,7 @@ menuカード
 .bl_singlArrowNav .el_singlArrowNav_btn_txt {
   color: var(--black);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 0.9722222222vw, 21px);
+  font-size: clamp(0px, 1.25vw, 27px);
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -2600,7 +2613,7 @@ menuカード
 }
 .bl_singlArrowNav .bl_singlArrowNav_btn {
   display: grid;
-  grid-template-columns: clamp(0px, 0.8333333333vw, 18px) auto;
+  grid-template-columns: clamp(0px, 1.4583333333vw, 31.5px) auto;
   align-items: center;
   justify-content: center;
   gap: clamp(0px, 1.3888888889vw, 30px);
@@ -2610,7 +2623,7 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_singlArrowNav .bl_singlArrowNav_btn {
     grid-template-columns: clamp(0px, 3.738317757vw, 17.6px) auto;
-    gap: clamp(0px, 4.6728971963vw, 22px);
+    gap: clamp(0px, 2.8037383178vw, 13.2px);
   }
 }
 .bl_singlArrowNav .bl_singlArrowNav_prev {
@@ -2635,7 +2648,7 @@ menuカード
 }
 .bl_singlArrowNav .bl_singlArrowNav_next {
   position: relative;
-  grid-template-columns: auto clamp(0px, 0.8333333333vw, 18px);
+  grid-template-columns: auto clamp(0px, 1.4583333333vw, 31.5px);
   grid-column: 3;
 }
 @media screen and (width <= 1024px) {
@@ -2681,6 +2694,11 @@ menuカード
   .bl_singlArrowNav .bl_singlArrowNav_allViewBtn {
     font-size: clamp(0px, 4.2056074766vw, 19.8px);
     padding-block: clamp(0px, 2.3364485981vw, 11px);
+  }
+}
+@media screen and (width <= 600px) {
+  .bl_singlArrowNav .bl_singlArrowNav_allViewBtn {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
 }
 @media (any-hover: hover) {
@@ -3895,13 +3913,14 @@ Case
   justify-content: center;
   align-items: center;
   gap: clamp(0px, 6.25vw, 135px);
-  padding-block: clamp(0px, 9.8611111111vw, 213px);
+  padding-top: clamp(0px, 9.8611111111vw, 213px);
+  padding-bottom: clamp(0px, 3.4722222222vw, 75px);
   max-width: clamp(0px, 77.7777777778vw, 1680px);
   margin-inline: auto;
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_ttlContainer .bl_menuArticle_ttlContainer_inner {
-    padding-top: clamp(0px, 33.1775700935vw, 156.2px);
+    padding-top: clamp(0px, 33.4112149533vw, 157.3px);
     grid-template-columns: 1fr;
     padding-bottom: clamp(0px, 14.0186915888vw, 66px);
     gap: clamp(0px, 7.0093457944vw, 33px);
@@ -4305,6 +4324,7 @@ Case
   transition: opacity 0.5s ease;
   margin-top: clamp(0px, 6.9444444444vw, 150px);
   margin-inline: auto;
+  padding-block: clamp(0px, 0.6944444444vw, 15px);
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_backAllbtn {
@@ -4503,6 +4523,13 @@ Case
   gap: clamp(0px, 1.3888888889vw, 30px);
   padding-bottom: clamp(0px, 0.4166666667vw, 9px);
   border-bottom: 1px solid #E5D8CD;
+  transition: opacity 0.5s ease;
+}
+@media (any-hover: hover) {
+  .bl_menuArchive_item .bl_menuArchive_item_lower .bl_menuArchive_item_lower_inner .bl_menuArchive_item_lower_list .bl_menuArchive_item_lower_list_item .bl_menuArchive_item_lower_list_item_link:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+  }
 }
 @media screen and (width <= 1024px) {
   .bl_menuArchive_item .bl_menuArchive_item_lower .bl_menuArchive_item_lower_inner .bl_menuArchive_item_lower_list .bl_menuArchive_item_lower_list_item .bl_menuArchive_item_lower_list_item_link {
@@ -4759,8 +4786,13 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_casePostList {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(0px, 9.3457943925vw, 44px);
+  }
+}
+@media screen and (width <= 375px) {
+  .bl_casePostList {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .bl_casePostList .bl_caseItem .bl_caseItem_details {
@@ -4801,7 +4833,8 @@ Case
   .bl_caseArticleWrapper {
     grid-template-columns: 1fr;
     gap: clamp(0px, 9.3457943925vw, 44px);
-    padding-block: clamp(0px, 23.3644859813vw, 110px);
+    padding-top: clamp(0px, 11.6822429907vw, 55px);
+    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
   }
 }
 .bl_caseArticleWrapper .bl_caseLeftWrapper {
@@ -4890,9 +4923,21 @@ Case
     transition: stroke 0.3s ease;
   }
 }
+.bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide {
+  max-width: calc(100% - clamp(0px, 8.3333333333vw, 180px));
+  margin-inline: auto;
+  width: 100%;
+}
+@media screen and (width <= 1024px) {
+  .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide {
+    max-width: 100%;
+    padding-inline: clamp(0px, 14.0186915888vw, 66px);
+  }
+}
 .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide .splide__slide {
   transform: scale(1);
   border: none;
+  width: fit-content !important;
 }
 .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide .bl_caseThumbnailSlide_item {
   aspect-ratio: 318/398;
@@ -4901,6 +4946,12 @@ Case
   object-fit: cover;
   overflow: hidden;
   transform: scale(1);
+  max-width: clamp(0px, 6.9444444444vw, 150px);
+}
+@media screen and (width <= 1024px) {
+  .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide .bl_caseThumbnailSlide_item {
+    max-width: clamp(0px, 23.3644859813vw, 110px);
+  }
 }
 .bl_caseArticleWrapper .bl_caseLeftWrapper .bl_caseImgSlieWrapper .bl_caseThumbnailSlide .is-active {
   border: none;
@@ -4959,8 +5010,78 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_relatedCaseSection .bl_relatedCaseSection_list {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(0px, 11.6822429907vw, 55px);
+  }
+}
+@media screen and (width <= 375px) {
+  .bl_relatedCaseSection .bl_relatedCaseSection_list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.bl_caseRightWrapper .bl_caseTableWrapper {
+  margin-top: clamp(0px, 2.7777777778vw, 60px);
+}
+@media screen and (width <= 1024px) {
+  .bl_caseRightWrapper .bl_caseTableWrapper {
+    margin-top: clamp(0px, 9.3457943925vw, 44px);
+  }
+}
+.bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable {
+  width: 100%;
+  border-radius: clamp(0px, 0.2777777778vw, 6px);
+  overflow: hidden;
+}
+@media screen and (width <= 1024px) {
+  .bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable {
+    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+  }
+}
+.bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable tr {
+  display: grid;
+  grid-template-columns: 0.38fr 0.7fr;
+  border-top: 1px solid rgba(152, 127, 101, 0.4);
+}
+.bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable tr:first-child {
+  border-top: none;
+}
+.bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable tr th {
+  padding: clamp(0px, 1.1111111111vw, 24px);
+  background-color: #E5D8CD;
+  color: var(--txtColor);
+  font-feature-settings: "palt" on;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable tr th {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    padding: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+.bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable tr td {
+  padding: clamp(0px, 1.1111111111vw, 24px);
+  background-color: #fff;
+  color: var(--txtColor);
+  font-feature-settings: "palt" on;
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_caseRightWrapper .bl_caseTableWrapper .bl_caseTable tr td {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    padding: clamp(0px, 3.738317757vw, 17.6px);
   }
 }
 
@@ -5962,7 +6083,7 @@ Information
   aspect-ratio: 1/1;
   height: auto;
   border-radius: clamp(0px, 0.2777777778vw, 6px);
-  padding: clamp(0px, 0.4861111111vw, 10.5px);
+  padding: clamp(0px, 0.4166666667vw, 9px);
   background-color: var(--bgColor);
   box-sizing: border-box;
   transition: background-color 0.5s ease;
@@ -5999,6 +6120,14 @@ Information
   }
   .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .bl_staffrContentsWrapper_snsListWrapper_list_item:hover svg path {
     fill: var(--bgColor);
+  }
+}
+.bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .is-instagram {
+  padding: clamp(0px, 0.2777777778vw, 6px);
+}
+@media screen and (width <= 1024px) {
+  .bl_staffContentsOuter .bl_staffContents .bl_staffrContentsWrapper_snsListWrapper .bl_staffrContentsWrapper_snsListWrapper_list .is-instagram {
+    padding: clamp(0px, 0.9345794393vw, 4.4px);
   }
 }
 .bl_staffContentsOuter .bl_staffContents:nth-child(odd) {
@@ -6112,6 +6241,11 @@ Information
   flex-direction: column;
   gap: clamp(0px, 3.4722222222vw, 75px);
 }
+@media screen and (width <= 600px) {
+  .bl_concernUpper {
+    gap: clamp(0px, 11.6822429907vw, 55px);
+  }
+}
 .bl_concernUpper .bl_concernUpper_ttlWrapper {
   display: grid;
   grid-template-columns: 1fr clamp(0px, 27.0833333333vw, 585px);
@@ -6122,6 +6256,12 @@ Information
   min-height: clamp(0px, 19.4444444444vw, 420px);
 }
 @media screen and (width <= 1024px) {
+  .bl_concernUpper .bl_concernUpper_ttlWrapper {
+    grid-template-columns: 1fr clamp(0px, 58.4112149533vw, 275px);
+    min-height: clamp(0px, 29.2056074766vw, 137.5px);
+  }
+}
+@media screen and (width <= 600px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper {
     grid-template-columns: 1fr clamp(0px, 29.2056074766vw, 137.5px);
     min-height: clamp(0px, 29.2056074766vw, 137.5px);
@@ -6134,11 +6274,12 @@ Information
   align-items: center;
   padding-left: clamp(0px, 3.4722222222vw, 75px);
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 600px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_ttl {
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
+    gap: clamp(0px, 2.3364485981vw, 11px);
     padding-left: clamp(0px, 4.6728971963vw, 22px);
   }
 }
@@ -6186,7 +6327,7 @@ Information
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 101%;
   height: 100%;
   background-image: linear-gradient(to left, rgba(244, 238, 234, 0) 0%, #F4EEEA 100%);
   z-index: 1;
@@ -6220,8 +6361,12 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernLower .bl_concernLower_inner {
-    grid-template-columns: repeat(auto-fill, minmax(min(clamp(0px, 39.7196261682vw, 187px), 100%), 1fr));
     gap: clamp(0px, 4.6728971963vw, 22px);
+  }
+}
+@media screen and (width <= 600px) {
+  .bl_concernLower .bl_concernLower_inner {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .bl_concernLower .bl_concernLower_inner .bl_menuCard {
@@ -7158,6 +7303,9 @@ Information
   .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt {
     font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
+  .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt br {
+    display: none;
+  }
 }
 .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_directorWrapper {
   display: grid;
@@ -7239,6 +7387,7 @@ Information
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
+  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
 }
 @media screen and (width <= 1024px) {
   .bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_ttl .el_recruitConditionsSection_ttl_en {
@@ -7377,7 +7526,7 @@ Information
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
-  margin-bottom: clamp(0px, 0.6944444444vw, 15px);
+  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
 }
 @media screen and (width <= 1024px) {
   .bl_jobCategorySection .bl_jobCategorySection_inner .bl_jobCategorySection_ttl .el_jobCategorySection_ttl_en {
@@ -7875,9 +8024,21 @@ Information
   align-items: center;
   gap: clamp(0px, 0.6944444444vw, 15px);
 }
+@media screen and (width <= 1024px) {
+  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper .bl_entryFormInputList_selectContainer {
+    width: 100%;
+  }
+}
 .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper .bl_entryFormInputList_selectContainer .bl_entryFormInputList_selectWrapper {
   position: relative;
   display: block;
+  width: 100%;
+  max-width: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper .bl_entryFormInputList_selectContainer .bl_entryFormInputList_selectWrapper {
+    max-width: clamp(0px, 28.0373831776vw, 132px);
+  }
 }
 .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_item_inputWrapper .bl_entryFormInputList_selectContainer .bl_entryFormInputList_selectWrapper::after {
   content: "";
@@ -8021,22 +8182,33 @@ Information
     font-size: clamp(0px, 2.8037383178vw, 13.2px);
   }
 }
-.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectWrapper:first-child {
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer select {
+  display: block;
   width: 100%;
-  max-width: clamp(0px, 7.2222222222vw, 156px);
+  box-sizing: border-box;
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer:first-child select {
+  width: clamp(0px, 7.2222222222vw, 156px);
 }
 @media screen and (width <= 1024px) {
-  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectWrapper:first-child {
-    max-width: clamp(0px, 24.2990654206vw, 114.4px);
+  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer:first-child select {
+    width: clamp(0px, 24.2990654206vw, 114.4px);
   }
 }
-.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectWrapper:last-child {
-  width: 100%;
-  max-width: clamp(0px, 7.2222222222vw, 156px);
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer:nth-child(2) select {
+  width: clamp(0px, 5.9722222222vw, 129px);
 }
 @media screen and (width <= 1024px) {
-  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectWrapper:last-child {
-    max-width: clamp(0px, 24.2990654206vw, 114.4px);
+  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer:nth-child(2) select {
+    width: clamp(0px, 20.0934579439vw, 94.6px);
+  }
+}
+.bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer:last-child select {
+  width: clamp(0px, 5.9722222222vw, 129px);
+}
+@media screen and (width <= 1024px) {
+  .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .bl_entryFormInputList_birthDateWrapper .bl_entryFormInputList_selectContainer:last-child select {
+    width: clamp(0px, 20.0934579439vw, 94.6px);
   }
 }
 .bl_entryFormWrapper .bl_entryFormWrapper_item .bl_entryFormInputList .bl_entryFormInputList_item .p-postal-code {
@@ -8157,7 +8329,7 @@ Information
   .el_checkBox {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0px, 7.0093457944vw, 33px);
+    gap: clamp(0px, 4.6728971963vw, 22px);
   }
 }
 .el_checkBox .wpcf7-list-item {
@@ -9148,9 +9320,6 @@ Information
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.05em;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
   overflow: hidden;
 }
 @media screen and (width <= 1024px) {

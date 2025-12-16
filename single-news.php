@@ -38,7 +38,7 @@
                 <?php if ($prev_post) : ?>
                     <a href="<?php echo get_permalink($prev_post->ID); ?>" class="bl_singlArrowNav_btn bl_singlArrowNav_prev">
                         <img class="el_singlArrowNav_btn_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/prev-arrow.svg" alt="">
-                        <p class="el_singlArrowNav_btn_txt">前の記事</p>
+                        <p class="el_singlArrowNav_btn_txt">前の記事へ</p>
                     </a>
                 <?php endif; ?>
 

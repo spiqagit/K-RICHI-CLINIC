@@ -33,7 +33,7 @@
 
         <?php if (is_post_type_archive('concern')  && is_archive()): ?>
             <li class="bl_commonBreadcrumbsItem">
-                <p class="bl_commonBreadcrumbsText">お悩み</p>
+                <p class="bl_commonBreadcrumbsText">お悩み一覧</p>
             </li>
         <?php endif; ?>
 

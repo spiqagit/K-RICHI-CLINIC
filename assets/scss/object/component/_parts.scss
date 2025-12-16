@@ -151,8 +151,7 @@
         }
 
         .bl_doctorContentsWrapper_nameWrapper_name {
-            display: grid;
-            grid-template-columns: max-content max-content;
+            display: flex;
             align-items: flex-end;
             gap: vwmin(20, pc);
 
@@ -617,7 +616,7 @@
 
         @include underSP {
             padding-top: vwmin(143, sp_m);
-            padding-bottom: 100px;
+            padding-bottom: 97px;
         }
 
         .bl_commonLowPageWhiteMain_ttlWrapper {
@@ -709,7 +708,7 @@
 
     @include underSP {
         padding-inline: vwmin(30, sp_m);
-        padding-bottom: vwmin(18, pc);
+        padding-bottom: vwmin(18, sp_m);
     }
 
     .bl_commonBreadcrumbsList {
@@ -1250,14 +1249,14 @@ menuカード
         justify-content: center;
         padding: vwmin(10, pc);
         background-color: #fff;
-        border-radius: 0 0 vwmin(4, pc) vwmin(4, pc);
+        border-radius: vwmin(4, pc)  0 vwmin(4, pc);
         max-width: vwmin(40, pc);
         margin-left: auto;
 
         @include underSP {
             padding: vwmin(10, sp_m);
             max-width: vwmin(40, sp_m);
-            border-radius: 0 0 vwmin(4, sp_m) vwmin(4, sp_m);
+            border-radius: vwmin(4, sp_m)  0 vwmin(4, sp_m);
         }
 
         .el_menuCard_arrowWrapper_img {
@@ -1379,6 +1378,8 @@ menuカード
         top: auto;
         align-self: auto;
         gap: vwmin(20, sp_m);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .bl_commonCatNavi_item_ttl {
@@ -1405,7 +1406,7 @@ menuカード
 
         @include underSP {
             display: grid;
-            grid-template-columns: 1fr vwmin(11, sp_m);
+            grid-template-columns: 1fr vwmin(14, sp_m);
             align-items: center;
             justify-content: center;
             gap: vwmin(10, sp_m);
@@ -1420,8 +1421,8 @@ menuカード
             padding-bottom: vwmin(10, sp_m);
             padding-inline: vwmin(24, sp_m);
             border: none;
-            border-top: 1px solid #987F65;
-            border-bottom: 1px solid #987F65;
+            border-top: vwmin(1, sp_m) solid #987F65;
+            border-bottom: vwmin(1, sp_m) solid #987F65;
             text-align: center;
             background: none;
             width: 100%;
@@ -1469,7 +1470,7 @@ menuカード
             font-size: vwmin(16, pc);
             font-style: normal;
             font-weight: 400;
-            line-height: 1;
+            line-height: 1.5;
             letter-spacing: calc(0.8 / 16 * 1em);
 
             @include underSP {
@@ -1480,7 +1481,7 @@ menuカード
             &::before {
                 content: '';
                 position: absolute;
-                top: vwmin(8, pc);
+                top: vwmin(10, pc);
                 left: 0;
                 width: vwmin(4, pc);
                 aspect-ratio: 1 / 1;
@@ -1489,7 +1490,7 @@ menuカード
                 border-radius: 100%;
 
                 @include underSP {
-                    top: vwmin(8, sp_m);
+                    top: vwmin(10, sp_m);
                     width: vwmin(4, sp_m);
                 }
             }
@@ -1514,16 +1515,22 @@ menuカード
 
 .bl_singlArrowNav {
     display: grid;
-    grid-template-columns: vwmin(135, pc) vwmin(200, pc) vwmin(135, pc);
+    grid-template-columns: vwmin(140, pc) vwmin(200, pc) vwmin(140, pc);
     align-items: center;
     justify-content: center;
     gap: vwmin(165, pc);
     padding-top: vwmin(100, pc);
 
     @include underSP {
+        grid-template-columns: vwmin(140, sp_m) vwmin(200, sp_m) vwmin(140, sp_m);
+        gap: vwmin(24, sp_m);
         padding-top: vwmin(60, sp_m);
-        grid-template-columns: max-content vwmin(120, sp_m) max-content;
-        gap: vwmin(27, sp_m);
+    }
+
+    @include underSP_m {
+        padding-top: vwmin(60, sp_m);
+        grid-template-columns: vwmin(110, sp_m) vwmin(120, sp_m) vwmin(110, sp_m);
+        gap: vwmin(10, sp_m);
         width: fit-content;
         margin-inline: auto;
     }
@@ -1532,7 +1539,7 @@ menuカード
     .el_singlArrowNav_btn_txt {
         color: var(--black);
         font-family: var(--notoSerifJP);
-        font-size: vwmin(14, pc);
+        font-size: vwmin(18, pc);
         font-style: normal;
         font-weight: 400;
         line-height: 1;
@@ -1547,7 +1554,7 @@ menuカード
 
     .bl_singlArrowNav_btn {
         display: grid;
-        grid-template-columns: vwmin(12, pc) auto;
+        grid-template-columns: vwmin(21, pc) auto;
         align-items: center;
         justify-content: center;
         gap: vwmin(20, pc);
@@ -1556,7 +1563,7 @@ menuカード
 
         @include underSP {
             grid-template-columns: vwmin(16, sp_m) auto;
-            gap: vwmin(20, sp_m);
+            gap: vwmin(12, sp_m);
         }
     }
 
@@ -1587,7 +1594,7 @@ menuカード
 
     .bl_singlArrowNav_next {
         position: relative;
-        grid-template-columns: auto vwmin(12, pc);
+        grid-template-columns: auto vwmin(21, pc);
         grid-column: 3;
 
         @include underSP {
@@ -1637,6 +1644,10 @@ menuカード
         @include underSP {
             font-size: vwmin(18, sp_m);
             padding-block: vwmin(10, sp_m);
+        }
+        
+        @include underSP_m {
+            font-size: vwmin(16, sp_m);
         }
 
         @media (any-hover: hover) {

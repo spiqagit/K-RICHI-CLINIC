@@ -70,11 +70,13 @@
                                 </p>
                                 <div class="bl_recruitMessageSection_messageTxtWrapper">
                                     <div class="bl_recruitMessageSection_messageTxtWrapper_txtContainer">
-                                        <p class="el_recruitMessageSection_messageTxtWrapper_txtContainer_txt">K-RICH CLINICは、韓国の先進美容医療と日本の高品質な医療を融合し、
-                                            ｢再生医療 × アンチエイジング × 美肌治療」を通じて、
+                                        <p class="el_recruitMessageSection_messageTxtWrapper_txtContainer_txt">
+                                            K-RICH CLINICは、韓国の先進美容医療と日本の高品質な医療を融合し、<br>
+                                            ｢再生医療 × アンチエイジング × 美肌治療」を通じて、<br>
                                             人々が“自分らしく、美しく、生きる”ことを支えます。
                                         </p>
-                                        <p class="el_recruitMessageSection_messageTxtWrapper_txtContainer_txt">韓国と日本の美容医療を基盤に、アジアをはじめ、世界中の人々から
+                                        <p class="el_recruitMessageSection_messageTxtWrapper_txtContainer_txt">
+                                            韓国と日本の美容医療を基盤に、アジアをはじめ、世界中の人々から<br>
                                             信頼されるクリニックを目指しています。
                                         </p>
                                         <p class="el_recruitMessageSection_messageTxtWrapper_txtContainer_txt">
@@ -134,7 +136,7 @@
             <div class="bl_jobCategorySection_inner">
                 <hgroup class="bl_jobCategorySection_ttl">
                     <h2 class="el_jobCategorySection_ttl_en">Job Category</h2>
-                    <p class="el_jobCategorySection_ttl_ja">求人カテゴリー</p>
+                    <p class="el_jobCategorySection_ttl_ja">募集職種</p>
                 </hgroup>
 
                 <div class="bl_jobCategorySection_list">

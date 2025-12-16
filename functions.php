@@ -650,10 +650,10 @@ function privacy_link_shortcode($atts) {
         'class' => '',
     ), $atts, 'privacy_link');
 
-    $privacy_url = get_permalink(get_page_by_path('privacy'));
+    $privacy_url =  home_url('/privacy-policy/');
     
     if (!$privacy_url) {
-        $privacy_url = home_url('/privacy/');
+        $privacy_url = home_url('/privacy-policy/');
     }
 
     $class_attr = !empty($atts['class']) ? ' class="' . esc_attr($atts['class']) . '"' : '';

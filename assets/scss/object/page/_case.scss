@@ -254,8 +254,12 @@
     gap: vwmin(40, pc);
 
     @include underSP {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: vwmin(40, sp_m);
+    }
+
+    @include underSP_s {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .bl_caseItem {
@@ -302,7 +306,8 @@
     @include underSP {
         grid-template-columns: 1fr;
         gap: vwmin(40, sp_m);
-        padding-block: vwmin(100, sp_m);
+        padding-top: vwmin(50, sp_m);
+        padding-bottom: vwmin(100, sp_m);
     }
 
     .bl_caseLeftWrapper {
@@ -403,11 +408,19 @@
             }
 
             .bl_caseThumbnailSlide {
+                max-width: calc(100% - vwmin(120, pc));
+                margin-inline: auto;
+                width: 100%;
 
+                @include underSP {
+                    max-width: 100%;
+                    padding-inline: vwmin(60, sp_m);
+                }
 
                 .splide__slide {
                     transform: scale(1);
                     border: none;
+                    width: fit-content !important;
                 }
 
                 .bl_caseThumbnailSlide_item {
@@ -417,6 +430,11 @@
                     object-fit: cover;
                     overflow: hidden;
                     transform: scale(1);
+                    max-width: vwmin(100, pc);
+
+                    @include underSP {
+                        max-width: vwmin(100, sp_m);
+                    }
                 }
 
                 .is-active {
@@ -480,8 +498,83 @@
         gap: vwmin(40, pc);
 
         @include underSP {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: vwmin(50, sp_m);
         }
+
+        @include underSP_s {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+.bl_caseRightWrapper {
+
+    .bl_caseTableWrapper {
+        margin-top: vwmin(40, pc);
+
+        @include underSP {
+            margin-top: vwmin(40, sp_m);
+        }
+
+        .bl_caseTable {
+            width: 100%;
+            border-radius: vwmin(4, pc);
+            overflow: hidden;
+
+            @include underSP {
+                border-radius: vwmin(4, sp_m);
+            }
+
+            tr {
+                display: grid;
+                grid-template-columns: .38fr .7fr;
+                border-top: 1px solid rgba(152, 127, 101, 0.40);
+
+                &:first-child {
+                    border-top: none;
+                }
+
+
+                th {
+                    padding: vwmin(16, pc);
+                    background-color: #E5D8CD;
+                    color: var(--txtColor);
+                    font-feature-settings: 'palt' on;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    text-align: left;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                        padding: vwmin(16, sp_m);
+                    }
+                }
+
+                td {
+                    padding: vwmin(16, pc);
+                    background-color: #fff;
+                    color: var(--txtColor);
+                    font-feature-settings: 'palt' on;
+                    font-family: var(--notoSerifJP);
+                    font-size: vwmin(16, pc);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    text-align: left;
+                    letter-spacing: calc(0.8 / 16 * 1em);
+
+                    @include underSP {
+                        font-size: vwmin(16, sp_m);
+                        padding: vwmin(16, sp_m);
+                    }
+                }
+            }
+        }
+
     }
 }

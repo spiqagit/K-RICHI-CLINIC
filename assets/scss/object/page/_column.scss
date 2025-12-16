@@ -192,9 +192,6 @@
                 font-weight: 400;
                 line-height: 1.6;
                 letter-spacing: calc(0.8 / 16 * 1em);
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 1;
                 overflow: hidden;
 
                 @include underSP {

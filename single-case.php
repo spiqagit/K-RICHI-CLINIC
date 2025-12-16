@@ -25,7 +25,7 @@
                                         <path d="M7 0C7 0.636 6.35863 1.58571 5.70938 2.38286C4.87463 3.41143 3.87713 4.30886 2.7335 4.99371C1.876 5.50714 0.8365 6 0 6M0 6C0.8365 6 1.87688 6.49286 2.7335 7.00629C3.87713 7.692 4.87463 8.58943 5.70938 9.61629C6.35863 10.4143 7 11.3657 7 12M0 6H21" stroke="#1A0F04" />
                                     </svg>
                                 </button>
-                                <div class="splide bl_caseImgSlide" aria-label="症例画像スライダー">
+                                <div class="splide bl_caseImgSlide">
                                     <div class="splide__track">
                                         <ul class="splide__list">
                                             <?php if (have_rows('slide')): ?>
@@ -49,7 +49,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="splide bl_caseThumbnailSlide" aria-label="症例サムネイルスライダー">
+                            <div class="splide bl_caseThumbnailSlide">
                                 <div class="splide__track">
                                     <ul class="splide__list">
                                         <?php if (have_rows('slide')): ?>
@@ -66,6 +66,52 @@
                     </div>
                     <div class="bl_commonArticleSection bl_caseRightWrapper">
                         <?php the_content(); ?>
+
+                        <?php
+                        $case_treatment = get_field('case-treatment');
+                        $case_price = get_field('case-price');
+                        $case_time = get_field('case-time');
+                        $case_downtime = get_field('case-downtime');
+                        $case_makeup = get_field('case-makeup');
+                        $case_risk = get_field('case-risk');
+                        if (
+                            ($case_treatment && trim($case_treatment) !== '') ||
+                            ($case_price && trim($case_price) !== '') ||
+                            ($case_time && trim($case_time) !== '') ||
+                            ($case_downtime && trim($case_downtime) !== '') ||
+                            ($case_makeup && trim($case_makeup) !== '') ||
+                            ($case_risk && trim($case_risk) !== '')
+                        ):
+                        ?>
+                            <div class="bl_caseTableWrapper">
+                                <table class="bl_caseTable">
+                                    <tr>
+                                        <th>施術名</th>
+                                        <td><?php the_field('case-treatment'); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>参考料金</th>
+                                        <td><?php the_field('case-price'); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>施術時間</th>
+                                        <td><?php the_field('case-time'); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>ダウンタイム</th>
+                                        <td><?php the_field('case-downtime'); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>メイク</th>
+                                        <td><?php the_field('case-makeup'); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>副作用・リスク</th>
+                                        <td><?php the_field('case-risk'); ?></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </article>
 
