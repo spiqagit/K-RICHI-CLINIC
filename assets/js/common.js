@@ -103,60 +103,76 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // モバイルナビゲーション
-    const initMobileNav = () => {
+    let mobileNavInitialized = false;
+    
+    const initMobileNavEvents = () => {
+        if (!navBtn || !nav || mobileNavInitialized) return;
+        
+        navBtn.addEventListener("click", () => {
+            if (window.innerWidth > 1024) return;
+            if (navBtn.dataset.animate === "animate") return;
+
+            if (navBtn.classList.contains("is-active")) {
+                navBtn.dataset.animate = "animate";
+                navBtn.classList.remove("is-active");
+                document.documentElement.style.overflow = "auto";
+
+                gsap.to(nav, {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        setTimeout(() => {
+                            nav.style.display = "none";
+                            navBtn.dataset.animate = "end";
+                        }, 150);
+                    },
+                });
+            } else {
+                navBtn.dataset.animate = "animate";
+                nav.style.display = "block";
+                navBtn.classList.add("is-active");
+                document.documentElement.style.overflow = "hidden";
+
+                gsap.to(nav, {
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        navBtn.dataset.animate = "end";
+                    },
+                });
+            }
+        });
+        
+        mobileNavInitialized = true;
+    };
+    
+    const updateMobileNavState = () => {
         if (!navBtn || !nav) return;
 
         if (window.innerWidth <= 1024) {
-            gsap.set(nav, {
-                opacity: 0,
-                display: "none",
-            });
-
-            navBtn.addEventListener("click", () => {
-                if (navBtn.dataset.animate === "animate") return;
-
-                if (navBtn.classList.contains("is-active")) {
-                    navBtn.dataset.animate = "animate";
-                    navBtn.classList.remove("is-active");
-                    document.documentElement.style.overflow = "auto";
-
-                    gsap.to(nav, {
-                        opacity: 0,
-                        duration: 0.3,
-                        ease: "power2.out",
-                        onComplete: () => {
-                            setTimeout(() => {
-                                nav.style.display = "none";
-                                navBtn.dataset.animate = "end";
-                            }, 150);
-                        },
-                    });
-                } else {
-                    navBtn.dataset.animate = "animate";
-                    nav.style.display = "block";
-                    navBtn.classList.add("is-active");
-                    document.documentElement.style.overflow = "hidden";
-
-                    gsap.to(nav, {
-                        opacity: 1,
-                        duration: 0.3,
-                        ease: "power2.out",
-                        onComplete: () => {
-                            navBtn.dataset.animate = "end";
-                        },
-                    });
-                }
-            });
+            // SPで、かつメニューが開いていない場合のみ初期状態にリセット
+            if (!navBtn.classList.contains("is-active")) {
+                gsap.set(nav, {
+                    opacity: 0,
+                    display: "none",
+                });
+            }
         } else {
+            // PCではナビを表示状態にリセット
             nav.style.display = "";
             nav.style.opacity = "";
             navBtn.classList.remove("is-active");
+            document.documentElement.style.overflow = "auto";
         }
     };
 
     // ヘッダーホバー
-    const initHeaderHover = () => {
-        if (window.innerWidth <= 767) return;
+    let headerHoverInitialized = false;
+    
+    const initHeaderHoverEvents = () => {
+        if (headerHoverInitialized) return;
 
         const hoverContainers = document.querySelectorAll(".bl_header_navWrapper_hoverContainer");
         hoverContainers.forEach((container) => {
@@ -164,21 +180,55 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!linkContainer) return;
 
             container.addEventListener("mouseenter", () => {
+                if (window.innerWidth <= breakPoint) return;
                 linkContainer.style.opacity = "1";
                 linkContainer.style.visibility = "visible";
             });
 
             container.addEventListener("mouseleave", () => {
+                if (window.innerWidth <= breakPoint) return;
                 linkContainer.style.opacity = "0";
                 linkContainer.style.visibility = "hidden";
             });
         });
+        
+        headerHoverInitialized = true;
+    };
+    
+    const updateHeaderHoverState = () => {
+        const hoverContainers = document.querySelectorAll(".bl_header_navWrapper_hoverContainer");
+        hoverContainers.forEach((container) => {
+            const linkContainer = container.querySelector(".bl_header_navWrapper_hoverContainer_linkContainer");
+            if (!linkContainer) return;
+
+            if (window.innerWidth <= breakPoint) {
+                // SPではホバー状態をリセット
+                linkContainer.style.opacity = "";
+                linkContainer.style.visibility = "";
+            } else {
+                // PCでは非表示状態にリセット
+                linkContainer.style.opacity = "0";
+                linkContainer.style.visibility = "hidden";
+            }
+        });
     };
 
+    // イベントリスナーの登録（一度だけ）
+    initMobileNavEvents();
+    initHeaderHoverEvents();
+    
+    // 初期状態の設定
     initAll();
-    initMobileNav();
-    initHeaderHover();
+    updateMobileNavState();
+    updateHeaderHoverState();
+    
     window.addEventListener("load", initAll, false);
+    
+    // リサイズ時の状態更新
+    window.addEventListener("resize", () => {
+        updateMobileNavState();
+        updateHeaderHoverState();
+    });
 
     // ケーススライダー
     const caseSlider = document.querySelector(".bl_caseSliderWrapper_slider");

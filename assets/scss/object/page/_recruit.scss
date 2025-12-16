@@ -125,7 +125,7 @@
                 @include underSP {
                     grid-row: 2;
                     margin-bottom: 0;
-                    font-size: vwmin(26, sp_m);
+                    font-size: 6vw;
                     width: fit-content;
                     margin-inline: auto;
                 }
@@ -140,7 +140,7 @@
                     letter-spacing: calc(0.56 / 28 * 1em);
 
                     @include underSP {
-                        font-size: vwmin(18, sp_m);
+                        font-size: 4vw;
                     }
                 }
             }

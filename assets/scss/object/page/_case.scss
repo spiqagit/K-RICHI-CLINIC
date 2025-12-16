@@ -498,7 +498,7 @@
         gap: vwmin(40, pc);
 
         @include underSP {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             gap: vwmin(50, sp_m);
         }
 

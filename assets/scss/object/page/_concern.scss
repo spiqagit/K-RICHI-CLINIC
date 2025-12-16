@@ -31,7 +31,7 @@
 
     .bl_concernUpper_ttlWrapper {
         display: grid;
-        grid-template-columns: 1fr vwmin(390, pc);
+        grid-template-columns: 1fr vwmin(280, pc) ;
         align-items: center;
         border-radius: vwmin(4, pc);
         border: 1px solid #987F65;
@@ -39,12 +39,12 @@
         min-height: vwmin(280, pc);
 
         @include underSP {
-            grid-template-columns: 1fr vwmin(250, sp_m);
+            grid-template-columns: 1fr vwmin(290, sp_m);
             min-height: vwmin(125, sp_m);
         }
 
         @include underSP_m {
-            grid-template-columns: 1fr vwmin(125, sp_m);
+            grid-template-columns: 1fr vwmin(150, sp_m);
             min-height: vwmin(125, sp_m);
         }
 
@@ -96,12 +96,11 @@
 
         .bl_concernUpper_ttlWrapper_imgWrapper {
             position: relative;
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            height: auto;
 
-            @include underSP {
-                aspect-ratio: 1 / 1;
-                width: 100%;
-                height: auto;
-            }
+        
 
             &::before {
                 content: '';

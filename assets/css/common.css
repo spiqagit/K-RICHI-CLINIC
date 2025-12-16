@@ -2695,7 +2695,7 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_singlArrowNav .bl_singlArrowNav_allViewBtn {
     font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    padding-block: clamp(0px, 2.3364485981vw, 11px);
+    padding-block: clamp(0px, 3.5046728972vw, 16.5px);
   }
 }
 @media screen and (width <= 600px) {
@@ -4333,7 +4333,7 @@ Case
     max-width: clamp(0px, 46.7289719626vw, 220px);
     border-radius: clamp(0px, 0.4672897196vw, 2.2px);
     font-size: clamp(0px, 4.2056074766vw, 19.8px);
-    padding: clamp(0px, 2.3364485981vw, 11px);
+    padding: clamp(0px, 3.5046728972vw, 16.5px);
   }
 }
 @media (any-hover: hover) {
@@ -5012,7 +5012,7 @@ Case
 }
 @media screen and (width <= 1024px) {
   .bl_relatedCaseSection .bl_relatedCaseSection_list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: clamp(0px, 11.6822429907vw, 55px);
   }
 }
@@ -6250,7 +6250,7 @@ Information
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper {
   display: grid;
-  grid-template-columns: 1fr clamp(0px, 27.0833333333vw, 585px);
+  grid-template-columns: 1fr clamp(0px, 19.4444444444vw, 420px);
   align-items: center;
   border-radius: clamp(0px, 0.2777777778vw, 6px);
   border: 1px solid #987F65;
@@ -6259,13 +6259,13 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper {
-    grid-template-columns: 1fr clamp(0px, 58.4112149533vw, 275px);
+    grid-template-columns: 1fr clamp(0px, 67.7570093458vw, 319px);
     min-height: clamp(0px, 29.2056074766vw, 137.5px);
   }
 }
 @media screen and (width <= 600px) {
   .bl_concernUpper .bl_concernUpper_ttlWrapper {
-    grid-template-columns: 1fr clamp(0px, 29.2056074766vw, 137.5px);
+    grid-template-columns: 1fr clamp(0px, 35.046728972vw, 165px);
     min-height: clamp(0px, 29.2056074766vw, 137.5px);
   }
 }
@@ -6316,13 +6316,9 @@ Information
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_imgWrapper {
   position: relative;
-}
-@media screen and (width <= 1024px) {
-  .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_imgWrapper {
-    aspect-ratio: 1/1;
-    width: 100%;
-    height: auto;
-  }
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
 }
 .bl_concernUpper .bl_concernUpper_ttlWrapper .bl_concernUpper_ttlWrapper_imgWrapper::before {
   content: "";
@@ -7260,7 +7256,7 @@ Information
   .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .el_recruitMessageSection_copyWrapper {
     grid-row: 2;
     margin-bottom: 0;
-    font-size: clamp(0px, 6.0747663551vw, 28.6px);
+    font-size: 6vw;
     width: fit-content;
     margin-inline: auto;
   }
@@ -7276,7 +7272,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_txtWrapper .el_recruitMessageSection_copyWrapper .el_recruitMessageSection_copyWrapper_span {
-    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+    font-size: 4vw;
   }
 }
 .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer {
