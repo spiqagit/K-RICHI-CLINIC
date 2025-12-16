@@ -116,8 +116,8 @@ function change_posts_per_page($query)
         $query->set('order', 'DESC');
     }
 
-    // column投稿タイプのアーカイブページ（年月アーカイブ含む）で10件表示
-    if (is_post_type_archive('column') || (is_date() && get_query_var('post_type') === 'column')) {
+    // column投稿タイプのアーカイブページ（年月アーカイブ・カテゴリー絞り込み含む）で10件表示
+    if (is_post_type_archive('column') || (is_date() && get_query_var('post_type') === 'column') || is_tax('column-cat')) {
         $query->set('posts_per_page', 10);
         $query->set('orderby', 'date');
         $query->set('order', 'DESC');
