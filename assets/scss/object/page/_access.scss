@@ -188,6 +188,8 @@
     }
 
     .bl_commonBreadcrumbsContainer {
-        padding-inline: 0 !important;
+        @include underSP {
+            padding-inline: 0 !important;
+        }
     }
 }

@@ -9800,6 +9800,8 @@ Information
     padding-bottom: clamp(0px, 42.0560747664vw, 198px) !important;
   }
 }
-.bl_accessContents_mapContainer .bl_commonBreadcrumbsContainer {
-  padding-inline: 0 !important;
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer .bl_commonBreadcrumbsContainer {
+    padding-inline: 0 !important;
+  }
 }
