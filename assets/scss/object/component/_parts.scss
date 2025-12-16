@@ -1563,7 +1563,7 @@ menuカード
 
         @include underSP {
             grid-template-columns: vwmin(16, sp_m) auto;
-            gap: vwmin(12, sp_m);
+            gap: vwmin(8, sp_m);
         }
     }
 
@@ -1720,11 +1720,10 @@ menuカード
 
             @media (any-hover: hover) {
                 &:hover {
-                    background-color: #F4EEEA;
+                    background-color: #fff;
                     transition: all 0.5s ease;
                     border: 1px solid #987F65;
                     color: #987F65;
-
                 }
             }
         }

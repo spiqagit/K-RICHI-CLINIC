@@ -32,8 +32,9 @@
         border-bottom: 1px dashed #987F65;
 
         @include underSP {
-            font-size: vwmin(32, sp_m);
+            font-size: vwmin(24, sp_m);
             margin-bottom: vwmin(20, sp_m);
+            padding-bottom: vwmin(20, sp_m);
         }
     }
 }
@@ -58,7 +59,7 @@
         letter-spacing: calc(1.2 / 24 * 1em);
 
         @include underSP {
-            font-size: vwmin(24, sp_m);
+            font-size: vwmin(20, sp_m);
         }
     }
 }
@@ -79,7 +80,7 @@
             display: flex;
             flex-direction: column;
             gap: vwmin(24, sp_m);
-            padding: vwmin(20, sp_m);
+            padding: vwmin(10, sp_m);
             height: 100%;
         }
 
@@ -186,7 +187,7 @@
 
             .el_columnBtnItem_txtWrapper_ttl {
                 color: var(--txtColor);
-                font-family: var(--notoSerifDisplay);
+                font-family: var(--notoSerifJP);
                 font-size: vwmin(16, pc);
                 font-style: normal;
                 font-weight: 400;
@@ -375,6 +376,7 @@
                     grid-template-columns: auto 1fr;
                     gap: vwmin(14, pc);
                     align-items: flex-end;
+
                     @include underSP {
                         grid-template-columns: auto 1fr;
                         gap: vwmin(14, sp_m);
@@ -403,6 +405,7 @@
                         font-weight: 400;
                         line-height: 1;
                         letter-spacing: calc(0.9 / 18 * 1em);
+
                         @include underSP {
                             font-size: vwmin(18, sp_m);
                         }
@@ -481,7 +484,7 @@
         gap: vwmin(20, pc);
 
         @include underSP {
-            grid-template-columns:  1fr;
+            grid-template-columns: 1fr;
             gap: vwmin(20, sp_m);
         }
 
@@ -489,15 +492,25 @@
             background-color: #F4EEEA !important;
 
             .bl_columnBtnItem_inner {
-                display:grid;
+                display: grid;
                 grid-template-columns: vwmin(100, sp_m) 1fr;
                 gap: vwmin(10, sp_m);
                 background-color: #F4EEEA !important;
 
-                .el_columnBtnItem_postInfoWrapper_cats_cat{
+                .el_columnBtnItem_postInfoWrapper_cats_cat {
                     background-color: #E5D8CD !important;
                 }
             }
         }
+    }
+}
+
+
+.bl_columnArticleWrapper_thumbnail {
+    width: 60%;
+    margin-inline: auto;
+
+    img {
+        width: 100%;
     }
 }

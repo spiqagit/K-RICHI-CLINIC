@@ -862,102 +862,6 @@ html {
     padding-inline: clamp(0px, 7.0093457944vw, 33px);
   }
 }
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer {
-  display: grid;
-  grid-template-columns: clamp(0px, 21.3194444444vw, 460.5px) 1fr;
-  gap: clamp(0px, 8.3333333333vw, 180px);
-  align-items: center;
-  justify-content: center;
-  max-width: clamp(0px, 69.9305555556vw, 1510.5px);
-  width: 100%;
-  margin-inline: auto;
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer {
-    grid-template-columns: 1fr;
-    gap: clamp(0px, 11.6822429907vw, 55px);
-    max-width: 100%;
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
-  margin-bottom: clamp(0px, 3.4722222222vw, 75px);
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
-    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
-  max-width: clamp(0px, 18.3333333333vw, 396px);
-  width: 100%;
-  margin-inline: auto;
-  margin-bottom: clamp(0px, 2.0833333333vw, 45px);
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
-    max-width: clamp(0px, 61.6822429907vw, 290.4px);
-    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo img {
-  width: 100%;
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
-  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
-    margin-bottom: clamp(0px, 4.6728971963vw, 22px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
-  color: var(--txtColor);
-  font-family: var(--OldSt);
-  font-size: clamp(0px, 1.1111111111vw, 24px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  margin-block: var(--leading-trim);
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
-  color: var(--txtColor);
-  font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.1111111111vw, 24px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
-    font-size: clamp(0px, 3.738317757vw, 17.6px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
-  display: grid;
-  grid-template-columns: auto clamp(0px, 0.8333333333vw, 18px);
-  align-items: center;
-  justify-content: center;
-  gap: clamp(0px, 0.2083333333vw, 4.5px);
-}
-@media screen and (width <= 1024px) {
-  .ly_footer .bl_footer_upper .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
-    grid-template-columns: auto clamp(0px, 2.8037383178vw, 13.2px);
-    gap: clamp(0px, 0.7009345794vw, 3.3px);
-  }
-}
-.ly_footer .bl_footer_upper .bl_footerClinicInfoWrapper_mapContainer iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 580/385;
-  border: none;
-}
 .ly_footer .bl_footer_lower {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -1164,6 +1068,104 @@ html {
   .ly_footer .bl_footer_copyrightContainer .bl_footer_copyrightWrapper_inner .bl_footer_copyrightTxt {
     font-size: clamp(0px, 2.8037383178vw, 13.2px);
   }
+}
+
+.bl_footerClinicInfoContainer {
+  display: grid;
+  grid-template-columns: clamp(0px, 21.3194444444vw, 460.5px) 1fr;
+  gap: clamp(0px, 8.3333333333vw, 180px);
+  align-items: center;
+  justify-content: center;
+  max-width: clamp(0px, 69.9305555556vw, 1510.5px);
+  width: 100%;
+  margin-inline: auto;
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer {
+    grid-template-columns: 1fr;
+    gap: clamp(0px, 11.6822429907vw, 55px);
+    max-width: 100%;
+  }
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
+  margin-bottom: clamp(0px, 3.4722222222vw, 75px);
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer {
+    margin-bottom: clamp(0px, 11.6822429907vw, 55px);
+  }
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
+  max-width: clamp(0px, 18.3333333333vw, 396px);
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: clamp(0px, 2.0833333333vw, 45px);
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo {
+    max-width: clamp(0px, 61.6822429907vw, 290.4px);
+    margin-bottom: clamp(0px, 7.0093457944vw, 33px);
+  }
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_logoContainer .bl_footerClinicInfoWrapper_logo img {
+  width: 100%;
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
+  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper {
+    margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+  }
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
+  color: var(--txtColor);
+  font-family: var(--OldSt);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-block: var(--leading-trim);
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_numberTxt {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
+  color: var(--txtColor);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_addressWrapper .el_footerClinicInfoWrapper_addressTxt {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+.bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
+  display: grid;
+  grid-template-columns: auto clamp(0px, 0.8333333333vw, 18px);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0px, 0.2083333333vw, 4.5px);
+}
+@media screen and (width <= 1024px) {
+  .bl_footerClinicInfoContainer .bl_footerClinicInfoWrapper_addressContainer .bl_footerClinicInfoWrapper_mapContainer {
+    grid-template-columns: auto clamp(0px, 2.8037383178vw, 13.2px);
+    gap: clamp(0px, 0.7009345794vw, 3.3px);
+  }
+}
+
+.bl_footerClinicInfoWrapper_mapContainer iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 580/385;
+  border: none;
 }
 
 .bl_commonAllviewBtnWrapper .bl_commonAllviewBtn {
@@ -2623,7 +2625,7 @@ menuカード
 @media screen and (width <= 1024px) {
   .bl_singlArrowNav .bl_singlArrowNav_btn {
     grid-template-columns: clamp(0px, 3.738317757vw, 17.6px) auto;
-    gap: clamp(0px, 2.8037383178vw, 13.2px);
+    gap: clamp(0px, 1.8691588785vw, 8.8px);
   }
 }
 .bl_singlArrowNav .bl_singlArrowNav_prev {
@@ -2769,7 +2771,7 @@ menuカード
 }
 @media (any-hover: hover) {
   .bl_commonShareBtnWrapper .bl_commonShareBtnWrapper_btnWrapper .bl_commonShareBtnWrapper_copyBtn:hover {
-    background-color: #F4EEEA;
+    background-color: #fff;
     transition: all 0.5s ease;
     border: 1px solid #987F65;
     color: #987F65;
@@ -7303,9 +7305,6 @@ Information
   .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt {
     font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
-  .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt br {
-    display: none;
-  }
 }
 .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_directorWrapper {
   display: grid;
@@ -7387,7 +7386,6 @@ Information
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
-  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
 }
 @media screen and (width <= 1024px) {
   .bl_recruitConditionsSection .bl_recruitConditionsSection_inner .bl_recruitConditionsSection_ttl .el_recruitConditionsSection_ttl_en {
@@ -7526,7 +7524,7 @@ Information
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
-  margin-bottom: clamp(0px, 1.3888888889vw, 30px);
+  margin-bottom: clamp(0px, 0.6944444444vw, 15px);
 }
 @media screen and (width <= 1024px) {
   .bl_jobCategorySection .bl_jobCategorySection_inner .bl_jobCategorySection_ttl .el_jobCategorySection_ttl_en {
@@ -9165,8 +9163,9 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_faqContentsWrapper .el_faqContentsWrapper_ttl {
-    font-size: clamp(0px, 7.476635514vw, 35.2px);
+    font-size: clamp(0px, 5.6074766355vw, 26.4px);
     margin-bottom: clamp(0px, 4.6728971963vw, 22px);
+    padding-bottom: clamp(0px, 4.6728971963vw, 22px);
   }
 }
 
@@ -9191,7 +9190,7 @@ Information
 }
 @media screen and (width <= 1024px) {
   .bl_faqContentsWrapper_item .el_faqContentsWrapper_item_ttl {
-    font-size: clamp(0px, 5.6074766355vw, 26.4px);
+    font-size: clamp(0px, 4.6728971963vw, 22px);
   }
 }
 
@@ -9210,7 +9209,7 @@ Information
     display: flex;
     flex-direction: column;
     gap: clamp(0px, 5.6074766355vw, 26.4px);
-    padding: clamp(0px, 4.6728971963vw, 22px);
+    padding: clamp(0px, 2.3364485981vw, 11px);
     height: 100%;
   }
 }
@@ -9314,7 +9313,7 @@ Information
 }
 .bl_columnBtnItem .bl_columnBtnItem_inner .bl_columnBtnItem_txtWrapper .el_columnBtnItem_txtWrapper_ttl {
   color: var(--txtColor);
-  font-family: var(--notoSerifDisplay);
+  font-family: var(--notoSerifJP);
   font-size: clamp(0px, 1.1111111111vw, 24px);
   font-style: normal;
   font-weight: 400;
@@ -9613,6 +9612,14 @@ Information
   background-color: #E5D8CD !important;
 }
 
+.bl_columnArticleWrapper_thumbnail {
+  width: 60%;
+  margin-inline: auto;
+}
+.bl_columnArticleWrapper_thumbnail img {
+  width: 100%;
+}
+
 .bl_accessContents {
   max-width: clamp(0px, 77.7777777778vw, 1680px);
   margin-inline: auto;
@@ -9622,8 +9629,8 @@ Information
 @media screen and (width <= 1024px) {
   .bl_accessContents {
     max-width: 100%;
+    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
     padding-inline: clamp(0px, 7.0093457944vw, 33px);
-    padding-bottom: clamp(0px, 28.0373831776vw, 132px);
   }
 }
 .bl_accessContents .el_accessContents_ttl {
@@ -9655,7 +9662,7 @@ Information
   gap: clamp(0px, 2.7777777778vw, 60px);
   overflow-x: auto;
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 600px) {
   .bl_accessContents .bl_accessContents_list {
     flex-direction: column;
     gap: clamp(0px, 9.3457943925vw, 44px);
@@ -9673,7 +9680,11 @@ Information
   .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item {
     padding: clamp(0px, 4.6728971963vw, 22px);
     border-radius: clamp(0px, 0.9345794393vw, 4.4px);
-    max-width: clamp(0px, 70.0934579439vw, 330px);
+    min-width: clamp(0px, 70.0934579439vw, 330px);
+  }
+}
+@media screen and (width <= 600px) {
+  .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item {
     min-width: 100%;
   }
 }
@@ -9688,9 +9699,9 @@ Information
   height: 2px;
   background-color: #E5D8CD;
 }
-@media screen and (width <= 1024px) {
+@media screen and (width <= 600px) {
   .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item::after {
-    width: clamp(0px, 9.3457943925vw, 44px);
+    width: clamp(0px, 10.5140186916vw, 49.5px);
     top: auto;
     right: auto;
     left: 50%;
@@ -9729,4 +9740,66 @@ Information
   .bl_accessContents .bl_accessContents_list .el_accessContents_list_item_txt {
     font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
+}
+
+.bl_accessContents_mapContainer {
+  border: 0 !important;
+  background-color: #E5D8CD !important;
+}
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer {
+    padding: clamp(0px, 9.3457943925vw, 44px);
+    border-radius: clamp(0px, 0.9345794393vw, 4.4px);
+  }
+}
+.bl_accessContents_mapContainer .bl_accessContents_routeContainer {
+  display: grid;
+  grid-template-columns: clamp(0px, 1.3888888889vw, 30px) 1fr;
+  gap: clamp(0px, 0.2777777778vw, 6px);
+  align-items: flex-start;
+  margin-top: clamp(0px, 2.0833333333vw, 45px);
+}
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer .bl_accessContents_routeContainer {
+    margin-top: clamp(0px, 7.0093457944vw, 33px);
+    grid-template-columns: clamp(0px, 4.6728971963vw, 22px) 1fr;
+  }
+}
+.bl_accessContents_mapContainer .bl_accessContents_routeContainer .el_accessContents_routeIcon {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  margin-top: clamp(0px, 0.2777777778vw, 6px);
+}
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer .bl_accessContents_routeContainer .el_accessContents_routeIcon {
+    margin-top: clamp(0px, 0.9345794393vw, 4.4px);
+  }
+}
+.bl_accessContents_mapContainer .bl_accessContents_routeContainer .el_accessContents_routeTxt {
+  color: var(--black);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.1111111111vw, 24px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer .bl_accessContents_routeContainer .el_accessContents_routeTxt {
+    font-size: clamp(0px, 3.738317757vw, 17.6px);
+    letter-spacing: clamp(0px, 0.1869158879vw, 0.88px);
+  }
+}
+.bl_accessContents_mapContainer .bl_footerClinicInfoContainer {
+  padding-bottom: clamp(0px, 8.3333333333vw, 180px) !important;
+}
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer .bl_footerClinicInfoContainer {
+    padding-bottom: clamp(0px, 42.0560747664vw, 198px) !important;
+  }
+}
+.bl_accessContents_mapContainer .bl_commonBreadcrumbsContainer {
+  padding-inline: 0 !important;
 }

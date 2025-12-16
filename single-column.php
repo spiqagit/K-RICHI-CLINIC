@@ -21,7 +21,7 @@
                     <?
                     $thumbnail = get_the_post_thumbnail_url();
                     if ($thumbnail) : ?>
-                        <div class="bl_newsArticleWrapper_thumbnail">
+                        <div class="bl_columnArticleWrapper_thumbnail">
                             <img src="<?php echo $thumbnail; ?>" alt="<?php the_title(); ?>">
                         </div>
                     <?php endif; ?>

@@ -20,9 +20,8 @@
             </hgroup>
         </div>
         <div class="bl_commonLowPageWrapper_contentsOuter">
-            <div class="bl_commonLowPageWrapper_contents">
-                <div class="bl_commonLowPageWrapper_contents_inner ">
-
+            <div class="bl_commonLowPageWrapper_contents bl_accessContents_listContainer">
+                <div class="bl_commonLowPageWrapper_contents_inner">
                     <div class="bl_accessContents">
                         <?php if (get_field('access-ttl')): ?>
                             <h2 class="el_accessContents_ttl"><?php echo get_field('access-ttl'); ?></h2>
@@ -41,11 +40,55 @@
                                         <?php endif; ?>
 
                                         <p class="el_accessContents_list_item_txt"><?php echo get_sub_field('access-list-txt'); ?></p>
-                                        
+
                                     </div>
                                 <?php endwhile; ?>
                             </div>
                         <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="bl_commonLowPageWrapper_contents bl_accessContents_mapContainer">
+                <div class="bl_commonLowPageWrapper_contents_inner">
+                    <div class="bl_footerClinicInfoContainer">
+                        <div class="bl_footerClinicInfoWrapper">
+                            <div class="bl_footerClinicInfoWrapper_logoContainer">
+                                <div class="bl_footerClinicInfoWrapper_logo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="K-RICH Clinic">
+                                </div>
+                            </div>
+
+                            <div class="bl_footerClinicInfoWrapper_addressContainer">
+                                <div class="bl_footerClinicInfoWrapper_addressWrapper">
+                                    <?php if (get_field('post-code', 'option')): ?>
+                                        <p class="el_footerClinicInfoWrapper_numberTxt"><?php echo get_field('post-code', 'option'); ?></p>
+                                    <?php endif; ?>
+                                    <?php if (get_field('address', 'option')): ?>
+                                        <p class="el_footerClinicInfoWrapper_addressTxt"><?php echo get_field('address', 'option'); ?></p>
+                                    <?php endif; ?>
+                                </div>
+
+                                <?php if (get_field('google_map_link', 'option')): ?>
+                                    <a href="<?php echo get_field('google_map_link', 'option'); ?>" class="bl_commonGoogleMapLink" target="_blank">
+                                        <p class="el_commonGoogleMapLink_txt">Google Maps</p>
+                                        <img class="el_commonGoogleMapLink_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/out-arrow.svg" alt="">
+                                    </a>
+                                <?php endif; ?>
+
+                                <?php if (get_field('access-routetxt')): ?>
+                                    <div class="bl_accessContents_routeContainer">
+                                        <img class="el_accessContents_routeIcon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/train.svg" alt="">
+                                        <p class="el_accessContents_routeTxt"><?php echo get_field('access-routetxt'); ?></p>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="bl_footerClinicInfoWrapper_mapContainer">
+                            <?php if (get_field('googlemap-code', 'option')): ?>
+                                <?php echo get_field('googlemap-code', 'option'); ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
 
                     <div>

@@ -157,112 +157,6 @@
             padding-bottom: vwmin(50, sp_m);
             padding-inline: vwmin(30, sp_m);
         }
-
-        .bl_footerClinicInfoContainer {
-            display: grid;
-            grid-template-columns: vwmin(307, pc) 1fr;
-            gap: vwmin(120, pc);
-            align-items: center;
-            justify-content: center;
-            max-width: vwmin(1007, pc);
-            width: 100%;
-            margin-inline: auto;
-
-            @include underSP {
-                grid-template-columns: 1fr;
-                gap: vwmin(50, sp_m);
-                max-width: 100%;
-            }
-
-            .bl_footerClinicInfoWrapper_logoContainer {
-                margin-bottom: vwmin(50, pc);
-
-                @include underSP {
-                    margin-bottom: vwmin(50, sp_m);
-                }
-
-                .bl_footerClinicInfoWrapper_logo {
-                    max-width: vwmin(264, pc);
-                    width: 100%;
-                    margin-inline: auto;
-                    margin-bottom: vwmin(30, pc);
-
-                    @include underSP {
-                        max-width: vwmin(264, sp_m);
-                        margin-bottom: vwmin(30, sp_m);
-                    }
-
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
-
-
-            .bl_footerClinicInfoWrapper_addressContainer {
-
-                .bl_footerClinicInfoWrapper_addressWrapper {
-                    margin-bottom: vwmin(20, pc);
-
-                    @include underSP {
-                        margin-bottom: vwmin(20, sp_m);
-                    }
-
-                    .el_footerClinicInfoWrapper_numberTxt {
-                        color: var(--txtColor);
-                        font-family: var(--OldSt);
-                        font-size: vwmin(16, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1;
-                        letter-spacing: calc(0.32 / 16 * 1em);
-                        margin-block: var(--leading-trim);
-
-                        @include underSP {
-                            font-size: vwmin(16, sp_m);
-                        }
-                    }
-
-                    .el_footerClinicInfoWrapper_addressTxt {
-                        color: var(--txtColor);
-                        font-family: var(--notoSerifJP);
-                        font-size: vwmin(16, pc);
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 1.5;
-                        letter-spacing: calc(0.8 / 16 * 1em);
-
-                        @include underSP {
-                            font-size: vwmin(16, sp_m);
-                        }
-                    }
-                }
-
-
-
-                .bl_footerClinicInfoWrapper_mapContainer {
-                    display: grid;
-                    grid-template-columns: auto vwmin(12, pc);
-                    align-items: center;
-                    justify-content: center;
-                    gap: vwmin(3, pc);
-
-                    @include underSP {
-                        grid-template-columns: auto vwmin(12, sp_m);
-                        gap: vwmin(3, sp_m);
-                    }
-                }
-            }
-        }
-
-        .bl_footerClinicInfoWrapper_mapContainer {
-            iframe {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 580 / 385;
-                border: none;
-            }
-        }
     }
 
 
@@ -481,5 +375,112 @@
                 }
             }
         }
+    }
+}
+
+
+.bl_footerClinicInfoContainer {
+    display: grid;
+    grid-template-columns: vwmin(307, pc) 1fr;
+    gap: vwmin(120, pc);
+    align-items: center;
+    justify-content: center;
+    max-width: vwmin(1007, pc);
+    width: 100%;
+    margin-inline: auto;
+
+    @include underSP {
+        grid-template-columns: 1fr;
+        gap: vwmin(50, sp_m);
+        max-width: 100%;
+    }
+
+    .bl_footerClinicInfoWrapper_logoContainer {
+        margin-bottom: vwmin(50, pc);
+
+        @include underSP {
+            margin-bottom: vwmin(50, sp_m);
+        }
+
+        .bl_footerClinicInfoWrapper_logo {
+            max-width: vwmin(264, pc);
+            width: 100%;
+            margin-inline: auto;
+            margin-bottom: vwmin(30, pc);
+
+            @include underSP {
+                max-width: vwmin(264, sp_m);
+                margin-bottom: vwmin(30, sp_m);
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+
+    .bl_footerClinicInfoWrapper_addressContainer {
+
+        .bl_footerClinicInfoWrapper_addressWrapper {
+            margin-bottom: vwmin(20, pc);
+
+            @include underSP {
+                margin-bottom: vwmin(20, sp_m);
+            }
+
+            .el_footerClinicInfoWrapper_numberTxt {
+                color: var(--txtColor);
+                font-family: var(--OldSt);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: calc(0.32 / 16 * 1em);
+                margin-block: var(--leading-trim);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+            }
+
+            .el_footerClinicInfoWrapper_addressTxt {
+                color: var(--txtColor);
+                font-family: var(--notoSerifJP);
+                font-size: vwmin(16, pc);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: calc(0.8 / 16 * 1em);
+
+                @include underSP {
+                    font-size: vwmin(16, sp_m);
+                }
+            }
+        }
+
+
+
+        .bl_footerClinicInfoWrapper_mapContainer {
+            display: grid;
+            grid-template-columns: auto vwmin(12, pc);
+            align-items: center;
+            justify-content: center;
+            gap: vwmin(3, pc);
+
+            @include underSP {
+                grid-template-columns: auto vwmin(12, sp_m);
+                gap: vwmin(3, sp_m);
+            }
+        }
+    }
+}
+
+.bl_footerClinicInfoWrapper_mapContainer {
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 580 / 385;
+        border: none;
     }
 }

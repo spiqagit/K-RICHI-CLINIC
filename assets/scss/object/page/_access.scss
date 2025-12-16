@@ -1,6 +1,7 @@
 @use '../../foundation/function/index' as *;
 
 
+
 .bl_accessContents {
     max-width: vwmin(1120, pc);
     margin-inline: auto;
@@ -9,8 +10,8 @@
 
     @include underSP {
         max-width: 100%;
+        padding-bottom: vwmin(100, sp_m);
         padding-inline: vwmin(30, sp_m);
-        padding-bottom: vwmin(120, sp_m);
     }
 
     .el_accessContents_ttl {
@@ -42,7 +43,7 @@
         gap: vwmin(40, pc);
         overflow-x: auto;
 
-        @include underSP {
+        @include underSP_m {
             flex-direction: column;
             gap: vwmin(40, sp_m);
             overflow-x: clip;
@@ -58,7 +59,10 @@
             @include underSP {
                 padding: vwmin(20, sp_m);
                 border-radius: vwmin(4, sp_m);
-                max-width: vwmin(300, sp_m);
+                min-width: vwmin(300, sp_m);
+            }
+
+            @include underSP_m {
                 min-width: 100%;
             }
 
@@ -73,8 +77,8 @@
                 height: 2px;
                 background-color: #E5D8CD;
 
-                @include underSP {
-                    width: vwmin(40, sp_m);
+                @include underSP_m {
+                    width: vwmin(45, sp_m);
                     top: auto;
                     right: auto;
                     left: 50%;
@@ -89,10 +93,10 @@
                     display: none;
                 }
             }
-    
+
         }
 
-    
+
         .bl_accessContents_list_item_img {
             display: block;
             margin-bottom: vwmin(20, pc);
@@ -121,5 +125,69 @@
             }
         }
 
+    }
+}
+
+.bl_accessContents_mapContainer {
+    border: 0 !important;
+    background-color: #E5D8CD !important;
+
+    @include underSP {
+        padding: vwmin(40, sp_m);
+        border-radius: vwmin(4, sp_m);
+    }
+
+    .bl_accessContents_routeContainer {
+        display: grid;
+        grid-template-columns: vwmin(20, pc) 1fr;
+        gap: vwmin(4, pc);
+        align-items: flex-start;
+        margin-top: vwmin(30, pc);
+
+        @include underSP {
+            margin-top: vwmin(30, sp_m);
+            grid-template-columns: vwmin(20, sp_m) 1fr;
+
+        }
+
+        .el_accessContents_routeIcon {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            margin-top: vwmin(4, pc);
+
+            @include underSP {
+                margin-top: vwmin(4, sp_m);
+            }
+        }
+
+        .el_accessContents_routeTxt {
+            color: var(--black);
+            font-family: var(--notoSerifJP);
+            font-size: vwmin(16, pc);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: calc(0.8 / 16 * 1em);
+
+            @include underSP {
+                font-size: vwmin(16, sp_m);
+                letter-spacing: vwmin(0.8, sp_m);
+            }
+        }
+    }
+
+
+    .bl_footerClinicInfoContainer {
+        padding-bottom: vwmin(120, pc) !important;
+
+        @include underSP {
+            padding-bottom: vwmin(180, sp_m) !important;
+        }
+    }
+
+    .bl_commonBreadcrumbsContainer {
+        padding-inline: 0 !important;
     }
 }

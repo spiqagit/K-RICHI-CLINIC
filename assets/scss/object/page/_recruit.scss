@@ -171,10 +171,6 @@
 
                     @include underSP {
                         font-size: vwmin(16, sp_m);
-
-                        br{
-                            display: none;
-                        }
                     }
                 }
             }
@@ -260,7 +256,6 @@
                 font-weight: 400;
                 line-height: 1;
                 letter-spacing: calc(0.96 / 48 * 1em);
-                margin-bottom: vwmin(20, pc);
 
                 @include underSP {
                     text-align: center;
@@ -406,7 +401,7 @@
                 font-weight: 400;
                 line-height: 1;
                 letter-spacing: calc(1.2 / 60 * 1em);
-                margin-bottom: vwmin(20, pc);
+                margin-bottom: vwmin(10, pc);
 
                 @include underSP {
                     font-size: vwmin(40, sp_m);
