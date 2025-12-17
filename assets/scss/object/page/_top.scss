@@ -355,6 +355,7 @@
             }
 
             .swiper-slide {
+                height: 100%;
                 @include underSP {
                     max-width: vwmin(260, sp_m);
                 }

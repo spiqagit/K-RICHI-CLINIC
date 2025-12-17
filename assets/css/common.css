@@ -3147,6 +3147,9 @@ menuカード
     width: 100%;
   }
 }
+.bl_newsSection .bl_newsSliderWrapper .swiper-wrapper .swiper-slide {
+  height: 100%;
+}
 @media screen and (width <= 1024px) {
   .bl_newsSection .bl_newsSliderWrapper .swiper-wrapper .swiper-slide {
     max-width: clamp(0px, 60.7476635514vw, 286px);

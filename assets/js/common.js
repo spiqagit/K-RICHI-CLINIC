@@ -30,12 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (newsSlide) newsSlide.destroy(true, true);
             newsSlide = new Swiper(newsSwiper, {
                 slidesPerView: 'auto',
+                autoHeight: true,
             });
         }
         if (featuerSwiper) {
             if (featuerSlide) featuerSlide.destroy(true, true);
             featuerSlide = new Swiper(featuerSwiper, {
                 slidesPerView: 'auto',
+                autoHeight: true,
                 spaceBetween: 30,
             });
         }
