@@ -95,7 +95,6 @@ function remove_taxonomy_view_action($actions, $tag)
 // news・recruit投稿タイプからアイキャッチを非表示
 function remove_thumbnail_support()
 {
-    remove_post_type_support('news', 'thumbnail');
     remove_post_type_support('recruit', 'thumbnail');
 }
 add_action('init', 'remove_thumbnail_support');
