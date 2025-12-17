@@ -5480,6 +5480,10 @@ Case
     padding-inline: clamp(0px, 7.0093457944vw, 33px);
   }
 }
+.bl_newsArticleWrapper .bl_newsArticleWrapper_inner .bl_newsArticleWrapper_thumbnail {
+  width: 60%;
+  margin-inline: auto;
+}
 
 /*--------------------------------
 Misson

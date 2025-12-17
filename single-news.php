@@ -18,6 +18,11 @@
         <div class="bl_newsArticleWrapper_container">
             <article class="bl_newsArticleWrapper">
                 <div class="bl_newsArticleWrapper_inner bl_commonArticleSection">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="bl_newsArticleWrapper_thumbnail">
+                            <img class="el_newsArticleWrapper_thumbnail_img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        </div>
+                    <?php endif; ?>
                     <?php the_content(); ?>
                 </div>
             </article>
