@@ -41,11 +41,11 @@
                         </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/concern/">
                             <span class="el_header_navBtn_en">Concern</span>
-                            <span class="el_header_navBtn_ja">お悩み</span>
+                            <span class="el_header_navBtn_ja">お悩み一覧</span>
                         </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/treatment/">
                             <span class="el_header_navBtn_en">treatment</span>
-                            <span class="el_header_navBtn_ja">施術</span>
+                            <span class="el_header_navBtn_ja">施術メニュー</span>
                         </a>
                         <a class="bl_header_navBtn" href="<?php echo home_url(); ?>/price/">
                             <span class="el_header_navBtn_en">price</span>

@@ -190,7 +190,8 @@
             gap: vwmin(20, pc);
 
             @include underSP {
-                padding: vwmin(20, sp_m);
+                padding-block: vwmin(20, sp_m);
+                padding-inline: vwmin(10, sp_m);
                 gap: vwmin(20, sp_m);
             }
 

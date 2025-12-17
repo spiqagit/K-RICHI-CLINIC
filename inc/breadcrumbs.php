@@ -135,11 +135,13 @@
             </li>
         <?php endif; ?>
 
-        <?php if (is_post_type_archive('column')  && is_archive()): ?>
+        <?php if (is_post_type_archive('column')  && is_archive() || is_tax("column-cat")): ?>
             <li class="bl_commonBreadcrumbsItem">
                 <p class="bl_commonBreadcrumbsText">コラム</p>
             </li>
         <?php endif; ?>
+
+
 
         <?php if (is_singular("column")): ?>
             <li class="bl_commonBreadcrumbsItem">
@@ -152,6 +154,9 @@
                 <p class="bl_commonBreadcrumbsText"><?php the_title(); ?></p>
             </li>
         <?php endif; ?>
+
+    
+        
 
 
         <?php if (is_page('thanks')): ?>

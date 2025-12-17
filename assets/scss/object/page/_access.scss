@@ -77,6 +77,12 @@
                 height: 2px;
                 background-color: #E5D8CD;
 
+                @include underSP {
+                    width: vwmin(45, sp_m);
+                    right: -13.5%;
+                    background-color: #E5D8CD;
+                }
+
                 @include underSP_m {
                     width: vwmin(45, sp_m);
                     top: auto;

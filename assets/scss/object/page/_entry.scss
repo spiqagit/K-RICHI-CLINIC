@@ -135,6 +135,7 @@
                     }
 
                     .el_entryFormInputList_item_ttl_subTxt {
+                        display: block;
                         color: #1A0F04;
                         font-feature-settings: 'palt' on;
                         font-family: var(--notoSerifJP);
@@ -143,9 +144,11 @@
                         font-weight: 400;
                         line-height: 1.2;
                         letter-spacing: calc(0.6 / 12 * 1em);
+                        margin-top: vwmin(4, pc);
 
                         @include underSP {
                             font-size: vwmin(12, sp_m);
+                            margin-top: vwmin(4, sp_m);
                         }
                     }
 
@@ -231,15 +234,20 @@
 
                     .el_selectBox {
                         padding-right: vwmin(45, pc);
+
+                        @include underSP {
+                            padding-right: vwmin(45, sp_m);
+                        }
                     }
 
                     .bl_entryFormInputList_selectContainer {
                         display: flex;
                         align-items: center;
                         gap: vwmin(10, pc);
+                        width: fit-content;
 
                         @include underSP {
-                            width: 100%;
+                            width: fit-content;
                         }
 
                         .bl_entryFormInputList_selectWrapper {
@@ -272,6 +280,7 @@
                                 }
                             }
                         }
+
 
                         .el_entryFormInputList_selectContainer_txt {
                             width: fit-content;
@@ -413,31 +422,31 @@
                         }
 
                         &:first-child {
-                            select{
-                                width: vwmin(104, pc);
+                            .bl_entryFormInputList_selectWrapper {
+                                max-width: vwmin(104, pc);
 
                                 @include underSP {
-                                    width: vwmin(104, sp_m);
+                                    min-width: vwmin(104, sp_m);
                                 }
                             }
                         }
 
                         &:nth-child(2) {
-                            select{
-                                width: vwmin(86, pc);
+                            .bl_entryFormInputList_selectWrapper {
+                                max-width: vwmin(86, pc);
 
                                 @include underSP {
-                                    width: vwmin(86, sp_m);
+                                    min-width: vwmin(86, sp_m);
                                 }
                             }
                         }
 
                         &:last-child {
-                            select{
-                            width: vwmin(86, pc);
+                            .bl_entryFormInputList_selectWrapper {
+                                max-width: vwmin(86, pc);
 
                                 @include underSP {
-                                    width: vwmin(86, sp_m);
+                                    min-width: vwmin(86, sp_m);
                                 }
                             }
                         }
@@ -455,8 +464,6 @@
             }
         }
     }
-
-
 
 
     .privacy {
@@ -770,13 +777,13 @@
         font-size: vwmin(20, pc) !important;
         font-style: normal;
         font-weight: 400;
-        line-height: 1.2;
+        line-height: 1.2 !important;
         letter-spacing: calc(0.8 / 16 * 1em);
         margin-bottom: vwmin(10, pc);
         color: #1A0F04;
 
         @include underSP {
-            font-size: vwmin(20, sp_m) !important;
+            font-size: vwmin(16, sp_m) !important;
         }
     }
 
@@ -830,6 +837,16 @@
         }
     }
 
+}
+
+.wpcf7-not-valid-tip {
+    font-family: var(--notoSerifJP) !important;
+    font-size: vwmin(16, pc) !important;
+    color: #dc3232 !important;
+
+    @include underSP {
+        font-size: vwmin(16, sp_m) !important;
+    }
 }
 
 .codedropz-upload-container {

@@ -1378,8 +1378,8 @@ menuカード
         top: auto;
         align-self: auto;
         gap: vwmin(20, sp_m);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
     }
 
     .bl_commonCatNavi_item_ttl {
@@ -1513,6 +1513,20 @@ menuカード
     }
 }
 
+
+.bl_twoColumnNavi{
+    @include underSP {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: vwmin(20, sp_m);
+    }
+    
+    @include underSP_s{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: vwmin(20, sp_m);
+    }
+}
 .bl_singlArrowNav {
     display: grid;
     grid-template-columns: vwmin(140, pc) vwmin(200, pc) vwmin(140, pc);

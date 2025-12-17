@@ -21,12 +21,12 @@
                         <section class="ly_commonTwoColumnWrapper_inner bl_newsArchiveWrapper">
                             <div class="ly_commonTwoColumnWrapper_left">
 
-                                <nav class="bl_commonCatNavi">
+                                <nav class="bl_commonCatNavi bl_twoColumnNavi">
                                     <div class="bl_commonCatNavi_item">
                                         <h2 class="bl_commonCatNavi_item_ttl">Category</h2>
                                         <button class="bl_commonCatNavi_item_btn" type="button">
                                             <span>Category</span>
-                                            <img class="bl_commonCatNavi_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
+                                            <img class="bl_commonCatNavi_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/pulldown-arrow.svg" alt="">
                                         </button>
                                         <div class="bl_commonCatNaviListWrapper">
                                             <ul class="bl_commonCatNaviList">
@@ -60,7 +60,7 @@
                                         <h2 class="bl_commonCatNavi_item_ttl">Timeline</h2>
                                         <button class="bl_commonCatNavi_item_btn" type="button">
                                             <span>Timeline</span>
-                                            <img class="bl_commonCatNavi_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
+                                            <img class="bl_commonCatNavi_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/pulldown-arrow.svg" alt="">
                                         </button>
                                         <div class="bl_commonCatNaviListWrapper">
                                             <ul class="bl_commonCatNaviList">

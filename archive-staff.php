@@ -126,7 +126,7 @@
 
                                                 <?php if (have_rows('license-list', $staff_post->ID)) : ?>
                                                     <div class="bl_doctorContentsWrapper_careerWrapper">
-                                                        <p class="bl_doctorContentsWrapper_careerWrapper_ttl">経歴</p>
+                                                        <p class="bl_doctorContentsWrapper_careerWrapper_ttl">所属・資格</p>
                                                         <ul class="bl_doctorContentsWrapper_careerWrapper_list">
                                                             <?php while (have_rows('license-list', $staff_post->ID)) : the_row(); ?>
                                                                 <li class="bl_doctorContentsWrapper_careerWrapper_list_item">

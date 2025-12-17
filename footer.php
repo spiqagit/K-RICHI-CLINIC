@@ -138,7 +138,7 @@
 
                 <a href="<?php echo home_url(); ?>/concern/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">concern</p>
-                    <p class="el_footer_btnTitle_ja">お悩み</p>
+                    <p class="el_footer_btnTitle_ja">お悩み一覧</p>
                 </a>
 
                 <a href="<?php echo home_url(); ?>/case/" class="bl_footer_btnTitle bl_footer_btn">
@@ -153,7 +153,7 @@
 
                 <a href="<?php echo home_url(); ?>/treatment/" class="bl_footer_btnTitle bl_footer_btn">
                     <p class="el_footer_btnTitle_en">treatment</p>
-                    <p class="el_footer_btnTitle_ja">施術</p>
+                    <p class="el_footer_btnTitle_ja">施術メニュー</p>
                 </a>
 
                 <a href="<?php echo home_url(); ?>/news/" class="bl_footer_btnTitle bl_footer_btn">

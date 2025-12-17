@@ -357,10 +357,10 @@
                             </div>
                         </section>
                     </div>
-                    <div>
+                </div>
+                <div>
                         <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
                     </div>
-                </div>
             </div>
         </div>
     </main>
