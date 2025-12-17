@@ -1,4 +1,66 @@
 <?php get_header('meta'); ?>
+
+<?php
+// FAQリッチリザルト用の構造化データを生成
+$faq_structured_data = array(
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => array()
+);
+
+$faq_catParentList_for_schema = get_terms('faq-cat', array('parent' => 0, 'hide_empty' => true));
+
+if (!empty($faq_catParentList_for_schema)) {
+    foreach ($faq_catParentList_for_schema as $faq_catParent_schema) {
+        $faq_catChildList_for_schema = get_terms('faq-cat', array(
+            'parent' => $faq_catParent_schema->term_id,
+            'hide_empty' => true
+        ));
+
+        if (!empty($faq_catChildList_for_schema)) {
+            foreach ($faq_catChildList_for_schema as $faq_catChild_schema) {
+                $faq_posts_for_schema = get_posts(array(
+                    'post_type' => 'faq',
+                    'posts_per_page' => -1,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'faq-cat',
+                            'field' => 'term_id',
+                            'terms' => $faq_catChild_schema->term_id,
+                        ),
+                    ),
+                ));
+
+                if (!empty($faq_posts_for_schema)) {
+                    foreach ($faq_posts_for_schema as $faq_post_schema) {
+                        $question = get_the_title($faq_post_schema);
+                        $answer = get_field('faqarchive-txt', $faq_post_schema->ID);
+
+                        if (!empty($question) && !empty($answer)) {
+                            $faq_structured_data['mainEntity'][] = array(
+                                '@type' => 'Question',
+                                'name' => wp_strip_all_tags($question),
+                                'acceptedAnswer' => array(
+                                    '@type' => 'Answer',
+                                    'text' => wp_strip_all_tags($answer)
+                                )
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
+    wp_reset_postdata();
+}
+?>
+
+<?php if (!empty($faq_structured_data['mainEntity'])) : ?>
+<script type="application/ld+json">
+<?php echo json_encode($faq_structured_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
+<?php endif; ?>
+
 <?php wp_head(); ?>
 </head>
 

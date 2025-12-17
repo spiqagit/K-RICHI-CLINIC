@@ -1,4 +1,84 @@
 <?php get_header('meta'); ?>
+
+<?php
+// Article構造化データを生成（著者/監修者情報含む）
+$article_structured_data = array(
+    '@context' => 'https://schema.org',
+    '@type' => 'Article',
+    'headline' => get_the_title(),
+    'datePublished' => get_the_date('c'),
+    'dateModified' => get_the_modified_date('c'),
+    'mainEntityOfPage' => array(
+        '@type' => 'WebPage',
+        '@id' => get_permalink()
+    )
+);
+
+// サムネイル画像
+$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+if ($thumbnail_url) {
+    $article_structured_data['image'] = $thumbnail_url;
+}
+
+// 監修者情報を取得
+$supervisors_for_schema = get_terms(array(
+    'taxonomy' => 'supervisor',
+    'field' => 'slug',
+    'hide_empty' => true,
+));
+
+if (!empty($supervisors_for_schema) && !is_wp_error($supervisors_for_schema)) {
+    $authors = array();
+    foreach ($supervisors_for_schema as $supervisor_schema) {
+        $author_data = array(
+            '@type' => 'Person',
+            'name' => $supervisor_schema->name
+        );
+
+        // 役職
+        $job_title = get_field('supervisor-job', 'supervisor_' . $supervisor_schema->term_id);
+        if ($job_title) {
+            $author_data['jobTitle'] = wp_strip_all_tags($job_title);
+        }
+
+        // プロフィール画像
+        $author_image = get_field('supervisor-icon', 'supervisor_' . $supervisor_schema->term_id);
+        if ($author_image) {
+            $author_data['image'] = $author_image;
+        }
+
+        // プロフィール説明
+        $author_description = get_field('supervisor-txt', 'supervisor_' . $supervisor_schema->term_id);
+        if ($author_description) {
+            $author_data['description'] = wp_strip_all_tags($author_description);
+        }
+
+        $authors[] = $author_data;
+    }
+
+    // 著者が1人の場合は配列ではなくオブジェクトとして設定
+    if (count($authors) === 1) {
+        $article_structured_data['author'] = $authors[0];
+    } else {
+        $article_structured_data['author'] = $authors;
+    }
+}
+
+// 発行者情報（クリニック情報）
+$article_structured_data['publisher'] = array(
+    '@type' => 'Organization',
+    'name' => get_bloginfo('name'),
+    'logo' => array(
+        '@type' => 'ImageObject',
+        'url' => get_template_directory_uri() . '/assets/img/common/logo.svg'
+    )
+);
+?>
+
+<script type="application/ld+json">
+<?php echo json_encode($article_structured_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+</script>
+
 <?php wp_head(); ?>
 <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
 </head>

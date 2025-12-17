@@ -31,7 +31,10 @@
                 <div class="bl_concernLower">
                     <div class="bl_concernLower_inner">
                         <?php foreach (get_field('menu_select') as $menu) : ?>
-                            <?php $menu_post = get_post($menu); ?>
+                            <?php
+                            $menu_post = get_post($menu);
+                            if (!$menu_post) continue;
+                            ?>
                             <a href="<?php echo get_the_permalink($menu_post->ID); ?>" class="bl_menuCard">
                                 <div class="bl_menuCard_inner">
                                     <?php if (has_post_thumbnail($menu_post->ID)): ?>

@@ -68,25 +68,37 @@ function remove_editor_for_page_templates()
 }
 add_action('admin_init', 'remove_editor_for_page_templates');
 
-// price-catタクソノミーの「表示」ボタンを非表示にする
-function remove_price_cat_view_action($actions, $tag)
+// タクソノミーの「表示」ボタンを非表示にする
+function remove_taxonomy_view_action($actions, $tag)
 {
     if (isset($actions['view'])) {
         unset($actions['view']);
     }
     return $actions;
 }
-add_filter('price-cat_row_actions', 'remove_price_cat_view_action', 10, 2);
 
-// menu-catタクソノミーの「表示」ボタンを非表示にする
-function remove_menu_cat_view_action($actions, $tag)
+// // 適用するタクソノミー一覧
+// $taxonomies_to_hide_view = array(
+//     'price-cat',
+//     'menu-cat',
+//     'faq-cat',
+//     'department-cat',
+//     'supervisor',
+//     'staff-cat',
+//     'concern-cat',
+// );
+
+// foreach ($taxonomies_to_hide_view as $taxonomy) {
+//     add_filter($taxonomy . '_row_actions', 'remove_taxonomy_view_action', 10, 2);
+// }
+
+// news・recruit投稿タイプからアイキャッチを非表示
+function remove_thumbnail_support()
 {
-    if (isset($actions['view'])) {
-        unset($actions['view']);
-    }
-    return $actions;
+    remove_post_type_support('news', 'thumbnail');
+    remove_post_type_support('recruit', 'thumbnail');
 }
-add_filter('menu-cat_row_actions', 'remove_menu_cat_view_action', 10, 2);
+add_action('init', 'remove_thumbnail_support');
 
 /* ---------- 投稿関連 ---------- */
 // single生成制御
@@ -195,6 +207,11 @@ function disable_pages_by_conditions()
         set_404_and_exit();
     }
 
+    //著者
+    if(is_tax('supervisor')) {
+        set_404_and_exit();
+    }
+
     // staff投稿タイプの個別記事
     if (is_singular('staff') || is_tax('staff-cat')) {
         set_404_and_exit();
@@ -223,6 +240,12 @@ function disable_default_post_pages()
         set_404_and_exit();
     }
 
+
+    // recruit投稿タイプの個別記事
+    if(is_singular('recruit')) {
+        set_404_and_exit();
+    }
+
     //お悩みカテゴリー
     if (is_tax('concern-cat')) {
         set_404_and_exit();
@@ -242,6 +265,7 @@ function disable_default_post_pages()
     if (is_home() && !is_front_page()) {
         set_404_and_exit();
     }
+
 
     // カテゴリー・タグアーカイブ（デフォルト投稿のみの場合）
     if (is_category() || is_tag()) {
