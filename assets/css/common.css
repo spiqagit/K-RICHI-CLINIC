@@ -4341,7 +4341,8 @@ Case
   transition: opacity 0.5s ease;
   margin-top: clamp(0px, 6.9444444444vw, 150px);
   margin-inline: auto;
-  padding-block: clamp(0px, 0.6944444444vw, 15px);
+  padding-block: clamp(0px, 1.0416666667vw, 22.5px);
+  min-height: clamp(0px, 3.3333333333vw, 72px);
 }
 @media screen and (width <= 1024px) {
   .bl_menuArticle_backAllbtn {
@@ -7316,6 +7317,11 @@ Information
 @media screen and (width <= 1024px) {
   .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer .el_recruitMessageSection_messageTxtWrapper_txtContainer_txt {
     font-size: clamp(0px, 3.738317757vw, 17.6px);
+  }
+}
+@media screen and (width <= 600px) {
+  .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_txtContainer br {
+    display: none;
   }
 }
 .bl_recruitMessageSection .bl_recruitMessageSection_inner .bl_recruitMessageSection_messageTxtWrapper .bl_recruitMessageSection_messageTxtWrapper_directorWrapper {

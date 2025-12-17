@@ -173,6 +173,12 @@
                         font-size: vwmin(16, sp_m);
                     }
                 }
+
+                br{
+                    @include underSP_m {
+                        display: none;
+                    }
+                }
             }
 
 

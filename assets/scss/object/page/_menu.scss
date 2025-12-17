@@ -454,7 +454,8 @@
     transition: opacity 0.5s ease;
     margin-top: vwmin(100, pc);
     margin-inline: auto;
-    padding-block: vwmin(10, pc);
+    padding-block: vwmin(15, pc);
+    min-height: vwmin(48, pc);
 
     @include underSP {
         max-width: vwmin(200, sp_m);
