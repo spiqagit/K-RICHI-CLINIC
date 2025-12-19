@@ -2823,6 +2823,27 @@ menuカード
   visibility: visible;
 }
 
+.bl_commonNoPostWrapper {
+  padding-bottom: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_commonNoPostWrapper {
+    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
+  }
+}
+.bl_commonNoPostWrapper .bl_commonNoPostWrapper_txt {
+  color: var(--txtColor);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.6666666667vw, 36px);
+  width: fit-content;
+  margin-inline: auto;
+}
+@media screen and (width <= 1024px) {
+  .bl_commonNoPostWrapper .bl_commonNoPostWrapper_txt {
+    font-size: clamp(0px, 4.2056074766vw, 19.8px);
+  }
+}
+
 /*--------------------------------
 共通
 --------------------------------*/

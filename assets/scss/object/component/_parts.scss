@@ -1774,3 +1774,24 @@ menuカード
         }
     }
 }
+
+
+.bl_commonNoPostWrapper{
+    padding-bottom: vwmin(120, pc);
+
+    @include underSP {
+        padding-bottom: vwmin(100, sp_m);
+    }
+
+    .bl_commonNoPostWrapper_txt {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(24, pc);
+        width: fit-content;
+        margin-inline: auto;
+
+        @include underSP {
+            font-size: vwmin(18, sp_m);
+        }
+    }
+}

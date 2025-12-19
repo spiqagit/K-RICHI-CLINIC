@@ -800,3 +800,23 @@ function custom_aioseo_description($description)
     return $description;
 }
 add_filter('aioseo_description', 'custom_aioseo_description');
+
+/**
+ * robots metaをカスタマイズ（All in One SEO対応）
+ * - news/column年月アーカイブ: noindexを解除してindexに
+ */
+function custom_aioseo_robots_meta($robots)
+{
+    // news年月アーカイブページ
+    if (is_date() && get_query_var('post_type') === 'news') {
+        $robots['noindex'] = false;
+    }
+
+    // column年月アーカイブページ
+    if (is_date() && get_query_var('post_type') === 'column') {
+        $robots['noindex'] = false;
+    }
+
+    return $robots;
+}
+add_filter('aioseo_robots_meta', 'custom_aioseo_robots_meta');
