@@ -688,55 +688,115 @@ add_shortcode('privacy_link', 'privacy_link_shortcode');
 // Contact Form 7 でショートコードを有効にする
 add_filter('wpcf7_form_elements', 'do_shortcode');
 
-/**
- * search-caseページのタイトルをカスタマイズ（All in One SEO対応）
- * 「〇〇の絞り込み | サイト名」の形式にする
- */
-function custom_search_case_aioseo_title($title)
-{
-    if (get_query_var('search_case')) {
-        $case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
-        
-        if ($case_id > 0) {
-            // menu投稿タイプから記事タイトルを取得
-            $menu_post = get_post($case_id);
-            if ($menu_post && $menu_post->post_type === 'menu') {
-                // サイト名部分を取得（タイトルから区切り文字以降を抽出）
-                $separator = ' | ';
-                $site_title_part = '';
-                if (strpos($title, $separator) !== false) {
-                    $parts = explode($separator, $title, 2);
-                    if (isset($parts[1])) {
-                        $site_title_part = $separator . $parts[1];
-                    }
-                }
-                $title = get_the_title($menu_post) . 'の絞り込み' . $site_title_part;
-            }
-        }
-    }
-    
-    return $title;
-}
-add_filter('aioseo_title', 'custom_search_case_aioseo_title');
+/* ---------- All in One SEO カスタマイズ ---------- */
 
 /**
- * search-caseページのディスクリプションをカスタマイズ（All in One SEO対応）
+ * サイト名部分を取得するヘルパー関数
  */
-function custom_search_case_aioseo_description($description)
+function get_aioseo_site_title_part($title, $separator = ' | ')
 {
+    if (strpos($title, $separator) !== false) {
+        $parts = explode($separator, $title, 2);
+        if (isset($parts[1])) {
+            return $separator . $parts[1];
+        }
+    }
+    return '';
+}
+
+/**
+ * タイトルをカスタマイズ（All in One SEO対応）
+ * - search-case: 症例
+ * - news年月アーカイブ: お知らせ
+ * - column年月アーカイブ: コラム
+ * - column-cat: {カテゴリー名}のコラム
+ */
+function custom_aioseo_title($title)
+{
+    // search-caseページ
+    if (get_query_var('search_case')) {
+        $title = '症例' . get_aioseo_site_title_part($title);
+    }
+
+    // news年月アーカイブページ
+    if (is_date() && get_query_var('post_type') === 'news') {
+        $title = 'お知らせ' . get_aioseo_site_title_part($title);
+    }
+
+    // column年月アーカイブページ
+    if (is_date() && get_query_var('post_type') === 'column') {
+        $title = 'コラム' . get_aioseo_site_title_part($title);
+    }
+
+    // column-catタクソノミーページ
+    if (is_tax('column-cat')) {
+        $term = get_queried_object();
+        $title = $term->name . 'のコラム' . get_aioseo_site_title_part($title);
+    }
+
+    return $title;
+}
+add_filter('aioseo_title', 'custom_aioseo_title');
+
+/**
+ * ディスクリプションをカスタマイズ（All in One SEO対応）
+ * - search-case: 〇〇の症例ページです。
+ * - news年月アーカイブ: YYYY年MM月のお知らせ
+ * - column年月アーカイブ: YYYY年MM月のコラム
+ * - column-cat: {カテゴリー名}に関するコラム一覧です。
+ * - concern個別ページ: concern-txtフィールドの内容
+ */
+function custom_aioseo_description($description)
+{
+    // search-caseページ
     if (get_query_var('search_case')) {
         $case_id = isset($_GET['s']) ? intval($_GET['s']) : 0;
-        
         if ($case_id > 0) {
-            // menu投稿タイプから記事タイトルを取得
             $menu_post = get_post($case_id);
             if ($menu_post && $menu_post->post_type === 'menu') {
                 $menu_title = get_the_title($menu_post);
-                $description = $menu_title . 'の症例一覧ページです。';
+                $description = $menu_title . 'の症例ページです。';
             }
         }
     }
-    
+
+    // news年月アーカイブページ
+    if (is_date() && get_query_var('post_type') === 'news') {
+        $year = get_query_var('year');
+        $month = get_query_var('monthnum');
+        if ($year && $month) {
+            $description = $year . '年' . $month . '月のお知らせ';
+        } elseif ($year) {
+            $description = $year . '年のお知らせ';
+        }
+    }
+
+    // column年月アーカイブページ
+    if (is_date() && get_query_var('post_type') === 'column') {
+        $year = get_query_var('year');
+        $month = get_query_var('monthnum');
+        if ($year && $month) {
+            $description = $year . '年' . $month . '月のコラム';
+        } elseif ($year) {
+            $description = $year . '年のコラム';
+        }
+    }
+
+    // column-catタクソノミーページ
+    if (is_tax('column-cat')) {
+        $term = get_queried_object();
+        $description = $term->name . 'に関するコラム一覧です。';
+    }
+
+    // concern個別ページ
+    if (is_singular('concern')) {
+        $concern_txt = get_field('concern-txt');
+        if ($concern_txt) {
+            $description = wp_strip_all_tags($concern_txt);
+            $description = mb_substr($description, 0, 160);
+        }
+    }
+
     return $description;
 }
-add_filter('aioseo_description', 'custom_search_case_aioseo_description');
+add_filter('aioseo_description', 'custom_aioseo_description');
