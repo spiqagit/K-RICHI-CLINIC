@@ -40,13 +40,13 @@
                                     <div class="swiper bl_guideAboutSection_imgSlider">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img class="el_guideAboutSection_imgSlider_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/guide/guide-slide-1.jpg" alt="">
+                                                <img class="el_guideAboutSection_imgSlider_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/guide/guide-slide-1.jpg" alt="K-RICH Clinic 院内イメージ1">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img class="el_guideAboutSection_imgSlider_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-03.jpg" alt="">
+                                                <img class="el_guideAboutSection_imgSlider_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-03.jpg" alt="K-RICH Clinic 院内イメージ2">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img class="el_guideAboutSection_imgSlider_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-04.jpg" alt="">
+                                                <img class="el_guideAboutSection_imgSlider_img" src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-04.jpg" alt="K-RICH Clinic 院内イメージ3">
                                             </div>
                                         </div>
                                     </div>
