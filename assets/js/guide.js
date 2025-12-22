@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Flow List Slider - 768px以下でのみ有効
-    const breakPoint = 768;
+    const breakPoint = 1024;
     const guideFlowListSlider = document.querySelector('.bl_guideFlowListSlider');
     let guideFlowListSliderSwiper = null;
     let guideFlowListSliderBool = false;

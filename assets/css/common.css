@@ -6655,6 +6655,11 @@ Information
     font-size: clamp(0px, 3.738317757vw, 17.6px);
   }
 }
+@media screen and (width <= 1024px) {
+  .bl_guideAboutSection .bl_guideAboutSection_contentWrapper .bl_guideAboutSection_contentWrapper_txtContainer .el_guideAboutSection_contentWrapper_txtContainer_txt br {
+    display: none;
+  }
+}
 .bl_guideAboutSection .bl_guideAboutSection_imgWrapper {
   width: 100%;
 }
