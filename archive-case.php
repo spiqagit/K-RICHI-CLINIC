@@ -350,6 +350,7 @@
                     <?php else: ?>
                         <div class="bl_commonNoPostWrapper">
                             <p class="bl_commonNoPostWrapper_txt">Coming soon...</p>
+                            <p class="bl_commonNoPostWrapper_txtJa">ただいま公開準備中です。</p>
                         </div>
                     <?php endif; ?>
                 </div>

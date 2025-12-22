@@ -2834,12 +2834,24 @@ menuカード
 .bl_commonNoPostWrapper .bl_commonNoPostWrapper_txt {
   color: var(--txtColor);
   font-family: var(--notoSerifJP);
-  font-size: clamp(0px, 1.6666666667vw, 36px);
+  font-size: clamp(0px, 2.2222222222vw, 48px);
   width: fit-content;
   margin-inline: auto;
 }
 @media screen and (width <= 1024px) {
   .bl_commonNoPostWrapper .bl_commonNoPostWrapper_txt {
+    font-size: clamp(0px, 5.6074766355vw, 26.4px);
+  }
+}
+.bl_commonNoPostWrapper .bl_commonNoPostWrapper_txtJa {
+  color: var(--txtColor);
+  font-family: var(--notoSerifJP);
+  font-size: clamp(0px, 1.25vw, 27px);
+  width: fit-content;
+  margin-inline: auto;
+}
+@media screen and (width <= 1024px) {
+  .bl_commonNoPostWrapper .bl_commonNoPostWrapper_txtJa {
     font-size: clamp(0px, 4.2056074766vw, 19.8px);
   }
 }

@@ -1786,10 +1786,23 @@ menuカード
     .bl_commonNoPostWrapper_txt {
         color: var(--txtColor);
         font-family: var(--notoSerifJP);
-        font-size: vwmin(24, pc);
+        font-size: vwmin(32, pc);
         width: fit-content;
         margin-inline: auto;
 
+        @include underSP {
+            font-size: vwmin(24, sp_m);
+        }
+
+    }
+
+    .bl_commonNoPostWrapper_txtJa {
+        color: var(--txtColor);
+        font-family: var(--notoSerifJP);
+        font-size: vwmin(18, pc);
+        width: fit-content;
+        margin-inline: auto;
+        
         @include underSP {
             font-size: vwmin(18, sp_m);
         }

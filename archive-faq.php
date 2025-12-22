@@ -56,9 +56,9 @@ if (!empty($faq_catParentList_for_schema)) {
 ?>
 
 <?php if (!empty($faq_structured_data['mainEntity'])) : ?>
-<script type="application/ld+json">
-<?php echo json_encode($faq_structured_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
-</script>
+    <script type="application/ld+json">
+        <?php echo json_encode($faq_structured_data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?>
+    </script>
 <?php endif; ?>
 
 <?php wp_head(); ?>
@@ -79,124 +79,129 @@ if (!empty($faq_catParentList_for_schema)) {
             <div class="bl_commonLowPageWrapper_contents">
                 <div class="bl_commonLowPageWrapper_contents_inner">
 
-                    <div class="ly_commonTwoColumnWrapper ly_priceColumnWrapper">
+                    <?php if (have_posts()) : ?>
+                        <div class="ly_commonTwoColumnWrapper ly_priceColumnWrapper">
+                            <section class="ly_commonTwoColumnWrapper_inner ly_priceColumnWrapper_inner">
+                                <div class="ly_commonTwoColumnWrapper_left">
+                                    <?php
+                                    $parent_catList = get_terms('faq-cat', array('parent' => 0, 'hide_empty' => true));
+                                    ?>
+                                    <?php if (!empty($parent_catList)) : ?>
+                                        <nav class="bl_commonSelectNaviWrapper">
+                                            <?php foreach ($parent_catList as $parent_cat) : ?>
 
-                        <section class="ly_commonTwoColumnWrapper_inner ly_priceColumnWrapper_inner">
-                            <div class="ly_commonTwoColumnWrapper_left">
-                                <?php
-                                $parent_catList = get_terms('faq-cat', array('parent' => 0, 'hide_empty' => true));
-                                ?>
-                                <?php if (!empty($parent_catList)) : ?>
-                                    <nav class="bl_commonSelectNaviWrapper">
-                                        <?php foreach ($parent_catList as $parent_cat) : ?>
-
-                                            <div class="bl_commonSelectNaviWrapper_item">
-                                                <label for="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_label"><?php echo $parent_cat->name; ?></label>
-                                                <div class="bl_commonSelectNaviWrapper_selectWrapper">
-                                                    <select name="<?php echo $parent_cat->slug; ?>" id="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_select">
-                                                        <option value="">施術を選ぶ</option>
-                                                        <?php
-                                                        $price_SelectList = get_posts(array(
-                                                            'post_type' => 'faq',
-                                                            'posts_per_page' => -1,
-                                                            'tax_query' => array(
-                                                                array(
-                                                                    'taxonomy' => 'faq-cat',
-                                                                    'field' => 'term_id',
-                                                                    'terms' => $parent_cat->term_id,
+                                                <div class="bl_commonSelectNaviWrapper_item">
+                                                    <label for="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_label"><?php echo $parent_cat->name; ?></label>
+                                                    <div class="bl_commonSelectNaviWrapper_selectWrapper">
+                                                        <select name="<?php echo $parent_cat->slug; ?>" id="<?php echo $parent_cat->slug; ?>Select" class="bl_commonSelectNaviWrapper_item_select">
+                                                            <option value="">施術を選ぶ</option>
+                                                            <?php
+                                                            $price_SelectList = get_posts(array(
+                                                                'post_type' => 'faq',
+                                                                'posts_per_page' => -1,
+                                                                'tax_query' => array(
+                                                                    array(
+                                                                        'taxonomy' => 'faq-cat',
+                                                                        'field' => 'term_id',
+                                                                        'terms' => $parent_cat->term_id,
+                                                                    ),
                                                                 ),
-                                                            ),
-                                                        ));
-                                                        ?>
-                                                        <?php if (!empty($price_SelectList)) : ?>
-                                                            <?php foreach ($price_SelectList as $price_Select) : ?>
-                                                                <option value="#post<?php echo $price_Select->ID; ?>"><?php echo get_the_title($price_Select); ?></option>
-                                                            <?php endforeach; ?>
-                                                        <?php endif; ?>
-                                                        <?php wp_reset_postdata(); ?>
-                                                    </select>
+                                                            ));
+                                                            ?>
+                                                            <?php if (!empty($price_SelectList)) : ?>
+                                                                <?php foreach ($price_SelectList as $price_Select) : ?>
+                                                                    <option value="#post<?php echo $price_Select->ID; ?>"><?php echo get_the_title($price_Select); ?></option>
+                                                                <?php endforeach; ?>
+                                                            <?php endif; ?>
+                                                            <?php wp_reset_postdata(); ?>
+                                                        </select>
+                                                    </div>
                                                 </div>
+                                            <?php endforeach; ?>
+                                        </nav>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="ly_commonTwoColumnWrapper_right bl_faqContentsWrapper_container">
+
+                                    <?php
+                                    $faq_catParentList = get_terms(
+                                        'faq-cat',
+                                        array(
+                                            'parent' => 0,
+                                            'hide_empty' => true
+                                        )
+                                    );
+                                    ?>
+
+                                    <?php if (!empty($faq_catParentList)) : ?>
+                                        <?php foreach ($faq_catParentList as $faq_catParent) : ?>
+                                            <div class="bl_faqContentsWrapper">
+                                                <h2 class="el_faqContentsWrapper_ttl"><?php echo $faq_catParent->name; ?></h2>
+
+                                                <?php
+                                                $faq_catChildList = get_terms(
+                                                    'faq-cat',
+                                                    array(
+                                                        'parent' => $faq_catParent->term_id,
+                                                        'hide_empty' => true
+                                                    )
+                                                );
+                                                ?>
+                                                <?php if (!empty($faq_catChildList)) : ?>
+                                                    <?php foreach ($faq_catChildList as $faq_catChild) : ?>
+                                                        <div class="bl_faqContentsWrapper_item">
+                                                            <h3 class="el_faqContentsWrapper_item_ttl"><?php echo $faq_catChild->name; ?></h3>
+
+                                                            <?php
+                                                            $faq_catChildList = get_posts(array(
+                                                                'post_type' => 'faq',
+                                                                'posts_per_page' => -1,
+                                                                'tax_query' => array(
+                                                                    array(
+                                                                        'taxonomy' => 'faq-cat',
+                                                                        'field' => 'term_id',
+                                                                        'terms' => $faq_catChild->term_id,
+                                                                    ),
+                                                                ),
+                                                            ));
+                                                            ?>
+                                                            <?php if (!empty($faq_catChildList)) : ?>
+                                                                <ul>
+                                                                    <?php foreach ($faq_catChildList as $faq_catChild) : ?>
+                                                                        <li>
+                                                                            <details class="bl_faqList_item_details" id="post<?php echo $faq_catChild->ID; ?>">
+                                                                                <summary class="bl_faqList_item_details_summary">
+                                                                                    <span class="el_faqList_item_details_summary_txt_q">Q.</span>
+                                                                                    <span class="el_faqList_item_details_summary_txt"><?php echo get_the_title($faq_catChild); ?></span>
+                                                                                    <img class="el_faqList_item_details_summary_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
+                                                                                </summary>
+                                                                                <div class="bl_faqList_details_content">
+                                                                                    <div class="bl_faqList_details_content_inner">
+                                                                                        <p class="el_faqList_details_content_ttl">A.</p>
+                                                                                        <p class="el_faqList_details_content_txt"><?php echo get_field("faqarchive-txt"); ?></p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </details>
+                                                                        </li>
+                                                                    <?php endforeach; ?>
+                                                                </ul>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
                                             </div>
                                         <?php endforeach; ?>
-                                    </nav>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="ly_commonTwoColumnWrapper_right bl_faqContentsWrapper_container">
-
-                                <?php
-                                $faq_catParentList = get_terms(
-                                    'faq-cat',
-                                    array(
-                                        'parent' => 0,
-                                        'hide_empty' => true
-                                    )
-                                );
-                                ?>
-
-                                <?php if (!empty($faq_catParentList)) : ?>
-                                    <?php foreach ($faq_catParentList as $faq_catParent) : ?>
-                                        <div class="bl_faqContentsWrapper">
-                                            <h2 class="el_faqContentsWrapper_ttl"><?php echo $faq_catParent->name; ?></h2>
-
-                                            <?php
-                                            $faq_catChildList = get_terms(
-                                                'faq-cat',
-                                                array(
-                                                    'parent' => $faq_catParent->term_id,
-                                                    'hide_empty' => true
-                                                )
-                                            );
-                                            ?>
-                                            <?php if (!empty($faq_catChildList)) : ?>
-                                                <?php foreach ($faq_catChildList as $faq_catChild) : ?>
-                                                    <div class="bl_faqContentsWrapper_item">
-                                                        <h3 class="el_faqContentsWrapper_item_ttl"><?php echo $faq_catChild->name; ?></h3>
-
-                                                        <?php
-                                                        $faq_catChildList = get_posts(array(
-                                                            'post_type' => 'faq',
-                                                            'posts_per_page' => -1,
-                                                            'tax_query' => array(
-                                                                array(
-                                                                    'taxonomy' => 'faq-cat',
-                                                                    'field' => 'term_id',
-                                                                    'terms' => $faq_catChild->term_id,
-                                                                ),
-                                                            ),
-                                                        ));
-                                                        ?>
-                                                        <?php if (!empty($faq_catChildList)) : ?>
-                                                            <ul>
-                                                                <?php foreach ($faq_catChildList as $faq_catChild) : ?>
-                                                                    <li>
-                                                                        <details class="bl_faqList_item_details" id="post<?php echo $faq_catChild->ID; ?>">
-                                                                            <summary class="bl_faqList_item_details_summary">
-                                                                                <span class="el_faqList_item_details_summary_txt_q">Q.</span>
-                                                                                <span class="el_faqList_item_details_summary_txt"><?php echo get_the_title($faq_catChild); ?></span>
-                                                                                <img class="el_faqList_item_details_summary_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
-                                                                            </summary>
-                                                                            <div class="bl_faqList_details_content">
-                                                                                <div class="bl_faqList_details_content_inner">
-                                                                                    <p class="el_faqList_details_content_ttl">A.</p>
-                                                                                    <p class="el_faqList_details_content_txt"><?php echo get_field("faqarchive-txt"); ?></p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </details>
-                                                                    </li>
-                                                                <?php endforeach; ?>
-                                                            </ul>
-                                                        <?php endif; ?>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </div>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </div>
-                        </section>
-
-                    </div>
+                                    <?php endif; ?>
+                                </div>
+                            </section>
+                        </div>
+                    <?php else : ?>
+                        <div class="bl_commonNoPostWrapper">
+                            <p class="bl_commonNoPostWrapper_txt">Coming soon...</p>
+                            <p class="bl_commonNoPostWrapper_txtJa">ただいま公開準備中です。</p>
+                        </div>
+                    <?php endif; ?>
                     <div>
                         <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
                     </div>

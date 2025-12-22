@@ -16,31 +16,31 @@
             <div class="bl_commonLowPageWrapper_contents">
                 <div class="bl_commonLowPageWrapper_contents_inner">
 
-                    <div class="ly_commonTwoColumnWrapper">
+                    <?php if (have_posts()) : ?>
+                        <div class="ly_commonTwoColumnWrapper">
+                            <section class="ly_commonTwoColumnWrapper_inner bl_newsArchiveWrapper">
+                                <div class="ly_commonTwoColumnWrapper_left">
 
-                        <section class="ly_commonTwoColumnWrapper_inner bl_newsArchiveWrapper">
-                            <div class="ly_commonTwoColumnWrapper_left">
+                                    <nav class="bl_commonCatNavi">
+                                        <div class="bl_commonCatNavi_item">
+                                            <h2 class="bl_commonCatNavi_item_ttl">Timeline</h2>
+                                            <button class="bl_commonCatNavi_item_btn" type="button">
+                                                <span>Timeline</span>
+                                                <img class="bl_commonCatNavi_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
+                                            </button>
+                                            <div class="bl_commonCatNaviListWrapper">
+                                                <ul class="bl_commonCatNaviList">
+                                                    <?php
+                                                    global $wpdb;
+                                                    // カスタム投稿タイプを指定
+                                                    $post_type = 'news';
 
-                                <nav class="bl_commonCatNavi">
-                                    <div class="bl_commonCatNavi_item">
-                                        <h2 class="bl_commonCatNavi_item_ttl">Timeline</h2>
-                                        <button class="bl_commonCatNavi_item_btn" type="button">
-                                            <span>Timeline</span>
-                                            <img class="bl_commonCatNavi_item_btn_arrow" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
-                                        </button>
-                                        <div class="bl_commonCatNaviListWrapper">
-                                            <ul class="bl_commonCatNaviList">
-                                                <?php
-                                                global $wpdb;
-                                                // カスタム投稿タイプを指定
-                                                $post_type = 'news';
-                                                
-                                                // 現在表示中のアーカイブページの年月を取得
-                                                $current_year = get_query_var('year');
-                                                $current_month = get_query_var('monthnum');
+                                                    // 現在表示中のアーカイブページの年月を取得
+                                                    $current_year = get_query_var('year');
+                                                    $current_month = get_query_var('monthnum');
 
-                                                // 年月の一覧を取得（過去12ヶ月分）
-                                                $months = $wpdb->get_results($wpdb->prepare("
+                                                    // 年月の一覧を取得（過去12ヶ月分）
+                                                    $months = $wpdb->get_results($wpdb->prepare("
                                             SELECT DISTINCT 
                                                 YEAR(post_date) AS year,
                                                 MONTH(post_date) AS month,
@@ -52,47 +52,46 @@
                                             ORDER BY year DESC, month DESC
                                             LIMIT 12", $post_type));
 
-                                                if ($months) : ?>
-                                                    <li class="bl_commonCatNaviItem">
-                                                        <?php if (empty($current_year) && empty($current_month)) : ?>
-                                                            <p class="bl_commonCatNaviItem_link_current">
-                                                                全て
-                                                            </p>
-                                                        <?php else : ?>
-                                                            <a href="<?php echo home_url("/{$post_type}/"); ?>" class="bl_commonCatNaviItem_link">
-                                                                全て
-                                                            </a>
-                                                        <?php endif; ?>
-                                                    </li>
-                                                    <?php foreach ($months as $month) : ?>
-                                                        <?php
-                                                        $year = $month->year;
-                                                        $month_num = zeroise($month->month, 2); // 01, 02 形式
-                                                        $url = home_url("/{$post_type}/{$year}/{$month_num}/");
-                                                        $is_current = ($year == $current_year && intval($month_num) == $current_month);
-                                                        ?>
+                                                    if ($months) : ?>
                                                         <li class="bl_commonCatNaviItem">
-                                                            <?php if ($is_current) : ?>
+                                                            <?php if (empty($current_year) && empty($current_month)) : ?>
                                                                 <p class="bl_commonCatNaviItem_link_current">
-                                                                    <?php echo esc_html($year); ?>年<?php echo esc_html($month_num); ?>月
+                                                                    全て
                                                                 </p>
                                                             <?php else : ?>
-                                                                <a href="<?php echo esc_url($url); ?>" class="bl_commonCatNaviItem_link">
-                                                                    <?php echo esc_html($year); ?>年<?php echo esc_html($month_num); ?>月
+                                                                <a href="<?php echo home_url("/{$post_type}/"); ?>" class="bl_commonCatNaviItem_link">
+                                                                    全て
                                                                 </a>
                                                             <?php endif; ?>
                                                         </li>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                            </ul>
+                                                        <?php foreach ($months as $month) : ?>
+                                                            <?php
+                                                            $year = $month->year;
+                                                            $month_num = zeroise($month->month, 2); // 01, 02 形式
+                                                            $url = home_url("/{$post_type}/{$year}/{$month_num}/");
+                                                            $is_current = ($year == $current_year && intval($month_num) == $current_month);
+                                                            ?>
+                                                            <li class="bl_commonCatNaviItem">
+                                                                <?php if ($is_current) : ?>
+                                                                    <p class="bl_commonCatNaviItem_link_current">
+                                                                        <?php echo esc_html($year); ?>年<?php echo esc_html($month_num); ?>月
+                                                                    </p>
+                                                                <?php else : ?>
+                                                                    <a href="<?php echo esc_url($url); ?>" class="bl_commonCatNaviItem_link">
+                                                                        <?php echo esc_html($year); ?>年<?php echo esc_html($month_num); ?>月
+                                                                    </a>
+                                                                <?php endif; ?>
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                </nav>
-                            </div>
+                                    </nav>
+                                </div>
 
-                            <div class="ly_commonTwoColumnWrapper_right">
-                                <div>
-                                    <?php if (have_posts()) : ?>
+                                <div class="ly_commonTwoColumnWrapper_right">
+                                    <div>
                                         <ul class="bl_newsArchiveList">
                                             <?php while (have_posts()) : the_post(); ?>
                                                 <li class="bl_newsArchiveItem">
@@ -274,14 +273,19 @@
                                                 <?php endif; ?>
                                             </nav>
                                         <?php endif; ?>
+                                    </div>
                                 </div>
-                            <?php else : ?>
-                                <p class="bl_newsNoPost">お知らせはありません。</p>
-                            <?php endif; ?>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
+                    <?php else : ?>
 
-                    </div>
+                        <div class="bl_commonNoPostWrapper">
+                            <p class="bl_commonNoPostWrapper_txt">Coming soon...</p>
+                            <p class="bl_commonNoPostWrapper_txtJa">ただいま公開準備中です。</p>
+                        </div>
+
+                    <?php endif; ?>
+
                     <div>
                         <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
                     </div>
