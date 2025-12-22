@@ -372,10 +372,15 @@
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    right: -40px;
-                    width: 40px;
+                    right: -20%;
+                    min-width: vwmin(80, pc);
                     height: 2px;
                     background-color: #E5D8CD;
+
+                    @include underSP {
+                        right: -45px;
+                        min-width: vwmin(80, sp_m);
+                    }
                 }
 
                 &:last-child {

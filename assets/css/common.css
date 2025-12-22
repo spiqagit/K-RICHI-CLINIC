@@ -6917,10 +6917,16 @@ Information
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: -40px;
-  width: 40px;
+  right: -20%;
+  min-width: clamp(0px, 5.5555555556vw, 120px);
   height: 2px;
   background-color: #E5D8CD;
+}
+@media screen and (width <= 1024px) {
+  .bl_guideFlowSection .bl_guideFlowSection_inner .bl_guideFlowListWrapper .swiper-slide::before {
+    right: -45px;
+    min-width: clamp(0px, 18.691588785vw, 88px);
+  }
 }
 .bl_guideFlowSection .bl_guideFlowSection_inner .bl_guideFlowListWrapper .swiper-slide:last-child::before {
   display: none;
