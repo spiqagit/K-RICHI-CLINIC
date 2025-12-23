@@ -10,7 +10,7 @@
 
     @include underSP {
         max-width: 100%;
-        padding-bottom: vwmin(100, sp_m);
+        padding-bottom: 0;
         padding-inline: vwmin(30, sp_m);
     }
 
@@ -54,7 +54,7 @@
             padding: vwmin(20, pc);
             border-radius: vwmin(4, pc);
             background-color: #E5D8CD;
-            min-width: vwmin(300, pc);
+            width: vwmin(300, pc);
 
             @include underSP {
                 padding: vwmin(20, sp_m);
@@ -110,6 +110,7 @@
             height: auto;
             object-fit: cover;
             border-radius: vwmin(2, pc);
+            aspect-ratio: 413 / 275;
 
             @include underSP {
                 margin-bottom: vwmin(20, sp_m);
@@ -196,6 +197,18 @@
     .bl_commonBreadcrumbsContainer {
         @include underSP {
             padding-inline: 0 !important;
+        }
+    }
+}
+
+.bl_accessContents_mapContainer_noList {
+
+    .bl_footerClinicInfoContainer{
+        padding-bottom: vwmin(120, pc);
+
+        @include underSP {
+            padding-inline: vwmin(30, sp_m);
+            padding-bottom: 0;
         }
     }
 }

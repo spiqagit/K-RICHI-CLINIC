@@ -9659,7 +9659,7 @@ Information
 @media screen and (width <= 1024px) {
   .bl_accessContents {
     max-width: 100%;
-    padding-bottom: clamp(0px, 23.3644859813vw, 110px);
+    padding-bottom: 0;
     padding-inline: clamp(0px, 7.0093457944vw, 33px);
   }
 }
@@ -9704,7 +9704,7 @@ Information
   padding: clamp(0px, 1.3888888889vw, 30px);
   border-radius: clamp(0px, 0.2777777778vw, 6px);
   background-color: #E5D8CD;
-  min-width: clamp(0px, 20.8333333333vw, 450px);
+  width: clamp(0px, 20.8333333333vw, 450px);
 }
 @media screen and (width <= 1024px) {
   .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item {
@@ -9757,6 +9757,7 @@ Information
   height: auto;
   object-fit: cover;
   border-radius: clamp(0px, 0.1388888889vw, 3px);
+  aspect-ratio: 413/275;
 }
 @media screen and (width <= 1024px) {
   .bl_accessContents .bl_accessContents_list .bl_accessContents_list_item_img {
@@ -9840,5 +9841,15 @@ Information
 @media screen and (width <= 1024px) {
   .bl_accessContents_mapContainer .bl_commonBreadcrumbsContainer {
     padding-inline: 0 !important;
+  }
+}
+
+.bl_accessContents_mapContainer_noList .bl_footerClinicInfoContainer {
+  padding-bottom: clamp(0px, 8.3333333333vw, 180px);
+}
+@media screen and (width <= 1024px) {
+  .bl_accessContents_mapContainer_noList .bl_footerClinicInfoContainer {
+    padding-inline: clamp(0px, 7.0093457944vw, 33px);
+    padding-bottom: 0;
   }
 }
