@@ -22,8 +22,8 @@
         <div class="bl_commonLowPageWrapper_contentsOuter">
             <div class="bl_commonLowPageWrapper_contents">
                 <div class="bl_commonLowPageWrapper_contents_inner">
-                    <div class="bl_aboutContentsWrapper">
 
+                    <div class="bl_aboutContentsWrapper">
                         <section class="bl_aboutMissionSection">
                             <div class="bl_aboutMissionSection_inner">
                                 <h2 class="el_aboutMissionSection_ttl">Mission</h2>
@@ -129,168 +129,95 @@
                                 </div>
                             </div>
                         </section>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <?php
-                        $staff_cats = get_terms([
-                            'taxonomy' => 'staff-cat',
-                            'orderby' => 'staff_order',
-                            'order' => 'ASC',
-                            'hide_empty' => true,
-                            'posts_per_page' => 1,
-                            'slug' => 'director',
-                        ]);
-                        ?>
-                        <section class="bl_topDoctorSection bl_aboutDoctorSection" id="manager">
-                            <div class="bl_topDoctorSection_inner bl_aboutDoctorSection_inner">
-                                <div class="blcommonSectionTtlWrapper">
-                                    <hgroup class="bl_commonSectionTtl">
-                                        <h2 class="el_commonSectionTtl_ttl_en">Doctor</h2>
-                                        <p class="el_commonSectionTtl_ttl_ja">院長紹介</p>
+        <div class="bl_commonLowPageWrapper_contents bl_aboutInformationSectionOuter">
+            <div class="bl_commonLowPageWrapper_contents_inner">
+                <div class="bl_aboutContentsWrapper">
+                    <section class="bl_aboutInformationSection">
+                        <div class="bl_aboutInformationSection_inner">
+                            <div class="bl_aboutInformationSection_ttlWrapper">
+                                <div class="bl_aboutInformationTtlWrapper">
+                                    <hgroup class="bl_aboutInformationTtlWrapper_group">
+                                        <h2 class="el_aboutInformationTtlWrapper_en">Information</h2>
+                                        <p class="el_aboutInformationTtlWrapper_ja">クリニック情報</p>
                                     </hgroup>
                                 </div>
-                                <?php foreach ($staff_cats as $staff_cat) : ?>
-                                    <?php
-                                    $staff_posts = get_posts([
-                                        'post_type' => 'staff',
-                                        'posts_per_page' => -1,
-                                        'orderby' => 'staff_order',
-                                        'order' => 'ASC',
-                                        'tax_query' => [
-                                            [
-                                                'taxonomy' => 'staff-cat',
-                                                'field' => 'slug',
-                                                'terms' => "director",
-                                            ],
-                                        ],
-                                    ]);
-                                    ?>
-                                    <?php if (!empty($staff_posts)) : ?>
-                                        <?php foreach ($staff_posts as $staff_post) : ?>
-                                            <div class="bl_doctorContentsWrapper">
-                                                <div class="bl_doctorContentsWrapper_imgWrapper">
-                                                    <img src="<?php echo get_the_post_thumbnail_url($staff_post->ID); ?>" alt="<?php echo get_the_title($staff_post); ?>">
-                                                </div>
-                                                <div class="bl_doctorContentsWrapper_txtWrapper">
-                                                    <div class="bl_doctorContentsWrapper_nameWrapper">
-                                                        <p class="el_doctorContentsWrapper_nameWrapper_job"><?php echo $staff_cat->name; ?></p>
-                                                        <div class="bl_doctorContentsWrapper_nameWrapper_name">
-                                                            <p class="el_doctorContentsWrapper_nameWrapper_name_first"><?php echo get_the_title($staff_post->ID); ?></p>
-                                                            <p class="el_doctorContentsWrapper_nameWrapper_name_last"><?php echo get_field('staff-rubi', $staff_post->ID); ?></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bl_doctorContentsWrapper_txtWrapper_txt">
-                                                        <?php echo get_field('director-txt', $staff_post->ID); ?>
-                                                    </div>
 
-                                                    <?php if (have_rows('career-list', $staff_post->ID)) : ?>
-                                                        <div class="bl_doctorContentsWrapper_careerWrapper">
-                                                            <p class="bl_doctorContentsWrapper_careerWrapper_ttl">経歴</p>
-                                                            <ul class="bl_doctorContentsWrapper_careerWrapper_list">
-                                                                <?php while (have_rows('career-list', $staff_post->ID)) : the_row(); ?>
-                                                                    <li class="bl_doctorContentsWrapper_careerWrapper_list_item">
-                                                                        <?php if (get_sub_field('career-list-year')) : ?>
-                                                                            <p class="bl_doctorContentsWrapper_careerWrapper_list_item_ttl"><?php the_sub_field('career-list-year'); ?></p>
-                                                                        <?php endif; ?>
-                                                                        <?php if (get_sub_field('career-list-txt')) : ?>
-                                                                            <p class="bl_doctorContentsWrapper_careerWrapper_list_item_txt"><?php the_sub_field('career-list-txt'); ?></p>
-                                                                        <?php endif; ?>
-                                                                    </li>
-                                                                <?php endwhile; ?>
-                                                            </ul>
-                                                        </div>
-                                                    <?php endif; ?>
-                                                </div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                        <?php wp_reset_postdata(); ?>
+                                <div class="bl_aboutInformationSection_infoWrapper">
+                                    <?php if (get_field('clinic-name', 'option')) : ?>
+                                        <dl class="bl_aboutInformationSection_infoWrapper_item">
+                                            <dt class="el_aboutInformationSection_infoWrapper_item_ttl">クリニック名</dt>
+                                            <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('clinic-name', 'option'); ?></dd>
+                                        </dl>
                                     <?php endif; ?>
-                                <?php endforeach; ?>
+                                    <?php if (get_field('clinic-director', 'option')) : ?>
+                                        <dl class="bl_aboutInformationSection_infoWrapper_item">
+                                            <dt class="el_aboutInformationSection_infoWrapper_item_ttl">院長</dt>
+                                            <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('clinic-director', 'option'); ?></dd>
+                                        </dl>
+                                    <?php endif; ?>
+                                    <?php if (get_field('medical-subject', 'option')) : ?>
+                                        <dl class="bl_aboutInformationSection_infoWrapper_item">
+                                            <dt class="el_aboutInformationSection_infoWrapper_item_ttl">診療科目</dt>
+                                            <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('medical-subject', 'option'); ?></dd>
+                                        </dl>
+                                    <?php endif; ?>
+                                    <?php if (get_field('address', 'option')) : ?>
+                                        <dl class="bl_aboutInformationSection_infoWrapper_item">
+                                            <dt class="el_aboutInformationSection_infoWrapper_item_ttl">所在地</dt>
+                                            <dd class="el_aboutInformationSection_infoWrapper_item_txt">
+                                                <p><?php echo get_field('post-code', 'option'); ?></p>
+                                                <p><?php echo get_field('address', 'option'); ?></p>
+
+                                                <?php if (get_field('google_map_link', 'option')): ?>
+                                                    <a href="<?php echo get_field('google_map_link', 'option'); ?>" class="bl_commonGoogleMapLink" target="_blank">
+                                                        <p class="el_commonGoogleMapLink_txt">Google Maps</p>
+                                                        <img class="el_commonGoogleMapLink_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/out-arrow.svg" alt="">
+                                                    </a>
+                                                <?php endif; ?>
+                                            </dd>
+                                        </dl>
+                                    <?php endif; ?>
+                                    <?php if (get_field('clinic-hour', 'option')) : ?>
+                                        <dl class="bl_aboutInformationSection_infoWrapper_item">
+                                            <dt class="el_aboutInformationSection_infoWrapper_item_ttl">営業時間</dt>
+                                            <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('clinic-hour', 'option'); ?></dd>
+                                        </dl>
+                                    <?php endif; ?>
+                                    <?php if (get_field('clinic-tel', 'option')) : ?>
+                                        <dl class="bl_aboutInformationSection_infoWrapper_item">
+                                            <dt class="el_aboutInformationSection_infoWrapper_item_ttl">電話番号</dt>
+                                            <dd class="el_aboutInformationSection_infoWrapper_item_txt">
+                                                <a href="tel:<?php echo get_field('clinic-tel', 'option'); ?>" class="el_aboutInformationSection_infoWrapper_item_txt_link"><?php echo get_field('clinic-tel', 'option'); ?></a>
+                                            </dd>
+                                        </dl>
+                                    <?php endif; ?>
+                                </div>
                             </div>
-                        </section>
-
-                        <section class="bl_aboutInformationSection">
-                            <div class="bl_aboutInformationSection_inner">
-                                <div class="bl_aboutInformationSection_ttlWrapper">
-                                    <div class="bl_aboutInformationTtlWrapper">
-                                        <hgroup class="bl_aboutInformationTtlWrapper_group">
-                                            <h2 class="el_aboutInformationTtlWrapper_en">Information</h2>
-                                            <p class="el_aboutInformationTtlWrapper_ja">クリニック情報</p>
-                                        </hgroup>
+                        </div>
+                        <div class="splide bl_aboutInformationSection_slider">
+                            <div class="splide__track">
+                                <div class="splide__list">
+                                    <div class="splide__slide">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-01.jpg" alt="院内写真">
                                     </div>
-
-                                    <div class="bl_aboutInformationSection_infoWrapper">
-                                        <?php if (get_field('clinic-name', 'option')) : ?>
-                                            <dl class="bl_aboutInformationSection_infoWrapper_item">
-                                                <dt class="el_aboutInformationSection_infoWrapper_item_ttl">クリニック名</dt>
-                                                <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('clinic-name', 'option'); ?></dd>
-                                            </dl>
-                                        <?php endif; ?>
-                                        <?php if (get_field('clinic-director', 'option')) : ?>
-                                            <dl class="bl_aboutInformationSection_infoWrapper_item">
-                                                <dt class="el_aboutInformationSection_infoWrapper_item_ttl">院長</dt>
-                                                <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('clinic-director', 'option'); ?></dd>
-                                            </dl>
-                                        <?php endif; ?>
-                                        <?php if (get_field('medical-subject', 'option')) : ?>
-                                            <dl class="bl_aboutInformationSection_infoWrapper_item">
-                                                <dt class="el_aboutInformationSection_infoWrapper_item_ttl">診療科目</dt>
-                                                <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('medical-subject', 'option'); ?></dd>
-                                            </dl>
-                                        <?php endif; ?>
-                                        <?php if (get_field('address', 'option')) : ?>
-                                            <dl class="bl_aboutInformationSection_infoWrapper_item">
-                                                <dt class="el_aboutInformationSection_infoWrapper_item_ttl">所在地</dt>
-                                                <dd class="el_aboutInformationSection_infoWrapper_item_txt">
-                                                    <p><?php echo get_field('post-code', 'option'); ?></p>
-                                                    <p><?php echo get_field('address', 'option'); ?></p>
-
-                                                    <?php if (get_field('google_map_link', 'option')): ?>
-                                                        <a href="<?php echo get_field('google_map_link', 'option'); ?>" class="bl_commonGoogleMapLink" target="_blank">
-                                                            <p class="el_commonGoogleMapLink_txt">Google Maps</p>
-                                                            <img class="el_commonGoogleMapLink_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/out-arrow.svg" alt="">
-                                                        </a>
-                                                    <?php endif; ?>
-                                                </dd>
-                                            </dl>
-                                        <?php endif; ?>
-                                        <?php if (get_field('clinic-hour', 'option')) : ?>
-                                            <dl class="bl_aboutInformationSection_infoWrapper_item">
-                                                <dt class="el_aboutInformationSection_infoWrapper_item_ttl">営業時間</dt>
-                                                <dd class="el_aboutInformationSection_infoWrapper_item_txt"><?php echo get_field('clinic-hour', 'option'); ?></dd>
-                                            </dl>
-                                        <?php endif; ?>
-                                        <?php if (get_field('clinic-tel', 'option')) : ?>
-                                            <dl class="bl_aboutInformationSection_infoWrapper_item">
-                                                <dt class="el_aboutInformationSection_infoWrapper_item_ttl">電話番号</dt>
-                                                <dd class="el_aboutInformationSection_infoWrapper_item_txt">
-                                                    <a href="tel:<?php echo get_field('clinic-tel', 'option'); ?>" class="el_aboutInformationSection_infoWrapper_item_txt_link"><?php echo get_field('clinic-tel', 'option'); ?></a>
-                                                </dd>
-                                            </dl>
-                                        <?php endif; ?>
+                                    <div class="splide__slide">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-02.jpg" alt="院内写真">
+                                    </div>
+                                    <div class="splide__slide">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-03.jpg" alt="院内写真">
+                                    </div>
+                                    <div class="splide__slide">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-04.jpg" alt="院内写真">
                                     </div>
                                 </div>
                             </div>
-                            <div class="splide bl_aboutInformationSection_slider">
-                                <div class="splide__track">
-                                    <div class="splide__list">
-                                        <div class="splide__slide">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-01.jpg" alt="院内写真">
-                                        </div>
-                                        <div class="splide__slide">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-02.jpg" alt="院内写真">
-                                        </div>
-                                        <div class="splide__slide">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-03.jpg" alt="院内写真">
-                                        </div>
-                                        <div class="splide__slide">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about/about-04.jpg" alt="院内写真">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
+                        </div>
+                    </section>
                     <div>
                         <?php include(get_template_directory() . '/inc/breadcrumbs.php'); ?>
                     </div>

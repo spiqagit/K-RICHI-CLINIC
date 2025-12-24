@@ -8,8 +8,8 @@
     <main class="bl_commonLowPageWrapper">
         <div class="bl_commonLowPageWrapper_ttlContainer">
             <hgroup class="bl_commonLowPageWrapper_ttl">
-                <h1 class="el_commonLowPageWrapper_ttl_en">Staff</h1>
-                <p class="el_commonLowPageWrapper_ttl_ja"><span>スタッフ紹介</span></p>
+                <h1 class="el_commonLowPageWrapper_ttl_en">Director</h1>
+                <p class="el_commonLowPageWrapper_ttl_ja"><span>院長紹介</span></p>
             </hgroup>
         </div>
 

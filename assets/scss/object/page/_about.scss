@@ -93,7 +93,8 @@ Misson
                     letter-spacing: calc(0.8 / 16 * 1em);
 
                     @include underSP {
-                        font-size: vwmin(16, sp_m);;
+                        font-size: vwmin(16, sp_m);
+                        ;
                     }
                 }
             }
@@ -169,6 +170,16 @@ Doctor
 /*--------------------------------
 Information
 ---------------------------------*/
+
+.bl_aboutInformationSectionOuter {
+    background-color: #E5D8CD;
+
+    padding-bottom: 3.3vw;
+
+    @include underSP {
+        padding-bottom: 97px;
+    }
+}
 
 .bl_aboutInformationSection {
     padding-top: vwmin(120, pc);
@@ -279,6 +290,7 @@ Information
 
                     .el_aboutInformationSection_infoWrapper_item_txt_link {
                         cursor: pointer;
+
                         @media (any-hover: hover) {
                             &:hover {
                                 opacity: 0.7;
@@ -288,7 +300,7 @@ Information
                     }
                 }
 
-                .bl_commonGoogleMapLink{
+                .bl_commonGoogleMapLink {
                     margin-top: vwmin(10, pc);
 
                     @include underSP {
@@ -299,8 +311,8 @@ Information
         }
     }
 
-    .bl_aboutInformationSection_slider{
-        .splide__slide{
+    .bl_aboutInformationSection_slider {
+        .splide__slide {
             max-width: vwmin(360, pc);
             width: 100%;
             border-radius: vwmin(2, pc);

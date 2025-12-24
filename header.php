@@ -25,12 +25,8 @@
                                     <p class="el_header_navWrapper_hoverContainer_linkContainer_link_txt">クリニックについて</p>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
                                 </a>
-                                <a href="<?php echo home_url(); ?>/about/#manager" class="bl_header_navWrapper_hoverContainer_linkContainer_link">
-                                    <p class="el_header_navWrapper_hoverContainer_linkContainer_link_txt">院長紹介</p>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
-                                </a>
                                 <a href="<?php echo home_url(); ?>/staff/" class="bl_header_navWrapper_hoverContainer_linkContainer_link">
-                                    <p class="el_header_navWrapper_hoverContainer_linkContainer_link_txt">スタッフ紹介</p>
+                                    <p class="el_header_navWrapper_hoverContainer_linkContainer_link_txt">院長紹介</p>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/black-arrow.svg" alt="">
                                 </a>
                             </div>

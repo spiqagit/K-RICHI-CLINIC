@@ -5672,6 +5672,16 @@ Doctor
 /*--------------------------------
 Information
 ---------------------------------*/
+.bl_aboutInformationSectionOuter {
+  background-color: #E5D8CD;
+  padding-bottom: 3.3vw;
+}
+@media screen and (width <= 1024px) {
+  .bl_aboutInformationSectionOuter {
+    padding-bottom: 97px;
+  }
+}
+
 .bl_aboutInformationSection {
   padding-top: clamp(0px, 8.3333333333vw, 180px);
   padding-bottom: clamp(0px, 13.8888888889vw, 300px);
