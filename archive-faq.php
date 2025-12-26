@@ -133,8 +133,21 @@ if (!empty($menuPosts_for_schema)) {
                                 <div class="ly_commonTwoColumnWrapper_left">
                                     <?php
                                     $parent_catList = get_terms('faq-cat', array('parent' => 0, 'hide_empty' => true));
+
+                                    // 施術についてのセレクトボックス
+                                    $menuPosts_nav = get_posts(array(
+                                        'post_type' => 'menu',
+                                        'posts_per_page' => -1,
+                                        'meta_query' => array(
+                                            array(
+                                                'key' => 'menu-faq-list',
+                                                'value' => '',
+                                                'compare' => '!=',
+                                            ),
+                                        ),
+                                    ));
                                     ?>
-                                    <?php if (!empty($parent_catList)) : ?>
+                                    <?php if (!empty($parent_catList) && !empty($menuPosts_nav)) : ?>
                                         <nav class="bl_commonSelectNaviWrapper">
                                             <?php foreach ($parent_catList as $parent_cat) : ?>
 
@@ -165,23 +178,10 @@ if (!empty($menuPosts_for_schema)) {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                
+
                                             <?php endforeach; ?>
 
-                                            <?php
-                                            // 施術についてのセレクトボックス
-                                            $menuPosts_nav = get_posts(array(
-                                                'post_type' => 'menu',
-                                                'posts_per_page' => -1,
-                                                'meta_query' => array(
-                                                    array(
-                                                        'key' => 'menu-faq-list',
-                                                        'value' => '',
-                                                        'compare' => '!=',
-                                                    ),
-                                                ),
-                                            ));
-                                            ?>
+
                                             <?php if (!empty($menuPosts_nav)) : ?>
                                                 <div class="bl_commonSelectNaviWrapper_item">
                                                     <label for="menuFaqSelect" class="bl_commonSelectNaviWrapper_item_label">施術について</label>
