@@ -9229,6 +9229,17 @@ Information
   }
 }
 
+.bl_faqArchiveList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0px, 1.3888888889vw, 30px);
+}
+@media screen and (width <= 1024px) {
+  .bl_faqArchiveList {
+    gap: clamp(0px, 4.6728971963vw, 22px);
+  }
+}
+
 .bl_columnBtnItem .bl_columnBtnItem_inner {
   display: grid;
   grid-template-columns: clamp(0px, 9.7222222222vw, 210px) 1fr;

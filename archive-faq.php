@@ -53,6 +53,36 @@ if (!empty($faq_catParentList_for_schema)) {
     }
     wp_reset_postdata();
 }
+
+// 施術について（menu投稿タイプのFAQリピーターフィールド）
+$menuPosts_for_schema = get_posts(array(
+    'post_type' => 'menu',
+    'posts_per_page' => -1,
+));
+
+if (!empty($menuPosts_for_schema)) {
+    foreach ($menuPosts_for_schema as $menuPost_schema) {
+        if (have_rows('menu-faq-list', $menuPost_schema->ID)) {
+            while (have_rows('menu-faq-list', $menuPost_schema->ID)) {
+                the_row();
+                $question = get_sub_field('menu-faq-list-q');
+                $answer = get_sub_field('menu-faq-list-a');
+
+                if (!empty($question) && !empty($answer)) {
+                    $faq_structured_data['mainEntity'][] = array(
+                        '@type' => 'Question',
+                        'name' => wp_strip_all_tags($question),
+                        'acceptedAnswer' => array(
+                            '@type' => 'Answer',
+                            'text' => wp_strip_all_tags($answer)
+                        )
+                    );
+                }
+            }
+        }
+    }
+    wp_reset_postdata();
+}
 ?>
 
 <?php if (!empty($faq_structured_data['mainEntity'])) : ?>
@@ -79,7 +109,25 @@ if (!empty($faq_catParentList_for_schema)) {
             <div class="bl_commonLowPageWrapper_contents">
                 <div class="bl_commonLowPageWrapper_contents_inner">
 
-                    <?php if (have_posts()) : ?>
+                    <?php
+                    // menu投稿タイプに menu-faq-list があるかチェック
+                    $menuPosts_check = get_posts(array(
+                        'post_type' => 'menu',
+                        'posts_per_page' => -1,
+                    ));
+                    $hasMenuFaq = false;
+                    if (!empty($menuPosts_check)) {
+                        foreach ($menuPosts_check as $menuPost_check) {
+                            if (have_rows('menu-faq-list', $menuPost_check->ID)) {
+                                $hasMenuFaq = true;
+                                break;
+                            }
+                        }
+                    }
+                    wp_reset_postdata();
+                    ?>
+
+                    <?php if (have_posts() || $hasMenuFaq) : ?>
                         <div class="ly_commonTwoColumnWrapper ly_priceColumnWrapper">
                             <section class="ly_commonTwoColumnWrapper_inner ly_priceColumnWrapper_inner">
                                 <div class="ly_commonTwoColumnWrapper_left">
@@ -117,7 +165,37 @@ if (!empty($faq_catParentList_for_schema)) {
                                                         </select>
                                                     </div>
                                                 </div>
+                                                
                                             <?php endforeach; ?>
+
+                                            <?php
+                                            // 施術についてのセレクトボックス
+                                            $menuPosts_nav = get_posts(array(
+                                                'post_type' => 'menu',
+                                                'posts_per_page' => -1,
+                                                'meta_query' => array(
+                                                    array(
+                                                        'key' => 'menu-faq-list',
+                                                        'value' => '',
+                                                        'compare' => '!=',
+                                                    ),
+                                                ),
+                                            ));
+                                            ?>
+                                            <?php if (!empty($menuPosts_nav)) : ?>
+                                                <div class="bl_commonSelectNaviWrapper_item">
+                                                    <label for="menuFaqSelect" class="bl_commonSelectNaviWrapper_item_label">施術について</label>
+                                                    <div class="bl_commonSelectNaviWrapper_selectWrapper">
+                                                        <select name="menuFaq" id="menuFaqSelect" class="bl_commonSelectNaviWrapper_item_select">
+                                                            <option value="">施術を選ぶ</option>
+                                                            <?php foreach ($menuPosts_nav as $menuPost_nav) : ?>
+                                                                <option value="#menu<?php echo $menuPost_nav->ID; ?>"><?php echo get_the_title($menuPost_nav); ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php wp_reset_postdata(); ?>
                                         </nav>
                                     <?php endif; ?>
                                 </div>
@@ -133,7 +211,6 @@ if (!empty($faq_catParentList_for_schema)) {
                                         )
                                     );
                                     ?>
-
                                     <?php if (!empty($faq_catParentList)) : ?>
                                         <?php foreach ($faq_catParentList as $faq_catParent) : ?>
                                             <div class="bl_faqContentsWrapper">
@@ -167,9 +244,9 @@ if (!empty($faq_catParentList_for_schema)) {
                                                             ));
                                                             ?>
                                                             <?php if (!empty($faq_catChildList)) : ?>
-                                                                <ul>
+                                                                <ul class="bl_faqList">
                                                                     <?php foreach ($faq_catChildList as $faq_catChild) : ?>
-                                                                        <li>
+                                                                        <li class="bl_faqList_item">
                                                                             <details class="bl_faqList_item_details" id="post<?php echo $faq_catChild->ID; ?>">
                                                                                 <summary class="bl_faqList_item_details_summary">
                                                                                     <span class="el_faqList_item_details_summary_txt_q">Q.</span>
@@ -192,6 +269,53 @@ if (!empty($faq_catParentList_for_schema)) {
                                                 <?php endif; ?>
                                             </div>
                                         <?php endforeach; ?>
+                                    <?php endif; ?>
+
+
+                                    <?php
+                                    $menuPosts = get_posts(array(
+                                        'post_type' => 'menu',
+                                        'posts_per_page' => -1,
+                                        'meta_query' => array(
+                                            array(
+                                                'key' => 'menu-faq-list',
+                                                'value' => '',
+                                                'compare' => '!=',
+                                            ),
+                                        ),
+                                    ));
+                                    $menuPostIdList = array_column($menuPosts, 'ID');
+                                    ?>
+                                    <?php if (!empty($menuPostIdList)) : ?>
+                                        <div class="bl_faqContentsWrapper">
+                                            <h2 class="el_faqContentsWrapper_ttl">施術について</h2>
+                                            <?php foreach ($menuPostIdList as $menuPostId) : ?>
+                                                <?php if (have_rows('menu-faq-list', $menuPostId)) : ?>
+                                                    <div class="bl_faqContentsWrapper_item" id="menu<?php echo $menuPostId; ?>">
+                                                        <h3 class="el_faqContentsWrapper_item_ttl"><?php echo get_the_title($menuPostId); ?></h3>
+                                                        <ul class="bl_faqArchiveList">
+                                                            <?php while (have_rows('menu-faq-list', $menuPostId)) : the_row(); ?>
+                                                                <li class="bl_faqArchiveList_item">
+                                                                    <details class="bl_faqList_item_details" id="post<?php echo get_sub_field('menu-faq-list-q'); ?>">
+                                                                        <summary class="bl_faqList_item_details_summary">
+                                                                            <span class="el_faqList_item_details_summary_txt_q">Q.</span>
+                                                                            <span class="el_faqList_item_details_summary_txt"><?php echo get_sub_field('menu-faq-list-q'); ?></span>
+                                                                            <img class="el_faqList_item_details_summary_icon" src="<?php echo get_template_directory_uri(); ?>/assets/img/common/faq-arrow.svg" alt="">
+                                                                        </summary>
+                                                                        <div class="bl_faqList_details_content">
+                                                                            <div class="bl_faqList_details_content_inner">
+                                                                                <p class="el_faqList_details_content_ttl">A.</p>
+                                                                                <p class="el_faqList_details_content_txt"><?php echo get_sub_field('menu-faq-list-q'); ?></p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </details>
+                                                                </li>
+                                                            <?php endwhile; ?>
+                                                        </ul>
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+                                        </div>
                                     <?php endif; ?>
                                 </div>
                             </section>

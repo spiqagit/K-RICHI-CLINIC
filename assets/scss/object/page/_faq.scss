@@ -65,3 +65,13 @@
         }
     }
 }
+
+.bl_faqArchiveList {
+    display: flex;
+    flex-direction: column;
+    gap: vwmin(20, pc);
+
+    @include underSP {
+        gap: vwmin(20, sp_m);
+    }
+}
